@@ -124,8 +124,8 @@ Copilot Studio는 단순 챗봇을 넘어 다양한 AI 기능을 제공합니다
 
 ### 다국어 지원
 
-- **영어 최적화**이며, 한국어를 포함한 [다수 언어를 지원](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-language-support)합니다.
-- 에이전트 생성 UI는 영어이지만, **실제 동작은 한국어 인식/응답이 가능**합니다.
+- 한국어를 포함한 [다수 언어를 지원](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-language-support)합니다.
+- 에이전트 생성시, 주언어 설정을 통해 한국어를 기반으로  **인식/응답이 가능한 에이전트를 **생성 할 수 있습니다.
 - 한국어 참조 자료(Knowledge)도 문제 없이 잘 동작합니다.
 
 ---
@@ -281,7 +281,8 @@ Copilot Studio는 강력한 도구이지만, 모든 시나리오에 적합하지
 
 <div class="info-box tip">
 <strong>💡 실무 팁 — 도입 판단 원칙</strong>
-"어디까지 Copilot Studio로 할 수 있는가"는 기능의 존재 여부보다, <strong>유지보수 가능성</strong>과 <strong>확장 가능성</strong>을 기준으로 판단하세요. 70% 이상의 요구사항이 Studio로 커버된다면 Studio를 기본으로 택하되, 나머지 30%는 Power Automate나 Azure Functions로 보완하는 <strong>혼합 구조</strong>를 권장합니다.
+"어디까지 Copilot Studio로 할 수 있는가"는 기능의 존재 여부보다, <strong>유지보수 가능성 과 확장 가능성</strong>을 기준으로 판단하세요. <br>
+70% 이상의 요구사항이 Studio로 커버된다면 Studio를 기본으로 택하되, 나머지 30%는 Power Automate나 Azure Functions로 보완하는 **혼합 구조**를 권장합니다.
 </div>
 
 <div class="info-box note">
