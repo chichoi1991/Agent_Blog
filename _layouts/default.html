@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="nav-inner">
+      <a href="{{ '/' | relative_url }}" class="nav-logo">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Copilot Studio 가이드</span>
+      </a>
+      <div class="nav-links">
+        <a href="{{ '/' | relative_url }}">홈</a>
+        <a href="https://copilotstudio.microsoft.com" target="_blank">Copilot Studio ↗</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 Copilot Studio 실무 가이드 · Built with GitHub Pages</p>
+    </div>
+  </footer>
+</body>
+</html>

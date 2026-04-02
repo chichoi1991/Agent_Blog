@@ -1,0 +1,26 @@
+title: "Copilot Studio 실무 가이드"
+description: "Microsoft Copilot Studio를 활용한 Agent 구축 가이드 — 도입 검토부터 배포·운영까지"
+baseurl: "/Agent_Blog"
+url: ""
+theme: null
+markdown: kramdown
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-seo-tag
+
+collections:
+  chapters:
+    output: true
+    permalink: /:collection/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "chapters"
+    values:
+      layout: "chapter"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
