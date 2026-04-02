@@ -4,6 +4,7 @@ title: "배포 및 사용 범위 설정"
 short_title: "배포 및 범위 설정"
 description: "Teams 배포, Web App 배포, 사용자·조직별 사용 범위 관리 방법을 단계별로 안내합니다."
 order: 6
+icon: "🚀"
 ---
 
 ## Teams 배포

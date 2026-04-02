@@ -6,28 +6,71 @@
   <title>{{ page.title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="top-nav">
-    <div class="nav-inner">
-      <a href="{{ '/' | relative_url }}" class="nav-logo">
-        <span class="logo-icon">🤖</span>
-        <span class="logo-text">Copilot Studio 가이드</span>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="{{ '/' | relative_url }}" class="header-logo">
+        <svg class="logo-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Copilot Studio 실무 가이드</span>
       </a>
-      <div class="nav-links">
-        <a href="{{ '/' | relative_url }}">홈</a>
+      <nav class="header-nav">
+        <a href="{{ '/' | relative_url }}">Home</a>
         <a href="https://copilotstudio.microsoft.com" target="_blank">Copilot Studio ↗</a>
+        <a href="https://github.com" target="_blank">GitHub ↗</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="메뉴 열기">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="site-wrapper">
+    <aside class="site-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">📖 가이드 목차</span>
       </div>
-    </div>
-  </nav>
-  <main>
-    {{ content }}
-  </main>
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p>© 2026 Copilot Studio 실무 가이드 · Built with GitHub Pages</p>
-    </div>
-  </footer>
+      <nav class="sidebar-nav">
+        <a href="{{ '/' | relative_url }}" class="sidebar-link {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">
+          <span class="sidebar-icon">🏠</span> Home
+        </a>
+        {% assign sorted = site.chapters | sort: "order" %}
+        {% for ch in sorted %}
+          <a href="{{ ch.url | relative_url }}" class="sidebar-link {% if ch.url == page.url %}active{% endif %}">
+            <span class="sidebar-icon">{{ ch.icon | default: '📄' }}</span>
+            <span class="sidebar-label">{{ ch.order }}. {{ ch.short_title }}</span>
+          </a>
+        {% endfor %}
+      </nav>
+    </aside>
+
+    <main class="site-main">
+      <div class="main-content">
+        {{ content }}
+      </div>
+      <footer class="site-footer">
+        <p>© 2026 Copilot Studio 실무 가이드 · Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="mobile-overlay" id="overlay"></div>
+
+  <script>
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+      });
+      overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+      });
+    }
+  </script>
 </body>
 </html>

@@ -4,6 +4,7 @@ title: "Copilot Studio 화면 구성 이해"
 short_title: "화면 구성 이해"
 description: "Agent 개념과 Copilot Studio의 주요 메뉴 및 핵심 구성 요소(Topics, Generative Answers, Actions, Knowledge)를 심층적으로 알아봅니다."
 order: 2
+icon: "🖥️"
 ---
 
 ## Agent 개념

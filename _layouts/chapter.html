@@ -6,72 +6,109 @@
   <title>{{ page.title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="top-nav">
-    <div class="nav-inner">
-      <a href="{{ '/' | relative_url }}" class="nav-logo">
-        <span class="logo-icon">🤖</span>
-        <span class="logo-text">Copilot Studio 가이드</span>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="{{ '/' | relative_url }}" class="header-logo">
+        <svg class="logo-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Copilot Studio 실무 가이드</span>
       </a>
-      <div class="nav-links">
-        <a href="{{ '/' | relative_url }}">홈</a>
+      <nav class="header-nav">
+        <a href="{{ '/' | relative_url }}">Home</a>
         <a href="https://copilotstudio.microsoft.com" target="_blank">Copilot Studio ↗</a>
-      </div>
+        <a href="https://github.com" target="_blank">GitHub ↗</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="메뉴 열기">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
     </div>
-  </nav>
+  </header>
 
-  <div class="chapter-layout">
-    <aside class="chapter-sidebar">
-      <h3>📚 목차</h3>
-      <ul class="sidebar-nav">
+  <div class="site-wrapper">
+    <aside class="site-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">📖 가이드 목차</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="{{ '/' | relative_url }}" class="sidebar-link">
+          <span class="sidebar-icon">🏠</span> Home
+        </a>
         {% assign sorted = site.chapters | sort: "order" %}
         {% for ch in sorted %}
-          <li class="{% if ch.url == page.url %}active{% endif %}">
-            <a href="{{ ch.url | relative_url }}">
-              <span class="ch-num">{{ ch.order }}.</span> {{ ch.short_title }}
-            </a>
-          </li>
+          <a href="{{ ch.url | relative_url }}" class="sidebar-link {% if ch.url == page.url %}active{% endif %}">
+            <span class="sidebar-icon">{{ ch.icon | default: '📄' }}</span>
+            <span class="sidebar-label">{{ ch.order }}. {{ ch.short_title }}</span>
+          </a>
         {% endfor %}
-      </ul>
+      </nav>
     </aside>
 
-    <main class="chapter-content">
-      <div class="chapter-header">
-        <span class="chapter-badge">Chapter {{ page.order }}</span>
-        <h1>{{ page.title }}</h1>
-        {% if page.description %}
-        <p class="chapter-desc">{{ page.description }}</p>
-        {% endif %}
-      </div>
-
-      <div class="chapter-body">
-        {{ content }}
-      </div>
-
-      <div class="chapter-nav">
-        {% assign sorted = site.chapters | sort: "order" %}
-        {% for ch in sorted %}
-          {% if ch.url == page.url %}
-            {% if forloop.index > 1 %}
-              {% assign prev_index = forloop.index0 | minus: 1 %}
-              <a href="{{ sorted[prev_index].url | relative_url }}" class="nav-prev">← {{ sorted[prev_index].short_title }}</a>
+    <main class="site-main">
+      <div class="main-content">
+        <article class="chapter-article">
+          <div class="chapter-header">
+            <div class="chapter-meta">
+              <span class="chapter-badge">Chapter {{ page.order }}</span>
+            </div>
+            <h1 class="chapter-title">{{ page.title }}</h1>
+            {% if page.description %}
+            <p class="chapter-desc">{{ page.description }}</p>
             {% endif %}
-            {% if forloop.last == false %}
-              {% assign next_index = forloop.index0 | plus: 1 %}
-              <a href="{{ sorted[next_index].url | relative_url }}" class="nav-next">{{ sorted[next_index].short_title }} →</a>
-            {% endif %}
-          {% endif %}
-        {% endfor %}
+          </div>
+
+          <div class="chapter-body">
+            {{ content }}
+          </div>
+
+          <nav class="chapter-pagination">
+            {% assign sorted = site.chapters | sort: "order" %}
+            {% for ch in sorted %}
+              {% if ch.url == page.url %}
+                {% if forloop.index > 1 %}
+                  {% assign prev_index = forloop.index0 | minus: 1 %}
+                  <a href="{{ sorted[prev_index].url | relative_url }}" class="pagination-link prev">
+                    <span class="pagination-direction">← 이전</span>
+                    <span class="pagination-title">{{ sorted[prev_index].short_title }}</span>
+                  </a>
+                {% else %}
+                  <div></div>
+                {% endif %}
+                {% if forloop.last == false %}
+                  {% assign next_index = forloop.index0 | plus: 1 %}
+                  <a href="{{ sorted[next_index].url | relative_url }}" class="pagination-link next">
+                    <span class="pagination-direction">다음 →</span>
+                    <span class="pagination-title">{{ sorted[next_index].short_title }}</span>
+                  </a>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </nav>
+        </article>
       </div>
+      <footer class="site-footer">
+        <p>© 2026 Copilot Studio 실무 가이드 · Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </footer>
     </main>
   </div>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p>© 2026 Copilot Studio 실무 가이드 · Built with GitHub Pages</p>
-    </div>
-  </footer>
+  <div class="mobile-overlay" id="overlay"></div>
+
+  <script>
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+      });
+      overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+      });
+    }
+  </script>
 </body>
 </html>

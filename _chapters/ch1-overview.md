@@ -4,6 +4,7 @@ title: "Copilot Studio 개요 및 접속"
 short_title: "개요 및 접속"
 description: "Copilot Studio에 접속하는 방법, 필요한 라이선스와 과금 구조, 그리고 유사 서비스와의 차이를 설명합니다."
 order: 1
+icon: "🌐"
 ---
 
 ## Copilot Studio란?
