@@ -1,5 +1,5 @@
-title: "Copilot Studio 실무 가이드"
-description: "Microsoft Copilot Studio를 활용한 Agent 구축 가이드 — 도입 검토부터 배포·운영까지"
+title: "Microsoft Copilot Agentic Blog"
+description: "Microsoft Copilot 에이전트 생태계 — 실무 가이드, 핸즈온 워크샵, 기술 업데이트를 한곳에서"
 baseurl: "/Agent_Blog"
 url: ""
 theme: null
@@ -24,3 +24,15 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+# Sidebar navigation sections
+nav_sections:
+  - key: guide
+    title: "Copilot Studio 실무 가이드"
+    icon: "📘"
+  - key: workshop
+    title: "핸즈온 워크샵"
+    icon: "🛠️"
+  - key: updates
+    title: "기술 업데이트"
+    icon: "🔔"

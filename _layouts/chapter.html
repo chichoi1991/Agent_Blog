@@ -13,7 +13,7 @@
     <div class="header-inner">
       <a href="{{ '/' | relative_url }}" class="header-logo">
         <svg class="logo-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Copilot Studio 실무 가이드</span>
+        <span>Microsoft Copilot Agentic Blog</span>
       </a>
       <nav class="header-nav">
         <a href="{{ '/' | relative_url }}">Home</a>
@@ -29,18 +29,37 @@
   <div class="site-wrapper">
     <aside class="site-sidebar" id="sidebar">
       <div class="sidebar-header">
-        <span class="sidebar-title">📖 가이드 목차</span>
+        <span class="sidebar-title">📖 목차</span>
       </div>
       <nav class="sidebar-nav">
         <a href="{{ '/' | relative_url }}" class="sidebar-link">
           <span class="sidebar-icon">🏠</span> Home
         </a>
-        {% assign sorted = site.chapters | sort: "order" %}
-        {% for ch in sorted %}
-          <a href="{{ ch.url | relative_url }}" class="sidebar-link {% if ch.url == page.url %}active{% endif %}">
-            <span class="sidebar-icon">{{ ch.icon | default: '📄' }}</span>
-            <span class="sidebar-label">{{ ch.order }}. {{ ch.short_title }}</span>
-          </a>
+
+        {% for section in site.nav_sections %}
+          {% assign section_chapters = site.chapters | where: "category", section.key | sort: "order" %}
+          {% assign is_active_section = false %}
+          {% for ch in section_chapters %}
+            {% if ch.url == page.url %}
+              {% assign is_active_section = true %}
+            {% endif %}
+          {% endfor %}
+
+          <div class="sidebar-section {% if is_active_section %}open{% endif %}">
+            <button class="sidebar-section-toggle {% if is_active_section %}active{% endif %}" aria-expanded="{{ is_active_section }}" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">{{ section.icon }}</span>
+              <span class="sidebar-label">{{ section.title }}</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              {% for ch in section_chapters %}
+                <a href="{{ ch.url | relative_url }}" class="sidebar-link sub {% if ch.url == page.url %}active{% endif %}">
+                  <span class="sidebar-icon">{{ ch.icon | default: '📄' }}</span>
+                  <span class="sidebar-label">{{ ch.short_title }}</span>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
         {% endfor %}
       </nav>
     </aside>
@@ -50,7 +69,15 @@
         <article class="chapter-article">
           <div class="chapter-header">
             <div class="chapter-meta">
-              <span class="chapter-badge">Chapter {{ page.order }}</span>
+              {% if page.category == 'guide' %}
+                <span class="chapter-badge">Guide · Chapter {{ page.order }}</span>
+              {% elsif page.category == 'workshop' %}
+                <span class="chapter-badge workshop">Workshop · Step {{ page.order }}</span>
+              {% elsif page.category == 'updates' %}
+                <span class="chapter-badge updates">Update</span>
+              {% else %}
+                <span class="chapter-badge">Chapter {{ page.order }}</span>
+              {% endif %}
             </div>
             <h1 class="chapter-title">{{ page.title }}</h1>
             {% if page.description %}
@@ -63,23 +90,23 @@
           </div>
 
           <nav class="chapter-pagination">
-            {% assign sorted = site.chapters | sort: "order" %}
-            {% for ch in sorted %}
+            {% assign same_category = site.chapters | where: "category", page.category | sort: "order" %}
+            {% for ch in same_category %}
               {% if ch.url == page.url %}
                 {% if forloop.index > 1 %}
                   {% assign prev_index = forloop.index0 | minus: 1 %}
-                  <a href="{{ sorted[prev_index].url | relative_url }}" class="pagination-link prev">
+                  <a href="{{ same_category[prev_index].url | relative_url }}" class="pagination-link prev">
                     <span class="pagination-direction">← 이전</span>
-                    <span class="pagination-title">{{ sorted[prev_index].short_title }}</span>
+                    <span class="pagination-title">{{ same_category[prev_index].short_title }}</span>
                   </a>
                 {% else %}
                   <div></div>
                 {% endif %}
                 {% if forloop.last == false %}
                   {% assign next_index = forloop.index0 | plus: 1 %}
-                  <a href="{{ sorted[next_index].url | relative_url }}" class="pagination-link next">
+                  <a href="{{ same_category[next_index].url | relative_url }}" class="pagination-link next">
                     <span class="pagination-direction">다음 →</span>
-                    <span class="pagination-title">{{ sorted[next_index].short_title }}</span>
+                    <span class="pagination-title">{{ same_category[next_index].short_title }}</span>
                   </a>
                 {% endif %}
               {% endif %}
@@ -88,7 +115,7 @@
         </article>
       </div>
       <footer class="site-footer">
-        <p>© 2026 Copilot Studio 실무 가이드 · Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+        <p>© 2026 Microsoft Copilot Agentic Blog · Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
       </footer>
     </main>
   </div>

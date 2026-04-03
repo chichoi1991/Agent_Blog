@@ -5,6 +5,7 @@ short_title: "반개발형 Agent"
 description: "Copilot Studio의 대화 설계 방식, 변수·상태 관리, Action 기반 처리 흐름, Generative Orchestration 활용까지 단계별로 안내합니다."
 order: 3
 icon: "⚙️"
+category: guide
 ---
 
 ## 이 챕터의 목표

@@ -4,17 +4,19 @@ title: "홈"
 ---
 
 <div class="home-hero">
-  <h1>Copilot Studio<br>실무 가이드</h1>
-  <p class="hero-sub">비개발자도, 개발자도 함께 활용할 수 있는 Microsoft Copilot Studio 실무 가이드입니다. 도입 검토부터 배포·운영까지, 단계별로 안내합니다.</p>
+  <h1>Microsoft Copilot<br>Agentic Blog</h1>
+  <p class="hero-sub">Microsoft Copilot 에이전트 생태계를 다루는 블로그입니다. 실무 가이드, 핸즈온 워크샵, 기술 업데이트를 한곳에서 확인하세요.</p>
 </div>
 
 <div class="home-info">
   <strong>⚠️ Before You Begin</strong>
-  이 가이드는 Copilot Studio를 처음 접하는 실무 담당자를 대상으로 합니다. 각 챕터는 순서대로 읽는 것을 권장하며, 필요에 따라 특정 챕터만 참고할 수도 있습니다.
+  이 블로그는 Microsoft Copilot Studio를 중심으로 에이전트 구축·운영에 관한 다양한 콘텐츠를 제공합니다. 각 섹션은 독립적으로 참고할 수 있으며, 필요한 주제부터 시작하세요.
 </div>
 
+<!-- ===== Section 1: 실무 가이드 ===== -->
 <div class="home-section">
-  <h2>📚 가이드 목차</h2>
+  <h2>📘 Copilot Studio 실무 가이드</h2>
+  <p class="section-desc">도입 검토부터 배포·운영까지, Copilot Studio를 단계별로 안내합니다.</p>
 
   <div class="chapter-list">
     <a href="{{ '/chapters/ch0-guide-premise/' | relative_url }}" class="chapter-item">
@@ -128,6 +130,94 @@ title: "홈"
         <div class="item-tags">
           <span class="item-tag">공식 문서</span>
           <span class="item-tag">확장 방향</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ===== Section 2: 핸즈온 워크샵 ===== -->
+<div class="home-section">
+  <h2>🛠️ 핸즈온 워크샵</h2>
+  <p class="section-desc">직접 따라하며 배우는 Copilot Studio 실습 과정입니다.</p>
+
+  <div class="chapter-list">
+    <a href="{{ '/chapters/ws1-basic-agent/' | relative_url }}" class="chapter-item workshop">
+      <div class="item-icon">🎯</div>
+      <div class="item-body">
+        <div class="item-title">Step 1. 첫 Agent 만들기</div>
+        <div class="item-desc">Copilot Studio에서 처음으로 Agent를 만들어보는 핸즈온 실습입니다.</div>
+        <div class="item-tags">
+          <span class="item-tag ws">기초</span>
+          <span class="item-tag ws">Agent 생성</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="{{ '/chapters/ws2-knowledge-connect/' | relative_url }}" class="chapter-item workshop">
+      <div class="item-icon">📂</div>
+      <div class="item-body">
+        <div class="item-title">Step 2. Knowledge 연결 실습</div>
+        <div class="item-desc">SharePoint, 웹사이트 등 다양한 Knowledge 소스를 Agent에 연결합니다.</div>
+        <div class="item-tags">
+          <span class="item-tag ws">Knowledge</span>
+          <span class="item-tag ws">SharePoint</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="{{ '/chapters/ws3-connector-action/' | relative_url }}" class="chapter-item workshop">
+      <div class="item-icon">🔌</div>
+      <div class="item-body">
+        <div class="item-title">Step 3. 커넥터 & Action 활용</div>
+        <div class="item-desc">Power Automate 커넥터와 커스텀 Action을 Agent에 추가합니다.</div>
+        <div class="item-tags">
+          <span class="item-tag ws">커넥터</span>
+          <span class="item-tag ws">Action</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ===== Section 3: 기술 업데이트 ===== -->
+<div class="home-section">
+  <h2>🔔 기술 업데이트</h2>
+  <p class="section-desc">Copilot Studio 및 에이전트 생태계의 최신 기능·변경 사항을 정리합니다.</p>
+
+  <div class="chapter-list">
+    <a href="{{ '/chapters/up1-2026h1-updates/' | relative_url }}" class="chapter-item updates">
+      <div class="item-icon">🆕</div>
+      <div class="item-body">
+        <div class="item-title">2026 상반기 업데이트 요약</div>
+        <div class="item-desc">2026년 상반기 Copilot Studio 주요 기능 업데이트와 변경 사항을 정리합니다.</div>
+        <div class="item-tags">
+          <span class="item-tag up">2026 H1</span>
+          <span class="item-tag up">릴리스 노트</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="{{ '/chapters/up2-mcp-support/' | relative_url }}" class="chapter-item updates">
+      <div class="item-icon">🔧</div>
+      <div class="item-body">
+        <div class="item-title">MCP(Model Context Protocol) 지원</div>
+        <div class="item-desc">Copilot Studio에서 MCP를 활용하는 방법과 주요 변경 사항을 안내합니다.</div>
+        <div class="item-tags">
+          <span class="item-tag up">MCP</span>
+          <span class="item-tag up">프로토콜</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="{{ '/chapters/up3-agent-builder/' | relative_url }}" class="chapter-item updates">
+      <div class="item-icon">🏗️</div>
+      <div class="item-body">
+        <div class="item-title">Agent Builder 통합 업데이트</div>
+        <div class="item-desc">Agent Builder와 Copilot Studio 간의 통합 변경 사항을 정리합니다.</div>
+        <div class="item-tags">
+          <span class="item-tag up">Agent Builder</span>
+          <span class="item-tag up">통합</span>
         </div>
       </div>
     </a>
