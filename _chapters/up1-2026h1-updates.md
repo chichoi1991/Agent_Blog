@@ -1,4 +1,4 @@
-﻿---
+---
 layout: chapter
 title: "Copilot Studio 2026 상반기 업데이트 요약"
 short_title: "2026 상반기 업데이트"

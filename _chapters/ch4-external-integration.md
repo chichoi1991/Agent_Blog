@@ -1,4 +1,4 @@
-﻿---
+---
 layout: chapter
 title: "외부(사내/대외) 시스템 연동 방식"
 short_title: "외부 시스템 연동"

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: chapter
 title: "MCP(Model Context Protocol) 지원"
 short_title: "MCP 지원"

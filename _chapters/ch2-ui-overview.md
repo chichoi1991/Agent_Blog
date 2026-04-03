@@ -1,4 +1,4 @@
-﻿---
+---
 layout: chapter
 title: "Copilot Studio 화면 구성 이해"
 short_title: "화면 구성 이해"

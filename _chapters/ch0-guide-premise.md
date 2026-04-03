@@ -1,4 +1,4 @@
-﻿---
+---
 layout: chapter
 title: "가이드의 전제"
 short_title: "가이드의 전제"

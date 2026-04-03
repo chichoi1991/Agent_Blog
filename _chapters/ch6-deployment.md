@@ -1,4 +1,4 @@
-﻿---
+---
 layout: chapter
 title: "배포 및 사용 범위 설정"
 short_title: "배포 및 범위 설정"

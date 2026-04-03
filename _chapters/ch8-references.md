@@ -1,4 +1,4 @@
-﻿---
+---
 layout: chapter
 title: "참고 자료 및 확장 방향"
 short_title: "참고 자료"
