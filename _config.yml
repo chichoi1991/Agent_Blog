@@ -2,7 +2,6 @@ title: "Microsoft Copilot Agentic Blog"
 description: "Microsoft Copilot 에이전트 생태계 — 실무 가이드, 핸즈온 워크샵, 기술 업데이트를 한곳에서"
 baseurl: "/Agent_Blog"
 url: ""
-theme: null
 markdown: kramdown
 kramdown:
   input: GFM
