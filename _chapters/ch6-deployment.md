@@ -1,4 +1,4 @@
----
+﻿---
 layout: chapter
 title: "배포 및 사용 범위 설정"
 short_title: "배포 및 범위 설정"
@@ -8,7 +8,7 @@ icon: "🚀"
 category: guide
 ---
 
-## 배포 전 체크리스트
+## 1. 배포 전 체크리스트
 
 배포 전에 다음 항목을 확인하세요.
 
@@ -23,30 +23,30 @@ category: guide
 
 ---
 
-## Teams 배포
+## 2. Teams 배포
 
 Microsoft Teams는 Copilot Studio Agent의 **가장 대표적인 배포 채널**입니다.
 
-> 📖 **참조**: [Publish and deploy your agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels)
+> 📖 **참조**: [Publish and deploy your agent](https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/publication-fundamentals-publish-channels)
 
-### 게시(Publish) 절차
+### 2.1 게시(Publish) 절차
 
 1. Copilot Studio 상단의 **Publish** 버튼 클릭
 2. 변경 사항 요약 확인 후 **Publish** 실행
 3. 게시 완료 메시지 확인
 
 <div class="info-box warning">
-<strong>⚠️ Publish를 해야 반영됩니다</strong>
-편집 중인 내용은 <strong>테스트 패널에서만 확인 가능</strong>합니다. 게시(Publish) 전까지 실제 채널에는 이전 버전이 유지됩니다. "수정했는데 왜 안 바뀌지?"라는 이슈의 원인은 대부분 <strong>Publish 미실행</strong>입니다.
+<b>⚠️ Publish를 해야 반영됩니다</b><br>
+편집 중인 내용은 <b>테스트 패널에서만 확인 가능</b>합니다. 게시(Publish) 전까지 실제 채널에는 이전 버전이 유지됩니다. "수정했는데 왜 안 바뀌지?"라는 이슈의 원인은 대부분 <b>Publish 미실행</b>입니다.
 </div>
 
-### Teams 채널 설정
+### 2.2 Teams 채널 설정
 
 1. **Publish 탭** → **Channels** → **Microsoft Teams** 선택
 2. **Turn on Teams** 활성화
 3. **Open agent** 클릭하여 Teams에서 Agent 확인
 
-### Teams 배포 범위
+### 2.3 Teams 배포 범위
 
 | 배포 방식 | 설명 | Admin 승인 |
 |---|---|---|
@@ -58,7 +58,7 @@ Microsoft Teams는 Copilot Studio Agent의 **가장 대표적인 배포 채널**
 
 ---
 
-## Web App 배포
+## 3. Web App 배포
 
 웹 채널을 통해 Agent를 **외부 웹사이트**나 **사내 포털**에 임베드할 수 있습니다.
 
@@ -67,29 +67,29 @@ Microsoft Teams는 Copilot Studio Agent의 **가장 대표적인 배포 채널**
 3. 대상 웹사이트의 HTML에 코드 삽입
 
 <div class="info-box tip">
-<strong>💡 실무 팁 — 웹 배포 보안</strong>
-웹 채널은 <strong>공개 모드</strong>(인증 없이 접근)와 <strong>인증 모드</strong>(Entra ID 필요)로 구분됩니다. 사내 정보를 다루는 Agent는 반드시 <strong>인증 모드</strong>를 사용하세요. 외부 고객 대상 배포 시에는 <strong>인증 방식 + 데이터 노출 범위를 사전에 보안팀과 검토</strong>하세요.
+<b>💡 실무 팁 — 웹 배포 보안</b><br>
+웹 채널은 <b>공개 모드</b>(인증 없이 접근)와 <b>인증 모드</b>(Entra ID 필요)로 구분됩니다. 사내 정보를 다루는 Agent는 반드시 <b>인증 모드</b>를 사용하세요. 외부 고객 대상 배포 시에는 <b>인증 방식 + 데이터 노출 범위를 사전에 보안팀과 검토</b>하세요.
 </div>
 
-### 기타 배포 채널
+### 3.1 기타 배포 채널
 
 | 채널 | 특징 | 참조 |
 |---|---|---|
-| **Microsoft 365 Copilot** | Copilot Chat 내에서 Agent를 플러그인으로 연동 | [Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions) |
-| **Facebook Messenger** | B2C 고객 대응 | [Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels) |
+| **Microsoft 365 Copilot** | Copilot Chat 내에서 Agent를 플러그인으로 연동 | [Learn](https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions) |
+| **Facebook Messenger** | B2C 고객 대응 | [Learn](https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/publication-fundamentals-publish-channels) |
 | **Direct Line API** | 커스텀 앱 연동 | |
 
 ---
 
-## 사용자/조직별 사용 범위 관리
+## 4. 사용자/조직별 사용 범위 관리
 
-### 공유 설정
+### 4.1 공유 설정
 
 **Agent 수준 공유 (편집 권한)**:
 - **공동 작성자(Co-author)**: Agent를 편집하고 게시할 수 있음
 - **뷰어(Viewer)**: Agent 설정을 확인할 수 있으나 편집 불가
 
-### 환경(Environment)별 관리
+### 4.2 환경(Environment)별 관리
 
 | 환경 유형 | 용도 | 접근 범위 |
 |---|---|---|
@@ -98,11 +98,11 @@ Microsoft Teams는 Copilot Studio Agent의 **가장 대표적인 배포 채널**
 | **운영(Production)** | 실제 서비스 환경 | 전체 사용자 |
 
 <div class="info-box warning">
-<strong>⚠️ Knowledge 접근 권한 주의</strong>
-Agent에 접근할 수 있더라도, Knowledge 소스(SharePoint 등)에 대한 <strong>접근 권한이 없는 사용자에게는 해당 정보가 응답에 포함되지 않습니다</strong>. 이를 고려하여 적절한 문서 권한 설계가 필요합니다.
+<b>⚠️ Knowledge 접근 권한 주의</b><br>
+Agent에 접근할 수 있더라도, Knowledge 소스(SharePoint 등)에 대한 <b>접근 권한이 없는 사용자에게는 해당 정보가 응답에 포함되지 않습니다</b>. 이를 고려하여 적절한 문서 권한 설계가 필요합니다.
 </div>
 
 <div class="info-box note">
-<strong>📌 다음 챕터 미리보기</strong>
-배포 방법을 익혔으니, 다음 <strong>Chapter 7</strong>에서는 조직 공용 Agent를 운영할 때의 거버넌스, 등록 프로세스, 유의사항을 다룹니다.
+<b>📌 다음 챕터 미리보기</b><br>
+배포 방법을 익혔으니, 다음 <b>Chapter 7</b>에서는 조직 공용 Agent를 운영할 때의 거버넌스, 등록 프로세스, 유의사항을 다룹니다.
 </div>

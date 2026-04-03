@@ -1,4 +1,4 @@
----
+﻿---
 layout: chapter
 title: "Copilot Studio 2026 상반기 업데이트 요약"
 short_title: "2026 상반기 업데이트"
@@ -24,4 +24,4 @@ _콘텐츠 준비 중..._
 
 ## 참고 링크
 
-- [Copilot Studio 릴리스 노트](https://learn.microsoft.com/en-us/microsoft-copilot-studio/release-notes)
+- [Copilot Studio 릴리스 노트](https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/release-notes)

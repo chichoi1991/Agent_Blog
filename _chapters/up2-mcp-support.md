@@ -1,4 +1,4 @@
----
+﻿---
 layout: chapter
 title: "MCP(Model Context Protocol) 지원"
 short_title: "MCP 지원"
@@ -24,4 +24,4 @@ _콘텐츠 준비 중..._
 
 ## 참고 링크
 
-- [Copilot Studio MCP 문서](https://learn.microsoft.com/en-us/microsoft-copilot-studio/)
+- [Copilot Studio MCP 문서](https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/)
