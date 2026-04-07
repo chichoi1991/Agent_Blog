@@ -75,7 +75,7 @@ Agent에 **Knowledge 소스**를 연결하면, 사내 문서와 데이터를 기
 <li><b>Word 문서</b>는 목차·제목 구분(탐색 구조)이 잘 되어 있을수록 검색 정확도가 높습니다.</li>
 <li><b>PPT 파일</b>은 마스터 레이아웃이 깔끔하게 정리된 파일이 파싱 정확도가 좋습니다.</li>
 <li><b>SharePoint</b> 연결 시 Document Library가 아닌 <b>사이트 URL</b>을 입력하세요. Document Library 직접 연결은 지원되지 않습니다.</li>
-<li>XLSX와 같은 구조화된 데이터는 업로드 가능하지만, Agent가 코드를 실행할 수 없으므로 <b>분석형 질문에는 최적의 응답을 기대하기 어렵습니다</b>. 따라서 행,열 기반 쿼리를 통한 데이터 조회가 필요한 시나리오라면 지식소스에 추가하는것으로 원하는 결과물을 얻기 어렵습니다. (커넥터와 플로우를 통한 작업 필요)</li>
+<li><b>XLSX와 같은 구조화된 엑셀 파일 데이터</b>는 업로드 가능하지만, Agent가 코드를 실행할 수 없으므로 <b>분석형 질문에는 최적의 응답을 기대하기 어렵습니다</b>. 따라서 행,열 기반 쿼리를 통한 데이터 조회가 필요한 시나리오라면 지식소스에 추가하는것으로 원하는 결과물을 얻기 어렵습니다. (커넥터와 플로우를 통한 작업 필요)</li>
 </ul>
 </div>
 
@@ -91,7 +91,7 @@ Agent에 **Knowledge 소스**를 연결하면, 사내 문서와 데이터를 기
 
 - HTTP 요청 기반으로 외부 REST API를 호출하거나, **1,000개 이상의 표준/프리미엄 커넥터**를 통해 다양한 서비스와 연동합니다.
 - **커스텀 커넥터**를 생성하여 사내·대외 시스템과 데이터를 주고받을 수 있습니다.
-- **MCP(Model Context Protocol)** 프로토콜을 통해 외부 MCP 서버를 도구(Tool)로 직접 연결할 수 있습니다.
+- **MCP(Model Context Protocol)** 프로토콜을 통해 외부 MCP 서버를 도ㄴ구(Tool)로 직접 연결할 수 있습니다.
 
 > 📖 **참조**: [Custom connectors overview](https://learn.microsoft.com/ko-kr/connectors/custom-connectors/) · [Connector reference](https://learn.microsoft.com/ko-kr/connectors/connector-reference/)
 
