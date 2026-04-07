@@ -55,7 +55,7 @@
               {% for ch in section_chapters %}
                 <a href="{{ ch.url | relative_url }}" class="sidebar-link sub {% if ch.url == page.url %}active{% endif %}">
                   <span class="sidebar-icon">{{ ch.icon | default: '📄' }}</span>
-                  <span class="sidebar-label">{{ ch.short_title }}</span>
+                  <span class="sidebar-label">{{ ch.order }}. {{ ch.short_title }}</span>
                 </a>
               {% endfor %}
             </div>
