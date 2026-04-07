@@ -1,4 +1,4 @@
----
+﻿---
 layout: chapter
 title: "가이드의 전제"
 short_title: "가이드의 전제"
@@ -96,8 +96,32 @@ Agent에 **Knowledge 소스**를 연결하면, 사내 문서와 데이터를 기
 > 📖 **참조**: [Custom connectors overview](https://learn.microsoft.com/ko-kr/connectors/custom-connectors/) · [Connector reference](https://learn.microsoft.com/ko-kr/connectors/connector-reference/)
 
 <div class="info-box warning">
-<b>⚠️ 실무 주의 — REST API 직접 호출</b>
-Copilot Studio Agent는 <b>일반 REST API 형태로 외부에서 호출할 수 없습니다</b>. Agent를 외부 시스템에서 호출하려면 <b>Direct Line API</b> 또는 <b>MCP 채널</b>을 활용해야 합니다. "Agent를 API처럼 쓸 수 있냐?"는 고객 질문이 빈번하므로, 이 점을 사전에 명확히 안내하세요.
+<b>⚠️ 실무 주의 — 외부에서 Copilot Studio Agent를 호출하려면?</b>
+Copilot Studio Agent는 <b>일반 REST API 형태로 외부에서 직접 호출할 수 없으며</b>, A2A·MCP 형태의 inbound endpoint도 제공하지 않습니다. 외부 시스템(AI Foundry, 자체 Agent Framework 등)에서 Copilot Studio를 호출하려면 아래 3가지 방식 중 하나를 선택해야 합니다.
+<br><br>
+<table>
+<tr><th>방식</th><th>적합 시나리오</th><th>특징</th><th>참조</th></tr>
+<tr>
+<td><b>M365 Agents SDK<br>Copilot Studio client</b></td>
+<td>사용자 컨텍스트(Delegated) 기반 호출<br>Teams·웹앱·M365 환경</td>
+<td>✅ 공식 권장 경로, SDK 기반 개발 편의성<br>⚠️ Service principal/daemon 미지원 → 이 경우 Direct Line 사용</td>
+<td><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-integrate-web-or-native-app-m365-agents-sdk">Learn</a></td>
+</tr>
+<tr>
+<td><b>Direct Line API</b></td>
+<td>백엔드 서비스, daemon, orchestrator<br>비-Microsoft 프레임워크</td>
+<td>✅ 가장 범용적, HTTP/WebSocket 모두 지원<br>⚠️ 토큰·conversation lifecycle 등 개발량이 큼</td>
+<td><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-web-security">Learn</a></td>
+</tr>
+<tr>
+<td><b>Power Platform<br>Connector wrapper</b></td>
+<td>PoC, low-code 우선, 기존 Power Platform 운영</td>
+<td>✅ 가장 빠른 구현, Power Automate/Power Apps에서 바로 호출<br>⚠️ Throttling(300 calls/60sec/connection), 대규모 orchestration에는 불리</td>
+<td><a href="https://learn.microsoft.com/en-us/connectors/microsoftcopilotstudio/">Learn</a></td>
+</tr>
+</table>
+<br>
+반대로 <b>Copilot Studio → 외부 agent</b> 방향은 <a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-add-other-agents">Connected Agents</a>를 통해 <b><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-agent-foundry-agent">Foundry agent</a>, <a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-agent-microsoft-365-agents-sdk-agent">M365 Agents SDK agent</a>, <a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-agent-agent-to-agent">A2A agent</a></b> 연결이 지원되며, <b><a href="https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/introducing-model-context-protocol-mcp-in-copilot-studio-simplified-integration-with-ai-apps-and-agents/">MCP</a>는 외부 tools/resources를 가져오는 방향(outbound)</b>으로 동작합니다.
 </div>
 
 ### 2.5 AI 기반 고급 기능
@@ -145,7 +169,7 @@ Copilot Studio는 강력한 도구이지만, 모든 시나리오에 적합하지
 
 ### 3.2 고도화된 UI/UX 커스터마이징
 
-- **Adaptive Card 지원이 제한적**이며, 기본 텍스트 포맷팅을 넘어서는 커스텀 렌더링이 필요하면 별도 프론트엔드 개발이 필요합니다.
+- **Adaptive Card 지원이 제한적**이며, 기본 텍스트 포맷팅을 넘어서는 커스텀 렌더링이 필요하면 별도 Agent SDK를 통해 프론트엔드와 연결한 개발이 필요합니다.
 - API 호출, Action, 응답 포맷팅에 대한 세밀한 개발자 제어가 제한됩니다.
 
 > 📖 **참조**: [Choose the right tool – Copilot Studio Pros/Cons](https://learn.microsoft.com/ko-kr/microsoft-365/copilot/extensibility/declarative-agent-tool-comparison#copilot-studio)
@@ -169,7 +193,6 @@ Copilot Studio는 강력한 도구이지만, 모든 시나리오에 적합하지
 - **Loop 파일**을 Knowledge 소스로 직접 사용할 수 없습니다 (현재 Feature In Review 상태).
 - SharePoint의 **Classic ASPX 페이지**, **SPFx 컴포넌트가 포함된 Modern 페이지**, **커스텀 CSS/아코디언 네비 사이트**는 Generative Answers에 사용되지 않습니다.
 - 파일명을 직접 참조하는 질문(예: "file-name.pdf에 뭐라고 했어?")에는 답변할 수 없습니다.
-- **Sensitivity Label**이 'Confidential' 또는 'Highly Confidential'로 설정된 문서, 비밀번호 보호 문서는 인덱싱되지 않습니다.
 
 ### 3.4 실시간 양방향 데이터 동기화
 
@@ -178,21 +201,25 @@ Copilot Studio는 강력한 도구이지만, 모든 시나리오에 적합하지
 
 ### 3.5 소스 제어 및 CI/CD
 
-- Azure DevOps, GitHub 등의 **소스 제어 시스템에 대한 기본 지원이 없습니다**.
-- Pull Request나 자동 배포 파이프라인이 기본 제공되지 않습니다.
-- 다만 Power Platform의 **Solution** 기능을 활용한 패키징과 환경 간 이관은 가능하며, [VS Code 확장](https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/visual-studio-code-extension-overview)을 통해 로컬 개발 워크플로우를 연계할 수 있습니다.
+- Power Platform은 **Solution 기반 ALM**을 공식 지원하며, [Power Platform Build Tools](https://learn.microsoft.com/ko-kr/power-platform/alm/devops-build-tools)(Azure DevOps)와 [GitHub Actions for Power Platform](https://learn.microsoft.com/ko-kr/power-platform/alm/devops-github-actions)을 통해 CI/CD 파이프라인을 구성할 수 있습니다.
+- [Power Platform CLI(`pac`)](https://learn.microsoft.com/ko-kr/power-platform/developer/cli/introduction)로 Solution을 개별 파일로 분해(unpack)하여 Git에 커밋하고, PR 기반 코드 리뷰 워크플로우를 적용할 수 있습니다.
+- [Pipelines in Power Platform](https://learn.microsoft.com/ko-kr/power-platform/alm/pipelines) 기능을 사용하면 Admin Center 내에서 코드 없이 Dev → Test → Prod 환경 간 배포 파이프라인을 구성할 수 있습니다.
+- Copilot Studio의 [VS Code 확장](https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/visual-studio-code-extension-overview)을 통해 Agent를 YAML 파일로 로컬에서 편집하고, `pac copilot` 명령으로 push/pull하여 Git 연동이 가능합니다.
+- 다만, **Copilot Studio UI에서 직접 Git 연동이나 PR 생성을 수행하는 기능은 내장되어 있지 않으므로**, 위 도구들을 조합하여 ALM 파이프라인을 별도로 구성해야 합니다.
 
 ### 3.6 온프레미스 전용 환경
 
 - Copilot Studio는 **클라우드 기반 SaaS 서비스**이므로, 완전한 온프레미스 환경에서의 운영은 불가합니다.
-- On-Premises Data Gateway를 활용한 하이브리드 구성은 가능하나, 제약이 있습니다.
+- 하지만 On-Premises Data Gateway 및 Azure vNET을 활용한 하이브리드 구성은 가능합니다.
+
+> 📖 **참조**:<br> [Power Platform vNet 설정 및 구성](https://learn.microsoft.com/ko-kr/power-platform/admin/vnet-support-setup-configure?tabs=existing%2Csingle&pivots=manual#option-1-use-the-power-platform-admin-center) <br> [실습: 코파일럿 스튜디오와 VNet 통합하기](https://github.com/baby-crows/Copilot-Studio-Hands-on/blob/main/CPS-Vnet-Integration/%EC%BD%94%ED%8C%8C%EC%9D%BC%EB%9F%BF%20%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%EC%99%80%20VNet%20%ED%86%B5%ED%95%A9%ED%95%98%EA%B8%B0.md)
 
 <div class="info-box warning">
-<b>⚠️ 고객이 가장 많이 오해하는 TOP 5</b>
+<b>⚠️ Copilot Studio를 처음 시작할 때 가장 많이 오해하는 TOP 5</b>
 <ol>
 <li><b>"M365 Copilot 있으면 Studio 다 되는 거죠?"</b> → ❌ 외부 채널 배포·Author 권한은 별도입니다. Copilot Author Role 또는 Studio User가 필요합니다.</li>
 <li><b>"프리미엄 커넥터 경고가 떠요"</b> → 실제 제한은 "배포 채널"에 따라 다릅니다. 커넥터 자체의 제한이 아니므로 오해하지 마세요.</li>
-<li><b>"지식 소스로 파일 올리면 비용이 안 드나요?"</b> → Knowledge 소스로 파일을 업로드하면 <b>Dataverse 스토리지가 소비</b>됩니다. 전사 PoC 시에는 반드시 환경/용량 가이드를 확인하세요.</li>
+<li><b>"지식 소스로 파일 올리면 비용이 안 드나요?"</b> → Knowledge 소스에 파일 직접 업로드를 선택하면  <b>Dataverse 스토리지가 소비</b>됩니다. </li>
 <li><b>"네트워크 차단이 안 풀려요"</b> → Copilot Studio는 Power Platform URL 접근이 필수입니다. <b>Conditional Access / MDCA / Proxy</b>와 충돌하는 사례가 빈번하므로, 보안팀과 사전 협의가 필요합니다.</li>
 <li><b>"에이전트가 사람처럼 알아서 다 해주겠죠?"</b> → 명확한 <b>Role / Tool / Output 제약</b>을 지침에 정의해야 합니다. 프롬프트로 형식을 강제하지 않으면 실패 확률이 높아집니다.</li>
 </ol>
@@ -214,18 +241,20 @@ Copilot Studio는 강력한 도구이지만, 모든 시나리오에 적합하지
 
 ### 4.1 판단 기준표
 
-| 판단 기준 | Copilot Studio 적합 | 직접 개발(SI) 적합 |
-|---|---|---|
-| **대화 복잡도** | 단순 FAQ, 안내, 정보 조회, 3단계 이하 분기 | 다단계 분기, 장기 맥락 유지, 복잡한 대화 흐름 |
-| **데이터 소스** | SharePoint, 웹사이트, Dataverse, 표준 커넥터 | 사내 DB 직접 연동, 레거시 시스템, 대량 비정형 데이터 |
-| **비즈니스 로직** | 간단한 조건 분기, Action 호출, Agent Flow | 복잡한 트랜잭션, 계산 로직, 다중 시스템 정합성 |
-| **UI/UX 요구** | 기본 채팅 UI, Adaptive Card | 커스텀 대시보드, 시각화, 키오스크/네이티브 앱 |
-| **배포 채널** | Teams, 웹, SharePoint, Slack (기본 제공) | 자체 앱, 키오스크, 임베디드 |
-| **유지보수 주체** | 현업/시민개발자/IT CoE | 전문 개발팀 |
-| **구축 기간** | 수 일 ~ 수 주 | 수 주 ~ 수 개월 |
-| **인증/보안** | Entra ID 기본 연동 | 커스텀 인증, mTLS, SAML 등 |
-| **소스 제어** | Solution Export/Import | Git, Azure DevOps CI/CD |
-| **AI 엔진** | Copilot Studio 기본 제공 LLM | 자체 모델, 특화 RAG 파이프라인 |
+| 판단 기준 | Copilot Studio 단독 | Copilot Studio + Azure 확장 | 직접 개발(SI) |
+|---|---|---|---|
+| **대화 복잡도** | 단순 FAQ, 안내, 정보 조회, 3단계 이하 분기 | 중간~높은 복잡도, 조건 분기 + Action 체이닝 + 멀티 에이전트 | 다단계 분기, 장기 맥락 유지, 복잡한 대화 흐름 |
+| **데이터 소스** | SharePoint, 웹사이트, Dataverse, 업로드 문서 | + 사내 DB(Azure Functions·Data Gateway·VNet 경유), 커스텀 커넥터, HTTP API, MCP 서버 | 사내 DB 직접 연동, 레거시 시스템, 대량 비정형 데이터 |
+| **비즈니스 로직** | Knowledge 기반 응답, 간단한 Topic 분기 | Agent Flow·Azure Functions·API Management로 중간 복잡도 로직 처리 | 복잡한 트랜잭션, 계산 로직, 다중 시스템 정합성 |
+| **UI/UX 요구** | 기본 채팅 UI, 텍스트/이미지 응답 | Adaptive Card, 구조화된 응답 포맷 | 커스텀 대시보드, 시각화, 키오스크/네이티브 앱 |
+| **배포 채널** | Teams, 웹, M365 Copilot (기본 제공) | + Slack, Facebook, WhatsApp, Direct Line | 자체 앱, 키오스크, 임베디드, 완전 커스텀 |
+| **유지보수 주체** | 현업/시민개발자 단독 운영 | 시민개발자 + IT/개발팀 or COE 협업 | 전문 개발팀 |
+| **구축 기간** | 수 일 | 수 주 | 수 주 ~ 수 개월 |
+| **인증/보안** | Entra ID 기본 연동 | Entra ID + OAuth2 커넥터 + VNet/Private Endpoint | 커스텀 인증, mTLS, SAML 등 |
+| **소스 제어** | Solution Export/Import | + pac CLI, Build Tools, GitHub Actions | Git, Azure DevOps 전체 CI/CD |
+| **AI 엔진** | Copilot Studio 기본 제공 LLM | + AI Prompts, Reasoning 모델, Foundry Agent 연동 | 자체 모델, 특화 RAG 파이프라인 |
+| **인프라 연동** | 없음 (Knowledge 소스만) | Azure Functions, Data Gateway, VNet으로 사내 DB·온프레미스 연동 가능 | 제약 없음 |
+| **비용 구조** | M365 Copilot B2E 무료 범위 내 | Copilot Credits + Azure 리소스 비용 | Azure/인프라 비용 직접 관리 |
 
 ### 4.2 Copilot Studio vs 직접 개발(SI) vs Azure AI Foundry
 
@@ -236,13 +265,13 @@ Copilot Studio는 강력한 도구이지만, 모든 시나리오에 적합하지
 | **개발 방식** | Low-code (그래픽 + YAML) | Full-code | Model / Prompt 중심 |
 | **구축 속도** | ✅ 매우 빠름 (수일~수주) | ❌ 느림 (수주~수개월) | ⚠️ 중간 |
 | **유지보수** | ✅ 현업 담당자 가능 | ❌ 전문 개발팀 필요 | ⚠️ ML 전문 인력 필요 |
-| **복잡 로직** | ⚠️ 제한적 (PA로 보완 가능) | ✅ 최적 | ✅ 가능 |
+| **복잡 로직** | ⚠️ 제한적 (Power Automate Flow로 보완 가능) | ✅ 최적 | ✅ 가능 |
 | **PoC 용이성** | ✅ 최적 | ❌ 어려움 | ⚠️ 중간 |
 | **거버넌스** | ✅ Power Platform 기본 제공 | ❌ 직접 설계 | ⚠️ 별도 구성 |
 | **프론트엔드** | ✅ Microsoft 기본 제공 | ❌ 반드시 직접 구현 | ❌ 직접 구현 |
 | **채널 관리** | ✅ Teams/웹/Slack 등 내장 | ❌ 직접 구현 | ❌ 직접 구현 |
 
-> **내부 공통 메시지**: Copilot Studio는 **Agent 제품화 도구**, Foundry는 **AI 엔진**, SI는 **시스템 구축** — 세 가지는 경쟁이 아닌 보완 관계입니다.
+> **중요**: Copilot Studio는 **Agent 제품화 도구**, Foundry는 **AI 엔진**, SI는 **시스템 구축** — 세 가지는 경쟁이 아닌 보완 관계입니다. 에이전트 개발을 하려는 사용자, 목적, 난이도에 따라 적절하게 취사선택 및 조합을 하여 최적화된 비용으로 에이전트 개발 및 운영을 가능케 합니다.
 
 ### 4.3 실무 의사결정 프레임워크
 
@@ -263,7 +292,7 @@ Copilot Studio는 강력한 도구이지만, 모든 시나리오에 적합하지
        └─ No → 목적에 따라 선택
 ```
 
-### 4.4 실제 기업 고객의 피드백 패턴
+### 4.4 실제 기업 고객의 피드백
 
 국내 엔터프라이즈 고객의 Copilot Studio 도입 검토에서 반복적으로 나타나는 피드백을 정리합니다.
 
@@ -278,7 +307,7 @@ Copilot Studio는 강력한 도구이지만, 모든 시나리오에 적합하지
 - **네트워크/보안팀과의 충돌** (CA 정책, Proxy 설정)
 
 **❓ 단골 질문:**
-- "외부 시스템도 호출할 수 있나?" → **가능하지만 설계가 핵심**
+- "외부 시스템도 호출할 수 있나?" → **커넥터를 이용하여 시스템 호출이 가능합니다.**
 - "비용이 폭증하지 않나?" → **M365 Copilot 사용자는 B2E 무료** (조건 있음, Ch1에서 상세 설명)
 - "사람이 승인 안 하면 자동으로 실행되나?" → **지침에서 제약 조건을 명확히 설정해야 함**
 
