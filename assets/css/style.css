@@ -165,7 +165,7 @@ a:hover { color: var(--link-hover); }
   padding: 8px 12px;
   border-radius: var(--radius);
   color: var(--text);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 450;
   line-height: 1.4;
   transition: all 0.15s;
@@ -204,7 +204,7 @@ a:hover { color: var(--link-hover); }
   background: none;
   color: var(--text);
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.4;
   cursor: pointer;
@@ -246,7 +246,7 @@ a:hover { color: var(--link-hover); }
 
 .sidebar-link.sub {
   padding: 6px 12px 6px 16px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   border-left: 2px solid var(--border);
   border-radius: 0 var(--radius) var(--radius) 0;
@@ -801,7 +801,7 @@ a:hover { color: var(--link-hover); }
 
 .sidebar-link.child {
   padding: 6px 8px 6px 10px;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-secondary);
   display: flex;
   align-items: center;
