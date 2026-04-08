@@ -4,6 +4,7 @@ title: "Agent Builder로 에이전트 만들기"
 short_title: "Agent Builder로 에이전트 만들기"
 description: "Agent Builder를 활용한 선언형 에이전트 핸즈온 실습"
 order: 4
+icon: "🤖"
 category: workshop
 parent: "ws4"
 is_parent: true
@@ -21,12 +22,16 @@ is_parent: true
 ---
 
 ## 🔍 핵심 특징
+<br> <br>
+
 | 특징 | 설명 |
 |------|------|
 | **Low-Code / No-Code** | 코드 대신 **지침 기반**으로 동작을 정의 |
 | **Microsoft 365 통합** | SharePoint, OneDrive, Teams 등과 자연스럽게 연결 |
 | **확장성** | 다양한 데이터 소스 및 API 연동 가능 |
 | **안전성** | Microsoft 365 보안 및 규정 준수 정책을 그대로 적용 |
+
+<br>
 
 ---
 
@@ -97,7 +102,8 @@ is_parent: true
 
 ---
 
-## 🛠 효과적인 지침 작성 원칙
+## 🛠 효과적인 지침 작성 원칙 <br>
+
 | 원칙 | 설명 |
 |------|------|
 | **명확성** | 모호한 표현을 피하고, 구체적인 작업과 조건을 명시합니다. |
