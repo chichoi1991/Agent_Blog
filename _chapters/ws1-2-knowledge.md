@@ -1,0 +1,112 @@
+---
+layout: chapter
+title: "참조 자료 추가"
+short_title: "참조 자료 추가"
+description: "기초편 #1: 블로그 포스트 에이전트 - 참조 자료 추가"
+order: 2
+icon: "📚"
+category: workshop
+parent: "ws1"
+---
+
+## Step 2: 참조 자료 추가
+
+# 에이전트에 참조 자료 추가
+
+이번 실습은, 에이전트가 웹 서치 정보와 함께 쉐어포인트에 미리 저장해둔 PDF형태의 데이터시트를 기반으로 답변을 할 수 있도록
+참조자료를 설정해 주도록 합니다.
+
+## 📚 Copilot Studio의 참조자료(Knowledge) 역할
+Copilot Studio에서 **참조자료(Knowledge)**는 에이전트가 기업 내부 문서나 외부 정보에 기반해 정확하고 신뢰할 수 있는 답변을 생성할 수 있도록 돕는 핵심 기능입니다.
+
+아래 표는 그 역할을 간단히 설명해주는 표 입니다.
+
+| 항목 | 설명 |
+|:------:|------|
+| **정의** | 에이전트가 답변을 생성할 때 참고할 수 있도록 연결된 문서, 웹페이지, 데이터 등 외부 정보 소스 |
+| **주요 기능** | 사용자 질문에 대해 **정확하고 근거 있는 답변**을 생성할 수 있도록 지원 |
+| **형식** | PDF, HTML, Word, Excel, 웹 링크 등 다양한 형식의 문서를 지원 |
+| **활용 예시** | - SharePoint에 저장된 매뉴얼 검색<br>- 내부 보고서 요약<br>- 통계 자료 기반 인사이트 제공 |
+| **중요성** | 참조자료가 없으면 에이전트는 일반적인 지식만으로 답변하며, **기업 맞춤형 정보 제공이 어려움** |
+| **설정 위치** | Copilot Studio의 **"Knowledge" 탭**에서 연결 가능 |
+
+<br> <br> 
+
+Copilot studio의 커스텀 엔진 에이전트에서는 Microsoft 365 내의 데이터 뿐만 아니라,
+다양한 데이터 소스에 저장되어 있는 정보를 참조자료로 활용하여 답변에 이용할 수 있습니다.
+
+## 📥 Copilot Studio에서 활용 가능한 참조자료(Knowledge) 데이터 소스 유형 요약
+| 카테고리 | 데이터 소스 | 설명 |
+|:----------:|:--------------:|------|
+| **문서 기반** | PDF, Word, Excel 등 업로드 파일 | Dataverse에 업로드 후 자동 색인화되어 검색 가능 |
+| **클라우드 저장소** | SharePoint, OneDrive | 조직 내 문서 저장소에서 직접 참조 가능 |
+| **웹 기반** | 공개 웹사이트 URL | Bing 검색을 통해 웹페이지 내용 참조 |
+| **엔터프라이즈 시스템** | ServiceNow, Salesforce, Confluence, ZenDesk 등 | 실시간 커넥터를 통해 외부 시스템의 지식 기반 또는 티켓 정보 참조 |
+| **테이블 데이터** | Dataverse 테이블 | 구조화된 테이블 데이터를 기반으로 질의 응답 가능 |
+| **API 기반** | 외부 HTTP API, YAML 정의 | OnKnowledgeRequested 트리거를 통해 실시간 API 호출 가능 |
+
+
+<img width="1023" height="742" alt="image" src="https://github.com/user-attachments/assets/b01a1a1c-75cd-46ec-9daa-015792a8f561" />
+<img width="1023" height="740" alt="image" src="https://github.com/user-attachments/assets/566c5a93-4c17-4a44-a229-35d3eb43ca51" />
+
+---
+
+## 실습
+
+먼저 에이전트 개요에서 스크롤을 내리면 참조자료 탭이 있습니다. <br>
+이곳에서 **웹 검색** 토글을 활성화 시켜 줍니다. <br> 
+<img width="512" height="254" alt="image" src="https://github.com/user-attachments/assets/c2b81140-34b5-46ba-935e-3d0c991b775c" />
+<br> 
+해당 기능을 활성화 하면 Agent는 Bing search 정보를 기반으로 사용자의 질문에 답변을 할 수 있습니다. <br>
+
+이어서 쉐어포인트의 데이터를 참조할 수 있도록 **+참조 자료 추가** 를 클릭합니다. <br>
+<img width="512" height="254" alt="image" src="https://github.com/user-attachments/assets/5e796dd8-8272-4486-b465-028dbdcf5f4e" />
+<br> <br> 
+
+버튼을 클릭하면 어디에 저장되어 있는 참조 자료를 추가할지 팝업창이 나오게 됩니다. <br> 
+이번 실습은 쉐어포인트의 데이터를 참고할 것이므로, SharePoint를 선택합니다. <br>
+<img width="538" height="392" alt="image" src="https://github.com/user-attachments/assets/87cc18ab-1ed9-444d-ba8e-dc86efe8ff84" />
+<br> <br> 
+
+이후 쉐어포인트 사이트 주소를 직접 입력하거나, **항목 찾아보기** 를 클릭하여 최근에 접근한 사이트를 선택합니다.
+<img width="554" height="404" alt="image" src="https://github.com/user-attachments/assets/05fe197d-56ef-4af7-b481-2f186c10be93" />
+
+ 
+이번 실습은 이전 Copilot studio lite와 마찬가지로 쉐어포인트 사이트의 특정 라이브러리 폴더 내부 파일만 참고할 예정이기에 쉐어포인트 폴더의 path를 입력합니다.
+
+정확한 사이트 주소를 알기위해 쉐어포인트 사이트로 이동합니다. <br>
+이후 추가할 폴더 라이브러리를 이동, 우측에 **세부 정보** 를 클릭하여 오른쪽 사이드에 세부 정보 사이드 패널을 활성화시킵니다. <br>
+마지막으로 하단의 **경로** 를 복사하면 라이브러리 폴더의 위치를 확보 할 수 있습니다.
+
+<img width="1380" height="1278" alt="image" src="https://github.com/user-attachments/assets/b4e30695-2f74-4c3d-a374-cdf90102e24d" />
+<br> 
+항목 찾기를 통해 사이트, 라이브러리를 선태하거나  사이트 입력창 확보한 링크를 붙여넣고 추가를 하면 아래와 같이 표시가 됩니다. <br>
+<img width="1092" height="792" alt="image" src="https://github.com/user-attachments/assets/02429176-066d-47c3-b1e9-f16f1fbe89f4" />
+<br> 
+
+마지막으로 설명란에 아래 내용을 추가하여 이 참조자료가 무엇에 관한 자료인지 설명을 보강 합니다.
+```
+이 참조 자료 원본은 냉장고, 식기세척기에 대한 Spec Sheet 정보를 제공합니다.
+데이터는 PDF형식으로 되어 있으며, 모델명_제품타입_spec sheet 형식으로 파일명이 저장되어 있습니다.
+예: LSSB2692ST_Core_Refrig-Spec_Sheet -> 제품명: LSSB2692ST, 제품타입: Core_Refrig(냉장고), 문서내용: Spec_Sheet
+
+```
+
+이후 **"에이전트 추가"** 버튼을 클릭하면 에이전트는 쉐어포인트 사이트의 PDF파일과 웹정보를 기반으로 답변을 할 수 있게 됩니다.
+
+<img width="1720" height="1392" alt="image" src="https://github.com/user-attachments/assets/ac38d914-1667-4872-a022-2a63d237f5f4" />
+
+<br>
+<br>
+---
+
+**축하합니다!** <br>
+참조자료를 추가를 통해 에이전트가 사내 데이터에 대한 답변을 할 수 있도록 구성을 마쳤습니다. <br>
+다음은 도구 추가를 통해 에이전트가 메일 발송, 팀즈 게시물 등록을 할 수 있도록 실습해 봅니다.
+
+
+---
+
+---
+
+← [이전: Step 1. 에이전트 생성]({{ '/chapters/ws1-1-create-agent/' | relative_url }}) | [다음: Step 3. 도구: MCP 커넥터]({{ '/chapters/ws1-3-tool-mcp/' | relative_url }}) →

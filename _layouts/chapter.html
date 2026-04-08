@@ -52,12 +52,41 @@
               <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="sidebar-section-items">
-              {% for ch in section_chapters %}
-                <a href="{{ ch.url | relative_url }}" class="sidebar-link sub {% if ch.url == page.url %}active{% endif %}">
-                  <span class="sidebar-icon">{{ ch.icon | default: '📄' }}</span>
-                  <span class="sidebar-label">{{ ch.order }}. {{ ch.short_title }}</span>
-                </a>
-              {% endfor %}
+              {% if section.key == 'workshop' %}
+                {%- comment -%} Workshop: hierarchical display {%- endcomment -%}
+                {% assign parents = section_chapters | where: "is_parent", true | sort: "order" %}
+                {% for parent in parents %}
+                  {% assign is_parent_active = false %}
+                  {% if parent.url == page.url %}{% assign is_parent_active = true %}{% endif %}
+                  {% assign children = section_chapters | where: "parent", parent.parent | where_exp: "item", "item.is_parent != true" | sort: "order" %}
+                  {% for child in children %}
+                    {% if child.url == page.url %}{% assign is_parent_active = true %}{% endif %}
+                  {% endfor %}
+
+                  <div class="sidebar-group {% if is_parent_active %}open{% endif %}">
+                    <a href="{{ parent.url | relative_url }}" class="sidebar-link sub sidebar-parent {% if parent.url == page.url %}active{% endif %}" onclick="event.stopPropagation(); var g=this.parentElement; g.classList.toggle('open');">
+                      <span class="sidebar-icon">{{ parent.icon | default: '📄' }}</span>
+                      <span class="sidebar-label">{{ parent.short_title }}</span>
+                      <svg class="sidebar-chevron-sm" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <div class="sidebar-children">
+                      {% for child in children %}
+                        <a href="{{ child.url | relative_url }}" class="sidebar-link child {% if child.url == page.url %}active{% endif %}">
+                          <span class="sidebar-icon">{{ child.icon | default: '📄' }}</span>
+                          <span class="sidebar-label">{{ child.order }}. {{ child.short_title }}</span>
+                        </a>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endfor %}
+              {% else %}
+                {% for ch in section_chapters %}
+                  <a href="{{ ch.url | relative_url }}" class="sidebar-link sub {% if ch.url == page.url %}active{% endif %}">
+                    <span class="sidebar-icon">{{ ch.icon | default: '📄' }}</span>
+                    <span class="sidebar-label">{{ ch.order }}. {{ ch.short_title }}</span>
+                  </a>
+                {% endfor %}
+              {% endif %}
             </div>
           </div>
         {% endfor %}
@@ -71,7 +100,9 @@
             <div class="chapter-meta">
               {% if page.category == 'guide' %}
                 <span class="chapter-badge">Guide · Chapter {{ page.order }}</span>
-              {% elsif page.category == 'workshop' %}
+              {% elsif page.category == 'workshop' and page.is_parent %}
+                <span class="chapter-badge workshop">Workshop</span>
+              {% elsif page.category == 'workshop' and page.parent %}
                 <span class="chapter-badge workshop">Workshop · Step {{ page.order }}</span>
               {% elsif page.category == 'updates' %}
                 <span class="chapter-badge updates">Update</span>
@@ -90,27 +121,72 @@
           </div>
 
           <nav class="chapter-pagination">
-            {% assign same_category = site.chapters | where: "category", page.category | sort: "order" %}
-            {% for ch in same_category %}
-              {% if ch.url == page.url %}
-                {% if forloop.index > 1 %}
-                  {% assign prev_index = forloop.index0 | minus: 1 %}
-                  <a href="{{ same_category[prev_index].url | relative_url }}" class="pagination-link prev">
-                    <span class="pagination-direction">← 이전</span>
-                    <span class="pagination-title">{{ same_category[prev_index].short_title }}</span>
-                  </a>
-                {% else %}
-                  <div></div>
-                {% endif %}
-                {% if forloop.last == false %}
-                  {% assign next_index = forloop.index0 | plus: 1 %}
-                  <a href="{{ same_category[next_index].url | relative_url }}" class="pagination-link next">
+            {% if page.parent %}
+              {%- comment -%} Workshop sub-page: navigate within same parent group {%- endcomment -%}
+              {% assign siblings = site.chapters | where: "parent", page.parent | where_exp: "item", "item.is_parent != true" | sort: "order" %}
+              {% assign parent_page = site.chapters | where: "parent", page.parent | where: "is_parent", true | first %}
+              {% if page.is_parent %}
+                <div></div>
+                {% if siblings.size > 0 %}
+                  <a href="{{ siblings[0].url | relative_url }}" class="pagination-link next">
                     <span class="pagination-direction">다음 →</span>
-                    <span class="pagination-title">{{ same_category[next_index].short_title }}</span>
+                    <span class="pagination-title">Step 1. {{ siblings[0].short_title }}</span>
                   </a>
                 {% endif %}
+              {% else %}
+                {% for ch in siblings %}
+                  {% if ch.url == page.url %}
+                    {% if forloop.index > 1 %}
+                      {% assign prev_index = forloop.index0 | minus: 1 %}
+                      <a href="{{ siblings[prev_index].url | relative_url }}" class="pagination-link prev">
+                        <span class="pagination-direction">← 이전</span>
+                        <span class="pagination-title">{{ siblings[prev_index].short_title }}</span>
+                      </a>
+                    {% else %}
+                      <a href="{{ parent_page.url | relative_url }}" class="pagination-link prev">
+                        <span class="pagination-direction">← 개요</span>
+                        <span class="pagination-title">{{ parent_page.short_title }}</span>
+                      </a>
+                    {% endif %}
+                    {% if forloop.last == false %}
+                      {% assign next_index = forloop.index0 | plus: 1 %}
+                      <a href="{{ siblings[next_index].url | relative_url }}" class="pagination-link next">
+                        <span class="pagination-direction">다음 →</span>
+                        <span class="pagination-title">{{ siblings[next_index].short_title }}</span>
+                      </a>
+                    {% else %}
+                      <a href="{{ parent_page.url | relative_url }}" class="pagination-link next">
+                        <span class="pagination-direction">개요로 돌아가기 →</span>
+                        <span class="pagination-title">{{ parent_page.short_title }}</span>
+                      </a>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
               {% endif %}
-            {% endfor %}
+            {% else %}
+              {%- comment -%} Non-workshop pages: original pagination {%- endcomment -%}
+              {% assign same_category = site.chapters | where: "category", page.category | sort: "order" %}
+              {% for ch in same_category %}
+                {% if ch.url == page.url %}
+                  {% if forloop.index > 1 %}
+                    {% assign prev_index = forloop.index0 | minus: 1 %}
+                    <a href="{{ same_category[prev_index].url | relative_url }}" class="pagination-link prev">
+                      <span class="pagination-direction">← 이전</span>
+                      <span class="pagination-title">{{ same_category[prev_index].short_title }}</span>
+                    </a>
+                  {% else %}
+                    <div></div>
+                  {% endif %}
+                  {% if forloop.last == false %}
+                    {% assign next_index = forloop.index0 | plus: 1 %}
+                    <a href="{{ same_category[next_index].url | relative_url }}" class="pagination-link next">
+                      <span class="pagination-direction">다음 →</span>
+                      <span class="pagination-title">{{ same_category[next_index].short_title }}</span>
+                    </a>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
           </nav>
         </article>
       </div>

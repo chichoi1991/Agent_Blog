@@ -740,3 +740,87 @@ a:hover { color: var(--link-hover); }
   .pagination-link { max-width: 100%; }
   .pagination-link.next { text-align: left; }
 }
+
+/* ===== Workshop Image Sizing ===== */
+.chapter-body img {
+  max-width: 680px;
+  width: 100%;
+  height: auto !important;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  margin: 12px 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.chapter-body img[width] {
+  width: auto;
+  max-width: min(100%, 560px);
+  height: auto !important;
+}
+
+/* ===== Sidebar Hierarchical (Workshop) ===== */
+.sidebar-group {
+  margin: 0;
+}
+
+.sidebar-parent {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.sidebar-parent .sidebar-label {
+  flex: 1;
+}
+
+.sidebar-chevron-sm {
+  flex-shrink: 0;
+  margin-left: 4px;
+  transition: transform 0.2s;
+  opacity: 0.5;
+}
+
+.sidebar-group.open > .sidebar-parent .sidebar-chevron-sm {
+  transform: rotate(90deg);
+}
+
+.sidebar-children {
+  display: none;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+  margin-left: 16px;
+}
+
+.sidebar-group.open > .sidebar-children {
+  display: block;
+}
+
+.sidebar-link.child {
+  padding: 4px 8px 4px 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: all 0.15s;
+}
+
+.sidebar-link.child:hover {
+  background: var(--sidebar-hover);
+  color: var(--text);
+}
+
+.sidebar-link.child.active {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.sidebar-link.child .sidebar-icon {
+  font-size: 12px;
+  width: 18px;
+  text-align: center;
+}

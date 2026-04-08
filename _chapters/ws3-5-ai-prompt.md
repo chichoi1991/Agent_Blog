@@ -1,0 +1,386 @@
+---
+layout: chapter
+title: "AI Prompt 도구 추가"
+short_title: "AI Prompt 도구"
+description: "기초편 #3: 자율동작 에이전트 - AI Prompt 도구 추가"
+order: 5
+icon: "🤖"
+category: workshop
+parent: "ws3"
+---
+
+## Step 5: AI Prompt 도구 추가
+
+# 5. AI Prompt 도구 추가 및 HTML 응답 설계
+
+> **이전 단계:** [4. ThinQ MCP 도구 추가](./4.%20ThinQ%20MCP%20도구%20추가.md) | **다음 단계:** [6. Excel 데이터 필터링 (심화)](./6.%20Excel%20데이터%20필터링.md)
+
+---
+
+## AI Prompt 도구(Generative Actions)란?
+
+코드 작성, HTML 형식으로 메일 발송의 경우 기본적으로 Agent가 코드를 생성하여 처리할 수 있지만, 이 경우 작업이 수행될 때 마다 항상 새로운 스타일의 코드가 작성됩니다.
+
+이 경우, 오케스트레이션을 위해 할당된 지침의 컨텍스트에 코드 패턴을 입력하는데 많은 토큰이 소모되고, 생성된 코드의 일관성도 보장하기 어렵습니다.
+
+**AI Prompt 도구** 는 Copilot Studio에서 사전에 정의한 프롬프트를 에이전트의 도구로 등록하는 기능입니다.  
+
+이 도구를 통해 에이전트는 사용자 요청에 따라 이 도구를 호출하여, **고정된 형식의 AI 생성 출력(텍스트·HTML 등)**을 얻을 수 있습니다.
+
+| 항목 | 설명 |
+|------|------|
+| **등록 위치** | 에이전트 → 도구 → AI Prompt |
+| **입력** | 프롬프트 템플릿 + 런타임 변수 |
+| **출력** | AI가 생성한 텍스트 (HTML, Markdown, JSON 등 포맷 자유롭게 지정 가능) |
+| **활용 예시** | 제품 비교표 HTML 생성, 보고서 초안 작성, 요약 카드 생성 등 |
+
+<br>
+
+---
+
+## 1. AI Prompt 도구 추가
+
+### 1-1. 도구 추가 시작
+
+에이전트 개요 화면 **도구** 섹션 → **+ 도구 추가** 를 클릭합니다.  
+도구 유형 목록에서  **프롬프트** 를 선택합니다.
+![1]({{ site.baseurl }}/assets/image/ws3/스크린샷%202026-03-19%20020111.png)
+
+
+<br>
+
+### 1-2. 프롬프트 편집기 구성
+
+프롬프트 편집기가 열리면 아래 항목을 입력합니다.
+
+**도구 이름:**
+```
+HTML_Response_Generator
+```
+
+### 1-3. 입력 변수 정의
+
+프롬프트에서 사용할 입력 변수를 추가합니다.
+변수는 / 를 입력하거나 지침 하단 **입력 변수 추가** 버튼을 클릭하여 생성할 수 있습니다.
+
+| 변수명 | 유형 | 설명 |
+|--------|------|------|
+| `content` | 텍스트 | HTML로 변환할 원본 응답 내용 |
+| `card_type` | 텍스트 | 카드 유형 (info / warning / product / report) |
+
+
+![2]({{ site.baseurl }}/assets/image/ws3/스크린샷%202026-03-19%20021214.png)
+
+
+
+<br>
+
+### 1-4. 프롬프트 작성
+
+아래 프롬프트를 입력합니다.
+
+```
+당신은 HTML 카드 생성 전문가입니다. 메일 주제에 따라 적절한 스타일의 Microsoft Teams 적응형 카드 형식으로 HTML을 생성해 주세요.
+
+
+## 입력 정보
+- 카드 유형: {{card_type}}
+- 내용: {{content}}
+
+## 카드 유형별 스타일 규칙
+- info: 파란색 헤더 (#0078D4), 일반 정보 표시
+- warning: 주황색 헤더 (#F7630C), 주의사항 강조
+- product: 초록색 헤더 (#107C10), 제품 정보 카드
+- report: 회색 헤더 (#605E5C), 업무 보고서 형식
+
+## 출력 규칙
+- 반드시 완성된 HTML 코드만 출력합니다. 설명 텍스트는 포함하지 않습니다.
+- 최대 너비 600px, 내부 패딩 16px 적용
+- 제목은 굵은 흰색 텍스트로 헤더에 표시
+- 내용의 목록은 <ul><li> 태그로 변환
+- 표 데이터는 <table> 태그로 변환, 줄무늬 스타일 적용
+- 모든 인라인 스타일 사용 (외부 CSS 금지)
+
+## 출력 HTML 구조#1 - 업무 현황 보고서 유형 예시
+
+<div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; color: #000000;">
+  
+  <!-- 헤더 -->
+  <div style="background-color: #e3f2fd; padding: 25px; border-radius: 10px; margin-bottom: 20px; border-left: 5px solid #1976d2;">
+    <h1 style="color: #1565c0; margin: 0; font-size: 24px;">📊 {{보고서_제목}}</h1>
+    <p style="color: #424242; margin: 10px 0 0 0; font-size: 14px;">보고일: {{보고일}}</p>
+  </div>
+
+  <!-- 인사말 -->
+  <div style="padding: 15px; margin-bottom: 20px;">
+    <p style="color: #212121; font-size: 15px; line-height: 1.6;">안녕하세요, {{수신자}} 👋</p>
+    <p style="color: #212121; font-size: 15px; line-height: 1.6;">{{인사말_본문}}</p>
+  </div>
+
+  <!-- 긴급 업무 -->
+  {{#each 긴급_업무}}
+  <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #ef5350;">
+    <h2 style="color: #c62828; font-size: 18px; margin: 0 0 15px 0;">🔴 긴급 업무</h2>
+    
+    <div style="padding: 15px; background-color: #ffebee; border-radius: 5px; margin-bottom: 10px;">
+      <h3 style="color: #d32f2f; font-size: 16px; margin: 0 0 10px 0;">{{순번}} {{업무명}}</h3>
+      <p style="color: #212121; margin: 5px 0; font-size: 14px;"><strong style="color: #1a237e;">⏰ 마감:</strong> {{마감일}}</p>
+      <p style="color: #212121; margin: 5px 0; font-size: 14px;"><strong style="color: #1a237e;">📋 현황:</strong></p>
+      <ul style="color: #212121; margin: 5px 0; font-size: 14px; padding-left: 20px;">
+        {{#each 현황_목록}}
+        <li style="margin: 5px 0;">{{this}}</li>
+        {{/each}}
+      </ul>
+      {{#if 조치_사항}}
+      <p style="color: #212121; margin: 10px 0 5px 0; font-size: 14px;"><strong style="color: #1a237e;">✅ 조치 사항:</strong></p>
+      <div style="background-color: #e8f5e9; padding: 12px; border-radius: 5px; border-left: 4px solid #4caf50;">
+        <p style="color: #1b5e20; margin: 5px 0; font-size: 14px;"><strong>{{조치_제목}}</strong></p>
+        <ul style="color: #212121; margin: 5px 0; font-size: 13px; padding-left: 20px;">
+          {{#each 조치_목록}}
+          <li style="margin: 3px 0;">{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      {{/if}}
+      <p style="color: #212121; margin: 10px 0 0 0; font-size: 14px;"><strong style="color: #c62828;">🎯 {{목표_액션}}</strong></p>
+    </div>
+  </div>
+  {{/each}}
+
+  <!-- 중요 업무 -->
+  {{#each 중요_업무}}
+  <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #ffa726;">
+    <h2 style="color: #e65100; font-size: 18px; margin: 0 0 15px 0;">🟡 중요 업무</h2>
+    
+    <div style="padding: 15px; background-color: #fff3e0; border-radius: 5px;">
+      <h3 style="color: #ef6c00; font-size: 16px; margin: 0 0 10px 0;">{{순번}} {{업무명}}</h3>
+      <p style="color: #212121; margin: 5px 0; font-size: 14px;"><strong style="color: #1a237e;">⏰ {{마감_라벨}}:</strong> {{마감일}}</p>
+      <p style="color: #212121; margin: 5px 0; font-size: 14px;"><strong style="color: #1a237e;">📋 현황:</strong></p>
+      <ul style="color: #212121; margin: 5px 0; font-size: 14px; padding-left: 20px;">
+        {{#each 현황_목록}}
+        <li style="margin: 5px 0;">{{this}}</li>
+        {{/each}}
+      </ul>
+      <p style="color: #212121; margin: 10px 0 0 0; font-size: 14px;"><strong style="color: #e65100;">🎯 {{목표_액션}}</strong></p>
+    </div>
+  </div>
+  {{/each}}
+
+  <!-- 기타 업무 -->
+  {{#if 기타_업무}}
+  <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #66bb6a;">
+    <h2 style="color: #2e7d32; font-size: 18px; margin: 0 0 15px 0;">🟢 기타 업무</h2>
+    
+    <div style="padding: 15px; background-color: #e8f5e9; border-radius: 5px;">
+      {{#each 기타_업무}}
+      <p style="color: #212121; margin: 5px 0; font-size: 14px;">
+        <strong style="color: #1b5e20;">{{순번}} {{업무명}}</strong> - {{설명}}
+      </p>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+
+  <!-- 우선순위 요약 -->
+  <div style="background-color: #fff9c4; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #f57f17;">
+    <h2 style="color: #f57f17; font-size: 18px; margin: 0 0 15px 0;">📌 이번 주 우선순위</h2>
+    <table style="width: 100%; border-collapse: collapse; color: #212121; font-size: 14px;">
+      <thead>
+        <tr style="background-color: #fff59d;">
+          <th style="padding: 10px; text-align: left; border: 1px solid #f9a825; color: #212121;">순위</th>
+          <th style="padding: 10px; text-align: left; border: 1px solid #f9a825; color: #212121;">업무</th>
+          <th style="padding: 10px; text-align: center; border: 1px solid #f9a825; color: #212121;">마감</th>
+          <th style="padding: 10px; text-align: center; border: 1px solid #f9a825; color: #212121;">상태</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each 우선순위_목록}}
+        <tr style="background-color: {{줄_배경색}};">
+          <td style="padding: 10px; border: 1px solid #f9a825; color: #212121;">{{순위}}</td>
+          <td style="padding: 10px; border: 1px solid #f9a825; color: #212121;">{{업무명}}</td>
+          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825; color: {{마감_색상}};"><strong>{{마감일}}</strong></td>
+          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825; color: #212121;">{{상태}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 마무리 -->
+  <div style="padding: 15px; background-color: #e1f5fe; border-radius: 8px; margin-bottom: 20px;">
+    <p style="color: #212121; font-size: 14px; line-height: 1.6; margin: 0;">
+      <strong style="color: #01579b;">💡 특이사항:</strong><br>
+      {{특이사항}}
+    </p>
+  </div>
+
+  <!-- 서명 -->
+  <div style="padding: 15px; border-top: 2px solid #e0e0e0; margin-top: 20px;">
+    <p style="color: #212121; font-size: 14px; margin: 5px 0;">감사합니다. 😊</p>
+    <p style="color: #616161; font-size: 13px; margin: 5px 0;">{{발신자_이름}}</p>
+    <p style="color: #616161; font-size: 13px; margin: 5px 0;">{{발신자_이메일}}</p>
+  </div>
+
+</div>
+
+## 출력 HTML 구조#2 - 에너지 사용량 리포트 유형 예시
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    </style>
+</head>
+<body>
+    <div style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
+        <div style="background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+
+            <h1 style="color: #2c3e50; text-align: center; margin-bottom: 10px;">🍷 {{디바이스명}} 에너지 사용량 리포트</h1>
+            <p style="color: #7f8c8d; text-align: center; font-size: 14px; margin-bottom: 30px;">조회 기간: {{조회_시작일}} ~ {{조회_종료일}} ({{조회_일수}}일간)</p>
+
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 8px; margin-bottom: 30px;">
+                <h2 style="color: #000000; margin-top: 0; font-size: 18px;">📊 요약 정보</h2>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 10px; color: #000000; font-weight: bold;">⚡ 총 에너지 사용량:</td>
+                        <td style="padding: 10px; color: #000000; font-size: 20px; font-weight: bold; text-align: right;">{{총_사용량}} Wh</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; color: #000000; font-weight: bold;">📈 일평균 사용량:</td>
+                        <td style="padding: 10px; color: #000000; font-size: 18px; text-align: right;">{{일평균_사용량}} Wh/일</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; color: #000000; font-weight: bold;">🔝 최대 사용량:</td>
+                        <td style="padding: 10px; color: #000000; text-align: right;">{{최대_사용량}} Wh ({{최대_사용일}})</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; color: #000000; font-weight: bold;">🔻 최소 사용량:</td>
+                        <td style="padding: 10px; color: #000000; text-align: right;">{{최소_사용량}} Wh ({{최소_사용일}})</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2 style="color: #2c3e50; margin-top: 30px; border-bottom: 2px solid #3498db; padding-bottom: 10px;">📅 일별 에너지 사용량 내역</h2>
+
+            <table style="width: 100%; border-collapse: collapse; margin-top: 20px; background-color: #ffffff;">
+                <thead>
+                    <tr style="background-color: #3498db;">
+                        <th style="padding: 12px; text-align: left; color: #000000; border: 1px solid #ddd;">날짜</th>
+                        <th style="padding: 12px; text-align: right; color: #000000; border: 1px solid #ddd;">사용량 (Wh)</th>
+                        <th style="padding: 12px; text-align: center; color: #000000; border: 1px solid #ddd;">상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each 일별_데이터}}
+                    <tr style="background-color: {{줄_배경색}};">
+                        <td style="padding: 10px; color: #2c3e50; border: 1px solid #ddd;{{#if 강조}} font-weight: bold;{{/if}}">{{날짜}} ({{요일}})</td>
+                        <td style="padding: 10px; color: #2c3e50; text-align: right; border: 1px solid #ddd;{{#if 강조}} font-weight: bold;{{/if}}">{{사용량}}</td>
+                        <td style="padding: 10px; color: {{상태_색상}}; text-align: center; border: 1px solid #ddd;">{{상태_아이콘}} {{상태_텍스트}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+
+            <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-top: 30px; border-radius: 5px;">
+                <h3 style="color: #2c3e50; margin-top: 0;">💡 분석 및 권장사항</h3>
+                <p style="color: #2c3e50; line-height: 1.6;">
+                    {{분석_내용}}
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
+                <p style="color: #7f8c8d; font-size: 12px;">본 리포트는 LG ThinQ 시스템에서 자동 생성되었습니다.</p>
+                <p style="color: #7f8c8d; font-size: 12px;">문의사항이 있으시면 언제든지 연락 주세요! 🙂</p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
+```
+
+<br>
+
+### 1-5. 저장
+
+프롬프트 작성 완료  스크롤을 내려  **저장** 버튼을 클릭하고 **추가 및 구성 버튼**을 눌러 도구 등록을 완료합니다.
+![3]({{ site.baseurl }}/assets/image/ws3/스크린샷%202026-03-19%20021621.png)
+<br>
+
+## 1-6. 도구 입력 변수 설명 추가
+
+도구 추가가 완료 되었다면, 스크롤을 내려 입력 탭에 각 입력 변수에 대한 설명을 추가합니다.
+기본적으로 AI로 동저으로 채우기가 되어있으며, 값 부분에 **사용자 지정** 을 선택하여 아래 설명으로 업데이트 하고 저장해 줍니다.
+
+| 변수명 | 유형 | 설명 |
+|--------|------|------|
+| `content` | 텍스트 | HTML로 변환할 원본 응답 내용입니다. |
+| `card_type` | 텍스트 | 카드 유형 입니다. (info / report) info는 에너지 사용량 보고서 일 경우, report는 일반 업무 브리핑일 경우 사용됩니다. |
+
+![4]({{ site.baseurl }}/assets/image/ws3/스크린샷%202026-03-19%20022018.png)
+
+---
+
+## 2. 지침 업데이트
+
+에이전트 지침의 `#메일 작성 규칙` 섹션을 아래와 같이 수정 합니다.
+
+```
+#메일 작성 규칙
+HTML 결과물 생성을 위해 /HTML_Response_Generator 를 호출하여 반환된 HTML 코드를 기반으로 메일 발송을 합니다.
+도구에 들어가야할 내용은 다음과 같습니다.
+- content : 데이터 조회를 통해 받은 원본 값 입니다
+- card_type: content의 내용에 따라 report | info 둘 중 하나를 입력 합니다.  
+-- 업무 브리핑 → card_type: "report"
+-- 일반 안내 → card_type: "info"
+
+```
+
+지침에서 / 를 입력하면 도구 호출을 위한 프롬프트 템플릿이 자동으로 삽입됩니다.
+![5]({{ site.baseurl }}/assets/image/ws3/스크린샷%202026-03-19%20022433.png)
+![6]({{ site.baseurl }}/assets/image/ws3/스크린샷%202026-03-19%20022448.png)
+
+<br>
+
+---
+
+## 3. 동작 확인
+
+테스트 패널에서 아래 질문을 입력합니다.
+
+**제품 정보 HTML 카드 테스트:**
+```
+와인셀러 에너지 사용량 리포트 정리해서 "메일 주소"로 보내줘
+```
+→ 에이전트가 ThinQ MCP로 데이터 조회 후 → HTML_Response_Generator를 호출하여 HTML 카드 형식으로 메일을 발송합니다.
+
+![7]({{ site.baseurl }}/assets/image/ws3/스크린샷%202026-03-19%20022837.png)
+![8]({{ site.baseurl }}/assets/image/ws3/스크린샷%202026-03-19%20022851.png)
+
+**업무 브리핑 HTML 카드 테스트:**
+```
+오늘 업무 현황을 정리해서 나에게 보내줘
+```
+→ Work IQ MCP 조회 후 → report 유형 HTML 카드로 메일을 발송해야 합니다.
+![9]({{ site.baseurl }}/assets/image/ws3/스크린샷%202026-03-19%20023607.png)
+
+<br>
+
+> **💡 팁:** 에이전트 테스트 화면에서는 HTML이 렌더링되지 않고 코드로 보일 수 있습니다.  
+> 실제 메일을 수신하였을 때에는 HTML이 정상 렌더링되어 카드 형태로 표시됩니다.
+
+<br>
+
+---
+
+> **다음 단계:** [6. Excel 데이터 필터링 (심화)](./6.%20Excel%20데이터%20필터링.md)
+
+
+---
+
+---
+
+← [이전: Step 4. ThinQ MCP]({{ '/chapters/ws3-4-thinq-mcp/' | relative_url }}) | [다음: Step 6. Excel 필터링]({{ '/chapters/ws3-6-excel-filter/' | relative_url }}) →
