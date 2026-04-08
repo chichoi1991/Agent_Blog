@@ -63,15 +63,10 @@
                   {% endfor %}
 
                   <div class="sidebar-group {% if is_parent_active %}open{% endif %}">
-                    <div class="sidebar-parent-row">
-                      <a href="{{ parent.url | relative_url }}" class="sidebar-link sub sidebar-parent {% if parent.url == page.url %}active{% endif %}">
-                        <span class="sidebar-icon">{{ parent.icon | default: '📄' }}</span>
-                        <span class="sidebar-label">{{ parent.short_title }}</span>
-                      </a>
-                      <button class="sidebar-group-toggle" onclick="this.closest('.sidebar-group').classList.toggle('open');" aria-label="하위 메뉴 열기">
-                        <svg class="sidebar-chevron-sm" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      </button>
-                    </div>
+                    <a href="{{ parent.url | relative_url }}" class="sidebar-link sub sidebar-parent {% if parent.url == page.url %}active{% endif %}" onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-icon">{{ parent.icon | default: '📄' }}</span>
+                      <span class="sidebar-label">{{ parent.short_title }}</span>
+                    </a>
                     <div class="sidebar-children">
                       {% for child in children %}
                         <a href="{{ child.url | relative_url }}" class="sidebar-link child {% if child.url == page.url %}active{% endif %}">
