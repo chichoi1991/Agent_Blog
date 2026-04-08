@@ -31,7 +31,7 @@ Agent Builder는 Teams 또는 M365 Copilot App에 위치하고 있으며, Copilo
 
 ## 🛠 효과적인 지침 작성 원칙 <br>
 <br>
- 
+
 | 원칙 | 설명 |
 |------|------|
 | **명확성** | 모호한 표현을 피하고, 구체적인 작업과 조건을 명시합니다. |
@@ -70,8 +70,8 @@ Agent Builder는 Teams 또는 M365 Copilot App에 위치하고 있으며, Copilo
 > 실습에서는 **Web 브라우저 기반 팀즈**에서 에이전트를 생성하고 공유하는것을 기준으로 진행합니다.
 
 사이트 링크 <br>
-- Microsoft Teams https://teams.microsoft.com/v2/
-- Microsoft 365 Copilot app [https://m365.cloud.microsoft/chat/](https://m365.cloud.microsoft/chat/)
+- Microsoft Teams: [https://teams.microsoft.com/v2/](https://teams.microsoft.com/v2/)
+- Microsoft 365 Copilot app: [https://m365.cloud.microsoft/chat/](https://m365.cloud.microsoft/chat/)
 
 Copilot 에서 좌측 탭을 확장하여 **에이전트 만들기** 를 선택하면 에이전트 생성 화면으로 이동하게 됩니다. .
 

@@ -22,7 +22,7 @@ is_parent: true
 ---
 
 ## 🔍 핵심 특징
-<br> <br>
+<br>
 
 | 특징 | 설명 |
 |------|------|
@@ -65,12 +65,14 @@ is_parent: true
 
 ## 2. 요구 조건 및 배포 방법
 
+<br>
+
 | 도구 | 요구사항 | 배포 대상 |
 |------|----------|-----------|
-| **Copilot Agent Builder** | Microsoft 365 구독 + "Create agent" 옵션 활성화 | Microsoft 365/Teams 중 사용 |
-| **SharePoint Agents** | Microsoft 365 구독 + 사이트 관리자 권한 | SharePoint 사이트 내 직접 배포 |
-| **Copilot Studio ** | Microsoft 365 구독 + Copilot 라이선스 + Copilot Studio 설치 | Copilot 이용 중인 사용자 |
-| **Agents Toolkit** | Microsoft 365 구독 + 사이드로딩, Visual Studio/VS Code, Azure 구독(선택) | Organizations with Copilot license |
+| **Copilot Agent Builder** | Microsoft 365 Copilot 라이선스 | Microsoft 365 Copilot / Teams 내 사용 |
+| **SharePoint Agents** | Microsoft 365 Copilot 라이선스 + SharePoint 사이트 접근 권한 | SharePoint 사이트 내 직접 배포 |
+| **Copilot Studio** | Copilot Studio 라이선스 (웹 기반, 별도 설치 불필요) | Teams, 웹, 다양한 채널에 배포 가능 |
+| **Agents Toolkit** | Microsoft 365 구독 + 사이드로딩 활성화 + Visual Studio/VS Code + Azure 구독(선택) | Microsoft 365 Copilot 라이선스 보유 조직에 배포 |
 
 
 ---
@@ -79,9 +81,9 @@ is_parent: true
 
 | 도구 | ✅ 장점 | ⚠️ 단점 |
 |------|---------|----------|
-| **Copilot Agent Builder** | • 매우 단순한 설정<br>• 신뢰도 높은 실무형 기능 | • 고급 설정 불가<br>• 기능 제한됨 |
+| **Copilot Agent Builder** | • 매우 단순한 설정<br>• 빠르고 간단한 RAG기반 에이전트 개발 | • 액션, 자동화등 고급 설정 불가<br>• 기능 제한됨 |
 | **SharePoint Agents** | • 특정 라이브러리 중심으로 맞춤 설정 가능<br>• SharePoint, Teams에 즉시 통합 | • SharePoint 외부에서는 사용 어려움 |
-| **Copilot Studio** | • 로우 코드 UI (드래그 앤 드롭)<br>• Power Platform 연결 사용 가능 | • 코드 제어 한계<br>• CI/CD 소스 제어 미지원<br>• Adaptive Card 제한 |
+| **Copilot Studio** | • 로우 코드 UI (드래그 앤 드롭)<br>• Power Platform 연결 사용 가능 | • 코드 제어 한계<br>• CI/CD 소스 관리 빈약 <br> |
 | **Agents Toolkit** | • 전문 개발자 대상 환경<br>• 커스터마이징 API 유연성<br>• Adaptive Card 지원 및 CI/CD<br>• 신기능 우선 적용 | • Power Platform 연결 지원 부족<br>• UI 없이 JSON 편집 필요<br>• 가파른 학습 곡선 |
 
 
@@ -115,7 +117,15 @@ is_parent: true
 ---
 
 ## ✅ 작성 예시
+<br>
 
+**목적**: SharePoint에서 문서를 검색하고 요약  
+**지침 예시**:
+- 사용자가 요청한 키워드로 SharePoint 문서를 검색합니다.
+- 검색 결과에서 가장 관련성이 높은 문서를 선택합니다.
+- 문서의 핵심 내용을 3~5줄로 요약하고, 원본 문서 이름과 위치를 표시합니다.
+- 출력은 마크다운 표 형식으로 제공합니다.
+<br>
 ---
 
 ## 📋 실습 순서
