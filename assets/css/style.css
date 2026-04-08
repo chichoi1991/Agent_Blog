@@ -767,11 +767,32 @@ a:hover { color: var(--link-hover); }
   display: flex;
   align-items: center;
   font-weight: 600;
-  position: relative;
+  flex: 1;
+  min-width: 0;
 }
 
 .sidebar-parent .sidebar-label {
   flex: 1;
+}
+
+.sidebar-parent-row {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-group-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+
+.sidebar-group-toggle:hover {
+  opacity: 1;
 }
 
 .sidebar-chevron-sm {
@@ -797,8 +818,8 @@ a:hover { color: var(--link-hover); }
 }
 
 .sidebar-link.child {
-  padding: 4px 8px 4px 10px;
-  font-size: 12px;
+  padding: 6px 8px 6px 10px;
+  font-size: 13px;
   color: var(--text-secondary);
   display: flex;
   align-items: center;
