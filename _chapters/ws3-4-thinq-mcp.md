@@ -4,7 +4,6 @@ title: "ThinQ MCP 도구 추가"
 short_title: "ThinQ MCP"
 description: "기초편 #3: 자율동작 에이전트 - ThinQ MCP 도구 추가"
 order: 4
-icon: "📱"
 category: workshop
 parent: "ws3"
 ---

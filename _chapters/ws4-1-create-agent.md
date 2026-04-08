@@ -4,7 +4,6 @@ title: "에이전트 생성 및 지침 작성"
 short_title: "에이전트 생성 및 지침 작성"
 description: "Agent Builder로 에이전트 만들기 - 에이전트 생성 및 지침 작성"
 order: 1
-icon: "⚙️"
 category: workshop
 parent: "ws4"
 ---

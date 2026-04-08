@@ -4,7 +4,6 @@ title: "Copilot Studio 2026 상반기 업데이트 요약"
 short_title: "2026 상반기 업데이트"
 description: "2026년 상반기 Copilot Studio 주요 기능 업데이트와 변경 사항을 정리합니다."
 order: 1
-icon: "🆕"
 category: updates
 ---
 

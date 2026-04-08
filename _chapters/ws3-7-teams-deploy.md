@@ -4,7 +4,6 @@ title: "Teams 배포"
 short_title: "Teams 배포"
 description: "기초편 #3: 자율동작 에이전트 - Teams 배포"
 order: 7
-icon: "🚀"
 category: workshop
 parent: "ws3"
 ---

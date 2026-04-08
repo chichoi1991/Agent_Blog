@@ -4,7 +4,6 @@ title: "에이전트 게시 및 공유"
 short_title: "게시 및 공유"
 description: "기초편 #2: 문서검색 & 에스컬레이션 - 에이전트 게시 및 공유"
 order: 5
-icon: "🚀"
 category: workshop
 parent: "ws2"
 ---

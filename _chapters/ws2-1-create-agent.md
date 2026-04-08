@@ -4,7 +4,6 @@ title: "Agent 생성 및 지침 작성"
 short_title: "Agent 생성"
 description: "기초편 #2: 문서검색 & 에스컬레이션 - Agent 생성 및 지침 작성"
 order: 1
-icon: "⚙️"
 category: workshop
 parent: "ws2"
 ---

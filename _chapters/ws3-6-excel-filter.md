@@ -4,7 +4,6 @@ title: "Excel 데이터 필터링 (심화)"
 short_title: "Excel 필터링"
 description: "기초편 #3: 자율동작 에이전트 - Excel 데이터 필터링 (심화)"
 order: 6
-icon: "📊"
 category: workshop
 parent: "ws3"
 ---

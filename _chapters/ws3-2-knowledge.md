@@ -4,7 +4,6 @@ title: "지식 소스 연결"
 short_title: "지식 소스 연결"
 description: "기초편 #3: 자율동작 에이전트 - 지식 소스 연결"
 order: 2
-icon: "📂"
 category: workshop
 parent: "ws3"
 ---

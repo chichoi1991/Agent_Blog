@@ -64,13 +64,11 @@
 
                   <div class="sidebar-group {% if is_parent_active %}open{% endif %}">
                     <a href="{{ parent.url | relative_url }}" class="sidebar-link sub sidebar-parent {% if parent.url == page.url %}active{% endif %}" onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
-                      <span class="sidebar-icon">{{ parent.icon | default: '📄' }}</span>
                       <span class="sidebar-label">{{ parent.short_title }}</span>
                     </a>
                     <div class="sidebar-children">
                       {% for child in children %}
                         <a href="{{ child.url | relative_url }}" class="sidebar-link child {% if child.url == page.url %}active{% endif %}">
-                          <span class="sidebar-icon">{{ child.icon | default: '📄' }}</span>
                           <span class="sidebar-label">{{ child.order }}. {{ child.short_title }}</span>
                         </a>
                       {% endfor %}
@@ -80,7 +78,6 @@
               {% else %}
                 {% for ch in section_chapters %}
                   <a href="{{ ch.url | relative_url }}" class="sidebar-link sub {% if ch.url == page.url %}active{% endif %}">
-                    <span class="sidebar-icon">{{ ch.icon | default: '📄' }}</span>
                     <span class="sidebar-label">{{ ch.order }}. {{ ch.short_title }}</span>
                   </a>
                 {% endfor %}

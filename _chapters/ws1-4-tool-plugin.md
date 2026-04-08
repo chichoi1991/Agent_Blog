@@ -4,7 +4,6 @@ title: "도구 추가 (플러그인 커넥터)"
 short_title: "도구: 플러그인 커넥터"
 description: "기초편 #1: 블로그 포스트 에이전트 - 도구 추가 (플러그인 커넥터)"
 order: 4
-icon: "🔌"
 category: workshop
 parent: "ws1"
 ---

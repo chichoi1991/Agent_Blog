@@ -4,7 +4,6 @@ title: "Agent Builder로 에이전트 만들기"
 short_title: "Agent Builder로 에이전트 만들기"
 description: "Agent Builder를 활용한 선언형 에이전트 핸즈온 실습"
 order: 4
-icon: "🤖"
 category: workshop
 parent: "ws4"
 is_parent: true

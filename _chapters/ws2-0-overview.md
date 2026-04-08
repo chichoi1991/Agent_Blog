@@ -4,7 +4,6 @@ title: "커스텀 에이전트 만들기 기초편 #2"
 short_title: "기초편 #2: 문서검색 & 에스컬레이션"
 description: "사내 문서 검색 및 메일 에스컬레이션 에이전트 실습"
 order: 2
-icon: "📂"
 category: workshop
 parent: "ws2"
 is_parent: true

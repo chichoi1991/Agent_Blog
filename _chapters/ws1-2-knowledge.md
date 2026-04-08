@@ -4,7 +4,6 @@ title: "참조 자료 추가"
 short_title: "참조 자료 추가"
 description: "기초편 #1: 블로그 포스트 에이전트 - 참조 자료 추가"
 order: 2
-icon: "📚"
 category: workshop
 parent: "ws1"
 ---

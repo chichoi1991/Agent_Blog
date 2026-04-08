@@ -4,7 +4,6 @@ title: "게시 및 배포"
 short_title: "게시 및 배포"
 description: "기초편 #1: 블로그 포스트 에이전트 - 게시 및 배포"
 order: 5
-icon: "🚀"
 category: workshop
 parent: "ws1"
 ---

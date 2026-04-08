@@ -4,7 +4,6 @@ title: "Copilot Studio vs 직접 개발 선택 가이드"
 short_title: "선택 가이드"
 description: "Copilot Studio에 적합한 요구사항, 직접 개발(SI)이 필요한 경우, 그리고 혼합 구조 패턴을 실무 사례와 함께 비교합니다."
 order: 5
-icon: "⚖️"
 category: guide
 ---
 

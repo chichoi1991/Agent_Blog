@@ -4,7 +4,6 @@ title: "Agent Builder 통합 업데이트"
 short_title: "Agent Builder 통합"
 description: "Microsoft 365 Copilot의 Agent Builder와 Copilot Studio 간의 통합 변경 사항을 정리합니다."
 order: 3
-icon: "🏗️"
 category: updates
 ---
 

@@ -4,7 +4,6 @@ title: "커스텀 에이전트 만들기 기초편 #1"
 short_title: "기초편 #1: 블로그 포스트 에이전트"
 description: "블로그 포스팅 에이전트를 만들어보는 핸즈온 실습"
 order: 1
-icon: "🎯"
 category: workshop
 parent: "ws1"
 is_parent: true

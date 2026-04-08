@@ -4,7 +4,6 @@ title: "도구(플로우) 추가"
 short_title: "도구: 플로우"
 description: "기초편 #2: 문서검색 & 에스컬레이션 - 도구(플로우) 추가"
 order: 3
-icon: "🔄"
 category: workshop
 parent: "ws2"
 ---

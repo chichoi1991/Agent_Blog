@@ -4,7 +4,6 @@ title: "MCP(Model Context Protocol) 지원"
 short_title: "MCP 지원"
 description: "Copilot Studio에서 MCP(Model Context Protocol)를 활용하는 방법과 주요 변경 사항을 안내합니다."
 order: 2
-icon: "🔧"
 category: updates
 ---
 
