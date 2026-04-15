@@ -87,6 +87,7 @@ Copilot Studio에서는 앞선 실습과 같이 카탈로그 형식으로 제공
 | **인증** | `API 키` | newsapi.org 에서 발급받은 API 키를 사용합니다. |
 | **인증 유형** | `헤더` | API 키를 HTTP 요청 헤더에 포함하여 인증합니다. |
 | **헤더 이름** | `x-news-api-key` | API 키를 전달할 HTTP 헤더 이름입니다. |
+| **인증 키값** | (삭제예정)3189309744ce42bb894f67a2f6237f21  | API 키값 입니다. newsapi.org에서 발급받은 키를 사용합니다. |
 
 ![4-3]({{ site.baseurl }}/assets/image/ws3/4-3.png)
 ![4-4]({{ site.baseurl }}/assets/image/ws3/4-4.png)
