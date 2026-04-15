@@ -56,6 +56,7 @@ is_parent: true
 | **Part 1** | [에이전트 생성 및 지침 작성]({{ '/chapters/sp1-1-instructions/' | relative_url }}) | 20분 |
 | **Part 2** | [Pre-built 도구 추가 (Work IQ MCP)]({{ '/chapters/sp1-2-prebuilt-tools/' | relative_url }}) | 15분 |
 | **Part 3** | [커스텀 도구 추가 (FRED MCP + ThinQ MCP)]({{ '/chapters/sp1-3-custom-tools/' | relative_url }}) | 25분 |
+| **Part 4** | [메일 수신 트리거 추가]({{ '/chapters/sp1-4-trigger/' | relative_url }}) | 15분 |
 
 <br>
 
@@ -72,6 +73,7 @@ is_parent: true
 | **투자 의사결정** | "공장 증설 타이밍이 맞나?" | SharePoint + FRED (금리, 산업생산) |
 | **메일 동향 검증** | "최근 보고 메일을 정리하고 시장 상황과 비교해줘" | Mail MCP + FRED |
 | **경영 판단 메일** | "이 이슈에 대해 판단 의견 메일을 작성해줘" | FRED + SharePoint + Mail MCP + Teams |
+| **메일 자동 처리 (트리거)** | 새 메일 수신 시 자동 분석 → 초안 작성 → Teams 알림 | 트리거 + FRED + SharePoint + Mail + Teams |
 
 <br>
 
