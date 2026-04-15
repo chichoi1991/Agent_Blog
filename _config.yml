@@ -32,6 +32,9 @@ nav_sections:
   - key: workshop
     title: "핸즈온 워크샵"
     icon: "🛠️"
+  - key: special
+    title: "특별 워크샵"
+    icon: "⭐"
   - key: updates
     title: "기술 업데이트"
     icon: "🔔"
