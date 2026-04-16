@@ -52,8 +52,8 @@
               <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="sidebar-section-items">
-              {% if section.key == 'workshop' %}
-                {%- comment -%} Workshop: hierarchical display {%- endcomment -%}
+              {% if section.key == 'workshop' or section.key == 'special' %}
+                {%- comment -%} Workshop & Special: hierarchical display {%- endcomment -%}
                 {% assign parents = section_chapters | where_exp: "item", "item.is_parent" | sort: "order" %}
                 {% for parent in parents %}
                   {% assign is_parent_active = false %}
