@@ -85,10 +85,10 @@ is_parent: true
 |------|------|
 | **Copilot Studio 접속** | [https://copilotstudio.microsoft.com](https://copilotstudio.microsoft.com) |
 | **Microsoft 365 계정** | Teams, Outlook, SharePoint 접근 가능한 조직 계정 |
-| **FRED API Key** | `1fabe49779bd82ea8a3084354a89c038` (실습용 공유 키) |
-| **ThinQ PAT** | `thinqpat_60c3ea2d060b6bfe8978cc946b12d52cb69adbdab51e788d53a3` (실습용 공유 키) |
+| **FRED API Key** | 실습 시 별도 안내 |
+| **ThinQ PAT** | 실습 시 별도 안내 |
 
-> **참고:** 실습용 API 키는 워크샵 기간에만 유효합니다. 실제 운영 시에는 개별 키를 발급받아 사용하세요.
+> **참고:** API 키는 보안상 별도로 안내됩니다. 실제 운영 시에는 개별 키를 발급받아 사용하세요.
 
 <br>
 
