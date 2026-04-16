@@ -1030,10 +1030,17 @@ JSON 포멧으로 답변합니다.
 ```
 → 에이전트가 엑셀 데이터를 조회 → "시계열 데이터 분석 프롬프트" 호출 → 답 반환
 
-![6]({{ site.baseurl }}/assets/image/ws3/스크린샷%202026-03-19%20092951.png)
----
+![6-10]({{ site.baseurl }}/assets/image/ws3/6-10.png)
 
 필요시, 메일 발송도구를 통해 생성된 HTML을 곧장 메일로 보내게도 구현할 수 있습니다.
+
+![6-11]({{ site.baseurl }}/assets/image/ws3/6-11.png)
+
+![6-12]({{ site.baseurl }}/assets/image/ws3/6-12.png)
+
+
+
+---
 
 
 
