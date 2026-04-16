@@ -1,7 +1,7 @@
 ---
 layout: chapter
 title: "Part 1: 에이전트 생성 및 지침 작성"
-short_title: "1. 지침 작성"
+short_title: "지침 작성"
 description: "특별 워크샵 - 에이전트 생성 및 CEO 의사결정 보조 지침 작성"
 order: 2
 category: special
