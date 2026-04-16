@@ -1,4 +1,3 @@
-
 ---
 layout: chapter
 title: "Part 3: 커스텀 도구 추가 (FRED MCP + ThinQ MCP)"
