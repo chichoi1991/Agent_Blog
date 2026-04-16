@@ -47,7 +47,7 @@ parent: "sp1"
 |------|------|
 | **데이터 소스** | [FRED (Federal Reserve Economic Data)](https://fred.stlouisfed.org/) |
 | **시리즈 수** | 81만+ 경제 시계열 |
-| **제공 도구** | 5개 테마 도구 + 1개 검색 도구 |
+| **제공 도구** | 6개 테마 도구 + 1개 검색 도구 |
 | **전송 방식** | Streamable HTTP |
 | **배포 환경** | Azure Container Apps (Korea Central) |
 
@@ -58,7 +58,7 @@ parent: "sp1"
 | 항목 | 값 |
 |------|-----|
 | **서버 이름** | `FRED_Economic_MCP` |
-| **서버 설명** | `미국 연방준비제도(FRED) 경제 데이터를 조회하는 MCP 서버입니다. 소비 수요, 원자재·환율, 거시경제, 산업 생산, EV·에너지 시장 등 5개 테마별 경제지표를 제공하고, 키워드로 81만개 이상의 시계열을 검색할 수 있습니다.` |
+| **서버 설명** | `미국 연방준비제도(FRED) 경제 데이터를 조회하는 MCP 서버입니다. 소비 수요, 원자재·환율, 거시경제, 산업 생산, EV·에너지 시장, 로봇·액추에이터 등 6개 테마별 경제지표를 제공하고, 키워드로 81만개 이상의 시계열을 검색할 수 있습니다.` |
 | **서버 URL** | `https://fred-mcp-python.purplehill-ba85d6d0.koreacentral.azurecontainerapps.io/mcp` |
 | **인증** | `API 키` |
 | **인증 유형** | `헤더` |
@@ -71,7 +71,7 @@ parent: "sp1"
 
 ### 2-3. 도구 목록 확인
 
-연결 성공 시 아래 6개 도구가 표시됩니다:
+연결 성공 시 아래 7개 도구가 표시됩니다:
 
 | 도구명 | 설명 | 주요 시리즈 |
 |--------|------|------------|
@@ -80,6 +80,7 @@ parent: "sp1"
 | `get-macro-environment` | 거시경제 환경 | GDPC1(실질 GDP), CPIAUCSL(CPI), CUSR0000SAD(내구재 CPI), FEDFUNDS(연방기금금리), UNRATE(실업률), DGS10(10년 국채), DGS2(2년 국채) |
 | `get-industry-production` | 산업/제조 동향 | INDPRO(산업생산지수), DGORDER(내구재 주문), AMTMNO(제조업 주문), IPMAN(제조업 생산) |
 | `get-ev-energy-market` | EV/에너지 시장 | TOTALSA(자동차판매), AISRSA(재고비율), DCOILWTICO(유가), GASREGW(휘발유가), IPG3361T3S(자동차생산) |
+| `get-robotics-actuator` | 로봇 & 액추에이터 | NASDAQNQROBO(AI로보틱스 글로벌), NASDAQNQROBOUS(AI로보틱스 미국), PCU333995333995(액추에이터 PPI), WPU114303(액추에이터·부품 PPI), IPG3332S(산업기계 생산), A33ENO(산업기계 주문), IPG3336S(동력전달장비 생산), ATGPNO(동력전달장비 주문) |
 | `search-fred-series` | FRED 시리즈 검색 | 키워드로 81만+ 시계열 탐색 |
 
 ### 2-4. 도구 파라미터
@@ -175,7 +176,7 @@ parent: "sp1"
 | Work IQ Mail MCP | 4~5개 | Pre-built |
 | Work IQ Teams MCP | 3~4개 | Pre-built |
 | Work IQ Copilot MCP | 1~2개 | Pre-built |
-| FRED Economic MCP | 6개 | Custom |
+| FRED Economic MCP | 7개 | Custom |
 | ThinQ MCP | 4개 | Custom |
 
 <br>
@@ -240,19 +241,30 @@ parent: "sp1"
 | 21 | "display panel 또는 flat panel 관련 데이터가 FRED에 있는지 검색해줘" | `display panel` / `flat panel` |
 | 22 | "information processing equipment 관련 지표를 찾아줘" | `information processing equipment` |
 
+**FRED 로봇 & 액추에이터 (get-robotics-actuator):**
+
+| # | 테스트 질문 | 기대 파라미터 |
+|---|------------|---------------|
+| 23 | "로봇·액추에이터 관련 경제 지표를 전체 조회해줘" | `indicator` 없이 전체 조회 |
+| 24 | "Nasdaq AI 로보틱스 지수 최근 3년 추이를 보여줘" | `indicator=NASDAQNQROBO, period=3y` |
+| 25 | "액추에이터 PPI가 최근 어떻게 변했어? 수요가 늘고 있는지 판단해줘" | `indicator=PCU333995333995` |
+| 26 | "산업기계 신규주문과 생산지수를 보여줘. 로봇 설비 수요가 회복되고 있는지 확인해줘" | `indicator` 없이 전체 조회 → IPG3332S, A33ENO 확인 |
+| 27 | "동력전달장비 신규주문 5년 데이터를 전년대비 변화율로 보여줘. 서보모터·감속기 수요 추세를 파악하고 싶어" | `indicator=ATGPNO, period=5y, units=pc1` |
+| 28 | "유체동력 실린더·액추에이터 PPI 전년대비 변화율을 보여줘" | `indicator=WPU114303, units=pc1` |
+
 **Work IQ (메일/Teams/Copilot):**
 
 | # | 테스트 질문 | 기대 호출 도구 |
 |---|------------|---------------|
-| 23 | "최근 1주일간 받은 메일 중 '시장 분석' 관련 메일을 정리해줘" | Work IQ Mail |
-| 24 | "Teams에서 '디스플레이 원가' 키워드로 최근 대화를 검색해줘" | Work IQ Teams |
-| 25 | "최근 받은 메일 중 컨설팅 보고서나 시장 리포트가 있는지 찾아줘" | Work IQ Mail |
+| 29 | "최근 1주일간 받은 메일 중 '시장 분석' 관련 메일을 정리해줘" | Work IQ Mail |
+| 30 | "Teams에서 '디스플레이 원가' 키워드로 최근 대화를 검색해줘" | Work IQ Teams |
+| 31 | "최근 받은 메일 중 컨설팅 보고서나 시장 리포트가 있는지 찾아줘" | Work IQ Mail |
 
 **ThinQ (IoT):**
 
 | # | 테스트 질문 | 기대 호출 도구 |
 |---|------------|---------------|
-| 26 | "등록된 가전 제품 목록을 보여줘" | ThinQ `getDevices` |
+| 32 | "등록된 가전 제품 목록을 보여줘" | ThinQ `getDevices` |
 
 ---
 
@@ -269,6 +281,8 @@ parent: "sp1"
 | 3 | "구리·합성수지 PPI와 환율을 함께 보고, 디스플레이 부품 수입 원가 압박 수준을 진단해줘" | `get-cost-pressure` (DEXKOUS + WPUSI019011 + PCU325211325211) → 종합 |
 | 4 | "내구재 CPI와 내구재 소비지출을 비교해서, 모니터·디스플레이 가격 대비 소비가 늘고 있는지 분석해줘" | `get-macro-environment` (CUSR0000SAD) + `get-consumer-demand` (PCEDG) → 비교 |
 | 5 | "소비자심리지수와 내구재 소비를 종합해서 IT 전자제품(모니터, TV) 소비 전망을 분석해줘" | `get-consumer-demand` (UMCSENT + PCEDG) → 전망 |
+| 6 | "AI 로보틱스 지수와 액추에이터 PPI를 함께 분석해서 Physical AI 시장의 시장 심리와 실물 수요를 비교해줘" | `get-robotics-actuator` (NASDAQNQROBO + PCU333995333995) → 비교 |
+| 7 | "산업기계 신규주문과 액추에이터 PPI를 종합해서 로봇 자동화 설비 투자 확대 시점인지 판단해줘" | `get-robotics-actuator` (A33ENO + PCU333995333995) → 투자 판단 |
 
 **⭐⭐ 3개 도구 조합 (중급):**
 
@@ -278,6 +292,8 @@ parent: "sp1"
 | 7 | "금리 역전 여부, GDP, 실업률을 확인하고, 산업생산지수와 내구재 주문 추이를 더해서 경기 침체 가능성과 제조업 영향을 평가해줘" | `get-macro-environment` → `get-industry-production` → 종합 판단 |
 | 8 | "주택착공·소비자심리·내구재 소비지출을 종합해서 가정용 모니터·TV 디스플레이 수요 전망을 분석해줘" | `get-consumer-demand` (HOUST + UMCSENT + PCEDG) → 수요 전망 |
 | 9 | "금리·GDP 환경을 확인하고, 내구재 주문 추이를 더해서 B2B 디스플레이 설비 투자 환경을 진단해줘" | `get-macro-environment` → `get-industry-production` (DGORDER) → B2B 투자 판단 |
+| 10 | "로봇·액추에이터 지표와 산업생산·거시경제 데이터를 종합해서 산업용 로봇 설비투자 환경을 평가해줘" | `get-robotics-actuator` → `get-industry-production` → `get-macro-environment` → 종합 평가 |
+| 11 | "동력전달장비 신규주문·AI 로보틱스 지수와 금리를 함께 분석해서 서보모터·감속기 시장 전망을 진단해줘" | `get-robotics-actuator` (ATGPNO + NASDAQNQROBO) → `get-macro-environment` (FEDFUNDS) → 전망 |
 
 **⭐⭐⭐ 4개+ 도구 조합 (고급):**
 
@@ -286,6 +302,7 @@ parent: "sp1"
 | 10 | "환율·구리·합성수지 PPI로 디스플레이 원가 추세를 보고, 내구재 CPI와 소비자심리를 함께 분석해서 모니터 시장 수익성 전망을 평가해줘" | `get-cost-pressure` → `get-macro-environment` → `get-consumer-demand` → 수익성 종합 |
 | 11 | "금리 역전 여부, GDP, 실업률, 산업생산지수를 종합하고, 환율·원자재 PPI까지 더해서 올해 디스플레이 제조업 투자 환경을 평가해줘" | `get-macro-environment` → `get-industry-production` → `get-cost-pressure` → 종합 판단 |
 | 12 | "computer and electronic product manufacturing 시리즈를 검색한 후, 관련 지표와 환율·원자재 데이터, 내구재 CPI까지 종합해서 디스플레이 산업 경기를 종합 진단해줘" | `search-fred-series` → `get-cost-pressure` → `get-macro-environment` → 종합 진단 |
+| 13 | "로봇·액추에이터 전체 지표를 조회하고, 환율·원자재 PPI·금리·산업생산 데이터를 더해서, Physical AI 사업 투자 환경을 종합 평가하는 브리핑을 만들어줘" | `get-robotics-actuator` → `get-cost-pressure` → `get-macro-environment` → `get-industry-production` → 종합 브리핑 |
 
 ---
 
@@ -319,6 +336,7 @@ FRED 경제 데이터와 **메일·Teams 대화·컨설팅 자료**를 결합하
 | 10 | "내부 컨설팅 자료 메일과 Teams 논의를 종합 검색하고, FRED에서 GDP·금리·내구재 주문·환율 데이터를 조회해서, 올해 디스플레이 사업부 투자 환경 브리핑 메일을 작성해줘" | Work IQ Mail + Teams → `get-macro-environment` + `get-industry-production` + `get-cost-pressure` → 브리핑 메일 작성 |
 | 11 | "신규 시장 진출에 대한 판단 의견 메일을 작성해줘. 관련 내부 자료를 메일과 Teams에서 찾고, GDP·금리·소비자심리·산업생산지수·환율 데이터를 모두 종합해서 근거를 만들어줘" | Work IQ Mail + Teams → `get-macro-environment` + `get-consumer-demand` + `get-industry-production` + `get-cost-pressure` → 판단 메일 작성 |
 | 12 | "computer and electronic product manufacturing 시리즈를 FRED에서 검색하고, 관련 Teams 논의와 메일 보고 내용을 함께 정리해서, 디스플레이 산업 경기 전망 보고서를 Teams 카드로 공유해줘" | `search-fred-series` → Work IQ Teams + Mail → 종합 보고 → Teams 카드 |
+| 13 | "Teams에서 '로봇' 또는 '자동화' 관련 논의를 검색하고, 로봇·액추에이터 지표와 산업생산·금리 데이터를 종합해서, Physical AI 사업 투자 환경 브리핑 메일을 작성해줘" | Work IQ Teams → `get-robotics-actuator` + `get-industry-production` + `get-macro-environment` → 브리핑 메일 작성 |
 
 ---
 
@@ -332,6 +350,8 @@ FRED 경제 데이터와 **메일·Teams 대화·컨설팅 자료**를 결합하
 | "원자재 가격 변동에 따른 가격 정책을 재검토해줘" | SharePoint 검색 → FRED 원가지표 → 마진 분석 → Teams 알림 |
 | "최근 보고 메일을 정리하고 시장 상황과 비교해줘" | Mail 조회 → FRED 검증 → 리스크 분석 → Teams 알림 |
 | "신규 시장 진출에 대한 판단 의견 메일을 작성해줘" | FRED + SharePoint → 판단 메일 draft → Teams 알림 |
+| "로봇·자동화 설비 투자를 확대할 시점인지 판단해줘" | FRED Tool 6 (로봇·액추에이터) + Tool 3 (금리) + Tool 4 (산업생산) → 투자 판단 |
+| "Physical AI 사업 관련 투자 환경 브리핑을 만들어줘" | FRED Tool 6 + Tool 2 (환율·원자재) + Tool 3 (거시경제) → 브리핑 → Teams 카드 |
 
 <br>
 
@@ -339,7 +359,7 @@ FRED 경제 데이터와 **메일·Teams 대화·컨설팅 자료**를 결합하
 
 ## ✅ Part 3 완료 체크리스트
 
-- [ ] FRED Economic MCP가 연결되고 6개 도구가 활성화되었는가?
+- [ ] FRED Economic MCP가 연결되고 7개 도구가 활성화되었는가?
 - [ ] ThinQ MCP가 연결되고 4개 도구가 활성화되었는가?
 - [ ] 단일 도구 테스트가 모두 통과하는가?
 - [ ] 복합 시나리오 테스트에서 여러 도구가 순차적으로 호출되는가?
