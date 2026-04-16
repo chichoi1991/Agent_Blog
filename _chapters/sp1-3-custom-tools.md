@@ -3,7 +3,7 @@ layout: chapter
 title: "Part 3: 커스텀 도구 추가 (FRED MCP + ThinQ MCP)"
 short_title: "커스텀 도구"
 description: "특별 워크샵 - FRED Economic MCP와 ThinQ MCP 커스텀 도구 추가"
-order: 4
+order: 3
 category: special
 parent: "sp1"
 ---
