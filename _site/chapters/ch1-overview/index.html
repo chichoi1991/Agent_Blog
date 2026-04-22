@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copilot Studio 개요 및 접속 | Microsoft Copilot Agentic Blog</title>
+  <link rel="stylesheet" href="/Agent_Blog/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/Agent_Blog/" class="header-logo">
+        <svg class="logo-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Microsoft Copilot Agentic Blog</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/Agent_Blog/">Home</a>
+        <a href="https://copilotstudio.microsoft.com" target="_blank">Copilot Studio 접속하기 ↗</a>
+        <a href="https://github.com/chichoi1991/Agent_Blog/tree/master/_chapters" target="_blank">Github 원본 보기↗</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="메뉴 열기">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="site-wrapper">
+    <aside class="site-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">📖 목차</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="/Agent_Blog/" class="sidebar-link">
+          <span class="sidebar-icon">🏠</span> Home
+        </a>
+
+        
+          
+          
+          
+
+          <div class="sidebar-section open">
+            <button class="sidebar-section-toggle active" aria-expanded="true" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">📘</span>
+              <span class="sidebar-label">Copilot Studio 실무 가이드</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  <a href="/Agent_Blog/chapters/ch0-guide-premise/" class="sidebar-link sub ">
+                    <span class="sidebar-label">0. 가이드의 전제</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch1-overview/" class="sidebar-link sub active">
+                    <span class="sidebar-label">1. 개요 및 접속</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch2-ui-overview/" class="sidebar-link sub ">
+                    <span class="sidebar-label">2. 화면 구성 이해</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch3-semi-dev-agent/" class="sidebar-link sub ">
+                    <span class="sidebar-label">3. 반개발형 Agent</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch4-external-integration/" class="sidebar-link sub ">
+                    <span class="sidebar-label">4. 외부 시스템 연동</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch5-selection-guide/" class="sidebar-link sub ">
+                    <span class="sidebar-label">5. 선택 가이드</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch6-deployment/" class="sidebar-link sub ">
+                    <span class="sidebar-label">6. 배포 및 범위 설정</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch7-org-agent/" class="sidebar-link sub ">
+                    <span class="sidebar-label">7. 조직 공용 Agent</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch8-references/" class="sidebar-link sub ">
+                    <span class="sidebar-label">8. 참고 자료</span>
+                  </a>
+                
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">🛠️</span>
+              <span class="sidebar-label">핸즈온 워크샵</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws1-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">기초편 #1: 블로그 포스트 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws1-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 생성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-2-knowledge/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 참조 자료 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-3-tool-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 도구: MCP 커넥터</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-4-tool-plugin/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 도구: 플러그인 커넥터</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-5-publish/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. 게시 및 배포</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws2-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">기초편 #2: 문서검색 & 에스컬레이션</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws2-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. Agent 생성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-2-tool-connector/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 도구: 커넥터</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-3-tool-flow/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 도구: 플로우</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-4-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 트리거 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-5-publish/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. 게시 및 공유</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws3-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">기초편 #3: 자율동작 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws3-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 생성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-2-knowledge/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 지식 소스 연결</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-3-workiq-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. Work IQ MCP</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-4-external-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 외부 MCP 도구 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-5-ai-prompt/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. AI Prompt 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-6-excel-filter/" class="sidebar-link child ">
+                          <span class="sidebar-label">6. Excel 필터링</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-7-teams-deploy/" class="sidebar-link child ">
+                          <span class="sidebar-label">7. Teams 배포</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws4-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">Agent Builder로 에이전트 만들기</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws4-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 생성 및 지침 작성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws4-2-ref-feature/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 참조자료 및 기능 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws4-3-test-share/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 테스트 및 공유</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws5-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">[리뉴얼] Copilot Studio 기본 기능</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws5-1-agent-intro/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 소개</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-2-instructions/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 기본 지침 설정</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-3-knowledge/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 참조자료 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-4-tool-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. MCP 도구 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-5-tool-connector/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. 커넥터(팀즈 채널 메세지 게시) 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-6-external-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">6. 외부 MCP 도구 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-7-tool-flow/" class="sidebar-link child ">
+                          <span class="sidebar-label">7. 커넥터 연결 플로우</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-8-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">8. 트리거 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-9-ai-prompt/" class="sidebar-link child ">
+                          <span class="sidebar-label">9. 프롬프트 도구 활용법</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-10-excel-filter/" class="sidebar-link child ">
+                          <span class="sidebar-label">10. Excel 데이터 활용</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-11-deploy/" class="sidebar-link child ">
+                          <span class="sidebar-label">11. 배포</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">⭐</span>
+              <span class="sidebar-label">특별 워크샵</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/sp1-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">특별 워크샵: 비즈니스 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/sp1-1-instructions/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 지침 작성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-2-prebuilt-tools/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. Pre-built 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-3-custom-tools/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 커스텀 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-4-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 트리거 추가</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">🔔</span>
+              <span class="sidebar-label">기술 업데이트</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  <a href="/Agent_Blog/chapters/up1-2026h1-updates/" class="sidebar-link sub ">
+                    <span class="sidebar-label">1. 2026 상반기 업데이트</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/up2-mcp-support/" class="sidebar-link sub ">
+                    <span class="sidebar-label">2. MCP 지원</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/up3-agent-builder/" class="sidebar-link sub ">
+                    <span class="sidebar-label">3. Agent Builder 통합</span>
+                  </a>
+                
+              
+            </div>
+          </div>
+        
+      </nav>
+    </aside>
+
+    <main class="site-main">
+      <div class="main-content">
+        <article class="chapter-article">
+          <div class="chapter-header">
+            <div class="chapter-meta">
+              
+                <span class="chapter-badge">Guide · Chapter 1</span>
+              
+            </div>
+            <h1 class="chapter-title">Copilot Studio 개요 및 접속</h1>
+            
+            <p class="chapter-desc">Copilot Studio에 접속하는 방법, 필요한 라이선스와 과금 구조, 그리고 유사 서비스와의 차이를 실무 관점에서 설명합니다.</p>
+            
+          </div>
+
+          <div class="chapter-body">
+            <h2 id="1-copilot-studio란">1. Copilot Studio란?</h2>
+
+<p>Microsoft Copilot Studio는 <strong>AI Agent를 구축하기 위한 그래픽 기반 로우코드 도구</strong>입니다. 직관적인 드래그 앤 드롭 인터페이스를 통해 대화형 AI Agent와 Agent Flow(자동화 워크플로우)를 만들 수 있습니다.</p>
+
+<blockquote>
+  <p>한 줄 요약: <strong>“Copilot Studio는 Agent를 빠르게 제품화하는 도구”</strong>입니다. AI 엔진(Azure Foundry)이나 시스템 구축(SI)과는 역할이 다릅니다.</p>
+</blockquote>
+
+<blockquote>
+  <p>📖 <strong>참조</strong>: <a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/fundamentals-what-is-copilot-studio">Copilot Studio overview</a></p>
+</blockquote>
+
+<h3 id="11-핵심-특징">1.1 핵심 특징</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>특징</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Agent 생성 및 커스터마이징</strong></td>
+      <td>AI 기반 Agent를 구축하고, 조직의 톤, 워크플로우, 비즈니스 규칙에 맞게 커스터마이징</td>
+    </tr>
+    <tr>
+      <td><strong>로우코드 + 프로코드 유연성</strong></td>
+      <td>직관적인 로우코드 도구로 시작하고, API·커스텀 커넥터·스크립트로 확장 가능</td>
+    </tr>
+    <tr>
+      <td><strong>Microsoft 생태계 통합</strong></td>
+      <td>Teams, Power Platform, Microsoft Graph와 원활한 통합</td>
+    </tr>
+    <tr>
+      <td><strong>외부 시스템 연결</strong></td>
+      <td>1,000개 이상의 커넥터와 API로 서드파티 시스템 연동</td>
+    </tr>
+    <tr>
+      <td><strong>트리거 및 자율 에이전트</strong></td>
+      <td>이벤트(새 레코드, 고객 문의 등)에 반응하여 자동으로 작업 수행</td>
+    </tr>
+    <tr>
+      <td><strong>컨텍스트 유지</strong></td>
+      <td>이전 대화 맥락을 유지하여 일관된 응답 제공</td>
+    </tr>
+    <tr>
+      <td><strong>확장성</strong></td>
+      <td>커스텀 플러그인, 커넥터, 고급 로직으로 기능 확장</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>📖 <strong>참조</strong>: <a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/system-service-card-copilot-studio#key-features-or-capabilities">Copilot Studio application card – Key features</a></p>
+</blockquote>
+
+<h3 id="12-사용되는-ai-모델">1.2 사용되는 AI 모델</h3>
+
+<p>Copilot Studio는 다양한 AI 모델을 활용하여 Agent 경험을 제공합니다.</p>
+
+<ul>
+  <li><strong>OpenAI GPT 시리즈</strong> (Azure OpenAI Service 제공)</li>
+  <li><strong>Anthropic Claude Sonnet</strong> 계열 (조직 정책으로 허용 및 차단 가능)</li>
+  <li><strong>xAI Grok</strong> 계열 (조직 정책으로 허용 및 차단 가능)</li>
+</ul>
+
+<p>Agent 생성 시 <strong>기본 모델을 선택</strong>할 수 있으며, 모델에 따라 성능과 응답 특성이 달라집니다. Microsoft는 고객 데이터를 사용하여 기반 모델을 훈련하지 않습니다.</p>
+
+<blockquote>
+  <p>📖 <strong>참조</strong>:<br /> 
+<a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/authoring-select-agent-model#model-availability-by-region">지역별 내가 사용할 수 있는 언어 모델 확인</a></p>
+</blockquote>
+
+<div class="info-box note">
+<b>📌 Reasoning 모델 사용 시 과금 주의</b><br />
+Reasoning 모델(고급 추론)을 사용하면 기본 기능 요금 + <b>Text and generative AI tools (premium)</b> 요금이 함께 부과됩니다. 예: Generative Answer에 Reasoning 모델 사용 시 = 2 Credits (생성형 응답) + 100 Credits (프리미엄 AI 도구) = 총 102 Credits 소모.
+— <em><a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/requirements-messages-management#reasoning-model-billing-rates" target="_blank">Learn: Reasoning model billing rates</a></em>
+</div>
+
+<hr />
+
+<h2 id="2-copilot-studio-접속-방법">2. Copilot Studio 접속 방법</h2>
+
+<p>Copilot Studio는 웹 브라우저에서 직접 접속할 수 있는 클라우드 서비스입니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>접속 URL</strong></td>
+      <td><a href="https://copilotstudio.microsoft.com">https://copilotstudio.microsoft.com</a></td>
+    </tr>
+    <tr>
+      <td><strong>지원 브라우저</strong></td>
+      <td>Microsoft Edge, Google Chrome, Firefox (최신 버전 권장)</td>
+    </tr>
+    <tr>
+      <td><strong>로그인 계정</strong></td>
+      <td>조직의 Microsoft 365 / Entra ID 계정</td>
+    </tr>
+    <tr>
+      <td><strong>프리뷰 사이트</strong></td>
+      <td><a href="https://copilotstudio.preview.microsoft.com/">copilotstudio.preview.microsoft.com</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="21-접속-방식별-차이">2.1 접속 방식별 차이</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>접속 방식</th>
+      <th>용도</th>
+      <th>특징</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>웹 앱</strong> (copilotstudio.microsoft.com)</td>
+      <td>IT 관리자, Agent 빌더</td>
+      <td>전체 기능, 고급 구성, 엔티티/변수 활용</td>
+    </tr>
+    <tr>
+      <td><strong>VS Code 확장</strong></td>
+      <td>개발자</td>
+      <td>로컬 개발 환경에서 Agent 편집, YAML 기반</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>중요! Teams App 내에 있는 Copilot Studio app은 기본적으로 한국에서 제공되지 않는 Legacy 기능입니다. 에이전트 개발에는 반드시 웹 앱을 이용해 주세요.</p>
+
+<blockquote>
+  <p>📖 <strong>참조</strong>: <a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/visual-studio-code-extension-overview">VS Code extension for Copilot Studio</a> · <a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/nlu-gpt-quickstart">Quickstart guide</a></p>
+</blockquote>
+
+<div class="info-box warning">
+<b>⚠️ 접속 전 확인사항</b><br />
+<ul>
+<li>조직의 <b>Entra ID(구 Azure AD)</b> 계정으로 로그인해야 합니다. 개인 Microsoft 계정(@outlook.com, @hotmail.com 등)으로는 접속할 수 없습니다.</li>
+<li>조직 네트워크에서 <b>*.powerva.microsoft.com</b>, <b>*.directline.botframework.com</b> 등 Power Platform 관련 URL이 차단되어 있지 않은지 확인하세요. Conditional Access / Proxy / MDCA와 충돌하는 사례가 빈번합니다.</li>
+</ul>
+</div>
+
+<blockquote>
+  <p>📖 <strong>참조</strong>: <a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/requirements-quotas#required-services">Required services and network URLs</a></p>
+</blockquote>
+
+<hr />
+
+<h2 id="3-접근-권한-및-라이선스">3. 접근 권한 및 라이선스</h2>
+
+<h3 id="31-라이선스-유형">3.1 라이선스 유형</h3>
+
+<p>Copilot Studio를 사용하려면 적절한 라이선스가 필요합니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>라이선스</th>
+      <th>설명</th>
+      <th>포함 내용</th>
+      <th>주요 대상</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Microsoft 365 Copilot</strong></td>
+      <td>M365 Copilot에 Copilot Studio 사용 권한 포함</td>
+      <td>B2E 시나리오 무료 사용</td>
+      <td>Copilot 도입 조직</td>
+    </tr>
+    <tr>
+      <td><strong>Copilot Studio 독립 라이선스</strong></td>
+      <td>테넌트당 구매, 25,000 Credits/월 포함</td>
+      <td>Dataverse 기본 용량 (5GB DB + 20GB File + 2GB Log)</td>
+      <td>Agent 전용 구축 조직</td>
+    </tr>
+    <tr>
+      <td><strong>Copilot Studio User 라이선스</strong></td>
+      <td>사용자별 무료 라이선스</td>
+      <td>Agent 작성(Maker) 권한</td>
+      <td>시민 개발자</td>
+    </tr>
+    <tr>
+      <td><strong>평가판 (Trial)</strong></td>
+      <td>60일간 무료 사용</td>
+      <td>기능 제한 없음</td>
+      <td>PoC / 테스트</td>
+    </tr>
+    <tr>
+      <td><strong>PAYG (Pay-As-You-Go)</strong></td>
+      <td>Azure 구독 연결, 사용한 만큼 과금</td>
+      <td>초과 크레딧 자동 처리</td>
+      <td>유연한 과금 필요 시</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>📖 <strong>참조</strong>: <a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/billing-licensing">Copilot Studio licensing</a> · <a href="https://learn.microsoft.com/ko-kr/power-platform/admin/powerapps-flow-licensing-faq#microsoft-copilot-studio">Power Platform licensing FAQ</a></p>
+</blockquote>
+
+<h3 id="32-권한-구조">3.2 권한 구조</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>역할</th>
+      <th>권한</th>
+      <th>대상</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>환경 관리자</strong></td>
+      <td>환경 설정, 사용자 관리, Agent 배포, DLP 정책</td>
+      <td>IT 관리자</td>
+    </tr>
+    <tr>
+      <td><strong>환경 작성자<br />(Enviorment Maker)</strong></td>
+      <td>Agent 생성 및 편집, Topic/Action 구성, 게시</td>
+      <td>시민 개발자, 현업 담당자</td>
+    </tr>
+    <tr>
+      <td><strong>사용자</strong></td>
+      <td>배포된 Agent 이용</td>
+      <td>최종 사용자 (직원, 고객)</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li><strong>보안 구조</strong>: Entra ID 기반 인증, Dataverse 보안 역할, AAD 보안 그룹 기반 접근 제한이 적용됩니다.</li>
+  <li><strong>환경(Environment)</strong>: Copilot Studio는 Power Platform 환경 위에서 동작하며, 환경별로 Agent를 생성·관리합니다.</li>
+</ul>
+
+<blockquote>
+  <p>📖 <strong>참조</strong>: <a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/requirements-licensing">Assign licenses and manage access</a></p>
+</blockquote>
+
+<div class="info-box tip">
+<b>💡 실무 팁 — "제작 권한"과 "실행 과금"은 별개입니다</b><br />
+<ul>
+<li><b>Agent를 만드는 권한</b>: Copilot Studio User 라이선스 (무료) 또는 Maker 역할</li>
+<li><b>Agent를 사용할 때 과금</b>: Copilot Credits 기반 (M365 Copilot 사용자는 B2E 무료)</li>
+</ul>
+이 두 가지를 분리해서 설명하지 않으면, "라이선스가 있으면 다 무료인 거 아니냐?"는 오해가 생깁니다.
+</div>
+
+<hr />
+
+<h2 id="4-과금-구조-상세-copilot-credits">4. 과금 구조 상세 (Copilot Credits)</h2>
+
+<h3 id="41-copilot-credits란">4.1 Copilot Credits란?</h3>
+
+<p><strong>Copilot Credits</strong>는 Copilot Studio의 공통 과금 단위입니다. Agent가 수행하는 작업 유형에 따라 크레딧 소모가 달라집니다. 2025년 9월부터 기존 “메시지(messages)” 단위에서 “Copilot Credits” 단위로 변경되었습니다.</p>
+
+<blockquote>
+  <p>📖 <strong>참조</strong>: <a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/requirements-messages-management">Billing rates and management</a></p>
+</blockquote>
+
+<h3 id="42-기능별-크레딧-소모-기준">4.2 기능별 크레딧 소모 기준</h3>
+<blockquote>
+  <p>2026년 4월 7일 기준이며, 자세한 내용은 상단의 공식 참조 문서를 확인하시길 바랍니다.</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>에이전트 동작</th>
+      <th>소모 크레딧</th>
+      <th>M365 Copilot 사용자</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Classic Answer (사전 정의 답변)</td>
+      <td><strong>1 Credit</strong></td>
+      <td>✅ 무료</td>
+      <td>FAQ, 고정 응답</td>
+    </tr>
+    <tr>
+      <td>Generative Answer (LLM 기반 생성 답변)</td>
+      <td><strong>2 Credits</strong></td>
+      <td>✅ 무료</td>
+      <td>GPT 기반 동적 답변</td>
+    </tr>
+    <tr>
+      <td>Agent Action (에이전트 작업 실행)</td>
+      <td><strong>5 Credits</strong></td>
+      <td>✅ 무료</td>
+      <td>Flow 호출, 커넥터 실행</td>
+    </tr>
+    <tr>
+      <td>Tenant Graph Grounding</td>
+      <td><strong>10 Credits</strong></td>
+      <td>✅ 무료</td>
+      <td>M365 Graph 기반 RAG</td>
+    </tr>
+    <tr>
+      <td>Agent Flow 실행 (100 actions 기준)</td>
+      <td><strong>13 Credits</strong></td>
+      <td>✅ 무료</td>
+      <td>Power Automate Flow</td>
+    </tr>
+    <tr>
+      <td>AI Tool – 기본 (10 responses)</td>
+      <td><strong>1 Credit</strong></td>
+      <td>✅ 무료</td>
+      <td>텍스트 생성형</td>
+    </tr>
+    <tr>
+      <td>AI Tool – 표준 (10 responses)</td>
+      <td><strong>15 Credits</strong></td>
+      <td>✅ 무료</td>
+      <td>중급 AI 도구</td>
+    </tr>
+    <tr>
+      <td>AI Tool – 프리미엄 (10 responses)</td>
+      <td><strong>100 Credits</strong></td>
+      <td>✅ 무료</td>
+      <td>Reasoning 모델 등</td>
+    </tr>
+    <tr>
+      <td>Content Processing Tool (페이지당)</td>
+      <td><strong>8 Credits</strong></td>
+      <td>✅ 무료</td>
+      <td>문서 처리</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>복합 과금 예시</strong>: Tenant Graph Grounding + Generative Answer 조합 = <strong>12 Credits</strong> (10 + 2) 소모</p>
+
+<blockquote>
+  <p>💡 <strong>크레딧 비용 참고</strong>: PAYG 기준 <strong>1 Copilot Credit = $0.01 USD</strong></p>
+
+  <p>📖 <strong>참조</strong>: <a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/requirements-messages-management#copilot-credits-billing-rates">Copilot Credits billing rates</a> · <a href="https://microsoft.github.io/copilot-studio-estimator/">Agent usage estimator</a></p>
+</blockquote>
+
+<h3 id="43-m365-copilot-사용자-무료-사용-조건">4.3 M365 Copilot 사용자 무료 사용 조건</h3>
+
+<p>M365 Copilot 라이선스를 보유한 사용자가 Copilot Studio Agent를 사용할 때, 특정 조건 하에서 <strong>크레딧 차감 없이 무료로 이용</strong>할 수 있습니다.</p>
+
+<p><strong>✅ 무료 사용이 되는 조건 (모두 충족해야 함):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>조건</th>
+      <th>필수 여부</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>M365 Copilot 라이선스 보유</td>
+      <td>✅</td>
+      <td>Agent <strong>사용자</strong>가 라이선스 보유</td>
+    </tr>
+    <tr>
+      <td>Entra ID 인증</td>
+      <td>✅</td>
+      <td>Agent의 인증 방식이 Entra ID 기반</td>
+    </tr>
+    <tr>
+      <td>사용 주체가 사람(User)</td>
+      <td>✅</td>
+      <td>시스템 계정이 아닌 실제 사용자</td>
+    </tr>
+    <tr>
+      <td>Employee-facing (B2E) 시나리오</td>
+      <td>✅</td>
+      <td>내부 직원 대상 업무</td>
+    </tr>
+    <tr>
+      <td>Fair Use 범위 내</td>
+      <td>✅</td>
+      <td>Microsoft가 정한 합리적 사용 범위</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>❌ 무료 적용이 안 되는 경우:</strong></p>
+<ul>
+  <li><strong>Anonymous</strong>(익명) 또는 <strong>Custom Token</strong> 인증</li>
+  <li>M365 Copilot <strong>User Identity를 확인할 수 없는</strong> 경우</li>
+  <li><strong>B2C</strong>(고객 대상) 시나리오</li>
+  <li><strong>System account</strong> 기반 자동 실행 (스케줄 / 트리거 기반)</li>
+  <li><strong>Autonomous/Non-interactive</strong> 작업</li>
+</ul>
+
+<div class="info-box tip">
+<b>💡 과금의 본질 한 줄 요약</b><br />
+<b>"누가(사용자 vs 시스템), 어떻게(대화 vs 자동화), 어떤 인증으로(Entra ID vs Anonymous) 쓰느냐"</b>가 과금의 핵심입니다. 사람이 직접 쓰는 Copilot 기반 업무는 무료 범위가 넓지만, 시스템이 대신 일을 하면 그때부터 과금이 발생합니다.
+</div>
+
+<h3 id="44-power-automate-플로우와-과금-관계">4.4 Power Automate 플로우와 과금 관계</h3>
+
+<p>Power Automate 플로우를 Copilot Studio에서 사용할 때 과금 기준이 변경됩니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>변경 전(Power Automate 플로우)</th>
+      <th>변경 후(Copilot Studio Agent Flow)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Power Automate Cloud Flow</td>
+      <td>Copilot Studio <strong>Agent Flow</strong></td>
+    </tr>
+    <tr>
+      <td>PA Premium / User 라이선스 기준</td>
+      <td><strong>Copilot Credits</strong> 기반 과금</td>
+    </tr>
+    <tr>
+      <td>프리미엄 커넥터 라이선스 필요</td>
+      <td>크레딧으로 프리미엄 커넥터 사용 가능</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>핵심 주의사항:</strong></p>
+<ul>
+  <li>Cloud Flow를 <strong>Copilot Studio Plan으로 변경</strong>하면 PA 라이선스 판정에서 벗어나 Copilot Studio Meter로 이동합니다.</li>
+  <li>이 경우 별도 PA Premium 없이도 프리미엄 커넥터 사용이 가능하나, <strong>Copilot Credits으로 차감</strong>됩니다.</li>
+</ul>
+
+<div class="info-box warning">
+<b>⚠️ 주의! 이 설정은 되돌릴 수 없습니다! </b><br />
+Copilot Studio Plan으로 변경한 Flow는 <b>User/Process 라이선스로 되돌릴 수 없습니다</b>. <br /> 필요 시 Flow를 처음부터 재생성해야 합니다. 변경 전에 반드시 영향 범위를 확인하세요.
+</div>
+
+<h3 id="45-크레딧-모니터링-및-초과-관리">4.5 크레딧 모니터링 및 초과 관리</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>기능</th>
+      <th>설명</th>
+      <th>참조</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>소비량 확인</strong></td>
+      <td>Power Platform Admin Center → Licensing → Copilot Studio</td>
+      <td><a href="https://learn.microsoft.com/ko-kr/power-platform/admin/manage-copilot-studio-messages-capacity">Learn</a></td>
+    </tr>
+    <tr>
+      <td><strong>Agent별 한도 설정</strong></td>
+      <td>개별 Agent의 월간 크레딧 상한 설정 가능</td>
+      <td>Admin Center → Manage Agents</td>
+    </tr>
+    <tr>
+      <td><strong>초과 시 동작</strong></td>
+      <td>Prepaid 소진 시 → PAYG 자동 전환 (Azure 구독 연결 및 명시적 설정 필요)</td>
+      <td><a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/requirements-messages-management#overage-enforcement">Learn</a></td>
+    </tr>
+    <tr>
+      <td><strong>Agent Flow 초과</strong></td>
+      <td>크레딧 소진 시 새 실행 차단 (Agent 자체는 비활성화되지 않음)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>사용량 예측</strong></td>
+      <td>Agent Usage Estimator 도구 활용</td>
+      <td><a href="https://microsoft.github.io/copilot-studio-estimator/">Estimator</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="info-box tip">
+<b>💡 실무 팁 — 비용 관리 전략</b><br />
+<ul>
+<li><b>Estimator 활용</b>: 에이전트 배포 전에 <a href="https://microsoft.github.io/copilot-studio-estimator/" target="_blank">Microsoft Copilot Studio agent usage estimator</a>로 예상 소비량을 반드시 확인하세요.</li>
+<li><b>Agent별 한도 설정</b>: 전사 배포 시 Agent별 월간 크레딧 상한을 설정하여 예기치 않은 비용 폭증을 방지하세요.</li>
+<li><b>PAYG 안전망</b>: Prepaid 크레딧 팩 + PAYG(Azure 구독)를 함께 설정하면, 크레딧 소진 시에도 서비스가 중단되지 않습니다.</li>
+<li><b>Dataverse Shadow Cost 주의</b>: Knowledge 소스로 파일을 업로드하면 Dataverse 스토리지가 소비됩니다. 전사 PoC 시 환경/용량 가이드를 반드시 확인하세요.</li>
+</ul>
+</div>
+
+<hr />
+
+<h2 id="5-copilot-chat--agent-builder--copilot-studio-차이">5. Copilot Chat / Agent Builder / Copilot Studio 차이</h2>
+
+<p>Microsoft는 다양한 AI/자동화 도구를 제공합니다. “어떤 도구를 써야 하는가?”는 실무에서 가장 빈번하게 받는 질문입니다.</p>
+
+<h3 id="51-도구-비교표">5.1 도구 비교표</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>Copilot Chat (BizChat)</th>
+      <th>Agent Builder (M365 내)</th>
+      <th>Copilot Studio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>목적</strong></td>
+      <td>일상 업무 보조 (검색, 요약, 작성)</td>
+      <td>빠르고 간단한 Agent 생성</td>
+      <td>대화형 Agent 전문 구축</td>
+    </tr>
+    <tr>
+      <td><strong>사용자</strong></td>
+      <td>전 직원</td>
+      <td>개인/소규모 팀</td>
+      <td>시민 개발자 / 개발자</td>
+    </tr>
+    <tr>
+      <td><strong>인터페이스</strong></td>
+      <td>채팅 (M365 앱 내 통합)</td>
+      <td>자연어 기반 간편 빌더</td>
+      <td>대화 흐름 디자이너 (그래픽 + YAML)</td>
+    </tr>
+    <tr>
+      <td><strong>주요 기능</strong></td>
+      <td>문서 요약, 이메일 작성, 질의응답</td>
+      <td>Knowledge 연결, 기본 지침</td>
+      <td>토픽, Knowledge, Action, 트리거</td>
+    </tr>
+    <tr>
+      <td><strong>Action/Flow</strong></td>
+      <td>❌ 불가</td>
+      <td>❌ 불가</td>
+      <td>✅ 가능</td>
+    </tr>
+    <tr>
+      <td><strong>외부 API 연동</strong></td>
+      <td>❌ 불가</td>
+      <td>❌ 불가</td>
+      <td>✅ 가능</td>
+    </tr>
+    <tr>
+      <td><strong>커스터마이징</strong></td>
+      <td>제한적 (프롬프트 수준)</td>
+      <td>지침 + Knowledge</td>
+      <td>Agent 로직 전체 제어</td>
+    </tr>
+    <tr>
+      <td><strong>배포 대상</strong></td>
+      <td>M365 앱 내</td>
+      <td>M365 Copilot 내</td>
+      <td>Teams, 웹, 커스텀 채널 다수</td>
+    </tr>
+    <tr>
+      <td><strong>거버넌스</strong></td>
+      <td>M365 관리</td>
+      <td>기본</td>
+      <td>환경 관리, DLP, 분석, 감사 로그</td>
+    </tr>
+    <tr>
+      <td><strong>추가 과금</strong></td>
+      <td>없음</td>
+      <td>없음</td>
+      <td>크레딧 기반 (B2E 무료 가능)</td>
+    </tr>
+    <tr>
+      <td><strong>AI 모델 선택</strong></td>
+      <td>기본 제공</td>
+      <td>기본 제공</td>
+      <td>GPT, Claude, Grok 등 선택 가능</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>📖 <strong>참조</strong>: <a href="https://learn.microsoft.com/ko-kr/microsoft-365/copilot/extensibility/copilot-studio-experience">Choose between Microsoft 365 Copilot and Copilot Studio</a> · <a href="https://learn.microsoft.com/ko-kr/microsoft-365/copilot/extensibility/copy-agent-to-copilot-studio">Copy agent to Copilot Studio</a></p>
+</blockquote>
+
+<h3 id="52-핵심-판단-기준">5.2 핵심 판단 기준</h3>
+
+<blockquote>
+  <p><strong>“정보를 찾기만 하면 → Agent Builder, <br /> 실제로 작업(액션)을 시키거나, 상황에 따라서 직접 활동하길 원하면 → Copilot Studio”</strong></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>시나리오</th>
+      <th>추천 도구</th>
+      <th>이유</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>“직원들이 문서를 빠르게 찾고 요약했으면 좋겠다”</td>
+      <td><strong>Copilot Chat</strong></td>
+      <td>M365 앱 내 자동 통합, 별도 구축 불필요</td>
+    </tr>
+    <tr>
+      <td>“개인적으로 사내 정책 FAQ Agent를 빠르게 만들고 싶다”</td>
+      <td><strong>Agent Builder</strong></td>
+      <td>자연어로 바로 생성, 설정 최소</td>
+    </tr>
+    <tr>
+      <td>“사용자 입력을 받아 이메일을 보내거나 시스템에 데이터를 등록해야 한다”</td>
+      <td><strong>Copilot Studio</strong></td>
+      <td>Action/Flow 연동 필요</td>
+    </tr>
+    <tr>
+      <td>“외부 API를 호출하거나 커스텀 커넥터를 연결해야 한다”</td>
+      <td><strong>Copilot Studio</strong></td>
+      <td>외부 연동은 Studio만 가능</td>
+    </tr>
+    <tr>
+      <td>“조직 전체에 정식으로 Agent를 배포하고 관리해야 한다”</td>
+      <td><strong>Copilot Studio</strong></td>
+      <td>거버넌스, 분석, 환경 관리 내장</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="53-agent-builder--copilot-studio-확장">5.3 Agent Builder → Copilot Studio 확장</h3>
+
+<p>Agent Builder는 <strong>빠르게 간단한 Agent를 만들기</strong> 위한 도구이지만, 고급 기능이 필요해지면 <strong>Copilot Studio로 복사(Copy to Copilot Studio)</strong>하여 확장할 수 있습니다.</p>
+
+<p>복사 시 활용할 수 있는 고급 기능:</p>
+<ul>
+  <li><strong>향상된 라이프사이클 관리</strong>: 버전 관리, 단계별 배포, 롤백</li>
+  <li><strong>사용 모니터링 및 분석</strong>: 사용자 참여도, 쿼리 트렌드, 성능 인사이트</li>
+  <li><strong>거버넌스 제어</strong>: 역할 기반 접근, DLP 정책, 규정 준수</li>
+  <li><strong>환경 관리</strong>: 개발/테스트/운영 환경 분리</li>
+  <li><strong>감사 및 규정 준수</strong>: 감사 추적, 규정 준수 보고</li>
+  <li><strong>조직 배포</strong>: Teams 앱 스토어 게시, 관리자 승인을 통한 전사 배포</li>
+</ul>
+
+<div class="info-box tip">
+<b>💡 실무 팁 — 단계적 접근 권장</b><br />
+처음부터 Copilot Studio로 복잡하게 시작하지 마세요. <b>Agent Builder로 빠르게 프로토타입</b>을 만들어 사용자 반응을 확인한 후, 기능이 더 필요할 때 <b>Copilot Studio로 확장</b>하는 방식이 가장 효과적입니다. "빠르게 시작 → 점진적 확장"이 실무에서 검증된 전략입니다.
+</div>
+
+<hr />
+
+<h2 id="6-agent를-활용하는-방식">6. Agent를 활용하는 방식</h2>
+
+<p>Copilot Studio로 만든 Agent는 크게 두 가지 방식으로 활용됩니다.</p>
+
+<h3 id="61-1-독립형-agent">6.1 1. 독립형 Agent</h3>
+
+<p>웹사이트, Teams, Facebook 등의 채널에서 <strong>사용자와 직접 대화</strong>하는 Agent입니다.</p>
+
+<p><strong>활용 예시:</strong></p>
+<ul>
+  <li><strong>고객 지원</strong>: 주문 추적, 반품 처리, FAQ 자동 응답</li>
+  <li><strong>사내 FAQ</strong>: HR 정책 안내, IT 매뉴얼, 복리후생 문의</li>
+  <li><strong>IT 헬프데스크</strong>: 비밀번호 초기화, VPN 연결, 장비 신청</li>
+  <li><strong>업무 자동화</strong>: 승인 요청, 이메일 발송, 데이터 등록</li>
+</ul>
+
+<blockquote>
+  <p>📖 <strong>참조</strong>: <a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/system-service-card-copilot-studio#intended-uses">Intended uses of Copilot Studio</a></p>
+</blockquote>
+
+<h3 id="62-2-microsoft-365-copilot-확장">6.2 2. Microsoft 365 Copilot 확장</h3>
+
+<p>M365 Copilot에 <strong>플러그인/확장 Agent</strong>로 연동하여, 기존 Copilot 경험에 우리 조직만의 전문 지식과 기능을 추가합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>예: 직원이 Copilot Chat에서
+    "우리 회사 연차 정책 알려줘" 라고 물으면
+    → 연결된 HR Agent가 SharePoint의 HR 문서를 기반으로 답변
+</code></pre></div></div>
+
+<blockquote>
+  <p>📖 <strong>참조</strong>: <a href="https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions">Extend Microsoft 365 Copilot with agents</a></p>
+</blockquote>
+
+<h3 id="63-3-agent-간-연동-multi-agent">6.3 3. Agent 간 연동 (Multi-Agent)</h3>
+
+<p>Agent는 단순 이용뿐 아니라, <strong>다른 Agent에게 도구(Tool)로도 제공</strong>될 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[사용자] → [통합 업무 Agent]
+              ├─ HR 관련 질문 → [HR Agent] 호출
+              ├─ IT 관련 질문 → [IT Agent] 호출
+              └─ 경비 관련 질문 → [Finance Agent] 호출
+</code></pre></div></div>
+
+<p>이 구조를 통해 도메인별 전문 Agent를 독립적으로 관리하면서도, 사용자에게는 하나의 통합 창구를 제공할 수 있습니다.</p>
+
+<div class="info-box note">
+<b>📌 다음 챕터 미리보기</b><br />
+이번 챕터에서 Copilot Studio가 무엇인지, 어떻게 접속하고, 과금이 어떻게 되는지를 파악했습니다. 다음 <b>Chapter 2</b>에서는 실제 Copilot Studio에 접속했을 때 보이는 <b>화면 구성</b>과 핵심 개념(Agent, Topics, Knowledge, Actions)을 하나씩 살펴봅니다.
+</div>
+
+          </div>
+
+          <nav class="chapter-pagination">
+            
+              
+                
+              
+                
+                  
+                    
+                    <a href="/Agent_Blog/chapters/ch0-guide-premise/" class="pagination-link prev">
+                      <span class="pagination-direction">← 이전</span>
+                      <span class="pagination-title">가이드의 전제</span>
+                    </a>
+                  
+                  
+                    
+                    <a href="/Agent_Blog/chapters/ch2-ui-overview/" class="pagination-link next">
+                      <span class="pagination-direction">다음 →</span>
+                      <span class="pagination-title">화면 구성 이해</span>
+                    </a>
+                  
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          </nav>
+        </article>
+      </div>
+      <footer class="site-footer">
+        <p>© 2026 Microsoft Copilot Agentic Blog · Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="mobile-overlay" id="overlay"></div>
+
+  <script>
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+      });
+      overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+      });
+    }
+
+    // Code copy button
+    document.querySelectorAll('.chapter-body pre').forEach(pre => {
+      const btn = document.createElement('button');
+      btn.className = 'code-copy-btn';
+      btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none"><path d="M4 4H2a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/></svg><span>Copy</span>';
+      btn.addEventListener('click', () => {
+        const code = pre.querySelector('code');
+        const text = code ? code.textContent : pre.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          btn.classList.add('copied');
+          btn.querySelector('span').textContent = 'Copied!';
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.querySelector('span').textContent = 'Copy';
+          }, 2000);
+        });
+      });
+      pre.appendChild(btn);
+    });
+  </script>
+</body>
+</html>

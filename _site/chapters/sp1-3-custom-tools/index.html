@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Part 3: 커스텀 도구 추가 (FRED MCP + ThinQ MCP) | Microsoft Copilot Agentic Blog</title>
+  <link rel="stylesheet" href="/Agent_Blog/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/Agent_Blog/" class="header-logo">
+        <svg class="logo-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Microsoft Copilot Agentic Blog</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/Agent_Blog/">Home</a>
+        <a href="https://copilotstudio.microsoft.com" target="_blank">Copilot Studio 접속하기 ↗</a>
+        <a href="https://github.com/chichoi1991/Agent_Blog/tree/master/_chapters" target="_blank">Github 원본 보기↗</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="메뉴 열기">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="site-wrapper">
+    <aside class="site-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">📖 목차</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="/Agent_Blog/" class="sidebar-link">
+          <span class="sidebar-icon">🏠</span> Home
+        </a>
+
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">📘</span>
+              <span class="sidebar-label">Copilot Studio 실무 가이드</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  <a href="/Agent_Blog/chapters/ch0-guide-premise/" class="sidebar-link sub ">
+                    <span class="sidebar-label">0. 가이드의 전제</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch1-overview/" class="sidebar-link sub ">
+                    <span class="sidebar-label">1. 개요 및 접속</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch2-ui-overview/" class="sidebar-link sub ">
+                    <span class="sidebar-label">2. 화면 구성 이해</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch3-semi-dev-agent/" class="sidebar-link sub ">
+                    <span class="sidebar-label">3. 반개발형 Agent</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch4-external-integration/" class="sidebar-link sub ">
+                    <span class="sidebar-label">4. 외부 시스템 연동</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch5-selection-guide/" class="sidebar-link sub ">
+                    <span class="sidebar-label">5. 선택 가이드</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch6-deployment/" class="sidebar-link sub ">
+                    <span class="sidebar-label">6. 배포 및 범위 설정</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch7-org-agent/" class="sidebar-link sub ">
+                    <span class="sidebar-label">7. 조직 공용 Agent</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch8-references/" class="sidebar-link sub ">
+                    <span class="sidebar-label">8. 참고 자료</span>
+                  </a>
+                
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">🛠️</span>
+              <span class="sidebar-label">핸즈온 워크샵</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws1-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">기초편 #1: 블로그 포스트 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws1-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 생성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-2-knowledge/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 참조 자료 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-3-tool-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 도구: MCP 커넥터</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-4-tool-plugin/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 도구: 플러그인 커넥터</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-5-publish/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. 게시 및 배포</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws2-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">기초편 #2: 문서검색 & 에스컬레이션</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws2-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. Agent 생성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-2-tool-connector/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 도구: 커넥터</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-3-tool-flow/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 도구: 플로우</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-4-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 트리거 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-5-publish/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. 게시 및 공유</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws3-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">기초편 #3: 자율동작 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws3-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 생성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-2-knowledge/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 지식 소스 연결</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-3-workiq-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. Work IQ MCP</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-4-external-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 외부 MCP 도구 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-5-ai-prompt/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. AI Prompt 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-6-excel-filter/" class="sidebar-link child ">
+                          <span class="sidebar-label">6. Excel 필터링</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-7-teams-deploy/" class="sidebar-link child ">
+                          <span class="sidebar-label">7. Teams 배포</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws4-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">Agent Builder로 에이전트 만들기</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws4-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 생성 및 지침 작성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws4-2-ref-feature/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 참조자료 및 기능 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws4-3-test-share/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 테스트 및 공유</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws5-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">[리뉴얼] Copilot Studio 기본 기능</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws5-1-agent-intro/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 소개</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-2-instructions/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 기본 지침 설정</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-3-knowledge/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 참조자료 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-4-tool-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. MCP 도구 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-5-tool-connector/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. 커넥터(팀즈 채널 메세지 게시) 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-6-external-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">6. 외부 MCP 도구 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-7-tool-flow/" class="sidebar-link child ">
+                          <span class="sidebar-label">7. 커넥터 연결 플로우</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-8-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">8. 트리거 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-9-ai-prompt/" class="sidebar-link child ">
+                          <span class="sidebar-label">9. 프롬프트 도구 활용법</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-10-excel-filter/" class="sidebar-link child ">
+                          <span class="sidebar-label">10. Excel 데이터 활용</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-11-deploy/" class="sidebar-link child ">
+                          <span class="sidebar-label">11. 배포</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section open">
+            <button class="sidebar-section-toggle active" aria-expanded="true" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">⭐</span>
+              <span class="sidebar-label">특별 워크샵</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group open">
+                    <a href="/Agent_Blog/chapters/sp1-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">특별 워크샵: 비즈니스 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/sp1-1-instructions/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 지침 작성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-2-prebuilt-tools/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. Pre-built 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-3-custom-tools/" class="sidebar-link child active">
+                          <span class="sidebar-label">3. 커스텀 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-4-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 트리거 추가</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">🔔</span>
+              <span class="sidebar-label">기술 업데이트</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  <a href="/Agent_Blog/chapters/up1-2026h1-updates/" class="sidebar-link sub ">
+                    <span class="sidebar-label">1. 2026 상반기 업데이트</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/up2-mcp-support/" class="sidebar-link sub ">
+                    <span class="sidebar-label">2. MCP 지원</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/up3-agent-builder/" class="sidebar-link sub ">
+                    <span class="sidebar-label">3. Agent Builder 통합</span>
+                  </a>
+                
+              
+            </div>
+          </div>
+        
+      </nav>
+    </aside>
+
+    <main class="site-main">
+      <div class="main-content">
+        <article class="chapter-article">
+          <div class="chapter-header">
+            <div class="chapter-meta">
+              
+                <span class="chapter-badge">Chapter 3</span>
+              
+            </div>
+            <h1 class="chapter-title">Part 3: 커스텀 도구 추가 (FRED MCP + ThinQ MCP)</h1>
+            
+            <p class="chapter-desc">특별 워크샵 - FRED Economic MCP와 ThinQ MCP 커스텀 도구 추가</p>
+            
+          </div>
+
+          <div class="chapter-body">
+            <h2 id="part-3-커스텀-도구-추가-fred-mcp--thinq-mcp">Part 3: 커스텀 도구 추가 (FRED MCP + ThinQ MCP)</h2>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td><strong>이전 단계:</strong> <a href="/Agent_Blog/chapters/sp1-2-prebuilt-tools/">Part 2: Pre-built 도구 추가</a></td>
+        <td><strong>처음으로:</strong> <a href="/Agent_Blog/chapters/sp1-0-overview/">개요</a></td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<hr />
+
+<p>이번 파트에서는 Microsoft가 기본 제공하지 않는 <strong>커스텀 MCP 서버</strong> 2종을 에이전트에 추가합니다.</p>
+
+<ul>
+  <li><strong>FRED Economic MCP</strong> — 미국 연방준비제도(Federal Reserve) 경제 데이터</li>
+  <li><strong>ThinQ MCP</strong> — LG IoT 가전 제품 제어·조회</li>
+</ul>
+
+<p>두 서버 모두 Azure Container Apps에 배포된 사설 MCP 서버이며, URL과 API Key를 직접 입력하여 연결합니다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="1-mcp-도구-추가-방법-공통">1. MCP 도구 추가 방법 (공통)</h2>
+
+<p>에이전트 개요 화면에서 <strong>도구</strong> 섹션 → <strong>+ 도구 추가</strong> 를 클릭합니다.</p>
+
+<p>도구 추가 팝업에서 <strong>MCP</strong> 탭 → 하단의 <strong>모델 컨텍스트 프로토콜(MCP)</strong> 옵션을 선택합니다.</p>
+
+<blockquote>
+  <p><strong>Pre-built vs Custom:</strong> Part 2에서 추가한 Work IQ 도구는 카탈로그에서 선택했지만, 커스텀 MCP는 <strong>URL과 인증 정보를 직접 입력</strong>합니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="2-fred-economic-mcp-서버-연결">2. FRED Economic MCP 서버 연결</h2>
+
+<h3 id="2-1-fred-mcp-소개">2-1. FRED MCP 소개</h3>
+
+<p><strong>FRED (Federal Reserve Economic Data)</strong> 는 미국 세인트루이스 연방준비은행이 제공하는 81만개 이상의 경제 시계열 데이터베이스입니다. 이 MCP 서버를 통해 에이전트가 실시간 경제지표를 조회하고 분석할 수 있습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>데이터 소스</strong></td>
+      <td><a href="https://fred.stlouisfed.org/">FRED (Federal Reserve Economic Data)</a></td>
+    </tr>
+    <tr>
+      <td><strong>시리즈 수</strong></td>
+      <td>81만+ 경제 시계열</td>
+    </tr>
+    <tr>
+      <td><strong>제공 도구</strong></td>
+      <td>6개 테마 도구 + 1개 검색 도구</td>
+    </tr>
+    <tr>
+      <td><strong>전송 방식</strong></td>
+      <td>Streamable HTTP</td>
+    </tr>
+    <tr>
+      <td><strong>배포 환경</strong></td>
+      <td>Azure Container Apps (Korea Central)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-2-서버-url-및-인증-정보-입력">2-2. 서버 URL 및 인증 정보 입력</h3>
+
+<p>아래 정보를 정확히 입력합니다:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>서버 이름</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">FRED_Economic_MCP</code></td>
+    </tr>
+    <tr>
+      <td><strong>서버 설명</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">미국 연방준비제도(FRED) 경제 데이터를 조회하는 MCP 서버입니다. 소비 수요, 원자재·환율, 거시경제, 산업 생산, EV·에너지 시장, 로봇·액추에이터 등 6개 테마별 경제지표를 제공하고, 키워드로 81만개 이상의 시계열을 검색할 수 있습니다.</code></td>
+    </tr>
+    <tr>
+      <td><strong>서버 URL</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">https://fred-mcp-python.purplehill-ba85d6d0.koreacentral.azurecontainerapps.io/mcp</code></td>
+    </tr>
+    <tr>
+      <td><strong>인증</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">API 키</code></td>
+    </tr>
+    <tr>
+      <td><strong>인증 유형</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">헤더</code></td>
+    </tr>
+    <tr>
+      <td><strong>헤더 이름</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">x-fred-api-key</code></td>
+    </tr>
+    <tr>
+      <td><strong>API 키 값</strong></td>
+      <td><em>(실습 시 별도 안내)</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>입력이 완료되면 <strong>만들기</strong> 를 클릭합니다.</p>
+
+<blockquote>
+  <p><strong>서버 설명이 중요한 이유:</strong> Copilot Studio의 생성 AI 오케스트레이터는 서버 설명을 참고하여 언제 이 도구를 호출할지 판단합니다. 설명이 충분히 구체적이어야 에이전트가 올바르게 동작합니다.</p>
+</blockquote>
+
+<h3 id="2-3-도구-목록-확인">2-3. 도구 목록 확인</h3>
+
+<p>연결 성공 시 아래 7개 도구가 표시됩니다:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>도구명</th>
+      <th>설명</th>
+      <th>주요 시리즈</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">get-consumer-demand</code></td>
+      <td>소비 수요 지표</td>
+      <td>PCEDG(내구재 소비), UMCSENT(소비자심리), HOUST(주택착공), HSN1F(주택판매), TOTALSA(자동차판매)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">get-cost-pressure</code></td>
+      <td>원가/마진 압박 지표</td>
+      <td>DEXKOUS(원/달러 환율), DCOILWTICO(WTI 유가), WPUSI019011(구리 PPI), WPU101(철강 PPI), PCU325211325211(합성수지 PPI)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">get-macro-environment</code></td>
+      <td>거시경제 환경</td>
+      <td>GDPC1(실질 GDP), CPIAUCSL(CPI), CUSR0000SAD(내구재 CPI), FEDFUNDS(연방기금금리), UNRATE(실업률), DGS10(10년 국채), DGS2(2년 국채)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">get-industry-production</code></td>
+      <td>산업/제조 동향</td>
+      <td>INDPRO(산업생산지수), DGORDER(내구재 주문), AMTMNO(제조업 주문), IPMAN(제조업 생산)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">get-ev-energy-market</code></td>
+      <td>EV/에너지 시장</td>
+      <td>TOTALSA(자동차판매), AISRSA(재고비율), DCOILWTICO(유가), GASREGW(휘발유가), IPG3361T3S(자동차생산)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">get-robotics-actuator</code></td>
+      <td>로봇 &amp; 액추에이터</td>
+      <td>NASDAQNQROBO(AI로보틱스 글로벌), NASDAQNQROBOUS(AI로보틱스 미국), PCU333995333995(액추에이터 PPI), WPU114303(액추에이터·부품 PPI), IPG3332S(산업기계 생산), A33ENO(산업기계 주문), IPG3336S(동력전달장비 생산), ATGPNO(동력전달장비 주문)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">search-fred-series</code></td>
+      <td>FRED 시리즈 검색</td>
+      <td>키워드로 81만+ 시계열 탐색</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-4-도구-파라미터">2-4. 도구 파라미터</h3>
+
+<p>모든 테마 도구(<code class="language-plaintext highlighter-rouge">get-*</code>)는 동일한 파라미터를 사용합니다:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>파라미터</th>
+      <th>타입</th>
+      <th>기본값</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">indicator</code></td>
+      <td>string (선택)</td>
+      <td>전체 조회</td>
+      <td>특정 시리즈 ID만 조회 (예: <code class="language-plaintext highlighter-rouge">FEDFUNDS</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">period</code></td>
+      <td>enum</td>
+      <td><code class="language-plaintext highlighter-rouge">1y</code></td>
+      <td>조회 기간: <code class="language-plaintext highlighter-rouge">6m</code>, <code class="language-plaintext highlighter-rouge">1y</code>, <code class="language-plaintext highlighter-rouge">3y</code>, <code class="language-plaintext highlighter-rouge">5y</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">units</code></td>
+      <td>enum</td>
+      <td><code class="language-plaintext highlighter-rouge">lin</code></td>
+      <td>데이터 변환: <code class="language-plaintext highlighter-rouge">lin</code>(원본), <code class="language-plaintext highlighter-rouge">chg</code>(변화량), <code class="language-plaintext highlighter-rouge">pch</code>(변화율%), <code class="language-plaintext highlighter-rouge">pc1</code>(전년대비%), <code class="language-plaintext highlighter-rouge">pca</code>(연율화), <code class="language-plaintext highlighter-rouge">log</code>(자연로그)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">search-fred-series</code> 도구의 파라미터:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>파라미터</th>
+      <th>타입</th>
+      <th>기본값</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">query</code></td>
+      <td>string (필수)</td>
+      <td>—</td>
+      <td>검색 키워드 (예: <code class="language-plaintext highlighter-rouge">semiconductor production</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">limit</code></td>
+      <td>integer</td>
+      <td><code class="language-plaintext highlighter-rouge">10</code></td>
+      <td>검색 결과 수 (1~50)</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>실습 테스트:</strong> 에이전트 테스트 창에서 “미국 실업률 최근 3년 추이를 보여줘”라고 입력하면 <code class="language-plaintext highlighter-rouge">get-macro-environment(indicator="UNRATE", period="3y")</code> 가 호출되어야 합니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="3-thinq-mcp-서버-연결">3. ThinQ MCP 서버 연결</h2>
+
+<h3 id="3-1-thinq-mcp-소개">3-1. ThinQ MCP 소개</h3>
+
+<p><strong>ThinQ MCP</strong> 는 LG ThinQ 플랫폼에 등록된 IoT 가전 제품을 조회·제어하는 MCP 서버입니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>대상 기기</strong></td>
+      <td>에어컨, 세탁기, 냉장고, 공기청정기, 건조기 등</td>
+    </tr>
+    <tr>
+      <td><strong>제공 기능</strong></td>
+      <td>디바이스 조회, 상태 확인, 제어 명령, 에너지 사용량 조회</td>
+    </tr>
+    <tr>
+      <td><strong>전송 방식</strong></td>
+      <td>Streamable HTTP</td>
+    </tr>
+    <tr>
+      <td><strong>배포 환경</strong></td>
+      <td>Azure Container Apps (Korea Central)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="3-2-서버-url-및-인증-정보-입력">3-2. 서버 URL 및 인증 정보 입력</h3>
+
+<p><strong>+ 도구 추가</strong> → <strong>MCP</strong> → <strong>모델 컨텍스트 프로토콜(MCP)</strong> 를 다시 선택하고, 아래 정보를 입력합니다:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>서버 이름</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">ThinQ_MCP</code></td>
+    </tr>
+    <tr>
+      <td><strong>서버 설명</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">LG ThinQ IoT 플랫폼의 스마트 가전 제품을 조회하고 제어하는 MCP 서버입니다. 에어컨, 세탁기, 냉장고 등의 상태 확인, 제어 명령 실행, 에너지 사용량 조회 기능을 제공합니다.</code></td>
+    </tr>
+    <tr>
+      <td><strong>서버 URL</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">https://thinqmcp-http-typescript.kindmoss-12649bc0.koreacentral.azurecontainerapps.io/mcp</code></td>
+    </tr>
+    <tr>
+      <td><strong>인증</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">API 키</code></td>
+    </tr>
+    <tr>
+      <td><strong>인증 유형</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">헤더</code></td>
+    </tr>
+    <tr>
+      <td><strong>헤더 이름</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">x-pat-token</code></td>
+    </tr>
+    <tr>
+      <td><strong>API 키 값</strong></td>
+      <td><em>(실습 시 별도 안내)</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>입력이 완료되면 <strong>만들기</strong> 를 클릭합니다.</p>
+
+<h3 id="3-3-도구-목록-확인">3-3. 도구 목록 확인</h3>
+
+<p>연결 성공 시 아래 도구들이 표시됩니다:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>도구명</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getDevices</code></td>
+      <td>등록된 전체 디바이스 목록 조회</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getDeviceStatus</code></td>
+      <td>특정 디바이스의 현재 상태 조회 (운전모드, 온도, 동작여부 등)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">controlDevice</code></td>
+      <td>디바이스 제어 명령 실행 (에어컨 온도 변경, 세탁기 시작 등)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getEnergyUsage</code></td>
+      <td>기기별 에너지 사용량 조회</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="3-4-도구-파라미터">3-4. 도구 파라미터</h3>
+
+<p><code class="language-plaintext highlighter-rouge">getDeviceStatus</code> / <code class="language-plaintext highlighter-rouge">controlDevice</code> / <code class="language-plaintext highlighter-rouge">getEnergyUsage</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>파라미터</th>
+      <th>타입</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">deviceId</code></td>
+      <td>string (필수)</td>
+      <td>디바이스 고유 ID (<code class="language-plaintext highlighter-rouge">getDevices</code>로 조회)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">controlDevice</code> 추가 파라미터:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>파라미터</th>
+      <th>타입</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">command</code></td>
+      <td>string (필수)</td>
+      <td>제어 명령 (예: <code class="language-plaintext highlighter-rouge">setTemperature</code>, <code class="language-plaintext highlighter-rouge">start</code>, <code class="language-plaintext highlighter-rouge">stop</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td>string/number</td>
+      <td>명령에 따른 값 (예: 온도 <code class="language-plaintext highlighter-rouge">24</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>실습 테스트:</strong> “등록된 가전 제품 목록을 보여줘”라고 입력하면 <code class="language-plaintext highlighter-rouge">getDevices</code>가 호출됩니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="4-전체-도구-확인">4. 전체 도구 확인</h2>
+
+<p>모든 도구 추가가 완료되면, 에이전트의 <strong>도구</strong> 섹션에서 아래와 같이 확인할 수 있어야 합니다:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>도구 그룹</th>
+      <th>도구 수</th>
+      <th>유형</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Work IQ Mail MCP</td>
+      <td>4~5개</td>
+      <td>Pre-built</td>
+    </tr>
+    <tr>
+      <td>Work IQ Teams MCP</td>
+      <td>3~4개</td>
+      <td>Pre-built</td>
+    </tr>
+    <tr>
+      <td>Work IQ Copilot MCP</td>
+      <td>1~2개</td>
+      <td>Pre-built</td>
+    </tr>
+    <tr>
+      <td>FRED Economic MCP</td>
+      <td>7개</td>
+      <td>Custom</td>
+    </tr>
+    <tr>
+      <td>ThinQ MCP</td>
+      <td>4개</td>
+      <td>Custom</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="5-통합-테스트">5. 통합 테스트</h2>
+
+<h3 id="5-1-단일-도구-테스트--기본-동작-확인">5-1. 단일 도구 테스트 — 기본 동작 확인</h3>
+
+<p>에이전트 테스트 채팅에서 각 도구가 정상 호출되는지 <strong>간단한 프롬프트</strong>부터 확인합니다:</p>
+
+<p><strong>FRED 거시경제 (get-macro-environment):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 파라미터</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>“미국 실업률 추이를 보여줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=UNRATE, period=1y</code></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>“CPI 3년 추이를 전년대비 변화율로 보여줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=CPIAUCSL, period=3y, units=pc1</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>“연방기금금리 5년 데이터를 원본 수치로 조회해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=FEDFUNDS, period=5y, units=lin</code></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>“10년물과 2년물 국채금리를 비교해서 장단기 금리 역전 여부를 확인해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator</code> 없이 전체 조회 → DGS10, DGS2 비교</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>“내구재 CPI(CUSR0000SAD) 3년 추이를 보여줘. 모니터·디스플레이 제품 가격이 오르고 있는지 분석해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=CUSR0000SAD, period=3y</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>FRED 소비 수요 (get-consumer-demand):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 파라미터</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>6</td>
+      <td>“미국 내구재 소비지출 최근 1년 데이터를 보여줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=PCEDG, period=1y</code></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>“소비자심리지수 3년 추이를 전년대비 변화율로 보여줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=UMCSENT, period=3y, units=pc1</code></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>“신규주택착공건수가 늘고 있어? 최근 6개월 데이터로 알려줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=HOUST, period=6m</code></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>“미국 자동차 총판매량 전년대비 변화율을 보여줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=TOTALSA, units=pc1</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>FRED 원가 압박 (get-cost-pressure):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 파라미터</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>“원/달러 환율 최근 6개월 추이를 알려줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=DEXKOUS, period=6m</code></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>“WTI 원유 가격이 최근 어떻게 움직이고 있어?”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=DCOILWTICO</code></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>“구리 PPI와 철강 PPI를 비교해서 보여줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator</code> 없이 전체 조회</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>“합성수지 PPI 추이를 보여줘. 모니터 하우징·플라스틱 부품 원가가 어떻게 변하고 있는지 분석해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=PCU325211325211</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>FRED 산업/제조 (get-industry-production):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 파라미터</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>14</td>
+      <td>“미국 산업생산지수 3년 추이를 전년동기대비 변화율로 조회해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=INDPRO, period=3y, units=pc1</code></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>“내구재 신규주문이 늘고 있어? IT 장비·디스플레이 관련 B2B 주문 회복 여부를 분석해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=DGORDER</code></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>“제조업 생산지수와 신규주문을 종합해서 공장 가동 상황을 분석해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator</code> 없이 전체 조회</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>FRED EV/에너지 (get-ev-energy-market):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 파라미터</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>17</td>
+      <td>“자동차 재고/판매 비율이 어떻게 돼? 재고가 쌓이고 있어?”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=AISRSA</code></td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>“WTI 유가와 휘발유 소매가격을 함께 보여줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator</code> 없이 전체 조회</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>FRED 시리즈 검색 (search-fred-series):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 키워드</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>19</td>
+      <td>“반도체 생산 관련 FRED 시리즈를 검색해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">semiconductor production</code></td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>“computer and electronic product manufacturing 관련 시리즈를 검색해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">computer electronic product manufacturing</code></td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>“display panel 또는 flat panel 관련 데이터가 FRED에 있는지 검색해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">display panel</code> / <code class="language-plaintext highlighter-rouge">flat panel</code></td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>“information processing equipment 관련 지표를 찾아줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">information processing equipment</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>FRED 로봇 &amp; 액추에이터 (get-robotics-actuator):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 파라미터</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>23</td>
+      <td>“로봇·액추에이터 관련 경제 지표를 전체 조회해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator</code> 없이 전체 조회</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>“Nasdaq AI 로보틱스 지수 최근 3년 추이를 보여줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=NASDAQNQROBO, period=3y</code></td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>“액추에이터 PPI가 최근 어떻게 변했어? 수요가 늘고 있는지 판단해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=PCU333995333995</code></td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>“산업기계 신규주문과 생산지수를 보여줘. 로봇 설비 수요가 회복되고 있는지 확인해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator</code> 없이 전체 조회 → IPG3332S, A33ENO 확인</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>“동력전달장비 신규주문 5년 데이터를 전년대비 변화율로 보여줘. 서보모터·감속기 수요 추세를 파악하고 싶어”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=ATGPNO, period=5y, units=pc1</code></td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>“유체동력 실린더·액추에이터 PPI 전년대비 변화율을 보여줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">indicator=WPU114303, units=pc1</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Work IQ (메일/Teams/Copilot):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 호출 도구</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>29</td>
+      <td>“최근 1주일간 받은 메일 중 ‘시장 분석’ 관련 메일을 정리해줘”</td>
+      <td>Work IQ Mail</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>“Teams에서 ‘디스플레이 원가’ 키워드로 최근 대화를 검색해줘”</td>
+      <td>Work IQ Teams</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>“최근 받은 메일 중 컨설팅 보고서나 시장 리포트가 있는지 찾아줘”</td>
+      <td>Work IQ Mail</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>ThinQ (IoT):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 호출 도구</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>32</td>
+      <td>“등록된 가전 제품 목록을 보여줘”</td>
+      <td>ThinQ <code class="language-plaintext highlighter-rouge">getDevices</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="5-2-fred-복합-분석-테스트--다중-도구-조합">5-2. FRED 복합 분석 테스트 — 다중 도구 조합</h3>
+
+<p>하나의 질문으로 <strong>여러 FRED 도구가 순차적으로 호출</strong>되는지 확인합니다. 난이도(⭐) 순서로 정렬되어 있습니다.</p>
+
+<p><strong>⭐ 2개 도구 조합 (기본):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 호출 순서</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>“환율과 원유가격을 함께 분석해서 수입 원가 영향을 알려줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-cost-pressure</code> (DEXKOUS + DCOILWTICO) → 종합</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>“GDP와 실업률을 종합해서 미국 경기 상황을 평가해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-macro-environment</code> (GDPC1 + UNRATE) → 종합</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>“구리·합성수지 PPI와 환율을 함께 보고, 디스플레이 부품 수입 원가 압박 수준을 진단해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-cost-pressure</code> (DEXKOUS + WPUSI019011 + PCU325211325211) → 종합</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>“내구재 CPI와 내구재 소비지출을 비교해서, 모니터·디스플레이 가격 대비 소비가 늘고 있는지 분석해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-macro-environment</code> (CUSR0000SAD) + <code class="language-plaintext highlighter-rouge">get-consumer-demand</code> (PCEDG) → 비교</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>“소비자심리지수와 내구재 소비를 종합해서 IT 전자제품(모니터, TV) 소비 전망을 분석해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-consumer-demand</code> (UMCSENT + PCEDG) → 전망</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>“AI 로보틱스 지수와 액추에이터 PPI를 함께 분석해서 Physical AI 시장의 시장 심리와 실물 수요를 비교해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-robotics-actuator</code> (NASDAQNQROBO + PCU333995333995) → 비교</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>“산업기계 신규주문과 액추에이터 PPI를 종합해서 로봇 자동화 설비 투자 확대 시점인지 판단해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-robotics-actuator</code> (A33ENO + PCU333995333995) → 투자 판단</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>⭐⭐ 3개 도구 조합 (중급):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 호출 순서</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>6</td>
+      <td>“환율·구리·합성수지 PPI로 원가 추세를 보고, 내구재 CPI로 가격 전가 여부를 확인해서, 디스플레이 마진 전망을 분석해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-cost-pressure</code> → <code class="language-plaintext highlighter-rouge">get-macro-environment</code> (CUSR0000SAD) → 마진 분석</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>“금리 역전 여부, GDP, 실업률을 확인하고, 산업생산지수와 내구재 주문 추이를 더해서 경기 침체 가능성과 제조업 영향을 평가해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-macro-environment</code> → <code class="language-plaintext highlighter-rouge">get-industry-production</code> → 종합 판단</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>“주택착공·소비자심리·내구재 소비지출을 종합해서 가정용 모니터·TV 디스플레이 수요 전망을 분석해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-consumer-demand</code> (HOUST + UMCSENT + PCEDG) → 수요 전망</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>“금리·GDP 환경을 확인하고, 내구재 주문 추이를 더해서 B2B 디스플레이 설비 투자 환경을 진단해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-macro-environment</code> → <code class="language-plaintext highlighter-rouge">get-industry-production</code> (DGORDER) → B2B 투자 판단</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>“로봇·액추에이터 지표와 산업생산·거시경제 데이터를 종합해서 산업용 로봇 설비투자 환경을 평가해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-robotics-actuator</code> → <code class="language-plaintext highlighter-rouge">get-industry-production</code> → <code class="language-plaintext highlighter-rouge">get-macro-environment</code> → 종합 평가</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>“동력전달장비 신규주문·AI 로보틱스 지수와 금리를 함께 분석해서 서보모터·감속기 시장 전망을 진단해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-robotics-actuator</code> (ATGPNO + NASDAQNQROBO) → <code class="language-plaintext highlighter-rouge">get-macro-environment</code> (FEDFUNDS) → 전망</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>⭐⭐⭐ 4개+ 도구 조합 (고급):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 호출 순서</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>“환율·구리·합성수지 PPI로 디스플레이 원가 추세를 보고, 내구재 CPI와 소비자심리를 함께 분석해서 모니터 시장 수익성 전망을 평가해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-cost-pressure</code> → <code class="language-plaintext highlighter-rouge">get-macro-environment</code> → <code class="language-plaintext highlighter-rouge">get-consumer-demand</code> → 수익성 종합</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>“금리 역전 여부, GDP, 실업률, 산업생산지수를 종합하고, 환율·원자재 PPI까지 더해서 올해 디스플레이 제조업 투자 환경을 평가해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-macro-environment</code> → <code class="language-plaintext highlighter-rouge">get-industry-production</code> → <code class="language-plaintext highlighter-rouge">get-cost-pressure</code> → 종합 판단</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>“computer and electronic product manufacturing 시리즈를 검색한 후, 관련 지표와 환율·원자재 데이터, 내구재 CPI까지 종합해서 디스플레이 산업 경기를 종합 진단해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">search-fred-series</code> → <code class="language-plaintext highlighter-rouge">get-cost-pressure</code> → <code class="language-plaintext highlighter-rouge">get-macro-environment</code> → 종합 진단</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>“로봇·액추에이터 전체 지표를 조회하고, 환율·원자재 PPI·금리·산업생산 데이터를 더해서, Physical AI 사업 투자 환경을 종합 평가하는 브리핑을 만들어줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">get-robotics-actuator</code> → <code class="language-plaintext highlighter-rouge">get-cost-pressure</code> → <code class="language-plaintext highlighter-rouge">get-macro-environment</code> → <code class="language-plaintext highlighter-rouge">get-industry-production</code> → 종합 브리핑</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="5-3-fred--work-iq-복합-분석-테스트--거시경제--내부-커뮤니케이션">5-3. FRED + Work IQ 복합 분석 테스트 — 거시경제 × 내부 커뮤니케이션</h3>
+
+<p>FRED 경제 데이터와 <strong>메일·Teams 대화·컨설팅 자료</strong>를 결합하여 실전 업무 판단에 활용하는 시나리오입니다.</p>
+
+<p><strong>⭐ 간단 — FRED + 메일/채팅 조합:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 동작</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>“최근 받은 메일 중 ‘시장 분석’ 관련 메일을 정리하고, 미국 실업률과 GDP 추이도 함께 보여줘”</td>
+      <td>Work IQ Mail → <code class="language-plaintext highlighter-rouge">get-macro-environment</code> → 병렬 정보 제공</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>“Teams에서 ‘원자재 가격’ 관련 최근 대화를 검색하고, 실제 구리·철강·합성수지 PPI 추이를 함께 보여줘”</td>
+      <td>Work IQ Teams → <code class="language-plaintext highlighter-rouge">get-cost-pressure</code> → 대화 내용 vs 실제 데이터 비교</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>“최근 메일에서 ‘환율’ 키워드가 포함된 내용을 찾아주고, 원/달러 환율 최근 6개월 데이터도 조회해줘”</td>
+      <td>Work IQ Mail → <code class="language-plaintext highlighter-rouge">get-cost-pressure</code> (DEXKOUS) → 메일 내용과 실제 추이 비교</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>⭐⭐ 중급 — 내부 자료 검증 + 경제 데이터 교차 분석:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 동작</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4</td>
+      <td>“최근 받은 컨설팅 보고서 메일을 찾아서 주요 내용을 요약하고, 보고서에 언급된 경제지표를 FRED에서 실제 데이터로 검증해줘”</td>
+      <td>Work IQ Mail (컨설팅 메일 검색) → FRED 관련 도구 → 교차 검증</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>“Teams에서 ‘디스플레이 시장’ 관련 최근 논의를 검색하고, 내구재 소비·소비자심리·내구재 CPI 데이터로 팀 논의 내용을 팩트체크해줘”</td>
+      <td>Work IQ Teams → <code class="language-plaintext highlighter-rouge">get-consumer-demand</code> + <code class="language-plaintext highlighter-rouge">get-macro-environment</code> → 팩트체크</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>“원자재 가격 변동에 따른 가격 정책을 재검토해줘. 관련 내부 메일과 Teams 대화를 찾고, FRED 환율·원자재 PPI 데이터로 근거를 보강해줘”</td>
+      <td>Work IQ Mail + Teams → <code class="language-plaintext highlighter-rouge">get-cost-pressure</code> → 가격 정책 검토</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>“최근 메일에서 ‘북미 시장’ 관련 보고를 찾아 정리하고, GDP·실업률·금리 데이터를 더해서 보고 내용이 현재 경기 상황과 부합하는지 평가해줘”</td>
+      <td>Work IQ Mail → <code class="language-plaintext highlighter-rouge">get-macro-environment</code> → 보고서 vs 실제 경기 비교</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>⭐⭐⭐ 고급 — 종합 판단 + 커뮤니케이션 산출물:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>테스트 질문</th>
+      <th>기대 동작</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>8</td>
+      <td>“최근 보고 메일을 정리하고, 환율·원자재 PPI·내구재 CPI·산업생산지수를 조회해서 시장 상황과 비교 분석한 뒤, 주요 리스크 포인트를 정리해서 Teams에 카드로 공유해줘”</td>
+      <td>Work IQ Mail → <code class="language-plaintext highlighter-rouge">get-cost-pressure</code> + <code class="language-plaintext highlighter-rouge">get-macro-environment</code> + <code class="language-plaintext highlighter-rouge">get-industry-production</code> → 리스크 분석 → Teams 카드</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>“Teams에서 ‘디스플레이 원가 상승’ 관련 논의를 검색하고, 구리·합성수지 PPI와 환율 데이터로 원가 압박 수준을 분석해서, 대응 방안 의견 메일을 작성해줘”</td>
+      <td>Work IQ Teams → <code class="language-plaintext highlighter-rouge">get-cost-pressure</code> → 분석 → Work IQ Mail (메일 작성)</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>“내부 컨설팅 자료 메일과 Teams 논의를 종합 검색하고, FRED에서 GDP·금리·내구재 주문·환율 데이터를 조회해서, 올해 디스플레이 사업부 투자 환경 브리핑 메일을 작성해줘”</td>
+      <td>Work IQ Mail + Teams → <code class="language-plaintext highlighter-rouge">get-macro-environment</code> + <code class="language-plaintext highlighter-rouge">get-industry-production</code> + <code class="language-plaintext highlighter-rouge">get-cost-pressure</code> → 브리핑 메일 작성</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>“신규 시장 진출에 대한 판단 의견 메일을 작성해줘. 관련 내부 자료를 메일과 Teams에서 찾고, GDP·금리·소비자심리·산업생산지수·환율 데이터를 모두 종합해서 근거를 만들어줘”</td>
+      <td>Work IQ Mail + Teams → <code class="language-plaintext highlighter-rouge">get-macro-environment</code> + <code class="language-plaintext highlighter-rouge">get-consumer-demand</code> + <code class="language-plaintext highlighter-rouge">get-industry-production</code> + <code class="language-plaintext highlighter-rouge">get-cost-pressure</code> → 판단 메일 작성</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>“computer and electronic product manufacturing 시리즈를 FRED에서 검색하고, 관련 Teams 논의와 메일 보고 내용을 함께 정리해서, 디스플레이 산업 경기 전망 보고서를 Teams 카드로 공유해줘”</td>
+      <td><code class="language-plaintext highlighter-rouge">search-fred-series</code> → Work IQ Teams + Mail → 종합 보고 → Teams 카드</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>“Teams에서 ‘로봇’ 또는 ‘자동화’ 관련 논의를 검색하고, 로봇·액추에이터 지표와 산업생산·금리 데이터를 종합해서, Physical AI 사업 투자 환경 브리핑 메일을 작성해줘”</td>
+      <td>Work IQ Teams → <code class="language-plaintext highlighter-rouge">get-robotics-actuator</code> + <code class="language-plaintext highlighter-rouge">get-industry-production</code> + <code class="language-plaintext highlighter-rouge">get-macro-environment</code> → 브리핑 메일 작성</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="5-4-복합-시나리오--전체-워크플로우-테스트">5-4. 복합 시나리오 — 전체 워크플로우 테스트</h3>
+
+<p>에이전트의 <strong>지침(Instructions)에 정의한 업무 시나리오</strong>가 end-to-end로 동작하는지 확인합니다:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>테스트 질문</th>
+      <th>기대 동작</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>“북미 시장 전략을 검토해줘”</td>
+      <td>SharePoint 검색 → FRED 조회 → 갭 분석 → Teams 어댑티브 카드</td>
+    </tr>
+    <tr>
+      <td>“원자재 가격 변동에 따른 가격 정책을 재검토해줘”</td>
+      <td>SharePoint 검색 → FRED 원가지표 → 마진 분석 → Teams 알림</td>
+    </tr>
+    <tr>
+      <td>“최근 보고 메일을 정리하고 시장 상황과 비교해줘”</td>
+      <td>Mail 조회 → FRED 검증 → 리스크 분석 → Teams 알림</td>
+    </tr>
+    <tr>
+      <td>“신규 시장 진출에 대한 판단 의견 메일을 작성해줘”</td>
+      <td>FRED + SharePoint → 판단 메일 draft → Teams 알림</td>
+    </tr>
+    <tr>
+      <td>“로봇·자동화 설비 투자를 확대할 시점인지 판단해줘”</td>
+      <td>FRED Tool 6 (로봇·액추에이터) + Tool 3 (금리) + Tool 4 (산업생산) → 투자 판단</td>
+    </tr>
+    <tr>
+      <td>“Physical AI 사업 관련 투자 환경 브리핑을 만들어줘”</td>
+      <td>FRED Tool 6 + Tool 2 (환율·원자재) + Tool 3 (거시경제) → 브리핑 → Teams 카드</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="-part-3-완료-체크리스트">✅ Part 3 완료 체크리스트</h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />FRED Economic MCP가 연결되고 7개 도구가 활성화되었는가?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />ThinQ MCP가 연결되고 4개 도구가 활성화되었는가?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />단일 도구 테스트가 모두 통과하는가?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />복합 시나리오 테스트에서 여러 도구가 순차적으로 호출되는가?</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Teams 어댑티브 카드 알림이 정상 발송되는가?</li>
+</ul>
+
+<p><br /></p>
+
+<p>다음 단계에서 메일 수신 트리거를 추가합니다. ➡️ <a href="/Agent_Blog/chapters/sp1-4-trigger/">Part 4: 메일 수신 트리거 추가</a></p>
+
+          </div>
+
+          <nav class="chapter-pagination">
+            
+              
+              
+                
+                  
+                
+                  
+                
+                  
+                    
+                      
+                      <a href="/Agent_Blog/chapters/sp1-2-prebuilt-tools/" class="pagination-link prev">
+                        <span class="pagination-direction">← 이전</span>
+                        <span class="pagination-title">Pre-built 도구</span>
+                      </a>
+                    
+                    
+                      
+                      <a href="/Agent_Blog/chapters/sp1-4-trigger/" class="pagination-link next">
+                        <span class="pagination-direction">다음 →</span>
+                        <span class="pagination-title">트리거 추가</span>
+                      </a>
+                    
+                  
+                
+                  
+                
+              
+            
+          </nav>
+        </article>
+      </div>
+      <footer class="site-footer">
+        <p>© 2026 Microsoft Copilot Agentic Blog · Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="mobile-overlay" id="overlay"></div>
+
+  <script>
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+      });
+      overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+      });
+    }
+
+    // Code copy button
+    document.querySelectorAll('.chapter-body pre').forEach(pre => {
+      const btn = document.createElement('button');
+      btn.className = 'code-copy-btn';
+      btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none"><path d="M4 4H2a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/></svg><span>Copy</span>';
+      btn.addEventListener('click', () => {
+        const code = pre.querySelector('code');
+        const text = code ? code.textContent : pre.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          btn.classList.add('copied');
+          btn.querySelector('span').textContent = 'Copied!';
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.querySelector('span').textContent = 'Copy';
+          }, 2000);
+        });
+      });
+      pre.appendChild(btn);
+    });
+  </script>
+</body>
+</html>

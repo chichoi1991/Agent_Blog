@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Prompt 도구 추가 | Microsoft Copilot Agentic Blog</title>
+  <link rel="stylesheet" href="/Agent_Blog/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/Agent_Blog/" class="header-logo">
+        <svg class="logo-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Microsoft Copilot Agentic Blog</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/Agent_Blog/">Home</a>
+        <a href="https://copilotstudio.microsoft.com" target="_blank">Copilot Studio 접속하기 ↗</a>
+        <a href="https://github.com/chichoi1991/Agent_Blog/tree/master/_chapters" target="_blank">Github 원본 보기↗</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="메뉴 열기">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="site-wrapper">
+    <aside class="site-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">📖 목차</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="/Agent_Blog/" class="sidebar-link">
+          <span class="sidebar-icon">🏠</span> Home
+        </a>
+
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">📘</span>
+              <span class="sidebar-label">Copilot Studio 실무 가이드</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  <a href="/Agent_Blog/chapters/ch0-guide-premise/" class="sidebar-link sub ">
+                    <span class="sidebar-label">0. 가이드의 전제</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch1-overview/" class="sidebar-link sub ">
+                    <span class="sidebar-label">1. 개요 및 접속</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch2-ui-overview/" class="sidebar-link sub ">
+                    <span class="sidebar-label">2. 화면 구성 이해</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch3-semi-dev-agent/" class="sidebar-link sub ">
+                    <span class="sidebar-label">3. 반개발형 Agent</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch4-external-integration/" class="sidebar-link sub ">
+                    <span class="sidebar-label">4. 외부 시스템 연동</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch5-selection-guide/" class="sidebar-link sub ">
+                    <span class="sidebar-label">5. 선택 가이드</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch6-deployment/" class="sidebar-link sub ">
+                    <span class="sidebar-label">6. 배포 및 범위 설정</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch7-org-agent/" class="sidebar-link sub ">
+                    <span class="sidebar-label">7. 조직 공용 Agent</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch8-references/" class="sidebar-link sub ">
+                    <span class="sidebar-label">8. 참고 자료</span>
+                  </a>
+                
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section open">
+            <button class="sidebar-section-toggle active" aria-expanded="true" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">🛠️</span>
+              <span class="sidebar-label">핸즈온 워크샵</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws1-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">기초편 #1: 블로그 포스트 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws1-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 생성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-2-knowledge/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 참조 자료 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-3-tool-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 도구: MCP 커넥터</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-4-tool-plugin/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 도구: 플러그인 커넥터</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-5-publish/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. 게시 및 배포</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws2-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">기초편 #2: 문서검색 & 에스컬레이션</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws2-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. Agent 생성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-2-tool-connector/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 도구: 커넥터</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-3-tool-flow/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 도구: 플로우</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-4-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 트리거 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-5-publish/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. 게시 및 공유</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group open">
+                    <a href="/Agent_Blog/chapters/ws3-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">기초편 #3: 자율동작 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws3-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 생성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-2-knowledge/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 지식 소스 연결</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-3-workiq-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. Work IQ MCP</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-4-external-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 외부 MCP 도구 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-5-ai-prompt/" class="sidebar-link child active">
+                          <span class="sidebar-label">5. AI Prompt 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-6-excel-filter/" class="sidebar-link child ">
+                          <span class="sidebar-label">6. Excel 필터링</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-7-teams-deploy/" class="sidebar-link child ">
+                          <span class="sidebar-label">7. Teams 배포</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws4-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">Agent Builder로 에이전트 만들기</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws4-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 생성 및 지침 작성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws4-2-ref-feature/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 참조자료 및 기능 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws4-3-test-share/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 테스트 및 공유</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws5-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">[리뉴얼] Copilot Studio 기본 기능</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws5-1-agent-intro/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 소개</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-2-instructions/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 기본 지침 설정</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-3-knowledge/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 참조자료 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-4-tool-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. MCP 도구 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-5-tool-connector/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. 커넥터(팀즈 채널 메세지 게시) 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-6-external-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">6. 외부 MCP 도구 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-7-tool-flow/" class="sidebar-link child ">
+                          <span class="sidebar-label">7. 커넥터 연결 플로우</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-8-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">8. 트리거 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-9-ai-prompt/" class="sidebar-link child ">
+                          <span class="sidebar-label">9. 프롬프트 도구 활용법</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-10-excel-filter/" class="sidebar-link child ">
+                          <span class="sidebar-label">10. Excel 데이터 활용</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-11-deploy/" class="sidebar-link child ">
+                          <span class="sidebar-label">11. 배포</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">⭐</span>
+              <span class="sidebar-label">특별 워크샵</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/sp1-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">특별 워크샵: 비즈니스 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/sp1-1-instructions/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 지침 작성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-2-prebuilt-tools/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. Pre-built 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-3-custom-tools/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 커스텀 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-4-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 트리거 추가</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">🔔</span>
+              <span class="sidebar-label">기술 업데이트</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  <a href="/Agent_Blog/chapters/up1-2026h1-updates/" class="sidebar-link sub ">
+                    <span class="sidebar-label">1. 2026 상반기 업데이트</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/up2-mcp-support/" class="sidebar-link sub ">
+                    <span class="sidebar-label">2. MCP 지원</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/up3-agent-builder/" class="sidebar-link sub ">
+                    <span class="sidebar-label">3. Agent Builder 통합</span>
+                  </a>
+                
+              
+            </div>
+          </div>
+        
+      </nav>
+    </aside>
+
+    <main class="site-main">
+      <div class="main-content">
+        <article class="chapter-article">
+          <div class="chapter-header">
+            <div class="chapter-meta">
+              
+                <span class="chapter-badge workshop">Workshop · Step 5</span>
+              
+            </div>
+            <h1 class="chapter-title">AI Prompt 도구 추가</h1>
+            
+            <p class="chapter-desc">기초편 #3: 자율동작 에이전트 - AI Prompt 도구 추가</p>
+            
+          </div>
+
+          <div class="chapter-body">
+            <h2 id="step-5-ai-prompt-도구-추가">Step 5: AI Prompt 도구 추가</h2>
+
+<h1 id="5-ai-prompt-도구-추가-및-html-응답-설계">5. AI Prompt 도구 추가 및 HTML 응답 설계</h1>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td><strong>이전 단계:</strong> <a href="./4.%20ThinQ%20MCP%20도구%20추가.md">4. ThinQ MCP 도구 추가</a></td>
+        <td><strong>다음 단계:</strong> <a href="./6.%20Excel%20데이터%20필터링.md">6. Excel 데이터 필터링 (심화)</a></td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<hr />
+
+<h2 id="ai-prompt-도구generative-actions란">AI Prompt 도구(Generative Actions)란?</h2>
+
+<p>코드 작성, HTML 형식으로 메일 발송의 경우 기본적으로 Agent가 코드를 생성하여 처리할 수 있지만, 이 경우 작업이 수행될 때 마다 항상 새로운 스타일의 코드가 작성됩니다.</p>
+
+<p>이 경우, 오케스트레이션을 위해 할당된 지침의 컨텍스트에 코드 패턴을 입력하는데 많은 토큰이 소모되고, 생성된 코드의 일관성도 보장하기 어렵습니다.</p>
+
+<p><strong>AI Prompt 도구</strong> 는 Copilot Studio에서 사전에 정의한 프롬프트를 에이전트의 도구로 등록하는 기능입니다.</p>
+
+<p>이 도구를 통해 에이전트는 사용자 요청에 따라 이 도구를 호출하여, <strong>고정된 형식의 AI 생성 출력(텍스트·HTML 등)</strong>을 얻을 수 있습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>등록 위치</strong></td>
+      <td>에이전트 → 도구 → AI Prompt</td>
+    </tr>
+    <tr>
+      <td><strong>입력</strong></td>
+      <td>프롬프트 템플릿 + 런타임 변수</td>
+    </tr>
+    <tr>
+      <td><strong>출력</strong></td>
+      <td>AI가 생성한 텍스트 (HTML, Markdown, JSON 등 포맷 자유롭게 지정 가능)</td>
+    </tr>
+    <tr>
+      <td><strong>활용 예시</strong></td>
+      <td>제품 비교표 HTML 생성, 보고서 초안 작성, 요약 카드 생성 등</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="1-ai-prompt-도구-추가">1. AI Prompt 도구 추가</h2>
+
+<h3 id="1-1-도구-추가-시작">1-1. 도구 추가 시작</h3>
+
+<p>에이전트 개요 화면 <strong>도구</strong> 섹션 → <strong>+ 도구 추가</strong> 를 클릭합니다.<br />
+도구 유형 목록에서  <strong>프롬프트</strong> 를 선택합니다.
+<img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20020111.png" alt="1" /></p>
+
+<p><br /></p>
+
+<h3 id="1-2-프롬프트-편집기-구성">1-2. 프롬프트 편집기 구성</h3>
+
+<p>프롬프트 편집기가 열리면 아래 항목을 입력합니다.</p>
+
+<p><strong>도구 이름:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTML_Response_Generator
+</code></pre></div></div>
+
+<h3 id="1-3-입력-변수-정의">1-3. 입력 변수 정의</h3>
+
+<p>프롬프트에서 사용할 입력 변수를 추가합니다.
+변수는 / 를 입력하거나 지침 하단 <strong>입력 변수 추가</strong> 버튼을 클릭하여 생성할 수 있습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>변수명</th>
+      <th>유형</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">content</code></td>
+      <td>텍스트</td>
+      <td>HTML로 변환할 원본 응답 내용</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">card_type</code></td>
+      <td>텍스트</td>
+      <td>카드 유형 (info / warning / product / report)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20021214.png" alt="2" /></p>
+
+<p><br /></p>
+
+<h3 id="1-4-프롬프트-작성">1-4. 프롬프트 작성</h3>
+
+<p>아래 프롬프트를 입력합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>당신은 HTML 카드 생성 전문가입니다. 메일 주제에 따라 적절한 스타일의 Microsoft Teams 적응형 카드 형식으로 HTML을 생성해 주세요.
+
+
+## 입력 정보
+- 카드 유형: 
+- 내용: &lt;h2 id="step-4-외부-mcp-도구-추가"&gt;Step 4: 외부 MCP 도구 추가&lt;/h2&gt;
+
+&lt;h1 id="3-외부-mcp-도구-추가-해외-뉴스-조회-mcp"&gt;3. 외부 MCP 도구 추가: 해외 뉴스 조회 MCP&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;table&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;이전 단계:&lt;/strong&gt; &lt;a href="./3.%20Work%20IQ%20MCP%20도구%20추가.md"&gt;3. Work IQ MCP 도구 추가&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;strong&gt;다음 단계:&lt;/strong&gt; &lt;a href="./5.%20AI%20Prompt%20도구%20추가.md"&gt;5. AI Prompt 도구 추가&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Copilot Studio에서는 앞선 실습과 같이 카탈로그 형식으로 제공되지 않는 기업내부, 사설 MCP 서버에 대해서도 GUI 방식으로 URL과 인증 토큰 입력하면 해당 서버가 제공하는 모든 도구를 에이전트에 추가할 수 있도록 제공합니다.&lt;/p&gt;
+
+&lt;p&gt;이번 실습에서는 사설 MCP 서버인 &lt;strong&gt;외부 뉴스 MCP&lt;/strong&gt; 를 에이전트에 연결하여 키워드, 지역 기반으로 해외에서 제공되는 뉴스 정보를 조회하는 도구로 활용해보겠습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;이 MCP는 &lt;a href="https://newsapi.org/"&gt;NewsAPI.org&lt;/a&gt; 에서 제공하는 API를 활용하여 구축된 MCP 서버 입니다. &lt;br /&gt; 해당 MCP 서버는 Microsoft Korea에서 개발한 MCP 서버로, Azure Container Apps에 배포되어 있기에 리소스 상황에 따라 서비스가 제공되지 않을 수 있습니다. &lt;br /&gt; 만약 연결이 원활하지 않을 경우, &lt;a href="https://github.com/chichoi1991/Demo-MCP-Server/blob/main/News-api-mcp/README.md"&gt;News API MCP 서버 직접 배포 가이드&lt;/a&gt;를 참고하여 직접 배포 후 연결해보시길 권장드립니다. &lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20002502.png" alt="1" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id="news-api-mcp-소개"&gt;News API MCP 소개&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;News API MCP&lt;/strong&gt; 는 &lt;a href="https://newsapi.org/"&gt;NewsAPI.org&lt;/a&gt; API를 기반으로 커스텀으로 작성된 MCP 서버입니다.
+해당 서버를 통해 전 세계 뉴스 정보를 조회할 수 있는 MCP 서버입니다.&lt;br /&gt;
+에이전트에 연결하면 사용자가 자연어로 뉴스 정보를 질의할 때 에이전트가 자동으로 News API MCP를 호출하여 관련된 정보에 대해 답변 및 설정을 진행합니다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;항목&lt;/th&gt;
+      &lt;th&gt;내용&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;언어&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;Python 3.12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;전송 방식&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;stdio + Streamable HTTP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;인증&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;News API Key (&lt;code class="language-plaintext highlighter-rouge"&gt;x-news-api-key&lt;/code&gt; 헤더)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;배포&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;azd up&lt;/code&gt; → Azure Container Apps&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id="도구"&gt;도구&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;도구명&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;search-news&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;키워드로 뉴스 기사 검색&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;get-top-headlines&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;국가/카테고리별 톱 헤드라인&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;get-news-sources&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;뉴스 소스 목록 조회&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;📄 상세: &lt;a href="https://github.com/chichoi1991/Demo-MCP-Server/tree/master/News-api-mcp"&gt;News-api-mcp/README.md&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id="1-mcp-도구-추가-시작"&gt;1. MCP 도구 추가 시작&lt;/h2&gt;
+
+&lt;p&gt;에이전트 개요 화면에서 &lt;strong&gt;도구&lt;/strong&gt; 섹션으로 이동 후 &lt;strong&gt;+ 도구 추가&lt;/strong&gt; 를 클릭합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/Agent_Blog/assets/image/ws3/4-1.png" alt="4-1" /&gt;&lt;/p&gt;
+
+&lt;p&gt;도구 추가 팝업에서 &lt;strong&gt;MCP&lt;/strong&gt; 탭 또는 &lt;strong&gt;모델 컨텍스트 프로토콜(MCP)&lt;/strong&gt; 옵션을 선택합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/Agent_Blog/assets/image/ws3/4-2.png" alt="4-2" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id="2-thinq-mcp-서버-연결"&gt;2. ThinQ MCP 서버 연결&lt;/h2&gt;
+
+&lt;h3 id="2-1-서버-url-및-정보-입력"&gt;2-1. 서버 URL 및 정보 입력&lt;/h3&gt;
+
+&lt;p&gt;아래 실습을 위한  &lt;strong&gt;ThinQ MCP 서버 URL&lt;/strong&gt; 을 입력합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;b&gt;중요!&lt;/b&gt; 이 MCP는 &lt;a href="https://newsapi.org/"&gt;NewsAPI.org&lt;/a&gt; 에서 제공하는 API를 활용하여 구축된 MCP 서버 입니다. &lt;br /&gt; 해당 MCP 서버는 Microsoft Korea에서 개발한 MCP 서버로, Azure Container Apps에 배포되어 있기에 리소스 상황에 따라 서비스가 제공되지 않을 수 있습니다. &lt;br /&gt; 만약 연결이 원활하지 않을 경우, &lt;a href="https://github.com/chichoi1991/Demo-MCP-Server/blob/main/News-api-mcp/README.md"&gt;News API MCP 서버 직접 배포 가이드&lt;/a&gt;를 참고하여 직접 배포 후 연결해보시길 권장드립니다. &lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;항목&lt;/th&gt;
+      &lt;th&gt;값&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;서버 이름&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;News_API_MCP_[이름]&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;에이전트 내에서 도구를 식별하기 위한 이름&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;서버 설명&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;전 세계 뉴스를 AI 에이전트에서 검색하고 활용할 수 있는 MCP(Model Context Protocol) 서버입니다. News API를 통해 뉴스 기사 검색, 톱 헤드라인 조회, 뉴스 소스 목록 조회 기능을 제공합니다.&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;에이전트 내에서 도구를 식별하기 위한 설명 입니다. 이 MCP 서버가 제공하는 도구 및 시나리오를 상세하게 적어야 에이전트가 올바르게 동작합니다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;서버 URL&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;https://newsapi-mcp-python.politeglacier-1c138199.koreacentral.azurecontainerapps.io/mcp&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;데모용으로 제공되는 news api MCP 서버의 엔드포인트 URL 입니다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;인증&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;API 키&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;newsapi.org 에서 발급받은 API 키를 사용합니다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;인증 유형&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;헤더&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;API 키를 HTTP 요청 헤더에 포함하여 인증합니다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;헤더 이름&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;x-news-api-key&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;API 키를 전달할 HTTP 헤더 이름입니다.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src="/Agent_Blog/assets/image/ws3/4-3.png" alt="4-3" /&gt;
+&lt;img src="/Agent_Blog/assets/image/ws3/4-4.png" alt="4-4" /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;서버 URL 및 정보는 실습 환경에 따라 다를 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;입력이 완료되었으면 &lt;strong&gt;만들기&lt;/strong&gt; 버튼을 클릭하여 ThinQ MCP 서버를 에이전트에 연결합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id="2-2-연결-확인"&gt;2-2. 연결 확인&lt;/h3&gt;
+
+&lt;p&gt;이후 연결창이 나오면, 아래와 같이 순서대로 새로운 연결을 진행합니다.
+&lt;img src="/Agent_Blog/assets/image/ws3/4-5.png" alt="4-5" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/Agent_Blog/assets/image/ws3/4-6.png" alt="4-6" /&gt;&lt;/p&gt;
+
+&lt;p&gt;연결이 완료되고  &lt;strong&gt;추가 및 구성&lt;/strong&gt; 버튼을 클릭합니다.&lt;br /&gt;
+완료되면  ThinQ MCP 서버가 노출하는 &lt;strong&gt;도구 목록&lt;/strong&gt;이 표시됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/Agent_Blog/assets/image/ws3/4-7.png" alt="4-7" /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;도구명&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;search-news&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;키워드로 뉴스 기사 검색&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;get-top-headlines&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;국가/카테고리별 톱 헤드라인&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class="language-plaintext highlighter-rouge"&gt;get-news-sources&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;뉴스 소스 목록 조회&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src="/Agent_Blog/assets/image/ws3/4-8.png" alt="4-8" /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id="3-지침-업데이트"&gt;3. 지침 업데이트&lt;/h2&gt;
+
+&lt;p&gt;News API MCP가 추가되었으면, 에이전트가 해당 도구를 활용할 수 있도록 지침을 업데이트해야 합니다. 이번 실습에는 이미 지침에 MCP 도구 활용 방법이 포함되어 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id="4-동작-확인"&gt;4. 동작 확인&lt;/h2&gt;
+
+&lt;p&gt;MCP동작을 위해 먼저 우측 상단의 &lt;strong&gt;설정&lt;/strong&gt; → &lt;strong&gt;연결 설정&lt;/strong&gt; 탭으로 이동하여 추가된 MCP의 연결을 허용합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20013436.png" alt="8" /&gt;
+&lt;img src="/Agent_Blog/assets/image/ws3/4-9.png" alt="4-9" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;연결이 완료되었다면, 설정창을 빠져나와 우측 테스트 패널에서 아래 질문을 입력하여 ThinQ MCP 동작을 확인합니다.&lt;/p&gt;
+
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;내가 가진 가전 제품 목록을 나열해
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20014327.png" alt="10" /&gt;&lt;/p&gt;
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;와인셀러 조명을 2단계로 변경해줘
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20014600.png" alt="11" /&gt;&lt;/p&gt;
+&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;와인셀러 일간 에너지 사용량 알려줘
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20014448.png" alt="12" /&gt;
+에이전트가 ThinQ MCP 도구를 호출하여 제품 정보를 응답하면 4단계 완료입니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;학습 포인트:&lt;/strong&gt; 코드 한 줄 없이 MCP 서버 URL 등록만으로 외부 데이터 소스를 에이전트 도구로 연결했습니다. 이 패턴은 어떤 MCP 서버에도 동일하게 적용됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;다음 단계:&lt;/strong&gt; &lt;a href="./5.%20AI%20Prompt%20도구%20추가.md"&gt;5. AI Prompt 도구 추가&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;← &lt;a href="/Agent_Blog/chapters/ws3-3-workiq-mcp/"&gt;이전: Step 3. Work IQ MCP&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href="/Agent_Blog/chapters/ws3-5-ai-prompt/"&gt;다음: Step 5. AI Prompt 도구&lt;/a&gt; →&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+
+## 카드 유형별 스타일 규칙
+- info: 파란색 헤더 (#0078D4), 일반 정보 표시
+- warning: 주황색 헤더 (#F7630C), 주의사항 강조
+- product: 초록색 헤더 (#107C10), 제품 정보 카드
+- report: 회색 헤더 (#605E5C), 업무 보고서 형식
+
+## 출력 규칙
+- 반드시 완성된 HTML 코드만 출력합니다. 설명 텍스트는 포함하지 않습니다.
+- 최대 너비 600px, 내부 패딩 16px 적용
+- 제목은 굵은 흰색 텍스트로 헤더에 표시
+- 내용의 목록은 &lt;ul&gt;&lt;li&gt; 태그로 변환
+- 표 데이터는 &lt;table&gt; 태그로 변환, 줄무늬 스타일 적용
+- 모든 인라인 스타일 사용 (외부 CSS 금지)
+
+## 출력 HTML 구조#1 - 업무 현황 보고서 유형 예시
+
+&lt;div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; color: #000000;"&gt;
+  
+  &lt;!-- 헤더 --&gt;
+  &lt;div style="background-color: #e3f2fd; padding: 25px; border-radius: 10px; margin-bottom: 20px; border-left: 5px solid #1976d2;"&gt;
+    &lt;h1 style="color: #1565c0; margin: 0; font-size: 24px;"&gt;📊 &lt;/h1&gt;
+    &lt;p style="color: #424242; margin: 10px 0 0 0; font-size: 14px;"&gt;보고일: &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 인사말 --&gt;
+  &lt;div style="padding: 15px; margin-bottom: 20px;"&gt;
+    &lt;p style="color: #212121; font-size: 15px; line-height: 1.6;"&gt;안녕하세요,  👋&lt;/p&gt;
+    &lt;p style="color: #212121; font-size: 15px; line-height: 1.6;"&gt;&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 긴급 업무 --&gt;
+  
+  &lt;div style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #ef5350;"&gt;
+    &lt;h2 style="color: #c62828; font-size: 18px; margin: 0 0 15px 0;"&gt;🔴 긴급 업무&lt;/h2&gt;
+    
+    &lt;div style="padding: 15px; background-color: #ffebee; border-radius: 5px; margin-bottom: 10px;"&gt;
+      &lt;h3 style="color: #d32f2f; font-size: 16px; margin: 0 0 10px 0;"&gt; &lt;/h3&gt;
+      &lt;p style="color: #212121; margin: 5px 0; font-size: 14px;"&gt;&lt;strong style="color: #1a237e;"&gt;⏰ 마감:&lt;/strong&gt; &lt;/p&gt;
+      &lt;p style="color: #212121; margin: 5px 0; font-size: 14px;"&gt;&lt;strong style="color: #1a237e;"&gt;📋 현황:&lt;/strong&gt;&lt;/p&gt;
+      &lt;ul style="color: #212121; margin: 5px 0; font-size: 14px; padding-left: 20px;"&gt;
+        
+        &lt;li style="margin: 5px 0;"&gt;&lt;/li&gt;
+        
+      &lt;/ul&gt;
+      
+      &lt;p style="color: #212121; margin: 10px 0 5px 0; font-size: 14px;"&gt;&lt;strong style="color: #1a237e;"&gt;✅ 조치 사항:&lt;/strong&gt;&lt;/p&gt;
+      &lt;div style="background-color: #e8f5e9; padding: 12px; border-radius: 5px; border-left: 4px solid #4caf50;"&gt;
+        &lt;p style="color: #1b5e20; margin: 5px 0; font-size: 14px;"&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;
+        &lt;ul style="color: #212121; margin: 5px 0; font-size: 13px; padding-left: 20px;"&gt;
+          
+          &lt;li style="margin: 3px 0;"&gt;&lt;/li&gt;
+          
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      
+      &lt;p style="color: #212121; margin: 10px 0 0 0; font-size: 14px;"&gt;&lt;strong style="color: #c62828;"&gt;🎯 &lt;/strong&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+
+  &lt;!-- 중요 업무 --&gt;
+  
+  &lt;div style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #ffa726;"&gt;
+    &lt;h2 style="color: #e65100; font-size: 18px; margin: 0 0 15px 0;"&gt;🟡 중요 업무&lt;/h2&gt;
+    
+    &lt;div style="padding: 15px; background-color: #fff3e0; border-radius: 5px;"&gt;
+      &lt;h3 style="color: #ef6c00; font-size: 16px; margin: 0 0 10px 0;"&gt; &lt;/h3&gt;
+      &lt;p style="color: #212121; margin: 5px 0; font-size: 14px;"&gt;&lt;strong style="color: #1a237e;"&gt;⏰ :&lt;/strong&gt; &lt;/p&gt;
+      &lt;p style="color: #212121; margin: 5px 0; font-size: 14px;"&gt;&lt;strong style="color: #1a237e;"&gt;📋 현황:&lt;/strong&gt;&lt;/p&gt;
+      &lt;ul style="color: #212121; margin: 5px 0; font-size: 14px; padding-left: 20px;"&gt;
+        
+        &lt;li style="margin: 5px 0;"&gt;&lt;/li&gt;
+        
+      &lt;/ul&gt;
+      &lt;p style="color: #212121; margin: 10px 0 0 0; font-size: 14px;"&gt;&lt;strong style="color: #e65100;"&gt;🎯 &lt;/strong&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+
+  &lt;!-- 기타 업무 --&gt;
+  
+  &lt;div style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #66bb6a;"&gt;
+    &lt;h2 style="color: #2e7d32; font-size: 18px; margin: 0 0 15px 0;"&gt;🟢 기타 업무&lt;/h2&gt;
+    
+    &lt;div style="padding: 15px; background-color: #e8f5e9; border-radius: 5px;"&gt;
+      
+      &lt;p style="color: #212121; margin: 5px 0; font-size: 14px;"&gt;
+        &lt;strong style="color: #1b5e20;"&gt; &lt;/strong&gt; - 
+      &lt;/p&gt;
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+
+  &lt;!-- 우선순위 요약 --&gt;
+  &lt;div style="background-color: #fff9c4; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #f57f17;"&gt;
+    &lt;h2 style="color: #f57f17; font-size: 18px; margin: 0 0 15px 0;"&gt;📌 이번 주 우선순위&lt;/h2&gt;
+    &lt;table style="width: 100%; border-collapse: collapse; color: #212121; font-size: 14px;"&gt;
+      &lt;thead&gt;
+        &lt;tr style="background-color: #fff59d;"&gt;
+          &lt;th style="padding: 10px; text-align: left; border: 1px solid #f9a825; color: #212121;"&gt;순위&lt;/th&gt;
+          &lt;th style="padding: 10px; text-align: left; border: 1px solid #f9a825; color: #212121;"&gt;업무&lt;/th&gt;
+          &lt;th style="padding: 10px; text-align: center; border: 1px solid #f9a825; color: #212121;"&gt;마감&lt;/th&gt;
+          &lt;th style="padding: 10px; text-align: center; border: 1px solid #f9a825; color: #212121;"&gt;상태&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        
+        &lt;tr style="background-color: ;"&gt;
+          &lt;td style="padding: 10px; border: 1px solid #f9a825; color: #212121;"&gt;&lt;/td&gt;
+          &lt;td style="padding: 10px; border: 1px solid #f9a825; color: #212121;"&gt;&lt;/td&gt;
+          &lt;td style="padding: 10px; text-align: center; border: 1px solid #f9a825; color: ;"&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style="padding: 10px; text-align: center; border: 1px solid #f9a825; color: #212121;"&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 마무리 --&gt;
+  &lt;div style="padding: 15px; background-color: #e1f5fe; border-radius: 8px; margin-bottom: 20px;"&gt;
+    &lt;p style="color: #212121; font-size: 14px; line-height: 1.6; margin: 0;"&gt;
+      &lt;strong style="color: #01579b;"&gt;💡 특이사항:&lt;/strong&gt;&lt;br&gt;
+      
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 서명 --&gt;
+  &lt;div style="padding: 15px; border-top: 2px solid #e0e0e0; margin-top: 20px;"&gt;
+    &lt;p style="color: #212121; font-size: 14px; margin: 5px 0;"&gt;감사합니다. 😊&lt;/p&gt;
+    &lt;p style="color: #616161; font-size: 13px; margin: 5px 0;"&gt;&lt;/p&gt;
+    &lt;p style="color: #616161; font-size: 13px; margin: 5px 0;"&gt;&lt;/p&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+
+## 출력 HTML 구조#2 - 에너지 사용량 리포트 유형 예시
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;style&gt;
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; border-radius: 10px;"&gt;
+        &lt;div style="background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);"&gt;
+
+            &lt;h1 style="color: #2c3e50; text-align: center; margin-bottom: 10px;"&gt;🍷  에너지 사용량 리포트&lt;/h1&gt;
+            &lt;p style="color: #7f8c8d; text-align: center; font-size: 14px; margin-bottom: 30px;"&gt;조회 기간:  ~  (일간)&lt;/p&gt;
+
+            &lt;div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 8px; margin-bottom: 30px;"&gt;
+                &lt;h2 style="color: #000000; margin-top: 0; font-size: 18px;"&gt;📊 요약 정보&lt;/h2&gt;
+                &lt;table style="width: 100%; border-collapse: collapse;"&gt;
+                    &lt;tr&gt;
+                        &lt;td style="padding: 10px; color: #000000; font-weight: bold;"&gt;⚡ 총 에너지 사용량:&lt;/td&gt;
+                        &lt;td style="padding: 10px; color: #000000; font-size: 20px; font-weight: bold; text-align: right;"&gt; Wh&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td style="padding: 10px; color: #000000; font-weight: bold;"&gt;📈 일평균 사용량:&lt;/td&gt;
+                        &lt;td style="padding: 10px; color: #000000; font-size: 18px; text-align: right;"&gt; Wh/일&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td style="padding: 10px; color: #000000; font-weight: bold;"&gt;🔝 최대 사용량:&lt;/td&gt;
+                        &lt;td style="padding: 10px; color: #000000; text-align: right;"&gt; Wh ()&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td style="padding: 10px; color: #000000; font-weight: bold;"&gt;🔻 최소 사용량:&lt;/td&gt;
+                        &lt;td style="padding: 10px; color: #000000; text-align: right;"&gt; Wh ()&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/div&gt;
+
+            &lt;h2 style="color: #2c3e50; margin-top: 30px; border-bottom: 2px solid #3498db; padding-bottom: 10px;"&gt;📅 일별 에너지 사용량 내역&lt;/h2&gt;
+
+            &lt;table style="width: 100%; border-collapse: collapse; margin-top: 20px; background-color: #ffffff;"&gt;
+                &lt;thead&gt;
+                    &lt;tr style="background-color: #3498db;"&gt;
+                        &lt;th style="padding: 12px; text-align: left; color: #000000; border: 1px solid #ddd;"&gt;날짜&lt;/th&gt;
+                        &lt;th style="padding: 12px; text-align: right; color: #000000; border: 1px solid #ddd;"&gt;사용량 (Wh)&lt;/th&gt;
+                        &lt;th style="padding: 12px; text-align: center; color: #000000; border: 1px solid #ddd;"&gt;상태&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    
+                    &lt;tr style="background-color: ;"&gt;
+                        &lt;td style="padding: 10px; color: #2c3e50; border: 1px solid #ddd; font-weight: bold;"&gt; ()&lt;/td&gt;
+                        &lt;td style="padding: 10px; color: #2c3e50; text-align: right; border: 1px solid #ddd; font-weight: bold;"&gt;&lt;/td&gt;
+                        &lt;td style="padding: 10px; color: ; text-align: center; border: 1px solid #ddd;"&gt; &lt;/td&gt;
+                    &lt;/tr&gt;
+                    
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+
+            &lt;div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-top: 30px; border-radius: 5px;"&gt;
+                &lt;h3 style="color: #2c3e50; margin-top: 0;"&gt;💡 분석 및 권장사항&lt;/h3&gt;
+                &lt;p style="color: #2c3e50; line-height: 1.6;"&gt;
+                    
+                &lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;"&gt;
+                &lt;p style="color: #7f8c8d; font-size: 12px;"&gt;본 리포트는 LG ThinQ 시스템에서 자동 생성되었습니다.&lt;/p&gt;
+                &lt;p style="color: #7f8c8d; font-size: 12px;"&gt;문의사항이 있으시면 언제든지 연락 주세요! 🙂&lt;/p&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="1-5-저장">1-5. 저장</h3>
+
+<p>프롬프트 작성 완료  스크롤을 내려  <strong>저장</strong> 버튼을 클릭하고 <strong>추가 및 구성 버튼</strong>을 눌러 도구 등록을 완료합니다.
+<img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20021621.png" alt="3" />
+<br /></p>
+
+<h2 id="1-6-도구-입력-변수-설명-추가">1-6. 도구 입력 변수 설명 추가</h2>
+
+<p>도구 추가가 완료 되었다면, 스크롤을 내려 입력 탭에 각 입력 변수에 대한 설명을 추가합니다.
+기본적으로 AI로 동저으로 채우기가 되어있으며, 값 부분에 <strong>사용자 지정</strong> 을 선택하여 아래 설명으로 업데이트 하고 저장해 줍니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>변수명</th>
+      <th>유형</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">content</code></td>
+      <td>텍스트</td>
+      <td>HTML로 변환할 원본 응답 내용입니다.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">card_type</code></td>
+      <td>텍스트</td>
+      <td>카드 유형 입니다. (info / report) info는 에너지 사용량 보고서 일 경우, report는 일반 업무 브리핑일 경우 사용됩니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20022018.png" alt="4" /></p>
+
+<hr />
+
+<h2 id="2-지침-업데이트">2. 지침 업데이트</h2>
+
+<p>에이전트 지침의 <code class="language-plaintext highlighter-rouge">#메일 작성 규칙</code> 섹션을 아래와 같이 수정 합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#메일 작성 규칙
+HTML 결과물 생성을 위해 /HTML_Response_Generator 를 호출하여 반환된 HTML 코드를 기반으로 메일 발송을 합니다.
+도구에 들어가야할 내용은 다음과 같습니다.
+- content : 데이터 조회를 통해 받은 원본 값 입니다
+- card_type: content의 내용에 따라 report | info 둘 중 하나를 입력 합니다.  
+-- 업무 브리핑 → card_type: "report"
+-- 일반 안내 → card_type: "info"
+
+</code></pre></div></div>
+
+<p>지침에서 / 를 입력하면 도구 호출을 위한 프롬프트 템플릿이 자동으로 삽입됩니다.
+<img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20022433.png" alt="5" />
+<img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20022448.png" alt="6" /></p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="3-동작-확인">3. 동작 확인</h2>
+
+<p>테스트 패널에서 아래 질문을 입력합니다.</p>
+
+<p><strong>제품 정보 HTML 카드 테스트:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>와인셀러 에너지 사용량 리포트 정리해서 "메일 주소"로 보내줘
+</code></pre></div></div>
+<p>→ 에이전트가 ThinQ MCP로 데이터 조회 후 → HTML_Response_Generator를 호출하여 HTML 카드 형식으로 메일을 발송합니다.</p>
+
+<p><img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20022837.png" alt="7" />
+<img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20022851.png" alt="8" /></p>
+
+<p><strong>업무 브리핑 HTML 카드 테스트:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>오늘 업무 현황을 정리해서 나에게 보내줘
+</code></pre></div></div>
+<p>→ Work IQ MCP 조회 후 → report 유형 HTML 카드로 메일을 발송해야 합니다.
+<img src="/Agent_Blog/assets/image/ws3/스크린샷%202026-03-19%20023607.png" alt="9" /></p>
+
+<p><br /></p>
+
+<blockquote>
+  <p><strong>💡 팁:</strong> 에이전트 테스트 화면에서는 HTML이 렌더링되지 않고 코드로 보일 수 있습니다.<br />
+실제 메일을 수신하였을 때에는 HTML이 정상 렌더링되어 카드 형태로 표시됩니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<blockquote>
+  <p><strong>다음 단계:</strong> <a href="./6.%20Excel%20데이터%20필터링.md">6. Excel 데이터 필터링 (심화)</a></p>
+</blockquote>
+
+<hr />
+
+<hr />
+
+<table>
+  <tbody>
+    <tr>
+      <td>← <a href="/Agent_Blog/chapters/ws3-4-thinq-mcp/">이전: Step 4. ThinQ MCP</a></td>
+      <td><a href="/Agent_Blog/chapters/ws3-6-excel-filter/">다음: Step 6. Excel 필터링</a> →</td>
+    </tr>
+  </tbody>
+</table>
+
+          </div>
+
+          <nav class="chapter-pagination">
+            
+              
+              
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    
+                      
+                      <a href="/Agent_Blog/chapters/ws3-4-external-mcp/" class="pagination-link prev">
+                        <span class="pagination-direction">← 이전</span>
+                        <span class="pagination-title">외부 MCP 도구 추가</span>
+                      </a>
+                    
+                    
+                      
+                      <a href="/Agent_Blog/chapters/ws3-6-excel-filter/" class="pagination-link next">
+                        <span class="pagination-direction">다음 →</span>
+                        <span class="pagination-title">Excel 필터링</span>
+                      </a>
+                    
+                  
+                
+                  
+                
+                  
+                
+              
+            
+          </nav>
+        </article>
+      </div>
+      <footer class="site-footer">
+        <p>© 2026 Microsoft Copilot Agentic Blog · Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="mobile-overlay" id="overlay"></div>
+
+  <script>
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+      });
+      overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+      });
+    }
+
+    // Code copy button
+    document.querySelectorAll('.chapter-body pre').forEach(pre => {
+      const btn = document.createElement('button');
+      btn.className = 'code-copy-btn';
+      btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none"><path d="M4 4H2a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/></svg><span>Copy</span>';
+      btn.addEventListener('click', () => {
+        const code = pre.querySelector('code');
+        const text = code ? code.textContent : pre.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          btn.classList.add('copied');
+          btn.querySelector('span').textContent = 'Copied!';
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.querySelector('span').textContent = 'Copy';
+          }, 2000);
+        });
+      });
+      pre.appendChild(btn);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Builder로 에이전트 만들기 | Microsoft Copilot Agentic Blog</title>
+  <link rel="stylesheet" href="/Agent_Blog/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/Agent_Blog/" class="header-logo">
+        <svg class="logo-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Microsoft Copilot Agentic Blog</span>
+      </a>
+      <nav class="header-nav">
+        <a href="/Agent_Blog/">Home</a>
+        <a href="https://copilotstudio.microsoft.com" target="_blank">Copilot Studio 접속하기 ↗</a>
+        <a href="https://github.com/chichoi1991/Agent_Blog/tree/master/_chapters" target="_blank">Github 원본 보기↗</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="메뉴 열기">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="site-wrapper">
+    <aside class="site-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title">📖 목차</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="/Agent_Blog/" class="sidebar-link">
+          <span class="sidebar-icon">🏠</span> Home
+        </a>
+
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">📘</span>
+              <span class="sidebar-label">Copilot Studio 실무 가이드</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  <a href="/Agent_Blog/chapters/ch0-guide-premise/" class="sidebar-link sub ">
+                    <span class="sidebar-label">0. 가이드의 전제</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch1-overview/" class="sidebar-link sub ">
+                    <span class="sidebar-label">1. 개요 및 접속</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch2-ui-overview/" class="sidebar-link sub ">
+                    <span class="sidebar-label">2. 화면 구성 이해</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch3-semi-dev-agent/" class="sidebar-link sub ">
+                    <span class="sidebar-label">3. 반개발형 Agent</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch4-external-integration/" class="sidebar-link sub ">
+                    <span class="sidebar-label">4. 외부 시스템 연동</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch5-selection-guide/" class="sidebar-link sub ">
+                    <span class="sidebar-label">5. 선택 가이드</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch6-deployment/" class="sidebar-link sub ">
+                    <span class="sidebar-label">6. 배포 및 범위 설정</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch7-org-agent/" class="sidebar-link sub ">
+                    <span class="sidebar-label">7. 조직 공용 Agent</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/ch8-references/" class="sidebar-link sub ">
+                    <span class="sidebar-label">8. 참고 자료</span>
+                  </a>
+                
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section open">
+            <button class="sidebar-section-toggle active" aria-expanded="true" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">🛠️</span>
+              <span class="sidebar-label">핸즈온 워크샵</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws1-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">기초편 #1: 블로그 포스트 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws1-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 생성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-2-knowledge/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 참조 자료 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-3-tool-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 도구: MCP 커넥터</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-4-tool-plugin/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 도구: 플러그인 커넥터</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws1-5-publish/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. 게시 및 배포</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws2-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">기초편 #2: 문서검색 & 에스컬레이션</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws2-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. Agent 생성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-2-tool-connector/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 도구: 커넥터</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-3-tool-flow/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 도구: 플로우</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-4-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 트리거 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws2-5-publish/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. 게시 및 공유</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws3-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">기초편 #3: 자율동작 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws3-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 생성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-2-knowledge/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 지식 소스 연결</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-3-workiq-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. Work IQ MCP</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-4-external-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 외부 MCP 도구 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-5-ai-prompt/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. AI Prompt 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-6-excel-filter/" class="sidebar-link child ">
+                          <span class="sidebar-label">6. Excel 필터링</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws3-7-teams-deploy/" class="sidebar-link child ">
+                          <span class="sidebar-label">7. Teams 배포</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group open">
+                    <a href="/Agent_Blog/chapters/ws4-0-overview/" class="sidebar-link sub sidebar-parent active" onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">Agent Builder로 에이전트 만들기</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws4-1-create-agent/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 생성 및 지침 작성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws4-2-ref-feature/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 참조자료 및 기능 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws4-3-test-share/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 테스트 및 공유</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/ws5-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">[리뉴얼] Copilot Studio 기본 기능</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/ws5-1-agent-intro/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 에이전트 소개</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-2-instructions/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. 기본 지침 설정</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-3-knowledge/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 참조자료 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-4-tool-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. MCP 도구 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-5-tool-connector/" class="sidebar-link child ">
+                          <span class="sidebar-label">5. 커넥터(팀즈 채널 메세지 게시) 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-6-external-mcp/" class="sidebar-link child ">
+                          <span class="sidebar-label">6. 외부 MCP 도구 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-7-tool-flow/" class="sidebar-link child ">
+                          <span class="sidebar-label">7. 커넥터 연결 플로우</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-8-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">8. 트리거 추가</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-9-ai-prompt/" class="sidebar-link child ">
+                          <span class="sidebar-label">9. 프롬프트 도구 활용법</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-10-excel-filter/" class="sidebar-link child ">
+                          <span class="sidebar-label">10. Excel 데이터 활용</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/ws5-11-deploy/" class="sidebar-link child ">
+                          <span class="sidebar-label">11. 배포</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">⭐</span>
+              <span class="sidebar-label">특별 워크샵</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/sp1-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">특별 워크샵: 비즈니스 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/sp1-1-instructions/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 지침 작성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-2-prebuilt-tools/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. Pre-built 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-3-custom-tools/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 커스텀 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-4-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 트리거 추가</span>
+                        </a>
+                      
+                    </div>
+                  </div>
+                
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">🔔</span>
+              <span class="sidebar-label">기술 업데이트</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
+                
+                  <a href="/Agent_Blog/chapters/up1-2026h1-updates/" class="sidebar-link sub ">
+                    <span class="sidebar-label">1. 2026 상반기 업데이트</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/up2-mcp-support/" class="sidebar-link sub ">
+                    <span class="sidebar-label">2. MCP 지원</span>
+                  </a>
+                
+                  <a href="/Agent_Blog/chapters/up3-agent-builder/" class="sidebar-link sub ">
+                    <span class="sidebar-label">3. Agent Builder 통합</span>
+                  </a>
+                
+              
+            </div>
+          </div>
+        
+      </nav>
+    </aside>
+
+    <main class="site-main">
+      <div class="main-content">
+        <article class="chapter-article">
+          <div class="chapter-header">
+            <div class="chapter-meta">
+              
+                <span class="chapter-badge workshop">Workshop</span>
+              
+            </div>
+            <h1 class="chapter-title">Agent Builder로 에이전트 만들기</h1>
+            
+            <p class="chapter-desc">Agent Builder를 활용한 선언형 에이전트 핸즈온 실습</p>
+            
+          </div>
+
+          <div class="chapter-body">
+            <h1 id="copilot-studio-실습---선언형-에이전트-만들기">Copilot Studio 실습 - 선언형 에이전트 만들기</h1>
+<hr />
+
+<h1 id="-선언적-에이전트declarative-agent란">✅ 선언적 에이전트(Declarative Agent)란?</h1>
+
+<p><strong>선언적 에이전트</strong>는 Microsoft 365 Copilot 확장성 모델에서 제공하는 <strong>코드 작성 없이 지침(Instructions)만으로 동작을 정의하는 방식의 에이전트</strong>입니다. 개발자가 복잡한 프로그래밍을 하지 않고도, <strong>사용자 요청을 처리하는 규칙과 데이터 소스 연결을 선언적으로 기술</strong>하여 Copilot 환경에서 실행할 수 있도록 설계되었습니다.</p>
+
+<p>이곳에서는 Copilot studio에서 선언형 에이전트를 만들어 초보자로 손쉽게 특수한 목적을 가진 AI Agent를 만들어 운용할 수 있도록 해 보겠습니다.</p>
+
+<hr />
+
+<h2 id="-핵심-특징">🔍 핵심 특징</h2>
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>특징</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Low-Code / No-Code</strong></td>
+      <td>코드 대신 <strong>지침 기반</strong>으로 동작을 정의</td>
+    </tr>
+    <tr>
+      <td><strong>Microsoft 365 통합</strong></td>
+      <td>SharePoint, OneDrive, Teams 등과 자연스럽게 연결</td>
+    </tr>
+    <tr>
+      <td><strong>확장성</strong></td>
+      <td>다양한 데이터 소스 및 API 연동 가능</td>
+    </tr>
+    <tr>
+      <td><strong>안전성</strong></td>
+      <td>Microsoft 365 보안 및 규정 준수 정책을 그대로 적용</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="-주요-구성-요소">🛠 주요 구성 요소</h2>
+<ul>
+  <li><strong>지침(Instructions)</strong>: 에이전트가 어떤 작업을 수행할지 정의하는 규칙</li>
+  <li><strong>데이터 소스 연결</strong>: SharePoint, Dataverse 등에서 데이터를 검색·요약</li>
+  <li><strong>출력 형식 지정</strong>: 마크다운, 표, 텍스트 등 사용자 친화적 결과 제공</li>
+</ul>
+
+<hr />
+
+<h2 id="-활용-예시">✅ 활용 예시</h2>
+<ul>
+  <li><strong>문서 검색 에이전트</strong>: SharePoint에서 특정 보고서를 찾아 요약</li>
+  <li><strong>통계 분석 에이전트</strong>: Excel 기반 시계열 데이터를 분석 후 인사이트 제공</li>
+  <li><strong>업무 자동화 에이전트</strong>: 승인 요청, 메일 발송 등 반복 작업 처리</li>
+</ul>
+
+<h2 id="-선언형-에이전트를-구축하는데-이용할-수-있는-도구들">🛠 선언형 에이전트를 구축하는데 이용할 수 있는 도구들</h2>
+
+<p>선언적 에이전트를 빌드하기 위한 다양한 도구와 각 도구의 특징, 권장 사용 사례를 아래와 같이 비교합니다.</p>
+
+<h2 id="1-도구-및-권장-용도">1. 도구 및 권장 용도</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>도구</th>
+      <th>코딩 레벨</th>
+      <th>설명</th>
+      <th>권장 사용자</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Copilot Agent Builder</strong></td>
+      <td>노코드</td>
+      <td>간단 설정으로 에이전트 생성 가능</td>
+      <td>팀즈내 Copilot에서 직접 만들 수 있으며 코드 중심 개발 경험이 없는 일반 업무 사용자들에게 적합 (온보딩, 문서 답변 등)</td>
+    </tr>
+    <tr>
+      <td><strong>SharePoint Agents</strong></td>
+      <td>노코드</td>
+      <td>SharePoint/Teams 내에서 실행되는 에이전트</td>
+      <td>특정 사이트, 라이브러리, 문서 사용 우선시하는 업무 사용자</td>
+    </tr>
+    <tr>
+      <td><strong>Copilot Studio</strong></td>
+      <td>로우 코드</td>
+      <td>드래그 앤 드롭 인터페이스, Power Platform 통합, 고급 작업 지원</td>
+      <td>정보 담당자, 업무 자동화 필요</td>
+    </tr>
+    <tr>
+      <td><strong>Microsoft 365 Agents Toolkit</strong></td>
+      <td>프로 코드</td>
+      <td>고급 기능(커스텀 API 액션, Adaptive Card, CI/CD 등) 포함</td>
+      <td>개발자, API 확장 및 소스 코드 제어가 필요한 경우</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="2-요구-조건-및-배포-방법">2. 요구 조건 및 배포 방법</h2>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>도구</th>
+      <th>요구사항</th>
+      <th>배포 대상</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Copilot Agent Builder</strong></td>
+      <td>Microsoft 365 Copilot 라이선스</td>
+      <td>Microsoft 365 Copilot / Teams 내 사용</td>
+    </tr>
+    <tr>
+      <td><strong>SharePoint Agents</strong></td>
+      <td>Microsoft 365 Copilot 라이선스 + SharePoint 사이트 접근 권한</td>
+      <td>SharePoint 사이트 내 직접 배포</td>
+    </tr>
+    <tr>
+      <td><strong>Copilot Studio</strong></td>
+      <td>Copilot Studio 라이선스 (웹 기반, 별도 설치 불필요)</td>
+      <td>Teams, 웹, 다양한 채널에 배포 가능</td>
+    </tr>
+    <tr>
+      <td><strong>Agents Toolkit</strong></td>
+      <td>Microsoft 365 구독 + 사이드로딩 활성화 + Visual Studio/VS Code + Azure 구독(선택)</td>
+      <td>Microsoft 365 Copilot 라이선스 보유 조직에 배포</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="3-도구별-장단점">3. 도구별 장단점</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>도구</th>
+      <th>✅ 장점</th>
+      <th>⚠️ 단점</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Copilot Agent Builder</strong></td>
+      <td>• 매우 단순한 설정<br />• 빠르고 간단한 RAG기반 에이전트 개발</td>
+      <td>• 액션, 자동화등 고급 설정 불가<br />• 기능 제한됨</td>
+    </tr>
+    <tr>
+      <td><strong>SharePoint Agents</strong></td>
+      <td>• 특정 라이브러리 중심으로 맞춤 설정 가능<br />• SharePoint, Teams에 즉시 통합</td>
+      <td>• SharePoint 외부에서는 사용 어려움</td>
+    </tr>
+    <tr>
+      <td><strong>Copilot Studio</strong></td>
+      <td>• 로우 코드 UI (드래그 앤 드롭)<br />• Power Platform 연결 사용 가능</td>
+      <td>• 코드 제어 한계<br />• CI/CD 소스 관리 빈약 <br /></td>
+    </tr>
+    <tr>
+      <td><strong>Agents Toolkit</strong></td>
+      <td>• 전문 개발자 대상 환경<br />• 커스터마이징 API 유연성<br />• Adaptive Card 지원 및 CI/CD<br />• 신기능 우선 적용</td>
+      <td>• Power Platform 연결 지원 부족<br />• UI 없이 JSON 편집 필요<br />• 가파른 학습 곡선</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-요약">✅ 요약</h2>
+
+<ul>
+  <li><strong>코딩 경험 없음</strong>: <code class="language-plaintext highlighter-rouge">Copilot Agent Builder</code> 또는 <code class="language-plaintext highlighter-rouge">SharePoint Agents</code> – 간단 설정으로 업무 대응</li>
+  <li><strong>정보 담당자/비즈니스 도메인 전문 사용자</strong>: <code class="language-plaintext highlighter-rouge">Copilot Studio Full</code> – 로우 코드로 복잡한 로직 구현 가능</li>
+  <li><strong>개발자 대상</strong>: <code class="language-plaintext highlighter-rouge">Agents Toolkit</code> – 커스터마이징 &amp; CI/CD 환경에 적합</li>
+  <li>
+    <h1 id="-효과적인-지침instructions의-중요성과-작성법">✅ 효과적인 지침(Instructions)의 중요성과 작성법</h1>
+  </li>
+</ul>
+
+<h2 id="-왜-지침이-중요한가">🔍 왜 지침이 중요한가?</h2>
+<ul>
+  <li><strong>에이전트의 행동을 결정하는 핵심 요소</strong>: 지침은 Copilot이 어떤 작업을 수행하고 어떤 방식으로 응답할지를 정의합니다.</li>
+  <li><strong>사용자 경험 향상</strong>: 명확하고 구체적인 지침은 정확한 답변과 일관된 결과를 제공합니다.</li>
+  <li><strong>보안 및 규정 준수 유지</strong>: 지침을 통해 데이터 접근 범위와 처리 규칙을 명확히 설정할 수 있습니다.</li>
+</ul>
+
+<hr />
+
+<h2 id="-효과적인-지침-작성-원칙-">🛠 효과적인 지침 작성 원칙 <br /></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>원칙</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>명확성</strong></td>
+      <td>모호한 표현을 피하고, 구체적인 작업과 조건을 명시합니다.</td>
+    </tr>
+    <tr>
+      <td><strong>간결성</strong></td>
+      <td>불필요한 문장은 줄이고 핵심 규칙만 포함합니다.</td>
+    </tr>
+    <tr>
+      <td><strong>맥락 제공</strong></td>
+      <td>데이터 소스, 출력 형식, 예외 처리 등 필요한 정보를 포함합니다.</td>
+    </tr>
+    <tr>
+      <td><strong>사용자 친화성</strong></td>
+      <td>결과는 표, 마크다운 등 직관적인 형식으로 제공하도록 지시합니다.</td>
+    </tr>
+    <tr>
+      <td><strong>안전성</strong></td>
+      <td>민감 데이터 처리 시 규정 준수 및 보안 정책을 명시합니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-작성-예시">✅ 작성 예시</h2>
+<p><br /></p>
+
+<p><strong>목적</strong>: SharePoint에서 문서를 검색하고 요약<br />
+<strong>지침 예시</strong>:</p>
+<ul>
+  <li>사용자가 요청한 키워드로 SharePoint 문서를 검색합니다.</li>
+  <li>검색 결과에서 가장 관련성이 높은 문서를 선택합니다.</li>
+  <li>문서의 핵심 내용을 3~5줄로 요약하고, 원본 문서 이름과 위치를 표시합니다.</li>
+  <li>출력은 마크다운 표 형식으로 제공합니다.
+<br />
+—</li>
+</ul>
+
+<h2 id="-실습-순서">📋 실습 순서</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>단계</th>
+      <th>내용</th>
+      <th>링크</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Step 1</strong></td>
+      <td>에이전트 생성 및 지침 작성</td>
+      <td><a href="/Agent_Blog/chapters/ws4-1-create-agent/">바로가기</a></td>
+    </tr>
+    <tr>
+      <td><strong>Step 2</strong></td>
+      <td>참조자료, 기능 추가하기</td>
+      <td><a href="/Agent_Blog/chapters/ws4-2-ref-feature/">바로가기</a></td>
+    </tr>
+    <tr>
+      <td><strong>Step 3</strong></td>
+      <td>에이전트 테스트 및 공유</td>
+      <td><a href="/Agent_Blog/chapters/ws4-3-test-share/">바로가기</a></td>
+    </tr>
+  </tbody>
+</table>
+
+          </div>
+
+          <nav class="chapter-pagination">
+            
+              
+              
+                <div></div>
+                
+                  <a href="/Agent_Blog/chapters/ws4-1-create-agent/" class="pagination-link next">
+                    <span class="pagination-direction">다음 →</span>
+                    <span class="pagination-title">Step 1. 에이전트 생성 및 지침 작성</span>
+                  </a>
+                
+              
+            
+          </nav>
+        </article>
+      </div>
+      <footer class="site-footer">
+        <p>© 2026 Microsoft Copilot Agentic Blog · Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="mobile-overlay" id="overlay"></div>
+
+  <script>
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+      });
+      overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+      });
+    }
+
+    // Code copy button
+    document.querySelectorAll('.chapter-body pre').forEach(pre => {
+      const btn = document.createElement('button');
+      btn.className = 'code-copy-btn';
+      btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none"><path d="M4 4H2a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/></svg><span>Copy</span>';
+      btn.addEventListener('click', () => {
+        const code = pre.querySelector('code');
+        const text = code ? code.textContent : pre.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          btn.classList.add('copied');
+          btn.querySelector('span').textContent = 'Copied!';
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.querySelector('span').textContent = 'Copy';
+          }, 2000);
+        });
+      });
+      pre.appendChild(btn);
+    });
+  </script>
+</body>
+</html>
