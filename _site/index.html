@@ -315,25 +315,80 @@
             <div class="sidebar-section-items">
               
                 
-                  <a href="/Agent_Blog/chapters/sp1-1-instructions/" class="sidebar-link sub ">
-                    <span class="sidebar-label">1. 지침 작성</span>
-                  </a>
                 
-                  <a href="/Agent_Blog/chapters/sp1-0-overview/" class="sidebar-link sub ">
-                    <span class="sidebar-label">1. 특별 워크샵: 비즈니스 에이전트</span>
-                  </a>
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/sp1-0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">특별 워크샵: 비즈니스 에이전트</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/sp1-1-instructions/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. 지침 작성</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-2-prebuilt-tools/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. Pre-built 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-3-custom-tools/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. 커스텀 도구</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/sp1-4-trigger/" class="sidebar-link child ">
+                          <span class="sidebar-label">4. 트리거 추가</span>
+                        </a>
+                      
+                    </div>
+                  </div>
                 
-                  <a href="/Agent_Blog/chapters/sp1-2-prebuilt-tools/" class="sidebar-link sub ">
-                    <span class="sidebar-label">2. Pre-built 도구</span>
-                  </a>
+              
+            </div>
+          </div>
+        
+          
+          
+          
+
+          <div class="sidebar-section ">
+            <button class="sidebar-section-toggle " aria-expanded="false" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+              <span class="sidebar-icon">🤝</span>
+              <span class="sidebar-label">Cowork Collective</span>
+              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sidebar-section-items">
+              
                 
-                  <a href="/Agent_Blog/chapters/sp1-3-custom-tools/" class="sidebar-link sub ">
-                    <span class="sidebar-label">3. 커스텀 도구</span>
-                  </a>
                 
-                  <a href="/Agent_Blog/chapters/sp1-4-trigger/" class="sidebar-link sub ">
-                    <span class="sidebar-label">4. 트리거 추가</span>
-                  </a>
+                  
+                  
+                  
+                  
+
+                  <div class="sidebar-group ">
+                    <a href="/Agent_Blog/chapters/cowork0-overview/" class="sidebar-link sub sidebar-parent " onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+                      <span class="sidebar-label">Cowork Collective 개요</span>
+                    </a>
+                    <div class="sidebar-children">
+                      
+                        <a href="/Agent_Blog/chapters/cowork1-badge-check/" class="sidebar-link child ">
+                          <span class="sidebar-label">1. Badge Check</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/cowork2-compliance-packet/" class="sidebar-link child ">
+                          <span class="sidebar-label">2. The Compliance Packet</span>
+                        </a>
+                      
+                        <a href="/Agent_Blog/chapters/cowork3-out-of-office/" class="sidebar-link child ">
+                          <span class="sidebar-label">3. Out of Office Handoff</span>
+                        </a>
+                      
+                    </div>
+                  </div>
                 
               
             </div>
@@ -583,6 +638,65 @@
           <span class="item-tag ws">ThinQ MCP</span>
           <span class="item-tag ws">Work IQ</span>
           <span class="item-tag ws">복합 분석</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ===== Section 2.6: Cowork Collective ===== -->
+<div class="home-section">
+  <h2>🤝 Cowork Collective</h2>
+  <p class="section-desc">Microsoft 365 Copilot Cowork에게 실제 업무를 위임해보는 핸즈온 미션 모음입니다. (한국어판 · 원문: Microsoft Agent Academy)</p>
+
+  <div class="chapter-list">
+    <a href="/Agent_Blog/chapters/cowork0-overview/" class="chapter-item workshop">
+      <div class="item-icon">🤝</div>
+      <div class="item-body">
+        <div class="item-title">Cowork Collective 개요</div>
+        <div class="item-desc">Copilot Cowork의 개념, 내장 스킬, 커스텀 스킬과 3개 미션을 소개합니다.</div>
+        <div class="item-tags">
+          <span class="item-tag ws">Copilot Cowork</span>
+          <span class="item-tag ws">Frontier</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/Agent_Blog/chapters/cowork1-badge-check/" class="chapter-item workshop">
+      <div class="item-icon">🏢</div>
+      <div class="item-body">
+        <div class="item-title">🏢 Badge Check</div>
+        <div class="item-desc">출입 배지 CSV를 분석해 미체크아웃 직원을 찾고, 커스텀 스킬로 스타일링된 HTML 리포트를 메일로 받습니다.</div>
+        <div class="item-tags">
+          <span class="item-tag ws">CSV 분석</span>
+          <span class="item-tag ws">커스텀 스킬</span>
+          <span class="item-tag ws">HTML 리포트</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/Agent_Blog/chapters/cowork2-compliance-packet/" class="chapter-item workshop">
+      <div class="item-icon">🔒</div>
+      <div class="item-body">
+        <div class="item-title">🔒 The Compliance Packet</div>
+        <div class="item-desc">4개의 내부 문서로 한 번의 대화에서 감사 패키지(Word/Excel)와 경영진 브리핑 메일을 생성합니다.</div>
+        <div class="item-tags">
+          <span class="item-tag ws">문서 생성</span>
+          <span class="item-tag ws">근거 기반</span>
+          <span class="item-tag ws">승인 워크플로</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/Agent_Blog/chapters/cowork3-out-of-office/" class="chapter-item workshop">
+      <div class="item-icon">🏖️</div>
+      <div class="item-body">
+        <div class="item-title">🏖️ Out of Office Vacation Handoff</div>
+        <div class="item-desc">휴가 전 인수인계 체크리스트 전체를 한 번의 대화로 위임하고, 매주 자동 점검까지 설정합니다.</div>
+        <div class="item-tags">
+          <span class="item-tag ws">자동화</span>
+          <span class="item-tag ws">디스커버리</span>
+          <span class="item-tag ws">스케줄링</span>
         </div>
       </div>
     </a>
