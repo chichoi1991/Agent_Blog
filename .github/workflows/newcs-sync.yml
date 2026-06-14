@@ -1,0 +1,106 @@
+name: Sync newcs chapters from source repo
+
+# 소스 콘텐츠 허브 repo(blog-content)가 갱신되면 호출되어, tools/newcs-sync 변환기로
+# _chapters/newcs*.md 를 재생성하고 PR 을 연다. PR 머지 시 기존 "Deploy Jekyll site
+# to Pages" 워크플로가 자동 배포한다.
+#
+# 트리거:
+#   - repository_dispatch (event_type: blog-content-updated)  ← 허브 repo 가 보냄
+#       client_payload: { source_repo, source_ref, source_path, pipeline, target }
+#   - workflow_dispatch  ← 수동 실행(소스 repo/ref/path 입력 가능)
+#
+# 필요한 secret:
+#   - SOURCE_REPO        예: chichoi1991/blog-content (없으면 dispatch payload 사용)
+#   - SOURCE_REPO_TOKEN  소스 private repo 를 checkout 할 수 있는 PAT(repo read)
+
+on:
+  repository_dispatch:
+    types: [blog-content-updated]
+  workflow_dispatch:
+    inputs:
+      source_repo:
+        description: "소스 repo (owner/name)"
+        required: false
+      source_ref:
+        description: "소스 ref (branch/tag/sha)"
+        required: false
+        default: main
+      source_path:
+        description: "소스 repo 내 프로젝트 폴더(예: projects/new-copilot-studio). 비우면 루트."
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout blog
+        uses: actions/checkout@v4
+
+      - name: Resolve source coordinates
+        id: src
+        run: |
+          REPO="${{ github.event.inputs.source_repo || github.event.client_payload.source_repo || secrets.SOURCE_REPO }}"
+          REF="${{ github.event.inputs.source_ref || github.event.client_payload.source_ref || 'main' }}"
+          SUBPATH="${{ github.event.inputs.source_path || github.event.client_payload.source_path || '' }}"
+          PIPELINE="${{ github.event.client_payload.pipeline || 'newcs-sync' }}"
+          echo "repo=$REPO" >> "$GITHUB_OUTPUT"
+          echo "ref=$REF"  >> "$GITHUB_OUTPUT"
+          echo "subpath=$SUBPATH" >> "$GITHUB_OUTPUT"
+          echo "pipeline=$PIPELINE" >> "$GITHUB_OUTPUT"
+          if [ -z "$REPO" ]; then echo "::error::source_repo 가 비어 있습니다 (SOURCE_REPO secret 또는 dispatch payload 필요)"; exit 1; fi
+          if [ "$PIPELINE" != "newcs-sync" ]; then echo "::error::이 워크플로는 pipeline=newcs-sync 만 처리합니다 (받은 값: $PIPELINE)"; exit 1; fi
+
+      - name: Checkout source docs (private)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.src.outputs.repo }}
+          ref: ${{ steps.src.outputs.ref }}
+          token: ${{ secrets.SOURCE_REPO_TOKEN }}
+          path: _src
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Convert sources → _chapters/newcs*.md
+        run: |
+          SRC="_src"
+          if [ -n "${{ steps.src.outputs.subpath }}" ]; then SRC="_src/${{ steps.src.outputs.subpath }}"; fi
+          echo "converting from: $SRC"
+          node tools/newcs-sync/convert.mjs --source "$SRC" --out "_chapters"
+
+      - name: Copy screenshots → assets/newcs
+        run: |
+          mkdir -p assets/newcs
+          SRC="_src"
+          if [ -n "${{ steps.src.outputs.subpath }}" ]; then SRC="_src/${{ steps.src.outputs.subpath }}"; fi
+          if [ -d "$SRC/images" ]; then
+            find "$SRC/images" -type f \( -iname '*.png' -o -iname '*.jpg' \) -exec cp -f {} assets/newcs/ \;
+          fi
+
+      - name: Clean up source checkout
+        run: rm -rf _src
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(newcs): sync chapters from source docs"
+          branch: auto/newcs-sync
+          delete-branch: true
+          title: "Sync New Copilot Studio chapters from source"
+          body: |
+            소스 문서 변경을 `tools/newcs-sync` 변환기로 자동 반영했습니다.
+
+            **검수 포인트**
+            - [ ] 챕터 분할/순서가 의도와 맞는가
+            - [ ] 콜아웃·표·코드블록 렌더링 정상
+            - [ ] 스크린샷(assets/newcs) 누락 없음
+            - [ ] (선택) AI 후처리로 표현을 다듬을 부분
+
+            머지하면 GitHub Pages 배포가 자동 실행됩니다.
+          labels: automated, newcs-sync

@@ -1,0 +1,14 @@
+# Jekyll build output — GitHub Pages 가 빌드하므로 추적하지 않음
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Ruby / Bundler
+.bundle/
+vendor/
+
+# OS / 에디터
+.DS_Store
+Thumbs.db
+*~

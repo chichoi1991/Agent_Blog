@@ -469,6 +469,10 @@ a:hover { color: var(--link-hover); }
   background: #D97706;
 }
 
+.chapter-badge.newcs {
+  background: linear-gradient(135deg, #7C3AED, #DB2777);
+}
+
 .chapter-title {
   font-size: 30px;
   font-weight: 800;
@@ -617,9 +621,7 @@ a:hover { color: var(--link-hover); }
 }
 
 .info-box strong {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 13px;
+  font-weight: 700;
 }
 
 .info-box.tip {
@@ -645,6 +647,72 @@ a:hover { color: var(--link-hover); }
 }
 
 .info-box.note strong { color: #1D4ED8; }
+
+/* Figures / screenshots */
+.chapter-body figure.screenshot {
+  margin: 20px 0 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--sidebar-bg);
+}
+
+.chapter-body figure.screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chapter-body figure.screenshot figcaption {
+  padding: 10px 16px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-light);
+  background: #FFFFFF;
+}
+
+/* Screenshot not yet added (img failed to load) */
+.chapter-body figure.screenshot.pending {
+  border-style: dashed;
+  border-color: var(--sidebar-active-border);
+  background: var(--accent-light);
+}
+
+.chapter-body figure.screenshot.pending figcaption {
+  border-top: none;
+  background: transparent;
+  color: var(--accent-dark);
+}
+
+.chapter-body figure.screenshot.pending figcaption::before {
+  content: "📷 스크린샷 준비 중 — ";
+  font-weight: 700;
+}
+
+/* Featured home section (New Copilot Studio) */
+.home-section.featured {
+  padding: 24px;
+  margin-bottom: 56px;
+  border: 1px solid var(--sidebar-active-border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--accent-light) 0%, #FFFFFF 60%);
+}
+
+.home-section.featured h2 { font-size: 22px; }
+
+.home-section .section-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #7C3AED, #DB2777);
+}
 
 /* ===== Pagination ===== */
 .chapter-pagination {

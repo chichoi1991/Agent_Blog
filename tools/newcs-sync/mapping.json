@@ -1,0 +1,67 @@
+{
+  "$comment": "newcs-sync 구조 정의. 소스 1·2·3부 MD의 '## N.' 섹션을 블로그 부모/자식 챕터로 매핑한다. sections 값은 소스의 숫자 섹션 인덱스(## 0., ## 1. ...). 구조만 바뀌면 이 파일만 고치면 된다.",
+  "category": "newcs",
+  "scrub": {
+    "rename": [["MS", "Microsoft"]],
+    "$comment_deny": "NDA 없음 가정: 하드 차단어는 비움. 내부 마커를 가볍게 정리하고 싶으면 여기에 정규식을 추가(빌드 게이트는 경고 수준).",
+    "deny": []
+  },
+  "parts": [
+    {
+      "part": 1,
+      "source": "New-Copilot-Studio_1부_Whats-New.md",
+      "group": "ncs1",
+      "parentSlug": "newcs1-whats-new",
+      "parentTitle": "New Copilot Studio — 1부 What's New (개념편)",
+      "parentShort": "1부 What's New (개념)",
+      "parentDesc": "하네스 설계 원리로 다시 읽는 New Copilot Studio. 개념편의 7개 주제를 안내합니다.",
+      "summary": "New Copilot Studio는 UI 개편이 아니라, Anthropic·OpenAI·GitHub가 코딩 에이전트에서 검증한 \"하네스 설계\" 원리를 엔터프라이즈 플랫폼에 이식한 것입니다. 모든 기능을 \"Microsoft 기능\"이 아니라 \"업계 원리 → Microsoft 구현\"으로 읽어야 정확합니다.",
+      "children": [
+        { "slug": "newcs1-1-why-rebuilt", "order": 1, "short": "왜 다시 지었나", "title": "1부 · 왜 다시 지었나", "desc": "클래식의 구조적 한계와 코어 재건축의 이유.", "question": "클래식은 왜 한계에 부딪혔나", "sections": [0] },
+        { "slug": "newcs1-2-harness", "order": 2, "short": "하네스 엔지니어링", "title": "1부 · 하네스 엔지니어링", "desc": "하네스란 무엇이고, 왜 업계가 코딩 하네스로 수렴했나.", "question": "\"하네스\"란 무엇이고 왜 코딩 하네스인가", "sections": [1] },
+        { "slug": "newcs1-3-loop-skill", "order": 3, "short": "에이전틱 루프 & 스킬", "title": "1부 · 에이전틱 루프 & 스킬", "desc": "코어의 심장인 에이전틱 루프와, 필요할 때만 로드하는 스킬.", "question": "코어는 어떻게 돌고, 스킬은 왜 필요할 때만 로드하나", "sections": [2, 3] },
+        { "slug": "newcs1-4-tools-subagents", "order": 4, "short": "툴·MCP & 서브에이전트", "title": "1부 · 툴·MCP & 서브에이전트", "desc": "도구의 두 축(커넥터·MCP)과 컨텍스트 격리를 위한 서브에이전트.", "question": "도구는 어떻게 붙이고, 왜 적을수록 좋은가", "sections": [4, 5] },
+        { "slug": "newcs1-5-memory-workflow-mapping", "order": 5, "short": "메모리·워크플로우·매핑", "title": "1부 · 메모리·워크플로우·매핑", "desc": "메모리의 3대 기법, 에이전트+워크플로우 결합, 클래식→뉴 매핑표.", "question": "기억은 어디 남고, 클래식은 무엇으로 바뀌나", "sections": [6, 7, 8] },
+        { "slug": "newcs1-6-runtime", "order": 6, "short": "CLI 런타임 구조", "title": "1부 · CLI 런타임 구조", "desc": "하네스의 실물 — 격리 컨테이너·참조자료 처리·Python 런타임·메모리 아키텍처.", "question": "하네스의 \"실물\"은 어떻게 생겼나", "sections": [9] },
+        { "slug": "newcs1-7-comparison", "order": 7, "short": "Claude Code 비교 & 참조", "title": "1부 · Claude Code 비교 & 참조", "desc": "같은 하네스 철학, 다른 목적 — 그리고 클래식 대비 강화점·참조 자료.", "question": "같은 철학, 무엇이 다른가", "sections": [10], "appendSections": ["참조"] }
+      ]
+    },
+    {
+      "part": 2,
+      "source": "New-Copilot-Studio_2부_에이전트-생성.md",
+      "group": "ncs2",
+      "parentSlug": "newcs2-build",
+      "parentTitle": "New Copilot Studio — 2부 에이전트 생성 (빌드 개념편)",
+      "parentShort": "2부 빌드 개념",
+      "parentDesc": "에이전트를 이루는 6요소 — 지침·스킬·도구·참고자료·연결된 에이전트·메모리.",
+      "summary": "2부는 1부의 원리(하네스·스킬·툴·메모리·컨텍스트 엔지니어링)를 실제 에이전트로 빌드할 때 알아야 할 6개 구성요소를 개념 → 작성법 → 함정까지 정리합니다. 구체적인 실습은 3부에서 다룹니다.",
+      "parentSections": [0],
+      "children": [
+        { "slug": "newcs2-1-instructions", "order": 1, "short": "지침 (Instructions)", "title": "2부 · 지침 (Instructions)", "desc": "항상 로드되는 상위 규칙 — 6원칙·단일 출처·확인 게이트.", "question": "항상 로드되는 상위 규칙 — 짧고 명확하게", "sections": [1] },
+        { "slug": "newcs2-2-skills", "order": 2, "short": "스킬 (Skills)", "title": "2부 · 스킬 (Skills)", "desc": "load-on-demand 지침 패키지 — SKILL.md 규격·패키징·프리뷰 함정.", "question": "필요할 때만 로드하는 재사용 지침 패키지", "sections": [2] },
+        { "slug": "newcs2-3-tools-knowledge", "order": 3, "short": "도구 & 참고자료", "title": "2부 · 도구 & 참고자료", "desc": "손발(커넥터·MCP)의 최소 큐레이션과, RAG에서 코드 실행으로 바뀐 참고자료.", "question": "손발(커넥터·MCP)과 읽는 지식(RAG→코드)", "sections": [3, 4] },
+        { "slug": "newcs2-4-connected-memory", "order": 4, "short": "연결된 에이전트 & 메모리", "title": "2부 · 연결된 에이전트 & 메모리", "desc": "컨텍스트 격리를 위한 연결된 에이전트와, 단기·장기 2계층 메모리.", "question": "컨텍스트 격리와 단기·장기 2계층 메모리", "sections": [5, 6] },
+        { "slug": "newcs2-5-synthesis", "order": 5, "short": "종합 & 체크리스트", "title": "2부 · 종합 & 체크리스트", "desc": "6요소가 한 요청에서 맞물리는 법, 빌드 순서, 흔한 함정.", "question": "6요소가 한 요청에서 맞물리는 법 + 함정", "sections": [7], "appendSections": ["부록"] }
+      ]
+    },
+    {
+      "part": 3,
+      "source": "New-Copilot-Studio_3부_에이전트-실습.md",
+      "group": "ncs3",
+      "parentSlug": "newcs3-handson",
+      "parentTitle": "New Copilot Studio — 3부 에이전트 생성 (실습편)",
+      "parentShort": "3부 실습 — 세일즈 어시스턴트",
+      "parentDesc": "통신사 세일즈 어시스턴트 따라 만들기 — 목표·시나리오·구성 안내.",
+      "summary": "2부에서 익힌 6요소를 실제 클릭 순서로 조립해 \"통신사 세일즈 어시스턴트\"를 완성합니다. 순서는 지침 → 단일 스킬 → 스킬 패키지 → 도구 → 테스트 → 배포이며, 각 단계에 작성 팁과 프리뷰 함정을 붙였습니다.",
+      "parentSections": [0],
+      "children": [
+        { "slug": "newcs3-1-setup-agent", "order": 1, "short": "사전 준비 & 생성·지침", "title": "3부 · 사전 준비 & 에이전트 생성·지침", "desc": "프리뷰 진입, 빈 에이전트 생성, 6요소의 뼈대인 지침 작성.", "question": "프리뷰 진입 → 빈 에이전트 → 지침 작성", "sections": [1, 2] },
+        { "slug": "newcs3-2-single-skill", "order": 2, "short": "단일 스킬 작성", "title": "3부 · 단일 스킬 작성", "desc": "UI에 바로 붙여넣는 SKILL.md 한 장짜리 스킬 만들기.", "question": "UI에 바로 붙여넣는 SKILL.md 한 장", "sections": [3] },
+        { "slug": "newcs3-3-skill-package", "order": 3, "short": "스킬 패키지 임포트", "title": "3부 · 스킬 패키지 임포트", "desc": "디자인·템플릿을 묶은 ZIP 고성능 스킬 + 프리뷰 함정.", "question": "디자인·템플릿을 묶은 ZIP 고성능 스킬", "sections": [4] },
+        { "slug": "newcs3-4-tools", "order": 4, "short": "커넥터·MCP 추가", "title": "3부 · 커넥터·MCP 추가 (Mail · OneDrive)", "desc": "메일 발송·첨부에 필요한 도구를 최소 큐레이션으로 추가.", "question": "Mail·OneDrive MCP (최소 큐레이션)", "sections": [5] },
+        { "slug": "newcs3-5-test", "order": 5, "short": "테스트", "title": "3부 · 테스트 창에서 테스트", "desc": "배포 전 전체 흐름 실측 + 점검 포인트 + 자가 복구 사례.", "question": "전체 흐름 실측 + 점검 포인트", "sections": [6] },
+        { "slug": "newcs3-6-deploy", "order": 6, "short": "배포 & 트러블슈팅", "title": "3부 · 배포 & 트러블슈팅", "desc": "게시·채널 제약·게시 후 주의 + 실습 체크리스트·트러블슈팅.", "question": "게시·채널 제약·문제 해결", "sections": [7], "appendSections": ["부록"] }
+      ]
+    }
+  ]
+}

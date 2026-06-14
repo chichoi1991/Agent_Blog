@@ -5,17 +5,77 @@ title: "홈"
 
 <div class="home-hero">
   <h1>Microsoft Copilot<br>Agentic Blog</h1>
-  <p class="hero-sub">Microsoft Copilot 에이전트 생태계를 다루는 블로그입니다. 실무 가이드, 핸즈온 워크샵, 기술 업데이트를 한곳에서 확인하세요.</p>
+  <p class="hero-sub">Microsoft Copilot 에이전트 생태계를 다루는 블로그입니다. 이제 <strong>New Copilot Studio (CLI Agent)</strong>를 중심으로, 기존 Classic 가이드·워크샵까지 한곳에서 확인하세요.</p>
 </div>
 
 <div class="home-info">
-  <strong>⚠️ Before You Begin</strong>
-  이 블로그는 Microsoft Copilot Studio를 중심으로 에이전트 구축·운영에 관한 다양한 콘텐츠를 제공합니다. 각 섹션은 독립적으로 참고할 수 있으며, 필요한 주제부터 시작하세요.
+  <strong>⚡ New vs Classic</strong>
+  <strong>New Copilot Studio (CLI Agent)</strong>는 AI 코어를 코딩 하네스 위에 다시 지은 새 패러다임입니다(메인). 기존 실무 가이드·핸즈온 워크샵·특별 워크샵·Cowork는 <strong>Classic Copilot Studio</strong> 기준이며, 두 버전은 나란히 공존합니다.
 </div>
 
-<!-- ===== Section 1: 실무 가이드 ===== -->
+<!-- ===== Featured: New Copilot Studio (CLI Agent) ===== -->
+<div class="home-section featured">
+  <span class="section-badge">⚡ Main · New</span>
+  <h2>New Copilot Studio (CLI Agent)</h2>
+  <p class="section-desc">하네스 설계 원리로 다시 읽는 New Copilot Studio — 개념(1부) · 빌드(2부) · 실습(3부).</p>
+
+  <div class="chapter-list">
+    <a href="{{ '/chapters/newcs0-overview/' | relative_url }}" class="chapter-item">
+      <div class="item-icon">⚡</div>
+      <div class="item-body">
+        <div class="item-title">개요 — 왜 CLI 에이전트인가</div>
+        <div class="item-desc">Classic과 무엇이 다른지, 1·2·3부를 어떻게 읽을지 안내합니다.</div>
+        <div class="item-tags">
+          <span class="item-tag">하네스</span>
+          <span class="item-tag">Classic 비교</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="{{ '/chapters/newcs1-whats-new/' | relative_url }}" class="chapter-item">
+      <div class="item-icon">🧠</div>
+      <div class="item-body">
+        <div class="item-title">1부 · What's New (개념편)</div>
+        <div class="item-desc">하네스·에이전틱 루프·스킬·툴(MCP)·서브에이전트·메모리·CLI 런타임 구조.</div>
+        <div class="item-tags">
+          <span class="item-tag">하네스</span>
+          <span class="item-tag">컨텍스트 엔지니어링</span>
+          <span class="item-tag">MCP</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="{{ '/chapters/newcs2-build/' | relative_url }}" class="chapter-item">
+      <div class="item-icon">🧩</div>
+      <div class="item-body">
+        <div class="item-title">2부 · 에이전트 생성 (빌드 개념편)</div>
+        <div class="item-desc">지침·스킬·도구·참고자료·연결된 에이전트·메모리 — 6요소 작성법과 함정.</div>
+        <div class="item-tags">
+          <span class="item-tag">6요소</span>
+          <span class="item-tag">스킬 패키징</span>
+          <span class="item-tag">함정</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="{{ '/chapters/newcs3-handson/' | relative_url }}" class="chapter-item">
+      <div class="item-icon">🧪</div>
+      <div class="item-body">
+        <div class="item-title">3부 · 에이전트 생성 (실습편)</div>
+        <div class="item-desc">통신사 세일즈 어시스턴트 따라 만들기 — 지침→스킬→패키지→도구→테스트→배포.</div>
+        <div class="item-tags">
+          <span class="item-tag">핸즈온</span>
+          <span class="item-tag">엑셀 분석</span>
+          <span class="item-tag">메일·대시보드</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ===== Section 1: 실무 가이드 (Classic) ===== -->
 <div class="home-section">
-  <h2>📘 Copilot Studio 실무 가이드</h2>
+  <h2>📘 Copilot Studio 실무 가이드 (Classic)</h2>
   <p class="section-desc">도입 검토부터 배포·운영까지, Copilot Studio를 단계별로 안내합니다.</p>
 
   <div class="chapter-list">
@@ -136,9 +196,9 @@ title: "홈"
   </div>
 </div>
 
-<!-- ===== Section 2: 핸즈온 워크샵 ===== -->
+<!-- ===== Section 2: 핸즈온 워크샵 (Classic) ===== -->
 <div class="home-section">
-  <h2>🛠️ 핸즈온 워크샵</h2>
+  <h2>🛠️ 핸즈온 워크샵 (Classic)</h2>
   <p class="section-desc">직접 따라하며 배우는 Copilot Studio 실습 과정입니다.</p>
 
   <div class="chapter-list">
@@ -197,9 +257,9 @@ title: "홈"
   </div>
 </div>
 
-<!-- ===== Section 2.5: 특별 워크샵 ===== -->
+<!-- ===== Section 2.5: 특별 워크샵 (Classic) ===== -->
 <div class="home-section">
-  <h2>⭐ 특별 워크샵</h2>
+  <h2>⭐ 특별 워크샵 (Classic)</h2>
   <p class="section-desc">복합 데이터 소스를 조합하는 고급 에이전트 실습 과정입니다.</p>
 
   <div class="chapter-list">

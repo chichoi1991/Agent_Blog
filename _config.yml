@@ -26,14 +26,17 @@ defaults:
 
 # Sidebar navigation sections
 nav_sections:
+  - key: newcs
+    title: "New Copilot Studio (CLI Agent)"
+    icon: "⚡"
   - key: guide
-    title: "Copilot Studio 실무 가이드"
+    title: "Copilot Studio 실무 가이드 (Classic)"
     icon: "📘"
   - key: workshop
-    title: "핸즈온 워크샵"
+    title: "핸즈온 워크샵 (Classic)"
     icon: "🛠️"
   - key: special
-    title: "특별 워크샵"
+    title: "특별 워크샵 (Classic)"
     icon: "⭐"
   - key: cowork
     title: "Cowork Collective"
@@ -41,3 +44,10 @@ nav_sections:
   - key: updates
     title: "기술 업데이트"
     icon: "🔔"
+
+# Exclude dev/handoff docs from the built site
+exclude:
+  - HANDOFF-new-copilot-studio.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
