@@ -55,8 +55,8 @@ parent: "ncs3"
 - [ ] New 환경(preview URL 또는 Try now)에 진입했는가
 - [ ] 지침이 "무엇을"에 집중하고, 디자인은 스킬을 가리키는가
 - [ ] **SharePoint 특정 폴더(엑셀 시계열 + Word 정책 문서)**를 Knowledge로 연결했는가
-- [ ] 단일 스킬(`result-brief`)이 UI에 등록됐는가
-- [ ] 깃허브의 **2개 ZIP 스킬 패키지**를 임포트했고, 둘 다 루트에 SKILL.md가 있는가
+- [ ] 단일 스킬(`weekly-sales-brief`)이 UI에 등록됐는가
+- [ ] **2개 ZIP 스킬 패키지**(`excel-analysis`·`brand-comms`)를 임포트했고, 둘 다 루트에 SKILL.md가 있는가
 - [ ] 스킬 `name`이 소문자·숫자·하이픈만 쓰는가
 - [ ] **`app/skills` 프롬프트로 리소스까지 주입됐는지 검증**했는가 (5.4)
 - [ ] Work IQ Mail·OneDrive MCP가 연결됐는가 (겹치는 도구 없음)

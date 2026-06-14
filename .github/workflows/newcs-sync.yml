@@ -74,13 +74,18 @@ jobs:
           echo "converting from: $SRC"
           node tools/newcs-sync/convert.mjs --source "$SRC" --out "_chapters"
 
-      - name: Copy screenshots → assets/newcs
+      - name: Copy screenshots & skill ZIPs → assets/newcs
         run: |
           mkdir -p assets/newcs
           SRC="_src"
           if [ -n "${{ steps.src.outputs.subpath }}" ]; then SRC="_src/${{ steps.src.outputs.subpath }}"; fi
           if [ -d "$SRC/images" ]; then
             find "$SRC/images" -type f \( -iname '*.png' -o -iname '*.jpg' \) -exec cp -f {} assets/newcs/ \;
+          fi
+          # skill packages (ZIP) — downloadable from the public blog (3부 5장)
+          if [ -d "$SRC/CLI-Agent-Demo/skills" ]; then
+            mkdir -p assets/newcs/skills
+            find "$SRC/CLI-Agent-Demo/skills" -maxdepth 1 -type f -iname '*.zip' -exec cp -f {} assets/newcs/skills/ \;
           fi
 
       - name: Clean up source checkout

@@ -16,12 +16,17 @@ parent: "ncs3"
 
 UI 단일 스킬은 파일 하나만 됩니다. 하지만 메일·보고서처럼 **디자인·템플릿을 고정**하려면 리소스를 함께 묶어야 합니다. ZIP 패키지가 그 방법입니다.
 
-**이 실습은 깃허브에 미리 올려둔 2개의 ZIP 파일을 받아 업로드**합니다(직접 만들어도 됨). 각 패키지의 역할:
+**이 실습은 아래에서 바로 받을 수 있는 2개의 ZIP 파일을 업로드**합니다(직접 만들어도 됨). 각 패키지의 역할:
 
 | 패키지(ZIP) | 구성 | 역할 |
 |---|---|---|
-| **분석 규칙 스킬** | `SKILL.md` + `데이터-설명(선택).md` | 엑셀을 정확히 집계·표로 정리하는 규칙(다관점 구매의향 분석) |
-| **메일·보고서 스킬** | `SKILL.md` + `design-set.md` + `email_template.html` + `report_template.html` | 회사 디자인(아이보리·마젠타)으로 메일·HTML 대시보드 생성 |
+| **분석 규칙 스킬** (`excel-analysis.zip`) | `SKILL.md` + `데이터-설명(선택).md` | 엑셀을 정확히 집계·표로 정리하는 규칙(다관점 구매의향 분석) |
+| **메일·보고서 스킬** (`brand-comms.zip`) | `SKILL.md` + `design-set.md` + `email_template.html` + `report_template.html` | 회사 디자인(아이보리·마젠타)으로 메일·HTML 대시보드 생성 |
+
+**📦 ZIP 바로 받기** — 압축을 풀지 말고 받은 파일 그대로 업로드하세요.
+
+- [`excel-analysis.zip` 다운로드]({{ '/assets/newcs/skills/excel-analysis.zip' | relative_url }}) — 분석 규칙 스킬
+- [`brand-comms.zip` 다운로드]({{ '/assets/newcs/skills/brand-comms.zip' | relative_url }}) — 메일·보고서 스킬
 
 <figure class="screenshot">
   <img src="{{ '/assets/newcs/3_6.png' | relative_url }}" alt="패키지 폴더 구조 / 임포트 버튼 위치" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
@@ -31,7 +36,7 @@ UI 단일 스킬은 파일 하나만 됩니다. 하지만 메일·보고서처�
 ### 5.2 임포트 절차
 
 1. Build 화면 **Skills → Import (ZIP)** 선택.
-2. 준비한 `브랜드-메일보고서.zip`을 업로드.
+2. 위에서 받은 **`excel-analysis.zip`** · **`brand-comms.zip`**을 각각 업로드(스킬 2개).
 3. 업로드 후 **Instructions 미리보기**에 SKILL.md 본문(예: 색상 HEX 표)이 보이는지 확인.
 
 ### 5.3 스킬 패키지 작성 팁 (2부 2.5·2.6)
