@@ -56,11 +56,12 @@
       "parentSections": [0],
       "children": [
         { "slug": "newcs3-1-setup-agent", "order": 1, "short": "사전 준비 & 생성·지침", "title": "3부 · 사전 준비 & 에이전트 생성·지침", "desc": "프리뷰 진입, 빈 에이전트 생성, 6요소의 뼈대인 지침 작성.", "question": "프리뷰 진입 → 빈 에이전트 → 지침 작성", "sections": [1, 2] },
-        { "slug": "newcs3-2-single-skill", "order": 2, "short": "단일 스킬 작성", "title": "3부 · 단일 스킬 작성", "desc": "UI에 바로 붙여넣는 SKILL.md 한 장짜리 스킬 만들기.", "question": "UI에 바로 붙여넣는 SKILL.md 한 장", "sections": [3] },
-        { "slug": "newcs3-3-skill-package", "order": 3, "short": "스킬 패키지 임포트", "title": "3부 · 스킬 패키지 임포트", "desc": "디자인·템플릿을 묶은 ZIP 고성능 스킬 + 프리뷰 함정.", "question": "디자인·템플릿을 묶은 ZIP 고성능 스킬", "sections": [4] },
-        { "slug": "newcs3-4-tools", "order": 4, "short": "커넥터·MCP 추가", "title": "3부 · 커넥터·MCP 추가 (Mail · OneDrive)", "desc": "메일 발송·첨부에 필요한 도구를 최소 큐레이션으로 추가.", "question": "Mail·OneDrive MCP (최소 큐레이션)", "sections": [5] },
-        { "slug": "newcs3-5-test", "order": 5, "short": "테스트", "title": "3부 · 테스트 창에서 테스트", "desc": "배포 전 전체 흐름 실측 + 점검 포인트 + 자가 복구 사례.", "question": "전체 흐름 실측 + 점검 포인트", "sections": [6] },
-        { "slug": "newcs3-6-deploy", "order": 6, "short": "배포 & 트러블슈팅", "title": "3부 · 배포 & 트러블슈팅", "desc": "게시·채널 제약·게시 후 주의 + 실습 체크리스트·트러블슈팅.", "question": "게시·채널 제약·문제 해결", "sections": [7], "appendSections": ["부록"] }
+        { "slug": "newcs3-2-knowledge", "order": 2, "short": "참조자료 추가", "title": "3부 · 에이전트 참조자료 추가", "desc": "SharePoint 특정 폴더(엑셀 시계열 + Word 정책)를 Knowledge로 연결.", "question": "SharePoint 폴더 연결 + 코드 처리 원리", "sections": [3] },
+        { "slug": "newcs3-3-single-skill", "order": 3, "short": "단일 스킬 작성", "title": "3부 · 단일 스킬 작성", "desc": "UI에 바로 붙여넣는 SKILL.md 한 장짜리 스킬 만들기.", "question": "UI에 바로 붙여넣는 SKILL.md 한 장", "sections": [4] },
+        { "slug": "newcs3-4-skill-package", "order": 4, "short": "스킬 패키지 임포트", "title": "3부 · 스킬 패키지 임포트", "desc": "GitHub의 2개 ZIP 고성능 스킬 + 프리뷰 함정.", "question": "디자인·템플릿을 묶은 ZIP 고성능 스킬", "sections": [5] },
+        { "slug": "newcs3-5-tools", "order": 5, "short": "커넥터·MCP 추가", "title": "3부 · 커넥터·MCP 추가 (Mail · OneDrive)", "desc": "메일 발송·첨부에 필요한 도구를 최소 큐레이션으로 추가.", "question": "Work IQ Mail·OneDrive MCP (최소 큐레이션)", "sections": [6] },
+        { "slug": "newcs3-6-test", "order": 6, "short": "테스트", "title": "3부 · 테스트 창에서 테스트", "desc": "5개 프롬프트로 전체 흐름 실측 + 점검 포인트.", "question": "프롬프트 #1~#5 실측 + 점검", "sections": [7] },
+        { "slug": "newcs3-7-deploy", "order": 7, "short": "배포 & 트러블슈팅", "title": "3부 · 배포 & 트러블슈팅", "desc": "게시·채널 제약·실제 채널 재반복 + 체크리스트·트러블슈팅.", "question": "게시·채널 제약·실채널 재반복", "sections": [8], "appendSections": ["부록"] }
       ]
     }
   ]

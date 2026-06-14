@@ -1,16 +1,16 @@
 ---
-layout: chapter
+layout: "chapter"
 title: "New Copilot Studio — 1부 What's New (개념편)"
 short_title: "1부 What's New (개념)"
 description: "하네스 설계 원리로 다시 읽는 New Copilot Studio. 개념편의 7개 주제를 안내합니다."
 order: 1
-category: newcs
+category: "newcs"
 parent: "ncs1"
 is_parent: true
 ---
 
 <div class="info-box note" markdown="1">
-**▶ 1부 한 줄 요약** — New Copilot Studio는 UI 개편이 아니라, Anthropic·OpenAI·GitHub가 코딩 에이전트에서 검증한 "하네스 설계" 원리를 엔터프라이즈 플랫폼에 이식한 것입니다. 모든 기능을 "Microsoft 기능"이 아니라 **"업계 원리 → Microsoft 구현"**으로 읽어야 정확합니다.
+**▶ 1부 한 줄 요약** — New Copilot Studio는 UI 개편이 아니라, Anthropic·OpenAI·GitHub가 코딩 에이전트에서 검증한 "하네스 설계" 원리를 엔터프라이즈 플랫폼에 이식한 것입니다. 모든 기능을 "Microsoft 기능"이 아니라 "업계 원리 → Microsoft 구현"으로 읽어야 정확합니다.
 </div>
 
 > ⚠️ 이 문서의 기능·화면·일정은 모두 프리뷰 기준이며 변경될 수 있습니다(subject to change).
@@ -19,9 +19,7 @@ is_parent: true
 
 ## 이 부에서 다루는 내용
 
-1부는 New Copilot Studio의 **개념**을 7개 주제로 나눠 설명합니다. 순서대로 읽으면 "왜 다시 지었나"부터 "런타임 실물"까지 자연스럽게 이어집니다.
-
-| # | 주제 | 핵심 질문 |
+| # | 주제 | 핵심 |
 |---|---|---|
 | 1 | [왜 다시 지었나]({{ '/chapters/newcs1-1-why-rebuilt/' | relative_url }}) | 클래식은 왜 한계에 부딪혔나 |
 | 2 | [하네스 엔지니어링]({{ '/chapters/newcs1-2-harness/' | relative_url }}) | "하네스"란 무엇이고 왜 코딩 하네스인가 |
@@ -31,4 +29,4 @@ is_parent: true
 | 6 | [CLI 런타임 구조]({{ '/chapters/newcs1-6-runtime/' | relative_url }}) | 하네스의 "실물"은 어떻게 생겼나 |
 | 7 | [Claude Code 비교 & 참조]({{ '/chapters/newcs1-7-comparison/' | relative_url }}) | 같은 철학, 무엇이 다른가 |
 
-> 처음이라면 **1 → 7 순서**를 권장합니다. 빌드를 빨리 해보고 싶다면 1·2만 읽고 [2부]({{ '/chapters/newcs2-build/' | relative_url }})로 넘어가도 됩니다.
+> 순서대로 읽으면 자연스럽게 이어집니다. 필요한 주제부터 펼쳐 보셔도 됩니다.

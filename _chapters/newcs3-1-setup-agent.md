@@ -1,48 +1,48 @@
 ---
-layout: chapter
+layout: "chapter"
 title: "3부 · 사전 준비 & 에이전트 생성·지침"
 short_title: "사전 준비 & 생성·지침"
 description: "프리뷰 진입, 빈 에이전트 생성, 6요소의 뼈대인 지침 작성."
 order: 1
-category: newcs
+category: "newcs"
 parent: "ncs3"
 ---
 
 ## 1. 사전 준비
 
-> **▶ 목표:** New Copilot Studio(프리뷰)에 진입합니다.
+> **▶ 목표:** New Copilot Studio(프리뷰)에 진입한다.
 
 ### 1.1 New 환경 진입 — 두 가지 방법
 
 | 방법 | 경로 |
 |---|---|
-| **A. 직접 이동** | 브라우저에서 New Copilot Studio 프리뷰 URL 접속 |
+| **A. 직접 이동** | 브라우저에서 `preview.copilotstudio.microsoft.com` 접속 |
 | **B. Try now** | 기존 Copilot Studio 홈에서 **"Try now"** 버튼 클릭 |
 
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_2.png' | relative_url }}" alt="프리뷰 접속 화면 / Try now 버튼 위치" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>프리뷰 접속 화면 / Try now 버튼 위치</figcaption>
+  <img src="{{ '/assets/newcs/3_2.png' | relative_url }}" alt="preview URL 접속 화면 / Try now 버튼 위치" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>preview URL 접속 화면 / Try now 버튼 위치</figcaption>
 </figure>
 
 ### 1.2 진입 후 확인
 
-- 좌측/상단에서 **새 빌드 화면(Build·Test·Preview·Monitor 탭)**이 보이면 New 환경입니다.
+- 좌측/상단에서 **새 빌드 화면(Build·Test·Preview·Monitor 탭)**이 보이면 New 환경입니다(1부 0.2).
 - 프리뷰는 opt-in이며 클래식과 나란히 동작합니다. 강제 전환 없음.
 
-<div class="info-box warning" markdown="1">
-**⚠️ 중요 — Sandbox 환경에서 실습하세요:** 현재 프리뷰에서는 **개인 개발환경에서 New(CLI) 에이전트가 정상 작동하지 않습니다**(스킬 패키지 임포트 불가·Copilot 앱 오류·Teams 랜덤 오동작). **실습은 반드시 Sandbox 환경에서 진행**하세요.
-</div>
+> **⚠️ 중요 — Sandbox 환경에서 실습하세요:** 현재 프리뷰에서는 **개인 개발환경(personal developer environment)에서 New(CLI) 에이전트가 정상 작동하지 않습니다**(스킬 패키지 임포트 불가·Copilot 앱 오류·Teams 랜덤 오동작 — 5장·8장 참조). **실습은 반드시 Sandbox 환경에서 진행**하세요.
+
+---
 
 ---
 
 ## 2. 에이전트 생성 + 지침 작성
 
-> **▶ 목표:** 빈 에이전트를 만들고, 6요소의 뼈대인 **지침**을 작성합니다.
+> **▶ 목표:** 빈 에이전트를 만들고, 6요소의 뼈대인 **지침**을 작성한다.
 
 ### 2.1 에이전트 만들기
 
 1. **Create / New agent** 클릭.
-2. 이름·설명 입력 (예: 이름 `통신사 세일즈 어시스턴트`).
+2. 이름·설명 입력 (예: 이름 `세일즈 어시스턴트 에이전트`).
 3. 생성되면 **Build** 화면으로 진입 — 여기에 지침·지식·도구·스킬이 한 화면에 모입니다.
 
 <figure class="screenshot">
@@ -52,7 +52,7 @@ parent: "ncs3"
 
 ### 2.2 지침 작성 — 뼈대
 
-지침 칸에 아래를 붙여넣습니다. **"무엇을"만 쉬운 말로, "어떻게"는 에이전트에 맡깁니다.**
+지침 칸에 아래를 붙여넣습니다(이 실습은 **미리 저장된 지침을 그대로 복사**해 쓰면 됩니다). **"무엇을"만 쉬운 말로, "어떻게"는 에이전트에 맡깁니다**(2부 1장).
 
 ```
 당신은 팀의 판매 데이터를 분석하고, 그 결과로 메일과 보고서를 만들어 주는 어시스턴트입니다.
@@ -81,10 +81,10 @@ SharePoint에 올라온 판매 엑셀과 안내용 Word 문서를 참고합니�
 - 메일은 항상 확인을 받은 뒤에만 보냅니다.
 ```
 
-### 2.3 지침 작성 팁
+### 2.3 지침 작성 팁 (2부 1장 요약)
 
 - **무엇을만, 어떻게는 맡긴다** — 코드·경로·라이브러리는 적지 않는다.
-- **단일 출처** — 색·절차 같은 세부는 지침에 박지 말고 **"스킬을 따르라"고 가리키기**.
+- **단일 출처** — 색·절차 같은 세부는 지침에 박지 말고 **"스킬을 따르라"고 가리키기**. (지침에 색을 박으면 에이전트가 스킬을 우회한다 — 2부 1.5)
 - **비가역 행동엔 확인 게이트** — 메일 발송은 "확인 후에만".
 - **가드레일은 부정형으로** — "없는 숫자 만들지 않기", "확인 전 발송 금지".
 - **짧게** — 지침은 항상 로드되니 길면 핵심이 묽어진다.
@@ -94,4 +94,6 @@ SharePoint에 올라온 판매 엑셀과 안내용 Word 문서를 참고합니�
   <figcaption>지침 입력 화면</figcaption>
 </figure>
 
-> **짚고 가기:** 지침은 "회사 디자인 규칙은 스킬을 따르라"고만 적고, 실제 색·템플릿은 2·3단계의 스킬에 둡니다. 이렇게 해야 에이전트가 메일·보고서를 만들 때 **반드시 스킬을 펼쳐** 디자인·안전 규칙까지 함께 적용합니다.
+> **짚고 가기:** 지침은 "회사 디자인 규칙은 스킬을 따르라"고만 적고, 실제 색·템플릿은 4·5장의 스킬에 둡니다. 이렇게 해야 에이전트가 메일·보고서를 만들 때 **반드시 스킬을 펼쳐** 디자인·안전 규칙까지 함께 적용합니다.
+
+---

@@ -238,8 +238,25 @@ if (dryRun) {
   for (const r of results) console.log('  ' + r.slug + '.md  (' + r.content.length + ' bytes)');
 } else {
   fs.mkdirSync(outDir, { recursive: true });
+  const written = new Set(results.map((r) => r.slug + '.md'));
+  // --clean (default on): remove orphan generated chapter files so renamed/removed
+  // slugs don't linger. Only touches files matching a part's slug prefix (e.g. newcs3-*),
+  // never the hand-written overview (newcs0-*) or unrelated chapters.
+  if (!args.includes('--no-clean')) {
+    const prefixes = mapping.parts.map((p) => p.parentSlug.replace(/-.*$/, '') + '-'); // e.g. "newcs3-"
+    const keep = new Set([...written, ...mapping.parts.map((p) => p.parentSlug + '.md')]);
+    for (const f of fs.readdirSync(outDir)) {
+      if (!f.endsWith('.md')) continue;
+      const isGenerated = prefixes.some((pre) => f.startsWith(pre)) && /^newcs\d+-\d+-/.test(f);
+      if (isGenerated && !keep.has(f)) {
+        fs.rmSync(path.join(outDir, f));
+        console.log('  [clean] removed orphan ' + f);
+      }
+    }
+  }
   for (const r of results) {
     fs.writeFileSync(path.join(outDir, r.slug + '.md'), r.content, 'utf8');
   }
   console.log(`[newcs-sync] wrote ${results.length} files to ${outDir}`);
 }
+
