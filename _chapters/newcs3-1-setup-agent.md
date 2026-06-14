@@ -29,7 +29,7 @@ parent: "ncs3"
 - 좌측/상단에서 **새 빌드 화면(Build·Test·Preview·Monitor 탭)**이 보이면 New 환경입니다(1부 0.2).
 - 프리뷰는 opt-in이며 클래식과 나란히 동작합니다. 강제 전환 없음.
 
-> **⚠️ 중요 — Sandbox 환경에서 실습하세요:** 현재 프리뷰에서는 **개인 개발환경(personal developer environment)에서 New(CLI) 에이전트가 정상 작동하지 않습니다**(스킬 패키지 임포트 불가·Copilot 앱 오류·Teams 랜덤 오동작 — 5장·8장 참조). **실습은 반드시 Sandbox 환경에서 진행**하세요.
+> **⚠️ 중요 — Sandbox 환경에서 실습하세요:** 현재 프리뷰에서는 **개인 개발환경(personal developer environment)에서 New(CLI) 에이전트가 정상 작동하지 않는 문제가 있습니다**  <br> (스킬 패키지 임포트 불가·Copilot 앱 오류·Teams 랜덤 오동작 — 5장·8장 참조). <br> **실습은 반드시 개인 개발환경이 아닌 Sandbox 환경에서 진행**하세요.
 
 ---
 

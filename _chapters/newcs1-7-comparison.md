@@ -30,22 +30,27 @@ Claude Code가 제시한 하네스 5요소(Tool Loop·Sandbox·Persistence·Obse
 
 → 결론: **"하네스 엔지니어링에 입각한 에이전트"가 맞다.**
 
-### 10.2 결정적 차이 — 같은 철학, 다른 목적
+### 10.2 결정적 차이 — 같은 철학, 다른 타겟·목적·거버넌스
 
-| 항목 | Claude Code 하네스 | Studio CLI 에이전트 |
+> **짚고 가기:** Studio CLI 에이전트가 "사람이 매번 개입해야만 하는(HITL 전용)" 도구라는 건 오해다. **워크플로우(7장)와 연동하면 그대로 자율 자동화**가 된다. 따라서 둘의 차이는 *자동화가 되느냐*가 아니라 — **누가 쓰고(타겟) · 무엇을 위해(목적) · 어떤 통제 아래(거버넌스)** 쓰느냐다.
+
+두 하네스는 **같은 철학**(격리 샌드박스 + 도구 루프 + 관찰·반복)을 공유합니다. 갈리는 지점은 세 축입니다.
+
+| 비교 축 | Claude Code 하네스 | Studio CLI 에이전트 |
 |---|---|---|
-| **자율 실행** | 사람 승인 없이 멀티스텝 자동 실행 | 매 턴 사람이 트리거(HITL) |
-| **에이전트 간 통신** | Multi-agent 오케스트레이션 | (현재) 단일 에이전트 중심 → connected agents로 확장(5장) |
-| **저장소 연동** | Git 기반 작업 중심 | Git 없음, **M365 생태계 중심** |
-| **루프 종료 판단** | 에이전트가 완료 여부 자체 판단 | 사용자가 턴 종료 결정 |
-| **최적화 목적** | 개발 자동화 극대화 | 기업 데이터 연동 + 사람 개입 보장 |
+| **타겟 — 누가 쓰나** | 개발자 중심 | 일반 사용자·준개발자(현업) 중심 |
+| **목적 — 무엇을 위해** | 로컬·프로젝트 단위 개발 자동화 극대화 | 조직 단위 배포 · 현장 업무 개선 |
+| **거버넌스·통제** | 비교적 자유 — 로컬 중심 작업 가능, 통제는 기업이 별도로 강구해야 함 | 기업이 통제하는 인프라 안에서만 — 중앙에서 배포한 리소스(지식·데이터·도구)로 작업 |
+| **자동화 방식** | 에이전트가 멀티스텝 자율 실행, 완료도 자체 판단 | 기본은 사람 개입(HITL), **워크플로우 연동 시 자율 실행**(7장) — 개입·자동화를 선택 |
+| **에이전트 간 통신** | Multi-agent 오케스트레이션 | connected agents로 확장(5장) |
+| **데이터·개발 연동** | Git 기반 작업 중심 | M365 생태계 중심 (+ 개발자에겐 Git CI/CD·VS Code Extension으로 지침·스킬 개발 지원) |
 
 ```
-Claude Code 하네스   →  개발 자동화 극대화 (Agentic)
-Studio CLI 에이전트  →  기업 데이터 연동 + 사람 개입 (Enterprise)
+Claude Code 하네스   →  개발자 · 로컬에서 자유로운 자율 실행 (Agentic)
+Studio CLI 에이전트  →  현업 · 기업 거버넌스 안의 데이터 연동 + 선택적 자동화 (Enterprise)
 ```
 
-> **한 줄 정리:** 같은 하네스 철학을 **다른 목적**으로 구현했다. Claude Code는 *개발자의 자율 실행*, Studio CLI는 *엔터프라이즈 거버넌스 + HITL*에 튜닝됐다. 우열이 아니라 **용도 차이**다.
+> **한 줄 정리:** 같은 하네스 철학을 **다른 타겟·목적·거버넌스**로 구현했다. Claude Code는 *개발자가 로컬에서 자유롭게 자율 실행*, Studio CLI는 *현업이 기업 통제 인프라 안에서 데이터를 연동하고, 필요하면 워크플로우로 자동화*한다. **HITL이냐 자동화냐의 우열이 아니라, 누가·무엇을·어떤 통제 아래 쓰느냐의 용도 차이**다.
 
 ### 10.3 기존(클래식) Studio 에이전트 대비 강화점
 
@@ -77,12 +82,5 @@ Studio CLI 에이전트  →  기업 데이터 연동 + 사람 개입 (Enterpris
 - Anthropic, **Building Effective Agents / Multi-agent research system / Writing tools for AI agents** — 보조
 - Anthropic Learn (anthropic.com/learn) — 학습 코스
 - 사례: Claude Code, GitHub Copilot CLI, OpenAI Codex CLI
-
-### Microsoft — 제품 출처
-
-- (공개) Copilot Studio Blog, **Meet the new Copilot Studio**
-- ⚠️ (내부) New Copilot Studio Launch FAQ — **Do not distribute**
-- ⚠️ (NDA) Microsoft Copilot Studio Futures – NDA Roadmap
-- ⚠️ (런타임 관찰) New Copilot Studio CLI 에이전트 컨테이너 inspection (2026-06-14) — 내부 경로·엔진 코드네임(`dracarys`)은 외부 공개 시 "AI 엔진"으로 추상화
 
 ---
