@@ -47,7 +47,7 @@ is_parent: true
 - **메일**: 회사 디자인 본문 + 대시보드 링크 첨부, **나와 팀장님에게** 발송(발송 전 확인)
 
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_1.png' | relative_url }}" alt="완성된 대시보드 / 발송된 메일 스크린샷" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/newcs/3-result-preview.png' | relative_url }}" alt="완성된 대시보드 / 발송된 메일 스크린샷" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>완성된 대시보드 / 발송된 메일 스크린샷</figcaption>
 </figure>
 

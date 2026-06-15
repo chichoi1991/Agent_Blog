@@ -20,9 +20,18 @@ parent: "ncs3"
 | **OneDrive (MCP)** | 대시보드를 링크로 첨부 | 직접 첨부(Base64) 토큰 폭발 우회 |
 | (자동) 코드 인터프리터 | 엑셀 분석·HTML 생성 | 새 코어 기본 역량, 별도 커넥터 불필요 |
 
+1. **Tools → Add a tool** 에서 **Office 365 Outlook** · **비즈니스용 OneDrive**를 고릅니다.
+
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_8.png' | relative_url }}" alt="Tools → Add (MCP) 화면 / Mail·OneDrive 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>Tools → Add (MCP) 화면 / Mail·OneDrive 선택</figcaption>
+  <img src="{{ '/assets/newcs/3-tools-add.png' | relative_url }}" alt="Tools → Add a tool에서 Office 365 Outlook · 비즈니스용 OneDrive 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Tools → Add a tool에서 Office 365 Outlook · 비즈니스용 OneDrive 선택</figcaption>
+</figure>
+
+2. Office 365 Outlook 안에서 **Use an MCP server → Work IQ Mail MCP**를 선택합니다(단발 액션이 아니라 MCP 서버로).
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/3-tools-mcp.png' | relative_url }}" alt="Office 365 Outlook → Use an MCP server → Work IQ Mail MCP 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Office 365 Outlook → Use an MCP server → Work IQ Mail MCP 선택</figcaption>
 </figure>
 
 ### 6.2 절차

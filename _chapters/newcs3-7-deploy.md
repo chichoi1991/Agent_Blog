@@ -18,7 +18,7 @@ parent: "ncs3"
 2. 게시 후 채널 설정에서 사용할 채널을 켭니다.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_10.png' | relative_url }}" alt="Publish 버튼 / 채널 설정 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/newcs/3-publish.png' | relative_url }}" alt="Publish 버튼 / 채널 설정 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>Publish 버튼 / 채널 설정 화면</figcaption>
 </figure>
 
