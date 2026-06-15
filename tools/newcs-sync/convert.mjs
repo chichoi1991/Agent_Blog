@@ -89,7 +89,7 @@ function pointBlockquoteToCallout(body) {
 
 // ![alt](images/3_1.png) → figure.screenshot
 function imagesToFigures(body) {
-  return body.replace(/!\[([^\]]*)\]\(images\/(\d+_\d+)\.png\)/g, (_m, alt, id) => {
+  return body.replace(/!\[([^\]]*)\]\(images\/([A-Za-z0-9_-]+)\.png\)/g, (_m, alt, id) => {
     const caption = String(alt).replace(/^\s*\d+_\d+[.\s]*/, '').trim() || id;
     return [
       '<figure class="screenshot">',
