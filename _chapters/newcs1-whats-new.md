@@ -21,7 +21,7 @@ is_parent: true
 
 | # | 주제 | 핵심 |
 |---|---|---|
-| 1 | [왜 다시 지었나]({{ '/chapters/newcs1-1-why-rebuilt/' | relative_url }}) | 클래식은 왜 한계에 부딪혔나 |
+| 1 | [왜 다시 만들었나]({{ '/chapters/newcs1-1-why-rebuilt/' | relative_url }}) | 클래식은 왜 한계에 부딪혔나 |
 | 2 | [하네스 엔지니어링]({{ '/chapters/newcs1-2-harness/' | relative_url }}) | "하네스"란 무엇이고 왜 코딩 하네스인가 |
 | 3 | [에이전틱 루프 & 스킬]({{ '/chapters/newcs1-3-loop-skill/' | relative_url }}) | 코어는 어떻게 돌고, 스킬은 왜 필요할 때만 로드하나 |
 | 4 | [툴·MCP & 서브에이전트]({{ '/chapters/newcs1-4-tools-subagents/' | relative_url }}) | 도구는 어떻게 붙이고, 왜 적을수록 좋은가 |
