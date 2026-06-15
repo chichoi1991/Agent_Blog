@@ -17,7 +17,7 @@
       "parentDesc": "하네스 설계 원리로 다시 읽는 New Copilot Studio. 개념편의 7개 주제를 안내합니다.",
       "summary": "New Copilot Studio는 UI 개편이 아니라, Anthropic·OpenAI·GitHub가 코딩 에이전트에서 검증한 \"하네스 설계\" 원리를 엔터프라이즈 플랫폼에 이식한 것입니다. 모든 기능을 \"Microsoft 기능\"이 아니라 \"업계 원리 → Microsoft 구현\"으로 읽어야 정확합니다.",
       "children": [
-        { "slug": "newcs1-1-why-rebuilt", "order": 1, "short": "왜 다시 지었나", "title": "1부 · 왜 다시 지었나", "desc": "클래식의 구조적 한계와 코어 재건축의 이유.", "question": "클래식은 왜 한계에 부딪혔나", "sections": [0] },
+        { "slug": "newcs1-1-why-rebuilt", "order": 1, "short": "왜 다시 만들었나", "title": "1부 · 왜 다시 만들었나", "desc": "클래식의 구조적 한계와 코어 재건축의 이유.", "question": "클래식은 왜 한계에 부딪혔나", "sections": [0] },
         { "slug": "newcs1-2-harness", "order": 2, "short": "하네스 엔지니어링", "title": "1부 · 하네스 엔지니어링", "desc": "하네스란 무엇이고, 왜 업계가 코딩 하네스로 수렴했나.", "question": "\"하네스\"란 무엇이고 왜 코딩 하네스인가", "sections": [1] },
         { "slug": "newcs1-3-loop-skill", "order": 3, "short": "에이전틱 루프 & 스킬", "title": "1부 · 에이전틱 루프 & 스킬", "desc": "코어의 심장인 에이전틱 루프와, 필요할 때만 로드하는 스킬.", "question": "코어는 어떻게 돌고, 스킬은 왜 필요할 때만 로드하나", "sections": [2, 3] },
         { "slug": "newcs1-4-tools-subagents", "order": 4, "short": "툴·MCP & 서브에이전트", "title": "1부 · 툴·MCP & 서브에이전트", "desc": "도구의 두 축(커넥터·MCP)과 컨텍스트 격리를 위한 서브에이전트.", "question": "도구는 어떻게 붙이고, 왜 적을수록 좋은가", "sections": [4, 5] },
