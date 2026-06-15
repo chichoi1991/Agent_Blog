@@ -242,6 +242,37 @@
       });
       pre.appendChild(btn);
     });
+
+    // Image lightbox — click a screenshot to enlarge
+    (function () {
+      const figImgs = document.querySelectorAll('.chapter-body figure.screenshot img');
+      if (!figImgs.length) return;
+      const overlay = document.createElement('div');
+      overlay.className = 'lightbox-overlay';
+      overlay.innerHTML = '<button class="lightbox-close" aria-label="닫기">&times;</button><img alt=""><div class="lightbox-caption"></div>';
+      document.body.appendChild(overlay);
+      const bigImg = overlay.querySelector('img');
+      const cap = overlay.querySelector('.lightbox-caption');
+      function close() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      figImgs.forEach(img => {
+        img.addEventListener('click', () => {
+          const fig = img.closest('figure');
+          if (!fig || fig.classList.contains('pending') || !img.naturalWidth) return;
+          bigImg.src = img.currentSrc || img.src;
+          const fc = fig.querySelector('figcaption');
+          cap.textContent = fc ? fc.textContent : '';
+          overlay.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      overlay.addEventListener('click', (e) => { if (e.target !== bigImg) close(); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) close();
+      });
+    })();
   </script>
 </body>
 </html>
