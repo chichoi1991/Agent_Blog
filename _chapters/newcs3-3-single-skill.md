@@ -70,7 +70,7 @@ description: 판매 데이터 분석 결과를 매번 똑같은 짧은 형식의
 > **짚고 가기:** 핵심은 **"언제 쓰는지(트리거) + 무엇을(고정 형식) + 규칙"** 세 가지뿐입니다. 리소스·코드 없이 이 한 장이면 단일 스킬이 됩니다.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_5.png' | relative_url }}" alt="단일 스킬 추가 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/newcs/3-single-skill.png' | relative_url }}" alt="단일 스킬 추가 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>단일 스킬 추가 화면</figcaption>
 </figure>
 

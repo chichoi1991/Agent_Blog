@@ -29,7 +29,7 @@ UI 단일 스킬은 파일 하나만 됩니다. 하지만 메일·보고서처�
 - [`brand-comms.zip` 다운로드]({{ '/assets/newcs/skills/brand-comms.zip' | relative_url }}) — 메일·보고서 스킬
 
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_6.png' | relative_url }}" alt="패키지 폴더 구조 / 임포트 버튼 위치" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/newcs/3-skill-package.png' | relative_url }}" alt="패키지 폴더 구조 / 임포트 버튼 위치" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>패키지 폴더 구조 / 임포트 버튼 위치</figcaption>
 </figure>
 
@@ -62,7 +62,7 @@ UI 단일 스킬은 파일 하나만 됩니다. 하지만 메일·보고서처�
 - **해결:** **Sandbox 환경에서 에이전트를 만드세요.** 개인 개발환경에서는 재업로드·이름 변경으로도 잘 안 풀립니다. Sandbox에서 임포트 후 위 프롬프트로 검증하고 시작하세요.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_7.png' | relative_url }}" alt="app/skills 확인 프롬프트 결과 — 정상 vs 문제" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/newcs/3-skills-verify.png' | relative_url }}" alt="app/skills 확인 프롬프트 결과 — 정상 vs 문제" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>app/skills 확인 프롬프트 결과 — 정상 vs 문제</figcaption>
 </figure>
 

@@ -20,7 +20,7 @@ parent: "ncs3"
 | **B. Try now** | 기존 Copilot Studio 홈에서 **"Try now"** 버튼 클릭 |
 
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_2.png' | relative_url }}" alt="preview URL 접속 화면 / Try now 버튼 위치" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/newcs/3-prereq-trynow.png' | relative_url }}" alt="preview URL 접속 화면 / Try now 버튼 위치" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>preview URL 접속 화면 / Try now 버튼 위치</figcaption>
 </figure>
 
@@ -46,7 +46,7 @@ parent: "ncs3"
 3. 생성되면 **Build** 화면으로 진입 — 여기에 지침·지식·도구·스킬이 한 화면에 모입니다.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_3.png' | relative_url }}" alt="새 에이전트 생성 다이얼로그 / Build 화면 개요" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/newcs/3-create-agent.png' | relative_url }}" alt="새 에이전트 생성 다이얼로그 / Build 화면 개요" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>새 에이전트 생성 다이얼로그 / Build 화면 개요</figcaption>
 </figure>
 
@@ -90,7 +90,7 @@ SharePoint에 올라온 판매 엑셀과 안내용 Word 문서를 참고합니�
 - **짧게** — 지침은 항상 로드되니 길면 핵심이 묽어진다.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_4.png' | relative_url }}" alt="지침 입력 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/newcs/3-instructions.png' | relative_url }}" alt="지침 입력 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>지침 입력 화면</figcaption>
 </figure>
 

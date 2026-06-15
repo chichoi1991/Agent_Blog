@@ -30,14 +30,32 @@ parent: "ncs3"
 | **시계열 판매·고객 데이터** | Excel | 구매·이용 이력 등 숫자 — 집계·분석 대상 |
 | **내부 정책 문서** | Word | 접대·선물 가이드 등 **규정·형식** — 주의사항 참조용 |
 
-1. Build 화면에서 **Knowledge → Add knowledge** 선택.
-2. **SharePoint**를 고르고, 위 두 파일이 들어있는 **사이트·폴더**를 지정.
-3. 권한 동의(로그인) 후 연결을 저장합니다.
-4. 연결된 Knowledge 목록에 폴더가 보이는지 확인합니다.
+1. Build 화면에서 **Knowledge → Add knowledge** → **SharePoint** 선택.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_11.png' | relative_url }}" alt="Knowledge → Add → SharePoint 특정 폴더 지정 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>Knowledge → Add → SharePoint 특정 폴더 지정 화면</figcaption>
+  <img src="{{ '/assets/newcs/3-knowledge-add.png' | relative_url }}" alt="Knowledge → Add knowledge에서 SharePoint 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Knowledge → Add knowledge에서 SharePoint 선택</figcaption>
+</figure>
+
+2. SharePoint 다이얼로그에서 **Browse items**로 사이트 라이브러리를 엽니다(또는 URL 직접 입력).
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/3-knowledge-browse.png' | relative_url }}" alt="SharePoint 다이얼로그에서 Browse items로 라이브러리 열기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>SharePoint 다이얼로그에서 Browse items로 라이브러리 열기</figcaption>
+</figure>
+
+3. 자료가 모인 **특정 폴더**(엑셀·Word가 든 폴더)를 선택하고 **Confirm selection**.
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/3-knowledge-folder.png' | relative_url }}" alt="사이트 라이브러리에서 자료 폴더 선택 후 Confirm selection" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>사이트 라이브러리에서 자료 폴더 선택 후 Confirm selection</figcaption>
+</figure>
+
+4. 선택한 폴더를 확인하고 **Add to agent**로 연결을 저장합니다. 권한 동의(로그인) 후, 연결된 Knowledge 목록에 폴더가 보이면 완료.
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/3-knowledge-confirm.png' | relative_url }}" alt="선택 폴더 확인 후 Add to agent로 연결 저장" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>선택 폴더 확인 후 Add to agent로 연결 저장</figcaption>
 </figure>
 
 > **짚고 가기:** 엑셀·Word는 **원본 파일째 SharePoint에 두고 폴더만 연결**합니다. 파일을 일일이 업로드하지 않아도, 에이전트가 필요할 때 해당 폴더에서 찾아 내려받아 처리합니다(권한은 원본 그대로 상속). 나중에 정책 문서(Word)는 7장 프롬프트#3(접대·선물 주의사항)에서 실제로 활용됩니다.
@@ -64,7 +82,7 @@ New CLI:      "제조사별 평균가?" → 원본 엑셀을 코드로 전체 �
 → 에이전트가 ① 파일을 검색·다운로드하고 ② "무엇을 계산할지" 한 줄 안내 후 ③ 코드로 집계한 **정확한 표**를 돌려주면 연결·처리가 정상입니다.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_12.png' | relative_url }}" alt="엑셀 검색 → 코드 집계 결과(정확한 표) 확인" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/newcs/3-knowledge-excel.png' | relative_url }}" alt="엑셀 검색 → 코드 집계 결과(정확한 표) 확인" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>엑셀 검색 → 코드 집계 결과(정확한 표) 확인</figcaption>
 </figure>
 

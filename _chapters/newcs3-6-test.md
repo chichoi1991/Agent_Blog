@@ -16,6 +16,13 @@ parent: "ncs3"
 
 아래 5개 프롬프트를 순서대로 입력하며 각 단계가 동작하는지 확인합니다. 한 흐름에 참고자료(엑셀·정책 Word)·스킬·도구가 모두 맞물립니다.
 
+> 테스트 전 우측상단의 저장 버튼을 눌러서 에이전트를 저장 후 테스트를 진행합니다.
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/3-test-prompts.png' | relative_url }}" alt="테스트 창 — 프롬프트 입력 영역" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>테스트 창 — 프롬프트 입력 영역</figcaption>
+</figure>
+
 **프롬프트 #1 — 구매 의향 고객 집계(다관점 + 인사이트)**
 ```
 구매 의향이 높은 고객들을 집계하고 싶어. 다양한 관점들을 통해 어떤 고객이 구매 의향이 높을지 파악해주고,
@@ -49,7 +56,7 @@ parent: "ncs3"
 → OneDrive 업로드 → 링크 첨부 → **받는 사람·제목·내용 미리보기 + 확인 요청** → 승인 후 발송.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/newcs/3_9.png' | relative_url }}" alt="Test 창 — 분석 결과 표 / 생성된 대시보드 / 메일 미리보기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/newcs/3-test.png' | relative_url }}" alt="Test 창 — 분석 결과 표 / 생성된 대시보드 / 메일 미리보기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>Test 창 — 분석 결과 표 / 생성된 대시보드 / 메일 미리보기</figcaption>
 </figure>
 
