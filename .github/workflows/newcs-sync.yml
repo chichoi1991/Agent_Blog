@@ -87,6 +87,11 @@ jobs:
             mkdir -p assets/newcs/skills
             find "$SRC/CLI-Agent-Demo/skills" -maxdepth 1 -type f -iname '*.zip' -exec cp -f {} assets/newcs/skills/ \;
           fi
+          # SharePoint 실습 데이터(xlsx/docx/csv/pdf) — downloadable (3부 3장)
+          if [ -d "$SRC/CLI-Agent-Demo/sample-data" ]; then
+            mkdir -p assets/newcs/sample-data
+            find "$SRC/CLI-Agent-Demo/sample-data" -maxdepth 1 -type f \( -iname '*.xlsx' -o -iname '*.xls' -o -iname '*.csv' -o -iname '*.docx' -o -iname '*.doc' -o -iname '*.pdf' \) -exec cp -f {} assets/newcs/sample-data/ \;
+          fi
 
       - name: Clean up source checkout
         run: rm -rf _src
