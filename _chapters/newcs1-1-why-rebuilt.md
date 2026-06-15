@@ -1,7 +1,7 @@
 ---
 layout: "chapter"
-title: "1부 · 왜 다시 지었나"
-short_title: "왜 다시 지었나"
+title: "1부 · 왜 다시 만들었나"
+short_title: "왜 다시 만들었나"
 description: "클래식의 구조적 한계와 코어 재건축의 이유."
 order: 1
 category: "newcs"

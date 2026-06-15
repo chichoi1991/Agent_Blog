@@ -30,6 +30,11 @@ parent: "ncs3"
 | **시계열 판매·고객 데이터** | Excel | 구매·이용 이력 등 숫자 — 집계·분석 대상 |
 | **내부 정책 문서** | Word | 접대·선물 가이드 등 **규정·형식** — 주의사항 참조용 |
 
+**📥 실습 데이터 받기** — 아래 두 파일을 내려받아 **본인 SharePoint 폴더에 올린 뒤** 연결하세요(직접 만들어도 됨).
+
+- [`Sales_analysis_dummy_data.xlsx` 다운로드]({{ '/assets/newcs/sample-data/Sales_analysis_dummy_data.xlsx' | relative_url }}) — 시계열 판매·고객 더미 데이터
+- [`sales-policy.docx_dummy.docx` 다운로드]({{ '/assets/newcs/sample-data/sales-policy.docx_dummy.docx' | relative_url }}) — 접대·선물 내부 정책 문서(더미)
+
 1. Build 화면에서 **Knowledge → Add knowledge** → **SharePoint** 선택.
 
 <figure class="screenshot">
