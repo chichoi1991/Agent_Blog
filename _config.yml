@@ -29,6 +29,9 @@ nav_sections:
   - key: newcs
     title: "New Copilot Studio (CLI Agent)"
     icon: "⚡"
+  - key: newcslab
+    title: "핸즈온 워크샵 (New Copilot Studio)"
+    icon: "🧪"
   - key: guide
     title: "Copilot Studio 실무 가이드 (Classic)"
     icon: "📘"

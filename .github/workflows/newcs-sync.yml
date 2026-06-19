@@ -52,9 +52,16 @@ jobs:
           echo "subpath=$SUBPATH" >> "$GITHUB_OUTPUT"
           echo "pipeline=$PIPELINE" >> "$GITHUB_OUTPUT"
           if [ -z "$REPO" ]; then echo "::error::source_repo 가 비어 있습니다 (SOURCE_REPO secret 또는 dispatch payload 필요)"; exit 1; fi
-          if [ "$PIPELINE" != "newcs-sync" ]; then echo "::error::이 워크플로는 pipeline=newcs-sync 만 처리합니다 (받은 값: $PIPELINE)"; exit 1; fi
+          # repository_dispatch 로 들어온 다른 파이프라인(예: newcs-passthrough)은 이 워크플로가 처리하지 않고 조용히 건너뛴다.
+          if [ "${{ github.event_name }}" = "repository_dispatch" ] && [ "$PIPELINE" != "newcs-sync" ]; then
+            echo "pipeline=$PIPELINE 은(는) 이 워크플로 대상이 아님 — 건너뜁니다."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Checkout source docs (private)
+        if: steps.src.outputs.skip != 'true'
         uses: actions/checkout@v4
         with:
           repository: ${{ steps.src.outputs.repo }}
@@ -63,11 +70,13 @@ jobs:
           path: _src
 
       - name: Setup Node
+        if: steps.src.outputs.skip != 'true'
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
       - name: Convert sources → _chapters/newcs*.md
+        if: steps.src.outputs.skip != 'true'
         run: |
           SRC="_src"
           if [ -n "${{ steps.src.outputs.subpath }}" ]; then SRC="_src/${{ steps.src.outputs.subpath }}"; fi
@@ -75,6 +84,7 @@ jobs:
           node tools/newcs-sync/convert.mjs --source "$SRC" --out "_chapters"
 
       - name: Copy screenshots & skill ZIPs → assets/newcs
+        if: steps.src.outputs.skip != 'true'
         run: |
           mkdir -p assets/newcs
           SRC="_src"
@@ -94,9 +104,11 @@ jobs:
           fi
 
       - name: Clean up source checkout
+        if: steps.src.outputs.skip != 'true'
         run: rm -rf _src
 
       - name: Create Pull Request
+        if: steps.src.outputs.skip != 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: "chore(newcs): sync chapters from source docs"
