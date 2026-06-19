@@ -144,7 +144,7 @@ is_parent: true
 
 ### 4.1 스킬 추가 방법
 1. **스킬(Skills) 추가**에서 각 스킬을 만들고 `SKILL.md`(또는 zip)를 업로드합니다.
-2. 디자인 스킬은 `design.md`·`briefing-card.md`가 함께 있어야 하므로 **폴더째 zip**으로 올립니다. (Adaptive Card JSON은 별도 `.json` 파일이 아니라 `briefing-card.md` 안 코드블록으로 둡니다 — 일부 임포터가 zip 안 `.json`을 매니페스트로 오인식해 에러를 내는 것을 피함.)
+2. 디자인 스킬은 `design.md`·`briefing-card.md`·`briefing-card.json`이 함께 있어야 하므로 **폴더째 zip**으로 올립니다.
 3. 단일 파일로 올리면 토큰·템플릿이 빠져 디자인이 깨집니다 → "리소스 없는 단일 파일" 경고 시 zip으로 재업로드.
 
 <div class="info-box tip" markdown="1">
