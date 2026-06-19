@@ -61,15 +61,15 @@ is_parent: true
 
 - New Copilot Studio(프리뷰) 접근 권한 — `copilotstudio.preview.microsoft.com` 또는 기존 홈화면서에 **Try now** 버튼을 클릭하여 New Copilot Studio UI로 전환합니다.
 - **Sandbox 환경**에서 실습하세요(개인 개발환경에서는 CLI 에이전트 동작 이슈가 있습니다).
-- 보고자료를 모을 **SharePoint(또는 OneDrive) 폴더** 1개 — 예: `Documents/보고자료`.
+- 보고자료를 모을 **SharePoint 라이브러리 생성(또는 OneDrive) 폴더** 1개 — 예: `Documents/보고자료`.
 - **OneDrive에 "CEO 리스크 포인트" Word 문서** 1개 — CEO가 민감하게 보는 관심 영역·우선순위·금기를 적은 문서(예: `Documents/CEO-리스크-포인트.docx`). 리스크 판단 **전에** 먼저 참조됩니다.
 - 테스트용 샘플 보고서 1~2개(PDF/Word) 준비.
-- **도구 계정 연결** — Teams·Outlook(Mail)·Calendar 도구를 쓸 **M365 계정**(브리핑 발송·맥락 조회 권한). 5장에서 연결합니다.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/01-sharepoint-folder.png' | relative_url }}" alt="보고자료를 모을 SharePoint 폴더와 샘플 파일" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>보고자료를 모을 SharePoint 폴더 (예: Documents/보고자료)</figcaption>
+  <img src="{{ '/assets/image/newcslab1/01-sharepoint-folder-1.png' | relative_url }}" alt="보고자료를 모을 SharePoint 폴더와 샘플 파일" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>보고자료를 모을 SharePoint 폴더#1 (예: Documents/보고자료)</figcaption>
 </figure>
+
 
 ---
 
@@ -235,7 +235,12 @@ is_parent: true
 
 <figure class="screenshot">
   <img src="{{ '/assets/image/newcslab1/05-workflow-trigger.png' | relative_url }}" alt="폴더 파일 추가 트리거와 요약→키워드→맥락→디자인→Teams 발송 흐름" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>폴더 감지 트리거 → 요약·(CEO)키워드·맥락·디자인 → Teams 브리핑 발송</figcaption>
+  <figcaption>폴더 감지 트리거 → M365 Copilot(WorkIQ) 컨텍스트 보강 → 브리핑 에이전트 호출</figcaption>
+</figure>
+
+<figure class="screenshot">
+  <img src="{{ '/assets/image/newcslab1/05-workflow-trigger-2.png' | relative_url }}" alt="브리핑 에이전트 호출 노드 — 새 보고자료 업로드 알림과 맥락 데이터를 전달" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>마지막 노드: 브리핑 에이전트 호출 — 업로드 알림·맥락 데이터를 넘겨 브리핑 생성·발송</figcaption>
 </figure>
 
 ---
