@@ -12,6 +12,20 @@
     "operative/09-document-generation": "5dd51e487a865743a34e7f5f6a47e6f0b34c727b",
     "operative/10-mcp": "513f829d6816c7c5ee6098eff9f59e5c6b3b89e1",
     "operative/11-obtain-user-feedback": "b4bc37384e83df731ec6002314f7bfec4431eeda",
-    "operative/course-completion-badges-operative": "23f401f30838f0233307b4d86d2b86fc60ee758e"
+    "operative/course-completion-badges-operative": "23f401f30838f0233307b4d86d2b86fc60ee758e",
+    "recruit/00-course-setup": "3c29eac528a8809d22e9de11c26d341cb2b18af9",
+    "recruit/01-introduction-to-agents": "039aa7706e7b5bc9dd25b61c73ee72099fe5b9ec",
+    "recruit/02-copilot-studio-fundamentals": "ea68e4108b3ff7eb3cbe2404a61a897f69991e18",
+    "recruit/03-create-a-declarative-agent-for-M365Copilot": "f0e36d36286fb87a73948ceaa9e8c7ac9fba6bb5",
+    "recruit/04-creating-a-solution": "0ef2f9b23aa52a8007346923298e92ff35bafaeb",
+    "recruit/05-using-prebuilt-agents": "34707a339603439a63e9dcd64b42ce2bd98e45f5",
+    "recruit/06-create-agent-from-conversation": "f74fa7af5573622662a9c8065d38809b1fbe0684",
+    "recruit/07-add-new-topic-with-trigger": "5a50e0159884f7da4762abfcac3d28531a975d21",
+    "recruit/08-add-adaptive-card": "20cbbd2325a237f83d8997dfb2c702482842aef2",
+    "recruit/09-add-an-agent-flow": "5e65b139bfe924dc40d64af0b848a6085c150dc5",
+    "recruit/10-add-event-triggers": "bb87248889575cc2ac0915331104ea40673d6703",
+    "recruit/11-publish-your-agent": "f776d4661c6d31af2c756729f36cc4c86e3c0b1a",
+    "recruit/12-understanding-licensing": "f7ab3ad74a5130d4c7122fe278d27705847865ac",
+    "recruit/course-completion-badges-recruit": "14acd2fe3dbdc752d5150afa32aa8d47ee4ca305"
   }
 }
