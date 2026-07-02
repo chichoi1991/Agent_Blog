@@ -6,14 +6,14 @@ description: "SharePoint 및 업로드 파일 지식 소스를 사용하는 Copi
 order: 5
 category: "catblog"
 source_url: "https://microsoft.github.io/mcscatblog/posts/pdf-page-level-citations/"
-source_author: "lewisdoesdevraemone"
+source_author: "lewisdoesdev, raemone"
 source_published: "2026-06-02"
 source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
 canonical_url: "https://microsoft.github.io/mcscatblog/posts/pdf-page-level-citations/"
 ---
 
 <div class="info-box note" markdown="1">
-**원문 번역 게시물** — 이 글은 [The Custom Engine](https://microsoft.github.io/mcscatblog/)(Microsoft Copilot Studio CAT)의 lewisdoesdevraemone(@lewisdoesdevraemone) 원문 [Page-Level PDF Citations in Copilot Studio](https://microsoft.github.io/mcscatblog/posts/pdf-page-level-citations/)(2026-06-02)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
+**원문 번역 게시물** — 이 글은 [The Custom Engine](https://microsoft.github.io/mcscatblog/)(Microsoft Copilot Studio CAT)의 lewisdoesdev, raemone 원문 [Page-Level PDF Citations in Copilot Studio](https://microsoft.github.io/mcscatblog/posts/pdf-page-level-citations/)(2026-06-02)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 
 <figure class="screenshot">

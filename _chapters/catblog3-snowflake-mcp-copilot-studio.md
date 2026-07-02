@@ -6,14 +6,14 @@ description: "Microsoft Entra ID를 통한 위임 사용자 OAuth를 사용해 S
 order: 3
 category: "catblog"
 source_url: "https://microsoft.github.io/mcscatblog/posts/snowflake-mcp-copilot-studio/"
-source_author: "Microsoft Copilot Studio CAT"
+source_author: "hasharaf, missbets"
 source_published: "2026-05-22"
 source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
 canonical_url: "https://microsoft.github.io/mcscatblog/posts/snowflake-mcp-copilot-studio/"
 ---
 
 <div class="info-box note" markdown="1">
-**원문 번역 게시물** — 이 글은 [The Custom Engine](https://microsoft.github.io/mcscatblog/)(Microsoft Copilot Studio CAT)의 Microsoft Copilot Studio CAT(@Microsoft Copilot Studio CAT) 원문 [Wiring up a Snowflake-managed MCP server in Copilot Studio](https://microsoft.github.io/mcscatblog/posts/snowflake-mcp-copilot-studio/)(2026-05-22)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
+**원문 번역 게시물** — 이 글은 [The Custom Engine](https://microsoft.github.io/mcscatblog/)(Microsoft Copilot Studio CAT)의 hasharaf, missbets 원문 [Wiring up a Snowflake-managed MCP server in Copilot Studio](https://microsoft.github.io/mcscatblog/posts/snowflake-mcp-copilot-studio/)(2026-05-22)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 
 <figure class="screenshot">
