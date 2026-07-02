@@ -1,0 +1,14 @@
+{
+  "repo": "microsoft/agent-academy",
+  "branch": "main",
+  "docsBase": "docs",
+  "siteBase": "https://microsoft.github.io/agent-academy",
+  "source_blog": "Copilot Studio Agent Academy",
+  "source_author": "Copilot Studio Agent Academy",
+  "sections": [
+    { "path": "recruit",     "category": "academy-courses", "parent": "arecruit",     "parentTitle": "Recruit — 입문 코스",   "parentShort": "Recruit",     "order": 1 },
+    { "path": "operative",   "category": "academy-courses", "parent": "aoperative",   "parentTitle": "Operative — 중급 코스", "parentShort": "Operative",   "order": 2 },
+    { "path": "commander",   "category": "academy-courses", "parent": "acommander",   "parentTitle": "Commander — 고급 코스", "parentShort": "Commander",   "order": 3 },
+    { "path": "special-ops", "category": "academy-labs",    "parent": "aspecialops",  "parentTitle": "Special Ops — 독립 랩", "parentShort": "Special Ops", "order": 1 }
+  ]
+}

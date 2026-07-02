@@ -1,0 +1,4 @@
+{
+  "_comment": "이미 번역·게시한 Agent Academy 페이지. 키는 소스 경로(docs 기준 상대, 예 recruit/01-introduction-to-agents), 값은 해당 index.md 의 git blob sha. fetch.mjs 는 sha 가 다르거나 없는 페이지만 신규/변경으로 감지·스테이징한다. 번역 완료 시(academy-sync 스킬/Copilot) manifest 의 path·sha 로 여기 항목을 추가/갱신한다.",
+  "processed": {}
+}

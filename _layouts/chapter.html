@@ -52,7 +52,7 @@
               <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="sidebar-section-items">
-              {% if section.key == 'workshop' or section.key == 'special' or section.key == 'cowork' or section.key == 'newcs' or section.key == 'newcslab' %}
+              {% if section.key == 'workshop' or section.key == 'special' or section.key == 'cowork' or section.key == 'newcs' or section.key == 'newcslab' or section.key == 'academy-courses' or section.key == 'academy-labs' %}
                 {%- comment -%} Hierarchical display: standalone items first, then parent groups {%- endcomment -%}
                 {% assign standalones = section_chapters | where_exp: "item", "item.is_parent != true" | where_exp: "item", "item.parent == nil" | sort: "order" %}
                 {% for ch in standalones %}
@@ -118,6 +118,16 @@
                 <span class="chapter-badge workshop">Cowork Collective</span>
               {% elsif page.category == 'cowork' and page.parent %}
                 <span class="chapter-badge workshop">Cowork · Mission {{ page.order }}</span>
+              {% elsif page.category == 'academy-courses' and page.is_parent %}
+                <span class="chapter-badge newcs">Agent Academy · 코스</span>
+              {% elsif page.category == 'academy-courses' and page.parent %}
+                <span class="chapter-badge newcs">Academy · Module {{ page.order }}</span>
+              {% elsif page.category == 'academy-labs' and page.is_parent %}
+                <span class="chapter-badge newcs">Agent Academy · 랩</span>
+              {% elsif page.category == 'academy-labs' and page.parent %}
+                <span class="chapter-badge newcs">Academy Lab · {{ page.order }}</span>
+              {% elsif page.category == 'catblog' %}
+                <span class="chapter-badge updates">CAT 블로그 번역</span>
               {% elsif page.category == 'updates' %}
                 <span class="chapter-badge updates">Update</span>
               {% else %}

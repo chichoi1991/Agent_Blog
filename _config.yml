@@ -50,6 +50,12 @@ nav_sections:
   - key: catblog
     title: "CAT 블로그 업데이트"
     icon: "🐱"
+  - key: academy-courses
+    title: "Agent Academy · 코스"
+    icon: "🎓"
+  - key: academy-labs
+    title: "Agent Academy · 랩"
+    icon: "🎯"
 
 # Exclude dev/handoff docs from the built site
 exclude:

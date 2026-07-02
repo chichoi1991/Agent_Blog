@@ -428,3 +428,47 @@ title: "홈"
     {% endif %}
   </div>
 </div>
+
+<!-- ===== Section 5: Agent Academy · 코스 ===== -->
+<div class="home-section">
+  <h2>🎓 Agent Academy · 코스</h2>
+  <p class="section-desc"><a href="https://microsoft.github.io/agent-academy/" target="_blank">Copilot Studio Agent Academy</a>의 랭크별 코스(Recruit·Operative·Commander)를 한글로 옮깁니다. 원문 출처를 명시합니다.</p>
+
+  <div class="chapter-list">
+    {% assign academy_courses = site.chapters | where: "category", "academy-courses" | where: "is_parent", true | sort: "order" %}
+    {% for ch in academy_courses %}
+    <a href="{{ ch.url | relative_url }}" class="chapter-item">
+      <div class="item-icon">🎓</div>
+      <div class="item-body">
+        <div class="item-title">{{ ch.title }}</div>
+        <div class="item-desc">{{ ch.description }}</div>
+      </div>
+    </a>
+    {% endfor %}
+    {% if academy_courses == empty %}
+    <p class="section-desc" style="opacity:.7">아직 게시된 코스가 없습니다. 신규/변경 페이지가 감지되면 자동으로 추가됩니다.</p>
+    {% endif %}
+  </div>
+</div>
+
+<!-- ===== Section 6: Agent Academy · 랩 ===== -->
+<div class="home-section">
+  <h2>🎯 Agent Academy · 랩</h2>
+  <p class="section-desc">Agent Academy의 독립 실습 미션(Special Ops)을 한글로 옮깁니다.</p>
+
+  <div class="chapter-list">
+    {% assign academy_labs = site.chapters | where: "category", "academy-labs" | where: "is_parent", true | sort: "order" %}
+    {% for ch in academy_labs %}
+    <a href="{{ ch.url | relative_url }}" class="chapter-item">
+      <div class="item-icon">🎯</div>
+      <div class="item-body">
+        <div class="item-title">{{ ch.title }}</div>
+        <div class="item-desc">{{ ch.description }}</div>
+      </div>
+    </a>
+    {% endfor %}
+    {% if academy_labs == empty %}
+    <p class="section-desc" style="opacity:.7">아직 게시된 랩이 없습니다.</p>
+    {% endif %}
+  </div>
+</div>

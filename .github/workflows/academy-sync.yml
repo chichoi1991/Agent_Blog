@@ -1,0 +1,67 @@
+name: Agent Academy sync (detect + assign Copilot)
+
+# Agent Academy(microsoft/agent-academy)의 코스(recruit/operative/commander)·랩(special-ops)
+# 페이지를 주기적으로 감지해 원문 Markdown·이미지를 스테이징(main 커밋)하고, 번역을
+# GitHub Copilot coding agent(copilot-swe-agent)에게 parent(랭크)별 이슈로 위임한다.
+# (A 방식 — 완전 자동화. 번역까지 Copilot 이 수행)
+#
+# 흐름: cron → fetch.mjs(tree 감지·이미지) → main 커밋 → assign-copilot.mjs(랭크별 이슈+할당)
+#      → Copilot 번역 PR → 사람 검수 merge → Pages 배포
+#
+# 트리거:
+#   - schedule: 매일 00:40 UTC
+#   - workflow_dispatch: 수동(category/section 지정 가능)
+
+on:
+  schedule:
+    - cron: "40 0 * * *"
+  workflow_dispatch:
+    inputs:
+      category:
+        description: "academy-courses | academy-labs (비우면 전부)"
+        required: false
+      section:
+        description: "특정 섹션만 (recruit|operative|commander|special-ops)"
+        required: false
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  detect-and-delegate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Detect & stage new/changed Academy pages
+        id: detect
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.category }}" ]; then ARGS="$ARGS --category ${{ github.event.inputs.category }}"; fi
+          if [ -n "${{ github.event.inputs.section }}" ]; then ARGS="$ARGS --section ${{ github.event.inputs.section }}"; fi
+          node tools/academy-sync/fetch.mjs $ARGS
+          if git status --porcelain tools/academy-sync/incoming assets/academy | grep -q .; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit staged sources to main
+        if: steps.detect.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/academy-sync/incoming assets/academy
+          git commit -m "chore(academy): stage new/changed Academy pages for translation"
+          git push
+
+      - name: Delegate translation to Copilot
+        if: steps.detect.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.CATBLOG_AGENT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: node tools/academy-sync/assign-copilot.mjs
