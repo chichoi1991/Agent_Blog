@@ -26,6 +26,12 @@
     "recruit/10-add-event-triggers": "bb87248889575cc2ac0915331104ea40673d6703",
     "recruit/11-publish-your-agent": "f776d4661c6d31af2c756729f36cc4c86e3c0b1a",
     "recruit/12-understanding-licensing": "f7ab3ad74a5130d4c7122fe278d27705847865ac",
-    "recruit/course-completion-badges-recruit": "14acd2fe3dbdc752d5150afa32aa8d47ee4ca305"
+    "recruit/course-completion-badges-recruit": "14acd2fe3dbdc752d5150afa32aa8d47ee4ca305",
+    "special-ops/docusign-mcp": "cb042cb7215e626c923057d00554f9b334e4aed7",
+    "special-ops/mcs-mcp": "d84b29350a88f5030d2bc03485544af83bbf0291",
+    "special-ops/ms-learn-mcp": "975bf294cb5b5bbc5325d33b5e9539572775f4da",
+    "special-ops/pac-cli-mcp": "3cbf10e9efc03caa14aa3baf38ae392df0cf4d08",
+    "special-ops/pac-cli-mcp/power-platform-plan": "90864c398779413006733fe55a4ccb391066a3c6",
+    "special-ops/yaml-specialist": "81c67fbda31722a100db55e6d42512ac043d1361"
   }
 }
