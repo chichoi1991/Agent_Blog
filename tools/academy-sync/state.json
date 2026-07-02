@@ -1,6 +1,18 @@
 {
   "_comment": "이미 번역·게시한 Agent Academy 페이지. 키는 소스 경로(docs 기준 상대, 예 recruit/01-introduction-to-agents), 값은 해당 index.md 의 git blob sha. fetch.mjs 는 sha 가 다르거나 없는 페이지만 신규/변경으로 감지·스테이징한다. 번역 완료 시(academy-sync 스킬/Copilot) manifest 의 path·sha 로 여기 항목을 추가/갱신한다.",
   "processed": {
+    "operative/01-get-started": "5536c646f5865dc8e3d08f88a39675efcacfb2b3",
+    "operative/02-agent-instructions": "c01fce2524c63c3132adaa5d33df80b901ef1205",
+    "operative/03-multi-agent": "7da90271be59db77f2f62b6deaf70afc93b4b497",
+    "operative/04-automate-triggers": "bf8c01e8c9bb0d9e93d6b6cc5146fd2339768962",
+    "operative/05-model-selection": "28bd5fe9ecc300030bb91d7cc4e7f99b7b43c49e",
+    "operative/06-ai-safety": "ec66b0ee2880afbbd127f49e036c1a8f197eddc9",
+    "operative/07-multimodal-prompts": "6b17c51c17b906c6e3889959781db797c9d942f1",
+    "operative/08-dataverse-grounding": "04d63fa2753f826742505ee30925b0ea4d71b1f1",
+    "operative/09-document-generation": "5dd51e487a865743a34e7f5f6a47e6f0b34c727b",
+    "operative/10-mcp": "513f829d6816c7c5ee6098eff9f59e5c6b3b89e1",
+    "operative/11-obtain-user-feedback": "b4bc37384e83df731ec6002314f7bfec4431eeda",
+    "operative/course-completion-badges-operative": "23f401f30838f0233307b4d86d2b86fc60ee758e",
     "recruit/00-course-setup": "3c29eac528a8809d22e9de11c26d341cb2b18af9",
     "recruit/01-introduction-to-agents": "039aa7706e7b5bc9dd25b61c73ee72099fe5b9ec",
     "recruit/02-copilot-studio-fundamentals": "ea68e4108b3ff7eb3cbe2404a61a897f69991e18",
