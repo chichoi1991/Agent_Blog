@@ -27,6 +27,7 @@ const ASSETS_BASE = join(HERE, "..", "..", "assets", "catblog"); // Agent_Blog/a
 const FEED_URL = "https://microsoft.github.io/mcscatblog/feed.xml";
 const SITE_BASE = "https://microsoft.github.io/mcscatblog";
 const RAW_BASE = "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts";
+const CONTENTS_API = "https://api.github.com/repos/microsoft/mcscatblog/contents/_posts?ref=main";
 const POST_BASE = "https://microsoft.github.io/mcscatblog/posts";
 
 const args = process.argv.slice(2);
@@ -96,7 +97,31 @@ async function rawMarkdown(slug, published) {
   const url = `${RAW_BASE}/${date}-${slug}.md`;
   const res = await fetch(url);
   if (res.ok) return { url, text: await res.text() };
+  // 폴백: _posts 파일명 날짜가 published 와 다를 수 있으므로 slug 로 조회한다.
+  const idx = await postsIndex();
+  const hit = idx.get(slug);
+  if (hit) {
+    const r2 = await fetch(hit);
+    if (r2.ok) return { url: hit, text: await r2.text() };
+  }
   return { url, text: null, status: res.status };
+}
+
+// _posts 디렉터리 목록을 1회 로드해 slug → download_url 맵을 만든다(파일명 날짜 무관).
+let _postsIndex = null;
+async function postsIndex() {
+  if (_postsIndex) return _postsIndex;
+  _postsIndex = new Map();
+  const res = await fetch(CONTENTS_API);
+  if (!res.ok) {
+    console.warn(`::warning::_posts 목록 조회 실패(${res.status}) — slug 폴백 불가`);
+    return _postsIndex;
+  }
+  for (const f of await res.json()) {
+    const m = (f.name || "").match(/^\d{4}-\d{2}-\d{2}-(.+)\.md$/);
+    if (m && f.download_url) _postsIndex.set(m[1], f.download_url);
+  }
+  return _postsIndex;
 }
 
 // 원문 MD 에서 참조하는 이미지 경로를 추출한다.

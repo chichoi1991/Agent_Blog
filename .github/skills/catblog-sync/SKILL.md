@@ -9,9 +9,13 @@ description: The Custom Engine(microsoft/mcscatblog) 공개 블로그의 신규 
 `Agent_Blog/_chapters/catblog*.md` 챕터로 게시한다. 사이드바 메뉴 **"CAT 블로그 업데이트"**
 (`category: catblog`)에 노출된다.
 
-> **역할 분담(B 방식)**: 감지·스테이징은 자동(`fetch.mjs` + `catblog-sync.yml` 워크플로),
-> **번역은 이 스킬을 통해 GitHub Copilot 이 수행**한다. (향후 A 방식: 번역 Issue 를
-> `@copilot` coding agent 에 할당해 완전 자동화.)
+> **역할 분담**: 감지·스테이징·이미지 다운로드는 자동(`fetch.mjs` + `catblog-sync.yml`).
+> 번역은 두 방식으로 수행할 수 있다:
+> - **A 방식(완전 자동, 현재 기본)**: 워크플로가 신규 글을 main 에 스테이징한 뒤
+>   `assign-copilot.mjs` 로 번역 이슈를 만들어 **Copilot coding agent(copilot-swe-agent)**
+>   에게 할당 → Copilot 이 번역 PR 을 자동 생성.
+> - **B 방식(반자동)**: 사람이 VS Code 에서 이 스킬을 호출해 incoming 글을 직접 번역.
+>   A 가 실패하거나 수동 보정이 필요할 때 사용.
 
 ## 언제 쓰나
 - "catblog-sync 로 신규 글 번역해줘"
@@ -19,12 +23,13 @@ description: The Custom Engine(microsoft/mcscatblog) 공개 블로그의 신규 
 - 워크플로가 연 PR(`auto/catblog-incoming`)의 incoming 글을 번역할 때
 
 ## 구성 (산출물 위치)
-- 감지·스테이징: `tools/catblog-sync/fetch.mjs` (Node 18+, 의존성 없음)
+- 감지·스테이징·이미지 다운로드: `tools/catblog-sync/fetch.mjs` (Node 18+, 의존성 없음)
+- Copilot 위임(A): `tools/catblog-sync/assign-copilot.mjs` — 번역 이슈 생성 + Copilot 할당
 - 상태(진실원천): `tools/catblog-sync/state.json` — 이미 게시한 slug 목록
-- 스테이징: `tools/catblog-sync/incoming/<slug>.md`(원문 EN) + `incoming/_manifest.json`(메타)
-- 감지 워크플로: `.github/workflows/catblog-sync.yml` (cron 감지 → PR)
+- 스테이징: `tools/catblog-sync/incoming/<slug>.md`(원문 EN) + `incoming/_manifest.json`(메타·이미지)
+- 감지·위임 워크플로: `.github/workflows/catblog-sync.yml` (cron 감지 → main 커밋 → Copilot 이슈)
 - 게시물: `_chapters/catblogNN-<slug>.md` (`category: catblog`)
-- 원문 자산(이미지): `assets/catblog/` (원문 이미지가 필요하면 다운로드해 여기로)
+- 원문 이미지: `assets/catblog/<slug>/`
 
 ## 전체 흐름
 

@@ -1,17 +1,21 @@
-name: CAT blog sync (detect new posts)
+name: CAT blog sync (detect + assign Copilot)
 
 # The Custom Engine(microsoft/mcscatblog) 공개 블로그의 신규 글을 주기적으로 감지해
-# 원문 Markdown 을 tools/catblog-sync/incoming/ 에 스테이징하고 PR 을 연다.
+# 원문 Markdown·이미지를 스테이징(main 커밋)하고, 번역 작업을 GitHub Copilot coding
+# agent(copilot-swe-agent)에게 이슈로 위임한다. Copilot 이 번역 PR 을 자동 생성한다.
+# (A 방식 — 완전 자동화. 번역까지 Copilot 이 수행)
 #
-# 번역은 이 워크플로가 하지 않는다(B 방식) — PR 브랜치를 로컬로 받아
-# VS Code 의 `catblog-sync` 스킬(GitHub Copilot)로 번역해 _chapters/catblog*.md 를
-# 만들고 같은 브랜치에 push → PR 검수 → merge 시 Pages 자동 배포.
-#
-# (향후 A 방식 업그레이드: 아래 PR 생성 대신 번역 Issue 를 만들어 @copilot 에게 할당)
+# 흐름:
+#   cron → fetch.mjs(감지·이미지 다운로드) → main 커밋 → assign-copilot.mjs(이슈+할당)
+#        → Copilot 번역 PR → 사람 검수 merge → Pages 배포
 #
 # 트리거:
-#   - schedule: 매일 00:20 UTC (한국시간 오전 9:20) 폴링
+#   - schedule: 매일 00:20 UTC (한국시간 오전 9:20)
 #   - workflow_dispatch: 수동 실행(limit 지정 가능)
+#
+# 토큰(할당용):
+#   - 기본 GITHUB_TOKEN 으로 Copilot 할당이 안 되면, PAT(repo + issues 쓰기)을
+#     secret CATBLOG_AGENT_TOKEN 으로 추가하면 그걸 우선 사용한다.
 
 on:
   schedule:
@@ -24,10 +28,11 @@ on:
 
 permissions:
   contents: write
+  issues: write
   pull-requests: write
 
 jobs:
-  detect:
+  detect-and-delegate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout blog
@@ -38,38 +43,29 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Detect & stage new CAT posts
+      - name: Detect & stage new CAT posts (with images)
         id: detect
         run: |
           LIMIT_ARG=""
           if [ -n "${{ github.event.inputs.limit }}" ]; then LIMIT_ARG="--limit ${{ github.event.inputs.limit }}"; fi
-          node tools/catblog-sync/fetch.mjs $LIMIT_ARG | tee /tmp/catblog.log
-          if git status --porcelain tools/catblog-sync/incoming | grep -q .; then
+          node tools/catblog-sync/fetch.mjs $LIMIT_ARG
+          if git status --porcelain tools/catblog-sync/incoming assets/catblog | grep -q .; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Create Pull Request (staged EN sources)
+      - name: Commit staged sources to main
         if: steps.detect.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          commit-message: "chore(catblog): stage new CAT blog posts for translation"
-          branch: auto/catblog-incoming
-          delete-branch: true
-          title: "CAT 블로그 신규 글 번역 대기 (catblog-sync)"
-          body: |
-            The Custom Engine(microsoft/mcscatblog)에서 신규 글을 감지해 원문(EN)을
-            `tools/catblog-sync/incoming/` 에 스테이징했습니다. **아직 번역 전입니다.**
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/catblog-sync/incoming assets/catblog
+          git commit -m "chore(catblog): stage new CAT posts for translation"
+          git push
 
-            ### 번역·게시 방법 (B 방식)
-            1. 이 브랜치(`auto/catblog-incoming`)를 로컬로 checkout
-            2. VS Code 에서 Copilot 에 **"catblog-sync 로 신규 글 번역해줘"**
-               → `_chapters/catblog*.md` 생성(원문 출처·원저자 명시) + `state.json` 갱신 + incoming 제거
-            3. `bundle exec jekyll build` 로 검증 후 같은 브랜치에 push
-            4. 이 PR 을 검수 후 **merge** → GitHub Pages 자동 배포
-
-            > ⚠️ 원문 출처(`source_url`)와 원저자(`source_author`)는 **반드시** 유지하세요.
-
-            대기 목록은 `tools/catblog-sync/incoming/_manifest.json` 참조.
-          labels: automated, catblog-sync
+      - name: Delegate translation to Copilot
+        if: steps.detect.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.CATBLOG_AGENT_TOKEN || secrets.GITHUB_TOKEN }}
+        run: node tools/catblog-sync/assign-copilot.mjs

@@ -1,0 +1,216 @@
+{
+  "items": [
+    {
+      "slug": "agent-authentication-controls",
+      "title": "The Admin Control That Closes the Door Before \"Hello\"",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/agent-authentication-controls/",
+      "source_author": "adilei",
+      "source_published": "2026-06-14",
+      "source_updated": "2026-06-14",
+      "categories": [
+        "copilot-studio",
+        "governance"
+      ],
+      "summary": "A new Power Platform admin control lets you govern how users authenticate to Copilot Studio agents, and it answers a question that DLP channel blocking never could.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-06-14-agent-authentication-controls.md",
+      "images": [
+        {
+          "src": "/assets/posts/agent-authentication-controls/on-sign-in-message.png",
+          "local": "assets/catblog/agent-authentication-controls/on-sign-in-message.png"
+        },
+        {
+          "src": "/assets/posts/agent-authentication-controls/authentication-for-agents-pane.png",
+          "local": "assets/catblog/agent-authentication-controls/authentication-for-agents-pane.png"
+        },
+        {
+          "src": "/assets/posts/agent-authentication-controls/agent-details-authentication.png",
+          "local": "assets/catblog/agent-authentication-controls/agent-details-authentication.png"
+        },
+        {
+          "src": "/assets/posts/agent-authentication-controls/header.png",
+          "local": "assets/catblog/agent-authentication-controls/header.png"
+        }
+      ],
+      "staged_at": "2026-07-02T07:59:19.399Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "snowflake-mcp-copilot-studio",
+      "title": "Wiring up a Snowflake-managed MCP server in Copilot Studio",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/snowflake-mcp-copilot-studio/",
+      "source_author": "Microsoft Copilot Studio CAT",
+      "source_published": "2026-05-22",
+      "source_updated": "2026-06-14",
+      "categories": [
+        "copilot-studio",
+        "mcp"
+      ],
+      "summary": "An end-to-end walkthrough for wiring a Snowflake-managed MCP server into a Microsoft Copilot Studio agent with delegated user OAuth through Microsoft Entra ID, including the Cortex Agent prerequisite, the manual OAuth path Snowflake actually requires, and the small details that make or break the setup.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-05-22-snowflake-mcp-copilot-studio.md",
+      "images": [
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/01-sample-data-result.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/01-sample-data-result.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/02-describe-mcp-server.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/02-describe-mcp-server.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/03-grant-usage-role.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/03-grant-usage-role.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/04-create-delegate-user.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/04-create-delegate-user.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/05-show-grants-user.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/05-show-grants-user.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/06-show-grants-role.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/06-show-grants-role.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/09-resource-app-expose-api.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/09-resource-app-expose-api.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/07-client-app-overview.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/07-client-app-overview.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/08-client-app-api-permissions.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/08-client-app-api-permissions.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/10-describe-integration.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/10-describe-integration.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/11-cs-create-mcp-form.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/11-cs-create-mcp-form.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/12a-powerapps-custom-connectors.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/12a-powerapps-custom-connectors.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/12b-connector-security-redirect-url.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/12b-connector-security-redirect-url.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/16-azure-add-redirect-uri.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/16-azure-add-redirect-uri.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/18-cs-add-tool-filter-mcp.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/18-cs-add-tool-filter-mcp.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/19-cs-add-tool-picker.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/19-cs-add-tool-picker.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/20-cs-tools-in-agent.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/20-cs-tools-in-agent.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/21-cs-agent-test.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/21-cs-agent-test.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/22-cs-agent-instructions.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/22-cs-agent-instructions.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/23-cs-agent-knowledge-settings.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/23-cs-agent-knowledge-settings.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/13-custom-connector-general.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/13-custom-connector-general.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/14-custom-connector-host.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/14-custom-connector-host.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/15-custom-connector-security.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/15-custom-connector-security.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/17-custom-connector-test.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/17-custom-connector-test.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/24-troubleshooting-test-section.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/24-troubleshooting-test-section.png"
+        },
+        {
+          "src": "/assets/posts/snowflake-mcp-copilot-studio/header.png",
+          "local": "assets/catblog/snowflake-mcp-copilot-studio/header.png"
+        }
+      ],
+      "staged_at": "2026-07-02T07:59:28.240Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "alm-copilot-studio-agents-foundation",
+      "title": "ALM for Copilot Studio Agents: The Foundation",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/alm-copilot-studio-agents-foundation/",
+      "source_author": "jpapadimitriou",
+      "source_published": "2026-06-03",
+      "source_updated": "2026-06-14",
+      "categories": [
+        "copilot-studio",
+        "alm"
+      ],
+      "summary": "The fundamentals of Application Lifecycle Management for Copilot Studio agents: environments, solutions, publishers, and pipelines - the safe baseline every maker should have in place.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-05-20-alm-copilot-studio-agents-foundation.md",
+      "images": [
+        {
+          "src": "/assets/posts/alm-copilot-studio-agents-foundation/alm-solution-evolution-diagram.png",
+          "local": "assets/catblog/alm-copilot-studio-agents-foundation/alm-solution-evolution-diagram.png"
+        },
+        {
+          "src": "/assets/posts/alm-copilot-studio-agents-foundation/alm_solution_pipeline_flow.png",
+          "local": "assets/catblog/alm-copilot-studio-agents-foundation/alm_solution_pipeline_flow.png"
+        },
+        {
+          "src": "/assets/posts/alm-copilot-studio-agents-foundation/header.png",
+          "local": "assets/catblog/alm-copilot-studio-agents-foundation/header.png"
+        }
+      ],
+      "staged_at": "2026-07-02T08:00:28.427Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "pdf-page-level-citations",
+      "title": "Page-Level PDF Citations in Copilot Studio",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/pdf-page-level-citations/",
+      "source_author": "lewisdoesdevraemone",
+      "source_published": "2026-06-02",
+      "source_updated": "2026-06-14",
+      "categories": [
+        "copilot-studio",
+        "knowledge"
+      ],
+      "summary": "How to deliver page-level PDF citations in Copilot Studio for SharePoint and uploaded file knowledge sources, so users land on the exact page that grounded the answer.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-05-19-pdf-page-level-citations.md",
+      "images": [
+        {
+          "src": "/assets/posts/pdf-page-level-citations/page-citation-test-canvas.png",
+          "local": "assets/catblog/pdf-page-level-citations/page-citation-test-canvas.png"
+        },
+        {
+          "src": "/assets/posts/pdf-page-level-citations/header.png",
+          "local": "assets/catblog/pdf-page-level-citations/header.png"
+        }
+      ],
+      "staged_at": "2026-07-02T08:00:31.285Z",
+      "status": "pending-translation"
+    }
+  ]
+}
