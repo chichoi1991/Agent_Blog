@@ -1,0 +1,2 @@
+# .gitkeep — 스테이징 폴더. fetch.mjs 가 신규 CAT 글 원문(EN) 을 여기에 내려받고,
+# catblog-sync 스킬이 번역 후 제거한다.

@@ -402,3 +402,29 @@ title: "홈"
     </a>
   </div>
 </div>
+
+<!-- ===== Section 4: CAT 블로그 업데이트 ===== -->
+<div class="home-section">
+  <h2>🐱 CAT 블로그 업데이트</h2>
+  <p class="section-desc">Microsoft Copilot Studio CAT 팀의 <a href="https://microsoft.github.io/mcscatblog/" target="_blank">The Custom Engine</a> 블로그 글을 한글로 옮겨 전합니다. 각 글의 원문 출처·원저자를 명시합니다.</p>
+
+  <div class="chapter-list">
+    {% assign catblog_chapters = site.chapters | where: "category", "catblog" | sort: "order" %}
+    {% for ch in catblog_chapters %}
+    <a href="{{ ch.url | relative_url }}" class="chapter-item updates">
+      <div class="item-icon">🐱</div>
+      <div class="item-body">
+        <div class="item-title">{{ ch.title }}</div>
+        <div class="item-desc">{{ ch.description }}</div>
+        <div class="item-tags">
+          {% if ch.source_author %}<span class="item-tag up">@{{ ch.source_author }}</span>{% endif %}
+          {% if ch.source_published %}<span class="item-tag up">{{ ch.source_published }}</span>{% endif %}
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+    {% if catblog_chapters == empty %}
+    <p class="section-desc" style="opacity:.7">아직 게시된 번역 글이 없습니다. 신규 글이 감지되면 자동으로 추가됩니다.</p>
+    {% endif %}
+  </div>
+</div>

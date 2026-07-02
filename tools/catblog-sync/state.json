@@ -1,0 +1,6 @@
+{
+  "_comment": "이미 번역·게시한 CAT 블로그 글의 slug 목록. catblog-sync 스킬이 번역 완료 시 추가한다. fetch.mjs 는 여기 없는 글만 신규로 감지·스테이징한다.",
+  "processed": [
+    "modern-mcs-agent-skills"
+  ]
+}

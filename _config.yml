@@ -47,6 +47,9 @@ nav_sections:
   - key: updates
     title: "기술 업데이트"
     icon: "🔔"
+  - key: catblog
+    title: "CAT 블로그 업데이트"
+    icon: "🐱"
 
 # Exclude dev/handoff docs from the built site
 exclude:
