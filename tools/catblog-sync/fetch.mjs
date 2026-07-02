@@ -22,8 +22,10 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const INCOMING = join(HERE, "incoming");
 const STATE_PATH = join(HERE, "state.json");
 const MANIFEST_PATH = join(INCOMING, "_manifest.json");
+const ASSETS_BASE = join(HERE, "..", "..", "assets", "catblog"); // Agent_Blog/assets/catblog/<slug>/
 
 const FEED_URL = "https://microsoft.github.io/mcscatblog/feed.xml";
+const SITE_BASE = "https://microsoft.github.io/mcscatblog";
 const RAW_BASE = "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts";
 const POST_BASE = "https://microsoft.github.io/mcscatblog/posts";
 
@@ -97,6 +99,39 @@ async function rawMarkdown(slug, published) {
   return { url, text: null, status: res.status };
 }
 
+// 원문 MD 에서 참조하는 이미지 경로를 추출한다.
+// - 인라인: ![alt](/assets/posts/<slug>/<file>.png){: .shadow }
+// - 헤더:   frontmatter image.path: /assets/posts/<slug>/header.png
+function extractImagePaths(md) {
+  const paths = new Set();
+  for (const m of md.matchAll(/!\[[^\]]*\]\((\/assets\/[^)\s]+)\)/g)) paths.add(m[1]);
+  for (const m of md.matchAll(/^\s*path:\s*(\/assets\/[^\s]+)\s*$/gm)) paths.add(m[1]);
+  return [...paths];
+}
+
+// 원문 이미지를 Agent_Blog/assets/catblog/<slug>/<file> 로 내려받는다.
+// 반환: [{ src: 원문경로, local: "assets/catblog/<slug>/<file>" }]
+async function downloadImages(slug, md) {
+  const refs = extractImagePaths(md);
+  if (refs.length === 0) return [];
+  const outDir = join(ASSETS_BASE, slug);
+  mkdirSync(outDir, { recursive: true });
+  const mapped = [];
+  for (const src of refs) {
+    const file = src.split("/").pop();
+    const res = await fetch(`${SITE_BASE}${src}`);
+    if (!res.ok) {
+      console.warn(`::warning::이미지 다운로드 실패(${res.status}) ${SITE_BASE}${src} — 건너뜀`);
+      continue;
+    }
+    const buf = Buffer.from(await res.arrayBuffer());
+    writeFileSync(join(outDir, file), buf);
+    mapped.push({ src, local: `assets/catblog/${slug}/${file}` });
+    console.log(`    🖼️ ${file}`);
+  }
+  return mapped;
+}
+
 async function main() {
   const res = await fetch(FEED_URL);
   if (!res.ok) {
@@ -137,6 +172,7 @@ async function main() {
       continue;
     }
     writeFileSync(join(INCOMING, `${e.slug}.md`), text, "utf8");
+    const images = await downloadImages(e.slug, text);
     manifest.items = manifest.items.filter((it) => it.slug !== e.slug);
     manifest.items.push({
       slug: e.slug,
@@ -148,10 +184,11 @@ async function main() {
       categories: e.categories,
       summary: e.summary,
       raw_url: url,
+      images,
       staged_at: new Date().toISOString(),
       status: "pending-translation",
     });
-    console.log(`  ↓ staged incoming/${e.slug}.md`);
+    console.log(`  ↓ staged incoming/${e.slug}.md${images.length ? ` (+이미지 ${images.length})` : ""}`);
   }
 
   writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + "\n", "utf8");

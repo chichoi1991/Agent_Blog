@@ -16,6 +16,10 @@ canonical_url: "https://microsoft.github.io/mcscatblog/posts/modern-mcs-agent-sk
 **원문 번역 게시물** — 이 글은 [The Custom Engine](https://microsoft.github.io/mcscatblog/)(Microsoft Copilot Studio CAT)의 roels(@roels) 원문 [Modern Agents Have Skills Now — Here's How They Work in Copilot Studio](https://microsoft.github.io/mcscatblog/posts/modern-mcs-agent-skills/)(2026-06-15)을 한글로 옮긴 것입니다. 세부 표현은 원문이 우선합니다.
 </div>
 
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/modern-mcs-agent-skills/header.png' | relative_url }}" alt="필요한 스킬 하나만 침착하게 집어들고 나머지 47개 서랍은 무시하는 에이전트" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+</figure>
+
 LLM은 흔한 케이스, 즉 **여러분 조직**만의 특수한 지식이 필요 없는 상황을 잘 처리합니다. 반대로 잘 못하는 영역은 바로 그 특수한 부분입니다 — 모델이 스스로 추론할 수 없는 맥락, 관례, 데이터, 노하우죠. 특히 **절차적 노하우**(여러분 조직이 어떤 일을 단계별로 처리하는 고유한 방식)는 LLM이 스스로 알아내기 어려워서, 결국 글로 적어두게 됩니다. 그런데 이 모든 것을 에이전트의 컨텍스트에 항상 쏟아부으면, 바로 그 지점에서 에이전트가 비대해지고 예측 불가능해집니다. 모던 에이전트에는 이 "상황 의존적인 부분"을 담을 더 깔끔한 자리가 있습니다 — **스킬(Skills)**.
 
 최근 코딩 에이전트를 다뤄본 적이 있다면 이미 만나봤을 겁니다. 본질적으로 스킬은 특정 종류의 작업이 등장할 때만 에이전트가 **온디맨드(on demand)** 로 불러오는 지침(그리고 선택적으로 예시·템플릿·스크립트 같은 리소스)입니다. `SKILL.md` 파일이 이름·설명·지침 본문을 담고, 그중 **이름과 설명**이 에이전트에게 "이 스킬이 언제 유효한지"를 알려줍니다.
@@ -65,8 +69,10 @@ LLM은 흔한 케이스, 즉 **여러분 조직**만의 특수한 지식이 필�
 
 스킬은 에이전트의 **Skills** 탭에 있습니다. 오늘 기준 진입점은 두 가지입니다. 빈 상태에서 스킬을 새로 만들거나, 기존 스킬을 업로드하는 것. 업로드는 단독 `SKILL.md` 파일일 수도 있고, `SKILL.md`와 추가 리소스(예: 스킬이 참조하는 Python 스크립트)를 함께 묶은 `.zip`일 수도 있습니다.
 
-> 🖼️ (원문 이미지: [Skills 탭의 "Create from blank" 대화상자](https://microsoft.github.io/mcscatblog/posts/modern-mcs-agent-skills/))
-_"Create from blank"은 중요한 세 가지를 묻습니다 — 이름, 설명, 지침. 업로드한 스킬도 `SKILL.md`의 front matter와 본문에 동일한 필드를 담고, 함께 번들된 파일이 더해집니다._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/modern-mcs-agent-skills/add-skill-create-from-blank.png' | relative_url }}" alt="Copilot Studio Skills 탭의 Create from blank 대화상자 — 이름·설명·지침 입력" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>"Create from blank"은 중요한 세 가지를 묻습니다 — 이름, 설명, 지침. 업로드한 스킬도 `SKILL.md`의 front matter와 본문에 동일한 필드를 담고, 함께 번들된 파일이 더해집니다.</figcaption>
+</figure>
 
 한 번 추가되면 스킬은 에이전트의 일부가 됩니다. 해당 에이전트에 스코프되어 함께 이동합니다 — 에이전트를 [Power Platform 솔루션](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-solutions-overview)에 추가하면 스킬도 ALM 라이프사이클을 따라 함께 움직입니다.
 
@@ -74,8 +80,10 @@ _"Create from blank"은 중요한 세 가지를 묻습니다 — 이름, 설명,
 
 스킬을 직접 "호출"하지는 않습니다. 대화가 매칭될 때, 오케스트레이터가 스킬의 이름과 설명을 근거로 선택합니다. 에이전트의 추론 뷰(reasoning view)에서 이 과정을 관찰할 수 있습니다.
 
-> 🖼️ (원문 이미지: [프로세스 마이닝 스킬을 로드하고 도구를 호출하는 추론 뷰](https://microsoft.github.io/mcscatblog/posts/modern-mcs-agent-skills/))
-_사용자가 프로세스 마이닝 분석을 요청합니다. 오케스트레이터가 매칭되는 스킬을 로드한 뒤, 지침을 단계별로 따르며 적절한 순간에 올바른 도구(`get_processes`)를 호출합니다._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/modern-mcs-agent-skills/invoke-skill-reasoning.png' | relative_url }}" alt="프로세스 마이닝 스킬을 로드하고 도구를 호출하는 Copilot Studio 추론 뷰" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>사용자가 프로세스 마이닝 분석을 요청합니다. 오케스트레이터가 매칭되는 스킬을 로드한 뒤, 지침을 단계별로 따르며 적절한 순간에 올바른 도구(`get_processes`)를 호출합니다.</figcaption>
+</figure>
 
 이 추론 뷰는 주요 디버깅 지점이기도 합니다. 스킬이 너무 자주 발동하면 설명이 지나치게 넓은 것이고, 전혀 발동하지 않으면 설명이 너무 좁거나 사용자가 실제로 쓰는 표현과 맞지 않는 것입니다.
 

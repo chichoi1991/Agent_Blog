@@ -102,9 +102,16 @@ frontmatter 바로 다음, 본문 맨 위에 삽입:
 - 원문의 `## 제목` 섹션 구조·표·코드블록·순서를 유지한 채 **자연스러운 한국어**로 번역.
 - 원문 frontmatter(`layout: post` 등)와 Jekyll 전용 태그는 **본문에서 제거**한다:
   - `{: .shadow }`, `{: .prompt-warning }`, `{: .text-center }` 등 Chirpy kramdown IAL → 제거.
-  - `![alt](/assets/posts/...png)` 이미지: 캡션(`_..._`)만 한글로 남기고, 실제 이미지는
-    필요 시 원문에서 받아 `assets/catblog/<slug>-N.png` 로 저장 후 경로 교체. 받지 않으면
-    `> 🖼️ (원문 이미지: <원문 링크>)` 로 대체.
+  - **이미지**: `fetch.mjs` 가 원문 이미지를 `assets/catblog/<slug>/<file>` 로 이미 내려받아
+    `_manifest.json` 의 `images[]`(`{ src, local }`)에 기록해 둔다. 각 이미지는 기존 컨벤션대로
+    `<figure class="screenshot">` 로 삽입하고 캡션(`_..._`)은 `<figcaption>` 으로 한글 번역:
+    ```html
+    <figure class="screenshot">
+      <img src="{{ '/assets/catblog/<slug>/<file>.png' | relative_url }}" alt="<한글 alt>" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption><한글 캡션></figcaption>
+    </figure>
+    ```
+    `_manifest.json` 에 해당 이미지가 없으면(다운로드 실패) `> 🖼️ (원문 이미지: <원문 링크>)` 로 대체.
   - `{% post_url YYYY-MM-DD-slug %}` 링크 → 해당 원문 절대 URL(`https://microsoft.github.io/mcscatblog/posts/<slug>/`)로 치환.
 - `mermaid` 코드블록: 그대로 두면 렌더 안 됨 → **ASCII 다이어그램으로 재작도**하거나
   핵심을 한글 설명 + 표로 대체(newcs-sync 규칙과 동일).
