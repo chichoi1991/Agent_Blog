@@ -8,6 +8,7 @@ order: 1
 category: "newcslab"
 parent: "ncslab1"
 is_parent: true
+tags: ["New Copilot Studio", "New Work Flow"]
 ---
 
 <div class="info-box note" markdown="1">

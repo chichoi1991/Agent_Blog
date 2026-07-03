@@ -76,6 +76,7 @@
             {% if page.description %}
             <p class="chapter-desc">{{ page.description }}</p>
             {% endif %}
+            {% include tag-badges.html tags=page.tags %}
             {% if page.date %}
             <div class="chapter-postmeta">게시일 {{ page.date | date: "%Y-%m-%d" }}{% if page.source_author %} · {{ page.source_author }}{% endif %}</div>
             {% endif %}

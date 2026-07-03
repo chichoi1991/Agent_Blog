@@ -61,6 +61,7 @@ title: "홈"
           <div class="post-card-cat cat-{{ cat }}">{{ clabel }}</div>
           <h2 class="post-card-title">{{ ch.title }}</h2>
           {% if ch.description %}<p class="post-card-desc">{{ ch.description }}</p>{% endif %}
+          {% include tag-badges.html tags=ch.tags class="post-card-tags" %}
           <div class="post-card-meta">
             {% if ch.date %}<span class="post-card-date">{{ ch.date | date: "%Y-%m-%d" }}</span>{% endif %}
             {% if ch.source_author %}<span class="post-card-author">· {{ ch.source_author }}</span>{% endif %}

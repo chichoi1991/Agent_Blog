@@ -1073,6 +1073,25 @@ a:hover { color: var(--link-hover); }
   padding: 0 12px; opacity: .95; letter-spacing: -.01em;
 }
 .thumb-newcs { background: linear-gradient(135deg,#5B21B6,#7C3AED); }
+
+/* ===== Lab 태그 칩 ===== */
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.chapter-header .tag-row { margin: 12px 0 0; }
+.post-card-tags { margin: 8px 0 0; }
+.tag-chip {
+  display: inline-flex; align-items: center;
+  font-size: 11.5px; font-weight: 600; line-height: 1;
+  padding: 4px 9px; border-radius: 999px;
+  border: 1px solid transparent; white-space: nowrap;
+  letter-spacing: -.01em;
+}
+/* 팔레트별 색상 (slug = 소문자·공백을 -로) */
+.tag-new-copilot-studio   { background: #EDE9FE; color: #6D28D9; border-color: #DDD6FE; }
+.tag-classic-copilot-studio { background: #E0F2FE; color: #0369A1; border-color: #BAE6FD; }
+.tag-new-work-flow        { background: #DCFCE7; color: #15803D; border-color: #BBF7D0; }
+.tag-power-platform-admin { background: #FFEDD5; color: #C2410C; border-color: #FED7AA; }
+.tag-cowork               { background: #FCE7F3; color: #BE185D; border-color: #FBCFE8; }
+.tag-scout                { background: #E0E7FF; color: #4338CA; border-color: #C7D2FE; }
 .thumb-newcslab { background: linear-gradient(135deg,#0E7490,#06B6D4); }
 .thumb-updates { background: linear-gradient(135deg,#B45309,#F59E0B); }
 .thumb-catblog { background: linear-gradient(135deg,#9D174D,#EC4899); }

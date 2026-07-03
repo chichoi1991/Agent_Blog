@@ -1,0 +1,13 @@
+{%- comment -%}
+  Lab 태그 칩 렌더. 파라미터: include.tags (배열), include.class (선택 추가 클래스)
+  태그 팔레트 → 색상 클래스는 slug(소문자·공백을 -로) 기준. style.css 참조.
+{%- endcomment -%}
+{% if include.tags %}{% assign tag_count = include.tags | size %}{% else %}{% assign tag_count = 0 %}{% endif %}
+{% if tag_count > 0 %}
+<div class="tag-row {{ include.class }}">
+  {% for t in include.tags %}
+    {% assign slug = t | downcase | replace: ' ', '-' %}
+    <span class="tag-chip tag-{{ slug }}">{{ t }}</span>
+  {% endfor %}
+</div>
+{% endif %}
