@@ -7,7 +7,6 @@ description: "기초편 #3: 자율동작 에이전트 - AI Prompt 도구 추가"
 order: 5
 category: workshop
 parent: "ws3"
-image: "/assets/image/ws3/스크린샷%202026-03-19%20020111.png"
 ---
 
 ## Step 5: AI Prompt 도구 추가

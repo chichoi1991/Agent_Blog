@@ -7,7 +7,6 @@ description: "메일 발송·첨부에 필요한 도구를 최소 큐레이션�
 order: 5
 category: "newcs"
 parent: "ncs3"
-image: "/assets/newcs/3-tools-add.png"
 ---
 
 ## 6. 커넥터·MCP 추가 (Mail · OneDrive)

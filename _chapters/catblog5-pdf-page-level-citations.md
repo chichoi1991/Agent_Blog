@@ -11,7 +11,6 @@ source_author: "lewisdoesdev, raemone"
 source_published: "2026-06-02"
 source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
 canonical_url: "https://microsoft.github.io/mcscatblog/posts/pdf-page-level-citations/"
-image: "/assets/catblog/pdf-page-level-citations/header.png"
 ---
 
 <div class="info-box note" markdown="1">

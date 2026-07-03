@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-02-19"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/07-add-new-topic-with-trigger/"
-image: "/assets/academy/recruit-07-add-new-topic-with-trigger/video-thumbnail.jpg"
 ---
 
 <div class="info-box note translated-post" markdown="1">

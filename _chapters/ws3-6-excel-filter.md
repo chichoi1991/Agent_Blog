@@ -7,7 +7,6 @@ description: "기초편 #3: 자율동작 에이전트 - Excel 데이터 필터�
 order: 6
 category: workshop
 parent: "ws3"
-image: "/assets/image/ws3/스크린샷%202026-03-19%20024129.png"
 ---
 
 ## Step 6: Excel 데이터 필터링 (심화)

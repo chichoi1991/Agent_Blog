@@ -7,7 +7,6 @@ description: "4개의 내부 문서를 바탕으로 한 번의 Cowork 대화에�
 order: 2
 category: cowork
 parent: "cowork"
-image: "/assets/select-cowork.BrBq5Ltl.png"
 ---
 
 > **미션: Operation By the Book**

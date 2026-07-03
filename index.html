@@ -35,11 +35,24 @@ title: "홈"
       {% when 'special' %}{% assign clabel = 'Classic · 특별 워크샵' %}
       {% else %}{% assign clabel = cat %}
     {% endcase %}
+    {%- comment -%} 썸네일: image 프론트매터 우선, 없으면 본문 첫 이미지, 둘 다 없으면 placeholder {%- endcomment -%}
+    {% assign thumb = ch.image %}
+    {% unless thumb %}
+      {% assign asset_parts = ch.content | split: '/assets/' %}
+      {% if asset_parts.size > 1 %}
+        {% assign after = asset_parts[1] %}
+        {% assign after = after | split: '"' | first | split: "'" | first | split: ')' | first %}
+        {% assign lower = after | downcase %}
+        {% if lower contains '.png' or lower contains '.jpg' or lower contains '.jpeg' or lower contains '.gif' or lower contains '.webp' %}
+          {% assign thumb = '/assets/' | append: after %}
+        {% endif %}
+      {% endif %}
+    {% endunless %}
     <article class="post-card">
       <a class="post-card-link" href="{{ ch.url | relative_url }}">
         <div class="post-card-thumb thumb-{{ cat }}">
-          {% if ch.image %}
-            <img src="{{ ch.image | relative_url }}" alt="" loading="lazy">
+          {% if thumb %}
+            <img src="{{ thumb | relative_url }}" alt="" loading="lazy">
           {% else %}
             <span class="thumb-label">{{ clabel }}</span>
           {% endif %}

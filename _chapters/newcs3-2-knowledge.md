@@ -7,7 +7,6 @@ description: "SharePoint 특정 폴더(엑셀 시계열 + Word 정책)를 Knowle
 order: 2
 category: "newcs"
 parent: "ncs3"
-image: "/assets/newcs/3-knowledge-add.png"
 ---
 
 ## 3. 에이전트 참조자료 추가

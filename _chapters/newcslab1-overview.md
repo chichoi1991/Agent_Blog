@@ -8,7 +8,6 @@ order: 1
 category: "newcslab"
 parent: "ncslab1"
 is_parent: true
-image: "/assets/image/newcslab1/00-scenario-overview.png"
 ---
 
 <div class="info-box note" markdown="1">

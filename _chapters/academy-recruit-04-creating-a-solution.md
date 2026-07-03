@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-06-10"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/04-creating-a-solution/"
-image: "/assets/academy/recruit-04-creating-a-solution/video-thumbnail.jpg"
 ---
 
 <div class="info-box note translated-post" markdown="1">

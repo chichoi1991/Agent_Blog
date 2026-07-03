@@ -7,7 +7,6 @@ description: "기초편 #3: 자율동작 에이전트 - 에이전트 생성 및 
 order: 1
 category: workshop
 parent: "ws3"
-image: "/assets/image/ws3/스크린샷%202026-03-18%20194438.png"
 ---
 
 ## Step 1: 에이전트 생성 및 지침 작성

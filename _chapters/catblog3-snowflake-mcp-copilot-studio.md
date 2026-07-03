@@ -11,7 +11,6 @@ source_author: "hasharaf, missbets"
 source_published: "2026-05-22"
 source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
 canonical_url: "https://microsoft.github.io/mcscatblog/posts/snowflake-mcp-copilot-studio/"
-image: "/assets/catblog/snowflake-mcp-copilot-studio/header.png"
 ---
 
 <div class="info-box note" markdown="1">

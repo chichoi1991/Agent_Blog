@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-31"
 canonical_url: "https://microsoft.github.io/agent-academy/operative/06-ai-safety/"
-image: "/assets/academy/operative-06-ai-safety/6-system-topics.png"
 ---
 
 <div class="info-box note" markdown="1">

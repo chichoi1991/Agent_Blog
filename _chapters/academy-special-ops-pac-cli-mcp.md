@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-17"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/pac-cli-mcp/"
-image: "/assets/academy/special-ops-pac-cli-mcp/powerplatform-cli-mcp-added-vs-code.png"
 ---
 
 <div class="info-box note" markdown="1">

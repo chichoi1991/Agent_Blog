@@ -11,7 +11,6 @@ source_author: "roels"
 source_published: "2026-06-15"
 source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
 canonical_url: "https://microsoft.github.io/mcscatblog/posts/modern-mcs-agent-skills/"
-image: "/assets/catblog/modern-mcs-agent-skills/header.png"
 ---
 
 <div class="info-box note" markdown="1">

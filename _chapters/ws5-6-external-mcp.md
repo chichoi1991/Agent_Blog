@@ -7,7 +7,6 @@ description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - URL 기반
 order: 6
 category: workshop
 parent: "ws5"
-image: "/assets/image/ws3/스크린샷%202026-03-19%20002502.png"
 ---
 
 ## Step 6: 외부 MCP 도구 추가

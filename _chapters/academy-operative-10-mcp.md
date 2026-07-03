@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-11"
 canonical_url: "https://microsoft.github.io/agent-academy/operative/10-mcp/"
-image: "/assets/academy/operative-10-mcp/tools.png"
 ---
 <div class="info-box note" markdown="1">
 **원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🚨 Mission 10: Integrate with MCP Servers](https://microsoft.github.io/agent-academy/operative/10-mcp/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.

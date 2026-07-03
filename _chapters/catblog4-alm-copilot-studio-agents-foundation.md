@@ -11,7 +11,6 @@ source_author: "jpapadimitriou"
 source_published: "2026-06-03"
 source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
 canonical_url: "https://microsoft.github.io/mcscatblog/posts/alm-copilot-studio-agents-foundation/"
-image: "/assets/catblog/alm-copilot-studio-agents-foundation/header.png"
 ---
 
 <div class="info-box note" markdown="1">

@@ -7,7 +7,6 @@ description: "UI에 바로 붙여넣는 SKILL.md 한 장짜리 스킬 만들기.
 order: 3
 category: "newcs"
 parent: "ncs3"
-image: "/assets/newcs/3-single-skill.png"
 ---
 
 ## 4. 단일 스킬 작성

@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-11"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/05-using-prebuilt-agents/"
-image: "/assets/academy/recruit-05-using-prebuilt-agents/video-thumbnail.jpg"
 ---
 
 <div class="info-box note translated-post" markdown="1">

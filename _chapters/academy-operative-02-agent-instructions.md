@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: ""
 canonical_url: "https://microsoft.github.io/agent-academy/operative/02-agent-instructions/"
-image: "/assets/academy/operative-02-agent-instructions/02-instructions-thumbnail_PlayButton.png"
 ---
 
 <div class="info-box note" markdown="1">

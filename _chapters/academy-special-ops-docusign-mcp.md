@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-06-16"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/docusign-mcp/"
-image: "/assets/academy/special-ops-docusign-mcp/0.0_02_SolutionDiagram.png"
 ---
 
 <div class="info-box note" markdown="1">

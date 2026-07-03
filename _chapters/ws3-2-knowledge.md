@@ -7,7 +7,6 @@ description: "기초편 #3: 자율동작 에이전트 - 지식 소스 연결"
 order: 2
 category: workshop
 parent: "ws3"
-image: "/assets/image/ws3/스크린샷%202026-03-18%20220355.png"
 ---
 
 ## Step 2: 지식 소스 연결

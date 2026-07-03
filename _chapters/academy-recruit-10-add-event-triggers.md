@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-02-19"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/10-add-event-triggers/"
-image: "/assets/academy/recruit-10-add-event-triggers/10_AddTriggerDialog.png"
 ---
 
 <div class="info-box note translated-post" markdown="1">

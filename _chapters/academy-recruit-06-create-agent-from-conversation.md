@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-02-19"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/06-create-agent-from-conversation/"
-image: "/assets/academy/recruit-06-create-agent-from-conversation/video-thumbnail.jpg"
 ---
 
 <div class="info-box note translated-post" markdown="1">

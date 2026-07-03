@@ -11,7 +11,6 @@ source_author: "adilei"
 source_published: "2026-06-14"
 source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
 canonical_url: "https://microsoft.github.io/mcscatblog/posts/agent-authentication-controls/"
-image: "/assets/catblog/agent-authentication-controls/header.png"
 ---
 
 <div class="info-box note" markdown="1">

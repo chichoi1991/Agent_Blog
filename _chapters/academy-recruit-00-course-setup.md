@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-16"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/00-course-setup/"
-image: "/assets/academy/recruit-00-course-setup/m365-freetrial.png"
 ---
 
 <div class="info-box note translated-post" markdown="1">

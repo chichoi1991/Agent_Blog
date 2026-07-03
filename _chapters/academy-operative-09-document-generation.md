@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-11"
 canonical_url: "https://microsoft.github.io/agent-academy/operative/09-document-generation/"
-image: "/assets/academy/operative-09-document-generation/ToolsSelect.png"
 ---
 
 <div class="info-box note" markdown="1">

@@ -12,7 +12,6 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-17"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/mcs-mcp/"
-image: "/assets/academy/special-ops-mcs-mcp/vscode-terminal-run-start.png"
 ---
 
 <div class="info-box note" markdown="1">

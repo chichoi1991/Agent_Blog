@@ -7,7 +7,6 @@ description: "게시·채널 제약·실제 채널 재반복 + 체크리스트·
 order: 7
 category: "newcs"
 parent: "ncs3"
-image: "/assets/newcs/3-publish.png"
 ---
 
 ## 8. 배포 및 실제 테스트
