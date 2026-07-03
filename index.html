@@ -4,8 +4,8 @@ title: "홈"
 ---
 
 <div class="home-hero">
-  <h1>Microsoft Copilot<br>Agentic Blog</h1>
-  <p class="hero-sub">Microsoft Copilot 에이전트 생태계 — New Copilot Studio(CLI Agent)를 중심으로 기술 업데이트·번역·핸즈온까지 한곳에서.</p>
+  <h1>Microsoft Copilot Agentic Blog</h1>
+  <p class="hero-sub">Microsoft Copilot 에이전트 생태계 — New Copilot Studio(CLI Agent)를 중심으로<br>기술 업데이트·번역·핸즈온까지 한곳에서 확인하세요.</p>
 </div>
 
 {%- comment -%} ===== 최근 포스팅: 기술 업데이트 + CAT 블로그 최신 8 ===== {%- endcomment -%}
@@ -20,7 +20,7 @@ title: "홈"
   {% assign recent = updates | concat: catblog | sort: "date" | reverse %}
 
   <div class="card-feed">
-    {% for ch in recent limit: 8 %}
+    {% for ch in recent limit: 4 %}
       {% assign cat = ch.category %}
       {% case cat %}
         {% when 'updates' %}{% assign clabel = '기술 업데이트' %}

@@ -284,27 +284,27 @@ a:hover { color: var(--link-hover); }
 
 /* ===== Home Page ===== */
 .home-hero {
-  margin-bottom: 48px;
+  margin-bottom: 22px;
 }
 
 .home-hero h1 {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 800;
   color: var(--text);
   line-height: 1.2;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   letter-spacing: -0.02em;
 }
 
 .home-hero .hero-sub {
-  font-size: 17px;
+  font-size: 14.5px;
   color: var(--text-secondary);
-  line-height: 1.6;
-  max-width: 640px;
+  line-height: 1.55;
+  max-width: 680px;
 }
 
 .home-section {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .home-section h2 {
@@ -1107,9 +1107,9 @@ a:hover { color: var(--link-hover); }
 .thumb-guide, .thumb-workshop, .thumb-special { background: linear-gradient(135deg,#334155,#64748B); }
 
 /* ===== 홈 섹션 제목 + 가로 스크롤 카드 ===== */
-.home-section { margin: 8px 0 40px; }
-.home-section + .home-section { margin-top: 12px; }
-.home-section-head { margin: 0 0 16px; }
+.home-section { margin: 6px 0 28px; }
+.home-section + .home-section { margin-top: 10px; }
+.home-section-head { margin: 0 0 12px; }
 .home-section-title {
   font-size: 22px; font-weight: 800; color: var(--text);
   letter-spacing: -.02em; margin: 0;
