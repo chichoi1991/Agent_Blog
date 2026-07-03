@@ -7,7 +7,7 @@
   --header-bg: #1B1F2B;
   --header-text: #FFFFFF;
   --sidebar-bg: #F8F9FA;
-  --sidebar-width: 340px;
+  --sidebar-width: 272px;
   --sidebar-border: #E5E7EB;
   --sidebar-hover: #EEF0F4;
   --sidebar-active-bg: #E8E0F0;
@@ -1055,7 +1055,7 @@ a:hover { color: var(--link-hover); }
 }
 
 /* Home card feed */
-.card-feed { display: flex; flex-direction: column; gap: 14px; max-width: 620px; }
+.card-feed { display: flex; flex-direction: column; gap: 14px; width: 100%; }
 .post-card {
   border: 1px solid var(--border); border-radius: var(--radius-lg);
   background: #fff; overflow: hidden; transition: box-shadow .18s, transform .18s;
