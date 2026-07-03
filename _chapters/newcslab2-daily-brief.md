@@ -27,7 +27,7 @@ canonical_url: "https://baby-crows.github.io/Copilot-Studio-Handson-Blog/labs/da
 - **원본 저장소**: [baby-crows/Copilot-Studio-Hands-on ↗](https://github.com/baby-crows/Copilot-Studio-Hands-on)
 - 문서 버전: v0.1 · 작성일 2026-06-13 · Level 300 · 소요 약 30분
 
-> 스크린샷(`image-*.png`)은 원문에 포함되어 있습니다. 아래 본문에서는 해당 위치를 *(원문 스크린샷 참고)* 로 표시했습니다.
+> 아래 본문의 이미지는 원작자의 원문 스크린샷을 그대로 가져온 것입니다.
 </div>
 
 > Copilot Studio의 신규 기능(Workflow + Custom Structured Output + Researcher node)을 활용해, 매일 특정 회사에 대한 뉴스 브리프를 자동 생성하고 메일로 발송하는 워크플로우를 30분 안에 구축합니다.
@@ -67,7 +67,11 @@ canonical_url: "https://baby-crows.github.io/Copilot-Studio-Handson-Blog/labs/da
 
 ### 1.2 아키텍처 다이어그램
 
-*(원문 스크린샷 참고: image.png)*
+
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+</figure>
 
 ```
 [Trigger: Manual — researchTopic 입력]
@@ -132,8 +136,20 @@ BriefArchive
 
 ### 3.3 List 생성 단계 안내
 
-1. 사이트 먼저 생성 *(원문 스크린샷 참고: image-1.png ~ image-3.png)*
-2. 리스트 생성 (가져오기 출처: CSV) *(원문 스크린샷 참고: image-4.png ~ image-6.png)*
+1. 사이트 먼저 생성 
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-1.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-2.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-3.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+</figure>
+2. 리스트 생성 (가져오기 출처: CSV) 
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-4.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-5.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-6.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+</figure>
 
 ---
 
@@ -153,11 +169,19 @@ Copilot Studio → Flows (또는 Workflows) → **+ New Flow**
 | Type | `String` |
 | Description | `Company to research` |
 
-*(원문 스크린샷 참고: image-7.png)*
+
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-7.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+</figure>
 
 ### 4.2 Prep — M365 Copilot 노드
 
-*(원문 스크린샷 참고: image-10.png)*
+
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-10.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+</figure>
 
 **노드 추가**: `M365 Copilot` (또는 "Use Microsoft 365 Copilot")
 
@@ -192,7 +216,11 @@ ANGLE: Partnerships | KO: 마이크로소프트 파트너십, 클라우드 계�
 3-5줄만 반환하세요. 서두 없음. 맺음말 없음.
 ```
 
-*(원문 스크린샷 참고: image-8.png)*
+
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-8.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+</figure>
 
 > 이때 prefer async는 켜는 것을 추천
 
@@ -317,7 +345,11 @@ passed < 2 이면 → warning = "low_yield" 설정
 
 #### 4.4.2 Output → Structured output (JSON Schema)
 
-*(원문 스크린샷 참고: image-12.png)*
+
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-12.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+</figure>
 
 UI 상단 `Output` 드롭다운 → **Structured output** 선택 → JSON schema 붙여넣기:
 
@@ -376,7 +408,11 @@ UI 상단 `Output` 드롭다운 → **Structured output** 선택 → JSON schema
 
 ### 4.5 Analyst — Agent 노드 (Agent: Analyst)
 
-*(원문 스크린샷 참고: image-13.png)*
+
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-13.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+</figure>
 
 **노드 추가**: `M365 Copilot`
 
@@ -696,7 +732,11 @@ HTML 구조 (이 골격을 따르고, 모든 입력 데이터를 렌더링)
 즉시 HTML 출력을 시작하세요.
 ```
 
-*(원문 스크린샷 참고: image-14.png)*
+
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-14.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+</figure>
 
 > Output — String 1개
 
@@ -711,7 +751,11 @@ HTML 구조 (이 골격을 따르고, 모든 입력 데이터를 렌더링)
 | Site Address | (본인 SharePoint 사이트 선택) |
 | List Name | `BriefArchive` |
 
-*(원문 스크린샷 참고: image-15.png)*
+
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-15.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+</figure>
 
 **컬럼 매핑** (Expression 직접 입력 혹은 일부는 dynamic content로 직접 삽입):
 
@@ -744,7 +788,13 @@ HTML 구조 (이 골격을 따르고, 모든 입력 데이터를 렌더링)
 | Subject | `{sharepoint item의 title 동적 콘텐츠 삽입}` |
 | Body | `{composer의 response 동적 콘텐츠 삽입}` |
 
-*(원문 스크린샷 참고: image-16.png ~ image-18.png)*
+
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-16.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-17.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-18.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+</figure>
 
 ---
 
@@ -758,7 +808,14 @@ HTML 구조 (이 골격을 따르고, 모든 입력 데이터를 렌더링)
 
 ### 5.2 결과 스크린샷
 
-*(원문 스크린샷 참고: image-20.png ~ image-23.png)*
+
+
+<figure class="screenshot">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-20.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-21.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-22.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+  <img src="{{ '/assets/newcs/labs/newcslab2/image-23.png' | relative_url }}" alt="Daily Brief 실습 스크린샷" loading="lazy">
+</figure>
 
 ---
 
