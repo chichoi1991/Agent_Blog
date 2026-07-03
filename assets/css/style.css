@@ -1115,20 +1115,24 @@ a:hover { color: var(--link-hover); }
 /* Chapter post date */
 .chapter-postmeta { margin-top: 12px; font-size: 13px; color: var(--text-light); }
 
-/* Sidebar search */
-.sidebar-search { padding: 0 6px 10px; position: relative; }
+/* Header search (top-right, next to Home) */
+.header-search { position: relative; display: flex; align-items: center; }
 .search-input {
-  width: 100%; padding: 7px 10px; font-size: 13.5px;
-  border: 1px solid var(--border); border-radius: var(--radius);
-  background: #fff; color: var(--text); font-family: var(--font-sans);
+  width: 190px; padding: 6px 12px; font-size: 13.5px;
+  border: 1px solid rgba(255,255,255,0.22); border-radius: 999px;
+  background: rgba(255,255,255,0.12); color: #fff; font-family: var(--font-sans);
+  transition: width .2s, background .2s, border-color .2s;
 }
-.search-input::placeholder { color: var(--text-light); }
-.search-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-light); }
+.search-input::placeholder { color: rgba(255,255,255,0.6); }
+.search-input:focus {
+  outline: none; width: 260px;
+  background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.5);
+}
 .search-results {
-  position: absolute; left: 6px; right: 6px; top: 40px;
-  max-height: 62vh; overflow-y: auto; background: #fff;
+  position: absolute; top: calc(100% + 8px); right: 0;
+  width: 360px; max-width: 82vw; max-height: 70vh; overflow-y: auto; background: #fff;
   border: 1px solid var(--border); border-radius: var(--radius);
-  box-shadow: var(--shadow-lg); z-index: 200; padding: 4px;
+  box-shadow: var(--shadow-lg); z-index: 300; padding: 4px;
 }
 .search-hit { display: flex; flex-direction: column; gap: 2px; padding: 7px 10px; border-radius: 6px; }
 .search-hit:hover { background: var(--sidebar-hover); }
