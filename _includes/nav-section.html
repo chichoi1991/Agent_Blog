@@ -18,6 +18,20 @@
   <div class="sidebar-section-items">
     {% if section_chapters.size == 0 %}
       <span class="sidebar-empty">콘텐츠 준비 중</span>
+    {% elsif section.key == "academy-labs" %}
+      {%- comment -%} 랩: 랜딩 + 개별 랩을 접힘 없이 평면 나열 {%- endcomment -%}
+      {% assign landings = section_chapters | where: "is_parent", true | sort: "order" %}
+      {% for parent in landings %}
+        <a href="{{ parent.url | relative_url }}" class="sidebar-link sub {% if parent.url == page.url %}active{% endif %}">
+          <span class="sidebar-label">{{ parent.short_title }}</span>
+        </a>
+      {% endfor %}
+      {% assign labs = section_chapters | where_exp: "item", "item.is_parent != true" | sort: "short_title" %}
+      {% for ch in labs %}
+        <a href="{{ ch.url | relative_url }}" class="sidebar-link sub {% if ch.url == page.url %}active{% endif %}">
+          {% if ch.order >= 900 %}<span class="sidebar-label">{{ ch.short_title }}</span>{% else %}<span class="sidebar-label">{{ ch.order }}. {{ ch.short_title }}</span>{% endif %}
+        </a>
+      {% endfor %}
     {% elsif section_parents.size > 0 %}
       {%- comment -%} 계층: 독립 항목 먼저, 그다음 부모 그룹 {%- endcomment -%}
       {% assign standalones = section_chapters | where_exp: "item", "item.is_parent != true" | where_exp: "item", "item.parent == nil" | sort: "order" %}
@@ -41,7 +55,7 @@
           <div class="sidebar-children">
             {% for child in children %}
               <a href="{{ child.url | relative_url }}" class="sidebar-link child {% if child.url == page.url %}active{% endif %}">
-                <span class="sidebar-label">{{ child.order }}. {{ child.short_title }}</span>
+                {% if child.order >= 900 %}<span class="sidebar-label">{{ child.short_title }}</span>{% else %}<span class="sidebar-label">{{ child.order }}. {{ child.short_title }}</span>{% endif %}
               </a>
             {% endfor %}
           </div>
