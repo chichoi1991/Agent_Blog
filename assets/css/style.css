@@ -1090,6 +1090,8 @@ a:hover { color: var(--link-hover); }
 .tag-classic-copilot-studio { background: #E0F2FE; color: #0369A1; border-color: #BAE6FD; }
 .tag-new-work-flow        { background: #DCFCE7; color: #15803D; border-color: #BBF7D0; }
 .tag-power-platform-admin { background: #FFEDD5; color: #C2410C; border-color: #FED7AA; }
+.tag-power-platform       { background: #FFEDD5; color: #C2410C; border-color: #FED7AA; }
+.tag-administrator        { background: #FEF9C3; color: #A16207; border-color: #FDE68A; }
 .tag-cowork               { background: #FCE7F3; color: #BE185D; border-color: #FBCFE8; }
 .tag-scout                { background: #E0E7FF; color: #4338CA; border-color: #C7D2FE; }
 .thumb-newcslab { background: linear-gradient(135deg,#0E7490,#06B6D4); }
