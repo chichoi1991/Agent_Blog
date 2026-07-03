@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "1부 · Claude Code 비교 & 참조"
 short_title: "Claude Code 비교 & 참조"
 description: "같은 하네스 철학, 다른 목적 — 그리고 클래식 대비 강화점·참조 자료."

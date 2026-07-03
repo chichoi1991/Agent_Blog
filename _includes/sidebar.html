@@ -1,0 +1,32 @@
+{%- comment -%} 공용 사이드바(목차). default.html·chapter.html 이 include 한다. {%- endcomment -%}
+<aside class="site-sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <span class="sidebar-title">목차</span>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="{{ '/' | relative_url }}" class="sidebar-link {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Home</a>
+
+    {% for entry in site.nav_sections %}
+      {% if entry.group %}
+        {% assign group_active = false %}
+        {% for sub in entry.sections %}
+          {% assign sc = site.chapters | where: "category", sub.key %}
+          {% for ch in sc %}{% if ch.url == page.url %}{% assign group_active = true %}{% endif %}{% endfor %}
+        {% endfor %}
+        <div class="sidebar-supergroup {% if group_active %}open{% endif %}">
+          <button class="sidebar-supergroup-toggle {% if group_active %}active{% endif %}" aria-expanded="{{ group_active }}" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+            <span class="sidebar-label">{{ entry.group }}</span>
+            <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="sidebar-supergroup-items">
+            {% for sub in entry.sections %}
+              {% include nav-section.html section=sub %}
+            {% endfor %}
+          </div>
+        </div>
+      {% else %}
+        {% include nav-section.html section=entry %}
+      {% endif %}
+    {% endfor %}
+  </nav>
+</aside>

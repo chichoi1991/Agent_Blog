@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-02-19
 title: "미션 06: 자연어와 AI로 커스텀 에이전트를 만들고 내 데이터로 그라운딩하기"
 short_title: "대화형 에이전트 생성"
 description: "자연어만으로 에이전트를 생성하고 SharePoint, 문서, 웹사이트 등 지식 소스로 그라운딩하는 방법"

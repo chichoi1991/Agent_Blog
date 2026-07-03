@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "3부 · 커넥터·MCP 추가 (Mail · OneDrive)"
 short_title: "커넥터·MCP 추가"
 description: "메일 발송·첨부에 필요한 도구를 최소 큐레이션으로 추가."

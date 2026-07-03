@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "2부 · 종합 & 체크리스트"
 short_title: "종합 & 체크리스트"
 description: "6요소가 한 요청에서 맞물리는 법, 빌드 순서, 흔한 함정."

@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-08
 title: "Teams 배포"
 short_title: "Teams 배포"
 description: "기초편 #3: 자율동작 에이전트 - Teams 배포"

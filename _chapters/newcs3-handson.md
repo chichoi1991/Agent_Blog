@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "New Copilot Studio — 3부 에이전트 생성 (실습편)"
 short_title: "3부 실습 — 세일즈 어시스턴트"
 description: "통신사 세일즈 어시스턴트 따라 만들기 — 목표·시나리오·구성 안내."

@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-23
 title: "기본 지침 설정"
 short_title: "기본 지침 설정"
 description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - 에이전트 생성 및 기본 지침 작성"

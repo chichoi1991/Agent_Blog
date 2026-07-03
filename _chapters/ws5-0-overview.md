@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-22
 title: "[리뉴얼] Copilot Studio 기본 기능 살펴보기"
 short_title: "[리뉴얼] Copilot Studio 기본 기능"
 description: "Copilot Studio에서 제공하는 기본 기능들을 처음부터 끝까지 한 번에 둘러보는 통합 핸즈온"

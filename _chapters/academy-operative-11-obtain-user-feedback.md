@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🚨 미션 11: 사용자로부터 피드백 수집하기"
+date: 2026-03-11
+title: "미션 11: 사용자로부터 피드백 수집하기"
 short_title: "11. 사용자 피드백 수집"
 description: "지속적인 개선을 위해 사용자 피드백을 수집하고 처리합니다"
 order: 11

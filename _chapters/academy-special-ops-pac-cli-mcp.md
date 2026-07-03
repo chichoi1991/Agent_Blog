@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "⚡ Power Platform CLI MCP Server"
+date: 2026-03-17
+title: "Power Platform CLI MCP Server"
 short_title: "PAC CLI MCP"
 description: "Power Platform CLI와 GitHub Copilot을 MCP로 연결해 자연어 명령으로 테넌트를 관리하는 실전 랩입니다. 환경 관리, 거버넌스 분석, AI 기반 전략 수립을 다룹니다."
 order: 999

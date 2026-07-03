@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "1부 · 툴·MCP & 서브에이전트"
 short_title: "툴·MCP & 서브에이전트"
 description: "도구의 두 축(커넥터·MCP)과 컨텍스트 격리를 위한 서브에이전트."

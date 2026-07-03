@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-03-18
 title: "Microsoft 365 Copilot용 선언형 에이전트 배포"
 short_title: "선언형 에이전트 배포"
 description: "프롬프트를 기반으로 Microsoft 365 Copilot에 나만의 에이전트를 추가하는 방법."

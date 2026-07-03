@@ -24,38 +24,32 @@ defaults:
     values:
       layout: "default"
 
-# Sidebar navigation sections
+# Sidebar navigation sections (그룹 지원: {group, sections:[...]} 또는 {key, title})
 nav_sections:
   - key: newcs
     title: "New Copilot Studio (CLI Agent)"
-    icon: "⚡"
   - key: newcslab
     title: "핸즈온 워크샵 (New Copilot Studio)"
-    icon: "🧪"
-  - key: guide
-    title: "Copilot Studio 실무 가이드 (Classic)"
-    icon: "📘"
-  - key: workshop
-    title: "핸즈온 워크샵 (Classic)"
-    icon: "🛠️"
-  - key: special
-    title: "특별 워크샵 (Classic)"
-    icon: "⭐"
-  - key: cowork
-    title: "Cowork Collective"
-    icon: "🤝"
   - key: updates
     title: "기술 업데이트"
-    icon: "🔔"
   - key: catblog
     title: "CAT 블로그 업데이트"
-    icon: "🐱"
   - key: academy-courses
     title: "Agent Academy · 코스"
-    icon: "🎓"
   - key: academy-labs
     title: "Agent Academy · 랩"
-    icon: "🎯"
+  - key: cowork
+    title: "Copilot Cowork"
+  - key: scout
+    title: "Microsoft Scout"
+  - group: "Copilot Studio Classic"
+    sections:
+      - key: guide
+        title: "Copilot Studio 실무 가이드"
+      - key: workshop
+        title: "핸즈온 워크샵 (Classic)"
+      - key: special
+        title: "특별 워크샵"
 
 # Exclude dev/handoff docs from the built site
 exclude:

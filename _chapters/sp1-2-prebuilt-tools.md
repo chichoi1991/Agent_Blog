@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-16
 title: "Part 2: Pre-built 도구 추가"
 short_title: "Pre-built 도구"
 description: "특별 워크샵 - Work IQ MCP (Mail, Teams, Copilot) Pre-built 도구 추가"

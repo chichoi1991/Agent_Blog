@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-23
 title: "MCP 도구 추가"
 short_title: "MCP 도구 추가"
 description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - 빌트인 MCP(이메일 관리) 도구 추가"

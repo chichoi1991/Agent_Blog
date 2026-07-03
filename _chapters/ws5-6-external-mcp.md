@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-22
 title: "외부 MCP 도구 추가"
 short_title: "외부 MCP 도구 추가"
 description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - URL 기반 사설 MCP 서버 연결"

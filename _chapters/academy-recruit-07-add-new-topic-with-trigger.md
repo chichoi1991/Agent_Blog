@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-02-19
 title: "미션 07: 트리거와 노드가 있는 새 토픽 추가하기"
 short_title: "토픽·트리거 추가"
 description: "Topics로 커스텀 질문/답변 경로를 정의하는 방법"

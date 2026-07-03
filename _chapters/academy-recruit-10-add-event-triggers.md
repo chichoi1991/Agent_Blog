@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-02-19
 title: "Event Trigger 추가로 자율형 에이전트 기능 활성화"
 short_title: "Event Trigger 추가"
 description: "이벤트 기반 로직으로 에이전트가 자율적으로 동작하도록 구성합니다."

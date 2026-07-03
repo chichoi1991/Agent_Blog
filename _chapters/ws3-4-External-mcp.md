@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-15
 title: "외부 MCP 도구 추가"
 short_title: "외부 MCP 도구 추가"
 description: "기초편 #3: 자율동작 에이전트 - 외부 MCP 도구 추가"

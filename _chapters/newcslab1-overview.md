@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-20
 title: "Lab 1 · 보고서 자료 브리핑 에이전트 (w/ Workflow)"
 short_title: "Lab 1 · 보고서 브리핑 (Workflow)"
 description: "워크플로를 활용해 보고서 자료를 수집·요약하고 브리핑을 생성하는 New Copilot Studio 에이전트를 만듭니다."

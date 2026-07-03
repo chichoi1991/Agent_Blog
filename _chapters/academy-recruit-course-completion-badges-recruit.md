@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-03-27
 title: "Recruit 배지 획득하기"
 short_title: "Recruit 배지"
 description: "배지를 신청하고 학습 성과를 공식적으로 남기는 방법을 안내합니다."

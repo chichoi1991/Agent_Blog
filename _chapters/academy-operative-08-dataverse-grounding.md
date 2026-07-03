@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🚨 미션 08: Dataverse grounding으로 프롬프트 강화"
+date: 2026-03-11
+title: "미션 08: Dataverse grounding으로 프롬프트 강화"
 short_title: "08. Dataverse 그라운딩"
 description: "정확한 응답을 위해 enterprise 데이터에 Agent를 grounding합니다"
 order: 8

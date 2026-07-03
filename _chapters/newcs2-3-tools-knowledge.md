@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "2부 · 도구 & 참고자료"
 short_title: "도구 & 참고자료"
 description: "손발(커넥터·MCP)의 최소 큐레이션과, RAG에서 코드 실행으로 바뀐 참고자료."

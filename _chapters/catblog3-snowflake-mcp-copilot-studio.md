@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-05-22
 title: "Copilot Studio에서 Snowflake 관리형 MCP 서버 연결하기"
 short_title: "Snowflake MCP 서버 연결"
 description: "Microsoft Entra ID를 통한 위임 사용자 OAuth를 사용해 Snowflake 관리형 MCP 서버를 Copilot Studio 에이전트에 연결하는 엔드투엔드 가이드."

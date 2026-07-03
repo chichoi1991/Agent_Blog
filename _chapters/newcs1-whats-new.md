@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "New Copilot Studio — 1부 What's New (개념편)"
 short_title: "1부 What's New (개념)"
 description: "하네스 설계 원리로 다시 읽는 New Copilot Studio. 개념편의 7개 주제를 안내합니다."

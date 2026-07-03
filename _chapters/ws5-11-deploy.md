@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-22
 title: "배포"
 short_title: "배포"
 description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - 게시 및 Microsoft Teams 채널 배포"

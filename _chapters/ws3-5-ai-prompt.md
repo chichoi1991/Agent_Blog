@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-08
 title: "AI Prompt 도구 추가"
 short_title: "AI Prompt 도구"
 description: "기초편 #3: 자율동작 에이전트 - AI Prompt 도구 추가"

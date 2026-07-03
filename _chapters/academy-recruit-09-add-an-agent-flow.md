@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-02-19
 title: "토픽에 에이전트 흐름 추가해 자동화하기"
 short_title: "에이전트 흐름 추가"
 description: "Adaptive Card 입력으로 백엔드 흐름을 트리거하는 방법을 배웁니다."

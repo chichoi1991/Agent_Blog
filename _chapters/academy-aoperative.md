@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-07-02
 title: "Operative — 중급 코스"
 short_title: "Operative"
 description: "Agent Academy Operative 코스 안내 — Copilot Studio로 채용 자동화 시나리오(Hiring Agent)를 처음부터 끝까지 구축하는 12개 미션."

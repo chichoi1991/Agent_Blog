@@ -1,0 +1,14 @@
+{%- comment -%} "최근 업데이트" 위젯 — 콘텐츠 단위(부모 랜딩 + 독립 글)를 date 내림차순으로. {%- endcomment -%}
+{% assign ru_units = site.chapters | where_exp: "c", "c.parent == nil or c.is_parent" %}
+{% assign ru_recent = ru_units | sort: "date" | reverse %}
+<div class="widget widget-recent">
+  <h3 class="widget-title">최근 업데이트</h3>
+  <ul class="widget-list">
+    {% for ch in ru_recent limit: 7 %}
+      <li>
+        <a href="{{ ch.url | relative_url }}">{{ ch.short_title | default: ch.title }}</a>
+        {% if ch.date %}<span class="widget-date">{{ ch.date | date: "%Y-%m-%d" }}</span>{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

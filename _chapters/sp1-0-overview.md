@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-17
 title: "비즈니스 데이터 + Work IQ 조합 에이전트"
 short_title: "특별 워크샵: 비즈니스 에이전트"
 description: "내부 비즈니스 데이터와 외부 경제지표를 조합하여 CEO의 전략적 의사결정을 보조하는 에이전트 구축 실습"

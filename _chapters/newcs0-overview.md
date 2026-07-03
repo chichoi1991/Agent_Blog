@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-06-15
 title: "New Copilot Studio — CLI 에이전트 개요"
 short_title: "개요"
 description: "왜 CLI 에이전트로 다시 지었나 — 1·2·3부로 읽는 New Copilot Studio 안내."

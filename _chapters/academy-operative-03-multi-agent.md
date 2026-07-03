@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🚨 미션 03: 멀티 에이전트 시스템"
+date: 2026-03-16
+title: "미션 03: 멀티 에이전트 시스템"
 short_title: "03. 멀티 에이전트 시스템"
 description: "단일 에이전트를 조율된 멀티 에이전트 시스템으로 전환합니다"
 order: 3

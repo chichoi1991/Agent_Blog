@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-05-09
 title: "참조자료, 기능 추가하기"
 short_title: "참조자료 및 기능 추가"
 description: "Agent Builder로 에이전트 만들기 - 참조자료, 기능 추가하기"

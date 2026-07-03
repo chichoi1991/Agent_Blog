@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🎯 Power Platform 테넌트 거버넌스 전략 개선 계획"
+date: 2026-02-20
+title: "Power Platform 테넌트 거버넌스 전략 개선 계획"
 short_title: "PP 거버넌스 계획"
 description: "AI가 생성한 Power Platform 테넌트 거버넌스 전략 개선 계획 예시입니다. 우선순위별 설정 권장사항, 단계별 구현 로드맵, CLI 명령, 모니터링 전략을 포함합니다."
 order: 999

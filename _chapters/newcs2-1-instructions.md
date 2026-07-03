@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "2부 · 지침 (Instructions)"
 short_title: "지침 (Instructions)"
 description: "항상 로드되는 상위 규칙 — 6원칙·단일 출처·확인 게이트."

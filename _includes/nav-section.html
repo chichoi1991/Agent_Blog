@@ -1,0 +1,58 @@
+{%- comment -%}
+  하나의 사이드바 섹션을 렌더한다. 파라미터: include.section = {key, title}
+  계층 여부는 하위 챕터에 is_parent 가 하나라도 있으면 자동 감지한다.
+{%- endcomment -%}
+{% assign section = include.section %}
+{% assign section_chapters = site.chapters | where: "category", section.key | sort: "order" %}
+{% assign is_active_section = false %}
+{% for ch in section_chapters %}
+  {% if ch.url == page.url %}{% assign is_active_section = true %}{% endif %}
+{% endfor %}
+{% assign section_parents = section_chapters | where: "is_parent", true %}
+
+<div class="sidebar-section {% if is_active_section %}open{% endif %}">
+  <button class="sidebar-section-toggle {% if is_active_section %}active{% endif %}" aria-expanded="{{ is_active_section }}" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
+    <span class="sidebar-label">{{ section.title }}</span>
+    <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="sidebar-section-items">
+    {% if section_chapters.size == 0 %}
+      <span class="sidebar-empty">콘텐츠 준비 중</span>
+    {% elsif section_parents.size > 0 %}
+      {%- comment -%} 계층: 독립 항목 먼저, 그다음 부모 그룹 {%- endcomment -%}
+      {% assign standalones = section_chapters | where_exp: "item", "item.is_parent != true" | where_exp: "item", "item.parent == nil" | sort: "order" %}
+      {% for ch in standalones %}
+        <a href="{{ ch.url | relative_url }}" class="sidebar-link sub {% if ch.url == page.url %}active{% endif %}">
+          <span class="sidebar-label">{{ ch.short_title }}</span>
+        </a>
+      {% endfor %}
+      {% assign parents = section_chapters | where_exp: "item", "item.is_parent" | sort: "order" %}
+      {% for parent in parents %}
+        {% assign is_parent_active = false %}
+        {% if parent.url == page.url %}{% assign is_parent_active = true %}{% endif %}
+        {% assign children = section_chapters | where: "parent", parent.parent | where_exp: "item", "item.is_parent != true" | sort: "order" %}
+        {% for child in children %}
+          {% if child.url == page.url %}{% assign is_parent_active = true %}{% endif %}
+        {% endfor %}
+        <div class="sidebar-group {% if is_parent_active %}open{% endif %}">
+          <a href="{{ parent.url | relative_url }}" class="sidebar-link sub sidebar-parent {% if parent.url == page.url %}active{% endif %}" onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
+            <span class="sidebar-label">{{ parent.short_title }}</span>
+          </a>
+          <div class="sidebar-children">
+            {% for child in children %}
+              <a href="{{ child.url | relative_url }}" class="sidebar-link child {% if child.url == page.url %}active{% endif %}">
+                <span class="sidebar-label">{{ child.order }}. {{ child.short_title }}</span>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      {% for ch in section_chapters %}
+        <a href="{{ ch.url | relative_url }}" class="sidebar-link sub {% if ch.url == page.url %}active{% endif %}">
+          <span class="sidebar-label">{{ ch.order }}. {{ ch.short_title }}</span>
+        </a>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>

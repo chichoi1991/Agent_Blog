@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-23
 title: "커넥터(팀즈 채널 메세지 게시) 추가"
 short_title: "커넥터(팀즈 채널 메세지 게시) 추가"
 description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - 일반 플러그인 커넥터 추가 (Teams 채널 게시 예시)"

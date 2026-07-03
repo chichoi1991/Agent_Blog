@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-08
 title: "외부(사내/대외) 시스템 연동 방식"
 short_title: "외부 시스템 연동"
 description: "Power Automate 연계, 표준 커넥터 활용, HTTP 기반 API 연동, 인증 방식 등 외부 시스템 연동 전략을 실무 관점에서 다룹니다."

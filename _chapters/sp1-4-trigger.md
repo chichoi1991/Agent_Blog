@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-16
 title: "Part 4: 메일 수신 트리거 추가"
 short_title: "트리거 추가"
 description: "특별 워크샵 - 새 메일 도착 시 자동으로 분석·초안 작성·Teams 알림을 수행하는 트리거 설정"

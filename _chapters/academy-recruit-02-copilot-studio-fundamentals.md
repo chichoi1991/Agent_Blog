@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-02-20
 title: "미션 02: Copilot Studio 기초"
 short_title: "Copilot Studio 기초"
 description: "Knowledge, Tools, Topics, Instructions가 어떻게 맞물려 Copilot Studio 에이전트를 구성하는지 배웁니다."

@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-17
 title: "Excel 데이터 필터링 (심화)"
 short_title: "Excel 필터링"
 description: "기초편 #3: 자율동작 에이전트 - Excel 데이터 필터링 (심화)"

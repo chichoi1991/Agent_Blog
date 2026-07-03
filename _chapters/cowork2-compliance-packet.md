@@ -1,6 +1,7 @@
 ---
 layout: chapter
-title: "🔒 The Compliance Packet — 감사 패키지 생성 미션"
+date: 2026-05-30
+title: "The Compliance Packet — 감사 패키지 생성 미션"
 short_title: "The Compliance Packet"
 description: "4개의 내부 문서를 바탕으로 한 번의 Cowork 대화에서 감사 패키지(Word/Excel)와 브리핑 메일을 생성"
 order: 2

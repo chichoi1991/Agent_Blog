@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "3부 · 스킬 패키지 임포트"
 short_title: "스킬 패키지 임포트"
 description: "GitHub의 2개 ZIP 고성능 스킬 + 프리뷰 함정."

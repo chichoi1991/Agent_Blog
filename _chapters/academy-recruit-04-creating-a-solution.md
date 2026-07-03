@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-10
 title: "에이전트를 위한 솔루션 만들기"
 short_title: "솔루션 만들기"
 description: "환경 간 관리와 배포를 위해 에이전트를 재사용 가능한 솔루션으로 패키징하는 방법."

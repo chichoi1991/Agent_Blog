@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-22
 title: "커넥터 연결 중심 플로우"
 short_title: "커넥터 연결 플로우"
 description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - Power Automate 플로우로 메일+팀즈 게시 연쇄 자동화"

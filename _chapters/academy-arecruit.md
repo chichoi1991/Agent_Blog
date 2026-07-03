@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-07-02
 title: "Recruit — 입문 코스"
 short_title: "Recruit"
 description: "Copilot Studio Agent Academy Recruit 과정의 전체 모듈을 한국어로 따라갈 수 있도록 정리한 입문 코스 안내입니다."

@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "📄 Microsoft Copilot Studio + Docusign MCP"
+date: 2026-06-16
+title: "Microsoft Copilot Studio + Docusign MCP"
 short_title: "Docusign MCP"
 description: "Docusign MCP Demo 서버를 Copilot Studio 에이전트에 연결하고 Workflow Builder 계약 자동화를 트리거하는 실전 랩입니다. 채용 계약서 워크플로우 전체를 자동화하는 방법을 다룹니다."
 order: 999

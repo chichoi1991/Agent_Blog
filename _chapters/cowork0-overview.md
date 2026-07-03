@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-05-30
 title: "Cowork Collective — Copilot Cowork 핸즈온 미션"
 short_title: "Cowork Collective 개요"
 description: "Microsoft 365 Copilot Cowork에게 실제 업무를 위임해보는 실습 미션 모음 (한국어판)"

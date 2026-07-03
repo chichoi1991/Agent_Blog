@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "3부 · 사전 준비 & 에이전트 생성·지침"
 short_title: "사전 준비 & 생성·지침"
 description: "프리뷰 진입, 빈 에이전트 생성, 6요소의 뼈대인 지침 작성."

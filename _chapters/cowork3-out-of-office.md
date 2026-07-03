@@ -1,6 +1,7 @@
 ---
 layout: chapter
-title: "🏖️ Out of Office Vacation Handoff — 휴가 인수인계 미션"
+date: 2026-05-30
+title: "Out of Office Vacation Handoff — 휴가 인수인계 미션"
 short_title: "Out of Office Handoff"
 description: "휴가 전 인수인계 체크리스트 전체를 한 번의 대화로 Cowork에게 위임하고, 매주 자동 점검까지 설정"
 order: 3

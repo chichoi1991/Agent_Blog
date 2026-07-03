@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-01-14
 title: "에이전트를 게시하고 Teams와 Microsoft 365 Copilot에 배포하기"
 short_title: "에이전트 게시"
 description: "에이전트를 Microsoft Teams와 Microsoft 365 Copilot에 배포합니다."

@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-08
 title: "에이전트 테스트 및 공유"
 short_title: "테스트 및 공유"
 description: "Agent Builder로 에이전트 만들기 - 에이전트 테스트 및 공유"

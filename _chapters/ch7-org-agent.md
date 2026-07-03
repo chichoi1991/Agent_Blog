@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-08
 title: "조직 공용 Agent 운영"
 short_title: "조직 공용 Agent"
 description: "개인 Agent와 조직 Agent의 차이, 조직 Agent 등록 프로세스, 전사 공용 Agent 운영 시 유의사항을 정리합니다."

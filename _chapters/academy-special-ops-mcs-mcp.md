@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🤖 Microsoft Copilot Studio ❤️ MCP"
+date: 2026-03-17
+title: "Microsoft Copilot Studio ❤️ MCP"
 short_title: "Copilot Studio + MCP"
 description: "MCP 서버를 배포하고 Microsoft Copilot Studio에 연결하는 실전 랩입니다. Node.js MCP 서버를 로컬 또는 Azure에 배포하고 GitHub Copilot 및 Copilot Studio와 연동합니다."
 order: 999

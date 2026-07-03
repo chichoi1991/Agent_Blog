@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-22
 title: "프롬프트 도구 활용법"
 short_title: "프롬프트 도구 활용법"
 description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - AI Prompt 도구로 일관된 HTML 응답 설계"

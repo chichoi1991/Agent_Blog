@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-02
 title: "Copilot Studio에서 PDF 페이지 단위 인용 구현하기"
 short_title: "PDF 페이지 단위 인용"
 description: "SharePoint 및 업로드 파일 지식 소스를 사용하는 Copilot Studio에서 페이지 단위 PDF 인용을 구현해 사용자가 답변 근거가 된 정확한 페이지로 바로 이동하게 하는 방법."

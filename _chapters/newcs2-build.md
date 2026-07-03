@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "New Copilot Studio — 2부 에이전트 생성 (빌드 개념편)"
 short_title: "2부 빌드 개념"
 description: "에이전트를 이루는 6요소 — 지침·스킬·도구·참고자료·연결된 에이전트·메모리."

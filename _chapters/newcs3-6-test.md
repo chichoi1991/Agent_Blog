@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "3부 · 테스트 창에서 테스트"
 short_title: "테스트"
 description: "5개 프롬프트로 전체 흐름 실측 + 점검 포인트."

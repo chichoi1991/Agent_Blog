@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🚨 미션 07: 멀티모달 프롬프트로 이력서 내용 추출하기"
+date: 2026-03-11
+title: "미션 07: 멀티모달 프롬프트로 이력서 내용 추출하기"
 short_title: "07. 멀티모달 프롬프트"
 description: "고급 AI 기능으로 문서와 이미지를 처리합니다"
 order: 7

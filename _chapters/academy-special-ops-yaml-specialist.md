@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🧬 YAML Specialist"
+date: 2026-04-02
+title: "YAML Specialist"
 short_title: "YAML Specialist"
 description: "VS Code에서 YAML 에이전트 정의 언어를 사용해 Copilot Studio 에이전트를 완전히 코드로 빌드하고 확장하는 실전 랩입니다. GitHub Copilot과 전문 스킬을 활용한 AI 지원 YAML 작성을 다룹니다."
 order: 999

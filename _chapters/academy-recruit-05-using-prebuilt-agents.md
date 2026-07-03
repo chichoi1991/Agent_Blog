@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-03-11
 title: "사전 구축 에이전트 활용하기"
 short_title: "사전 구축 에이전트"
 description: "템플릿 에이전트를 사용하고 사용자 지정해 더 빠르게 시작하는 방법."

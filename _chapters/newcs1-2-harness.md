@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "1부 · 하네스 엔지니어링"
 short_title: "하네스 엔지니어링"
 description: "하네스란 무엇이고, 왜 업계가 코딩 하네스로 수렴했나."

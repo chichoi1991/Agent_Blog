@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🚨 Mission 01: Hiring Agent 시작하기"
+date: 2026-03-16
+title: "Mission 01: Hiring Agent 시작하기"
 short_title: "01. 시작하기"
 description: "채용 관리 시스템의 핵심 인프라를 배포하고 중앙 오케스트레이터 Agent를 만듭니다"
 order: 1

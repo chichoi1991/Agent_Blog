@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-22
 title: "트리거 추가"
 short_title: "트리거 추가"
 description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - 이벤트 기반 트리거를 활용한 자동 실행"

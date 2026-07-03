@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "모던 에이전트에는 이제 스킬이 있다 — Copilot Studio에서의 동작 방식"
 short_title: "에이전트 스킬 동작 방식"
 description: "모던 Copilot Studio 에이전트에서 스킬(Skill)이 동작하는 방식 — 특정 시나리오에서 온디맨드로 로드되는 지침·리소스, 지침을 스킬로 모듈화하는 이유, 스킬과 지침을 언제 나눠 쓰는가."

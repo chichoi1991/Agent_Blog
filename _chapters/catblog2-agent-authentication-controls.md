@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-14
 title: "\"안녕하세요\" 이전에 문을 닫는 관리자 컨트롤"
 short_title: "에이전트 인증 관리 컨트롤"
 description: "Power Platform 관리자 컨트롤 '에이전트 Microsoft 인증 필수'가 DLP 채널 차단으로는 해결하지 못했던 내부 직원용 에이전트 인증 경계 문제를 어떻게 해결하는지 설명합니다."

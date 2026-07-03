@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-03-16
 title: "미션 00: 과정 준비"
 short_title: "과정 준비"
 description: "개발 환경, Copilot Studio 체험판, SharePoint 사이트를 준비해 Recruit 과정을 시작합니다."

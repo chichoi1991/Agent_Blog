@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🚨 최종 미션: Operative 배지 획득하기"
+date: 2026-02-02
+title: "최종 미션: Operative 배지 획득하기"
 short_title: "수료 배지 신청"
 description: "Operative 배지를 신청하고 성과를 기념하세요"
 order: 999

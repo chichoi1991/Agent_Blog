@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-22
 title: "에이전트 소개"
 short_title: "에이전트 소개"
 description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - 실습 시나리오와 완성된 에이전트 구조 소개"

@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "1부 · CLI 런타임 구조"
 short_title: "CLI 런타임 구조"
 description: "하네스의 실물 — 격리 컨테이너·참조자료 처리·Python 런타임·메모리 아키텍처."

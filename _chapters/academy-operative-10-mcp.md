@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🚨 미션 10: MCP 서버와 통합하기"
+date: 2026-03-11
+title: "미션 10: MCP 서버와 통합하기"
 short_title: "10. MCP 서버 연동"
 description: "기본 제공 MCP 서버와 통합합니다"
 order: 10

@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-07-02
 title: "Special Ops — 독립 랩"
 short_title: "Special Ops"
 description: "Copilot Studio Agent Academy의 Special Ops 독립 랩 모음입니다. MCP 서버 연동, YAML 에이전트 작성, Power Platform CLI 거버넌스, Docusign 연동 등 실전 시나리오를 다룹니다."

@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-03-11
 title: "Copilot Studio 라이선싱 이해하기"
 short_title: "라이선싱 이해"
 description: "Copilot Studio의 라이선싱과 과금 방식이 어떻게 동작하는지 배웁니다."

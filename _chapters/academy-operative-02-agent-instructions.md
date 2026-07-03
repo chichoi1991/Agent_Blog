@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🕵️‍♂️ 미션 02: 에이전트 지침 작성"
+date: 2026-07-02
+title: "미션 02: 에이전트 지침 작성"
 short_title: "02. 에이전트 지침 작성"
 description: "정교한 Agent 커뮤니케이션과 동작 제어를 익힙니다"
 order: 2

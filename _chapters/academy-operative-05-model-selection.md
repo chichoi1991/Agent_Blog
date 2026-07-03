@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🚨 미션 05: Agent 모델과 응답 형식 이해"
+date: 2026-03-11
+title: "미션 05: Agent 모델과 응답 형식 이해"
 short_title: "05. Agent 모델 이해"
 description: "최대의 효과와 참여를 위해 agent 모델을 사용자 지정합니다"
 order: 5

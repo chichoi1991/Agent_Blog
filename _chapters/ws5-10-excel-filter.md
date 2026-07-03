@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-23
 title: "Excel 기반 데이터 활용법"
 short_title: "Excel 데이터 활용"
 description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - SharePoint Excel 데이터 필터링 + AI Prompt 결합"

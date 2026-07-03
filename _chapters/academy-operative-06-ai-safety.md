@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🚨 미션 06: AI 안전과 콘텐츠 검열"
+date: 2026-03-31
+title: "미션 06: AI 안전과 콘텐츠 검열"
 short_title: "06. AI 안전과 콘텐츠 검열"
 description: "엔터프라이즈급 안전 및 규정 준수 조치를 구현합니다"
 order: 6

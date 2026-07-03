@@ -27,73 +27,7 @@
   </header>
 
   <div class="site-wrapper">
-    <aside class="site-sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <span class="sidebar-title">📖 목차</span>
-      </div>
-      <nav class="sidebar-nav">
-        <a href="{{ '/' | relative_url }}" class="sidebar-link {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">
-          <span class="sidebar-icon">🏠</span> Home
-        </a>
-
-        {% for section in site.nav_sections %}
-          {% assign section_chapters = site.chapters | where: "category", section.key | sort: "order" %}
-          {% assign is_active_section = false %}
-          {% for ch in section_chapters %}
-            {% if ch.url == page.url %}
-              {% assign is_active_section = true %}
-            {% endif %}
-          {% endfor %}
-
-          <div class="sidebar-section {% if is_active_section %}open{% endif %}">
-            <button class="sidebar-section-toggle {% if is_active_section %}active{% endif %}" aria-expanded="{{ is_active_section }}" onclick="this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('open'))">
-              <span class="sidebar-icon">{{ section.icon }}</span>
-              <span class="sidebar-label">{{ section.title }}</span>
-              <svg class="sidebar-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="sidebar-section-items">
-              {% if section.key == 'workshop' or section.key == 'special' or section.key == 'cowork' or section.key == 'newcs' %}
-                {%- comment -%} Hierarchical display: standalone items first, then parent groups {%- endcomment -%}
-                {% assign standalones = section_chapters | where_exp: "item", "item.is_parent != true" | where_exp: "item", "item.parent == nil" | sort: "order" %}
-                {% for ch in standalones %}
-                  <a href="{{ ch.url | relative_url }}" class="sidebar-link sub {% if ch.url == page.url %}active{% endif %}">
-                    <span class="sidebar-label">{{ ch.short_title }}</span>
-                  </a>
-                {% endfor %}
-                {% assign parents = section_chapters | where_exp: "item", "item.is_parent" | sort: "order" %}
-                {% for parent in parents %}
-                  {% assign is_parent_active = false %}
-                  {% if parent.url == page.url %}{% assign is_parent_active = true %}{% endif %}
-                  {% assign children = section_chapters | where: "parent", parent.parent | where_exp: "item", "item.is_parent != true" | sort: "order" %}
-                  {% for child in children %}
-                    {% if child.url == page.url %}{% assign is_parent_active = true %}{% endif %}
-                  {% endfor %}
-
-                  <div class="sidebar-group {% if is_parent_active %}open{% endif %}">
-                    <a href="{{ parent.url | relative_url }}" class="sidebar-link sub sidebar-parent {% if parent.url == page.url %}active{% endif %}" onclick="var g=this.closest('.sidebar-group'); if(!g.classList.contains('open')){g.classList.add('open');}">
-                      <span class="sidebar-label">{{ parent.short_title }}</span>
-                    </a>
-                    <div class="sidebar-children">
-                      {% for child in children %}
-                        <a href="{{ child.url | relative_url }}" class="sidebar-link child {% if child.url == page.url %}active{% endif %}">
-                          <span class="sidebar-label">{{ child.order }}. {{ child.short_title }}</span>
-                        </a>
-                      {% endfor %}
-                    </div>
-                  </div>
-                {% endfor %}
-              {% else %}
-                {% for ch in section_chapters %}
-                  <a href="{{ ch.url | relative_url }}" class="sidebar-link sub {% if ch.url == page.url %}active{% endif %}">
-                    <span class="sidebar-label">{{ ch.order }}. {{ ch.short_title }}</span>
-                  </a>
-                {% endfor %}
-              {% endif %}
-            </div>
-          </div>
-        {% endfor %}
-      </nav>
-    </aside>
+    {% include sidebar.html %}
 
     <main class="site-main">
       <div class="main-content">
@@ -103,6 +37,10 @@
         <p>© 2026 Microsoft Copilot Agentic Blog · Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
       </footer>
     </main>
+
+    <aside class="site-aside">
+      {% include recently-updated.html %}
+    </aside>
   </div>
 
   <div class="mobile-overlay" id="overlay"></div>

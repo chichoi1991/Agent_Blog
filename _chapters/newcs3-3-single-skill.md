@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "3부 · 단일 스킬 작성"
 short_title: "단일 스킬 작성"
 description: "UI에 바로 붙여넣는 SKILL.md 한 장짜리 스킬 만들기."

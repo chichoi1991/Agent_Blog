@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-03-13
 title: "미션 01: 에이전트 소개"
 short_title: "에이전트 소개"
 description: "대화형 AI, LLM, RAG, 대화형·자율형 에이전트의 핵심 차이를 이해합니다."

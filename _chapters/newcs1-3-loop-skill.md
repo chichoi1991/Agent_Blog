@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "1부 · 에이전틱 루프 & 스킬"
 short_title: "에이전틱 루프 & 스킬"
 description: "코어의 심장인 에이전틱 루프와, 필요할 때만 로드하는 스킬."

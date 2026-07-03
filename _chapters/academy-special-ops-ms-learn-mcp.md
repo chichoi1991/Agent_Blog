@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "📚 Microsoft Learn MCP Server"
+date: 2026-03-17
+title: "Microsoft Learn MCP Server"
 short_title: "MS Learn MCP"
 description: "Microsoft Learn Docs MCP Server를 Copilot Studio 에이전트에 연결해 실시간 문서 접근을 구현하는 랩입니다. 로컬 배포 없이 바로 시작할 수 있는 가장 쉬운 MCP 연동 방법입니다."
 order: 999

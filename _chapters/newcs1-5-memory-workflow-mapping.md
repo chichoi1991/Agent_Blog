@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "1부 · 메모리·워크플로우·매핑"
 short_title: "메모리·워크플로우·매핑"
 description: "메모리의 3대 기법, 에이전트+워크플로우 결합, 클래식→뉴 매핑표."

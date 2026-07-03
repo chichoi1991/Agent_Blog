@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-08
 title: "가이드의 전제"
 short_title: "가이드의 전제"
 description: "이 가이드가 전제하는 Copilot Studio의 가능 범위, 한계, 그리고 직접 개발(SI)과의 경계 기준을 정리합니다."

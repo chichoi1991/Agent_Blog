@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-08
 title: "도구 추가 (MCP 커넥터)"
 short_title: "도구: MCP 커넥터"
 description: "기초편 #1: 블로그 포스트 에이전트 - 도구 추가 (MCP 커넥터)"

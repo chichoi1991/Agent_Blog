@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-23
 title: "참조자료 추가"
 short_title: "참조자료 추가"
 description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - SharePoint·웹 등 참조자료 연결"

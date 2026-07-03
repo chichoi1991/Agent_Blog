@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-02-19
 title: "미션 08: Adaptive Card로 Topics의 사용자 상호작용 강화하기"
 short_title: "Adaptive Card 추가"
 description: "Power Fx와 SharePoint를 사용해 Adaptive Card를 만드는 방법"

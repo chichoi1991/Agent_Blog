@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "3부 · 배포 & 트러블슈팅"
 short_title: "배포 & 트러블슈팅"
 description: "게시·채널 제약·실제 채널 재반복 + 체크리스트·트러블슈팅."

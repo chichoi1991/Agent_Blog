@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "2부 · 연결된 에이전트 & 메모리"
 short_title: "연결된 에이전트 & 메모리"
 description: "컨텍스트 격리를 위한 연결된 에이전트와, 단기·장기 2계층 메모리."

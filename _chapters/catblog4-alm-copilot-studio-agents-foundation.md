@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-03
 title: "Copilot Studio 에이전트 ALM의 기초"
 short_title: "Copilot Studio 에이전트 ALM 기초"
 description: "Copilot Studio 에이전트를 위한 애플리케이션 수명 주기 관리(ALM)의 핵심 — 환경, 솔루션, 게시자, 파이프라인으로 구성되는 안전한 베이스라인."

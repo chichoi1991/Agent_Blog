@@ -1,6 +1,7 @@
 ---
 layout: chapter
-title: "🏢 Badge Check — 출입 기록 분석 미션"
+date: 2026-05-30
+title: "Badge Check — 출입 기록 분석 미션"
 short_title: "Badge Check"
 description: "출입 배지 CSV를 분석해 미체크아웃 직원을 찾고, 커스텀 스킬로 스타일링된 HTML 리포트를 메일로 받기"
 order: 1

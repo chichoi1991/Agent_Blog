@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "3부 · 에이전트 참조자료 추가"
 short_title: "참조자료 추가"
 description: "SharePoint 특정 폴더(엑셀 시계열 + Word 정책)를 Knowledge로 연결."

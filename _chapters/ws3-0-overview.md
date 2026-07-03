@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-08
 title: "커스텀 에이전트 만들기 기초편 #3"
 short_title: "기초편 #3: 자율동작 에이전트"
 description: "지침+도구+MCP만으로 자율 동작하는 에이전트 실습"

@@ -1,6 +1,7 @@
 ---
 layout: "chapter"
-title: "🚨 미션 09: 후보자 면접 질문 문서 생성"
+date: 2026-03-11
+title: "미션 09: 후보자 면접 질문 문서 생성"
 short_title: "09. 문서 생성"
 description: "AI 프롬프트에서 문서 생성을 구현합니다"
 order: 9

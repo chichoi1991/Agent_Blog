@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-06-15
 title: "2부 · 스킬 (Skills)"
 short_title: "스킬 (Skills)"
 description: "load-on-demand 지침 패키지 — SKILL.md 규격·패키징·프리뷰 함정."

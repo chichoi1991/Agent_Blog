@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-08
 title: "에이전트 생성 및 기본 설정"
 short_title: "에이전트 생성"
 description: "기초편 #1: 블로그 포스트 에이전트 - 에이전트 생성 및 기본 설정"

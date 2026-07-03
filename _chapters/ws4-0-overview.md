@@ -1,5 +1,6 @@
 ---
 layout: chapter
+date: 2026-04-08
 title: "Agent Builder로 에이전트 만들기"
 short_title: "Agent Builder로 에이전트 만들기"
 description: "Agent Builder를 활용한 선언형 에이전트 핸즈온 실습"
