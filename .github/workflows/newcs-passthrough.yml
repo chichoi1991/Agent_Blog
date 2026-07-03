@@ -123,6 +123,26 @@ jobs:
             echo "스킬 zip 복사 → $DEST"
           fi
 
+      - name: Copy extra assets (per blog-sync.json extraAssets)
+        if: steps.src.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          SRC="_src/${{ steps.src.outputs.subpath }}"
+          CFG="$SRC/blog-sync.json"
+          COUNT=$(jq '(.extraAssets // []) | length' "$CFG")
+          echo "extraAssets 개수: $COUNT"
+          for i in $(seq 0 $((COUNT-1))); do
+            D=$(jq -r ".extraAssets[$i].dir" "$CFG")
+            T=$(jq -r ".extraAssets[$i].target" "$CFG")
+            if [ -d "$SRC/$D" ]; then
+              mkdir -p "$T"
+              find "$SRC/$D" -maxdepth 1 -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.gif' -o -iname '*.webp' \) -exec cp -f {} "$T"/ \;
+              echo "extra assets: $D → $T"
+            else
+              echo "::warning::extraAssets 폴더 없음: $SRC/$D"
+            fi
+          done
+
       - name: Clean up source checkout
         if: steps.src.outputs.skip != 'true'
         run: rm -rf _src
