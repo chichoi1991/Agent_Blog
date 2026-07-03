@@ -1,0 +1,61 @@
+{%- comment -%}
+  가로 스크롤 카드 섹션. 파라미터: include.key(category), include.title
+  academy-labs는 개별 랩(자식)을, 그 외는 상위/독립 항목을 카드로 렌더한다.
+{%- endcomment -%}
+{% assign key = include.key %}
+{% assign items = site.chapters | where: "category", key | sort: "order" %}
+{% case key %}
+  {% when 'newcslab' %}{% assign clabel = '핸즈온 워크샵' %}
+  {% when 'academy-courses' %}{% assign clabel = 'Agent Academy · 코스' %}
+  {% when 'academy-labs' %}{% assign clabel = 'Agent Academy · 랩' %}
+  {% when 'cowork' %}{% assign clabel = 'Copilot Cowork' %}
+  {% when 'scout' %}{% assign clabel = 'Microsoft Scout' %}
+  {% else %}{% assign clabel = key %}
+{% endcase %}
+
+<div class="hscroll-block">
+  <div class="hscroll-head">
+    <h3 class="hscroll-title">{{ include.title }}</h3>
+  </div>
+  <div class="hscroll-row">
+    {% assign shown = 0 %}
+    {% for ch in items %}
+      {% assign ok = false %}
+      {% if key == 'academy-labs' %}
+        {% unless ch.is_parent %}{% assign ok = true %}{% endunless %}
+      {% else %}
+        {% unless ch.parent and ch.is_parent != true %}{% assign ok = true %}{% endunless %}
+      {% endif %}
+      {% if ok %}
+        {% assign shown = shown | plus: 1 %}
+        {% assign thumb = ch.image %}
+        {% unless thumb %}
+          {% assign asset_parts = ch.content | split: '/assets/' %}
+          {% if asset_parts.size > 1 %}
+            {% assign after = asset_parts[1] %}
+            {% assign after = after | split: '"' | first | split: "'" | first | split: ')' | first %}
+            {% assign lower = after | downcase %}
+            {% if lower contains '.png' or lower contains '.jpg' or lower contains '.jpeg' or lower contains '.gif' or lower contains '.webp' %}
+              {% assign thumb = '/assets/' | append: after %}
+            {% endif %}
+          {% endif %}
+        {% endunless %}
+        <a class="hcard" href="{{ ch.url | relative_url }}">
+          <div class="hcard-thumb thumb-{{ key }}">
+            {% if thumb %}
+              <img src="{{ thumb | relative_url }}" alt="" loading="lazy">
+            {% else %}
+              <span class="thumb-label">{{ clabel }}</span>
+            {% endif %}
+          </div>
+          <div class="hcard-body">
+            <div class="hcard-cat cat-{{ key }}">{{ clabel }}</div>
+            <h4 class="hcard-title">{{ ch.short_title | default: ch.title }}</h4>
+            {% if ch.date %}<div class="hcard-date">{{ ch.date | date: "%Y-%m-%d" }}</div>{% endif %}
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+    {% if shown == 0 %}<div class="hscroll-empty">콘텐츠 준비 중</div>{% endif %}
+  </div>
+</div>

@@ -5,70 +5,76 @@ title: "홈"
 
 <div class="home-hero">
   <h1>Microsoft Copilot<br>Agentic Blog</h1>
-  <p class="hero-sub">Microsoft Copilot 에이전트 생태계 — New Copilot Studio(CLI Agent)를 중심으로 기술 업데이트·번역·핸즈온까지 한곳에서. 최신 글을 시간순으로 모아 봅니다.</p>
+  <p class="hero-sub">Microsoft Copilot 에이전트 생태계 — New Copilot Studio(CLI Agent)를 중심으로 기술 업데이트·번역·핸즈온까지 한곳에서.</p>
 </div>
 
-{% assign posts = site.chapters | sort: "date" | reverse %}
+{%- comment -%} ===== 최근 포스팅: 기술 업데이트 + CAT 블로그 최신 8 ===== {%- endcomment -%}
+<section class="home-section">
+  <div class="home-section-head">
+    <h2 class="home-section-title">최근 포스팅</h2>
+    <p class="home-section-sub">기술 업데이트 · CAT 블로그 업데이트 최신 글</p>
+  </div>
 
-<div class="card-feed">
-  {% for ch in posts %}
-    {% assign show = false %}
-    {% if ch.category == 'academy-labs' %}
-      {%- comment -%} 랩은 부모(Special Ops) 대신 실제 랩 과목(자식)을 카드로 {%- endcomment -%}
-      {% unless ch.is_parent %}{% assign show = true %}{% endunless %}
-    {% else %}
-      {% unless ch.parent and ch.is_parent != true %}{% assign show = true %}{% endunless %}
-    {% endif %}
-    {% if show %}
-    {% assign cat = ch.category %}
-    {% case cat %}
-      {% when 'newcs' %}{% assign clabel = 'New Copilot Studio' %}
-      {% when 'newcslab' %}{% assign clabel = '핸즈온 워크샵 (New)' %}
-      {% when 'updates' %}{% assign clabel = '기술 업데이트' %}
-      {% when 'catblog' %}{% assign clabel = 'CAT 블로그' %}
-      {% when 'academy-courses' %}{% assign clabel = 'Agent Academy · 코스' %}
-      {% when 'academy-labs' %}{% assign clabel = 'Agent Academy · 랩' %}
-      {% when 'cowork' %}{% assign clabel = 'Copilot Cowork' %}
-      {% when 'scout' %}{% assign clabel = 'Microsoft Scout' %}
-      {% when 'guide' %}{% assign clabel = 'Classic · 실무 가이드' %}
-      {% when 'workshop' %}{% assign clabel = 'Classic · 워크샵' %}
-      {% when 'special' %}{% assign clabel = 'Classic · 특별 워크샵' %}
-      {% else %}{% assign clabel = cat %}
-    {% endcase %}
-    {%- comment -%} 썸네일: image 프론트매터 우선, 없으면 본문 첫 이미지, 둘 다 없으면 placeholder {%- endcomment -%}
-    {% assign thumb = ch.image %}
-    {% unless thumb %}
-      {% assign asset_parts = ch.content | split: '/assets/' %}
-      {% if asset_parts.size > 1 %}
-        {% assign after = asset_parts[1] %}
-        {% assign after = after | split: '"' | first | split: "'" | first | split: ')' | first %}
-        {% assign lower = after | downcase %}
-        {% if lower contains '.png' or lower contains '.jpg' or lower contains '.jpeg' or lower contains '.gif' or lower contains '.webp' %}
-          {% assign thumb = '/assets/' | append: after %}
-        {% endif %}
-      {% endif %}
-    {% endunless %}
-    <article class="post-card">
-      <a class="post-card-link" href="{{ ch.url | relative_url }}">
-        <div class="post-card-thumb thumb-{{ cat }}">
-          {% if thumb %}
-            <img src="{{ thumb | relative_url }}" alt="" loading="lazy">
-          {% else %}
-            <span class="thumb-label">{{ clabel }}</span>
+  {% assign updates = site.chapters | where: "category", "updates" %}
+  {% assign catblog = site.chapters | where: "category", "catblog" %}
+  {% assign recent = updates | concat: catblog | sort: "date" | reverse %}
+
+  <div class="card-feed">
+    {% for ch in recent limit: 8 %}
+      {% assign cat = ch.category %}
+      {% case cat %}
+        {% when 'updates' %}{% assign clabel = '기술 업데이트' %}
+        {% when 'catblog' %}{% assign clabel = 'CAT 블로그' %}
+        {% else %}{% assign clabel = cat %}
+      {% endcase %}
+      {%- comment -%} 썸네일: image 프론트매터 우선, 없으면 본문 첫 이미지 {%- endcomment -%}
+      {% assign thumb = ch.image %}
+      {% unless thumb %}
+        {% assign asset_parts = ch.content | split: '/assets/' %}
+        {% if asset_parts.size > 1 %}
+          {% assign after = asset_parts[1] %}
+          {% assign after = after | split: '"' | first | split: "'" | first | split: ')' | first %}
+          {% assign lower = after | downcase %}
+          {% if lower contains '.png' or lower contains '.jpg' or lower contains '.jpeg' or lower contains '.gif' or lower contains '.webp' %}
+            {% assign thumb = '/assets/' | append: after %}
           {% endif %}
-        </div>
-        <div class="post-card-body">
-          <div class="post-card-cat cat-{{ cat }}">{{ clabel }}</div>
-          <h2 class="post-card-title">{{ ch.title }}</h2>
-          {% if ch.description %}<p class="post-card-desc">{{ ch.description }}</p>{% endif %}
-          {% include tag-badges.html tags=ch.tags class="post-card-tags" %}
-          <div class="post-card-meta">
-            {% if ch.date %}<span class="post-card-date">{{ ch.date | date: "%Y-%m-%d" }}</span>{% endif %}
-            {% if ch.source_author %}<span class="post-card-author">· {{ ch.source_author }}</span>{% endif %}
+        {% endif %}
+      {% endunless %}
+      <article class="post-card">
+        <a class="post-card-link" href="{{ ch.url | relative_url }}">
+          <div class="post-card-thumb thumb-{{ cat }}">
+            {% if thumb %}
+              <img src="{{ thumb | relative_url }}" alt="" loading="lazy">
+            {% else %}
+              <span class="thumb-label">{{ clabel }}</span>
+            {% endif %}
           </div>
-        </div>
-      </a>
-    </article>
-    {% endif %}
-  {% endfor %}
-</div>
+          <div class="post-card-body">
+            <div class="post-card-cat cat-{{ cat }}">{{ clabel }}</div>
+            <h2 class="post-card-title">{{ ch.title }}</h2>
+            {% if ch.description %}<p class="post-card-desc">{{ ch.description }}</p>{% endif %}
+            {% include tag-badges.html tags=ch.tags class="post-card-tags" %}
+            <div class="post-card-meta">
+              {% if ch.date %}<span class="post-card-date">{{ ch.date | date: "%Y-%m-%d" }}</span>{% endif %}
+              {% if ch.source_author %}<span class="post-card-author">· {{ ch.source_author }}</span>{% endif %}
+            </div>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+{%- comment -%} ===== 핸즈온 워크샵 & 아카데미: 섹션별 가로 스크롤 카드 ===== {%- endcomment -%}
+<section class="home-section">
+  <div class="home-section-head">
+    <h2 class="home-section-title">핸즈온 워크샵</h2>
+    <p class="home-section-sub">직접 따라 하는 실습 — 워크샵 · Agent Academy · Cowork · Scout</p>
+  </div>
+
+  {% include hscroll-section.html key="newcslab" title="핸즈온 워크샵" %}
+  {% include hscroll-section.html key="academy-courses" title="Agent Academy · 코스" %}
+  {% include hscroll-section.html key="academy-labs" title="Agent Academy · 랩" %}
+  {% include hscroll-section.html key="cowork" title="Copilot Cowork" %}
+  {% include hscroll-section.html key="scout" title="Microsoft Scout" %}
+</section>
