@@ -8,11 +8,11 @@ title: "홈"
   <p class="hero-sub">Microsoft Copilot 에이전트 생태계 — New Copilot Studio(CLI Agent)를 중심으로 기술 업데이트·번역·핸즈온까지 한곳에서. 최신 글을 시간순으로 모아 봅니다.</p>
 </div>
 
-{% assign units = site.chapters | where_exp: "c", "c.parent == nil or c.is_parent" %}
-{% assign posts = units | sort: "date" | reverse %}
+{% assign posts = site.chapters | sort: "date" | reverse %}
 
 <div class="card-feed">
   {% for ch in posts %}
+    {% unless ch.parent and ch.is_parent != true %}
     {% assign cat = ch.category %}
     {% case cat %}
       {% when 'newcs' %}{% assign clabel = 'New Copilot Studio' %}
@@ -48,5 +48,6 @@ title: "홈"
         </div>
       </a>
     </article>
+    {% endunless %}
   {% endfor %}
 </div>
