@@ -55,11 +55,11 @@
               {% elsif page.category == 'academy-courses' and page.is_parent %}
                 <span class="chapter-badge newcs">Agent Academy · 코스</span>
               {% elsif page.category == 'academy-courses' and page.parent %}
-                <span class="chapter-badge newcs">Academy · Module {{ page.order }}</span>
+                {% if page.order >= 900 %}<span class="chapter-badge newcs">Agent Academy · 코스</span>{% else %}<span class="chapter-badge newcs">Academy · Module {{ page.order }}</span>{% endif %}
               {% elsif page.category == 'academy-labs' and page.is_parent %}
                 <span class="chapter-badge newcs">Agent Academy · 랩</span>
               {% elsif page.category == 'academy-labs' and page.parent %}
-                <span class="chapter-badge newcs">Academy Lab · {{ page.order }}</span>
+                <span class="chapter-badge newcs">Agent Academy · 랩</span>
               {% elsif page.category == 'catblog' %}
                 <span class="chapter-badge updates">CAT 블로그 번역</span>
               {% elsif page.category == 'updates' %}

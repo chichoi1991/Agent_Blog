@@ -50,7 +50,7 @@
     {% else %}
       {% for ch in section_chapters %}
         <a href="{{ ch.url | relative_url }}" class="sidebar-link sub {% if ch.url == page.url %}active{% endif %}">
-          <span class="sidebar-label">{{ ch.order }}. {{ ch.short_title }}</span>
+          {% if ch.order >= 900 %}<span class="sidebar-label">{{ ch.short_title }}</span>{% else %}<span class="sidebar-label">{{ ch.order }}. {{ ch.short_title }}</span>{% endif %}
         </a>
       {% endfor %}
     {% endif %}
