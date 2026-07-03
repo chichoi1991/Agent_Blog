@@ -659,8 +659,11 @@ a:hover { color: var(--link-hover); }
 
 .chapter-body figure.screenshot img {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  max-height: 75vh;   /* 세로로 긴 이미지 자동 축소 */
+  width: auto;
   height: auto;
+  margin: 0 auto;
 }
 
 .chapter-body figure.screenshot figcaption {
