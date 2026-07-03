@@ -7,6 +7,7 @@ description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - 빌트인 
 order: 4
 category: workshop
 parent: "ws5"
+image: "/assets/image/ws5/4-1.png"
 ---
 
 ## Step 4: MCP 도구 추가

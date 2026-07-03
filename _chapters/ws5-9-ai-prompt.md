@@ -7,6 +7,7 @@ description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - AI Prompt 
 order: 9
 category: workshop
 parent: "ws5"
+image: "/assets/image/ws3/스크린샷%202026-03-19%20020111.png"
 ---
 
 ## Step 9: 프롬프트 도구 활용법

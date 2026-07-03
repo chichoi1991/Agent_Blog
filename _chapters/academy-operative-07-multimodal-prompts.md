@@ -12,6 +12,7 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-11"
 canonical_url: "https://microsoft.github.io/agent-academy/operative/07-multimodal-prompts/"
+image: "/assets/academy/operative-07-multimodal-prompts/07-multi-modal-prompts-thumbnail.png"
 ---
 <div class="info-box note" markdown="1">
 **원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🚨 Mission 07: Extracting Resume Contents with Multimodal Prompts](https://microsoft.github.io/agent-academy/operative/07-multimodal-prompts/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.

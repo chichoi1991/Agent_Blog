@@ -7,6 +7,7 @@ description: "5개 프롬프트로 전체 흐름 실측 + 점검 포인트."
 order: 6
 category: "newcs"
 parent: "ncs3"
+image: "/assets/newcs/3-test-prompts.png"
 ---
 
 ## 7. 테스트 창에서 테스트

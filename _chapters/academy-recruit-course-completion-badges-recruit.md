@@ -12,6 +12,7 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-27"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/course-completion-badges-recruit/"
+image: "/assets/academy/recruit-course-completion-badges-recruit/mcs-agent-academy-recruit-badge.png"
 ---
 
 <div class="info-box note translated-post" markdown="1">

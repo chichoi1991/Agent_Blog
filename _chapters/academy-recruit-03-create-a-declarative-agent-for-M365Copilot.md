@@ -12,6 +12,7 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-18"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/03-create-a-declarative-agent-for-M365Copilot/"
+image: "/assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/video-thumbnail.jpg"
 ---
 
 <div class="info-box note translated-post" markdown="1">

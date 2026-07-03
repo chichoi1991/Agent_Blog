@@ -7,6 +7,7 @@ description: "휴가 전 인수인계 체크리스트 전체를 한 번의 대�
 order: 3
 category: cowork
 parent: "cowork"
+image: "/assets/select-cowork.BrBq5Ltl.png"
 ---
 
 > **미션: Operation Clean Getaway**

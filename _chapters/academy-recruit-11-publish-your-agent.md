@@ -12,6 +12,7 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-01-14"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/11-publish-your-agent/"
+image: "/assets/academy/recruit-11-publish-your-agent/channels.png"
 ---
 
 <div class="info-box note translated-post" markdown="1">

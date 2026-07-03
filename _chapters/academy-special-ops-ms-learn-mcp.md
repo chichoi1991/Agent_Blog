@@ -12,6 +12,7 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-17"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/ms-learn-mcp/"
+image: "/assets/academy/special-ops-ms-learn-mcp/create-agent.png"
 ---
 
 <div class="info-box note" markdown="1">

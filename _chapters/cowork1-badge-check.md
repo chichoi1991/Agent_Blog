@@ -7,6 +7,7 @@ description: "출입 배지 CSV를 분석해 미체크아웃 직원을 찾고, �
 order: 1
 category: cowork
 parent: "cowork"
+image: "/assets/select-cowork.BkCBnr2H.png"
 ---
 
 > **미션: Operation Badge Bandit**

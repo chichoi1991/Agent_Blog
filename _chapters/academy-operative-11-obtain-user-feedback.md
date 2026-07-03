@@ -12,6 +12,7 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-11"
 canonical_url: "https://microsoft.github.io/agent-academy/operative/11-obtain-user-feedback/"
+image: "/assets/academy/operative-11-obtain-user-feedback/11.0_01_UserFeedbackSettings.png"
 ---
 
 <div class="info-box note" markdown="1">

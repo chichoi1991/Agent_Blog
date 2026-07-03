@@ -12,6 +12,7 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-02-19"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/08-add-adaptive-card/"
+image: "/assets/academy/recruit-08-add-adaptive-card/video-thumbnail.jpg"
 ---
 
 <div class="info-box note translated-post" markdown="1">

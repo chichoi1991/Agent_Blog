@@ -7,6 +7,7 @@ description: "[리뉴얼] Copilot Studio 기본 기능 살펴보기 - 에이전�
 order: 2
 category: workshop
 parent: "ws5"
+image: "/assets/image/ws5/2-1.png"
 ---
 
 ## Step 2: 기본 지침 설정

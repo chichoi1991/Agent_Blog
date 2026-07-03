@@ -12,6 +12,7 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-02-02"
 canonical_url: "https://microsoft.github.io/agent-academy/operative/course-completion-badges-operative/"
+image: "/assets/academy/operative-course-completion-badges-operative/mcs-agent-academy-operative-badge.png"
 ---
 <div class="info-box note" markdown="1">
 **원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🚨 Final Mission: Securing Your Operative Badge](https://microsoft.github.io/agent-academy/operative/course-completion-badges-operative/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.

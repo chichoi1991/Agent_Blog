@@ -12,6 +12,7 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-04-02"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/yaml-specialist/"
+image: "/assets/academy/special-ops-yaml-specialist/select-solution.png"
 ---
 
 <div class="info-box note" markdown="1">

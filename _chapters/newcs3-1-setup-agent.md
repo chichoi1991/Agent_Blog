@@ -7,6 +7,7 @@ description: "프리뷰 진입, 빈 에이전트 생성, 6요소의 뼈대인 �
 order: 1
 category: "newcs"
 parent: "ncs3"
+image: "/assets/newcs/3-prereq-trynow.png"
 ---
 
 ## 1. 사전 준비

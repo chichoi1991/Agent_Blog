@@ -12,6 +12,7 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-03-16"
 canonical_url: "https://microsoft.github.io/agent-academy/operative/01-get-started/"
+image: "/assets/academy/operative-01-get-started/01-solutionstab.png"
 ---
 
 <div class="info-box note" markdown="1">

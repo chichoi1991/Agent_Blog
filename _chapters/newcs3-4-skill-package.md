@@ -7,6 +7,7 @@ description: "GitHub의 2개 ZIP 고성능 스킬 + 프리뷰 함정."
 order: 4
 category: "newcs"
 parent: "ncs3"
+image: "/assets/newcs/3-skill-package.png"
 ---
 
 ## 5. 고급 스킬 — 스킬 패키지 임포트

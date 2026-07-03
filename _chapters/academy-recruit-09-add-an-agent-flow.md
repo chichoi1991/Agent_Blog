@@ -12,6 +12,7 @@ source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
 source_published: "2026-02-19"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/09-add-an-agent-flow/"
+image: "/assets/academy/recruit-09-add-an-agent-flow/9.1_01_AddNewAgentFlow.png"
 ---
 
 <div class="info-box note translated-post" markdown="1">

@@ -7,6 +7,7 @@ description: "기초편 #3: 자율동작 에이전트 - 외부 MCP 도구 추가
 order: 4
 category: workshop
 parent: "ws3"
+image: "/assets/image/ws3/스크린샷%202026-03-19%20002502.png"
 ---
 
 ## Step 4: 외부 MCP 도구 추가

@@ -8,6 +8,7 @@ order: 3
 category: "newcs"
 parent: "ncs3"
 is_parent: true
+image: "/assets/newcs/3-result-preview.png"
 ---
 
 <div class="info-box note" markdown="1">
