@@ -1115,6 +1115,27 @@ a:hover { color: var(--link-hover); }
 /* Chapter post date */
 .chapter-postmeta { margin-top: 12px; font-size: 13px; color: var(--text-light); }
 
+/* Sidebar search */
+.sidebar-search { padding: 0 6px 10px; position: relative; }
+.search-input {
+  width: 100%; padding: 7px 10px; font-size: 13.5px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: #fff; color: var(--text); font-family: var(--font-sans);
+}
+.search-input::placeholder { color: var(--text-light); }
+.search-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-light); }
+.search-results {
+  position: absolute; left: 6px; right: 6px; top: 40px;
+  max-height: 62vh; overflow-y: auto; background: #fff;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow-lg); z-index: 200; padding: 4px;
+}
+.search-hit { display: flex; flex-direction: column; gap: 2px; padding: 7px 10px; border-radius: 6px; }
+.search-hit:hover { background: var(--sidebar-hover); }
+.search-hit-cat { font-size: 11px; color: var(--accent); font-weight: 600; }
+.search-hit-title { font-size: 13.5px; color: var(--text); line-height: 1.3; }
+.search-empty { padding: 12px; font-size: 13px; color: var(--text-light); text-align: center; }
+
 /* Responsive */
 @media (max-width: 1200px) {
   .site-aside { display: none; }

@@ -6,13 +6,19 @@
     {% assign ru_shown = 0 %}
     {% for ch in ru_recent %}
       {% if ru_shown >= 7 %}{% break %}{% endif %}
-      {% unless ch.parent and ch.is_parent != true %}
+      {% assign ru_show = false %}
+      {% if ch.category == 'academy-labs' %}
+        {% unless ch.is_parent %}{% assign ru_show = true %}{% endunless %}
+      {% else %}
+        {% unless ch.parent and ch.is_parent != true %}{% assign ru_show = true %}{% endunless %}
+      {% endif %}
+      {% if ru_show %}
         <li>
           <a href="{{ ch.url | relative_url }}">{{ ch.short_title | default: ch.title }}</a>
           {% if ch.date %}<span class="widget-date">{{ ch.date | date: "%Y-%m-%d" }}</span>{% endif %}
         </li>
         {% assign ru_shown = ru_shown | plus: 1 %}
-      {% endunless %}
+      {% endif %}
     {% endfor %}
   </ul>
 </div>

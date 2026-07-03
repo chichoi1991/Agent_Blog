@@ -3,6 +3,10 @@
   <div class="sidebar-header">
     <span class="sidebar-title">목차</span>
   </div>
+  <div class="sidebar-search">
+    <input type="search" id="blog-search" class="search-input" placeholder="검색…" autocomplete="off" aria-label="블로그 검색">
+    <div class="search-results" id="search-results" hidden></div>
+  </div>
   <nav class="sidebar-nav">
     <a href="{{ '/' | relative_url }}" class="sidebar-link {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}">Home</a>
 
@@ -29,4 +33,40 @@
       {% endif %}
     {% endfor %}
   </nav>
+
+  <script>
+  (function () {
+    var input = document.getElementById('blog-search');
+    var box = document.getElementById('search-results');
+    if (!input || !box) return;
+    var data = null;
+    var url = "{{ '/search.json' | relative_url }}";
+    var labels = { 'newcs':'New Copilot Studio','newcslab':'핸즈온(New)','updates':'기술 업데이트','catblog':'CAT 블로그','academy-courses':'Academy 코스','academy-labs':'Academy 랩','cowork':'Copilot Cowork','scout':'Microsoft Scout','guide':'실무 가이드','workshop':'워크샵','special':'특별 워크샵' };
+    function load() { if (data) return Promise.resolve(data); return fetch(url).then(function (r) { return r.json(); }).then(function (j) { data = j; return j; }).catch(function () { return []; }); }
+    function esc(s) { return (s || '').replace(/[&<>]/g, function (c) { return { '&':'&amp;','<':'&lt;','>':'&gt;' }[c]; }); }
+    function render(q, items) {
+      var ql = q.toLowerCase();
+      var hits = items.filter(function (it) {
+        return (it.title||'').toLowerCase().indexOf(ql) >= 0
+            || (it.short||'').toLowerCase().indexOf(ql) >= 0
+            || (it.desc||'').toLowerCase().indexOf(ql) >= 0
+            || (labels[it.cat]||'').toLowerCase().indexOf(ql) >= 0;
+      }).slice(0, 20);
+      if (!hits.length) { box.innerHTML = '<div class="search-empty">결과 없음</div>'; box.hidden = false; return; }
+      box.innerHTML = hits.map(function (it) {
+        return '<a class="search-hit" href="' + it.url + '"><span class="search-hit-cat">' + esc(labels[it.cat] || it.cat) + '</span><span class="search-hit-title">' + esc(it.title) + '</span></a>';
+      }).join('');
+      box.hidden = false;
+    }
+    var t;
+    input.addEventListener('input', function () {
+      var q = input.value.trim();
+      clearTimeout(t);
+      if (q.length < 1) { box.hidden = true; box.innerHTML = ''; return; }
+      t = setTimeout(function () { load().then(function (items) { render(q, items); }); }, 120);
+    });
+    input.addEventListener('focus', function () { load(); });
+    document.addEventListener('click', function (e) { if (!e.target.closest('.sidebar-search')) { box.hidden = true; } });
+  })();
+  </script>
 </aside>

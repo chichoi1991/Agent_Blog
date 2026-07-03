@@ -12,7 +12,14 @@ title: "홈"
 
 <div class="card-feed">
   {% for ch in posts %}
-    {% unless ch.parent and ch.is_parent != true %}
+    {% assign show = false %}
+    {% if ch.category == 'academy-labs' %}
+      {%- comment -%} 랩은 부모(Special Ops) 대신 실제 랩 과목(자식)을 카드로 {%- endcomment -%}
+      {% unless ch.is_parent %}{% assign show = true %}{% endunless %}
+    {% else %}
+      {% unless ch.parent and ch.is_parent != true %}{% assign show = true %}{% endunless %}
+    {% endif %}
+    {% if show %}
     {% assign cat = ch.category %}
     {% case cat %}
       {% when 'newcs' %}{% assign clabel = 'New Copilot Studio' %}
@@ -48,6 +55,6 @@ title: "홈"
         </div>
       </a>
     </article>
-    {% endunless %}
+    {% endif %}
   {% endfor %}
 </div>
