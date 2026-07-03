@@ -133,7 +133,13 @@ tags: ["New Copilot Studio", "New Work Flow"]
 </div>
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint-1.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+
+  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint-2.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+ 
+  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint-3.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">  
+  
+   <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint-4.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"> 
   <figcaption>참고자료에 SharePoint 보고자료 폴더 + OneDrive "CEO 리스크 포인트" Word 문서 연결</figcaption>
 </figure>
 
@@ -160,6 +166,8 @@ tags: ["New Copilot Studio", "New Work Flow"]
 
 > 완성된 스킬 원본은 **작성 허브 repo `blog-content` 의 `projects/newcs-labs/skills/`** 에 가이드와 함께 있습니다(각 폴더의 zip도 동봉 — `build-skill-zips.ps1` 로 재생성). 발행되면 zip은 블로그의 `assets/newcs/labs/newcslab1/skills/` 에서 다운로드할 수 있습니다. 업로드 시 그대로 쓰면 됩니다(디자인 스킬은 템플릿이 함께 들어가야 하므로 반드시 zip).
 
+
+
 ### 4.1 스킬 추가 방법
 1. **스킬(Skills) 추가**에서 각 스킬을 만들고 `SKILL.md`(또는 zip)를 업로드합니다.
 2. 디자인 스킬은 `design.md`·`briefing-card.md`·`briefing-card.json`이 함께 있어야 하므로 **폴더째 zip**으로 올립니다.
@@ -168,6 +176,11 @@ tags: ["New Copilot Studio", "New Work Flow"]
 <div class="info-box tip" markdown="1">
 **디자인 스킬은 `design.md`로 분리한다 (Anthropic 방식).** Anthropic의 `canvas-design`은 **디자인 철학을 `.md`로 먼저** 만들고 다음 단계가 그걸 표현하게 하고, `frontend-design`은 **토큰 시스템(색 4~6개 named hex · 타입 역할 · 레이아웃 · 시그니처 요소)을 명시**하며 크림 배경·보라 그라데이션 같은 **"AI slop" 기본값을 피하라**고 합니다. 그대로 차용해 `briefing-design/design.md`에 **고정 색 토큰·타이포·레이아웃·채널 매핑(텍스트 HEX ↔ Adaptive Card 의미 색)**을 담았습니다. SKILL.md는 lean하게 두고 **색이 필요할 때만 `design.md`를 읽도록**(progressive disclosure) 했습니다.
 </div>
+
+<figure class="screenshot">
+   <img src="{{ '/assets/image/newcslab1/04-Skill-Create-upload-1.png' | relative_url }}" alt="스킬을 생성하거나 zip파일로 된 패키지를 임포트하는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"> 
+  <figcaption> 스킬 탭을 선택하여 나만의 워크플로우를 구성 또는 사전에 작성된 스킬, 스킬 패키지를 업로드</figcaption>
+</figure>
 
 ### 4.2 각 스킬이 필요로 하는 도구
 스킬 자체는 **지침(텍스트)**라 도구 없이도 동작하지만, 입력을 받고 결과를 전달하고 맥락을 보강하려면 다음이 필요합니다.
