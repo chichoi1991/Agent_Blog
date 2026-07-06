@@ -19,7 +19,7 @@ title: "홈"
   {% assign catblog = site.chapters | where: "category", "catblog" %}
   {% assign recent = updates | concat: catblog | sort: "date" | reverse %}
 
-  {% include card-feed.html posts=recent limit: 4 %}
+  {% include card-feed.html posts=recent limit=4 %}
 </section>
 
 {%- comment -%} ===== 핸즈온 워크샵 & 아카데미: 섹션별 가로 스크롤 카드 ===== {%- endcomment -%}
