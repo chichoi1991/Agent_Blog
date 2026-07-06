@@ -52,6 +52,9 @@ nav_sections:
         title: "핸즈온 워크샵 (Classic)"
       - key: special
         title: "특별 워크샵"
+  - key: resources
+    title: "추천 사이트"
+    listing: /resources/
 
 # Exclude dev/handoff docs from the built site
 exclude:
