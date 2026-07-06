@@ -32,8 +32,10 @@ nav_sections:
     title: "핸즈온 워크샵"
   - key: updates
     title: "기술 업데이트"
+    listing: /updates/
   - key: catblog
     title: "CAT 블로그 업데이트"
+    listing: /catblog/
   - key: academy-courses
     title: "Agent Academy · 코스"
   - key: academy-labs

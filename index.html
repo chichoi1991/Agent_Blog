@@ -19,50 +19,7 @@ title: "홈"
   {% assign catblog = site.chapters | where: "category", "catblog" %}
   {% assign recent = updates | concat: catblog | sort: "date" | reverse %}
 
-  <div class="card-feed">
-    {% for ch in recent limit: 4 %}
-      {% assign cat = ch.category %}
-      {% case cat %}
-        {% when 'updates' %}{% assign clabel = '기술 업데이트' %}
-        {% when 'catblog' %}{% assign clabel = 'CAT 블로그' %}
-        {% else %}{% assign clabel = cat %}
-      {% endcase %}
-      {%- comment -%} 썸네일: image 프론트매터 우선, 없으면 본문 첫 이미지 {%- endcomment -%}
-      {% assign thumb = ch.image %}
-      {% unless thumb %}
-        {% assign asset_parts = ch.content | split: '/assets/' %}
-        {% if asset_parts.size > 1 %}
-          {% assign after = asset_parts[1] %}
-          {% assign after = after | split: '"' | first | split: "'" | first | split: ')' | first %}
-          {% assign lower = after | downcase %}
-          {% if lower contains '.png' or lower contains '.jpg' or lower contains '.jpeg' or lower contains '.gif' or lower contains '.webp' %}
-            {% assign thumb = '/assets/' | append: after %}
-          {% endif %}
-        {% endif %}
-      {% endunless %}
-      <article class="post-card">
-        <a class="post-card-link" href="{{ ch.url | relative_url }}">
-          <div class="post-card-thumb thumb-{{ cat }}">
-            {% if thumb %}
-              <img src="{{ thumb | relative_url }}" alt="" loading="lazy">
-            {% else %}
-              <span class="thumb-label">{{ clabel }}</span>
-            {% endif %}
-          </div>
-          <div class="post-card-body">
-            <div class="post-card-cat cat-{{ cat }}">{{ clabel }}</div>
-            <h2 class="post-card-title">{{ ch.title }}</h2>
-            {% if ch.description %}<p class="post-card-desc">{{ ch.description }}</p>{% endif %}
-            {% include tag-badges.html tags=ch.tags class="post-card-tags" %}
-            <div class="post-card-meta">
-              {% if ch.date %}<span class="post-card-date">{{ ch.date | date: "%Y-%m-%d" }}</span>{% endif %}
-              {% if ch.source_author %}<span class="post-card-author">· {{ ch.source_author }}</span>{% endif %}
-            </div>
-          </div>
-        </a>
-      </article>
-    {% endfor %}
-  </div>
+  {% include card-feed.html posts=recent limit: 4 %}
 </section>
 
 {%- comment -%} ===== 핸즈온 워크샵 & 아카데미: 섹션별 가로 스크롤 카드 ===== {%- endcomment -%}

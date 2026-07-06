@@ -222,6 +222,10 @@ a:hover { color: var(--link-hover); }
   color: var(--sidebar-active-text);
 }
 
+.sidebar-section-link {
+  text-decoration: none;
+}
+
 .sidebar-chevron {
   margin-left: auto;
   flex-shrink: 0;

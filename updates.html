@@ -1,0 +1,17 @@
+---
+layout: default
+title: "기술 업데이트"
+permalink: /updates/
+---
+
+<div class="home-section-head">
+  <h1 class="home-section-title">기술 업데이트</h1>
+  <p class="home-section-sub">Microsoft Copilot·Agent 생태계의 최신 기술 업데이트를 최신순으로 모았습니다.</p>
+</div>
+
+{% assign posts = site.chapters | where: "category", "updates" | sort: "date" | reverse %}
+{% if posts.size == 0 %}
+  <p class="home-section-sub">아직 게시된 글이 없습니다. 곧 업데이트됩니다.</p>
+{% else %}
+  {% include card-feed.html posts=posts %}
+{% endif %}

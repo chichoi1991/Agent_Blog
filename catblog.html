@@ -1,0 +1,17 @@
+---
+layout: default
+title: "CAT 블로그 업데이트"
+permalink: /catblog/
+---
+
+<div class="home-section-head">
+  <h1 class="home-section-title">CAT 블로그 업데이트</h1>
+  <p class="home-section-sub">The Custom Engine(CAT) 블로그의 번역·정리 글을 최신순으로 모았습니다.</p>
+</div>
+
+{% assign posts = site.chapters | where: "category", "catblog" | sort: "date" | reverse %}
+{% if posts.size == 0 %}
+  <p class="home-section-sub">아직 게시된 글이 없습니다. 곧 업데이트됩니다.</p>
+{% else %}
+  {% include card-feed.html posts=posts %}
+{% endif %}
