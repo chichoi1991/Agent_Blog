@@ -45,6 +45,8 @@ body {
   line-height: 1.7;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  /* 전체 화면 크기 110% (브라우저 확대와 동일한 효과) */
+  zoom: 1.1;
 }
 
 a { color: var(--link); text-decoration: none; transition: color 0.15s; }
