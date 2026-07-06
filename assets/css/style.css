@@ -1171,6 +1171,21 @@ a:hover { color: var(--link-hover); }
 }
 .post-card-meta { font-size: 11px; color: var(--text-light); display: flex; gap: 6px; }
 
+/* 홈 '최근 포스팅' 카드: 고정 높이 90px (컴팩트) — 데스크톱만 적용, 모바일 세로 스택 제외 */
+@media (min-width: 769px) {
+  .home-section .post-card,
+  .home-section .post-card-link { height: 90px; }
+  .home-section .post-card { overflow: hidden; }
+  .home-section .post-card-thumb { height: 90px; min-height: 90px; }
+  .home-section .post-card-body { padding: 9px 13px; align-self: center; }
+  .home-section .post-card-title {
+    display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+    overflow: hidden; margin-bottom: 2px;
+  }
+  .home-section .post-card-desc { -webkit-line-clamp: 1; margin-bottom: 4px; }
+  .home-section .post-card-tags { display: none; }
+}
+
 /* Sidebar supergroup (Classic archive) */
 .sidebar-supergroup { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 8px; }
 .sidebar-supergroup-toggle {
