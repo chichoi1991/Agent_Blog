@@ -46,7 +46,7 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   /* 전체 화면 크기 확대 (브라우저 확대와 동일한 효과) */
-  zoom: 1.25;
+  zoom: 1.2;
 }
 
 a { color: var(--link); text-decoration: none; transition: color 0.15s; }
