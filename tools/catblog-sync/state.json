@@ -5,6 +5,7 @@
     "agent-authentication-controls",
     "snowflake-mcp-copilot-studio",
     "alm-copilot-studio-agents-foundation",
-    "pdf-page-level-citations"
+    "pdf-page-level-citations",
+    "e3-users-build-agents-turn-it-off"
   ]
 }
