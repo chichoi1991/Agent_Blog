@@ -469,91 +469,6 @@
       "status": "pending-translation"
     },
     {
-      "slug": "recruit-04-creating-a-solution",
-      "src_path": "recruit/04-creating-a-solution",
-      "sha": "0ef2f9b23aa52a8007346923298e92ff35bafaeb",
-      "title": "🚨 Mission 04: Creating a Solution for Your Agent",
-      "description": "Package your agent into a reusable solution for environment management",
-      "category": "academy-courses",
-      "parent": "arecruit",
-      "parentTitle": "Recruit — 입문 코스",
-      "parentShort": "Recruit",
-      "parentOrder": 1,
-      "order": 4,
-      "source_url": "https://microsoft.github.io/agent-academy/recruit/04-creating-a-solution/",
-      "source_author": "Copilot Studio Agent Academy",
-      "source_blog": "Copilot Studio Agent Academy",
-      "source_published": "2026-06-10",
-      "images": [
-        {
-          "src": "./assets/video-thumbnail.jpg",
-          "local": "assets/academy/recruit-04-creating-a-solution/video-thumbnail.jpg"
-        },
-        {
-          "src": "./assets/4.0_01_Solutions.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.0_01_Solutions.png"
-        },
-        {
-          "src": "./assets/4.0_02_CopilotStudioSolutionExplorer.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.0_02_CopilotStudioSolutionExplorer.png"
-        },
-        {
-          "src": "./assets/4.0_03_DeveloperEnvironment.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.0_03_DeveloperEnvironment.png"
-        },
-        {
-          "src": "./assets/4.1_01_Solutions.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.1_01_Solutions.png"
-        },
-        {
-          "src": "./assets/4.1_02_NewSolution.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.1_02_NewSolution.png"
-        },
-        {
-          "src": "./assets/4.1_03_NewPublisher.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.1_03_NewPublisher.png"
-        },
-        {
-          "src": "./assets/4.1_04_PublisherProperties.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.1_04_PublisherProperties.png"
-        },
-        {
-          "src": "./assets/4.1_05_Contact.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.1_05_Contact.png"
-        },
-        {
-          "src": "./assets/4.1_06_SavePublisher.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.1_06_SavePublisher.png"
-        },
-        {
-          "src": "./assets/4.1_07_PublisherSelected.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.1_07_PublisherSelected.png"
-        },
-        {
-          "src": "./assets/4.2_01_SolutionDetails_.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.2_01_SolutionDetails_.png"
-        },
-        {
-          "src": "./assets/4.2_02_MoreOptions.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.2_02_MoreOptions.png"
-        },
-        {
-          "src": "./assets/4.2_03_Create.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.2_03_Create.png"
-        },
-        {
-          "src": "./assets/4.2_04_SolutionCreated.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.2_04_SolutionCreated.png"
-        },
-        {
-          "src": "./assets/4.2_05_CurrentPreferredSolutionSelected.png",
-          "local": "assets/academy/recruit-04-creating-a-solution/4.2_05_CurrentPreferredSolutionSelected.png"
-        }
-      ],
-      "staged_at": "2026-07-02T08:49:35.297Z",
-      "status": "pending-translation"
-    },
-    {
       "slug": "recruit-05-using-prebuilt-agents",
       "src_path": "recruit/05-using-prebuilt-agents",
       "sha": "34707a339603439a63e9dcd64b42ce2bd98e45f5",
@@ -1779,6 +1694,91 @@
         }
       ],
       "staged_at": "2026-07-02T08:51:18.051Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-04-creating-a-solution",
+      "src_path": "recruit/04-creating-a-solution",
+      "sha": "8b4307dd1d9c872e7b342201d1200048bb3b47e4",
+      "title": "🚨 Mission 04: Creating a Solution for Your Agent",
+      "description": "Package your agent into a reusable solution for environment management",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 4,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/04-creating-a-solution/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-07-09",
+      "images": [
+        {
+          "src": "./assets/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-04-creating-a-solution/video-thumbnail.jpg"
+        },
+        {
+          "src": "./assets/4.0_01_Solutions.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.0_01_Solutions.png"
+        },
+        {
+          "src": "./assets/4.0_02_CopilotStudioSolutionExplorer.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.0_02_CopilotStudioSolutionExplorer.png"
+        },
+        {
+          "src": "./assets/4.0_03_DeveloperEnvironment.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.0_03_DeveloperEnvironment.png"
+        },
+        {
+          "src": "./assets/4.1_01_Solutions.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_01_Solutions.png"
+        },
+        {
+          "src": "./assets/4.1_02_NewSolution.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_02_NewSolution.png"
+        },
+        {
+          "src": "./assets/4.1_03_NewPublisher.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_03_NewPublisher.png"
+        },
+        {
+          "src": "./assets/4.1_04_PublisherProperties.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_04_PublisherProperties.png"
+        },
+        {
+          "src": "./assets/4.1_05_Contact.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_05_Contact.png"
+        },
+        {
+          "src": "./assets/4.1_06_SavePublisher.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_06_SavePublisher.png"
+        },
+        {
+          "src": "./assets/4.1_07_PublisherSelected.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_07_PublisherSelected.png"
+        },
+        {
+          "src": "./assets/4.2_01_SolutionDetails_.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.2_01_SolutionDetails_.png"
+        },
+        {
+          "src": "./assets/4.2_02_MoreOptions.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.2_02_MoreOptions.png"
+        },
+        {
+          "src": "./assets/4.2_03_Create.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.2_03_Create.png"
+        },
+        {
+          "src": "./assets/4.2_04_SolutionCreated.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.2_04_SolutionCreated.png"
+        },
+        {
+          "src": "./assets/4.2_05_CurrentPreferredSolutionSelected.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.2_05_CurrentPreferredSolutionSelected.png"
+        }
+      ],
+      "staged_at": "2026-07-09T04:41:57.856Z",
       "status": "pending-translation"
     }
   ]
