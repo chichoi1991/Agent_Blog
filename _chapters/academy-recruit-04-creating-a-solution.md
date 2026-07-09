@@ -1,6 +1,6 @@
 ---
 layout: "chapter"
-date: 2026-06-10
+date: 2026-07-09
 title: "에이전트를 위한 솔루션 만들기"
 short_title: "솔루션 만들기"
 description: "환경 간 관리와 배포를 위해 에이전트를 재사용 가능한 솔루션으로 패키징하는 방법."
@@ -10,7 +10,7 @@ parent: "arecruit"
 source_url: "https://microsoft.github.io/agent-academy/recruit/04-creating-a-solution/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-06-10"
+source_published: "2026-07-09"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/04-creating-a-solution/"
 ---
 
@@ -69,13 +69,13 @@ Copilot Studio에서 만드는 모든 에이전트는 Power Platform solution �
 
 즉, 다음과 같은 일반적인 솔루션 작업을 Copilot Studio 안에서 처리할 수 있습니다.
 
-- **Create a solution** - custom solution을 만들면 에이전트를 환경 간 export/import할 수 있습니다.
-- **Set your preferred solution** - agents, apps 등이 기본으로 생성될 솔루션을 지정할 수 있습니다.
-- **Add or remove components** - 에이전트가 environment variables나 cloud flows 같은 다른 구성 요소를 참조할 때 같은 솔루션에 포함할 수 있습니다.
-- **Export solutions** - 다른 대상 환경으로 이동할 수 있습니다.
-- **Import solutions** - 다른 곳에서 만든 솔루션을 가져오고 업그레이드/업데이트할 수 있습니다.
-- **Create and manage solution pipelines** - 환경 간 배포를 자동화할 수 있습니다.
-- **Git integration** - 개발 환경에서 솔루션을 Git 리포지토리와 연결해 버전 관리와 협업을 수행할 수 있습니다.
+- **새 솔루션 만들기** - custom solution을 만들면 에이전트를 환경 간 export/import할 수 있습니다.
+- **기본 솔루션 설정** - agents, apps 등이 기본으로 생성될 솔루션을 지정할 수 있습니다.
+- **구성 요소 추가/제거** - 에이전트가 environment variables나 cloud flows 같은 다른 구성 요소를 참조할 때 같은 솔루션에 포함할 수 있습니다.
+- **솔루션 내보내기** - 다른 대상 환경으로 이동할 수 있습니다.
+- **솔루션 가져오기** - 다른 곳에서 만든 솔루션을 가져오고 업그레이드/업데이트할 수 있습니다.
+- **솔루션 파이프라인 만들기 및 관리** - 환경 간 배포를 자동화할 수 있습니다.
+- **Git 통합** - 개발 환경에서 솔루션을 Git 리포지토리와 연결해 버전 관리와 협업을 수행할 수 있습니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/recruit-04-creating-a-solution/4.0_02_CopilotStudioSolutionExplorer.png' | relative_url }}" alt="Copilot Studio의 Solution Explorer 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
@@ -98,25 +98,25 @@ Copilot Studio에서 만드는 모든 에이전트는 Power Platform solution �
 
 개발자 환경(source environment)에서는 에이전트를 전용 솔루션 안에 만드는 것이 좋은 습관입니다. 이유는 다음과 같습니다.
 
-### Organized development
+### 체계적인 개발
 
 - Default solution의 다른 자산과 섞이지 않고, 에이전트 관련 구성 요소를 한곳에 모을 수 있습니다.
 - 필요한 모든 요소가 하나의 솔루션에 있으므로 대상 환경으로 export/import하기 쉽고, 이는 ALM의 좋은 습관입니다.
 
-### Safe deployment
+### 안전한 배포
 
 - 앱이나 에이전트를 managed solution으로 내보내 테스트나 프로덕션 환경에 배포할 수 있으며, 실수로 편집될 위험을 줄일 수 있습니다.
 
-### Version control
+### 버전 관리
 
 - patches(목표 수정), updates(보다 넓은 범위의 변경), upgrades(기능 추가나 대규모 변경을 포함한 교체)를 만들 수 있습니다.
 - 변경 사항을 통제된 방식으로 배포하는 데 도움이 됩니다.
 
-### Dependency management
+### 종속성 관리
 
 - 어떤 구성 요소가 다른 구성 요소에 의존하는지 추적해, 변경으로 인해 예기치 않게 깨지는 일을 줄일 수 있습니다.
 
-### Team collaboration
+### 팀 협업
 
 - 개발 단계에서는 unmanaged solution으로 함께 작업하고, 배포 단계에서는 managed solution을 넘기는 방식으로 makers와 developers가 협업할 수 있습니다.
 
@@ -149,12 +149,12 @@ Power Platform의 Solution Publisher는 솔루션을 만든 주체를 식별하�
 
 이제 솔루션의 목적을 이해했으니 lifecycle을 살펴보겠습니다.
 
-1. **Create Solution in Development environment** - Development 환경에서 새 솔루션을 만듭니다.
-2. **Add Components** - apps, flows, tables 등 필요한 요소를 추가합니다.
-3. **Export as Managed solution** - 배포용으로 패키징합니다.
-4. **Import to Test environment** - Test 환경에서 동작을 검증합니다.
-5. **Import to Production environment** - 검증이 끝난 솔루션을 운영 환경에 배포합니다.
-6. **Apply Patches, Updates or Upgrades** - 수정과 개선을 적용하고 이 주기를 반복합니다.
+1. **개발 환경에서 솔루션 만들기** - Development 환경에서 새 솔루션을 만듭니다.
+2. **구성 요소 추가** - apps, flows, tables 등 필요한 요소를 추가합니다.
+3. **Managed solution으로 내보내기** - 배포용으로 패키징합니다.
+4. **Test 환경으로 가져오기** - Test 환경에서 동작을 검증합니다.
+5. **Production 환경으로 가져오기** - 검증이 끝난 솔루션을 운영 환경에 배포합니다.
+6. **Patch, Update, Upgrade 적용** - 수정과 개선을 적용하고 이 주기를 반복합니다.
 
 <div class="info-box note" markdown="1">
 **예시**
@@ -179,7 +179,7 @@ Power Platform의 Solution Publisher는 솔루션을 만든 주체를 식별하�
 
 ### 사전 준비
 
-#### Security role
+#### 보안 역할
 
 Copilot Studio에서 Solution Explorer로 할 수 있는 작업은 사용자 security role에 따라 달라집니다. Power Apps admin center에서 솔루션을 관리할 권한이 없다면, Copilot Studio 안에서도 같은 작업을 수행할 수 없습니다.
 
@@ -187,20 +187,20 @@ Copilot Studio에서 Solution Explorer로 할 수 있는 작업은 사용자 sec
 
 다음 security role이 있으면 환경에서 솔루션을 만들 수 있습니다.
 
-| Security role | Description |
+| 보안 역할 | 설명 |
 |---|---|
-| Environment Maker | 특정 환경에서 solutions를 포함한 리소스를 만들고 사용자 지정하고 관리하는 데 필요한 권한 제공 |
-| System Customizer | Environment Maker보다 넓은 권한 제공, 환경 사용자 지정과 security roles 관리 포함 |
-| System Administrator | 최고 수준의 권한으로 security roles 생성 및 할당을 포함해 환경 전반 관리 가능 |
+| Environment Maker | 특정 환경에서 solutions를 포함한 리소스를 만들고 사용자 지정하고 관리하는 데 필요한 권한을 제공합니다. |
+| System Customizer | Environment Maker보다 넓은 권한을 제공하며, 환경 사용자 지정과 security roles 관리를 포함합니다. |
+| System Administrator | 최고 수준의 권한으로 security roles 생성 및 할당을 포함해 환경 전반을 관리할 수 있습니다. |
 
-#### Developer environment
+#### 개발자 환경
 
 <div class="info-box note" markdown="1">
 **주의**
-반드시 전용 developer environment로 전환하세요. 자세한 내용은 [/chapters/academy-recruit-00-course-setup/#step-3-create-new-developer-environment](/chapters/academy-recruit-00-course-setup/#step-3-create-new-developer-environment)를 참고하세요.
+반드시 전용 developer environment로 전환하세요. 자세한 내용은 [미션 00: 과정 준비]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})의 개발자 환경 생성 단계를 참고하세요.
 </div>
 
-1. Copilot Studio 왼쪽 탐색에서 **environment** 아이콘을 선택하고 기본 환경에서 자신의 환경(예: **Adele Vance's environment**)으로 전환합니다.
+1. 오른쪽 위의 **gear (settings)** 아이콘을 선택한 뒤 기본 환경에서 자신의 환경(예: **Adele Vance's environment**)으로 전환합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/recruit-04-creating-a-solution/4.0_03_DeveloperEnvironment.png' | relative_url }}" alt="Developer environment 전환 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
@@ -363,7 +363,7 @@ Copilot Studio에서 Solution Explorer로 할 수 있는 작업은 사용자 sec
 
 이제 여러분은 규모 있는 운영을 위한 첫걸음인 깔끔한 디지털 기반을 마련했습니다. 정리된 구조와 배포 가능한 패키징 방식은 엔터프라이즈급 에이전트 개발의 핵심입니다.
 
-이로써 **Lab 04 - Creating a Solution**를 마칩니다. 다음 학습은 [/chapters/academy-recruit-05-using-prebuilt-agents/](/chapters/academy-recruit-05-using-prebuilt-agents/)에서 이어집니다. 이번 실습에서 만든 솔루션은 다음 실습에서도 사용됩니다.
+이로써 **Lab 04 - Creating a Solution**를 마칩니다. 다음 학습은 [사전 구축 에이전트 빠르게 시작하기]({{ '/chapters/academy-recruit-05-using-prebuilt-agents/' | relative_url }})에서 이어집니다. 이번 실습에서 만든 솔루션은 다음 실습에서도 사용됩니다.
 
 ## 참고 자료
 
