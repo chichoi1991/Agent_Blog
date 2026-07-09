@@ -72,7 +72,9 @@ ${list}
 3. \`tools/academy-sync/state.json\` 의 \`processed\` 에 \`"<src_path>": "<sha>"\` 추가(manifest 값 사용).
 4. 번역한 \`incoming/<slug>.md\` 삭제 + \`_manifest.json\` 에서 항목 제거.
 
-완료되면 이 이슈를 참조하는 PR 을 열어줘.`;
+완료되면 이 이슈를 참조하는 PR 을 열어줘.
+
+<!-- academy-parent:${p.parent} -->`;
   return { title, body };
 }
 
@@ -103,6 +105,22 @@ async function copilotBotId() {
   return node.id;
 }
 
+// parent 당 이미 열린 이슈가 있으면 중복 생성하지 않도록, 열린 academy-sync 이슈들이 커버하는
+// parent 집합을 구한다. (body 의 <!-- academy-parent:xxx --> 마커 우선, 없으면 제목 접두 매칭으로 폴백)
+async function openCoveredParents(parentTitleByParent) {
+  const issues = await gh(`/repos/${OWNER}/${NAME}/issues?state=open&labels=academy-sync&per_page=100`);
+  const covered = new Set();
+  for (const it of Array.isArray(issues) ? issues : []) {
+    if (it.pull_request) continue; // PR 제외(이슈만)
+    const m = (it.body || "").match(/<!--\s*academy-parent:([\w-]+)\s*-->/);
+    if (m) covered.add(m[1]);
+    for (const [parent, ptitle] of Object.entries(parentTitleByParent)) {
+      if ((it.title || "").startsWith(`Agent Academy 번역: ${ptitle} (`)) covered.add(parent);
+    }
+  }
+  return covered;
+}
+
 async function main() {
   const groups = pendingByParent();
   const parents = Object.keys(groups);
@@ -117,8 +135,11 @@ async function main() {
     return;
   }
 
+  const parentTitleByParent = Object.fromEntries(parents.map((p) => [p, groups[p][0].parentTitle]));
+  const covered = await openCoveredParents(parentTitleByParent);
   const botId = await copilotBotId();
   for (const p of parents) {
+    if (covered.has(p)) { console.log(`이미 열린 이슈 존재 — [${p}] 건너뜀(중복 방지).`); continue; }
     const { title, body } = buildIssue(groups[p]);
     const issue = await gh(`/repos/${OWNER}/${NAME}/issues`, {
       method: "POST", body: JSON.stringify({ title, body, labels: ["automated", "academy-sync"] }) });
