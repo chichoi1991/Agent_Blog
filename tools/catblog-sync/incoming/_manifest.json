@@ -211,6 +211,32 @@
       ],
       "staged_at": "2026-07-02T08:00:31.285Z",
       "status": "published"
+    },
+    {
+      "slug": "e3-users-build-agents-turn-it-off",
+      "title": "Why Your E3 Users Can Suddenly Build Agents in Copilot Studio — and How to Turn It Off",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/e3-users-build-agents-turn-it-off/",
+      "source_author": "emdarcy",
+      "source_published": "2026-07-09",
+      "source_updated": "2026-07-09",
+      "categories": [
+        "copilot-studio",
+        "governance"
+      ],
+      "summary": "A recent redirect change surfaced classic agent creation in the Copilot Studio web app for basic-licensed users. Here's the single service plan admins can disable to govern it.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-07-09-e3-users-build-agents-turn-it-off.md",
+      "images": [
+        {
+          "src": "/assets/posts/e3-users-build-agents-turn-it-off/Licence2.png",
+          "local": "assets/catblog/e3-users-build-agents-turn-it-off/Licence2.png"
+        },
+        {
+          "src": "/assets/posts/e3-users-build-agents-turn-it-off/classic-agents-governance-hero.png",
+          "local": "assets/catblog/e3-users-build-agents-turn-it-off/classic-agents-governance-hero.png"
+        }
+      ],
+      "staged_at": "2026-07-09T23:00:57.607Z",
+      "status": "pending-translation"
     }
   ]
 }
