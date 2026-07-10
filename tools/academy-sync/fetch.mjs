@@ -29,6 +29,10 @@ const cfg = JSON.parse(readFileSync(SOURCES_PATH, "utf8"));
 const RAW = (p) => `https://raw.githubusercontent.com/${cfg.repo}/${cfg.branch}/${p}`;
 const TREE_API = `https://api.github.com/repos/${cfg.repo}/git/trees/${cfg.branch}?recursive=1`;
 
+// 무인증 GitHub API 는 IP당 60회/시간(러너 공용 IP 공유) 제한이라 간헐적 403 을 유발한다.
+// GITHUB_TOKEN(또는 GH_TOKEN)이 있으면 인증해 5,000회/시간으로 올린다.
+const GH_TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || "";
+
 const args = process.argv.slice(2);
 const CHECK = args.includes("--check");
 const catIdx = args.indexOf("--category");
@@ -54,7 +58,13 @@ function activeSections() {
 
 // git tree 에서 docs/<section>/**/index.md 블롭을 찾는다.
 async function treeEntries() {
-  const res = await fetch(TREE_API, { headers: { "User-Agent": "academy-sync", Accept: "application/vnd.github+json" } });
+  const res = await fetch(TREE_API, {
+    headers: {
+      "User-Agent": "academy-sync",
+      Accept: "application/vnd.github+json",
+      ...(GH_TOKEN ? { Authorization: `Bearer ${GH_TOKEN}` } : {}),
+    },
+  });
   if (!res.ok) throw new Error(`git tree 조회 실패 ${res.status} ${TREE_API}`);
   const j = await res.json();
   if (j.truncated) console.warn("::warning::git tree 가 truncated 됨 — 일부 페이지가 누락될 수 있습니다.");

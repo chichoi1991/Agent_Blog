@@ -40,6 +40,8 @@ jobs:
 
       - name: Detect & stage new/changed Academy pages
         id: detect
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ARGS=""
           if [ -n "${{ github.event.inputs.category }}" ]; then ARGS="$ARGS --category ${{ github.event.inputs.category }}"; fi
