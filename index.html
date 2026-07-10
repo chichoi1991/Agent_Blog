@@ -17,7 +17,8 @@ title: "홈"
 
   {% assign updates = site.chapters | where: "category", "updates" %}
   {% assign catblog = site.chapters | where: "category", "catblog" %}
-  {% assign recent = updates | concat: catblog | sort: "date" | reverse %}
+  {% assign m365 = site.chapters | where: "category", "m365" %}
+  {% assign recent = updates | concat: catblog | concat: m365 | sort: "date" | reverse %}
 
   {% include card-feed.html posts=recent limit=4 %}
 </section>

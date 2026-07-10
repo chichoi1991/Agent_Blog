@@ -37,7 +37,7 @@
     if (!input || !box) return;
     var data = null;
     var url = "{{ '/search.json' | relative_url }}";
-    var labels = { 'newcs':'New Copilot Studio','newcslab':'핸즈온(New)','updates':'기술 업데이트','catblog':'CAT 블로그','academy-courses':'Academy 코스','academy-labs':'Academy 랩','cowork':'Copilot Cowork','scout':'Microsoft Scout','guide':'실무 가이드','workshop':'워크샵','special':'특별 워크샵' };
+    var labels = { 'newcs':'New Copilot Studio','newcslab':'핸즈온(New)','updates':'기술 업데이트','catblog':'CAT 블로그','academy-courses':'Academy 코스','academy-labs':'Academy 랩','cowork':'Copilot Cowork','scout':'Microsoft Scout','m365':'Microsoft 365','guide':'실무 가이드','workshop':'워크샵','special':'특별 워크샵' };
     function load() { if (data) return Promise.resolve(data); return fetch(url).then(function (r) { return r.json(); }).then(function (j) { data = j; return j; }).catch(function () { return []; }); }
     function esc(s) { return (s || '').replace(/[&<>]/g, function (c) { return { '&':'&amp;','<':'&lt;','>':'&gt;' }[c]; }); }
     function render(q, items) {

@@ -1110,6 +1110,7 @@ a:hover { color: var(--link-hover); }
 .thumb-academy-labs { background: linear-gradient(135deg,#065F46,#10B981); }
 .thumb-cowork { background: linear-gradient(135deg,#374151,#6B7280); }
 .thumb-scout { background: linear-gradient(135deg,#7C2D12,#EA580C); }
+.thumb-m365 { background: linear-gradient(135deg,#1E3A8A,#2563EB); }
 .thumb-guide, .thumb-workshop, .thumb-special { background: linear-gradient(135deg,#334155,#64748B); }
 
 /* ===== 홈 섹션 제목 + 가로 스크롤 카드 ===== */
