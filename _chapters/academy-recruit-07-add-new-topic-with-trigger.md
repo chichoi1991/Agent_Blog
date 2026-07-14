@@ -1,6 +1,5 @@
 ---
 layout: "chapter"
-date: 2026-02-19
 title: "미션 07: 트리거와 노드가 있는 새 토픽 추가하기"
 short_title: "토픽·트리거 추가"
 description: "Topics로 커스텀 질문/답변 경로를 정의하는 방법"
@@ -14,7 +13,7 @@ source_published: "2026-02-19"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/07-add-new-topic-with-trigger/"
 ---
 
-<div class="info-box note translated-post" markdown="1">
+<div class="info-box note" markdown="1">
 **원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🚨 Mission 07: Add new topic with trigger and nodes](https://microsoft.github.io/agent-academy/recruit/07-add-new-topic-with-trigger/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 

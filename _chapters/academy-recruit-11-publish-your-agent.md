@@ -18,7 +18,9 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/11-publish-you
 **원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🚨 Mission 11: Publish Your Agent](https://microsoft.github.io/agent-academy/recruit/11-publish-your-agent/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 
-🎥 [YouTube 워크스루 보기](https://www.youtube.com/watch?v=eVZmljhYlSI)
+🎥 **워크스루 영상 보기**
+
+<figure class="screenshot"><img src="{{ '/assets/academy/recruit-11-publish-your-agent/video-thumbnail.jpg' | relative_url }}" alt="Publish agent video thumbnail" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption><a href="https://www.youtube.com/watch?v=eVZmljhYlSI">YouTube에서 워크스루 보기</a></figcaption></figure>
 
 ## 🎯 미션 브리핑
 
