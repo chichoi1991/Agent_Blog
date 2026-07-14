@@ -237,6 +237,40 @@
       ],
       "staged_at": "2026-07-09T23:00:57.607Z",
       "status": "published"
+    },
+    {
+      "slug": "new-orchestrator-resources",
+      "title": "New Orchestrator, New Rules? CAT's Got You",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/new-orchestrator-resources/",
+      "source_author": "giorgioughiniroelsadileihenryjammeschrisgartylewisdoesdevadrianatruji",
+      "source_published": "2026-07-07",
+      "source_updated": "2026-07-13",
+      "categories": [
+        "copilot-studio",
+        "orchestration"
+      ],
+      "summary": "The new Copilot Studio experience is a big shift. We shipped three resources so you can understand it, see it run, and migrate to it. Here's how to use each one.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-07-07-new-orchestrator-resources.md",
+      "images": [
+        {
+          "src": "/assets/posts/new-orchestrator-resources/componentslide.png",
+          "local": "assets/catblog/new-orchestrator-resources/componentslide.png"
+        },
+        {
+          "src": "/assets/posts/new-orchestrator-resources/minisite.png",
+          "local": "assets/catblog/new-orchestrator-resources/minisite.png"
+        },
+        {
+          "src": "/assets/posts/new-orchestrator-resources/plugin.png",
+          "local": "assets/catblog/new-orchestrator-resources/plugin.png"
+        },
+        {
+          "src": "/assets/posts/new-orchestrator-resources/header.png",
+          "local": "assets/catblog/new-orchestrator-resources/header.png"
+        }
+      ],
+      "staged_at": "2026-07-14T03:35:58.389Z",
+      "status": "pending-translation"
     }
   ]
 }
