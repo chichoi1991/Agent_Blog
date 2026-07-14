@@ -10,7 +10,7 @@ parent: "aoperative"
 source_url: "https://microsoft.github.io/agent-academy/operative/02-agent-instructions/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: ""
+source_published: "2026-01-14"
 canonical_url: "https://microsoft.github.io/agent-academy/operative/02-agent-instructions/"
 ---
 

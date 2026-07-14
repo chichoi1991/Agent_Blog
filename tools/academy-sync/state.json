@@ -2,7 +2,7 @@
   "_comment": "이미 번역·게시한 Agent Academy 페이지. 키는 소스 경로(docs 기준 상대, 예 recruit/01-introduction-to-agents), 값은 해당 index.md 의 git blob sha. fetch.mjs 는 sha 가 다르거나 없는 페이지만 신규/변경으로 감지·스테이징한다. 번역 완료 시(academy-sync 스킬/Copilot) manifest 의 path·sha 로 여기 항목을 추가/갱신한다.",
   "processed": {
     "operative/01-get-started": "5536c646f5865dc8e3d08f88a39675efcacfb2b3",
-    "operative/02-agent-instructions": "c01fce2524c63c3132adaa5d33df80b901ef1205",
+    "operative/02-agent-instructions": "f964dc9b2713eb427b2d64bf44690222d5fe0486",
     "operative/03-multi-agent": "7da90271be59db77f2f62b6deaf70afc93b4b497",
     "operative/04-automate-triggers": "bf8c01e8c9bb0d9e93d6b6cc5146fd2339768962",
     "operative/05-model-selection": "28bd5fe9ecc300030bb91d7cc4e7f99b7b43c49e",

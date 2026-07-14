@@ -722,31 +722,6 @@
       ],
       "staged_at": "2026-07-14T03:47:41.647Z",
       "status": "pending-translation"
-    },
-    {
-      "slug": "operative-02-agent-instructions",
-      "src_path": "operative/02-agent-instructions",
-      "sha": "f964dc9b2713eb427b2d64bf44690222d5fe0486",
-      "title": "🕵️‍♂️ Mission 02: Authoring Agent Instructions",
-      "description": "",
-      "category": "academy-courses",
-      "parent": "aoperative",
-      "parentTitle": "Operative — 중급 코스",
-      "parentShort": "Operative",
-      "parentOrder": 2,
-      "order": 2,
-      "source_url": "https://microsoft.github.io/agent-academy/operative/02-agent-instructions/",
-      "source_author": "Copilot Studio Agent Academy",
-      "source_blog": "Copilot Studio Agent Academy",
-      "source_published": "",
-      "images": [
-        {
-          "src": "./assets/02-instructions-thumbnail_PlayButton.png",
-          "local": "assets/academy/operative-02-agent-instructions/02-instructions-thumbnail_PlayButton.png"
-        }
-      ],
-      "staged_at": "2026-07-14T03:47:41.989Z",
-      "status": "pending-translation"
     }
   ]
 }
