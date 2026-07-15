@@ -1,8 +1,9 @@
 // catblog-sync/fetch.mjs — CAT 블로그(The Custom Engine) 신규 글 감지·스테이징
 //
-// 공개 repo microsoft/mcscatblog 의 Atom 피드(feed.xml)를 읽어, 아직 처리하지 않은
-// (state.json 에 없는) 신규 글의 원문 Markdown 을 GitHub raw 에서 받아
-// tools/catblog-sync/incoming/<slug>.md 로 스테이징하고 _manifest.json 을 갱신한다.
+// 공개 repo microsoft/mcscatblog 의 sitemap.xml(라이브 전수 목록)을 읽어, 기준일(CUTOFF)
+// 이후 발행 & 아직 처리하지 않은(state.json 에 없는) 신규 글의 원문 Markdown 을 GitHub raw
+// 에서 받아 tools/catblog-sync/incoming/<slug>.md 로 스테이징하고 _manifest.json 을 갱신한다.
+// (제목/저자/요약 등 메타데이터는 feed.xml → 없으면 포스트 HTML 로 보강)
 //
 // 번역은 이 스크립트가 하지 않는다 — VS Code 의 `catblog-sync` 스킬(GitHub Copilot)이
 // incoming/*.md 를 읽어 한글 챕터(_chapters/catblog*.md)로 번역·생성하고,
@@ -25,10 +26,15 @@ const MANIFEST_PATH = join(INCOMING, "_manifest.json");
 const ASSETS_BASE = join(HERE, "..", "..", "assets", "catblog"); // Agent_Blog/assets/catblog/<slug>/
 
 const FEED_URL = "https://microsoft.github.io/mcscatblog/feed.xml";
+const SITEMAP_URL = "https://microsoft.github.io/mcscatblog/sitemap.xml";
 const SITE_BASE = "https://microsoft.github.io/mcscatblog";
 const RAW_BASE = "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts";
 const CONTENTS_API = "https://api.github.com/repos/microsoft/mcscatblog/contents/_posts?ref=main";
 const POST_BASE = "https://microsoft.github.io/mcscatblog/posts";
+
+// 기준일(컷오프): 이 날짜(포함) 이후 발행 글만 번역·게시한다. 이전 백로그는 무시.
+// 환경변수 CATBLOG_CUTOFF 로 재정의 가능(YYYY-MM-DD).
+const CUTOFF_DATE = process.env.CATBLOG_CUTOFF || "2026-07-01";
 
 const args = process.argv.slice(2);
 const CHECK = args.includes("--check");
@@ -71,6 +77,46 @@ function parseFeed(xml) {
     });
   }
   return entries.filter((e) => e.slug);
+}
+
+// sitemap.xml → 라이브 전체 글 목록 [{ slug, loc, lastmod }]
+function parseSitemap(xml) {
+  const out = [];
+  const re = /<url>([\s\S]*?)<\/url>/g;
+  let m;
+  while ((m = re.exec(xml)) !== null) {
+    const b = m[1];
+    const loc = tag(b, "loc");
+    const sm = loc.match(/\/posts\/([^/]+)\/?$/);
+    if (!sm) continue;
+    out.push({ slug: sm[1], loc, lastmod: tag(b, "lastmod") });
+  }
+  return out;
+}
+
+// feed 에 없는 후보의 메타데이터를 포스트 HTML(<meta>)에서 보강한다.
+async function fetchPostMeta(slug) {
+  const url = `${POST_BASE}/${slug}/`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const html = await res.text();
+    const meta = (prop, attr = "property") => {
+      const m =
+        html.match(new RegExp(`<meta[^>]*${attr}=["']${prop}["'][^>]*content=["']([^"']*)["']`, "i")) ||
+        html.match(new RegExp(`<meta[^>]*content=["']([^"']*)["'][^>]*${attr}=["']${prop}["']`, "i"));
+      return m ? decodeXml(m[1]) : "";
+    };
+    return {
+      title: meta("og:title") || (html.match(/<title[^>]*>([^<]*)<\/title>/i)?.[1] || "").trim(),
+      author: meta("author", "name") || meta("article:author") || "The Custom Engine Team",
+      published: meta("article:published_time"),
+      summary: meta("og:description") || meta("description", "name"),
+      categories: [],
+    };
+  } catch {
+    return null;
+  }
 }
 
 function loadState() {
@@ -158,27 +204,62 @@ async function downloadImages(slug, md) {
 }
 
 async function main() {
-  const res = await fetch(FEED_URL);
-  if (!res.ok) {
-    console.error(`::error::피드 요청 실패 ${res.status} ${FEED_URL}`);
+  // 1) 라이브 전체 글 목록: sitemap.xml (feed 5개 창 대신 전수)
+  const smRes = await fetch(SITEMAP_URL);
+  if (!smRes.ok) {
+    console.error(`::error::sitemap 요청 실패 ${smRes.status} ${SITEMAP_URL}`);
     process.exit(1);
   }
-  const feed = await res.text();
-  const entries = parseFeed(feed);
+  const posts = parseSitemap(await smRes.text());
+
+  // 2) 최신 메타데이터(제목/저자/요약): feed.xml (최근 창) → slug 맵
+  let feedMap = new Map();
+  try {
+    const fRes = await fetch(FEED_URL);
+    if (fRes.ok) feedMap = new Map(parseFeed(await fRes.text()).map((e) => [e.slug, e]));
+  } catch {
+    /* feed 없어도 sitemap 기반으로 진행 */
+  }
 
   const state = loadState();
   const done = new Set(state.processed || []);
   const staged = stagedSlugs();
+  const cutoff = new Date(`${CUTOFF_DATE}T00:00:00Z`);
 
-  const fresh = entries.filter((e) => !done.has(e.slug) && !staged.has(e.slug)).slice(0, LIMIT);
+  // 3) 컷오프(포함) 이후 & 미처리 & 미스테이징 후보 (최신순)
+  const candidates = posts
+    .filter((p) => p.lastmod && new Date(p.lastmod) >= cutoff)
+    .filter((p) => !done.has(p.slug) && !staged.has(p.slug))
+    .sort((a, b) => new Date(b.lastmod) - new Date(a.lastmod))
+    .slice(0, LIMIT);
 
-  if (fresh.length === 0) {
+  console.log(`sitemap 총 ${posts.length}건 · 컷오프(${CUTOFF_DATE}) 이후 신규 후보 ${candidates.length}건`);
+
+  if (candidates.length === 0) {
     console.log("신규 글 없음 — 최신 상태입니다.");
     return;
   }
 
+  // 4) 후보별 메타데이터 확정 (feed 우선, 없으면 HTML 보강)
+  const fresh = [];
+  for (const p of candidates) {
+    const meta = feedMap.get(p.slug) || (await fetchPostMeta(p.slug)) || {};
+    const published = (meta.published || p.lastmod || "").slice(0, 10);
+    fresh.push({
+      slug: p.slug,
+      title: meta.title || p.slug,
+      author: meta.author || "The Custom Engine Team",
+      published,
+      // raw 파일명(YYYY-MM-DD-slug.md) 용 날짜: feed published → 없으면 sitemap lastmod
+      dateForFile: (meta.published || p.lastmod || "").slice(0, 10),
+      updated: (p.lastmod || "").slice(0, 10),
+      categories: meta.categories || [],
+      summary: (meta.summary || "").replace(/\s+/g, " "),
+    });
+  }
+
   console.log(`신규 글 ${fresh.length}건 발견:`);
-  for (const e of fresh) console.log(`  • [${e.published?.slice(0, 10)}] ${e.title} (${e.slug}) — @${e.author}`);
+  for (const e of fresh) console.log(`  • [${e.published}] ${e.title} (${e.slug}) — @${e.author}`);
 
   if (CHECK) {
     console.log("\n(--check) 드라이런 — 다운로드하지 않았습니다.");
@@ -191,7 +272,7 @@ async function main() {
     : { items: [] };
 
   for (const e of fresh) {
-    const { url, text, status } = await rawMarkdown(e.slug, e.published);
+    const { url, text, status } = await rawMarkdown(e.slug, e.dateForFile);
     if (!text) {
       console.warn(`::warning::원문 MD 다운로드 실패(${status}) ${url} — 건너뜀`);
       continue;
@@ -204,8 +285,8 @@ async function main() {
       title: e.title,
       source_url: `${POST_BASE}/${e.slug}/`,
       source_author: e.author,
-      source_published: e.published?.slice(0, 10) || "",
-      source_updated: e.updated?.slice(0, 10) || "",
+      source_published: e.published || "",
+      source_updated: e.updated || "",
       categories: e.categories,
       summary: e.summary,
       raw_url: url,
