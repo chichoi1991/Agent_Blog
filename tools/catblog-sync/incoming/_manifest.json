@@ -271,6 +271,28 @@
       ],
       "staged_at": "2026-07-14T03:35:58.389Z",
       "status": "published"
+    },
+    {
+      "slug": "migration-plugin-video-demo",
+      "title": "Video Demo: Migrating a Classic Agent to Modern Orchestration",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/migration-plugin-video-demo/",
+      "source_author": "giorgioughini",
+      "source_published": "2026-07-14",
+      "source_updated": "2026-07-14",
+      "categories": [
+        "copilot-studio",
+        "migration"
+      ],
+      "summary": "Watch GitHub Copilot CLI migrate a classic Copilot Studio travel agent to modern orchestration with our newly released plugin, then explore how its capabilities become Skills and tools.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-07-14-migration-plugin-video-demo.md",
+      "images": [
+        {
+          "src": "/assets/posts/migration-plugin-video-demo/header.png",
+          "local": "assets/catblog/migration-plugin-video-demo/header.png"
+        }
+      ],
+      "staged_at": "2026-07-15T01:12:44.638Z",
+      "status": "pending-translation"
     }
   ]
 }
