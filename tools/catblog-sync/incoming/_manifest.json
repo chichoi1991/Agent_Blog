@@ -292,7 +292,7 @@
         }
       ],
       "staged_at": "2026-07-15T01:12:44.638Z",
-      "status": "pending-translation"
+      "status": "published"
     },
     {
       "slug": "redlining-documents-new-copilot-studio-experience",
@@ -334,7 +334,7 @@
         }
       ],
       "staged_at": "2026-07-17T03:39:31.376Z",
-      "status": "pending-translation"
+      "status": "published"
     }
   ]
 }
