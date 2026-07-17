@@ -293,6 +293,48 @@
       ],
       "staged_at": "2026-07-15T01:12:44.638Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "redlining-documents-new-copilot-studio-experience",
+      "title": "Redlining Documents with the New Copilot Studio Experience",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/redlining-documents-new-copilot-studio-experience/",
+      "source_author": "AndrewHessMSFTraemone",
+      "source_published": "2026-07-15",
+      "source_updated": "2026-07-15",
+      "categories": [
+        "copilot-studio",
+        "tutorial"
+      ],
+      "summary": "Compare documents using Microsoft Word's Native Redlining Track Changes.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-07-15-redlining-documents-new-copilot-studio-experience.md",
+      "images": [
+        {
+          "src": "/assets/posts/redlining-documents-new-copilot-studio-experience/xml_for_redlining.png",
+          "local": "assets/catblog/redlining-documents-new-copilot-studio-experience/xml_for_redlining.png"
+        },
+        {
+          "src": "/assets/posts/redlining-documents-new-copilot-studio-experience/phases.png",
+          "local": "assets/catblog/redlining-documents-new-copilot-studio-experience/phases.png"
+        },
+        {
+          "src": "/assets/posts/redlining-documents-new-copilot-studio-experience/meta-lesson.png",
+          "local": "assets/catblog/redlining-documents-new-copilot-studio-experience/meta-lesson.png"
+        },
+        {
+          "src": "/assets/posts/redlining-documents-new-copilot-studio-experience/folder-structure.png",
+          "local": "assets/catblog/redlining-documents-new-copilot-studio-experience/folder-structure.png"
+        },
+        {
+          "src": "/assets/posts/redlining-documents-new-copilot-studio-experience/document-redlined.png",
+          "local": "assets/catblog/redlining-documents-new-copilot-studio-experience/document-redlined.png"
+        },
+        {
+          "src": "/assets/posts/redlining-documents-new-copilot-studio-experience/header.png",
+          "local": "assets/catblog/redlining-documents-new-copilot-studio-experience/header.png"
+        }
+      ],
+      "staged_at": "2026-07-17T03:39:31.376Z",
+      "status": "pending-translation"
     }
   ]
 }
