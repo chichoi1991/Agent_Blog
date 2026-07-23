@@ -29,9 +29,10 @@
     "recruit/course-completion-badges-recruit": "14acd2fe3dbdc752d5150afa32aa8d47ee4ca305",
     "special-ops/docusign-mcp": "cb042cb7215e626c923057d00554f9b334e4aed7",
     "special-ops/mcs-mcp": "d84b29350a88f5030d2bc03485544af83bbf0291",
-    "special-ops/ms-learn-mcp": "975bf294cb5b5bbc5325d33b5e9539572775f4da",
+    "special-ops/ms-learn-mcp": "a5a13e048ecb1fdfb6bb417a7e5404c454a946c4",
     "special-ops/pac-cli-mcp": "3cbf10e9efc03caa14aa3baf38ae392df0cf4d08",
     "special-ops/pac-cli-mcp/power-platform-plan": "90864c398779413006733fe55a4ccb391066a3c6",
-    "special-ops/yaml-specialist": "81c67fbda31722a100db55e6d42512ac043d1361"
+    "special-ops/yaml-specialist": "81c67fbda31722a100db55e6d42512ac043d1361",
+    "special-ops/azure-ai-search-rag": "8917bbd4a0f8ddd8aaa392a405043226887741f3"
   }
 }
