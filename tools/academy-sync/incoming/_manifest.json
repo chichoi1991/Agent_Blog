@@ -1,3 +1,202 @@
 {
-  "items": []
+  "items": [
+    {
+      "slug": "special-ops-azure-ai-search-rag",
+      "src_path": "special-ops/azure-ai-search-rag",
+      "sha": "8917bbd4a0f8ddd8aaa392a405043226887741f3",
+      "title": "🔎 Azure AI Search RAG",
+      "description": "",
+      "category": "academy-labs",
+      "parent": "aspecialops",
+      "parentTitle": "Special Ops — 독립 랩",
+      "parentShort": "Special Ops",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/special-ops/azure-ai-search-rag/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-07-02",
+      "images": [
+        {
+          "src": "assets/azure-search-01.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-01.png"
+        },
+        {
+          "src": "assets/azure-storage-01.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-storage-01.png"
+        },
+        {
+          "src": "assets/openai-embedding-01.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/openai-embedding-01.png"
+        },
+        {
+          "src": "assets/azure-storage-02.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-storage-02.png"
+        },
+        {
+          "src": "assets/azure-storage-03.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-storage-03.png"
+        },
+        {
+          "src": "assets/azure-search-02.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-02.png"
+        },
+        {
+          "src": "assets/azure-search-03.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-03.png"
+        },
+        {
+          "src": "assets/azure-search-04.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-04.png"
+        },
+        {
+          "src": "assets/azure-search-05.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-05.png"
+        },
+        {
+          "src": "assets/azure-search-06.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-06.png"
+        },
+        {
+          "src": "assets/new-experience.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/new-experience.png"
+        },
+        {
+          "src": "assets/new-agent.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/new-agent.png"
+        },
+        {
+          "src": "assets/title-description.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/title-description.png"
+        },
+        {
+          "src": "./assets/rag-knowledge-no-azure-search.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/rag-knowledge-no-azure-search.png"
+        },
+        {
+          "src": "./assets/rag-tool-azure-search-actions.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/rag-tool-azure-search-actions.png"
+        },
+        {
+          "src": "./assets/rag-tool-details-auth.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/rag-tool-details-auth.png"
+        },
+        {
+          "src": "./assets/badge.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/badge.png"
+        }
+      ],
+      "staged_at": "2026-07-23T03:58:33.608Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "special-ops-ms-learn-mcp",
+      "src_path": "special-ops/ms-learn-mcp",
+      "sha": "a5a13e048ecb1fdfb6bb417a7e5404c454a946c4",
+      "title": "📚 Microsoft Learn MCP Server",
+      "description": "",
+      "category": "academy-labs",
+      "parent": "aspecialops",
+      "parentTitle": "Special Ops — 독립 랩",
+      "parentShort": "Special Ops",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/special-ops/ms-learn-mcp/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-03-17",
+      "images": [
+        {
+          "src": "./assets/step-01.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-01.png"
+        },
+        {
+          "src": "./assets/step-02.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-02.png"
+        },
+        {
+          "src": "./assets/step-03.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-03.png"
+        },
+        {
+          "src": "./assets/step-04.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-04.png"
+        },
+        {
+          "src": "./assets/step-05.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-05.png"
+        },
+        {
+          "src": "./assets/step-06.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-06.png"
+        },
+        {
+          "src": "./assets/step-07.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-07.png"
+        },
+        {
+          "src": "./assets/step-08.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-08.png"
+        },
+        {
+          "src": "./assets/step-09.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-09.png"
+        },
+        {
+          "src": "./assets/step-10.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-10.png"
+        },
+        {
+          "src": "./assets/step-11.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-11.png"
+        },
+        {
+          "src": "./assets/step-12.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-12.png"
+        },
+        {
+          "src": "./assets/step-13.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-13.png"
+        },
+        {
+          "src": "./assets/step-14.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-14.png"
+        },
+        {
+          "src": "./assets/step-15.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-15.png"
+        },
+        {
+          "src": "./assets/step-16.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-16.png"
+        },
+        {
+          "src": "./assets/step-17.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-17.png"
+        },
+        {
+          "src": "./assets/step-18.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-18.png"
+        },
+        {
+          "src": "./assets/step-19.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-19.png"
+        },
+        {
+          "src": "./assets/step-20.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-20.png"
+        },
+        {
+          "src": "./assets/step-21.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-21.png"
+        },
+        {
+          "src": "./assets/Academy_LearnMCP_Badge.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/Academy_LearnMCP_Badge.png"
+        }
+      ],
+      "staged_at": "2026-07-23T03:58:36.940Z",
+      "status": "pending-translation"
+    }
+  ]
 }
