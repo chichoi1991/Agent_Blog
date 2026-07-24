@@ -197,6 +197,103 @@
       ],
       "staged_at": "2026-07-23T03:58:36.940Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "special-ops-mcp-oauth",
+      "src_path": "special-ops/mcp-oauth",
+      "sha": "1b89bfb6e652beb5e71cb9e244fb59c5f5186e0d",
+      "title": "🔐 Consuming a Secured MCP Server with OAuth 2.0",
+      "description": "",
+      "category": "academy-labs",
+      "parent": "aspecialops",
+      "parentTitle": "Special Ops — 독립 랩",
+      "parentShort": "Special Ops",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/special-ops/mcp-oauth/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-07-23",
+      "images": [
+        {
+          "src": "./assets/mc-oauth-badge.png",
+          "local": "assets/academy/special-ops-mcp-oauth/mc-oauth-badge.png"
+        },
+        {
+          "src": "./assets/mcp-server-secured-01.png",
+          "local": "assets/academy/special-ops-mcp-oauth/mcp-server-secured-01.png"
+        },
+        {
+          "src": "./assets/entra-app-registration-01.png",
+          "local": "assets/academy/special-ops-mcp-oauth/entra-app-registration-01.png"
+        },
+        {
+          "src": "./assets/entra-app-registration-02.png",
+          "local": "assets/academy/special-ops-mcp-oauth/entra-app-registration-02.png"
+        },
+        {
+          "src": "./assets/entra-expose-api-01.png",
+          "local": "assets/academy/special-ops-mcp-oauth/entra-expose-api-01.png"
+        },
+        {
+          "src": "./assets/entra-add-scope-01.png",
+          "local": "assets/academy/special-ops-mcp-oauth/entra-add-scope-01.png"
+        },
+        {
+          "src": "./assets/entra-api-permissions-01.png",
+          "local": "assets/academy/special-ops-mcp-oauth/entra-api-permissions-01.png"
+        },
+        {
+          "src": "./assets/entra-api-permissions-02.png",
+          "local": "assets/academy/special-ops-mcp-oauth/entra-api-permissions-02.png"
+        },
+        {
+          "src": "./assets/entra-admin-consent-01.png",
+          "local": "assets/academy/special-ops-mcp-oauth/entra-admin-consent-01.png"
+        },
+        {
+          "src": "./assets/devtunnel-hosting-01.png",
+          "local": "assets/academy/special-ops-mcp-oauth/devtunnel-hosting-01.png"
+        },
+        {
+          "src": "./assets/step-agent-name-annotated.png",
+          "local": "assets/academy/special-ops-mcp-oauth/step-agent-name-annotated.png"
+        },
+        {
+          "src": "./assets/step-model-dropdown.png",
+          "local": "assets/academy/special-ops-mcp-oauth/step-model-dropdown.png"
+        },
+        {
+          "src": "./assets/step-agent-configured.png",
+          "local": "assets/academy/special-ops-mcp-oauth/step-agent-configured.png"
+        },
+        {
+          "src": "./assets/step-suggested-prompts-filled.png",
+          "local": "assets/academy/special-ops-mcp-oauth/step-suggested-prompts-filled.png"
+        },
+        {
+          "src": "./assets/step-mcp-tab-annotated.png",
+          "local": "assets/academy/special-ops-mcp-oauth/step-mcp-tab-annotated.png"
+        },
+        {
+          "src": "./assets/step-mcp-server-details.png",
+          "local": "assets/academy/special-ops-mcp-oauth/step-mcp-server-details.png"
+        },
+        {
+          "src": "./assets/step-oauth-config.png",
+          "local": "assets/academy/special-ops-mcp-oauth/step-oauth-config.png"
+        },
+        {
+          "src": "./assets/entra-redirect-uri-01.png",
+          "local": "assets/academy/special-ops-mcp-oauth/entra-redirect-uri-01.png"
+        },
+        {
+          "src": "./assets/step-preview.png",
+          "local": "assets/academy/special-ops-mcp-oauth/step-preview.png"
+        }
+      ],
+      "staged_at": "2026-07-24T03:57:24.127Z",
+      "status": "pending-translation"
     }
   ]
 }
