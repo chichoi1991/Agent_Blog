@@ -294,6 +294,115 @@
       ],
       "staged_at": "2026-07-24T03:57:24.127Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "special-ops-ghostwriter",
+      "src_path": "special-ops/ghostwriter",
+      "sha": "d6d793e27e7ac017af4d17cf88182420a7e68b1c",
+      "title": "✍️ Operation Ghostwriter: A Marketing Content Agent Built on Skills",
+      "description": "",
+      "category": "academy-labs",
+      "parent": "aspecialops",
+      "parentTitle": "Special Ops — 독립 랩",
+      "parentShort": "Special Ops",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/special-ops/ghostwriter/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-07-24",
+      "images": [
+        {
+          "src": "./assets/1.1_01_CreateAgent.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.1_01_CreateAgent.png"
+        },
+        {
+          "src": "./assets/1.1_02_Instructions-annotated.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.1_02_Instructions-annotated.png"
+        },
+        {
+          "src": "./assets/1.2_01_AddSkill-annotated.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.2_01_AddSkill-annotated.png"
+        },
+        {
+          "src": "./assets/1.2_03_CreateFromBlank.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.2_03_CreateFromBlank.png"
+        },
+        {
+          "src": "./assets/1.2_04_CreateBlogSKill.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.2_04_CreateBlogSKill.png"
+        },
+        {
+          "src": "./assets/1.3_addskill.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.3_addskill.png"
+        },
+        {
+          "src": "./assets/1.3_uploadskill.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.3_uploadskill.png"
+        },
+        {
+          "src": "./assets/1.4_skillfilled.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.4_skillfilled.png"
+        },
+        {
+          "src": "./assets/1.5_skillfilled.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.5_skillfilled.png"
+        },
+        {
+          "src": "./assets/1.5_previewtab.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.5_previewtab.png"
+        },
+        {
+          "src": "./assets/1.5_blogresponse.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.5_blogresponse.png"
+        },
+        {
+          "src": "./assets/1.5_seoskillresponse.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.5_seoskillresponse.png"
+        },
+        {
+          "src": "./assets/1.5_repurposeresponse.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.5_repurposeresponse.png"
+        },
+        {
+          "src": "./assets/1.5_voicecheckreponse.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.5_voicecheckreponse.png"
+        },
+        {
+          "src": "./assets/1.7_skillprompt.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7_skillprompt.png"
+        },
+        {
+          "src": "./assets/1.7_reviewcopy.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7_reviewcopy.png"
+        },
+        {
+          "src": "./assets/1.7-addskill.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7-addskill.png"
+        },
+        {
+          "src": "./assets/1.7_plusskill.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7_plusskill.png"
+        },
+        {
+          "src": "./assets/1.7_createskill.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7_createskill.png"
+        },
+        {
+          "src": "./assets/1.7_testprompt.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7_testprompt.png"
+        },
+        {
+          "src": "./assets/1.7-test.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7-test.png"
+        },
+        {
+          "src": "../assets/ghostwriter-badge.png",
+          "local": "assets/academy/special-ops-ghostwriter/ghostwriter-badge.png"
+        }
+      ],
+      "staged_at": "2026-07-25T03:53:22.257Z",
+      "status": "pending-translation"
     }
   ]
 }
