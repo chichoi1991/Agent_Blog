@@ -205,6 +205,95 @@
       ],
       "staged_at": "2026-07-25T03:53:22.257Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "special-ops-azure-ai-search-rag",
+      "src_path": "special-ops/azure-ai-search-rag",
+      "sha": "a46e1dd3e836bc1aa60259a5368198c119e9cf0b",
+      "title": "🔎 Azure AI Search RAG",
+      "description": "",
+      "category": "academy-labs",
+      "parent": "aspecialops",
+      "parentTitle": "Special Ops — 독립 랩",
+      "parentShort": "Special Ops",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/special-ops/azure-ai-search-rag/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-07-02",
+      "images": [
+        {
+          "src": "assets/azure-search-01.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-01.png"
+        },
+        {
+          "src": "assets/azure-storage-01.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-storage-01.png"
+        },
+        {
+          "src": "assets/openai-embedding-01.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/openai-embedding-01.png"
+        },
+        {
+          "src": "assets/azure-storage-02.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-storage-02.png"
+        },
+        {
+          "src": "assets/azure-storage-03.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-storage-03.png"
+        },
+        {
+          "src": "assets/azure-search-02.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-02.png"
+        },
+        {
+          "src": "assets/azure-search-03.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-03.png"
+        },
+        {
+          "src": "assets/azure-search-04.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-04.png"
+        },
+        {
+          "src": "assets/azure-search-05.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-05.png"
+        },
+        {
+          "src": "assets/azure-search-06.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-06.png"
+        },
+        {
+          "src": "assets/new-experience.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/new-experience.png"
+        },
+        {
+          "src": "assets/new-agent.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/new-agent.png"
+        },
+        {
+          "src": "assets/title-description.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/title-description.png"
+        },
+        {
+          "src": "./assets/rag-knowledge-no-azure-search.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/rag-knowledge-no-azure-search.png"
+        },
+        {
+          "src": "./assets/rag-tool-azure-search-actions.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/rag-tool-azure-search-actions.png"
+        },
+        {
+          "src": "./assets/rag-tool-details-auth.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/rag-tool-details-auth.png"
+        },
+        {
+          "src": "./assets/ai-search-badge.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/ai-search-badge.png"
+        }
+      ],
+      "staged_at": "2026-07-27T04:26:02.022Z",
+      "status": "pending-translation"
     }
   ]
 }
