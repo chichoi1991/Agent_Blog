@@ -20,7 +20,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/special-ops/azure-ai-s
 
 # 🔎 Azure AI Search RAG
 
-<figure class="screenshot"><img src="{{ '/assets/academy/special-ops-azure-ai-search-rag/badge.png' | relative_url }}" alt="Azure AI Search RAG 배지" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Azure AI Search RAG 배지</figcaption></figure>
+<figure class="screenshot"><img src="{{ '/assets/academy/special-ops-azure-ai-search-rag/ai-search-badge.png' | relative_url }}" alt="Azure AI Search RAG 배지" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Azure AI Search RAG 배지</figcaption></figure>
 
 에이전트 여러분, 이번 미션 **Operation Vector Vault**의 목표는 Azure AI Search 벡터 검색 기반 **RAG(Retrieval-Augmented Generation)** 를 사용해 Copilot Studio 에이전트가 조직의 실제 문서를 근거로 답변하게 만드는 것입니다. 검색 서비스를 만들고, 이력서 문서를 벡터화해 인덱싱하고, 이를 **HR Knowledge Agent**에 연결해 키워드가 아닌 의미 중심으로 답변하고 출처를 제시하도록 구성합니다.
 
@@ -335,7 +335,7 @@ Who has project management experience combined with technical skills?
 
 ## 🏅 완료 배지 받기
 
-<figure class="screenshot"><img src="{{ '/assets/academy/special-ops-azure-ai-search-rag/badge.png' | relative_url }}" alt="Azure AI Search RAG Badge" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Azure AI Search RAG Badge</figcaption></figure>
+<figure class="screenshot"><img src="{{ '/assets/academy/special-ops-azure-ai-search-rag/ai-search-badge.png' | relative_url }}" alt="Azure AI Search RAG Badge" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Azure AI Search RAG Badge</figcaption></figure>
 
 배지 신청 폼에 필수 항목을 제출하세요.
 
