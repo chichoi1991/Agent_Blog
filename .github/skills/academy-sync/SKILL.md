@@ -18,14 +18,16 @@ description: Agent Academy(microsoft/agent-academy)의 코스(recruit/operative/
 - 상태: `tools/academy-sync/state.json` — `processed: { "<src_path>": "<sha>" }`
 - 스테이징: `tools/academy-sync/incoming/<slug>.md` + `incoming/_manifest.json`
 - Copilot 위임: `tools/academy-sync/assign-copilot.mjs` (parent/랭크별 이슈)
-- 워크플로: `.github/workflows/academy-sync.yml`
+- 머지 후 정리: `tools/academy-sync/reconcile.mjs` (state.json 갱신·manifest 항목 제거·incoming 삭제, master 단독)
+- 워크플로: `.github/workflows/academy-sync.yml`(감지·위임), `.github/workflows/academy-reconcile.yml`(머지 후 정리)
 - 게시물: `_chapters/academy-<slug>.md` + 부모 랜딩 `_chapters/academy-<parent>.md`
 - 이미지: `assets/academy/<slug>/`
 
 ## 전체 흐름
 ```
 git tree(agent-academy) ──fetch.mjs(sha 비교)──▶ incoming/<slug>.md(EN)+이미지 ──main 커밋──▶
-   assign-copilot.mjs(랭크별 이슈) ──▶ Copilot 번역 PR ──사람 검수 merge──▶ Pages 배포
+   assign-copilot.mjs(랭크별 이슈) ──▶ Copilot 번역 PR(_chapters/*.md 만) ──사람 검수 merge──▶
+   reconcile.mjs(state/manifest/incoming 정리, master) ──▶ Pages 배포
 ```
 
 ## 워크플로 (스킬 실행 순서)
@@ -41,8 +43,10 @@ node tools/academy-sync/fetch.mjs --section special-ops                # 랩만
 1. `incoming/<slug>.md` 원문을 읽는다.
 2. 부모 랜딩(`_chapters/academy-<parent>.md`)이 없으면 생성(`is_parent: true`).
 3. `_chapters/academy-<slug>.md` 생성 — 아래 **출력 규칙** 준수.
-4. `state.json` `processed` 에 `"<src_path>": "<sha>"` 추가(manifest 값).
-5. `incoming/<slug>.md` 삭제 + `_manifest.json` 에서 항목 제거.
+
+> **⚠️ 상태파일은 건드리지 않는다(B 방식).** 번역 작업(특히 Copilot PR)은 **`_chapters/academy-*.md` 생성까지만** 한다.
+> `state.json` 갱신 · `_manifest.json` 항목 제거 · `incoming/<slug>.md` 삭제는 **머지 후 master 에서 `reconcile.mjs` 가 자동 수행**한다.
+> PR 브랜치가 `state.json`/`_manifest.json`/`incoming/` 을 수정하면 매일 도는 `academy-sync` 스케줄 커밋과 충돌하므로 금지.
 ### 3) 빌드 검증 → 반영 (catblog 와 동일; 서버 끄고 `_site` 삭제 후 `bundle exec jekyll build`)
 
 ## 출력 규칙 (_chapters/academy-<slug>.md)
@@ -89,7 +93,9 @@ canonical_url: "<manifest.source_url>"
 ## state.json / 감지 규칙
 - `processed["<src_path>"]` 값이 tree 의 blob sha 와 **같으면** fetch 가 건너뛴다.
   원문이 갱신되면 sha 가 바뀌어 다시 감지된다 → 재번역 대상.
-- 번역 완료 시 반드시 `processed` 에 `"<src_path>": "<sha>"`(manifest 값) 추가.
+- **`processed` 갱신은 사람/Copilot 이 하지 않는다.** 번역 PR 이 master 로 머지되면
+  `reconcile.mjs`(`academy-reconcile.yml`)가 `_chapters/academy-<slug>.md` 존재를 근거로
+  `processed` 에 `"<src_path>": "<sha>"`(manifest 값)를 추가하고 manifest 항목·incoming 파일을 정리한다.
 - 재번역이 필요하면 해당 키를 state 에서 제거 후 fetch 재실행.
 
 ## 함정 / 주의
