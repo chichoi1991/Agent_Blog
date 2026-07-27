@@ -1,0 +1,17 @@
+---
+layout: default
+title: "Microsoft Scout"
+permalink: /scout/
+---
+
+<div class="home-section-head">
+  <h1 class="home-section-title">Microsoft Scout</h1>
+  <p class="home-section-sub">Microsoft Scout Desktop을 개인 비서(Executive Assistant)처럼 활용하는 실무 가이드를 최신순으로 모았습니다.</p>
+</div>
+
+{% assign posts = site.chapters | where: "category", "scout" | sort: "date" | reverse %}
+{% if posts.size == 0 %}
+  <p class="home-section-sub">아직 게시된 글이 없습니다. 곧 업데이트됩니다.</p>
+{% else %}
+  {% include card-feed.html posts=posts %}
+{% endif %}

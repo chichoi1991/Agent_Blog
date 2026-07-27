@@ -44,6 +44,7 @@ nav_sections:
     title: "Copilot Cowork"
   - key: scout
     title: "Microsoft Scout"
+    listing: /scout/
   - key: m365
     title: "Microsoft 365"
     listing: /m365/
