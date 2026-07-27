@@ -1,0 +1,52 @@
+name: Agent Academy reconcile (post-merge state cleanup)
+
+# B 방식(공유 상태파일 분리):
+# Copilot 번역 PR 은 _chapters/academy-*.md (번역본)만 생성한다.
+# 그 PR 이 master 로 머지되면(= _chapters/academy-*.md push) 이 워크플로가 master 에서 단독으로
+#   - state.json 의 processed 갱신
+#   - _manifest.json 에서 게시된 항목 제거
+#   - incoming/<slug>.md 삭제
+# 를 수행한다. 상태파일 쓰기 주체를 master 하나로 모아, 매일 도는 academy-sync 스케줄 커밋과의
+# write-write 충돌(PR 이 며칠 열려 있으면 반드시 발생)을 원천 제거한다.
+#
+# 무한루프 방지: 이 워크플로의 커밋은 tools/academy-sync/** 만 바꾸고 _chapters/academy-*.md 는
+# 건드리지 않으므로 자기 자신을 재트리거하지 않는다.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "_chapters/academy-*.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: academy-reconcile
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Reconcile manifest/state on master
+        run: node tools/academy-sync/reconcile.mjs
+
+      - name: Commit reconciliation
+        run: |
+          if git status --porcelain tools/academy-sync/state.json tools/academy-sync/incoming | grep -q .; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add tools/academy-sync/state.json tools/academy-sync/incoming
+            git commit -m "chore(academy): reconcile state/manifest after translation merge"
+            git pull --rebase origin master
+            git push
+          else
+            echo "변경 없음 — 커밋 생략."
+          fi

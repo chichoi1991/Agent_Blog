@@ -69,8 +69,10 @@ ${list}
    - 본문 최상단에 "원문 번역 게시물" 콜아웃(원문 링크 명시).
    - **VitePress 정리**: \`> [!TIP]\`/\`[!INFO]\`/\`[!WARNING]\` → 블로그 콜아웃(\`<div class="info-box note" markdown="1">\`)로 변환. \`<mission-meta />\`·\`<analytics-tag .../>\` 등 커스텀 컴포넌트 제거. 제목 앵커 \`{#...}\` 제거. 상대 링크(\`../02-.../index.md\`)는 제거하거나 원문 절대 URL로.
    - 이미지는 이미 \`assets/academy/<slug>/\` 에 다운로드됨(manifest의 images 참조). 기존 컨벤션대로 \`<figure class="screenshot"><img src="{{ '/assets/academy/<slug>/<file>' | relative_url }}" ...><figcaption>...</figcaption></figure>\` 로 삽입.
-3. \`tools/academy-sync/state.json\` 의 \`processed\` 에 \`"<src_path>": "<sha>"\` 추가(manifest 값 사용).
-4. 번역한 \`incoming/<slug>.md\` 삭제 + \`_manifest.json\` 에서 항목 제거.
+> ⚠️ **이 PR 은 \`_chapters/academy-*.md\` (번역본)만 생성/수정한다.**
+> \`tools/academy-sync/state.json\`, \`incoming/_manifest.json\`, \`incoming/<slug>.md\` 는 **절대 수정·삭제하지 마.**
+> 이 파일들은 매일 도는 \`academy-sync\` 스케줄이 master 에서 갱신하므로, PR 이 건드리면 충돌한다.
+> 상태 반영(state 갱신·manifest 항목 제거·incoming 삭제)은 **머지 후 \`reconcile.mjs\` 가 master 에서 자동 수행**한다.
 
 완료되면 이 이슈를 참조하는 PR 을 열어줘.
 
