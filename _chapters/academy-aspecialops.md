@@ -39,4 +39,10 @@ Special Ops는 Copilot Studio Agent Academy의 독립 실전 랩 모음으로, �
 7. [📄 Microsoft Copilot Studio + Docusign MCP]({{ '/chapters/academy-special-ops-docusign-mcp/' | relative_url }})  
    Docusign MCP Demo 서버를 Copilot Studio 에이전트에 연결하고 Workflow Builder 자동화를 트리거합니다.
 
+8. [🔐 OAuth 2.0으로 보안 MCP 서버 연동하기]({{ '/chapters/academy-special-ops-mcp-oauth/' | relative_url }})  
+   OAuth 2.0 인증으로 보호된 MCP 서버를 Copilot Studio 에이전트에 연결하는 방법을 실습합니다.
+
+9. [✍️ Operation Ghostwriter: Skills로 만드는 마케팅 콘텐츠 에이전트]({{ '/chapters/academy-special-ops-ghostwriter/' | relative_url }})  
+   하나의 거대한 지시 블록 대신 Skills를 활용해 마케팅 콘텐츠 에이전트를 모던 방식으로 구축합니다.
+
 각 랩은 독립적으로 수행할 수 있지만, MCP 기반 랩들을 순서대로 진행하면 이해도를 높일 수 있습니다.
