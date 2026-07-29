@@ -29,12 +29,12 @@
     "recruit/course-completion-badges-recruit": "14acd2fe3dbdc752d5150afa32aa8d47ee4ca305",
     "special-ops/docusign-mcp": "cb042cb7215e626c923057d00554f9b334e4aed7",
     "special-ops/mcs-mcp": "d84b29350a88f5030d2bc03485544af83bbf0291",
-    "special-ops/ms-learn-mcp": "a5a13e048ecb1fdfb6bb417a7e5404c454a946c4",
+    "special-ops/ms-learn-mcp": "6d8f65b69787c1b1406659066a37cc59fe7b0ca1",
     "special-ops/pac-cli-mcp": "3cbf10e9efc03caa14aa3baf38ae392df0cf4d08",
     "special-ops/pac-cli-mcp/power-platform-plan": "90864c398779413006733fe55a4ccb391066a3c6",
     "special-ops/yaml-specialist": "81c67fbda31722a100db55e6d42512ac043d1361",
-    "special-ops/azure-ai-search-rag": "a46e1dd3e836bc1aa60259a5368198c119e9cf0b",
-    "special-ops/mcp-oauth": "1b89bfb6e652beb5e71cb9e244fb59c5f5186e0d",
+    "special-ops/azure-ai-search-rag": "e7bfa53ecb808947279ede54cb3690fd87bcb528",
+    "special-ops/mcp-oauth": "f5a91039c0a7cf611ec5b7129160e20fa96256ad",
     "special-ops/ghostwriter": "d6d793e27e7ac017af4d17cf88182420a7e68b1c"
   }
 }
