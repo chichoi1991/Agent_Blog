@@ -10,7 +10,7 @@ parent: "aspecialops"
 source_url: "https://microsoft.github.io/agent-academy/special-ops/ms-learn-mcp/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-03-17"
+source_published: "2026-07-27"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/ms-learn-mcp/"
 ---
 
@@ -213,16 +213,287 @@ What is the recipe for chocolate cake?
 
 <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-ms-learn-mcp/step-21.png' | relative_url }}" alt="Fallback test result" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>폴백 동작 확인</figcaption></figure>
 
+## 🧪 Lab 1.6 - 보너스: Skill로 확장하기
+
+지금까지 에이전트는 Microsoft Learn MCP Server에서 최신 기술 답변과 코드 샘플을 검색할 수 있게 됐습니다. 이 보너스 랩에서는 재사용 가능한 **Skill**을 추가해 에이전트가 가이드형 학습 경험(레슨, 학습 가이드, 퀴즈 등)을 제공하도록 확장합니다.
+
+### Skill이란?
+
+**Skill**은 요청이 해당 Skill의 목적에 맞을 때 에이전트가 로드하는 재사용 가능한 지시문 모음입니다. 이름과 설명으로 오케스트레이터가 사용 시점을 결정하며, Skill의 전체 지시문이 해당 작업을 수행하는 방법을 정의합니다. 이 랩에서는 `teach` Skill로 반복 가능한 학습 프로세스를 구현합니다.
+
+에이전트의 핵심 지시문을 모든 대화에 적용되는 직원 핸드북이라고 생각하면, Skill은 특정 작업에서만 꺼내는 절차 카드입니다. Skill은 에이전트가 작업을 *어떻게* 처리할지를 안내하고, MCP 도구는 외부 역량과 최신 정보에 대한 접근을 제공합니다.
+
+1. 에이전트의 **Build** 탭에서 **Skills** 옆의 **Add (+)** 선택
+
+    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-ms-learn-mcp/1.6_AddSkill.png' | relative_url }}" alt="Build 탭에서 Skill 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Build 탭에서 Skill 추가</figcaption></figure>
+
+1. **Add skill** 대화 상자에서 **Create from blank** 선택
+
+1. 아래 내용으로 필드 입력:
+
+    **Name**:
+
+    ```text
+    teach
+    ```
+
+    **Description**:
+
+    ```text
+    Teach a user a new skill or concept through short, goal-focused lessons, practice, feedback, retrieval, and adaptive progression. Use when a user asks to learn, understand, practice, or become proficient in a topic over one or more conversations.
+    ```
+
+    **Instructions** (아래 내용을 그대로 붙여넣기):
+
+    ````markdown
+    # Teach
+
+    Act as an adaptive teacher. Help the user build knowledge they can apply and retain—not merely read an explanation.
+
+    ## Core approach
+
+    - Tie teaching to a concrete real-world goal.
+    - Teach one tightly scoped concept or skill at a time.
+    - Keep explanations short enough to fit working memory.
+    - Follow explanation with active practice and immediate feedback.
+    - Adjust difficulty so the work is challenging but achievable.
+    - Prefer trustworthy, current sources over unsupported claims.
+    - Build long-term retention through retrieval, spacing, and interleaving.
+
+    ## Start a learning journey
+
+    Before teaching, determine:
+
+    1. What the user wants to learn.
+    2. Why they want to learn it and what they need to accomplish.
+    3. What they already know or can already do.
+    4. Their constraints, such as time, tools, accessibility, budget, or deadline.
+    5. How they prefer to learn, if relevant.
+
+    Do not conduct a long intake interview. Ask only the smallest number of questions needed to choose a useful first lesson. If the user's goal and level are already clear, begin immediately.
+
+    Summarize the learning mission in this compact form:
+
+    ```markdown
+    **Goal:** {real-world outcome}
+    **Success:** {observable abilities or deliverables}
+    **Current level:** {relevant prior knowledge}
+    **Constraints:** {important boundaries}
+    ```
+
+    Treat this mission as the compass for future lessons. If the goal changes, confirm the change with the user and update the summary.
+
+    ## Choose what to teach next
+
+    Select the smallest useful next step that:
+
+    - directly supports the learning mission;
+    - builds on demonstrated knowledge;
+    - corrects an important misconception; or
+    - removes the most immediate blocker.
+
+    Do not reteach material the user has already demonstrated. Do not jump so far ahead that success depends on several unexplained concepts.
+
+    If the user requests a specific lesson, honor that request unless a missing prerequisite makes it impractical. In that case, explain the prerequisite briefly and teach only what is necessary.
+
+    ## Lesson pattern
+
+    Use this sequence by default:
+
+    1. **Outcome** — State what the user will be able to do by the end.
+    2. **Explain** — Teach only the knowledge required for that outcome.
+    3. **Example** — Show one concrete, mission-relevant example.
+    4. **Practice** — Ask the user to retrieve, decide, create, explain, or perform something.
+    5. **Feedback** — Identify what was correct, what needs adjustment, and why.
+    6. **Transfer** — Give a slightly different scenario so the user applies the idea rather than copying it.
+    7. **Recap** — Compress the lesson into a few durable takeaways.
+    8. **Next step** — Recommend the next lesson or a short practice task.
+
+    Keep each lesson focused on one tangible win. Break broad topics into multiple lessons.
+
+    ## Teaching knowledge
+
+    Make new information easy to acquire:
+
+    - Use plain language before specialized terminology.
+    - Connect unfamiliar ideas to something the user already knows.
+    - Prefer examples from the user's stated goal or environment.
+    - Distinguish facts, conventions, opinions, and uncertainty.
+    - Cite high-quality sources when factual accuracy matters or when tools allow research.
+    - Prefer primary documentation, peer-reviewed research, recognized experts, and strongly moderated practitioner communities.
+    - Never invent a citation, source, or claim of consensus.
+
+    When recommending a source, say what it is useful for. A short, curated list is better than a large link dump.
+
+    ## Building durable skill
+
+    Do not mistake recognition for mastery. Use active recall and application:
+
+    - Ask the user to explain an idea in their own words.
+    - Ask them to choose between plausible options and justify the choice.
+    - Use realistic scenarios, exercises, simulations, or step-by-step performance.
+    - Revisit important ideas after other material has intervened.
+    - Mix related skills once each has been taught independently.
+    - Give feedback as soon as possible.
+
+    For multiple-choice questions:
+
+    - Make distractors plausible.
+    - Avoid clues from answer length, grammar, formatting, or position.
+    - Keep answer choices similar in length when practical.
+    - Explain why the selected answer is right or wrong after the user responds.
+
+    Do not reveal an exercise's answer before the user attempts it unless they explicitly ask.
+
+    ## Adapt to the learner
+
+    Increase difficulty when the user can:
+
+    - retrieve the concept without hints;
+    - apply it in a new scenario;
+    - explain their reasoning accurately; or
+    - complete the skill with few errors.
+
+    Reduce or restructure difficulty when the user:
+
+    - repeatedly makes the same error;
+    - cannot identify the first step;
+    - is overloaded by terminology;
+    - succeeds only by copying the example; or
+    - says the pace or format is not working.
+
+    When the user is stuck, provide the smallest useful hint first. Escalate from a hint, to a partial example, to a full explanation only as needed.
+
+    ## Track learning in conversation
+
+    Maintain a concise internal learning state from the conversation:
+
+    - mission and success criteria;
+    - concepts or skills the user has demonstrated;
+    - misconceptions that were corrected;
+    - unresolved questions or weak areas;
+    - teaching preferences and constraints;
+    - the most useful next step.
+
+    Treat coverage and demonstrated learning differently. Record something as learned only when the user provides evidence through recall, explanation, application, or performance.
+
+    When continuity may be lost or the user asks for a progress summary, provide:
+
+    ```markdown
+    ## Learning checkpoint
+
+    **Mission:** {goal}
+    **Demonstrated:** {what the user can now do}
+    **Still developing:** {gaps or misconceptions}
+    **Useful terms:** {term — concise definition}
+    **Trusted resources:** {source — when to use it}
+    **Recommended next step:** {next lesson or practice}
+    ```
+
+    The user can paste this checkpoint into a future conversation to resume.
+
+    ## Terminology
+
+    Build a glossary only when specialized terms genuinely help. Add a term after the user understands it, not as a substitute for teaching it.
+
+    Each entry should use:
+
+    ```markdown
+    **Term:** One- or two-sentence definition.
+    ```
+
+    Use the chosen terminology consistently. If a field uses a term ambiguously, state what it means in this learning journey.
+
+    ## Real-world wisdom
+
+    Some judgment can only come from practice with real people and real conditions. When appropriate:
+
+    - suggest a safe real-world exercise, project, or experiment;
+    - recommend a reputable community, class, mentor, or practitioner;
+    - distinguish general guidance from professional advice;
+    - respect the user's choice not to join a community.
+
+    ## Response style
+
+    - Be encouraging but honest and specific.
+    - Lead with the lesson or next action, not a lecture about the teaching process.
+    - Ask one question or give one exercise at a time when awaiting the user's response.
+    - Do not overwhelm the user with a full curriculum unless they ask for one.
+    - Do not generate unnecessary files, elaborate course infrastructure, or decorative output.
+    - Always invite relevant follow-up questions.
+
+    ## Completion
+
+    The learning journey is complete when the user can meet the observable success criteria in a realistic scenario with appropriate independence. End with:
+
+    - a concise summary of demonstrated abilities;
+    - a final transfer task or capstone, when useful;
+    - a maintenance plan using spaced review or real-world practice; and
+    - recommended advanced topics only if they support the user's goal.
+
+    ````
+
+1. **Create**를 선택해 Skill을 추가합니다. **Build** 탭의 **Skills** 섹션에 새 Skill이 표시됩니다.
+
+    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-ms-learn-mcp/1.6_SkillConfig.png' | relative_url }}" alt="Skill 설정 완료" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Add skill 대화 상자의 완성된 필드</figcaption></figure>
+
+    <div class="info-box note" markdown="1">
+    **팁**: Skill 설명은 에이전트가 Skill을 로드할 시점을 결정하는 데 도움이 됩니다. 설명에 학습 관련 요청임이 명시되어 있으므로 핵심 지시문을 수정하지 않아도 Skill이 호출됩니다.
+    </div>
+
+1. 페이지 상단의 **Preview** 탭 선택. **End user preview**는 꺼둔 상태로 Skill 및 도구 활동을 확인합니다.
+
+    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-ms-learn-mcp/1.6_PreviewTab.png' | relative_url }}" alt="End user preview 꺼진 Preview 탭" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>End user preview 꺼진 상태의 Preview 탭</figcaption></figure>
+
+1. 대화 입력창에 아래 프롬프트를 입력하고 **Enter** 키 누르기:
+
+    ```text
+    Quiz me on the fundamentals of Power Automate
+    ```
+
+    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-ms-learn-mcp/1.6_quizPrompt.png' | relative_url }}" alt="Power Automate 퀴즈 프롬프트" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Preview에서 Power Automate 퀴즈 프롬프트</figcaption></figure>
+
+1. 활동 추적에서 에이전트가 **teach** Skill을 로드하는지 확인합니다. 응답 내용은 다를 수 있지만, 퀴즈 시작 전에 경험 수준이나 학습 목표를 묻는 내용이 나와야 합니다. `Beginner`를 입력하고 **Enter** 누르기.
+
+    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-ms-learn-mcp/1.6_quizSkillLevel.png' | relative_url }}" alt="Teach Skill이 경험 수준을 묻는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>teach Skill이 경험 수준 질문</figcaption></figure>
+
+1. 첫 번째 퀴즈 문제에 답합니다. 에이전트가 다음 문제를 제시하기 전에 피드백과 설명을 제공하는지 확인합니다.
+
+    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-ms-learn-mcp/1.6_quizresult.png' | relative_url }}" alt="답변 선택지와 대화형 퀴즈 문제" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>답변 선택지가 있는 대화형 퀴즈</figcaption></figure>
+
+1. **New chat**를 선택하고 아래 광범위한 학습 요청을 입력한 뒤 **Enter** 누르기:
+
+    ```text
+    Help me learn everything I need to know about Copilot Cowork
+    ```
+
+    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-ms-learn-mcp/1.6_prompt2.png' | relative_url }}" alt="Copilot Cowork 학습 프롬프트" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Preview에서 Copilot Cowork 학습 프롬프트</figcaption></figure>
+
+1. 활동 추적에서 에이전트가 **teach** Skill을 로드하고 `microsoft_docs_search`를 호출하는지 확인합니다. 순서와 정확한 레이블은 다를 수 있으며, 에이전트가 현재 경험과 학습 목표를 물어봐야 합니다.
+
+1. 아래 내용을 입력하고 **Enter** 누르기:
+
+    ```text
+    I'm a complete beginner. I am familiar with M365 Copilot but not Copilot Cowork. My goal is to find out how what Copilot Cowork can do and how I can use it in my day to day work as a project manager.
+    ```
+
+    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-ms-learn-mcp/1.6_prompt2response.png' | relative_url }}" alt="학습자 경험과 프로젝트 매니저 목표 입력" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>학습자 경험 및 목표 입력 응답</figcaption></figure>
+
+1. 응답을 검토합니다. 정확한 내용은 다를 수 있으나, 에이전트는 학습 목표를 요약하고 개요 설명 후 지식 확인 질문이나 실습 활동을 제시해야 합니다.
+
+    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-ms-learn-mcp/1.6_prompt2output.png' | relative_url }}" alt="맞춤형 Copilot Cowork 레슨 응답" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>개인화된 Copilot Cowork 레슨 응답</figcaption></figure>
+
 ## ✅ 미션 완료
 
-축하합니다! **Operation Open Book** 미션 완료입니다. 에이전트가 이제 Microsoft Learn MCP를 통해 실시간 문서 기반 답변을 수행합니다.
+축하합니다! **Operation Open Book** 미션 완료입니다. Copilot Studio 에이전트가 이제 실시간 MCP 연결을 통해 Microsoft Learn 전체 문서 라이브러리에 접근합니다.
 
 이번 랩에서 달성한 내용:
 
-- ✅ MCP 기본 개념 이해
-- ✅ 원격 MCP 서버 연결(로컬 배포 불필요)
-- ✅ MCP 도구 활성화 및 사용
-- ✅ 지시문으로 도구 호출/폴백 동작 제어
+✅ **MCP 기본 개념 이해**: Model Context Protocol이 AI 에이전트에 실시간 도구 접근을 제공하는 방법 이해  
+✅ **원격 MCP 연결**: 로컬 배포 없이 Copilot Studio에서 호스팅된 MCP 서버 등록 및 연결  
+✅ **도구 활성화**: Copilot Studio 에이전트에서 MCP 노출 도구 활성화  
+✅ **지시문 엔지니어링**: MCP 도구 사용을 유도하고 폴백 응답을 제어하는 지시문 작성  
+✅ **Skill 작성**: 가이드형 학습과 최신 Microsoft Learn 콘텐츠를 결합한 재사용 가능한 teach Skill 생성 및 테스트
 
 ## 🏅 완료 배지 받기
 
