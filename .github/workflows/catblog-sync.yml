@@ -10,7 +10,7 @@ name: CAT blog sync (detect + assign Copilot)
 #        → Copilot 번역 PR → 사람 검수 merge → Pages 배포
 #
 # 트리거:
-#   - schedule: 매일 00:20 UTC (한국시간 오전 9:20)
+#   - schedule: 매일 2회 - 00:20 UTC(오전 9:20 KST), 12:20 UTC(오후 9:20 KST)
 #   - workflow_dispatch: 수동 실행(limit 지정 가능)
 #
 # 토큰(할당용):
@@ -20,6 +20,7 @@ name: CAT blog sync (detect + assign Copilot)
 on:
   schedule:
     - cron: "20 0 * * *"
+    - cron: "20 12 * * *"
   workflow_dispatch:
     inputs:
       limit:
