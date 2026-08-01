@@ -26,6 +26,9 @@ defaults:
 
 # Sidebar navigation sections (그룹 지원: {group, sections:[...]} 또는 {key, title})
 nav_sections:
+  - key: agent-resources
+    title: "Microsoft Agent 통합 리소스"
+    listing: /agent-resources/
   - key: newcs
     title: "New Copilot Studio (CLI Agent)"
   - key: newcslab
@@ -48,9 +51,6 @@ nav_sections:
   - key: m365
     title: "Microsoft 365"
     listing: /m365/
-  - key: agent-resources
-    title: "Microsoft Agent 통합 교육 리소스"
-    listing: /agent-resources/
   - group: "Copilot Studio Classic"
     sections:
       - key: guide
