@@ -13,3 +13,6 @@ vendor/
 Thumbs.db
 *~
 bin/
+
+# 로컬 전용 메모 (배포 제외)
+_local-notes/

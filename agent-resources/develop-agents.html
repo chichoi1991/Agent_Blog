@@ -1,0 +1,418 @@
+---
+layout: default
+title: "에이전트 개발 리소스"
+permalink: /agent-resources/develop-agents/
+---
+
+<div class="ar-detail-nav">
+  <a href="{{ '/agent-resources/' | relative_url }}" class="ar-back-link">← Agent 리소스 허브</a>
+</div>
+
+<div class="ar-detail-hero ar-detail-hero--dev">
+  <div class="ar-detail-hero-icon">
+    <img src="{{ '/assets/img/agent-resources/agent-framework-icon.png' | relative_url }}" alt="Agent Development">
+  </div>
+  <div>
+    <span class="ar-detail-eyebrow">Develop Agents</span>
+    <h1 class="ar-detail-title">에이전트 개발 리소스</h1>
+    <p class="ar-detail-desc">Microsoft SDK, 프로토콜, OSS 도구를 활용하여 엔터프라이즈 AI 에이전트를 개발하기 위한 개발자 리소스입니다. <a href="https://aka.ms/wearecat" target="_blank" rel="noopener">Microsoft Copilot Acceleration Team (CAT)</a>이 큐레이션했습니다.</p>
+  </div>
+</div>
+
+<nav class="ar-toc-bar">
+  <a href="#get-started">시작하기</a>
+  <a href="#extend-m365">M365 확장</a>
+  <a href="#sdks">Microsoft SDK</a>
+  <a href="#protocols">프로토콜</a>
+  <a href="#oss">OSS/서드파티</a>
+  <a href="#samples">샘플</a>
+  <a href="#learning">학습</a>
+  <a href="#community">커뮤니티</a>
+</nav>
+
+<div class="ar-detail-body">
+
+  <section id="get-started" class="ar-section">
+    <h2 class="ar-section-title">🚀 시작하기</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://microsoft.github.io/agent-resources/" target="_blank" rel="noopener">에이전트 리소스 허브</a>
+        <span class="ar-resource-desc">— Microsoft 에이전트 개발 전체 생태계를 보여주는 공식 허브</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/architecture/ai-ml/architecture/ai-agent-design-patterns" target="_blank" rel="noopener">AI 에이전트 솔루션 아키텍처</a>
+        <span class="ar-resource-desc">— 에이전트 시스템을 설계하기 위한 패턴과 아키텍처 원칙</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/architecture/ai-ml/architecture/agent-design-guidelines" target="_blank" rel="noopener">에이전트 설계 지침</a>
+        <span class="ar-resource-desc">— 좋은 에이전트를 만들기 위한 설계 원칙 및 권장 패턴</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365-copilot/extensibility/agents-sdk" target="_blank" rel="noopener">M365 Agents SDK</a>
+        <span class="ar-resource-desc">— Microsoft 365 Copilot를 확장하는 공식 에이전트 SDK</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-copilot-studio/sdk" target="_blank" rel="noopener">Copilot Studio SDK</a>
+        <span class="ar-resource-desc">— 코드로 Copilot Studio 에이전트를 개발하는 SDK</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension" target="_blank" rel="noopener">Teams Toolkit VS Code 확장</a>
+        <span class="ar-resource-desc">— Visual Studio Code에서 Teams 앱과 에이전트를 개발하는 공식 확장</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">에이전트 아키타입</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/architecture/ai-ml/architecture/agent-archetypes" target="_blank" rel="noopener">에이전트 아키타입 가이드</a>
+        <span class="ar-resource-desc">— 알림형, 보조형, 자율형 등 에이전트 종류별 설계 패턴</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="extend-m365" class="ar-section">
+    <h2 class="ar-section-title">🔌 M365 Copilot 확장</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365-copilot/extensibility/" target="_blank" rel="noopener">M365 Copilot 확장성 개요</a>
+        <span class="ar-resource-desc">— Agent Store, Work IQ, SharePoint Copilot Apps를 통한 확장 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent" target="_blank" rel="noopener">선언형 에이전트 (Declarative Agents)</a>
+        <span class="ar-resource-desc">— JSON으로 에이전트 동작을 선언하여 M365 Copilot에 통합하는 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-message-extension-bot" target="_blank" rel="noopener">메시지 확장 플러그인</a>
+        <span class="ar-resource-desc">— Teams 메시지 확장을 M365 Copilot 플러그인으로 변환하는 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/graph/connecting-external-content-connectors-overview" target="_blank" rel="noopener">Microsoft Graph 커넥터</a>
+        <span class="ar-resource-desc">— 외부 데이터 소스를 Graph에 연결하여 Copilot에서 검색 가능하게 만들기</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="sdks" class="ar-section">
+    <h2 class="ar-section-title">🛠️ Microsoft SDK</h2>
+    <h3 class="ar-subsection-title">Agent Framework (MAF)</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework" target="_blank" rel="noopener">Agent Framework 소개</a>
+        <span class="ar-resource-desc">— 복잡한 멀티 에이전트 시스템을 구축하는 Microsoft Agent Framework 소개</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework/quickstart" target="_blank" rel="noopener">MAF 퀵스타트</a>
+        <span class="ar-resource-desc">— Agent Framework로 첫 번째 에이전트를 만드는 단계별 가이드</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework/memory" target="_blank" rel="noopener">MAF 메모리 관리</a>
+        <span class="ar-resource-desc">— 에이전트가 컨텍스트를 기억하고 참조하는 메모리 패턴</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework/workflows" target="_blank" rel="noopener">MAF 워크플로</a>
+        <span class="ar-resource-desc">— 순차적·병렬·조건부 에이전트 실행 워크플로 구성 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework/a2a" target="_blank" rel="noopener">MAF A2A (에이전트 간 통신)</a>
+        <span class="ar-resource-desc">— Agent-to-Agent 프로토콜로 에이전트 간 작업을 위임하는 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework/dev-ui" target="_blank" rel="noopener">MAF 개발자 UI</a>
+        <span class="ar-resource-desc">— 에이전트 실행을 시각적으로 디버깅하는 Developer UI 도구</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/azure/azure-ai-agent-framework" target="_blank" rel="noopener">MAF GitHub 저장소</a>
+        <span class="ar-resource-desc">— Agent Framework 오픈소스 코드, 샘플, 이슈 트래커</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/azure/azure-ai-agent-framework/tree/main/samples" target="_blank" rel="noopener">MAF 샘플 코드</a>
+        <span class="ar-resource-desc">— 다양한 에이전트 패턴을 보여주는 Agent Framework 예제 모음</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework/azure-functions" target="_blank" rel="noopener">MAF + Azure Functions</a>
+        <span class="ar-resource-desc">— Azure Functions를 에이전트 도구로 통합하는 서버리스 패턴</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Semantic Kernel (SK)</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/semantic-kernel/overview/" target="_blank" rel="noopener">Semantic Kernel 공식 문서</a>
+        <span class="ar-resource-desc">— .NET, Python, Java를 지원하는 Microsoft 오픈소스 AI 오케스트레이션 SDK</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/semantic-kernel" target="_blank" rel="noopener">Semantic Kernel GitHub</a>
+        <span class="ar-resource-desc">— Semantic Kernel 오픈소스 코드 저장소 (⭐ 30K+)</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://www.nuget.org/packages/Microsoft.SemanticKernel/" target="_blank" rel="noopener">SK NuGet 패키지 (.NET)</a>
+        <span class="ar-resource-desc">— .NET 프로젝트에 Semantic Kernel을 설치하는 NuGet 패키지</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://pypi.org/project/semantic-kernel/" target="_blank" rel="noopener">SK PyPI 패키지 (Python)</a>
+        <span class="ar-resource-desc">— Python 프로젝트에 Semantic Kernel을 설치하는 PyPI 패키지</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">M365 Agents SDK</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365/agents-sdk/" target="_blank" rel="noopener">M365 Agents SDK 공식 문서</a>
+        <span class="ar-resource-desc">— Teams, M365 Copilot, Azure Bot Service를 지원하는 통합 에이전트 SDK</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://devblogs.microsoft.com/microsoft365dev/announcing-m365-agents-sdk/" target="_blank" rel="noopener">M365 Agents SDK 발표 블로그</a>
+        <span class="ar-resource-desc">— M365 Agents SDK 출시 배경과 Bot Framework에서의 마이그레이션 안내</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365/agents-sdk/quickstart-csharp" target="_blank" rel="noopener">퀵스타트 — C#</a>
+        <span class="ar-resource-desc">— C#으로 첫 번째 M365 에이전트를 만드는 빠른 시작 가이드</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365/agents-sdk/quickstart-javascript" target="_blank" rel="noopener">퀵스타트 — JavaScript</a>
+        <span class="ar-resource-desc">— JavaScript/TypeScript로 M365 에이전트를 만드는 빠른 시작 가이드</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365/agents-sdk/quickstart-python" target="_blank" rel="noopener">퀵스타트 — Python</a>
+        <span class="ar-resource-desc">— Python으로 M365 에이전트를 만드는 빠른 시작 가이드</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/teams-ai" target="_blank" rel="noopener">M365 Agents SDK GitHub</a>
+        <span class="ar-resource-desc">— M365 Agents SDK 오픈소스 저장소 (구 Teams AI 라이브러리)</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365/agents-sdk/botframework-migration" target="_blank" rel="noopener">Bot Framework 마이그레이션 가이드</a>
+        <span class="ar-resource-desc">— 기존 Bot Framework 봇을 M365 Agents SDK로 전환하는 마이그레이션 가이드</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Copilot Studio 개발자 도구</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://marketplace.visualstudio.com/items?itemName=microsoft.copilotstudio" target="_blank" rel="noopener">VS Code 확장 — Copilot Studio</a>
+        <span class="ar-resource-desc">— Visual Studio Code에서 Copilot Studio 에이전트를 코드로 개발</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/power-platform/developer/cli/introduction" target="_blank" rel="noopener">Power Platform CLI</a>
+        <span class="ar-resource-desc">— 명령줄에서 Copilot Studio 에이전트를 관리하는 Power Platform CLI</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Agent 365 SDK</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365/agent365/sdk" target="_blank" rel="noopener">Agent 365 SDK 공식 문서</a>
+        <span class="ar-resource-desc">— Agent 365 플랫폼과 통합하는 개발자 SDK 문서</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/agent365-sdk-nodejs" target="_blank" rel="noopener">Agent 365 SDK — Node.js</a>
+        <span class="ar-resource-desc">— Node.js 환경에서 Agent 365를 통합하는 공식 SDK</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/agent365-sdk-python" target="_blank" rel="noopener">Agent 365 SDK — Python</a>
+        <span class="ar-resource-desc">— Python 환경에서 Agent 365를 통합하는 공식 SDK</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/agent365-sdk-dotnet" target="_blank" rel="noopener">Agent 365 SDK — .NET</a>
+        <span class="ar-resource-desc">— .NET 환경에서 Agent 365를 통합하는 공식 SDK</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Azure AI Foundry Agent Service SDK</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/sdk" target="_blank" rel="noopener">Foundry Agent Service SDK 문서</a>
+        <span class="ar-resource-desc">— Azure AI Foundry 에이전트 서비스를 코드로 제어하는 SDK</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="protocols" class="ar-section">
+    <h2 class="ar-section-title">📡 프로토콜 및 표준</h2>
+    <h3 class="ar-subsection-title">A2A (Agent-to-Agent 프로토콜)</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://google.github.io/A2A/" target="_blank" rel="noopener">A2A 프로토콜 사양</a>
+        <span class="ar-resource-desc">— 서로 다른 에이전트 플랫폼 간 상호 운용을 위한 A2A 프로토콜 공식 사양</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/google-a2a/A2A" target="_blank" rel="noopener">A2A GitHub</a>
+        <span class="ar-resource-desc">— A2A 프로토콜 오픈소스 구현 코드 및 샘플</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">MCP (Model Context Protocol)</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://modelcontextprotocol.io/docs" target="_blank" rel="noopener">MCP 공식 문서</a>
+        <span class="ar-resource-desc">— AI 모델에 외부 데이터와 도구를 연결하는 MCP 표준 공식 문서</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/modelcontextprotocol/python-sdk" target="_blank" rel="noopener">MCP Python SDK</a>
+        <span class="ar-resource-desc">— Python으로 MCP 서버와 클라이언트를 구현하는 공식 SDK</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/modelcontextprotocol/typescript-sdk" target="_blank" rel="noopener">MCP TypeScript SDK</a>
+        <span class="ar-resource-desc">— TypeScript/JavaScript로 MCP를 구현하는 공식 SDK</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/Azure/azure-mcp" target="_blank" rel="noopener">Azure MCP 서버</a>
+        <span class="ar-resource-desc">— Azure 서비스를 MCP 프로토콜로 노출하는 공식 Azure MCP 서버</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/adding-mcp-plugins" target="_blank" rel="noopener">SK + MCP 통합</a>
+        <span class="ar-resource-desc">— Semantic Kernel에 MCP 플러그인을 추가하는 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-copilot-studio/agent-mcp" target="_blank" rel="noopener">Copilot Studio + MCP</a>
+        <span class="ar-resource-desc">— Copilot Studio 에이전트에서 MCP 서버를 연결하여 도구를 확장하는 방법</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="oss" class="ar-section">
+    <h2 class="ar-section-title">🌐 OSS 및 서드파티</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://python.langchain.com/docs/integrations/providers/azure" target="_blank" rel="noopener">LangChain — Azure 통합</a>
+        <span class="ar-resource-desc">— LangChain 프레임워크와 Azure AI 서비스를 통합하는 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://microsoft.github.io/autogen/" target="_blank" rel="noopener">AutoGen (AG2)</a>
+        <span class="ar-resource-desc">— Microsoft Research의 멀티 에이전트 대화 프레임워크 AutoGen</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://www.crewai.com/" target="_blank" rel="noopener">CrewAI</a>
+        <span class="ar-resource-desc">— 역할 기반 에이전트 팀을 구성하는 CrewAI 프레임워크</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://docs.llamaindex.ai/en/stable/" target="_blank" rel="noopener">LlamaIndex</a>
+        <span class="ar-resource-desc">— 데이터 중심 RAG와 에이전트 워크플로를 위한 LlamaIndex 프레임워크</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="samples" class="ar-section">
+    <h2 class="ar-section-title">💾 샘플 및 리포지토리</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://github.com/azure/azureai-samples" target="_blank" rel="noopener">azureai-samples</a>
+        <span class="ar-resource-desc">— Azure AI Foundry 공식 샘플 코드 저장소</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/semantic-kernel/tree/main/python/samples" target="_blank" rel="noopener">Semantic Kernel Python 샘플</a>
+        <span class="ar-resource-desc">— Semantic Kernel Python 예제 코드 모음</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/semantic-kernel/tree/main/dotnet/samples" target="_blank" rel="noopener">Semantic Kernel .NET 샘플</a>
+        <span class="ar-resource-desc">— Semantic Kernel .NET 예제 코드 모음</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/Agent365-Samples" target="_blank" rel="noopener">Agent365 샘플</a>
+        <span class="ar-resource-desc">— Agent 365 플랫폼 통합 샘플 코드</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/OfficeDev/TeamsFx/tree/main/templates" target="_blank" rel="noopener">Teams Toolkit 샘플 템플릿</a>
+        <span class="ar-resource-desc">— Teams Toolkit에서 시작 가능한 에이전트 프로젝트 템플릿</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/azure/azure-ai-agent-framework/tree/main/samples" target="_blank" rel="noopener">Agent Framework 샘플</a>
+        <span class="ar-resource-desc">— MAF 기반 멀티 에이전트 패턴 예제</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/build-2026-demos" target="_blank" rel="noopener">Build 2026 데모 코드</a>
+        <span class="ar-resource-desc">— Microsoft Build 2026에서 선보인 에이전트 데모 소스 코드</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/multi-agent-reference-architecture" target="_blank" rel="noopener">멀티 에이전트 참조 아키텍처</a>
+        <span class="ar-resource-desc">— 엔터프라이즈 멀티 에이전트 시스템의 참조 아키텍처 구현</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/autogen" target="_blank" rel="noopener">AutoGen GitHub</a>
+        <span class="ar-resource-desc">— AutoGen 오픈소스 멀티 에이전트 프레임워크 코드 저장소</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/OfficeDev/Copilot-for-M365-Samples" target="_blank" rel="noopener">Copilot-for-M365-Samples</a>
+        <span class="ar-resource-desc">— M365 Copilot 확장 개발 샘플 (선언형 에이전트, 플러그인)</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://adoption.microsoft.com/sample-solution-gallery/" target="_blank" rel="noopener">샘플 솔루션 갤러리</a>
+        <span class="ar-resource-desc">— 즉시 배포 가능한 Microsoft 365 솔루션 갤러리</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/CopilotStudioSamples" target="_blank" rel="noopener">CopilotStudioSamples</a>
+        <span class="ar-resource-desc">— Copilot Studio 에이전트 개발 샘플 저장소</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/copilot-connectors-samples" target="_blank" rel="noopener">Copilot 커넥터 샘플</a>
+        <span class="ar-resource-desc">— Graph 커넥터 및 Copilot 플러그인 샘플 코드</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/skills-for-copilot-studio" target="_blank" rel="noopener">Copilot Studio용 스킬</a>
+        <span class="ar-resource-desc">— Copilot Studio에서 재사용 가능한 스킬 모듈 라이브러리</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="learning" class="ar-section">
+    <h2 class="ar-section-title">🎓 학습 및 과정</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://aka.ms/AIAgentsForBeginners" target="_blank" rel="noopener">AI Agents for Beginners (12강)</a>
+        <span class="ar-resource-desc">— GitHub에서 제공하는 12강 구성 에이전트 개발 무료 입문 과정</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/training/paths/develop-ai-agents-azure-open-ai-semantic-kernel-sdk/" target="_blank" rel="noopener">MS Learn — Semantic Kernel로 AI 에이전트 개발</a>
+        <span class="ar-resource-desc">— Azure OpenAI와 Semantic Kernel SDK를 활용하는 공식 학습 경로</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/training/paths/m365-agents-sdk/" target="_blank" rel="noopener">MS Learn — M365 Agents SDK 학습 경로</a>
+        <span class="ar-resource-desc">— M365 Agents SDK를 처음부터 배우는 구조화된 학습 경로</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://aka.ms/CopilotDevCamp" target="_blank" rel="noopener">Copilot Dev Camp</a>
+        <span class="ar-resource-desc">— M365 Copilot 확장 개발자를 위한 집중 학습 캠프</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/credentials/certifications/exams/ai-3026/" target="_blank" rel="noopener">AI-3026 인증 — AI 에이전트 솔루션 개발</a>
+        <span class="ar-resource-desc">— Microsoft 에이전트 개발 역량을 공식 검증하는 새 인증 시험</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Build 2026 세션</h3>
+    <div class="ar-session-grid">
+      <a href="https://build.microsoft.com/sessions/BRK101" target="_blank" rel="noopener" class="ar-session-badge">BRK101 — 에이전트 개발 패턴</a>
+      <a href="https://build.microsoft.com/sessions/BRK102" target="_blank" rel="noopener" class="ar-session-badge">BRK102 — M365 Agents SDK</a>
+      <a href="https://build.microsoft.com/sessions/BRK103" target="_blank" rel="noopener" class="ar-session-badge">BRK103 — Semantic Kernel</a>
+      <a href="https://build.microsoft.com/sessions/BRK104" target="_blank" rel="noopener" class="ar-session-badge">BRK104 — MCP & A2A</a>
+      <a href="https://build.microsoft.com/sessions/BRK105" target="_blank" rel="noopener" class="ar-session-badge">BRK105 — MAF 멀티 에이전트</a>
+      <a href="https://build.microsoft.com/sessions/DEM201" target="_blank" rel="noopener" class="ar-session-badge">DEM201 — 에이전트 데모</a>
+    </div>
+    <h3 class="ar-subsection-title">동영상 튜토리얼</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://www.youtube.com/@NTFAQGuy" target="_blank" rel="noopener">John Savill — 에이전트 아키텍처 심화</a>
+        <span class="ar-resource-desc">— 클라우드 아키텍트를 위한 에이전트 설계 패턴 기술 비디오</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://www.youtube.com/c/MicrosoftDeveloper" target="_blank" rel="noopener">Microsoft Developer YouTube</a>
+        <span class="ar-resource-desc">— SDK, 프레임워크, 코딩 튜토리얼이 풍부한 개발자 공식 채널</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="community" class="ar-section">
+    <h2 class="ar-section-title">🤝 커뮤니티</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://techcommunity.microsoft.com/t5/microsoft-developer-community/ct-p/DeveloperCommunity" target="_blank" rel="noopener">Microsoft Developer Tech Community</a>
+        <span class="ar-resource-desc">— 에이전트 개발 관련 기술 블로그와 토론이 모이는 개발자 커뮤니티</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/semantic-kernel/discussions" target="_blank" rel="noopener">Semantic Kernel GitHub Discussions</a>
+        <span class="ar-resource-desc">— Semantic Kernel 사용자와 팀이 함께 토론하는 GitHub Discussions</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://stackoverflow.com/questions/tagged/microsoft-agents-sdk" target="_blank" rel="noopener">Stack Overflow — microsoft-agents-sdk</a>
+        <span class="ar-resource-desc">— M365 Agents SDK 관련 Q&amp;A Stack Overflow 태그</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://discord.gg/semantic-kernel" target="_blank" rel="noopener">Semantic Kernel Discord</a>
+        <span class="ar-resource-desc">— 실시간 채팅과 도움을 주고받는 Semantic Kernel 커뮤니티 Discord</span>
+      </div>
+    </div>
+  </section>
+
+</div>

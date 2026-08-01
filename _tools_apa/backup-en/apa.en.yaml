@@ -1,0 +1,688 @@
+################################################################################
+# Microsoft Agent Platform Advisor — Scoring Matrix
+# Platforms: Agent Builder (agent_builder), Microsoft 365 Copilot (m365_copilot),
+#            Copilot Studio (copilot_studio), Microsoft Foundry (foundry)
+#
+# Score scale: 0 = not a fit · 1 = weak signal · 2 = moderate · 3 = strong
+# Max raw score per platform: 15 (5 questions × max 3)
+################################################################################
+
+meta:
+  version: "1.1"
+  platforms:
+    - id: agent_builder
+      label: Agent Builder
+    - id: m365_copilot
+      label: Microsoft 365 Copilot
+    - id: copilot_studio
+      label: Copilot Studio
+    - id: foundry
+      label: Microsoft Foundry
+
+################################################################################
+# QUESTIONS
+################################################################################
+
+questions:
+
+  - id: q1
+    label: Who is building this agent?
+    purpose: Sets persona weight for interpreting later answers
+    prompt: Some platforms are designed for makers using low-code tools, while others require professional development skills.
+    options:
+      - id: q1a
+        label: Business user or subject matter expert — no coding experience
+        scores:
+          agent_builder: 3
+          copilot_studio: 1
+          foundry: 0
+
+      - id: q1b
+        label: Low-code maker or IT professional — comfortable with drag-and-drop tools and configuration
+        scores:
+          agent_builder: 1
+          copilot_studio: 3
+          foundry: 0
+
+      - id: q1c
+        label: Professional developer — writes code and builds software
+        scores:
+          agent_builder: 0
+          copilot_studio: 2
+          foundry: 3
+
+      - id: q1d
+        label: Data scientist or AI/ML engineer — works with AI models and data infrastructure
+        scores:
+          agent_builder: 0
+          copilot_studio: 1
+          foundry: 3
+
+  - id: q8
+    label: Who will use this agent?
+    purpose: External-facing is a hard constraint that affects platform eligibility
+    prompt: Will this agent be used by a small internal group, a broad internal audience, or external users such as customers or partners?
+    hard_rules:
+      - condition: option in [q8b]
+        effect: >
+          Set agent_builder = 0 and m365_copilot = 0.
+          Agent Builder has no external publishing path.
+          Microsoft 365 Copilot is tenant-scoped only.
+    options:
+      - id: q8a
+        label: Me or a small internal team — quick agent for a bounded group
+        scores:
+          agent_builder: 3
+          copilot_studio: 2
+          foundry: 1
+
+      - id: q8c
+        label: A department or broad internal audience — many employees need a managed agent
+        scores:
+          agent_builder: 1
+          copilot_studio: 3
+          foundry: 2
+
+      - id: q8b
+        label: External users — customers, partners, or the public
+        scores:
+          agent_builder: 0
+          copilot_studio: 3
+          foundry: 3
+        hard_rule_trigger: true
+
+      - id: q8d
+        label: Not decided yet
+        scores:
+          agent_builder: 2
+          copilot_studio: 2
+          foundry: 1
+
+  - id: q2
+    label: Where will users interact with this agent?
+    purpose: Deployment surface is often a hard constraint
+    prompt: Think about where people will access or use the agent in their day-to-day work.
+    options:
+      - id: q2a
+        label: Inside Microsoft 365 Copilot chat — Microsoft365.com, Office.com, or Teams desktop/web
+        scores:
+          agent_builder: 3
+          copilot_studio: 3
+          foundry: 2
+
+      - id: q2b
+        label: In a custom app — a website or mobile app your team builds
+        scores:
+          agent_builder: 0
+          copilot_studio: 3
+          foundry: 3
+
+      - id: q2c
+        label: Running automatically in the background — triggered by events, not by a person chatting with it
+        scores:
+          agent_builder: 0
+          copilot_studio: 3
+          foundry: 3
+
+      - id: q2d
+        label: Multiple places, or not decided yet
+        scores:
+          agent_builder: 1
+          copilot_studio: 3
+          foundry: 3
+
+  - id: q4
+    label: What should this agent do?
+    purpose: Single strongest discriminator between Copilot Studio and Foundry
+    prompt: What type of work do you want this agent to handle? Choose the option that best represents the most advanced task you expect it to perform.
+    hard_rules:
+      - condition: option == q4d
+        effect: >
+          Set foundry = 3. Cap agent_builder and m365_copilot at 0
+          regardless of other answers.
+    options:
+      - id: q4a
+        label: Answer questions in a single exchange — Q&A, lookups, or summaries
+        scores:
+          agent_builder: 3
+          copilot_studio: 3
+          foundry: 1
+
+      - id: q4b
+        label: Have a back-and-forth conversation and remember context
+        scores:
+          agent_builder: 2
+          copilot_studio: 3
+          foundry: 2
+
+      - id: q4e
+        label: Create or analyze content inside Copilot — documents, charts, images, or lightweight data analysis
+        scores:
+          agent_builder: 3
+          copilot_studio: 2
+          foundry: 2
+
+      - id: q4c
+        label: Complete multi-step tasks — follow a process, check multiple systems, or take actions like submitting forms or updating records
+        scores:
+          agent_builder: 0
+          copilot_studio: 3
+          foundry: 3
+
+      - id: q4d
+        label: Manage complex workflows — coordinate multiple agents or handle long-running processes
+        scores:
+          agent_builder: 0
+          copilot_studio: 2
+          foundry: 3
+        hard_rule_trigger: true
+
+  - id: q3
+    label: What information does this agent need to access?
+    purpose: Grounding requirements narrow the field fast
+    prompt: Where does the information this agent needs currently live? Pick the option closest to where the information lives today.
+    options:
+      - id: q3a
+        label: Microsoft 365 content — SharePoint, OneDrive, Teams, Outlook, or people data
+        scores:
+          agent_builder: 3
+          copilot_studio: 2
+          foundry: 1
+
+      - id: q3b
+        label: Business systems already available through Microsoft 365 Copilot connectors — like Jira, ServiceNow, GitHub, or Azure DevOps
+        scores:
+          agent_builder: 2
+          copilot_studio: 3
+          foundry: 2
+
+      - id: q3c
+        label: Dataverse, custom connectors, or direct business APIs your team can expose to the agent
+        scores:
+          agent_builder: 0
+          copilot_studio: 3
+          foundry: 2
+
+      - id: q3d
+        label: A mix — Microsoft 365 content plus connector-backed business systems
+        scores:
+          agent_builder: 2
+          copilot_studio: 3
+          foundry: 2
+
+      - id: q3e
+        label: Public websites or uploaded files — scoped web sources, PDFs, Office files, or other embedded content
+        scores:
+          agent_builder: 3
+          copilot_studio: 2
+          foundry: 1
+
+      - id: q3f
+        label: Custom RAG, Azure AI Search, private indexes, Foundry IQ knowledge bases, or large-scale retrieval managed by engineering
+        scores:
+          agent_builder: 0
+          copilot_studio: 1
+          foundry: 3
+
+################################################################################
+# SCORING ENGINE
+################################################################################
+
+scoring:
+
+  # Step 1 — Hard rules are evaluated before summing.
+  # They cap or zero out platforms regardless of cumulative scores.
+  # Hard rules represent real platform limitations, not preferences.
+  hard_rule_evaluation: pre_sum
+  hard_rules:
+    q4d:
+      zero: [agent_builder, m365_copilot]
+      label: "Complex agent orchestration — Agent Builder and M365 Copilot are not suitable for multi-agent or long-running orchestration"
+    q4c:
+      zero: [agent_builder]
+      label: "Multi-step action workflows — Agent Builder cannot submit forms, update records, or take actions across systems"
+    q8b:
+      zero: [agent_builder, m365_copilot]
+      label: "External user audience — Agent Builder and M365 Copilot cannot publish externally"
+    q2b:
+      zero: [agent_builder]
+      label: "Custom app deployment — Agent Builder can only run inside Microsoft 365"
+    q2c:
+      zero: [agent_builder]
+      label: "Background execution — Agent Builder has no event-driven or autonomous capabilities"
+    q3c:
+      zero: [agent_builder]
+      label: "Direct business system integration — Agent Builder cannot directly connect to Dataverse, custom connectors, or business APIs"
+    q3f:
+      zero: [agent_builder]
+      label: "Custom retrieval architecture — Agent Builder cannot directly use custom RAG, Azure AI Search, private indexes, Foundry IQ, or engineering-managed retrieval systems"
+  # Step 2 — Sum raw scores across all answered questions.
+  raw_score_max: 15  # 5 questions × max score of 3
+
+  # Step 2.5 — Persona preferences: soft overrides that force one platform
+  # above another when a specific persona is selected. Unlike hard rules,
+  # scores are preserved. A rationale message is shown to explain the override.
+  persona_preferences:
+    - when:
+        q1: q1d
+      prefer: copilot_studio
+      over: agent_builder
+      rationale: >
+        Copilot Studio is recommended over Agent Builder for data scientists and AI/ML engineers
+        because it supports curated model selection, agent evaluations, Foundry IQ integration,
+        code-first development via the VS Code extension, and more flexible orchestration —
+        capabilities that Agent Builder does not offer.
+
+  # Step 3 — Map raw scores to recommendation strength.
+  recommendation_thresholds:
+    - min: 12
+      max: 15
+      label: Strong fit
+      description: This platform is well-aligned with your requirements across all dimensions.
+    - min: 8
+      max: 11
+      label: Good fit
+      description: This platform meets most of your requirements with minor tradeoffs.
+    - min: 4
+      max: 7
+      label: Partial fit
+      description: This platform can address your scenario but may require workarounds.
+    - min: 0
+      max: 3
+      label: Not recommended
+      description: This platform is unlikely to meet your requirements in this scenario.
+
+  # Step 5 — Tie handling: surface both as a complementary pair.
+  tie_handling:
+    threshold_points: 2
+    present_as: complementary_pair
+    # Persona-based tiebreakers — applied before valid_pairs when a specific
+    # answer makes one platform a better fit despite equal scores.
+    tiebreakers:
+      - when:
+          q1: q1c
+        platforms: [agent_builder, copilot_studio]
+        prefer: copilot_studio
+        rationale: >
+          When the builder is a professional developer and scores are equal,
+          Copilot Studio is the better fit — it supports code-first authoring
+          via the VS Code extension while Agent Builder is no-code only.
+      - when:
+          q1: q1d
+        platforms: [copilot_studio, foundry]
+        prefer: copilot_studio
+        rationale: >
+          When the builder is a data scientist or AI/ML engineer and scores are equal,
+          Copilot Studio is preferred — it provides a faster path to production
+          agents while Foundry is reserved for deeper custom orchestration.
+    valid_pairs:
+      - platforms: [copilot_studio, foundry]
+        rationale: Build in Copilot Studio, extend with custom code in Foundry.
+      - platforms: [m365_copilot, copilot_studio]
+        rationale: Microsoft 365 Copilot for end users, Copilot Studio for customization and extension.
+      - platforms: [agent_builder, m365_copilot]
+        rationale: Agent Builder for Microsoft 365-native agents, Microsoft 365 Copilot for broader extensibility.
+
+  # Cross-question contradiction notes — shown as contextual banners
+  # when the user's answer combination is logically contradictory.
+  cross_question_notes:
+    - when:
+        q2: q2c
+        q4: q4a
+      note: >
+        You selected a background, event-driven agent but also chose simple Q&A.
+        Background agents typically process events automatically rather than answering
+        user questions. Consider whether your agent is event-driven or conversational.
+    - when:
+        q8: q8b
+        q2: q2a
+      note: >
+        You selected external users but want the agent inside Microsoft 365 apps.
+        External users typically can't access your organization's Teams, SharePoint,
+        or Outlook. Your agent may need a custom web deployment to reach them.
+    - when:
+        q1: q1a
+        q4: q4d
+      note: >
+        Complex multi-agent orchestration typically requires professional development
+        skills. Consider partnering with your development team, or selecting a simpler
+        task type that matches your experience level.
+    - when:
+        q1: q1a
+        q3: q3c
+      note: >
+        Direct business system integrations like Dataverse, custom connectors, or APIs
+        usually require technical expertise to configure. Consider whether your IT or
+        development team will help set up data access for the agent.
+    - when:
+        q1: q1a
+        q3: q3f
+      note: >
+        Custom retrieval architectures like Azure AI Search, private indexes, Foundry IQ,
+        or large-scale RAG usually require engineering expertise. Consider partnering with
+        your development or data platform team before building the agent.
+
+  # Winner-persona mismatch notes — shown when the recommended platform
+  # doesn't match the builder persona.
+  winner_persona_notes:
+    - winner: foundry
+      persona: q1a
+      note: >
+        Microsoft Foundry is the right platform for this scenario, but it requires
+        professional development skills and Azure expertise. Consider partnering with
+        your development team to build and maintain this agent.
+
+################################################################################
+# RECOMMENDATION COPY
+################################################################################
+
+recommendations:
+
+  agent_builder:
+    headline: Agent Builder
+    description: Create lightweight agents in minutes without writing code, grounded in Microsoft 365 content, scoped web, uploaded files, and admin-enabled Copilot connectors
+    resources_url: https://microsoft.github.io/agent-resources/m365-copilot/#agent-builder
+    scoring_summary: Best suited for no-code, small-team declarative agents inside Microsoft 365 Copilot.
+    exploration_best_for: Create no-code agents in Microsoft 365 Copilot
+    exploration_summary: >
+      Choose Agent Builder when you want to create agents without writing any code,
+      using Microsoft 365 content, scoped web sources, uploaded files, or business data
+      already exposed through Microsoft 365 Copilot connectors. Ideal for business users
+      who need Q&A, summarization, lookup, or lightweight content and data-analysis
+      helpers for themselves or a small team.
+    summary: >
+      The right starting point for business users who want to build
+      lightweight declarative agents directly inside Microsoft 365 Copilot without writing code.
+    best_for:
+      - No-code creators building for themselves or a small internal team
+      - Agents grounded in Microsoft 365 content, scoped web, uploaded files, or admin-enabled Copilot connectors
+      - Q&A, summarization, lookup, coaching, and lightweight document, chart, image, or data-analysis scenarios
+    watch_out_for:
+      - Can't be shared with people outside your organization
+      - Broad department or organization-wide agents usually need Copilot Studio's deployment and governance controls
+      - External business data must be available through Microsoft 365 Copilot connectors; direct APIs, Dataverse, custom databases, private search indexes, and custom retrieval require Copilot Studio or Foundry
+      - Not suitable for custom action logic, approvals, branching workflows, or external system updates
+      - Copy the agent to Copilot Studio when you outgrow Agent Builder's sharing, integration, lifecycle, or governance limits
+      - No evaluation or testing tools — quality assurance is manual
+      - No lifecycle management — no versioning, environments, or CI/CD
+      - Minimal observability — limited visibility into agent behavior and usage
+    templates:
+      - label: Career Coach
+        description: Personalized career development plans, skill gap analysis, and actionable advice
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-career-coach
+      - label: Corporate Communications Crafter
+        description: On-brand internal and external communications — announcements, newsletters, exec updates
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-corporate-communications
+      - label: Customer Insight Assistant
+        description: Detailed customer profiles including industry, priorities, leadership, and competitors
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-customer-insight
+      - label: Idea Coach
+        description: Guided brainstorming sessions with creative exercises to develop and refine ideas
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-idea-coach
+      - label: Interview Question Assistant
+        description: Tailored, high-quality interview questions based on role and job description
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-interview-questions
+      - label: Learning Coach
+        description: Structured learning plans and topic summaries tailored to individual knowledge gaps
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-learning-coach
+      - label: Meeting Coach
+        description: Structured agendas, role assignments, and real-time guidance to run effective meetings
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-meeting-coach
+      - label: Prompt Coach
+        description: Guides users in crafting well-structured Copilot prompts through interactive feedback
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-prompt-coach
+      - label: Request for Proposal Assistant
+        description: Generates tailored RFP response drafts from existing proposal content and templates
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-rfp-assistant
+      - label: Quiz Tutor
+        description: Interactive quizzes based on training content to reinforce learning and knowledge retention
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-quiz-tutor
+      - label: Scrum Assistant
+        description: Real-time guidance on scrum ceremonies, backlog management, and Agile best practices
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-scrum-assistant
+      - label: Text Translator Assistant
+        description: Translates text, adjusts tone for professional communication, and improves writing quality
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-text-translator
+      - label: Writing Coach
+        description: Detailed feedback on clarity, coherence, grammar, and tone to elevate writing quality
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-writing-coach
+
+  m365_copilot:
+    headline: Microsoft 365 Copilot
+    description: Built-in, permission-aware AI across Microsoft 365 Copilot Chat, Search, Word, Excel, PowerPoint, Outlook, Teams, Loop, Pages, Notebooks, and Microsoft-built agents
+    resources_url: https://microsoft.github.io/agent-resources/m365-copilot/
+    scoring_summary: Fits scenarios where Microsoft 365 Copilot's built-in chat, search, app, notebook, and first-party agent capabilities already cover the need.
+    exploration_best_for: Use built-in AI across Microsoft 365
+    exploration_summary: >
+      Use Microsoft 365 Copilot when employees need built-in, permission-aware help
+      across Microsoft 365 Copilot Chat, Copilot Search, Word, Excel, PowerPoint,
+      Outlook, Teams, Loop, Pages, Notebooks, and Microsoft-built agents like
+      Researcher, Analyst, Facilitator, and Interpreter. Ideal when the work can
+      be handled by existing Microsoft 365 experiences rather than a custom agent.
+    summary: >
+      Best when built-in Microsoft 365 Copilot capabilities already meet most of
+      what users need — chat, search, app-native assistance, collaborative pages
+      and notebooks, and Microsoft-built agents grounded in each user's permitted
+      work content, connected sources, and the web.
+    # The entry-point wizard's task-type answer picks which surface inside
+    # Microsoft 365 Copilot to start with. Copilot Chat and the built-in agents
+    # are surfaces of this one product, not separate destinations.
+    start_here:
+      chat:
+        label: Copilot Chat
+        url: https://learn.microsoft.com/microsoft-365/copilot/microsoft-365-copilot-overview
+        tagline: Ask, summarize, and draft in the flow of work
+        description: >-
+          The conversational front door to Microsoft 365 Copilot — you ask, iterate, and get
+          answers, summaries, and drafts yourself, grounded in your email, meetings, files, and
+          messages. Call a specialized agent from here whenever a task needs one.
+      agents:
+        label: Built-in agents — Researcher, Analyst, Facilitator, Interpreter
+        url: https://learn.microsoft.com/microsoft-365/copilot/researcher-agent
+        tagline: Purpose-built agents for specialized jobs
+        description: >-
+          Start with the agent built for the job — Researcher for source-cited deep research,
+          Analyst for data analysis in Python, Facilitator for meeting notes and follow-ups,
+          Interpreter for live translation. They run inside Microsoft 365 Copilot alongside chat,
+          so you can move between them without switching products.
+
+    best_for:
+      - Ad hoc, user-initiated questions, summaries, and drafting
+      - Working through a task yourself rather than handing it off
+      - Specialized jobs a Microsoft-built agent already handles
+      - Grounded in your Microsoft 365 context (email, meetings, files, messages)
+    watch_out_for:
+      - You stay in the loop — it does not run a multi-step task end to end on its own
+      - Not always-on or proactively monitoring
+      - Use Cowork instead when you want to delegate a bounded, multi-step deliverable
+      - Use Scout instead when work should continue or act over time
+
+    first_party_label: Built-in Copilot capabilities and agents
+    first_party_agents:
+      - label: Copilot Chat
+        description: Permission-aware chat for drafting, summarizing, answering questions, and working across Microsoft 365 content and the web
+        url: https://learn.microsoft.com/microsoft-365/copilot/microsoft-365-copilot-overview
+      - label: Copilot Search
+        description: AI-powered universal search across Microsoft 365 and connected third-party sources, with natural-language queries and handoff to chat
+        url: https://learn.microsoft.com/microsoft-365/copilot/microsoft-365-copilot-search
+      - label: Copilot Pages and Notebooks
+        description: Persistent, shareable workspaces for synthesizing content and grounding Copilot on curated material; stored in SharePoint Embedded/Loop containers
+        url: https://learn.microsoft.com/microsoft-365/loop/cpcn-requirements
+      - label: Sales agent
+        description: Seller productivity in Teams, Outlook, and CRM apps
+        url: https://learn.microsoft.com/microsoft-sales-copilot/
+      - label: Service agent
+        description: Customer service agent assistance across support channels
+        url: https://learn.microsoft.com/microsoft-copilot-service/
+      - label: Finance agent
+        description: Financial workflows, analysis, and reconciliation in Excel and Outlook
+        url: https://learn.microsoft.com/copilot/finance/
+      - label: Employee Self-Service Agent
+        description: HR and IT self-service within Teams for policies, FAQs, and requests
+        url: https://learn.microsoft.com/copilot/microsoft-365/employee-self-service/overview
+      - label: SharePoint Agent
+        description: Q&A grounded in a specific SharePoint site or document library
+        url: https://support.microsoft.com/office/get-started-with-sharepoint-agents-69e2faf9-2c1e-4baa-8305-23e625021bcf
+      - label: Facilitator Agent
+        description: Meeting facilitation, collaborative real-time notes, Q&A, timeline markers, action items, and preview Planner/Word integrations in Teams
+        url: https://learn.microsoft.com/microsoftteams/facilitator-teams
+      - label: Researcher Agent
+        description: Performs deeper, source-cited, multi-step research across web and work content to produce structured reports, visuals, and recommendations
+        url: https://learn.microsoft.com/microsoft-365/copilot/researcher-agent
+      - label: Analyst Agent
+        description: Transforms complex data into clear insights, charts, and visualizations using Python
+        url: https://techcommunity.microsoft.com/blog/microsoft365copilotblog/analyst-agent-in-microsoft-365-copilot/4397191
+      - label: Interpreter Agent
+        description: Real-time speech-to-speech interpretation in Teams meetings across nine languages, with optional voice simulation and included monthly capacity
+        url: https://learn.microsoft.com/microsoftteams/interpreter-agent-teams
+      - label: Project Manager Agent
+        description: Automates project plan creation, task tracking, and status reporting in Planner (preview)
+        url: https://aka.ms/agents/ProjectManagerDocs
+      - label: Channel Agent
+        description: Teams channel expert for summarizing conversations, managing tasks, and boosting productivity (preview)
+        url: https://support.microsoft.com/office/get-started-with-channel-agent-for-teams-channels-b85945cf-deef-4f1e-9db1-66e1a23b6a65
+      - label: Community Agent
+        description: Accelerates knowledge sharing and surfaces expertise across org communities in Viva Engage (preview)
+        url: https://learn.microsoft.com/viva/engage/ai-technology-with-viva-engage/agents-community-network-deployment-config
+
+  copilot_studio:
+    headline: Copilot Studio
+    description: Build governed enterprise agents that combine knowledge, tools, workflows, event triggers, human review, connected agents, evaluation, monitoring, and multi-channel deployment
+    resources_url: https://microsoft.github.io/agent-resources/copilot-studio/
+    scoring_summary: The governed low-code platform for enterprise agents that need actions, workflows, connectors, evaluation, monitoring, and broad deployment.
+    exploration_best_for: Build governed enterprise agents and workflows
+    exploration_summary: >
+      Choose Copilot Studio when you need agents that go beyond quick knowledge lookup —
+      connecting to CRMs, databases, APIs, MCP servers, workflows, Microsoft 365 context,
+      and other agents. Great for makers and IT teams building governed agents that can
+      reason, take actions, evaluate quality, and deploy across channels.
+    summary: >
+      The best low-code platform for governed enterprise agents — connect to outside
+      systems, automate business processes, use generative orchestration, evaluate
+      quality, monitor behavior, and deploy to websites, Teams, Microsoft 365, and more.
+    best_for:
+      - Low-code makers and IT pros
+      - Agents connecting to external APIs, CRM, ERP, Dataverse, databases, MCP servers, or custom connectors
+      - Event-triggered, scheduled, or user-triggered workflows with actions, branching, human review, and approvals
+      - Agent-to-agent orchestration — child agents, connected Copilot Studio agents, and A2A integrations
+      - Automating legacy web or desktop apps with computer use when no API exists
+      - Multi-turn conversational experiences with generative orchestration, Microsoft IQ context, and optional per-user memory in the new experience
+      - Internal and external-facing deployment
+      - Built-in evaluation test sets, activity maps, analytics, monitoring, and tenant-wide agent inventory
+    watch_out_for:
+      - Complex ML pipelines or custom model training require Foundry
+      - Highly custom, high-scale, or code-first multi-agent orchestration is better served by Foundry
+      - Supports curated GA, preview, and experimental models, including deep reasoning models; use Foundry for arbitrary bring-your-own model hosting, custom model training, model routing, and full runtime control
+      - Memory is available in the new experience preview with per-user/per-agent storage and lifecycle limits; use Foundry when you need custom memory architecture, longer retention, or application-controlled memory
+      - Computer use requires careful credential, supervision, access-control, observability, and cost governance
+      - Copilot Credits can scale quickly with generative answers, agent actions, tenant graph grounding, workflows, reasoning models, voice, and computer use
+    persona_tips:
+      q1c: >
+        🛠️ <strong>Developer tip:</strong> You can build Copilot Studio agents in YAML using the
+        <a href="https://learn.microsoft.com/microsoft-copilot-studio/authoring-overview" target="_blank" rel="noopener noreferrer">Copilot Studio extension for VS Code</a>
+
+  foundry:
+    headline: Microsoft Foundry
+    description: A developer platform and managed agent runtime for building, deploying, evaluating, and operating production-grade agents with full code, model, tool, identity, networking, and observability control
+    resources_url: https://microsoft.github.io/agent-resources/microsoft-foundry/
+    scoring_summary: The right choice when production agents need code-first control, managed hosting, custom retrieval, advanced tooling, identity, observability, or strict compliance.
+    exploration_best_for: Build and operate production-grade agentic systems
+    exploration_summary: >
+      Choose Microsoft Foundry when your team needs a managed agent runtime with
+      full developer control — prompt agents, hosted code agents, custom protocols,
+      Foundry models, toolboxes, MCP, Foundry IQ, private networking, agent identity,
+      tracing, evaluation, monitoring, and publishing to Microsoft 365 or custom apps.
+      Built for professional developers, architects, and ML engineers.
+    summary: >
+      The right choice when your team needs to build and operate production-grade
+      agents as software — with managed endpoints, versioning, custom code, model
+      catalog access, custom retrieval, agent identity, private networking, tracing,
+      evaluation, and monitoring.
+    best_for:
+      - Professional developers, architects, and ML engineers
+      - Prompt agents when you want Foundry to run the agent without maintaining application code
+      - Hosted agents when you need your own code, Agent Framework, LangGraph, OpenAI Agents SDK, Anthropic Agent SDK, GitHub Copilot SDK, or custom frameworks
+      - Agents embedded in custom-built applications, backend services, APIs, webhooks, voice systems, or custom protocols
+      - Custom RAG and enterprise retrieval with Foundry IQ, Azure AI Search, Azure Blob Storage, SharePoint, OneLake, web sources, citations, ACLs, and Purview sensitivity labels
+      - Foundry Toolboxes and MCP-compatible tool bundles with centralized authentication, versioning, and policy enforcement
+      - Dedicated Microsoft Entra agent identities, RBAC, private networking, content filters, and bring-your-own Azure resources
+      - Full development lifecycle — versioning, stable endpoints, rollback, publishing, tracing, evaluation, optimization, monitoring, and Application Insights integration
+      - Publishing agents to Microsoft 365 Copilot, Teams, custom apps, services, and the Entra Agent Registry
+      - Strict compliance, data residency, private networking, or security requirements
+    watch_out_for:
+      - Higher implementation complexity and time-to-value
+      - Requires Azure expertise and development resources
+      - Hosted agents add container compute, framework, protocol, and operational responsibilities
+      - Some capabilities, including selected tools, optimizer, A2A, and portions of agentic retrieval, may be preview depending on API version, region, and setup
+      - Use Copilot Studio for low-code departmental workflows, Dataverse/custom connector automations, and fast maker-led delivery
+      - Use Agent Builder for simple no-code Microsoft 365 Copilot knowledge agents
+
+  # ---------------------------------------------------------------------------
+  # Ready-made agent entry points (entry-point wizard only) — Cowork and Scout
+  # are places an end user goes to get work done, not platforms you build agents
+  # on. (The wizard's third destination, Microsoft 365 Copilot, is defined above
+  # because it is also a scored-wizard platform.) They are NOT part of the scored wizard and
+  # never appear in meta.platforms. They are reached only via the prescreen
+  # "Help me find the right place to get work done" path, which asks about the
+  # work pattern (involvement, cadence, reach) instead of product names.
+  # ---------------------------------------------------------------------------
+
+  cowork:
+    headline: Copilot Cowork
+    description: A ready-made agent inside Microsoft 365 Copilot that plans and completes multi-step work on your behalf — and can be extended with custom skills and plugins
+    resources_url: https://learn.microsoft.com/microsoft-365/copilot/cowork/
+    scoring_summary: Best for delegating a bounded, multi-step Microsoft 365 deliverable on demand.
+    exploration_best_for: Delegate multi-step Microsoft 365 work on demand
+    exploration_summary: >
+      Cowork acts as your AI delegate inside Microsoft 365 Copilot — you describe an
+      outcome, it creates a plan, works through the steps, and pauses for approval
+      before sensitive actions. Ideal for meeting prep, inbox and calendar cleanup,
+      deep research, and coordinated document sets, with human-in-the-loop checkpoints.
+    summary: >
+      Delegate a defined, multi-step outcome across Microsoft 365 and get the work
+      package completed — with approvals and checkpoints before sensitive actions.
+    best_for:
+      - Handing off a bounded, multi-step Microsoft 365 deliverable on demand
+      - Meeting packets, inbox and calendar cleanup, deep research, coordinated document sets
+      - Human-in-the-loop control — progress updates, approval checkpoints, pause/resume/cancel
+      - Grounded in your Microsoft 365 context (email, meetings, files, messages) via Work IQ
+      - Extending the experience with custom skills and plugins
+    watch_out_for:
+      - On demand and user-initiated — not always-on or proactively monitoring
+      - Centered on Microsoft 365 — no desktop, shell, browser, or local-file runtime
+      - Usage-based billing through Copilot Credits
+      - Take actions like sending email or posting in Teams require explicit approval
+      - Use Microsoft 365 Copilot (Copilot Chat) instead when you just want to ask and iterate yourself
+      - Use Scout instead when work should run continuously or reach beyond Microsoft 365
+
+  scout:
+    headline: Microsoft Scout
+    description: An always-on personal Autopilot desktop app that works autonomously across your files, shell, browser, and Microsoft 365 — and can be extended with custom skills and plugins
+    resources_url: https://learn.microsoft.com/microsoft-scout/overview
+    scoring_summary: Best for always-on, proactive follow-through across desktop, browser, and Microsoft 365.
+    exploration_best_for: An always-on personal autonomous agent 
+    exploration_summary: >
+      Scout is Microsoft's first Autopilot — an always-on personal agent with its own
+      identity that works autonomously across files, shell, browser, and Microsoft 365,
+      including in the background on schedules or triggers. Ideal for proactive
+      monitoring, coordination, and follow-through that spans local and cloud
+      environments. Currently a Frontier preview.
+    summary: >
+      An always-on Autopilot that proactively keeps work moving across desktop,
+      browser, local files, and Microsoft 365 — even when you are not prompting it.
+    best_for:
+      - Continuous, proactive follow-through rather than one-time tasks
+      - Scheduled or condition-triggered work via heartbeat mode and automations
+      - Acting across local files, shell commands, browser automation, code, and Microsoft 365
+      - Delegating work to specialized sub-agents
+      - Monitoring for risks like stalled decisions and upcoming deliverables
+      - Extending the experience with custom skills and plugins
+    watch_out_for:
+      - Frontier preview — capabilities, access, and commercialization details can change
+      - Gated through Frontier enrollment, Intune policy, attestation, and GitHub Copilot licensing
+      - Desktop application for Windows and macOS
+      - Sensitive actions (sending email, writing files, running commands) require approval
+      - Use Cowork instead when the work is a bounded Microsoft 365 deliverable done on demand
+      - Use Microsoft 365 Copilot (Copilot Chat) instead when you just want to ask and iterate yourself
+
+################################################################################

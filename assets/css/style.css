@@ -45,8 +45,6 @@ body {
   line-height: 1.7;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
-  /* 전체 화면 크기 확대 (브라우저 확대와 동일한 효과) */
-  zoom: 1.2;
 }
 
 a { color: var(--link); text-decoration: none; transition: color 0.15s; }
@@ -118,6 +116,7 @@ a:hover { color: var(--link-hover); }
   max-width: 1680px;
   margin: 0 auto;
   min-height: 100vh;
+  min-height: 100dvh;
   padding-top: 56px;
 }
 
@@ -130,6 +129,7 @@ a:hover { color: var(--link-hover); }
   position: sticky;
   top: 56px;
   height: calc(100vh - 56px);
+  height: calc(100dvh - 56px);
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 100;
@@ -1030,6 +1030,7 @@ a:hover { color: var(--link-hover); }
   position: sticky;
   top: 56px;
   height: calc(100vh - 56px);
+  height: calc(100dvh - 56px);
   overflow-y: auto;
   padding: 28px 20px 40px;
   border-left: 1px solid var(--border);
@@ -1277,3 +1278,309 @@ a:hover { color: var(--link-hover); }
   transition: background 0.15s;
 }
 .download-btn:hover { background: var(--accent-dark); color: #fff !important; }
+
+/* ============================
+   Agent Resources Hub & Detail Pages
+   ============================ */
+
+/* --- Hub: Hero --- */
+.ar-hero {
+  background: linear-gradient(135deg, #1B1F2B 0%, #2D2259 100%);
+  color: #fff;
+  padding: 48px 40px 40px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 32px;
+}
+.ar-hero-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.ar-hero-desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.8);
+  max-width: 720px;
+  line-height: 1.75;
+}
+.ar-hero-desc a { color: rgba(255,255,255,0.9); text-decoration: underline; }
+
+/* --- Hub: Cards grid --- */
+.ar-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.ar-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  background: #fff;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+.ar-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  color: var(--text);
+}
+
+.ar-card-body {
+  padding: 24px 24px 16px;
+  flex: 1;
+}
+.ar-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.ar-card-icon { flex-shrink: 0; }
+.ar-card-icon img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+}
+.ar-card-icon svg { display: block; }
+.ar-card-title-group { display: flex; flex-direction: column; gap: 2px; }
+.ar-card-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+.ar-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.ar-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.ar-card-cta {
+  padding: 10px 24px 12px;
+  border-top: 1px solid var(--border-light);
+}
+.ar-cta-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Card accent borders */
+.ar-card--m365     { border-top: 3px solid #0078D4; }
+.ar-card--studio   { border-top: 3px solid #8B5CF6; }
+.ar-card--foundry  { border-top: 3px solid #00B294; }
+.ar-card--dev      { border-top: 3px solid #F59E0B; }
+.ar-card--agent365 { border-top: 3px solid #E11D48; }
+.ar-card--advisor  { border-top: 3px solid #2563EB; }
+
+.ar-card--m365:hover     { border-color: #0078D4; }
+.ar-card--studio:hover   { border-color: #8B5CF6; }
+.ar-card--foundry:hover  { border-color: #00B294; }
+.ar-card--dev:hover      { border-color: #F59E0B; }
+.ar-card--agent365:hover { border-color: #E11D48; }
+.ar-card--advisor:hover  { border-color: #2563EB; }
+
+/* --- Source note --- */
+.ar-source-note {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-light);
+}
+.ar-source-note a { color: var(--text-secondary); text-decoration: underline; }
+
+/* --- Detail: Back nav --- */
+.ar-detail-nav { margin-bottom: 20px; }
+.ar-back-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.ar-back-link:hover { color: var(--accent-dark); }
+
+/* --- Detail: Hero --- */
+.ar-detail-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #F8F9FA 0%, #EDE9FE 100%);
+  border-left: 5px solid var(--accent);
+}
+.ar-detail-hero--m365     { border-left-color: #0078D4; background: linear-gradient(135deg, #F0F7FF 0%, #E8F3FF 100%); }
+.ar-detail-hero--studio   { border-left-color: #8B5CF6; background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%); }
+.ar-detail-hero--foundry  { border-left-color: #00B294; background: linear-gradient(135deg, #F0FDFB 0%, #CCFBF1 100%); }
+.ar-detail-hero--dev      { border-left-color: #F59E0B; background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%); }
+.ar-detail-hero--agent365 { border-left-color: #E11D48; background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%); }
+.ar-detail-hero--advisor  { border-left-color: #2563EB; background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%); }
+
+.ar-detail-hero-icon { flex-shrink: 0; margin-top: 4px; }
+.ar-detail-hero-icon img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+}
+.ar-detail-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+.ar-detail-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.3;
+  color: var(--text);
+}
+.ar-detail-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.ar-detail-desc a { color: var(--link); }
+
+/* --- TOC bar --- */
+.ar-toc-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 28px;
+  padding: 12px 16px;
+  background: var(--border-light);
+  border-radius: var(--radius);
+}
+.ar-toc-bar a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.ar-toc-bar a:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* --- Detail: Sections --- */
+.ar-detail-body { display: flex; flex-direction: column; gap: 0; }
+
+.ar-section {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+.ar-section:last-child { border-bottom: none; }
+
+.ar-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--text);
+  scroll-margin-top: 72px;
+}
+.ar-subsection-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin: 18px 0 8px;
+}
+.ar-subsection-title:first-child { margin-top: 0; }
+
+/* --- Resource list --- */
+.ar-resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ar-resource-item {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  background: #FAFAFA;
+  border: 1px solid var(--border-light);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  transition: background 0.12s;
+}
+.ar-resource-item:hover { background: var(--accent-light); }
+.ar-resource-item a {
+  font-weight: 600;
+  color: var(--link);
+}
+.ar-resource-item a:hover { color: var(--link-hover); }
+.ar-resource-desc {
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .ar-hero { padding: 28px 20px; }
+  .ar-hero-title { font-size: 1.35rem; }
+  .ar-cards { grid-template-columns: 1fr; }
+  .ar-detail-hero { flex-direction: column; gap: 12px; padding: 20px; }
+  .ar-toc-bar { padding: 10px 12px; }
+}
+
+/* Agent Resources — Session grid & badges */
+.ar-session-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+
+.ar-session-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1E40AF;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.ar-session-badge:hover {
+  background: #DBEAFE;
+  border-color: #93C5FD;
+  color: #1E3A8A;
+  text-decoration: none;
+}
+
+/* Agent Resources — Detail hero color variants */
+.ar-detail-hero--dev { border-left-color: #E8720C; }
+.ar-detail-hero--agent365 { border-left-color: #C43574; }

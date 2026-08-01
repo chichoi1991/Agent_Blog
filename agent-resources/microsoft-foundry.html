@@ -1,0 +1,459 @@
+---
+layout: default
+title: "Microsoft Foundry 리소스"
+permalink: /agent-resources/microsoft-foundry/
+---
+
+<div class="ar-detail-nav">
+  <a href="{{ '/agent-resources/' | relative_url }}" class="ar-back-link">← Agent 리소스 허브</a>
+</div>
+
+<div class="ar-detail-hero ar-detail-hero--foundry">
+  <div class="ar-detail-hero-icon">
+    <img src="{{ '/assets/img/agent-resources/foundry-icon.png' | relative_url }}" alt="Microsoft Foundry">
+  </div>
+  <div>
+    <span class="ar-detail-eyebrow">Microsoft Foundry</span>
+    <h1 class="ar-detail-title">Microsoft Foundry 리소스</h1>
+    <p class="ar-detail-desc">Azure AI Foundry로 엔터프라이즈급 AI 에이전트를 구축하고 운영하기 위한 리소스입니다. <a href="https://aka.ms/wearecat" target="_blank" rel="noopener">Microsoft Copilot Acceleration Team (CAT)</a>이 큐레이션했습니다.</p>
+  </div>
+</div>
+
+<nav class="ar-toc-bar">
+  <a href="#get-started">시작하기</a>
+  <a href="#news">뉴스</a>
+  <a href="#adoption">도입</a>
+  <a href="#training">교육</a>
+  <a href="#building">구축하기</a>
+  <a href="#models">모델/서비스</a>
+  <a href="#evaluate">평가/개선</a>
+  <a href="#architecture">아키텍처</a>
+  <a href="#stories">사례</a>
+  <a href="#samples">샘플</a>
+  <a href="#community">커뮤니티</a>
+</nav>
+
+<div class="ar-detail-body">
+
+  <section id="get-started" class="ar-section">
+    <h2 class="ar-section-title">🚀 시작하기</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/what-is-ai-studio" target="_blank" rel="noopener">Azure AI Foundry란?</a>
+        <span class="ar-resource-desc">— 엔터프라이즈 AI 개발을 위한 통합 플랫폼 Azure AI Foundry 소개</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/concepts/ai-resources" target="_blank" rel="noopener">핵심 개념 — 허브, 프로젝트, 연결, 배포</a>
+        <span class="ar-resource-desc">— Foundry의 허브/프로젝트/연결/배포 개념을 이해하는 기초 문서</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://ai.azure.com" target="_blank" rel="noopener">Azure AI Foundry 포털</a>
+        <span class="ar-resource-desc">— 지금 바로 Azure AI Foundry 포털에 접속하여 시작하기</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-playground" target="_blank" rel="noopener">퀵스타트 — AI Foundry 플레이그라운드</a>
+        <span class="ar-resource-desc">— 코드 없이 AI Foundry 플레이그라운드에서 모델을 바로 테스트</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="news" class="ar-section">
+    <h2 class="ar-section-title">📰 뉴스 및 업데이트</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://aka.ms/FoundryBuild2026" target="_blank" rel="noopener">Build 2026 Foundry 뉴스 모음</a>
+        <span class="ar-resource-desc">— Microsoft Build 2026에서 발표된 Azure AI Foundry 주요 소식</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://aka.ms/FoundryIQGA" target="_blank" rel="noopener">Foundry IQ GA 발표</a>
+        <span class="ar-resource-desc">— Copilot Studio와 통합되는 Foundry IQ 기능 정식 출시</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://aka.ms/FoundryHostedAgents" target="_blank" rel="noopener">호스팅된 에이전트 (Hosted Agents)</a>
+        <span class="ar-resource-desc">— Foundry에서 에이전트를 직접 호스팅하는 새 기능 발표</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://aka.ms/FoundryAgentOptimizer" target="_blank" rel="noopener">Agent Optimizer</a>
+        <span class="ar-resource-desc">— 에이전트 성능을 자동으로 평가하고 최적화하는 Agent Optimizer</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://aka.ms/FoundryMemory" target="_blank" rel="noopener">에이전트 메모리 기능</a>
+        <span class="ar-resource-desc">— Foundry 에이전트가 대화 컨텍스트를 지속적으로 기억하는 메모리 기능</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://aka.ms/FoundryToolboxes" target="_blank" rel="noopener">Toolboxes & Routines</a>
+        <span class="ar-resource-desc">— 에이전트에 도구 세트를 묶어 제공하는 Toolboxes 및 Routines 기능</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://aka.ms/FoundryDeepSeekV4" target="_blank" rel="noopener">DeepSeek V4 통합</a>
+        <span class="ar-resource-desc">— Azure AI Foundry에서 DeepSeek V4 모델 사용 가능 발표</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://aka.ms/FoundryCrossRegion" target="_blank" rel="noopener">크로스 리전 배포</a>
+        <span class="ar-resource-desc">— 글로벌 에이전트를 위한 크로스 리전 배포 및 라우팅 기능</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/whats-new" target="_blank" rel="noopener">전체 새 기능 목록</a>
+        <span class="ar-resource-desc">— Azure AI Foundry 전체 릴리스 노트 및 업데이트 기록</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Build 2026 세션</h3>
+    <div class="ar-session-grid">
+      <a href="https://build.microsoft.com/sessions/BRK210" target="_blank" rel="noopener" class="ar-session-badge">BRK210 — Foundry 심화</a>
+      <a href="https://build.microsoft.com/sessions/BRK211" target="_blank" rel="noopener" class="ar-session-badge">BRK211 — 에이전트 서비스</a>
+      <a href="https://build.microsoft.com/sessions/BRK212" target="_blank" rel="noopener" class="ar-session-badge">BRK212 — 모델 최적화</a>
+      <a href="https://build.microsoft.com/sessions/DEM311" target="_blank" rel="noopener" class="ar-session-badge">DEM311 — Foundry 데모</a>
+    </div>
+  </section>
+
+  <section id="adoption" class="ar-section">
+    <h2 class="ar-section-title">📋 도입 및 채택</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/ai/" target="_blank" rel="noopener">Cloud Adoption Framework — AI 시나리오</a>
+        <span class="ar-resource-desc">— 엔터프라이즈 AI 도입을 위한 클라우드 채택 프레임워크 가이드</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-services/responsible-use-of-ai-overview" target="_blank" rel="noopener">책임 있는 AI 활용</a>
+        <span class="ar-resource-desc">— Microsoft의 책임 있는 AI 원칙을 Azure 서비스에 적용하는 방법</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="training" class="ar-section">
+    <h2 class="ar-section-title">🎓 교육 및 학습</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/training/paths/get-started-with-artificial-intelligence-on-azure/" target="_blank" rel="noopener">MS Learn — Azure AI 시작하기</a>
+        <span class="ar-resource-desc">— Azure AI 서비스 전반을 배우는 공식 학습 경로</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/credentials/applied-skills/build-an-azure-ai-solution/" target="_blank" rel="noopener">Applied Skills — Azure AI 솔루션 구축</a>
+        <span class="ar-resource-desc">— 실무 프로젝트를 통해 Azure AI 역량을 검증하는 응용 기술 인증</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://www.youtube.com/@NTFAQGuy" target="_blank" rel="noopener">John Savill — Azure AI Foundry 시리즈</a>
+        <span class="ar-resource-desc">— 클라우드 아키텍트를 위한 Azure AI Foundry 심화 기술 비디오</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/Azure/azure-ai-workshop" target="_blank" rel="noopener">Azure AI 워크숍 자료</a>
+        <span class="ar-resource-desc">— GitHub에서 제공하는 Azure AI Foundry 핸즈온 워크숍</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/credentials/certifications/azure-ai-engineer/" target="_blank" rel="noopener">AI-102 인증 — Azure AI 엔지니어</a>
+        <span class="ar-resource-desc">— Azure AI 솔루션 설계 및 구현 역량을 검증하는 공식 인증</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/credentials/certifications/azure-data-scientist/" target="_blank" rel="noopener">DP-100 인증 — Azure 데이터 사이언티스트</a>
+        <span class="ar-resource-desc">— 머신러닝과 AI 모델링 역량을 검증하는 데이터 사이언티스트 인증</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/" target="_blank" rel="noopener">AI-900 인증 — Azure AI 기초</a>
+        <span class="ar-resource-desc">— AI 기초 개념과 Azure AI 서비스를 이해하는 기초 인증</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="building" class="ar-section">
+    <h2 class="ar-section-title">🔧 Foundry로 구축하기</h2>
+    <h3 class="ar-subsection-title">에이전트 서비스 (Agent Service)</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/overview" target="_blank" rel="noopener">Azure AI 에이전트 서비스란?</a>
+        <span class="ar-resource-desc">— Foundry에서 에이전트를 만들고 배포하는 에이전트 서비스 개요</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/quickstart" target="_blank" rel="noopener">에이전트 서비스 퀵스타트</a>
+        <span class="ar-resource-desc">— 첫 번째 Foundry 에이전트를 만드는 단계별 빠른 시작 가이드</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/tools" target="_blank" rel="noopener">에이전트 도구 (Tools)</a>
+        <span class="ar-resource-desc">— 에이전트가 사용할 수 있는 코드 실행, 파일 검색, 함수 호출 도구</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/toolbox" target="_blank" rel="noopener">Toolbox — 도구 세트</a>
+        <span class="ar-resource-desc">— 여러 도구를 묶어 재사용 가능한 Toolbox로 구성하는 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/skills" target="_blank" rel="noopener">에이전트 스킬 (Skills)</a>
+        <span class="ar-resource-desc">— 에이전트에 재사용 가능한 스킬 모듈을 추가하는 방법</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Prompt Flow 마이그레이션</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow-migration" target="_blank" rel="noopener">Prompt Flow에서 에이전트 서비스로 마이그레이션</a>
+        <span class="ar-resource-desc">— 기존 Prompt Flow 워크플로를 새 에이전트 서비스로 전환하는 가이드</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Foundry Local</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/foundry-local/overview" target="_blank" rel="noopener">Foundry Local GA</a>
+        <span class="ar-resource-desc">— 로컬 환경에서 AI 모델을 실행하는 Foundry Local 정식 출시</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/foundry-local/get-started" target="_blank" rel="noopener">Foundry Local 시작하기</a>
+        <span class="ar-resource-desc">— PC나 서버에 Foundry Local을 설치하고 모델을 실행하는 방법</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">SDK 및 개발 도구</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/develop/sdk-overview" target="_blank" rel="noopener">Azure AI SDK 개요</a>
+        <span class="ar-resource-desc">— Python, JavaScript 등 언어별 Azure AI SDK 사용 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/develop/trace-based-evaluation" target="_blank" rel="noopener">추적(Tracing) 기반 평가</a>
+        <span class="ar-resource-desc">— 에이전트 실행을 추적하고 성능을 평가하는 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/develop/rag-tutorial" target="_blank" rel="noopener">RAG 튜토리얼</a>
+        <span class="ar-resource-desc">— Azure AI Search와 Foundry를 결합한 RAG(검색 증강 생성) 구축 튜토리얼</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.ai-studio" target="_blank" rel="noopener">VS Code 확장 — AI Foundry</a>
+        <span class="ar-resource-desc">— Visual Studio Code에서 Foundry 프로젝트를 개발하는 확장 프로그램</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Agent Framework</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework" target="_blank" rel="noopener">Agent Framework 문서</a>
+        <span class="ar-resource-desc">— 멀티 에이전트 시스템을 구축하는 Foundry Agent Framework 공식 문서</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/azure/azure-ai-agent-framework" target="_blank" rel="noopener">Agent Framework GitHub</a>
+        <span class="ar-resource-desc">— Azure AI Agent Framework 오픈소스 코드 저장소</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/skills-for-python" target="_blank" rel="noopener">Python용 스킬 라이브러리</a>
+        <span class="ar-resource-desc">— Python 에이전트에 추가할 수 있는 재사용 가능한 스킬 모음</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/multi-agent-architecture" target="_blank" rel="noopener">멀티 에이전트 참조 아키텍처</a>
+        <span class="ar-resource-desc">— 복잡한 작업을 분산하는 멀티 에이전트 시스템 설계 패턴</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="models" class="ar-section">
+    <h2 class="ar-section-title">🧠 모델 및 서비스</h2>
+    <h3 class="ar-subsection-title">모델 카탈로그</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview" target="_blank" rel="noopener">모델 카탈로그</a>
+        <span class="ar-resource-desc">— OpenAI, Meta, Mistral, DeepSeek 등 수백 개 모델을 탐색하는 카탈로그</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/model-benchmarks" target="_blank" rel="noopener">모델 벤치마크</a>
+        <span class="ar-resource-desc">— 사용 사례에 맞는 모델을 선택하기 위한 성능 벤치마크 비교</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-serverless" target="_blank" rel="noopener">서버리스 배포</a>
+        <span class="ar-resource-desc">— 인프라 관리 없이 모델을 바로 API로 사용하는 서버리스 배포</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Model Router</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/model-router" target="_blank" rel="noopener">Model Router</a>
+        <span class="ar-resource-desc">— 비용과 성능을 최적화하여 요청을 적절한 모델로 자동 라우팅</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Azure OpenAI 서비스</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-services/openai/overview" target="_blank" rel="noopener">Azure OpenAI 서비스 개요</a>
+        <span class="ar-resource-desc">— GPT-4o, o3, o4-mini 등 OpenAI 모델을 Azure에서 사용하는 방법</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Azure AI 서비스</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-services/computer-vision/overview" target="_blank" rel="noopener">Azure AI Vision</a>
+        <span class="ar-resource-desc">— 이미지 분석, OCR, 얼굴 감지 등 컴퓨터 비전 서비스</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-services/speech-service/overview" target="_blank" rel="noopener">Azure AI Speech</a>
+        <span class="ar-resource-desc">— 음성 인식, 텍스트 음성 변환, 음성 번역 서비스</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-services/language-service/overview" target="_blank" rel="noopener">Azure AI Language</a>
+        <span class="ar-resource-desc">— 감정 분석, 키워드 추출, 언어 이해 서비스</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/search/search-what-is-azure-search" target="_blank" rel="noopener">Azure AI Search</a>
+        <span class="ar-resource-desc">— 벡터 검색과 키워드 검색을 결합한 엔터프라이즈 검색 서비스</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="evaluate" class="ar-section">
+    <h2 class="ar-section-title">📊 평가 및 개선</h2>
+    <h3 class="ar-subsection-title">에이전트 평가</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app" target="_blank" rel="noopener">생성형 AI 앱 평가</a>
+        <span class="ar-resource-desc">— 에이전트 응답의 품질, 근거성, 일관성을 측정하는 평가 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-sdk" target="_blank" rel="noopener">평가 SDK</a>
+        <span class="ar-resource-desc">— 코드로 에이전트 성능을 자동 평가하는 Azure AI Evaluation SDK</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/monitor-your-app" target="_blank" rel="noopener">프로덕션 모니터링</a>
+        <span class="ar-resource-desc">— 배포된 에이전트의 성능과 품질을 지속적으로 모니터링하는 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-optimizer" target="_blank" rel="noopener">Agent Optimizer</a>
+        <span class="ar-resource-desc">— 평가 결과를 바탕으로 에이전트를 자동 최적화하는 Agent Optimizer</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">파인튜닝 (Fine-tuning)</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/fine-tuning" target="_blank" rel="noopener">지도 학습 파인튜닝 (SFT)</a>
+        <span class="ar-resource-desc">— 레이블된 데이터로 모델을 특정 작업에 특화시키는 SFT 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/reinforcement-fine-tuning" target="_blank" rel="noopener">강화 학습 파인튜닝 (RFT)</a>
+        <span class="ar-resource-desc">— 보상 신호로 모델을 개선하는 강화 학습 기반 파인튜닝</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/distillation" target="_blank" rel="noopener">모델 증류 (Distillation)</a>
+        <span class="ar-resource-desc">— 대형 모델의 지식을 소형 모델로 전달하는 증류 기법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/stored-completions" target="_blank" rel="noopener">저장된 완성 (Stored Completions)</a>
+        <span class="ar-resource-desc">— 프로덕션 응답을 자동으로 수집하여 파인튜닝 데이터로 활용하는 방법</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/synthetic-data" target="_blank" rel="noopener">합성 데이터 생성</a>
+        <span class="ar-resource-desc">— 파인튜닝용 합성 훈련 데이터를 AI로 생성하는 방법</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">콘텐츠 안전성</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-services/content-safety/overview" target="_blank" rel="noopener">Azure AI Content Safety</a>
+        <span class="ar-resource-desc">— 에이전트 출력에서 유해 콘텐츠를 감지하고 필터링하는 서비스</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="architecture" class="ar-section">
+    <h2 class="ar-section-title">🏗️ 아키텍처 및 모범 사례</h2>
+    <h3 class="ar-subsection-title">Cloud Adoption Framework (CAF)</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/ai/" target="_blank" rel="noopener">AI 시나리오 가이드</a>
+        <span class="ar-resource-desc">— AI 도입 전략, 랜딩 존 설계, 계획·준비·거버넌스를 다루는 CAF</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Well-Architected Framework (WAF)</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/well-architected/ai/get-started" target="_blank" rel="noopener">AI 워크로드 Well-Architected</a>
+        <span class="ar-resource-desc">— 신뢰성, 보안, 비용 최적화 관점에서 AI 워크로드를 설계하는 WAF</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">참조 아키텍처</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/architecture/ai-ml/architecture/rag-azure-ai-search" target="_blank" rel="noopener">RAG 기준선 아키텍처 (Azure AI Search)</a>
+        <span class="ar-resource-desc">— Azure AI Search와 Azure OpenAI를 결합한 RAG 참조 아키텍처</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/architecture/ai-ml/baseline-chat-application" target="_blank" rel="noopener">기준선 채팅 앱 아키텍처</a>
+        <span class="ar-resource-desc">— 엔터프라이즈 채팅 AI 앱을 위한 기준선 참조 아키텍처</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">보안 및 네트워킹</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/configure-private-link" target="_blank" rel="noopener">Private Link 구성</a>
+        <span class="ar-resource-desc">— 인터넷을 통하지 않고 안전하게 Foundry에 연결하는 Private Link 설정</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/rbac-azure-ai-studio" target="_blank" rel="noopener">역할 기반 접근 제어 (RBAC)</a>
+        <span class="ar-resource-desc">— Foundry 리소스에 대한 세밀한 접근 권한을 관리하는 RBAC 가이드</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/managed-identity" target="_blank" rel="noopener">관리 ID (Managed Identity)</a>
+        <span class="ar-resource-desc">— 자격 증명 없이 Azure 서비스 간 안전한 인증을 구현하는 관리 ID</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="stories" class="ar-section">
+    <h2 class="ar-section-title">🏆 고객 성공 사례</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://customers.microsoft.com/story/accenture-azure-ai-foundry" target="_blank" rel="noopener">Accenture — Foundry 활용 사례</a>
+        <span class="ar-resource-desc">— 글로벌 컨설팅 기업 Accenture의 Azure AI Foundry 도입 성공 사례</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://customers.microsoft.com/search?sq=azure+ai&ff=Story_ProductsUsed%3AAzure+AI+Studio&p=0&so=story_publish_date+desc" target="_blank" rel="noopener">금융 서비스 — AI 사례 모음</a>
+        <span class="ar-resource-desc">— 금융·보험·은행 업종의 Azure AI Foundry 활용 고객 사례</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://customers.microsoft.com/search?sq=azure+ai+healthcare" target="_blank" rel="noopener">헬스케어 — AI 사례 모음</a>
+        <span class="ar-resource-desc">— 병원·제약·의료 기기 분야의 Azure AI 활용 사례</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="samples" class="ar-section">
+    <h2 class="ar-section-title">💾 샘플 및 리포지토리</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://github.com/azure/azureai-samples" target="_blank" rel="noopener">azureai-samples</a>
+        <span class="ar-resource-desc">— Microsoft 공식 Azure AI Foundry 샘플 코드 모음</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/azure/azure-ai-agent-framework/tree/main/samples" target="_blank" rel="noopener">Agent Framework 샘플</a>
+        <span class="ar-resource-desc">— 멀티 에이전트 패턴을 보여주는 Agent Framework 샘플</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/Azure-Samples/rag-with-azure-ai-search" target="_blank" rel="noopener">RAG with Azure AI Search</a>
+        <span class="ar-resource-desc">— Azure AI Search를 사용한 RAG 패턴 완전한 샘플 앱</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator" target="_blank" rel="noopener">Chat with Your Data 솔루션 가속기</a>
+        <span class="ar-resource-desc">— 사내 데이터와 대화하는 엔터프라이즈 채팅 AI 솔루션 가속기</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/build-2026-demos" target="_blank" rel="noopener">Build 2026 데모 코드</a>
+        <span class="ar-resource-desc">— Microsoft Build 2026에서 시연된 Azure AI Foundry 데모 소스 코드</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="community" class="ar-section">
+    <h2 class="ar-section-title">🤝 커뮤니티</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://techcommunity.microsoft.com/t5/azure-ai-services/ct-p/AzureAIServices" target="_blank" rel="noopener">Azure AI Tech Community</a>
+        <span class="ar-resource-desc">— Azure AI 관련 기술 블로그와 커뮤니티 토론 허브</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/azure/azure-ai-foundry/discussions" target="_blank" rel="noopener">GitHub Discussions</a>
+        <span class="ar-resource-desc">— Azure AI Foundry 오픈소스 프로젝트의 GitHub 토론 공간</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://feedback.azure.com/d365community/forum/c4bc1c2b-1b25-ec11-b6e6-000d3a4f0f1c" target="_blank" rel="noopener">기능 피드백 및 요청</a>
+        <span class="ar-resource-desc">— Azure AI Foundry 새 기능을 제안하거나 기존 요청에 투표</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://stackoverflow.com/questions/tagged/azure-ai-studio" target="_blank" rel="noopener">Stack Overflow — azure-ai-studio</a>
+        <span class="ar-resource-desc">— Azure AI Foundry 기술 질문과 답변을 공유하는 Stack Overflow</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://techcommunity.microsoft.com/t5/azure-ai-blog/bg-p/AzureAIBlog" target="_blank" rel="noopener">Azure AI DevBlog</a>
+        <span class="ar-resource-desc">— 개발자 관점의 Azure AI 기술 심화 블로그</span>
+      </div>
+    </div>
+  </section>
+
+</div>

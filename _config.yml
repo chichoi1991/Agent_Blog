@@ -48,6 +48,9 @@ nav_sections:
   - key: m365
     title: "Microsoft 365"
     listing: /m365/
+  - key: agent-resources
+    title: "Microsoft Agent 통합 교육 리소스"
+    listing: /agent-resources/
   - group: "Copilot Studio Classic"
     sections:
       - key: guide
@@ -66,3 +69,4 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - tools/
