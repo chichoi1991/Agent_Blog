@@ -401,40 +401,6 @@
       ],
       "staged_at": "2026-07-31T01:22:10.306Z",
       "status": "published"
-    },
-    {
-      "slug": "copilot-studio-agent-sandbox",
-      "title": "The New Copilot Studio Agent Sandbox",
-      "source_url": "https://microsoft.github.io/mcscatblog/posts/copilot-studio-agent-sandbox/",
-      "source_author": "chrisgarty",
-      "source_published": "2026-07-20",
-      "source_updated": "2026-07-20",
-      "categories": [
-        "copilot-studio",
-        "agents"
-      ],
-      "summary": "How the Copilot Studio agent sandbox turns model reasoning into finished files, calculations, and other executable work while keeping external access governed.",
-      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-07-20-copilot-studio-agent-sandbox.md",
-      "images": [
-        {
-          "src": "/assets/posts/copilot-studio-agent-sandbox/knowledge-analysis-chart.png",
-          "local": "assets/catblog/copilot-studio-agent-sandbox/knowledge-analysis-chart.png"
-        },
-        {
-          "src": "/assets/posts/redlining-documents-new-copilot-studio-experience/document-redlined.png",
-          "local": "assets/catblog/copilot-studio-agent-sandbox/document-redlined.png"
-        },
-        {
-          "src": "/assets/posts/copilot-studio-agent-sandbox/agent-harness-explorer-report-example.png",
-          "local": "assets/catblog/copilot-studio-agent-sandbox/agent-harness-explorer-report-example.png"
-        },
-        {
-          "src": "/assets/posts/copilot-studio-agent-sandbox/copilot-studio-agent-sandbox-cat.png",
-          "local": "assets/catblog/copilot-studio-agent-sandbox/copilot-studio-agent-sandbox-cat.png"
-        }
-      ],
-      "staged_at": "2026-08-02T03:54:43.419Z",
-      "status": "pending-translation"
     }
   ]
 }
