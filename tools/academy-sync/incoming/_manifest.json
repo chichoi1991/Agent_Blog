@@ -1,3 +1,117 @@
 {
-  "items": []
+  "items": [
+    {
+      "slug": "special-ops-mcs-mcp",
+      "src_path": "special-ops/mcs-mcp",
+      "sha": "e0fd29088d1a9a7d1a6bf7c74294522b6c099cbd",
+      "title": "🤖 Microsoft Copilot Studio ❤️ MCP",
+      "description": "",
+      "category": "academy-labs",
+      "parent": "aspecialops",
+      "parentTitle": "Special Ops — 독립 랩",
+      "parentShort": "Special Ops",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/special-ops/mcs-mcp/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-04",
+      "images": [
+        {
+          "src": "./assets/vscode-terminal-run-start.png",
+          "local": "assets/academy/special-ops-mcs-mcp/vscode-terminal-run-start.png"
+        },
+        {
+          "src": "./assets/vscode-terminal-ports.png",
+          "local": "assets/academy/special-ops-mcs-mcp/vscode-terminal-ports.png"
+        },
+        {
+          "src": "./assets/vscode-terminal-ports-forward.png",
+          "local": "assets/academy/special-ops-mcs-mcp/vscode-terminal-ports-forward.png"
+        },
+        {
+          "src": "./assets/vscode-terminal-ports-setup.png",
+          "local": "assets/academy/special-ops-mcs-mcp/vscode-terminal-ports-setup.png"
+        },
+        {
+          "src": "./assets/azd-deploy-server.png",
+          "local": "assets/academy/special-ops-mcs-mcp/azd-deploy-server.png"
+        },
+        {
+          "src": "./assets/settings.png",
+          "local": "assets/academy/special-ops-mcs-mcp/settings.png"
+        },
+        {
+          "src": "./assets/tools-menu.png",
+          "local": "assets/academy/special-ops-mcs-mcp/tools-menu.png"
+        },
+        {
+          "src": "./assets/github-copilot-get-joke.png",
+          "local": "assets/academy/special-ops-mcs-mcp/github-copilot-get-joke.png"
+        },
+        {
+          "src": "./assets/newagent.png",
+          "local": "assets/academy/special-ops-mcs-mcp/newagent.png"
+        },
+        {
+          "src": "./assets/editname.png",
+          "local": "assets/academy/special-ops-mcs-mcp/editname.png"
+        },
+        {
+          "src": "./assets/tools.png",
+          "local": "assets/academy/special-ops-mcs-mcp/tools.png"
+        },
+        {
+          "src": "./assets/create-mcp.png",
+          "local": "assets/academy/special-ops-mcs-mcp/create-mcp.png"
+        },
+        {
+          "src": "./assets/add-mcp.png",
+          "local": "assets/academy/special-ops-mcs-mcp/add-mcp.png"
+        },
+        {
+          "src": "./assets/create-connection-mcp-create.png",
+          "local": "assets/academy/special-ops-mcs-mcp/create-connection-mcp-create.png"
+        },
+        {
+          "src": "./assets/create-connection-mcp-create-name.png",
+          "local": "assets/academy/special-ops-mcs-mcp/create-connection-mcp-create-name.png"
+        },
+        {
+          "src": "./assets/create-connection-mcp-create-add.png",
+          "local": "assets/academy/special-ops-mcs-mcp/create-connection-mcp-create-add.png"
+        },
+        {
+          "src": "./assets/tools-mcp-server.png",
+          "local": "assets/academy/special-ops-mcs-mcp/tools-mcp-server.png"
+        },
+        {
+          "src": "./assets/preview-mode.png",
+          "local": "assets/academy/special-ops-mcs-mcp/preview-mode.png"
+        },
+        {
+          "src": "./assets/connection-allow.png",
+          "local": "assets/academy/special-ops-mcs-mcp/connection-allow.png"
+        },
+        {
+          "src": "./assets/joke-result.png",
+          "local": "assets/academy/special-ops-mcs-mcp/joke-result.png"
+        },
+        {
+          "src": "./assets/dad-joke-result.png",
+          "local": "assets/academy/special-ops-mcs-mcp/dad-joke-result.png"
+        },
+        {
+          "src": "./assets/azd-down-confirmation.png",
+          "local": "assets/academy/special-ops-mcs-mcp/azd-down-confirmation.png"
+        },
+        {
+          "src": "./assets/MCP_Joker_Badge.png",
+          "local": "assets/academy/special-ops-mcs-mcp/MCP_Joker_Badge.png"
+        }
+      ],
+      "staged_at": "2026-08-05T03:48:30.686Z",
+      "status": "pending-translation"
+    }
+  ]
 }
