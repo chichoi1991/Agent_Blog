@@ -112,6 +112,56 @@
       ],
       "staged_at": "2026-08-05T03:48:30.686Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-choose",
+      "src_path": "recruit/choose",
+      "sha": "a44159c9f9526b3af9810bfa87ac7f9c47feeb33",
+      "title": "Welcome Recruit",
+      "description": "",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/choose/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "",
+      "images": [
+        {
+          "src": "../../images/banner_recruit.png",
+          "local": "assets/academy/recruit-choose/banner_recruit.png"
+        }
+      ],
+      "staged_at": "2026-08-06T03:53:28.313Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-course-completion-badges-recruit",
+      "src_path": "recruit/course-completion-badges-recruit",
+      "sha": "2b1a8a790c6172d95a3a530fd1a49151fc1e3051",
+      "title": "🚨 Final Mission: Securing Your Recruit Badge",
+      "description": "Claim your badge and mark your achievement!",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/course-completion-badges-recruit/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-03-27",
+      "images": [
+        {
+          "src": "../../images/mcs-agent-academy-recruit-badge.png",
+          "local": "assets/academy/recruit-course-completion-badges-recruit/mcs-agent-academy-recruit-badge.png"
+        }
+      ],
+      "staged_at": "2026-08-06T03:53:28.458Z",
+      "status": "pending-translation"
     }
   ]
 }
