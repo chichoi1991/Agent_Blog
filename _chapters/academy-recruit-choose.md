@@ -3,7 +3,7 @@ layout: "chapter"
 date: 2026-08-06
 title: "Recruit에 오신 것을 환영합니다"
 short_title: "Recruit 시작"
-description: "Copilot Studio Agent Academy Recruit 과정에서 표준 harness와 GitHub Copilot harness 중 어떤 학습 경로를 선택할지 안내합니다."
+description: "Copilot Studio Agent Academy Recruit 과정에서 Standard harness와 GitHub Copilot harness 중 어떤 학습 경로를 선택할지 안내합니다."
 order: 999
 category: "academy-courses"
 parent: "arecruit"
