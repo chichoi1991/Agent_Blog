@@ -44,12 +44,6 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/course-complet
 </figure>
 배지의 의미를 유지하기 위해 Agent Academy는 **엄격한 검증 절차** 를 따릅니다.
 
-<div class="info-box note" markdown="1">
-**중요**
-
-**Recruit 경로에서 만든 IT Help Desk Agent만 이 배지의 대상입니다.**
-</div>
-
 ### 🧭 제출 절차
 
 아래 단계를 **순서대로 모두** 수행하세요.
@@ -92,7 +86,7 @@ Star는 빠르고 무료이며, 배지 자격 요건에 포함됩니다.
 <div class="info-box note" markdown="1">
 **중요**
 
-**배지 요청 양식의 이메일과 Global AI Community 계정 이메일이 정확히 일치해야 합니다.** 다르면 배지가 전달되지 않습니다.
+**이메일이 일치하는지, 이메일을 정확히 입력했는지 반드시 확인하세요. 그렇지 않으면 배지가 전달되지 않습니다.**
 </div>
 
 ## 📡 다음 단계 준비하기
