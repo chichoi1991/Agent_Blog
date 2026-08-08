@@ -1,5 +1,6 @@
 ---
 layout: "chapter"
+date: 2026-08-06
 title: "미션 07: 트리거와 노드가 있는 새 토픽 추가하기"
 short_title: "토픽·트리거 추가"
 description: "Topics로 커스텀 질문/답변 경로를 정의하는 방법"
@@ -9,7 +10,7 @@ parent: "arecruit"
 source_url: "https://microsoft.github.io/agent-academy/recruit/07-add-new-topic-with-trigger/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-02-19"
+source_published: "2026-08-06"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/07-add-new-topic-with-trigger/"
 ---
 
@@ -23,7 +24,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/07-add-new-top
 
 ## 🎯 미션 브리핑
 
-에이전트를 만들었습니다. 듣고, 배우고, 질문에 답하죠 - 하지만 이제 더 전술적으로 다가갈 시간입니다. 이번 미션에서는 내부 깊숙이 들어가, 특정 프롬프트에 정확하게 응답하도록 에이전트를 가르칩니다.
+돌아오신 것을 환영합니다, Recruit. 여러분은 듣고, 배우고, 질문에 답하는 에이전트를 만들었습니다. 이제 특정 요청에 정확하게 응답하도록 에이전트를 가르칠 차례입니다.
 
 Topics와 Trigger를 사용하면 에이전트는 다음을 할 수 있습니다:
 
@@ -473,17 +474,17 @@ Power Automate 클라우드 플로우가 실행되어 휴가 관리 시스템에
 
 1. **SharePoint 목록**
 
-    [레슨 00 - 코스 설정 - 3단계: 새 SharePoint 사이트 만들기](/chapters/academy-recruit-00-course-setup/)에서 만든 **Devices** SharePoint 목록을 사용합니다.
+    [미션 00 - 코스 설정 - 5단계: 새 SharePoint 사이트 만들기]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})에서 만든 **Devices** SharePoint 목록을 사용합니다.
 
-    **Devices** SharePoint 목록을 아직 설정하지 않았다면, [레슨 00 - 코스 설정 - 3단계: 새 SharePoint 사이트 만들기](/chapters/academy-recruit-00-course-setup/)로 돌아가 설정하세요.
+    **Devices** SharePoint 목록을 아직 설정하지 않았다면, [미션 00 - 코스 설정 - 5단계: 새 SharePoint 사이트 만들기]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})로 돌아가 설정하세요.
 
 1. **Contoso Helpdesk Agent**
 
-    [레슨 06 - 자연어와 AI로 커스텀 에이전트를 만들고 내 데이터로 그라운딩하기](/chapters/academy-recruit-06-create-agent-from-conversation/)에서 이전에 만든 것과 같은 에이전트를 사용합니다.
+    [레슨 06 - 자연어와 AI로 커스텀 에이전트를 만들고 내 데이터로 그라운딩하기]({{ '/chapters/academy-recruit-06-create-agent-from-conversation/' | relative_url }})에서 이전에 만든 것과 같은 에이전트를 사용합니다.
 
 ### 7.1 빈 상태에서 새 토픽 추가
 
-1. 에이전트 이름 근처의 **Topics 탭**을 선택합니다. 보이지 않으면 **+6**을 선택하면 **Topics**가 표시됩니다.
+1. 에이전트 이름 근처의 **Topics** 탭을 선택합니다. **Topics**가 보이지 않으면 탭 오버플로 메뉴를 열고 **Topics**를 선택합니다.
 
     <figure class="screenshot"><img src="{{ '/assets/academy/recruit-07-add-new-topic-with-trigger/7.1_01_Topics.png' | relative_url }}" alt="Select Topics" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Select Topics</figcaption></figure>
 
@@ -611,7 +612,7 @@ Power Automate 클라우드 플로우가 실행되어 휴가 관리 시스템에
 
     <figure class="screenshot"><img src="{{ '/assets/academy/recruit-07-add-new-topic-with-trigger/7.3_05_UpdateDescription.png' | relative_url }}" alt="Get items description" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Get items description</figcaption></figure>
 
-1. **Inputs** 탭을 선택하고, [레슨 00 - 코스 설정 - 3단계: 새 SharePoint 사이트 만들기](/chapters/academy-recruit-00-course-setup/)에서 설정한 **Contoso IT** 사이트와 **Devices** 목록을 선택합니다.
+1. **Inputs** 탭을 선택하고, [미션 00 - 코스 설정 - 5단계: 새 SharePoint 사이트 만들기]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})에서 설정한 **Contoso IT** 사이트와 **Devices** 목록을 선택합니다.
 
     <figure class="screenshot"><img src="{{ '/assets/academy/recruit-07-add-new-topic-with-trigger/7.3_06_GetItemsInputs.png' | relative_url }}" alt="Configure Get items inputs" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Configure Get items inputs</figcaption></figure>
 
@@ -761,11 +762,14 @@ Power Automate 클라우드 플로우가 실행되어 휴가 관리 시스템에
 
 ## ✅ 미션 완료
 
-축하합니다! 👏🏻 처음부터 새 토픽을 추가하는 법, Get items SharePoint 커넥터 액션을 호출하는 도구를 추가하는 법, Power Fx로 상태가 available이고 기기 유형이 laptop인 항목만 반환하도록 응답을 필터링하는 법을 배웠습니다. 🙌🏻
+성공적으로 완료했습니다:
 
-이것으로 **랩 07 - 대화 노드가 있는 새 토픽 추가하기**가 끝났습니다. 다음 레슨으로 이동하려면 아래 링크를 선택하세요. 이 랩의 사용 사례는 다음 레슨의 랩에서 확장됩니다.
+- **토픽 설계**: 입력, 출력, 대화 노드가 있는 토픽 만들기
+- **SharePoint 커넥터**: Devices 목록에서 기기 레코드 가져오기
+- **Power Fx 필터링**: 사용 가능 여부와 기기 유형으로 레코드 필터링하기
+- **에이전트 지침**: 적절한 시점에 토픽을 호출하도록 에이전트 구성하기
 
-⏭️ [**Adaptive Card로 사용자 상호작용 강화하기** 레슨으로 이동](/chapters/academy-recruit-08-add-adaptive-card/)
+다음으로 [미션 08: Adaptive Card로 토픽 강화하기]({{ '/chapters/academy-recruit-08-add-adaptive-card/' | relative_url }})를 계속 진행하세요.
 
 ## 📚 전술 자료
 

@@ -1,6 +1,6 @@
 ---
 layout: "chapter"
-date: 2026-02-19
+date: 2026-08-06
 title: "미션 08: Adaptive Card로 Topics의 사용자 상호작용 강화하기"
 short_title: "Adaptive Card 추가"
 description: "Power Fx와 SharePoint를 사용해 Adaptive Card를 만드는 방법"
@@ -10,7 +10,7 @@ parent: "arecruit"
 source_url: "https://microsoft.github.io/agent-academy/recruit/08-add-adaptive-card/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-02-19"
+source_published: "2026-08-06"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/08-add-adaptive-card/"
 ---
 
@@ -24,21 +24,22 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/08-add-adaptiv
 
 ## 🎯 미션 브리핑
 
-에이전트 여러분, 여러분의 미션은 정적인 사용자 경험에 침투해 이를 풍부하고 동적이며 실행 가능한 Adaptive Card로 대체하는 것입니다. JSON 페이로드와 Power Fx 수식을 배치해 Copilot Studio 대화를 단순한 Q&A에서 완전한 인터랙티브 상호작용으로 변신시킵니다. 목표는 사용자 입력을 수집하고, 데이터를 아름답게 표시하며, 정확하고 스타일리시하게 대화를 안내하는 것입니다. 적응에 실패하면 사용자들은 덜 똑똑한 인터페이스로 이탈할 수 있습니다.
+다시 오신 것을 환영합니다, Recruit. 이번 미션은 정적인 상호작용을 풍부하고 실행 가능한 Adaptive Card로 대체하는 것입니다. JSON 페이로드와 Power Fx 수식을 사용해 입력을 수집하고, 데이터를 표시하며, 대화를 안내합니다.
 
 <div class="info-box note" markdown="1">
-**참고** — Copilot Studio 화면이 이 강의의 스크린샷과 다르게 보인다면, 오른쪽 상단의 **New Experience**를 꺼서 여기서 사용하는 **클래식 경험**으로 전환하세요.
+**중요** — 이 미션은 classic Copilot Studio experience를 사용합니다.
+Copilot Studio 화면이 이 미션의 스크린샷과 다르게 보인다면, 오른쪽 상단의 **New Experience**를 꺼서 여기서 사용하는 **classic experience**로 다시 전환하세요.
 </div>
 
 ## 🔎 학습 목표
 
 이번 미션에서 다음을 배웁니다:
 
-1. Adaptive Card가 무엇이고 Copilot Studio에서 사용자 상호작용을 어떻게 강화하는지 이해하기
-1. 동적 콘텐츠를 위한 JSON과 Power Fx 수식으로 인터랙티브 카드를 만드는 법 배우기
-1. 비주얼 카드 제작을 위한 Adaptive Card Designer와 핵심 구성 요소 살펴보기
-1. 에이전트 토픽 안에서 풍부하고 인터랙티브한 폼과 데이터 수집 경험 만들기
-1. 반응형이고 사용자 친화적인 adaptive card를 설계하기 위한 모범 사례 적용하기
+1. Adaptive Card가 무엇이며 에이전트 상호작용을 어떻게 강화하는지
+1. JSON과 Power Fx가 동적 카드 콘텐츠를 만드는 방식
+1. Adaptive Card Designer 사용 방법
+1. 에이전트 토픽 안에서 사용자 입력을 수집하는 방법
+1. 반응형이고 접근성 있는 Adaptive Card를 설계하는 방법
 
 ## 🤔 Adaptive Card란?
 
@@ -78,7 +79,7 @@ JSON, 즉 _JavaScript Object Notation_은 데이터를 구조화하는 데 사�
 
 ## 👀 _formula_로 adaptive card를 만드는 또 다른 방법도 있네요
 
-[미션 07 - 노드에서 Power Fx 사용하기](/chapters/academy-recruit-07-add-new-topic-with-trigger/)에서 배운 Power Fx를 기억하시나요? Copilot Studio의 Adaptive Card에도 똑같이 적용할 수 있습니다.
+[미션 07 - 노드에서 Power Fx 사용하기]({{ '/chapters/academy-recruit-07-add-new-topic-with-trigger/' | relative_url }})에서 배운 Power Fx를 기억하시나요? Copilot Studio의 Adaptive Card에도 똑같이 적용할 수 있습니다.
 
 요약하면,
 
@@ -274,13 +275,13 @@ Copilot Studio에서 에이전트용 Adaptive Card를 만들 때의 모범 사�
 
 1. **SharePoint 목록**
 
-    [레슨 00 - 코스 설정 - 3단계: 새 SharePoint 사이트 만들기](/chapters/academy-recruit-00-course-setup/)에서 만든 **Devices** SharePoint 목록을 사용합니다.
+    [미션 00 - 코스 설정 - 5단계: 새 SharePoint 사이트 만들기]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})에서 만든 **Devices** SharePoint 목록을 사용합니다.
 
-    **Devices** SharePoint 목록을 아직 설정하지 않았다면, [레슨 00 - 코스 설정 - 3단계: 새 SharePoint 사이트 만들기](/chapters/academy-recruit-00-course-setup/)로 돌아가 설정하세요.
+    **Devices** SharePoint 목록을 아직 설정하지 않았다면, [미션 00 - 코스 설정 - 5단계: 새 SharePoint 사이트 만들기]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})로 돌아가세요.
 
 1. **Contoso Helpdesk Copilot**
 
-    [레슨 06 - 자연어와 AI로 커스텀 에이전트를 만들고 내 데이터로 그라운딩하기](/chapters/academy-recruit-06-create-agent-from-conversation/)에서 이전에 만든 것과 같은 에이전트를 사용합니다.
+    [레슨 06 - 자연어와 AI로 커스텀 에이전트를 만들고 내 데이터로 그라운딩하기]({{ '/chapters/academy-recruit-06-create-agent-from-conversation/' | relative_url }})에서 이전에 만든 것과 같은 에이전트를 사용합니다.
 
 ### 8.1 사용자가 요청을 제출할 수 있는 Adaptive Card가 있는 새 토픽 만들기
 
@@ -366,15 +367,15 @@ Copilot Studio에서 에이전트용 Adaptive Card를 만들 때의 모범 사�
 
     <figure class="screenshot"><img src="{{ '/assets/academy/recruit-08-add-adaptive-card/8.1_14_ChangeToFormula.png' | relative_url }}" alt="Change to formula" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Change to formula</figcaption></figure>
 
-1. **expand** 아이콘을 클릭해 Formula 필드를 확대합니다.
+1. **Expand**를 선택해 **Formula** 필드를 확대합니다.
 
-    <figure class="screenshot"><img src="{{ '/assets/academy/recruit-08-add-adaptive-card/8.1_15_SelectExpand.png' | relative_url }}" alt="Click on expand icon" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Click on expand icon</figcaption></figure>
+    <figure class="screenshot"><img src="{{ '/assets/academy/recruit-08-add-adaptive-card/8.1_15_SelectExpand.png' | relative_url }}" alt="Formula field with Expand control" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Formula field with Expand control</figcaption></figure>
 
 1. **Card payload editor**를 클릭하고 Windows 키보드 단축키 _Ctrl + A_ 또는 Mac 키보드 단축키 _Command + A_로 모든 줄을 선택한 뒤 삭제합니다.
 
-    <figure class="screenshot"><img src="{{ '/assets/academy/recruit-08-add-adaptive-card/8.1_16_SelectAll.png' | relative_url }}" alt="Click into payload card editor" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Click into payload card editor</figcaption></figure>
+    <figure class="screenshot"><img src="{{ '/assets/academy/recruit-08-add-adaptive-card/8.1_16_SelectAll.png' | relative_url }}" alt="Formula text selected in card payload editor" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Formula text selected in card payload editor</figcaption></figure>
 
-    [Request Devices formula 파일](https://raw.githubusercontent.com/microsoft/agent-academy/main/docs/recruit/08-add-adaptive-card/assets/8.1_RequestDeviceFormula.txt)에서 formula를 붙여넣습니다.
+    [Request Devices formula 파일](https://raw.githubusercontent.com/microsoft/agent-academy/main/docs/recruit/08-add-adaptive-card/assets/8.1_RequestDeviceFormula.txt)의 Formula를 붙여넣습니다.
 
 1. 이 수식에서는 `For All` 함수를 사용해 각 SharePoint 목록 항목을 순회하며, 선택 옵션의 제목에 `Model` 값을 표시하고 SharePoint 항목의 `ID`를 값으로 참조합니다. 또한 수식이 토픽의 작성 캔버스에서 adaptive card를 렌더링하려면 값이 필요하기 때문에, `If(IsBlank()` 함수로 값을 감쌉니다. 그렇지 않으면 "Property cannot be null"이라는 메시지가 나타납니다.
 
@@ -396,7 +397,7 @@ Copilot Studio에서 에이전트용 Adaptive Card를 만들 때의 모범 사�
 
     <figure class="screenshot"><img src="{{ '/assets/academy/recruit-08-add-adaptive-card/8.2_01_EditInstructions.png' | relative_url }}" alt="Edit instructions" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Edit instructions</figcaption></figure>
 
-1. [랩 07 - 대화 노드가 있는 새 토픽 추가하기, 7.3 커넥터로 도구 추가하기](/chapters/academy-recruit-07-add-new-topic-with-trigger/)의 이전 지침 아래에 새 줄을 추가합니다.
+1. [랩 07 - 대화 노드가 있는 새 토픽 추가하기, 7.3 커넥터로 도구 추가하기]({{ '/chapters/academy-recruit-07-add-new-topic-with-trigger/' | relative_url }})의 이전 지침 아래에 새 줄을 추가합니다.
 
     ```text
     2. If the user answers yes to the question of requesting a device, trigger [Request device]. Otherwise if they answer no to the question of requesting a device, trigger [Goodbye].
@@ -454,18 +455,21 @@ Copilot Studio에서 에이전트용 Adaptive Card를 만들 때의 모범 사�
 
 ## ✅ 미션 완료
 
-축하합니다! 👏🏻 Power Fx 수식을 사용해 변수의 데이터를 표시하는 adaptive card를 추가하는 법과, 한 토픽에서 다른 토픽으로 리다이렉트하는 법을 배웠습니다. 작은 단위의 토픽을 만들면 에이전트가 더 체계적으로 구성될 뿐 아니라, 사용자를 에이전트와의 대화 흐름 여러 부분으로 안내하는 데도 도움이 됩니다.
+성공적으로 완료한 항목은 다음과 같습니다:
 
-이것으로 **랩 08 - Adaptive Card로 사용자 상호작용 강화하기**가 끝났습니다. 다음 레슨으로 이동하려면 아래 링크를 선택하세요. 이 랩의 사용 사례는 다음 레슨의 랩에서 확장됩니다.
+- **Adaptive Card 디자인**: 인터랙티브 기기 요청 카드 만들기
+- **Power Fx**: 수식을 사용해 변수에 저장된 데이터 표시하기
+- **사용자 입력**: 기기 선택과 추가 의견 수집하기
+- **토픽 리다이렉션**: 사용 가능한 기기 토픽과 기기 요청 토픽 연결하기
 
-⏭️ [**자동화를 위해 토픽에 에이전트 플로우 추가하기** 레슨으로 이동](https://microsoft.github.io/agent-academy/recruit/09-add-an-agent-flow/)
+다음으로 [미션 09: Agent Flow 추가하기]({{ '/chapters/academy-recruit-09-add-an-agent-flow/' | relative_url }})를 계속 진행하세요.
 
 ## 📚 전술 자료
 
-🔗 [Copilot Studio에서 Adaptive Card 사용하기](https://learn.microsoft.com/microsoft-copilot-studio/guidance/adaptive-cards-overview?WT.mc_id=power-172619-ebenitez)
+- [Copilot Studio에서 Adaptive Card 사용하기](https://learn.microsoft.com/microsoft-copilot-studio/guidance/adaptive-cards-overview?WT.mc_id=power-172619-ebenitez)
 
-🔗 [Send a message 노드에 adaptive card 추가하기](https://learn.microsoft.com/microsoft-copilot-studio/authoring-send-message#add-an-adaptive-card?WT.mc_id=power-172619-ebenitez)
+- [Send a message 노드에 adaptive card 추가하기](https://learn.microsoft.com/microsoft-copilot-studio/authoring-send-message#add-an-adaptive-card?WT.mc_id=power-172619-ebenitez)
 
-🔗 [Power Fx로 표현식 만들기](https://learn.microsoft.com/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-172619-ebenitez)
+- [Power Fx로 표현식 만들기](https://learn.microsoft.com/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-172619-ebenitez)
 
-📺 [Power FX로 Adaptive Card 만들기](https://aka.ms/ai-in-action/copilot-studio/ep8)
+- [Power Fx로 Adaptive Card 만들기](https://aka.ms/ai-in-action/copilot-studio/ep8)
