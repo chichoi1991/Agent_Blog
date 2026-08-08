@@ -24,6 +24,1758 @@
       ],
       "staged_at": "2026-08-06T03:53:28.313Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-00-course-setup",
+      "src_path": "recruit/00-course-setup",
+      "sha": "9a9ce052d3024f36c0418e60476b98361d2f0f0c",
+      "title": "🚨 Mission 00: Course Setup",
+      "description": "Set up your dev environment, Copilot Studio trial, and SharePoint site",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 0,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/00-course-setup/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./images/m365-freetrial.png",
+          "local": "assets/academy/recruit-00-course-setup/m365-freetrial.png"
+        },
+        {
+          "src": "./images/mcs-trial-screen.png",
+          "local": "assets/academy/recruit-00-course-setup/mcs-trial-screen.png"
+        },
+        {
+          "src": "./images/mcs-trial-signin.png",
+          "local": "assets/academy/recruit-00-course-setup/mcs-trial-signin.png"
+        },
+        {
+          "src": "./images/mcs-start-trial.png",
+          "local": "assets/academy/recruit-00-course-setup/mcs-start-trial.png"
+        },
+        {
+          "src": "images/0.3_01_SignUp.png",
+          "local": "assets/academy/recruit-00-course-setup/0.3_01_SignUp.png"
+        },
+        {
+          "src": "images/admin-teams-groups.png",
+          "local": "assets/academy/recruit-00-course-setup/admin-teams-groups.png"
+        },
+        {
+          "src": "images/admin-securitygroup-tab.png",
+          "local": "assets/academy/recruit-00-course-setup/admin-securitygroup-tab.png"
+        },
+        {
+          "src": "images/admin-securitygroup-name.png",
+          "local": "assets/academy/recruit-00-course-setup/admin-securitygroup-name.png"
+        },
+        {
+          "src": "images/admin-creategroup.png",
+          "local": "assets/academy/recruit-00-course-setup/admin-creategroup.png"
+        },
+        {
+          "src": "images/admin-selectgroup.png",
+          "local": "assets/academy/recruit-00-course-setup/admin-selectgroup.png"
+        },
+        {
+          "src": "images/admin-viewmembers.png",
+          "local": "assets/academy/recruit-00-course-setup/admin-viewmembers.png"
+        },
+        {
+          "src": "images/admin-addmember.png",
+          "local": "assets/academy/recruit-00-course-setup/admin-addmember.png"
+        },
+        {
+          "src": "images/admin-selectname.png",
+          "local": "assets/academy/recruit-00-course-setup/admin-selectname.png"
+        },
+        {
+          "src": "images/pp-admin-managetab.png",
+          "local": "assets/academy/recruit-00-course-setup/pp-admin-managetab.png"
+        },
+        {
+          "src": "images/pp-admin-tenantsettings.png",
+          "local": "assets/academy/recruit-00-course-setup/pp-admin-tenantsettings.png"
+        },
+        {
+          "src": "images/pp-authors.png",
+          "local": "assets/academy/recruit-00-course-setup/pp-authors.png"
+        },
+        {
+          "src": "images/pp-pencil.png",
+          "local": "assets/academy/recruit-00-course-setup/pp-pencil.png"
+        },
+        {
+          "src": "images/pp-securitygroup.png",
+          "local": "assets/academy/recruit-00-course-setup/pp-securitygroup.png"
+        },
+        {
+          "src": "images/pp-save.png",
+          "local": "assets/academy/recruit-00-course-setup/pp-save.png"
+        },
+        {
+          "src": "images/00-select-sharepoint-in-power-apps.png",
+          "local": "assets/academy/recruit-00-course-setup/00-select-sharepoint-in-power-apps.png"
+        },
+        {
+          "src": "images/00-select-sharepoint-in-microsoft-365-admin-center.png",
+          "local": "assets/academy/recruit-00-course-setup/00-select-sharepoint-in-microsoft-365-admin-center.png"
+        },
+        {
+          "src": "images/00-create-a-new-sharepoint-site.png",
+          "local": "assets/academy/recruit-00-course-setup/00-create-a-new-sharepoint-site.png"
+        },
+        {
+          "src": "images/00-select-it-help-desk-site-template.png",
+          "local": "assets/academy/recruit-00-course-setup/00-select-it-help-desk-site-template.png"
+        },
+        {
+          "src": "images/00-use-the-it-help-desk-template.png",
+          "local": "assets/academy/recruit-00-course-setup/00-use-the-it-help-desk-template.png"
+        },
+        {
+          "src": "images/00-configure-the-new-sharepoint-site-details.png",
+          "local": "assets/academy/recruit-00-course-setup/00-configure-the-new-sharepoint-site-details.png"
+        },
+        {
+          "src": "images/00-open-the-newly-created-sharepoint-site.png",
+          "local": "assets/academy/recruit-00-course-setup/00-open-the-newly-created-sharepoint-site.png"
+        },
+        {
+          "src": "./images/devices-list.png",
+          "local": "assets/academy/recruit-00-course-setup/devices-list.png"
+        },
+        {
+          "src": "./images/add-column.png",
+          "local": "assets/academy/recruit-00-course-setup/add-column.png"
+        }
+      ],
+      "staged_at": "2026-08-08T02:34:15.239Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-01-introduction-to-agents",
+      "src_path": "recruit/01-introduction-to-agents",
+      "sha": "8a0cf1ab0423817daa562b05aa41816ba74fdd39",
+      "title": "🚨 Mission 01: Introduction to Agents",
+      "description": ">-",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 1,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/01-introduction-to-agents/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./images/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-01-introduction-to-agents/video-thumbnail.jpg"
+        }
+      ],
+      "staged_at": "2026-08-08T02:34:15.519Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-02-copilot-studio-fundamentals",
+      "src_path": "recruit/02-copilot-studio-fundamentals",
+      "sha": "e01d15f9578874aff993440ced9b7b540c1209cf",
+      "title": "🚨 Mission 02: Copilot Studio Fundamentals",
+      "description": "Learn the building blocks: knowledge, skills, autonomy",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 2,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/02-copilot-studio-fundamentals/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./assets/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-02-copilot-studio-fundamentals/video-thumbnail.jpg"
+        }
+      ],
+      "staged_at": "2026-08-08T02:34:15.775Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-03-create-a-declarative-agent-for-M365Copilot",
+      "src_path": "recruit/03-create-a-declarative-agent-for-M365Copilot",
+      "sha": "56418c6c82ccdc1d3a1246fc29ddc77dba5bc3dd",
+      "title": "🚨 Mission 03: Deploy a Declarative Agent for Microsoft 365 Copilot",
+      "description": "Add your own agent to the Microsoft 365 Copilot, grounded in a prompt",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 3,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/03-create-a-declarative-agent-for-M365Copilot/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./assets/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/video-thumbnail.jpg"
+        },
+        {
+          "src": "assets/3.0_01_Customization.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.0_01_Customization.png"
+        },
+        {
+          "src": "assets/3.0_02_AdvancedCapabilities.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.0_02_AdvancedCapabilities.png"
+        },
+        {
+          "src": "assets/3.1_02_CopilotForM365.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.1_02_CopilotForM365.png"
+        },
+        {
+          "src": "assets/3.1_03_AddAgent.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.1_03_AddAgent.png"
+        },
+        {
+          "src": "assets/3.1_04_AgentName.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.1_04_AgentName.png"
+        },
+        {
+          "src": "assets/3.1_05_ChangeIcon.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.1_05_ChangeIcon.png"
+        },
+        {
+          "src": "assets/3.1_06_AgentDescription.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.1_06_AgentDescription.png"
+        },
+        {
+          "src": "assets/3.1_07_AgentInstruction.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.1_07_AgentInstruction.png"
+        },
+        {
+          "src": "assets/3.1_08_SuggestedPrompts.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.1_08_SuggestedPrompts.png"
+        },
+        {
+          "src": "assets/3.1_09_CreateDeclarativeAgent.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.1_09_CreateDeclarativeAgent.png"
+        },
+        {
+          "src": "assets/3.1_10_AgentCreated.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.1_10_AgentCreated.png"
+        },
+        {
+          "src": "assets/3.1_11_TestResponse.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.1_11_TestResponse.png"
+        },
+        {
+          "src": "assets/3.2_01_AddTool.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_01_AddTool.png"
+        },
+        {
+          "src": "assets/3.2_02_SelectPrompt.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_02_SelectPrompt.png"
+        },
+        {
+          "src": "assets/3.2_03_NamePrompt.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_03_NamePrompt.png"
+        },
+        {
+          "src": "assets/3.2_04_ChangeModel.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_04_ChangeModel.png"
+        },
+        {
+          "src": "assets/3.2_05_UseCopilot_EnterPrompt.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_05_UseCopilot_EnterPrompt.png"
+        },
+        {
+          "src": "assets/3.2_06_CopilotDraftingPrompt.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_06_CopilotDraftingPrompt.png"
+        },
+        {
+          "src": "assets/3.2_07_CopilotGeneratedInstructions.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_07_CopilotGeneratedInstructions.png"
+        },
+        {
+          "src": "assets/3.2_08_SelectPromptTemplate.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_08_SelectPromptTemplate.png"
+        },
+        {
+          "src": "assets/3.2_09_PromptLibrary.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_09_PromptLibrary.png"
+        },
+        {
+          "src": "assets/3.2_10_SelectITExpertPrompt.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_10_SelectITExpertPrompt.png"
+        },
+        {
+          "src": "assets/3.2_11_ITExpertPromptInstructions.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_11_ITExpertPromptInstructions.png"
+        },
+        {
+          "src": "assets/3.2_12_PromptInstructions.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_12_PromptInstructions.png"
+        },
+        {
+          "src": "assets/3.2_13_AddContent.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_13_AddContent.png"
+        },
+        {
+          "src": "assets/3.2_14_NameSampleData.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_14_NameSampleData.png"
+        },
+        {
+          "src": "assets/3.2_15_TestPrompt.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_15_TestPrompt.png"
+        },
+        {
+          "src": "assets/3.2_16_ModelResponse.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_16_ModelResponse.png"
+        },
+        {
+          "src": "assets/3.2_17_ModelResponse.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_17_ModelResponse.png"
+        },
+        {
+          "src": "assets/3.2_18_PromptSettings.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_18_PromptSettings.png"
+        },
+        {
+          "src": "assets/3.2_19_ConfigurePromptSettings.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_19_ConfigurePromptSettings.png"
+        },
+        {
+          "src": "assets/3.2_20_SavePrompt.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_20_SavePrompt.png"
+        },
+        {
+          "src": "assets/3.2_21_AddAndConfigure.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_21_AddAndConfigure.png"
+        },
+        {
+          "src": "assets/3.2_22_PromptAddedAsTool.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_22_PromptAddedAsTool.png"
+        },
+        {
+          "src": "assets/3.3_01_EditInstructions.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.3_01_EditInstructions.png"
+        },
+        {
+          "src": "assets/3.3_02_UpdateInstructionsWithPrompt.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.3_02_UpdateInstructionsWithPrompt.png"
+        },
+        {
+          "src": "assets/3.3_03_RefreshTestPane.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.3_03_RefreshTestPane.png"
+        },
+        {
+          "src": "assets/3.3_04_PerformTest.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.3_04_PerformTest.png"
+        },
+        {
+          "src": "assets/3.3_05_ModelResponse.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.3_05_ModelResponse.png"
+        },
+        {
+          "src": "assets/3.3_06_ModelResponse.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.3_06_ModelResponse.png"
+        },
+        {
+          "src": "assets/3.4_01_PublishAgent.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_01_PublishAgent.png"
+        },
+        {
+          "src": "assets/3.4_02_ConfigurePublishingAgentDetails.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_02_ConfigurePublishingAgentDetails.png"
+        },
+        {
+          "src": "assets/3.4_03_UpdatePublishingAgentDetails.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_03_UpdatePublishingAgentDetails.png"
+        },
+        {
+          "src": "assets/3.4_04_AvailabilityOptions.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_04_AvailabilityOptions.png"
+        },
+        {
+          "src": "assets/3.4_05_ShareAgent.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_05_ShareAgent.png"
+        },
+        {
+          "src": "assets/3.4_06_CopyLink.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_06_CopyLink.png"
+        },
+        {
+          "src": "assets/3.4_07_AgentAppDetails.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_07_AgentAppDetails.png"
+        },
+        {
+          "src": "assets/3.4_08_SelectStarterPrompt.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_08_SelectStarterPrompt.png"
+        },
+        {
+          "src": "assets/3.4_09_AlwaysAllow.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_09_AlwaysAllow.png"
+        },
+        {
+          "src": "assets/3.4_10_01_Response.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_10_01_Response.png"
+        },
+        {
+          "src": "assets/3.4_10_02_Response.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_10_02_Response.png"
+        },
+        {
+          "src": "assets/3.4_11_DeveloperModeEnabled.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_11_DeveloperModeEnabled.png"
+        },
+        {
+          "src": "assets/3.4_12_EnterQuestion.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_12_EnterQuestion.png"
+        },
+        {
+          "src": "assets/3.4_13_AgentDebuggingInfo.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_13_AgentDebuggingInfo.png"
+        },
+        {
+          "src": "assets/3.4_14_01_ReviewAgentDebugInfo.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_14_01_ReviewAgentDebugInfo.png"
+        },
+        {
+          "src": "assets/3.4_14_02_ReviewAgentDebugInfo.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_14_02_ReviewAgentDebugInfo.png"
+        },
+        {
+          "src": "assets/3.4_14_03_ReviewAgentDebugInfo.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_14_03_ReviewAgentDebugInfo.png"
+        },
+        {
+          "src": "assets/3.4_15_DeveloperModeDisabled.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_15_DeveloperModeDisabled.png"
+        },
+        {
+          "src": "assets/3.4_16_NavigateToApps.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_16_NavigateToApps.png"
+        },
+        {
+          "src": "assets/3.4_17_Agree.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_17_Agree.png"
+        },
+        {
+          "src": "assets/3.4_18_CopilotAgentsInTeams.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_18_CopilotAgentsInTeams.png"
+        },
+        {
+          "src": "assets/3.4_19_SelectAndPinAgentFromApps.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_19_SelectAndPinAgentFromApps.png"
+        },
+        {
+          "src": "assets/3.4_20_EnterQuestion.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_20_EnterQuestion.png"
+        },
+        {
+          "src": "./assets/3.4_21_AgentInTeamsResponse.png",
+          "local": "assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_21_AgentInTeamsResponse.png"
+        }
+      ],
+      "staged_at": "2026-08-08T02:34:25.407Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-04-creating-a-solution",
+      "src_path": "recruit/04-creating-a-solution",
+      "sha": "da495dd9a0f642e20355e1d493cb0b52d19d9916",
+      "title": "🚨 Mission 04: Creating a Solution for Your Agent",
+      "description": "Package your agent into a reusable solution for environment management",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 4,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/04-creating-a-solution/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./assets/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-04-creating-a-solution/video-thumbnail.jpg"
+        },
+        {
+          "src": "./assets/4.0_01_Solutions.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.0_01_Solutions.png"
+        },
+        {
+          "src": "./assets/4.0_02_CopilotStudioSolutionExplorer.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.0_02_CopilotStudioSolutionExplorer.png"
+        },
+        {
+          "src": "./assets/4.0_03_DeveloperEnvironment.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.0_03_DeveloperEnvironment.png"
+        },
+        {
+          "src": "./assets/4.1_01_Solutions.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_01_Solutions.png"
+        },
+        {
+          "src": "./assets/4.1_02_NewSolution.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_02_NewSolution.png"
+        },
+        {
+          "src": "./assets/4.1_03_NewPublisher.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_03_NewPublisher.png"
+        },
+        {
+          "src": "./assets/4.1_04_PublisherProperties.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_04_PublisherProperties.png"
+        },
+        {
+          "src": "./assets/4.1_05_Contact.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_05_Contact.png"
+        },
+        {
+          "src": "./assets/4.1_06_SavePublisher.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_06_SavePublisher.png"
+        },
+        {
+          "src": "./assets/4.1_07_PublisherSelected.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.1_07_PublisherSelected.png"
+        },
+        {
+          "src": "./assets/4.2_01_SolutionDetails_.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.2_01_SolutionDetails_.png"
+        },
+        {
+          "src": "./assets/4.2_02_MoreOptions.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.2_02_MoreOptions.png"
+        },
+        {
+          "src": "./assets/4.2_03_Create.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.2_03_Create.png"
+        },
+        {
+          "src": "./assets/4.2_04_SolutionCreated.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.2_04_SolutionCreated.png"
+        },
+        {
+          "src": "./assets/4.2_05_CurrentPreferredSolutionSelected.png",
+          "local": "assets/academy/recruit-04-creating-a-solution/4.2_05_CurrentPreferredSolutionSelected.png"
+        }
+      ],
+      "staged_at": "2026-08-08T02:34:27.782Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-05-using-prebuilt-agents",
+      "src_path": "recruit/05-using-prebuilt-agents",
+      "sha": "99645e21959849e7371d37f9657adba324955861",
+      "title": "🧰 Mission 05: Using a Pre-Built Agent",
+      "description": "Use and customize a template agent to accelerate setup",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 5,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/05-using-prebuilt-agents/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./images/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-05-using-prebuilt-agents/video-thumbnail.jpg"
+        },
+        {
+          "src": "./images/5.1.01_agentstab.png",
+          "local": "assets/academy/recruit-05-using-prebuilt-agents/5.1.01_agentstab.png"
+        },
+        {
+          "src": "./images/5.1.02_templateselect.png",
+          "local": "assets/academy/recruit-05-using-prebuilt-agents/5.1.02_templateselect.png"
+        },
+        {
+          "src": "./images/template-setup.png",
+          "local": "assets/academy/recruit-05-using-prebuilt-agents/template-setup.png"
+        },
+        {
+          "src": "./images/create-agent-setup.png",
+          "local": "assets/academy/recruit-05-using-prebuilt-agents/create-agent-setup.png"
+        },
+        {
+          "src": "./images/knowledge.png",
+          "local": "assets/academy/recruit-05-using-prebuilt-agents/knowledge.png"
+        },
+        {
+          "src": "./images/public-website.png",
+          "local": "assets/academy/recruit-05-using-prebuilt-agents/public-website.png"
+        },
+        {
+          "src": "./images/paste-add.png",
+          "local": "assets/academy/recruit-05-using-prebuilt-agents/paste-add.png"
+        },
+        {
+          "src": "./images/add-to-agent.png",
+          "local": "assets/academy/recruit-05-using-prebuilt-agents/add-to-agent.png"
+        },
+        {
+          "src": "./images/response-passport.png",
+          "local": "assets/academy/recruit-05-using-prebuilt-agents/response-passport.png"
+        },
+        {
+          "src": "./images/publish-1.png",
+          "local": "assets/academy/recruit-05-using-prebuilt-agents/publish-1.png"
+        },
+        {
+          "src": "./images/publish-2.png",
+          "local": "assets/academy/recruit-05-using-prebuilt-agents/publish-2.png"
+        }
+      ],
+      "staged_at": "2026-08-08T02:34:29.704Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-06-create-agent-from-conversation",
+      "src_path": "recruit/06-create-agent-from-conversation",
+      "sha": "d964637a14917167048fc277453f3bcc57430381",
+      "title": "🚨 Mission 06: Create a custom agent using natural language with AI and grounding it with your data",
+      "description": "Create a new agent grounded in knowledge sources",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 6,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/06-create-agent-from-conversation/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./assets/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/video-thumbnail.jpg"
+        },
+        {
+          "src": "./assets/6.1_01_Prompt.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_01_Prompt.png"
+        },
+        {
+          "src": "./assets/6.1_02_AgentSettings.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_02_AgentSettings.png"
+        },
+        {
+          "src": "./assets/6.1_03_AgentProvisioned.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_03_AgentProvisioned.png"
+        },
+        {
+          "src": "./assets/6.1_04_KnowledgeAndTools.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_04_KnowledgeAndTools.png"
+        },
+        {
+          "src": "./assets/6.1_05_ConnectedAgentsTopicsSuggestedPrompts.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_05_ConnectedAgentsTopicsSuggestedPrompts.png"
+        },
+        {
+          "src": "./assets/6.1_06_AgentSettings.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_06_AgentSettings.png"
+        },
+        {
+          "src": "./assets/6.1_07_AdvancedSettings.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_07_AdvancedSettings.png"
+        },
+        {
+          "src": "./assets/6.1_08_EditDetails.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_08_EditDetails.png"
+        },
+        {
+          "src": "./assets/6.1_09_AgentName.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_09_AgentName.png"
+        },
+        {
+          "src": "./assets/6.1_10_AddSuggestedWebsite.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_10_AddSuggestedWebsite.png"
+        },
+        {
+          "src": "./assets/6.1_11_AddWebsite.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_11_AddWebsite.png"
+        },
+        {
+          "src": "./assets/6.1_12_AddAdditionalWebsite.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_12_AddAdditionalWebsite.png"
+        },
+        {
+          "src": "./assets/6.1_13_SelectDismiss.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_13_SelectDismiss.png"
+        },
+        {
+          "src": "./assets/6.1_14_DisableWebSearch.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_14_DisableWebSearch.png"
+        },
+        {
+          "src": "./assets/6.1_15_StartNewTestSession.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_15_StartNewTestSession.png"
+        },
+        {
+          "src": "./assets/6.1_16_EnterQuestion.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_16_EnterQuestion.png"
+        },
+        {
+          "src": "./assets/6.1_17_References.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_17_References.png"
+        },
+        {
+          "src": "./assets/6.2_01_SelectSharePoint.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.2_01_SelectSharePoint.png"
+        },
+        {
+          "src": "./assets/6.2_02_AddSharePointSite.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.2_02_AddSharePointSite.png"
+        },
+        {
+          "src": "./assets/6.2_03_SharePointSiteAdded.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.2_03_SharePointSiteAdded.png"
+        },
+        {
+          "src": "./assets/6.3_01_SelectUploadFile.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.3_01_SelectUploadFile.png"
+        },
+        {
+          "src": "./assets/6.3_02_SelectWordFile.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.3_02_SelectWordFile.png"
+        },
+        {
+          "src": "./assets/6.3_03_SelectAddToAgent.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.3_03_SelectAddToAgent.png"
+        },
+        {
+          "src": "./assets/6.3_04_FileAdded.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.3_04_FileAdded.png"
+        },
+        {
+          "src": "./assets/6.3_05_FileStatus.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.3_05_FileStatus.png"
+        },
+        {
+          "src": "./assets/6.4_01_EnterQuestion1.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_01_EnterQuestion1.png"
+        },
+        {
+          "src": "./assets/6.4_02_Question1Response.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_02_Question1Response.png"
+        },
+        {
+          "src": "./assets/6.4_03_OtherSourcesSearchedOver.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_03_OtherSourcesSearchedOver.png"
+        },
+        {
+          "src": "./assets/6.4_04_EnterQuestion2Question3.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_04_EnterQuestion2Question3.png"
+        },
+        {
+          "src": "./assets/6.4_05_Question2Response.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_05_Question2Response.png"
+        },
+        {
+          "src": "./assets/6.4_06_Question3Response.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_06_Question3Response.png"
+        },
+        {
+          "src": "./assets/6.4_07_OtherSourcesSearchedOver.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_07_OtherSourcesSearchedOver.png"
+        },
+        {
+          "src": "./assets/6.4_08_VerifyDocument.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_08_VerifyDocument.png"
+        }
+      ],
+      "staged_at": "2026-08-08T02:34:34.884Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-07-add-new-topic-with-trigger",
+      "src_path": "recruit/07-add-new-topic-with-trigger",
+      "sha": "8a865c49c6e256eca6c471f9155d37bf8980c826",
+      "title": "🚨 Mission 07: Add new topic with trigger and nodes",
+      "description": "Use Topics to define custom question/answer paths",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 7,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/07-add-new-topic-with-trigger/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./assets/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/video-thumbnail.jpg"
+        },
+        {
+          "src": "assets/7.0_01_Topics.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.0_01_Topics.png"
+        },
+        {
+          "src": "assets/7.0_03_ConversationNodes.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.0_03_ConversationNodes.png"
+        },
+        {
+          "src": "assets/7.3_09_EnterFormula.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_09_EnterFormula.png"
+        },
+        {
+          "src": "assets/7.0_04_AddATopic.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.0_04_AddATopic.png"
+        },
+        {
+          "src": "assets/7.1_01_Topics.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.1_01_Topics.png"
+        },
+        {
+          "src": "assets/7.1_02_FromBlank.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.1_02_FromBlank.png"
+        },
+        {
+          "src": "assets/7.1_03_TopicNameAndDescription.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.1_03_TopicNameAndDescription.png"
+        },
+        {
+          "src": "assets/7.2_01_SelectTopicDetails.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.2_01_SelectTopicDetails.png"
+        },
+        {
+          "src": "assets/7.2_02_SelectInputTab.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.2_02_SelectInputTab.png"
+        },
+        {
+          "src": "assets/7.2_03_CreateANewVariable.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.2_03_CreateANewVariable.png"
+        },
+        {
+          "src": "assets/7.2_04_VariableName.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.2_04_VariableName.png"
+        },
+        {
+          "src": "assets/7.2_05_IdentifyAs.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.2_05_IdentifyAs.png"
+        },
+        {
+          "src": "assets/7.2_06_InputDescription.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.2_06_InputDescription.png"
+        },
+        {
+          "src": "assets/7.2_07_SelectOutputTab.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.2_07_SelectOutputTab.png"
+        },
+        {
+          "src": "assets/7.2_08_CreateANewVariable.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.2_08_CreateANewVariable.png"
+        },
+        {
+          "src": "assets/7.2_09_OutputVariable.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.2_09_OutputVariable.png"
+        },
+        {
+          "src": "assets/7.2_10_ExitTopicDetailsPane.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.2_10_ExitTopicDetailsPane.png"
+        },
+        {
+          "src": "assets/7.3_01_AddNode.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_01_AddNode.png"
+        },
+        {
+          "src": "assets/7.3_02_GetItems.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_02_GetItems.png"
+        },
+        {
+          "src": "assets/7.3_04_GetItemsProperties.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_04_GetItemsProperties.png"
+        },
+        {
+          "src": "assets/7.3_05_UpdateDescription.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_05_UpdateDescription.png"
+        },
+        {
+          "src": "assets/7.3_06_GetItemsInputs.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_06_GetItemsInputs.png"
+        },
+        {
+          "src": "assets/7.3_07_SelectVariable.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_07_SelectVariable.png"
+        },
+        {
+          "src": "assets/7.3_08_SelectFormula.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_08_SelectFormula.png"
+        },
+        {
+          "src": "assets/7.3_10_LimitColumnsByView.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_10_LimitColumnsByView.png"
+        },
+        {
+          "src": "assets/7.3_11_ConfigureOutputs.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_11_ConfigureOutputs.png"
+        },
+        {
+          "src": "assets/7.3_12_RenameVariable.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_12_RenameVariable.png"
+        },
+        {
+          "src": "assets/7.3_13_UpdateToGlobalVariable.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_13_UpdateToGlobalVariable.png"
+        },
+        {
+          "src": "assets/7.3_14_ExitVariablePropertiesPane.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_14_ExitVariablePropertiesPane.png"
+        },
+        {
+          "src": "assets/7.3_15_AddSetAVariableValueNode.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_15_AddSetAVariableValueNode.png"
+        },
+        {
+          "src": "assets/7.3_16_SelectAVariable.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_16_SelectAVariable.png"
+        },
+        {
+          "src": "assets/7.3_17_SelectVarAvailableDevices.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_17_SelectVarAvailableDevices.png"
+        },
+        {
+          "src": "assets/7.3_18_SelectVariable.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_18_SelectVariable.png"
+        },
+        {
+          "src": "assets/7.3_19_SelectFormulaTab.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_19_SelectFormulaTab.png"
+        },
+        {
+          "src": "assets/7.3_20_EnterFormula.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_20_EnterFormula.png"
+        },
+        {
+          "src": "assets/7.3_21_Formula.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_21_Formula.png"
+        },
+        {
+          "src": "assets/7.3_22_EditInstructions.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_22_EditInstructions.png"
+        },
+        {
+          "src": "assets/7.3_23_ClearInstructions.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_23_ClearInstructions.png"
+        },
+        {
+          "src": "assets/7.3_24_UpdateInstructions.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_24_UpdateInstructions.png"
+        },
+        {
+          "src": "assets/7.3_25_HighlightPlaceholder.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_25_HighlightPlaceholder.png"
+        },
+        {
+          "src": "assets/7.3_26_SelectAvailableDevicesTopic.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_26_SelectAvailableDevicesTopic.png"
+        },
+        {
+          "src": "assets/7.3_27_SaveUpdatedInstructions.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_27_SaveUpdatedInstructions.png"
+        },
+        {
+          "src": "assets/7.3_28_NewTestSession.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_28_NewTestSession.png"
+        },
+        {
+          "src": "assets/7.3_29_SelectAllow.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_29_SelectAllow.png"
+        },
+        {
+          "src": "assets/7.3_30_TestResponse.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_30_TestResponse.png"
+        },
+        {
+          "src": "assets/7.3_31_ManageConnections.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_31_ManageConnections.png"
+        },
+        {
+          "src": "assets/7.3_32_UsedBy.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_32_UsedBy.png"
+        },
+        {
+          "src": "assets/7.3_33_UsedByInformation.png",
+          "local": "assets/academy/recruit-07-add-new-topic-with-trigger/7.3_33_UsedByInformation.png"
+        }
+      ],
+      "staged_at": "2026-08-08T02:34:42.668Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-08-add-adaptive-card",
+      "src_path": "recruit/08-add-adaptive-card",
+      "sha": "0c14251b22c45e3fc6bd82b3b11ac61003398d99",
+      "title": "🚨 Mission 08: Enhance user interactions in Topics with Adaptive Cards",
+      "description": "Build an Adaptive Card using Power Fx and SharePoint",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 8,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/08-add-adaptive-card/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./assets/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-08-add-adaptive-card/video-thumbnail.jpg"
+        },
+        {
+          "src": "assets/8.0_01_AdaptiveCard.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.0_01_AdaptiveCard.png"
+        },
+        {
+          "src": "assets/8.0_02_AdaptiveCardPropertiesPane.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.0_02_AdaptiveCardPropertiesPane.png"
+        },
+        {
+          "src": "assets/8.0_03_AdaptiveCardPropertiesPane.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.0_03_AdaptiveCardPropertiesPane.png"
+        },
+        {
+          "src": "assets/8.0_04_AdaptiveCardDesignerSamples.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.0_04_AdaptiveCardDesignerSamples.png"
+        },
+        {
+          "src": "assets/8.1_01_NewTopic.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_01_NewTopic.png"
+        },
+        {
+          "src": "assets/8.1_02_TopicNameAndTriggerDescription.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_02_TopicNameAndTriggerDescription.png"
+        },
+        {
+          "src": "assets/8.1_03_AddAskWithAdaptiveCard.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_03_AddAskWithAdaptiveCard.png"
+        },
+        {
+          "src": "assets/8.1_04_EditAdaptiveCard.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_04_EditAdaptiveCard.png"
+        },
+        {
+          "src": "assets/8.1_05_DragAndDropCardElements.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_05_DragAndDropCardElements.png"
+        },
+        {
+          "src": "assets/8.1_06_PreviewAdaptiveCard.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_06_PreviewAdaptiveCard.png"
+        },
+        {
+          "src": "assets/8.1_07_PreviewCardWidths.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_07_PreviewCardWidths.png"
+        },
+        {
+          "src": "assets/8.1_08_Undo.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_08_Undo.png"
+        },
+        {
+          "src": "assets/8.1_09_SelectAll.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_09_SelectAll.png"
+        },
+        {
+          "src": "assets/8.1_10_DeviceRequestCard.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_10_DeviceRequestCard.png"
+        },
+        {
+          "src": "assets/8.1_11_ExitAdaptiveCardNodeProperties.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_11_ExitAdaptiveCardNodeProperties.png"
+        },
+        {
+          "src": "assets/8.1_12_DeviceRequestCard.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_12_DeviceRequestCard.png"
+        },
+        {
+          "src": "assets/8.1_13_DeviceRequestCardOutputs.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_13_DeviceRequestCardOutputs.png"
+        },
+        {
+          "src": "assets/8.1_14_ChangeToFormula.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_14_ChangeToFormula.png"
+        },
+        {
+          "src": "assets/8.1_15_SelectExpand.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_15_SelectExpand.png"
+        },
+        {
+          "src": "assets/8.1_16_SelectAll.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_16_SelectAll.png"
+        },
+        {
+          "src": "assets/8.1_17_PowerFxFormula.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_17_PowerFxFormula.png"
+        },
+        {
+          "src": "assets/8.1_18_SaveTopic.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.1_18_SaveTopic.png"
+        },
+        {
+          "src": "assets/8.2_01_EditInstructions.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.2_01_EditInstructions.png"
+        },
+        {
+          "src": "assets/8.2_02_ReplaceRequestDevicePlaceholder.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.2_02_ReplaceRequestDevicePlaceholder.png"
+        },
+        {
+          "src": "assets/8.2_03_ReferenceRequestDeviceTopic.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.2_03_ReferenceRequestDeviceTopic.png"
+        },
+        {
+          "src": "assets/8.2_04_ReferenceGoodbyeTopic.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.2_04_ReferenceGoodbyeTopic.png"
+        },
+        {
+          "src": "assets/8.2_05_TestAgent.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.2_05_TestAgent.png"
+        },
+        {
+          "src": "assets/8.2_06_TestRequestDeviceTopic.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.2_06_TestRequestDeviceTopic.png"
+        },
+        {
+          "src": "assets/8.2_07_AdaptiveCardQuestion.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.2_07_AdaptiveCardQuestion.png"
+        },
+        {
+          "src": "assets/8.2_08_RefreshTestPane.png",
+          "local": "assets/academy/recruit-08-add-adaptive-card/8.2_08_RefreshTestPane.png"
+        }
+      ],
+      "staged_at": "2026-08-08T02:34:47.320Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-09-add-an-agent-flow",
+      "src_path": "recruit/09-add-an-agent-flow",
+      "sha": "aa9777566451715f31e0e4ec16a5e5d7b9259ed1",
+      "title": "🚨 Mission 09: Add an agent flow to your Topic for automation",
+      "description": "Use Adaptive Card input to trigger back-end flows",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 9,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/09-add-an-agent-flow/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./assets/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/video-thumbnail.jpg"
+        },
+        {
+          "src": "./assets/9.1_01_AddNewAgentFlow.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_01_AddNewAgentFlow.png"
+        },
+        {
+          "src": "./assets/9.1_02_SelectTrigger.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_02_SelectTrigger.png"
+        },
+        {
+          "src": "./assets/9.1_03_AddInput.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_03_AddInput.png"
+        },
+        {
+          "src": "./assets/9.1_04_SelectText.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_04_SelectText.png"
+        },
+        {
+          "src": "./assets/9.1_05_DeviceSharePointIdInput.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_05_DeviceSharePointIdInput.png"
+        },
+        {
+          "src": "./assets/9.1_06_AddInput.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_06_AddInput.png"
+        },
+        {
+          "src": "./assets/9.1_07_UserInput.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_07_UserInput.png"
+        },
+        {
+          "src": "./assets/9.1_08_AddInput.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_08_AddInput.png"
+        },
+        {
+          "src": "./assets/9.1_09_AdditionalComments.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_09_AdditionalComments.png"
+        },
+        {
+          "src": "./assets/9.1_10_Optional.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_10_Optional.png"
+        },
+        {
+          "src": "./assets/9.1_11_AddAction.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_11_AddAction.png"
+        },
+        {
+          "src": "./assets/9.1_12_AddGetItemAction.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_12_AddGetItemAction.png"
+        },
+        {
+          "src": "./assets/9.1_13_SelectEllipsis.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_13_SelectEllipsis.png"
+        },
+        {
+          "src": "./assets/9.1_14_SelectRename.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_14_SelectRename.png"
+        },
+        {
+          "src": "./assets/9.1_15_RenameAction.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_15_RenameAction.png"
+        },
+        {
+          "src": "./assets/9.1_16_SharePointSiteAndListParameters.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_16_SharePointSiteAndListParameters.png"
+        },
+        {
+          "src": "./assets/9.1_17_InsertExpressionIcon.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_17_InsertExpressionIcon.png"
+        },
+        {
+          "src": "./assets/9.1_18_DeviceSharePointId.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_18_DeviceSharePointId.png"
+        },
+        {
+          "src": "./assets/9.1_19_AdvancedParameters.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_19_AdvancedParameters.png"
+        },
+        {
+          "src": "./assets/9.1_20_LimitColumnsByView.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_20_LimitColumnsByView.png"
+        },
+        {
+          "src": "./assets/9.1_21_SelectView.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_21_SelectView.png"
+        },
+        {
+          "src": "./assets/9.1_22_AddAnAction.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_22_AddAnAction.png"
+        },
+        {
+          "src": "./assets/9.1_23_SendAnEmail.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_23_SendAnEmail.png"
+        },
+        {
+          "src": "./assets/9.1_24_RenameAndConfigureParameters.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_24_RenameAndConfigureParameters.png"
+        },
+        {
+          "src": "./assets/9.1_25_AddUserInput.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_25_AddUserInput.png"
+        },
+        {
+          "src": "./assets/9.1_26_SelectUserInput.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_26_SelectUserInput.png"
+        },
+        {
+          "src": "./assets/9.1_27_UserInputAdded.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_27_UserInputAdded.png"
+        },
+        {
+          "src": "./assets/9.1_28_ManufacturerValueAdded.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_28_ManufacturerValueAdded.png"
+        },
+        {
+          "src": "./assets/9.1_29_ModelAdded.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_29_ModelAdded.png"
+        },
+        {
+          "src": "./assets/9.1_30_ToggleCodeView.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_30_ToggleCodeView.png"
+        },
+        {
+          "src": "./assets/9.1_31_AddHTMLTag.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_31_AddHTMLTag.png"
+        },
+        {
+          "src": "./assets/9.1_32_AddLinkToItem.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_32_AddLinkToItem.png"
+        },
+        {
+          "src": "./assets/9.1_33_LinkToItemAdded.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_33_LinkToItemAdded.png"
+        },
+        {
+          "src": "./assets/9.1_34_AddHTMLTag.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_34_AddHTMLTag.png"
+        },
+        {
+          "src": "./assets/9.1_35_ClickAfterText.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_35_ClickAfterText.png"
+        },
+        {
+          "src": "./assets/9.1_36_ClosingAnchorTag.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_36_ClosingAnchorTag.png"
+        },
+        {
+          "src": "./assets/9.1_37_ToggleCodeView.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_37_ToggleCodeView.png"
+        },
+        {
+          "src": "./assets/9.1_38_AddUserInput.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_38_AddUserInput.png"
+        },
+        {
+          "src": "./assets/9.1_39_AddUserDynamicContent.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_39_AddUserDynamicContent.png"
+        },
+        {
+          "src": "./assets/9.1_40_AddExpression.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_40_AddExpression.png"
+        },
+        {
+          "src": "./assets/9.1_41_IfEmptyFunctions.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_41_IfEmptyFunctions.png"
+        },
+        {
+          "src": "./assets/9.1_42_AdditionalCommentsDynamicContent.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_42_AdditionalCommentsDynamicContent.png"
+        },
+        {
+          "src": "./assets/9.1_43_None.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_43_None.png"
+        },
+        {
+          "src": "./assets/9.1_44_AdditionalCommentsDynamicContent.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_44_AdditionalCommentsDynamicContent.png"
+        },
+        {
+          "src": "./assets/9.1_45_Italics.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_45_Italics.png"
+        },
+        {
+          "src": "./assets/9.1_46_RespondToTheAgentAction.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_46_RespondToTheAgentAction.png"
+        },
+        {
+          "src": "./assets/9.1_47_ModelValueInput.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_47_ModelValueInput.png"
+        },
+        {
+          "src": "./assets/9.1_48_InsertModelDynamicContent.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_48_InsertModelDynamicContent.png"
+        },
+        {
+          "src": "./assets/9.1_49_SaveDraftAgentFlow.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_49_SaveDraftAgentFlow.png"
+        },
+        {
+          "src": "./assets/9.1_50_EditAgentFlowDetails.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_50_EditAgentFlowDetails.png"
+        },
+        {
+          "src": "./assets/9.1_51_RenameAndDescription.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_51_RenameAndDescription.png"
+        },
+        {
+          "src": "./assets/9.1_52_Publish.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_52_Publish.png"
+        },
+        {
+          "src": "./assets/9.1_53_Confirmation.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.1_53_Confirmation.png"
+        },
+        {
+          "src": "./assets/9.2_01_SelectAgent.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_01_SelectAgent.png"
+        },
+        {
+          "src": "./assets/9.2_02_SelectTopics.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_02_SelectTopics.png"
+        },
+        {
+          "src": "./assets/9.2_03_SelectRequestDevice.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_03_SelectRequestDevice.png"
+        },
+        {
+          "src": "./assets/9.2_04_SelectAgentFlow.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_04_SelectAgentFlow.png"
+        },
+        {
+          "src": "./assets/9.2_05_SelectVariable.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_05_SelectVariable.png"
+        },
+        {
+          "src": "./assets/9.2_06_SelectdeviceSelectionIdVariable.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_06_SelectdeviceSelectionIdVariable.png"
+        },
+        {
+          "src": "./assets/9.2_07_SelectVariable.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_07_SelectVariable.png"
+        },
+        {
+          "src": "./assets/9.2_08_SelectUser.DisplayNameVariable.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_08_SelectUser.DisplayNameVariable.png"
+        },
+        {
+          "src": "./assets/9.2_09_ExpandAdvancedInputs.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_09_ExpandAdvancedInputs.png"
+        },
+        {
+          "src": "./assets/9.2_10_SelectVariable.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_10_SelectVariable.png"
+        },
+        {
+          "src": "./assets/9.2_11_SelectFormulaAndExpandIcon.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_11_SelectFormulaAndExpandIcon.png"
+        },
+        {
+          "src": "./assets/9.2_12_IfIsBlank.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_12_IfIsBlank.png"
+        },
+        {
+          "src": "./assets/9.2_13_Topic.commentsId.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_13_Topic.commentsId.png"
+        },
+        {
+          "src": "./assets/9.2_14_PowerFxExpression.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_14_PowerFxExpression.png"
+        },
+        {
+          "src": "./assets/9.2_15_PowerFxExpressionForAdditionalCommentsInput.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.2_15_PowerFxExpressionForAdditionalCommentsInput.png"
+        },
+        {
+          "src": "./assets/9.3_01_AddSendAMessageNode.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.3_01_AddSendAMessageNode.png"
+        },
+        {
+          "src": "./assets/9.3_02_InsertVariable.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.3_02_InsertVariable.png"
+        },
+        {
+          "src": "./assets/9.3_03_SelectSystemVariable.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.3_03_SelectSystemVariable.png"
+        },
+        {
+          "src": "./assets/9.3_04_SelectCustomVariable.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.3_04_SelectCustomVariable.png"
+        },
+        {
+          "src": "./assets/9.3_05_SendAMessage.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.3_05_SendAMessage.png"
+        },
+        {
+          "src": "./assets/9.3_06_EndOfConversation.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.3_06_EndOfConversation.png"
+        },
+        {
+          "src": "./assets/9.3_07_SaveTopic.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.3_07_SaveTopic.png"
+        },
+        {
+          "src": "./assets/9.4_01_EnableTrackBetweenTopics.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_01_EnableTrackBetweenTopics.png"
+        },
+        {
+          "src": "./assets/9.4_02_TestAgent_RequestDevice_Yes.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_02_TestAgent_RequestDevice_Yes.png"
+        },
+        {
+          "src": "./assets/9.4_03_RequestDevice_Yes.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_03_RequestDevice_Yes.png"
+        },
+        {
+          "src": "./assets/9.4_04_SelectDeviceAndEnterComment.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_04_SelectDeviceAndEnterComment.png"
+        },
+        {
+          "src": "./assets/9.4_05_SubmitRequest.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_05_SubmitRequest.png"
+        },
+        {
+          "src": "./assets/9.4_06_SelectAllow.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_06_SelectAllow.png"
+        },
+        {
+          "src": "./assets/9.4_07_RequestSubmitted.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_07_RequestSubmitted.png"
+        },
+        {
+          "src": "./assets/9.4_08_RedirectNode.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_08_RedirectNode.png"
+        },
+        {
+          "src": "./assets/9.4_09_EndOfConversation.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_09_EndOfConversation.png"
+        },
+        {
+          "src": "./assets/9.4_10_EndOfConversation.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_10_EndOfConversation.png"
+        },
+        {
+          "src": "./assets/9.4_11_ReviewEmailMessageWithComment.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_11_ReviewEmailMessageWithComment.png"
+        },
+        {
+          "src": "./assets/9.4_12_SelectLinkInEmail.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_12_SelectLinkInEmail.png"
+        },
+        {
+          "src": "./assets/9.4_13_RequestDevice_Yes.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_13_RequestDevice_Yes.png"
+        },
+        {
+          "src": "./assets/9.4_14_SelectDevice.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_14_SelectDevice.png"
+        },
+        {
+          "src": "./assets/9.4_15_SubmitRequest.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_15_SubmitRequest.png"
+        },
+        {
+          "src": "./assets/9.4_16_ReviewEmailMessage.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_16_ReviewEmailMessage.png"
+        },
+        {
+          "src": "./assets/9.4_17_TestAgent_RequestDevice_No.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_17_TestAgent_RequestDevice_No.png"
+        },
+        {
+          "src": "./assets/9.4_18_Goodbye.png",
+          "local": "assets/academy/recruit-09-add-an-agent-flow/9.4_18_Goodbye.png"
+        }
+      ],
+      "staged_at": "2026-08-08T02:35:01.214Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-10-add-event-triggers",
+      "src_path": "recruit/10-add-event-triggers",
+      "sha": "ed994904745e71991874b148072c61d933bf97f3",
+      "title": "🚨 Mission 10: Add Event Triggers - Enable autonomous agent capabilities",
+      "description": "Enable your agent to act autonomously using event-based logic",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 10,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/10-add-event-triggers/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./assets/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-10-add-event-triggers/video-thumbnail.jpg"
+        },
+        {
+          "src": "./assets/10_AddTriggerDialog.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_AddTriggerDialog.png"
+        },
+        {
+          "src": "./assets/10_EnableGenerativeAI.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_EnableGenerativeAI.png"
+        },
+        {
+          "src": "./assets/10_NavigateToTrigger.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_NavigateToTrigger.png"
+        },
+        {
+          "src": "./assets/10_SelectSharePointTrigger.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_SelectSharePointTrigger.png"
+        },
+        {
+          "src": "./assets/10_ConfigureTriggerNameAndConnections.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_ConfigureTriggerNameAndConnections.png"
+        },
+        {
+          "src": "./assets/10_ConfigureTriggerParams.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_ConfigureTriggerParams.png"
+        },
+        {
+          "src": "./assets/10_EditTriggerInPowerAutomate.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_EditTriggerInPowerAutomate.png"
+        },
+        {
+          "src": "./assets/10_InsertExpressionForTrigger.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_InsertExpressionForTrigger.png"
+        },
+        {
+          "src": "./assets/10_TriggerOutputExpression.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_TriggerOutputExpression.png"
+        },
+        {
+          "src": "./assets/10_SelectOutlookConnector.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_SelectOutlookConnector.png"
+        },
+        {
+          "src": "./assets/10_ConfigureInputParameters.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_ConfigureInputParameters.png"
+        },
+        {
+          "src": "./assets/10_CreateTestTicket.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_CreateTestTicket.png"
+        },
+        {
+          "src": "./assets/10_MonitorTriggerTest.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_MonitorTriggerTest.png"
+        },
+        {
+          "src": "./assets/10_AllowConnector.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_AllowConnector.png"
+        },
+        {
+          "src": "./assets/10_TestTrigger.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_TestTrigger.png"
+        },
+        {
+          "src": "./assets/10_TestEmailSent.png",
+          "local": "assets/academy/recruit-10-add-event-triggers/10_TestEmailSent.png"
+        }
+      ],
+      "staged_at": "2026-08-08T02:35:04.766Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-11-publish-your-agent",
+      "src_path": "recruit/11-publish-your-agent",
+      "sha": "8801b3a553736ccd0aa30b803a39233b1d087af0",
+      "title": "🚨 Mission 11: Publish Your Agent",
+      "description": "Deploy your agent to Microsoft Teams and Microsoft 365 Copilot",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 11,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/11-publish-your-agent/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./assets/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-11-publish-your-agent/video-thumbnail.jpg"
+        },
+        {
+          "src": "./assets/channels.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/channels.png"
+        },
+        {
+          "src": "./assets/publish.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/publish.png"
+        },
+        {
+          "src": "./assets/publish-popup.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/publish-popup.png"
+        },
+        {
+          "src": "./assets/publishing.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/publishing.png"
+        },
+        {
+          "src": "./assets/publish-notification.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/publish-notification.png"
+        },
+        {
+          "src": "./assets/channels-tab.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/channels-tab.png"
+        },
+        {
+          "src": "./assets/teams-m365-copilot.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/teams-m365-copilot.png"
+        },
+        {
+          "src": "./assets/add-channel.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/add-channel.png"
+        },
+        {
+          "src": "./assets/channel-added.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/channel-added.png"
+        },
+        {
+          "src": "./assets/see-agent-teams.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/see-agent-teams.png"
+        },
+        {
+          "src": "./assets/add-teams.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/add-teams.png"
+        },
+        {
+          "src": "./assets/teams-added.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/teams-added.png"
+        },
+        {
+          "src": "./assets/agent-teams-open.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/agent-teams-open.png"
+        },
+        {
+          "src": "./assets/m365-teams-edit-details.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/m365-teams-edit-details.png"
+        },
+        {
+          "src": "./assets/edit-details.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/edit-details.png"
+        },
+        {
+          "src": "./assets/m365-teams-availability-options.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/m365-teams-availability-options.png"
+        },
+        {
+          "src": "./assets/availability-options.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/availability-options.png"
+        },
+        {
+          "src": "./assets/submit-for-approval.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/submit-for-approval.png"
+        },
+        {
+          "src": "./assets/pending-approval.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/pending-approval.png"
+        },
+        {
+          "src": "./assets/teams-apps-publish.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/teams-apps-publish.png"
+        },
+        {
+          "src": "./assets/available-in-app-store.png",
+          "local": "assets/academy/recruit-11-publish-your-agent/available-in-app-store.png"
+        }
+      ],
+      "staged_at": "2026-08-08T02:35:11.864Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-12-understanding-licensing",
+      "src_path": "recruit/12-understanding-licensing",
+      "sha": "ca75afd16126a2dde7c675ae6bac367358cbc57e",
+      "title": "🚨 Mission 12: Understanding Licensing",
+      "description": "Learn how licensing and billing works with Copilot Studio",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 12,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/12-understanding-licensing/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [],
+      "staged_at": "2026-08-08T02:35:11.986Z",
+      "status": "pending-translation"
     }
   ]
 }
