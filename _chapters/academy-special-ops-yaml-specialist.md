@@ -1,6 +1,6 @@
 ---
 layout: "chapter"
-date: 2026-04-02
+date: 2026-08-07
 title: "YAML Specialist"
 short_title: "YAML Specialist"
 description: "VS Code에서 YAML 에이전트 정의 언어를 사용해 Copilot Studio 에이전트를 완전히 코드로 빌드하고 확장하는 실전 랩입니다. GitHub Copilot과 전문 스킬을 활용한 AI 지원 YAML 작성을 다룹니다."
@@ -10,7 +10,7 @@ parent: "aspecialops"
 source_url: "https://microsoft.github.io/agent-academy/special-ops/yaml-specialist/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-04-02"
+source_published: "2026-08-07"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/yaml-specialist/"
 ---
 
@@ -300,11 +300,21 @@ beginDialog:
 
 ### Lab 1.2: Copilot Studio VS Code 확장 설치
 
-1. **Visual Studio Code**를 엽니다.
+다음으로 VS Code용 Copilot Studio 확장을 설치합니다.
+
+1. **Visual Studio Code**를 엽니다(설치되어 있지 않다면 [code.visualstudio.com](https://code.visualstudio.com/)에서 다운로드).
 1. 왼쪽의 Activity Bar에서 **Extensions** 아이콘을 선택합니다 (또는 `Ctrl+Shift+X`).
 1. 검색 창에 **ms-copilotstudio.vscode-copilotstudio**를 입력합니다.
 1. **Microsoft**가 게시한 확장을 찾아 **Install**을 선택합니다.  
     <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-yaml-specialist/install-copilot-studio-extension.png' | relative_url }}" alt="Copilot Studio 확장 설치" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Copilot Studio VS Code 확장 설치</figcaption></figure>
+1. 설치가 완료될 때까지 기다립니다 — VS Code가 다시 로드를 요청할 수 있습니다.
+1. Activity Bar에 새로 나타난 **Copilot Studio** 아이콘을 선택합니다.
+1. "The extension 'Copilot Studio' wants to sign in using Microsoft" 팝업 알림이 표시되면 **Allow**를 선택합니다.  
+    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-yaml-specialist/sign-in-copilot-studio.png' | relative_url }}" alt="Copilot Studio 로그인" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Copilot Studio 로그인</figcaption></figure>
+1. 로그인할 계정을 선택하고 자격 증명을 입력한 뒤 다단계 인증이 있으면 완료합니다.
+1. VS Code로 돌아와 **Copilot Studio** 패널에서 **Getting Started** 섹션을 접고 **Agents** 섹션을 펼칩니다.
+1. 잠시 로딩이 끝나면 환경과 에이전트 목록이 표시됩니다.  
+    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-yaml-specialist/environment-list.png' | relative_url }}" alt="환경 목록" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>VS Code에 표시된 환경 목록</figcaption></figure>
 
 ### Lab 1.3: 에이전트를 로컬 머신에 클론
 
@@ -359,12 +369,14 @@ GitHub Copilot은 강력한 AI 코딩 어시스턴트이지만 기본적으로 C
 
 ### Lab 2.1: GitHub Copilot CLI 설치 및 열기
 
-1. [GitHub Copilot 구독](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot)이 있는지 확인합니다. **무료 플랜**(신용카드 불필요)이 이 미션에서 작동합니다 — Agent 모드, Copilot CLI, 월 50개의 채팅/에이전트 요청이 포함됩니다. 이 미션은 약 5-10개의 요청을 사용합니다.
+1. [GitHub Copilot 구독](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot)이 있는지 확인합니다. **무료 플랜**(신용카드 불필요)이 이 미션에서 작동합니다 — Agent 모드, Copilot CLI, 월 50개의 채팅/에이전트 요청이 포함됩니다. 이 미션은 약 5~10개의 요청을 사용하므로 무료 할당량으로 충분합니다. 이번 달 요청을 이미 모두 사용했다면 초기화를 기다리거나, GPT-5 mini 무제한 채팅과 프리미엄 요청 300개가 포함된 [Copilot Pro](https://github.com/features/copilot/plans)로 업그레이드해야 합니다. 인증된 학생과 교사는 Copilot Pro를 무료로 사용할 수 있습니다.
 
 1. VS Code를 열고 **Extensions** 아이콘(또는 `Ctrl+Shift+X`)을 선택하고 **github.copilot-chat**을 검색한 후 아직 설치되지 않았으면 **Install**을 선택합니다.  
     <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-yaml-specialist/install-github-copilot.png' | relative_url }}" alt="GitHub Copilot Chat 설치" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>GitHub Copilot Chat 설치</figcaption></figure>
 
-1. 메뉴 바에서 **Terminal** → **New Terminal** (또는 `` Ctrl+` ``)로 터미널을 열고 터미널 탭 옆의 **+** 드롭다운을 선택한 후 **GitHub Copilot CLI**를 선택합니다.  
+1. 메시지가 표시되면 GitHub에 **로그인**합니다.
+
+1. 메뉴 바에서 **Terminal** → **New Terminal** (또는 `` Ctrl+` ``)로 터미널을 열고 터미널 탭 옆의 **+** 드롭다운을 선택한 후 **GitHub Copilot CLI**를 선택합니다. CLI가 아직 설치되지 않았다면 VS Code가 설치를 안내하므로 안내에 따라 설치를 완료하세요. 자세한 내용은 [Installing GitHub Copilot in the CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli/installing-github-copilot-in-the-cli)를 참고하세요.  
     <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-yaml-specialist/open-cli.png' | relative_url }}" alt="GitHub Copilot CLI 열기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>GitHub Copilot CLI 열기</figcaption></figure>
 
 1. 터미널의 전체 화면 아이콘을 선택해 GitHub Copilot CLI를 확장할 수 있습니다.  
@@ -477,14 +489,15 @@ GitHub Copilot과 Copilot Studio 스킬을 사용해 `ConversationInit` 토픽�
 GitHub Copilot이 `agent.mcs.yml` 파일도 업데이트해 지시사항에 `{Global.UserCountry}` 참조를 포함했어야 합니다.
 
 1. Explorer에서 `agent.mcs.yml`을 엽니다.
-1. `instructions` 섹션에서 `{Global.UserCountry}` 참조를 찾습니다.  
+1. `instructions` 섹션에서 `{Global.UserCountry}` 참조를 찾습니다.
+1. 이는 지시사항이 현재 사용자의 위치에 맞춰지도록 하는 변수 참조입니다.  
     <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-yaml-specialist/agent-instructions-updated.png' | relative_url }}" alt="업데이트된 에이전트 지시사항" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>업데이트된 에이전트 지시사항</figcaption></figure>
 
 ## 🧪 Lab 4.1 - 지식 소스 및 가드레일 추가
 
 ### Lab 4.1: AI를 통해 지식 소스 추가
 
-1. 3섹션에서 사용했던 **GitHub Copilot CLI** 터미널에서 `/agents`로 **Copilot Studio Author** 에이전트를 다시 선택합니다.
+1. 3섹션에서 사용했던 **GitHub Copilot CLI** 터미널(닫았다면 2.1 섹션을 참고해 다시 엽니다)에서 `/agents`로 **Copilot Studio Author** 에이전트를 다시 선택합니다.
 
 1. 다음 프롬프트를 입력합니다:
 
@@ -498,6 +511,8 @@ GitHub Copilot이 `agent.mcs.yml` 파일도 업데이트해 지시사항에 `{Gl
 
 1. 에이전트가 완료되면 GitHub Copilot이 제안하는 변경사항을 검토합니다 — 지식 구성 파일을 수정하고 에이전트 지시사항을 업데이트해야 합니다.  
    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-yaml-specialist/knowledge-added.png' | relative_url }}" alt="지식 추가됨" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>지식 소스 추가됨</figcaption></figure>
+
+1. 에이전트 `yaml` 파일의 변경 내용을 살펴보며 어떤 수정이 이뤄졌는지 확인합니다.
 
 ## 🧪 Lab 5.1 - 변경사항 적용 및 테스트
 
@@ -581,6 +596,8 @@ Copilot Studio 확장은 세 가지 동기화 작업을 제공합니다:
 ## 🏅 완료 배지 받기
 
 <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-yaml-specialist/YAML_Specialist_Badge.png' | relative_url }}" alt="YAML Specialist Badge" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>YAML Specialist Badge</figcaption></figure>
+
+축하합니다, 에이전트 여러분 — 미션 완수! 이제 배지를 받을 차례입니다.
 
 배지 요청 양식을 제출하고 모든 필수 질문에 답하세요:
 
