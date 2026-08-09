@@ -1,16 +1,16 @@
 ---
 layout: "chapter"
-date: 2026-02-20
+date: 2026-08-06
 title: "미션 02: Copilot Studio 기초"
 short_title: "Copilot Studio 기초"
-description: "Knowledge, Tools, Topics, Instructions가 어떻게 맞물려 Copilot Studio 에이전트를 구성하는지 배웁니다."
+description: "Knowledge, Skills, Autonomy라는 구성 요소를 배웁니다."
 order: 2
 category: "academy-courses"
 parent: "arecruit"
 source_url: "https://microsoft.github.io/agent-academy/recruit/02-copilot-studio-fundamentals/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-02-20"
+source_published: "2026-08-06"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/02-copilot-studio-fundamentals/"
 ---
 
@@ -33,23 +33,19 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/02-copilot-stu
 
 첫 에이전트를 만들기 전에, 모든 커스텀 AI 에이전트를 구성하는 네 가지 핵심 요소인 Knowledge, Tools, Topics, Instructions를 이해해야 합니다. 또 이 요소들이 Copilot Studio 오케스트레이터 안에서 어떻게 함께 동작하는지도 배우게 됩니다.
 
-<div class="info-box note translated-post" markdown="1">
-**중요**  
-이 과정은 현재 클래식 환경을 기준으로 작성되었습니다. Microsoft Copilot Studio는 새 작성 환경을 순차적으로 배포하고 있지만, 이 미션의 개념 자체는 그대로 적용됩니다. 다만 스크린샷과 클릭 경로는 **클래식 환경** 기준이므로, 이후 수업에서 화면이 다르게 보이면 오른쪽 위의 **New Experience**를 끄고 따라오세요.
+<div class="info-box note" markdown="1">
+**중요 — 이 미션은 클래식 Copilot Studio 환경을 사용합니다**
+Microsoft Copilot Studio는 새 작성 환경을 순차적으로 배포하고 있습니다. 이 미션의 개념은 그대로 적용되지만, 과정의 스크린샷과 탐색 경로는 **클래식 환경**을 기준으로 합니다. 이후 미션에서 화면이 다르게 보이면 오른쪽 위의 **New Experience**를 끄고 따라오세요.
 </div>
 
 ## 목표
 
 이 미션에서 다루는 내용은 다음과 같습니다.
 
-- **Copilot Studio가 무엇인지 이해하기**
-- **언제, 왜 에이전트를 써야 하는지 이해하기**
-- **에이전트의 네 가지 핵심 구성 요소 살펴보기**
-  - **Knowledge**
-  - **Tools**
-  - **Topics**
-  - **Instructions**
-- **이 요소들이 함께 작동해 지능형 자동화 에이전트를 만드는 방식 이해하기**
+1. Copilot Studio가 무엇이며 언제 사용해야 하는지
+2. 조직이 지식과 자동화 시나리오를 위해 에이전트를 구축하는 이유
+3. Knowledge, Tools, Topics, Instructions가 에이전트를 형성하는 방식
+4. Copilot Studio 오케스트레이터가 이 구성 요소들을 함께 작동시키는 방식
 
 ## Copilot Studio의 에이전트란?
 
@@ -241,13 +237,16 @@ sequenceDiagram
 
 ## 미션 완료
 
-기초 브리핑을 성공적으로 마쳤습니다. 이제 Copilot Studio 에이전트의 네 가지 핵심 구성 요소를 이해했습니다.
+성공적으로 완료한 내용은 다음과 같습니다.
 
-1. **Knowledge** – 사실 정보를 찾고 대화 메모리를 유지하는 기반  
-2. **Tools** – 실제 작업을 자동으로 수행하게 만드는 실행 수단  
-3. **Topics** – 사용자 의도를 인식하고 어떤 워크플로를 실행할지 결정하는 진입점  
-4. **Instructions** – 모든 응답의 규칙, 톤, 경계를 정하는 지침
+- **Knowledge**: 에이전트가 사실 정보를 찾는 위치를 식별했습니다.
+- **Tools**: 에이전트가 작업을 수행하고 다른 시스템에 연결하는 방식을 설명했습니다.
+- **Topics**: 에이전트가 정의된 대화 경로를 처리하는 방식을 설명했습니다.
+- **Instructions**: 규칙, 톤, 경계가 응답을 안내하는 방식을 설명했습니다.
 
-이 네 요소를 갖추면 질문에 답하고 간단한 워크플로를 실행하는 기본 에이전트를 만들 수 있습니다. 다음 수업에서는 첫 번째 “Service Desk” 에이전트를 만드는 과정을 단계별로 따라가며, 지식 원본 연결부터 토픽 정의, 액션 연결까지 직접 살펴봅니다.
+다음으로 [Mission 03: Deploy a Declarative Agent for Microsoft 365 Copilot]({{ '/chapters/academy-recruit-03-create-a-declarative-agent-for-m365copilot/' | relative_url }})을 계속 진행하세요.
 
-다음 단계: [Deploy a Declarative Agent for Microsoft 365 Copilot](https://microsoft.github.io/agent-academy/recruit/03-create-a-declarative-agent-for-M365Copilot/)
+## 전술 리소스
+
+- [Microsoft Copilot Studio 개요](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-what-is-copilot-studio)
+- [Copilot Studio에서 에이전트 만들기](https://learn.microsoft.com/microsoft-copilot-studio/authoring-first-bot)

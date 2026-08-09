@@ -1,6 +1,6 @@
 ---
 layout: "chapter"
-date: 2026-02-19
+date: 2026-08-06
 title: "Event Trigger 추가로 자율형 에이전트 기능 활성화"
 short_title: "Event Trigger 추가"
 description: "이벤트 기반 로직으로 에이전트가 자율적으로 동작하도록 구성합니다."
@@ -10,37 +10,48 @@ parent: "arecruit"
 source_url: "https://microsoft.github.io/agent-academy/recruit/10-add-event-triggers/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-02-19"
+source_published: "2026-08-06"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/10-add-event-triggers/"
 ---
 
-<div class="info-box note translated-post" markdown="1">
+<div class="info-box note" markdown="1">
 **원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🚨 Mission 10: Add Event Triggers - Enable autonomous agent capabilities](https://microsoft.github.io/agent-academy/recruit/10-add-event-triggers/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 
-🎥 [YouTube 워크스루 보기](https://www.youtube.com/watch?v=ZgwHL8PQ1nY)
+## 영상으로 보기
+
+- YouTube walkthrough: https://www.youtube.com/watch?v=ZgwHL8PQ1nY
+
+<figure class="screenshot">
+  <img src="{{ '/assets/academy/recruit-10-add-event-triggers/video-thumbnail.jpg' | relative_url }}" alt="Add Event Triggers 동영상 썸네일" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Add Event Triggers 동영상 썸네일</figcaption>
+</figure>
 
 ## 🎯 미션 브리핑
 
-이제 에이전트를 단순한 대화형 도우미에서 **자율적으로 움직이는 운영 자산**으로 끌어올릴 차례입니다. 이번 미션의 목표는 사용자가 직접 호출하지 않아도 외부 신호를 감지하고 즉시 행동하는 agent를 만드는 것입니다.
+다시 오신 것을 환영합니다, Recruit. 이제 agent를 대화형 도우미에서 사용자 입력을 기다리지 않고 이벤트에 반응하는 자율형 agent로 끌어올릴 차례입니다.
 
-Event Trigger를 사용하면 SharePoint, Teams, Outlook 같은 외부 시스템을 감시하고, 신호가 들어오는 즉시 지능형 작업을 실행하도록 구성할 수 있습니다. 성공 기준은 단순히 응답하는 agent가 아니라, **스스로 가치를 시작하는 agent** 를 만드는 것입니다.
+Event Trigger를 사용하면 SharePoint, Teams, Outlook 같은 외부 시스템을 감시하고, 신호가 들어오는 즉시 지능형 작업을 실행하도록 agent를 훈련할 수 있습니다. 이 작업은 agent를 조용하고, 빠르며, 항상 감시하는 완전한 현장 운영 자산으로 바꿔 줍니다.
+
+성공 기준은 단순히 가치에 응답하는 agent가 아니라, **스스로 가치를 시작하는 agent** 를 만드는 것입니다.
 
 <div class="info-box note" markdown="1">
-**참고**
+**중요**
 
-이 실습의 스크린샷과 Copilot Studio 화면이 다르면 오른쪽 위의 **New Experience**를 꺼서 여기에서 사용하는 **classic experience**로 전환하세요.
+이 미션은 classic Copilot Studio experience를 사용합니다.
+
+이 미션의 스크린샷과 Copilot Studio 화면이 다르면 오른쪽 위의 **New Experience**를 꺼서 여기에서 사용하는 **classic experience**로 전환하세요.
 </div>
 
 ## 🔎 학습 목표
 
-이 레슨에서는 다음을 다룹니다.
+이 미션에서 배우는 내용은 다음과 같습니다.
 
-- Event Trigger가 무엇이며 어떻게 자율형 agent 동작을 가능하게 하는지 이해하기
-- Event Trigger와 topic trigger의 차이, trigger workflow, payload 이해하기
-- 대표적인 Event Trigger 시나리오 살펴보기
-- event 기반 agent의 인증, 보안, 게시 고려 사항 이해하기
-- SharePoint 이벤트에 반응하고 확인 메일을 보내는 자율형 IT Help Desk agent 만들기
+1. Event Trigger가 자율형 agent 동작을 가능하게 하는 방식
+1. Event Trigger와 topic trigger의 차이
+1. Event Trigger에 적합한 시나리오
+1. 인증, 보안, 게시가 event 기반 agent에 미치는 영향
+1. SharePoint 이벤트에 반응해 이메일 확인을 보내는 방법
 
 ## 🤔 Event Trigger란?
 
@@ -59,6 +70,7 @@ Topic trigger가 사용자가 문장을 입력해야 대화를 시작하는 반�
   <img src="{{ '/assets/academy/recruit-10-add-event-triggers/10_AddTriggerDialog.png' | relative_url }}" alt="Add Trigger 대화상자" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>Add Trigger 대화상자</figcaption>
 </figure>
+
 ### 자율형 agent에서 왜 중요할까요?
 
 Event Trigger는 agent를 반응형 도우미에서 사전 대응형 자율 도우미로 바꿔 줍니다.
@@ -145,6 +157,8 @@ Event Trigger에서 agent 동작을 유도하는 위치는 두 군데입니다.
 
 ## 🎯 대표적인 Event Trigger 시나리오
 
+Event Trigger가 agent를 어떻게 향상할 수 있는지 보여 주는 실용적인 예시는 다음과 같습니다.
+
 ### IT Help Desk Agent
 
 - **Trigger**: 새 SharePoint list item(지원 티켓)
@@ -193,6 +207,8 @@ Event Trigger가 포함된 agent를 게시할 때는 다음을 점검하세요.
 1. **Monitor usage** - trigger 활동과 리소스 사용량 추적
 
 ## ⚠️ 문제 해결과 제한 사항
+
+Event Trigger로 작업할 때는 다음 중요한 고려 사항을 염두에 두세요.
 
 ### Quota와 과금 영향
 
@@ -414,14 +430,19 @@ IT Help Desk agent가 새 지원 요청에 자동으로 반응하도록 확장�
 
 ## ✅ Mission Complete
 
-축하합니다! connector tool과 Event Trigger를 조합해 사용자 개입 없이 지원 티켓을 처리하고 확인 메일을 보내는 자율형 agent 동작을 구현했습니다. 이제 agent를 게시하면 여러분을 대신해 자율적으로 움직일 수 있습니다.
+성공적으로 다음을 완료했습니다.
 
-🚀 다음 단계: [Publish your agent]({{ '/chapters/academy-recruit-11-publish-your-agent/' | relative_url }})
+- **Event trigger**: 새 SharePoint item에 반응하도록 agent를 구성했습니다.
+- **Trigger payload**: 티켓 세부 정보를 agent에 전달했습니다.
+- **Connector tool**: 이메일 확인 tool을 추가했습니다.
+- **Autonomous testing**: 대화형 입력 없이 trigger와 tool을 검증했습니다.
+
+다음으로 [Mission 11: Publish Your Agent]({{ '/chapters/academy-recruit-11-publish-your-agent/' | relative_url }})를 계속 진행하세요.
 
 ## 📚 Tactical Resources
 
-- **Microsoft Learn**: [Make your agent autonomous in Copilot Studio](https://learn.microsoft.com/training/modules/autonomous-agents-online-workshop/?WT.mc_id=power-177340-scottdurow)
-- **Documentation**: [Add an event trigger](https://learn.microsoft.com/microsoft-copilot-studio/authoring-trigger-event?WT.mc_id=power-177340-scottdurow)
-- **Best Practices**: [Power Automate triggers introduction](https://learn.microsoft.com/power-automate/triggers-introduction?WT.mc_id=power-177340-scottdurow)
-- **Advanced Scenarios**: [Using Power Automate flows with agents](https://learn.microsoft.com/microsoft-copilot-studio/advanced-flow-create?WT.mc_id=power-177340-scottdurow)
-- **Security**: [Data loss prevention for Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention?WT.mc_id=power-177340-scottdurow)
+- [Make your agent autonomous in Copilot Studio](https://learn.microsoft.com/training/modules/autonomous-agents-online-workshop/?WT.mc_id=power-177340-scottdurow)
+- [Add an event trigger](https://learn.microsoft.com/microsoft-copilot-studio/authoring-trigger-event?WT.mc_id=power-177340-scottdurow)
+- [Power Automate triggers introduction](https://learn.microsoft.com/power-automate/triggers-introduction?WT.mc_id=power-177340-scottdurow)
+- [Use Power Automate flows with agents](https://learn.microsoft.com/microsoft-copilot-studio/advanced-flow-create?WT.mc_id=power-177340-scottdurow)
+- [Data loss prevention for Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention?WT.mc_id=power-177340-scottdurow)

@@ -14,7 +14,7 @@ source_published: ""
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/choose/"
 ---
 
-<div class="info-box note translated-post" markdown="1">
+<div class="info-box note" markdown="1">
 **원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [Welcome Recruit](https://microsoft.github.io/agent-academy/recruit/choose/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 

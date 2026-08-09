@@ -1,20 +1,20 @@
 ---
 layout: "chapter"
-date: 2026-02-19
+date: 2026-08-06
 title: "미션 06: 자연어와 AI로 커스텀 에이전트를 만들고 내 데이터로 그라운딩하기"
 short_title: "대화형 에이전트 생성"
-description: "자연어만으로 에이전트를 생성하고 SharePoint, 문서, 웹사이트 등 지식 소스로 그라운딩하는 방법"
+description: "지식 소스로 그라운딩된 새 에이전트를 만드는 방법"
 order: 6
 category: "academy-courses"
 parent: "arecruit"
 source_url: "https://microsoft.github.io/agent-academy/recruit/06-create-agent-from-conversation/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-02-19"
+source_published: "2026-08-06"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/06-create-agent-from-conversation/"
 ---
 
-<div class="info-box note translated-post" markdown="1">
+<div class="info-box note" markdown="1">
 **원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🚨 Mission 06: Create a custom agent using natural language with AI and grounding it with your data](https://microsoft.github.io/agent-academy/recruit/06-create-agent-from-conversation/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 
@@ -24,7 +24,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/06-create-agen
 
 ## 🎯 미션 브리핑
 
-돌아온 것을 환영합니다, 에이전트 메이커. 이번 미션에서는 Copilot Studio에서 가장 강력한 기능 — 오직 자연어만으로 커스텀 에이전트를 처음부터 만들고, 여러분의 데이터로 강화하는 작업을 지휘합니다.
+돌아온 것을 환영합니다, Recruit. 이번 미션에서는 Copilot Studio의 강력한 기능, 즉 자연어로 커스텀 에이전트를 만들고 여러분의 데이터로 그라운딩하는 일을 직접 다룹니다.
 
 이건 그냥 챗봇이 아닙니다. 여러분은 추론하고, 응답하고, 실제 엔터프라이즈 정보를 참조할 수 있는 지식 기반 디지털 동료를 만들고 있는 것입니다.
 
@@ -33,7 +33,9 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/06-create-agen
 바닥부터 여러분의 에이전트를 만들어봅시다.
 
 <div class="info-box note" markdown="1">
-**참고** — Copilot Studio 화면이 이 강의의 스크린샷과 다르게 보인다면, 오른쪽 상단의 **New Experience**를 꺼서 여기서 사용하는 **클래식 경험**으로 전환하세요.
+**중요: 이 미션은 클래식 Copilot Studio 환경을 사용합니다**
+
+Copilot Studio 화면이 이 미션의 스크린샷과 다르게 보인다면, 오른쪽 상단의 **New Experience**를 꺼서 여기서 사용하는 **클래식 경험**으로 전환하세요.
 </div>
 
 ## 🔎 학습 목표
@@ -41,10 +43,10 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/06-create-agen
 이번 미션에서 다음을 배웁니다:
 
 1. 커스텀 에이전트가 무엇인지, 사전 빌드된 템플릿과 어떻게 다른지 이해하기
-1. AI를 활용한 자연어 프롬프트로 에이전트 생성하기
+1. 자연어 설명을 사용해 에이전트 생성하기
 1. SharePoint, 문서, 웹사이트를 포함한 엔터프라이즈 지식 소스로 에이전트 그라운딩하기
-1. 생성형 오케스트레이션(generative orchestration)이 무엇이며, 에이전트가 여러 데이터 소스를 동적으로 검색·응답하는 방식 알아보기
-1. 내 데이터로 질문에 답할 수 있는 완전한 기능의 IT 헬프데스크 에이전트를 빌드하고 테스트하기
+1. 생성형 오케스트레이션(generative orchestration)이 여러 데이터 소스를 검색하는 방식 알아보기
+1. 엔터프라이즈 데이터로 그라운딩된 IT 헬프데스크 에이전트를 빌드하고 테스트하기
 
 ## 🤔 커스텀 에이전트란 무엇인가?
 
@@ -53,7 +55,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/06-create-agen
 - **목적을 직접 정합니다** - 휴가 신청, 주문 상태 확인, IT 관련 질문 지원 등
 - **대화를 직접 정의합니다** - 에이전트가 무엇을 말하고 어떻게 응답해야 하는지
 - **여러분의 데이터로 그라운딩합니다** - 내장 지원되는 지식 리소스를 통해 엔터프라이즈 데이터에 연결
-- **자체 시스템이나 애플리케이션과 연결합니다** - 커넥터, 플로우, REST API, model context protocol 서버 중 선택
+- **자체 시스템이나 애플리케이션과 연결합니다** - 커넥터, 플로우, REST API, Model Context Protocol 서버 중 선택
 
 <div class="info-box note" markdown="1">
 **참고** — 이렇게 생각해보세요: 사용자와 대화하며 질문에 답하거나, 프로세스에 필요한 정보를 수집하거나, 엔터프라이즈 데이터에 연결하는 등의 작업을 대신 처리해주는 나만의 디지털 도우미를 만드는 것입니다.
@@ -85,7 +87,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/06-create-agen
 
 ## 🗣️ 자연어로 에이전트 생성하기
 
-앞서 [레슨 05 - 사전 빌드된 에이전트로 빠르게 시작하기](/chapters/academy-recruit-05-using-prebuilt-agents/)에서 사전 빌드된 에이전트 템플릿으로 Copilot Studio에서 빠르게 에이전트를 만드는 법을 배웠습니다. 이번 레슨에서는 AI를 활용한 대화형 작성 경험을 살펴봅니다. Copilot Studio에서는 에이전트를 만들 때 코드를 작성할 필요가 없습니다. 여러분의 언어로 된 설명(자연어)만으로 에이전트를 쉽게 만들 수 있습니다.
+앞서 [레슨 05 - 사전 빌드된 에이전트로 빠르게 시작하기]({{ '/chapters/academy-recruit-05-using-prebuilt-agents/' | relative_url }})에서 사전 빌드된 에이전트 템플릿으로 Copilot Studio에서 빠르게 에이전트를 만드는 법을 배웠습니다. 이번 레슨에서는 AI를 활용한 대화형 작성 경험을 살펴봅니다. Copilot Studio에서는 에이전트를 만들 때 코드를 작성할 필요가 없습니다. 여러분의 언어로 된 설명(자연어)만으로 에이전트를 쉽게 만들 수 있습니다.
 
 자연어로 에이전트를 설명하며 시작하면, AI가 자동으로 에이전트의 이름, 설명, 지침(instructions)을 생성합니다. 또한 트리거, 채널, 지식 소스, 도구도 제안합니다. 이러한 제안은 수락하거나 무시할 수 있으며, 현재 세션 동안만 유지되고 저장되지는 않습니다.
 
@@ -240,7 +242,7 @@ SharePoint나 Dataverse 같은 일부 소스는 사용자 인증이 필요합니
 
 ### ✨ 사용 사례
 
-[레슨 03 - Microsoft 365 Copilot용 선언형 에이전트 만들기](/chapters/academy-recruit-03-create-a-declarative-agent-for-M365Copilot/)와 같은 사용 사례를 사용합니다.
+[레슨 03 - Microsoft 365 Copilot용 선언형 에이전트 만들기]({{ '/chapters/academy-recruit-03-create-a-declarative-agent-for-m365copilot/' | relative_url }})와 같은 사용 사례를 사용합니다.
 
 **직원으로서**
 
@@ -254,15 +256,15 @@ SharePoint나 Dataverse 같은 일부 소스는 사용자 인증이 필요합니
 
 - **SharePoint 사이트**
 
-[레슨 00 - 코스 설정 - 3단계: 새 SharePoint 사이트 만들기](/chapters/academy-recruit-00-course-setup/)에서 만든 **Contoso IT** SharePoint 사이트를 사용합니다.
+[미션 00 - 코스 설정 - 5단계: 새 SharePoint 사이트 만들기]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})에서 만든 **Contoso IT** SharePoint 사이트를 사용합니다.
 
-**Contoso IT** SharePoint 사이트를 아직 설정하지 않았다면, [레슨 00 - 코스 설정 - 3단계: 새 SharePoint 사이트 만들기](/chapters/academy-recruit-00-course-setup/)로 돌아가 설정하세요.
+**Contoso IT** SharePoint 사이트를 아직 설정하지 않았다면, [미션 00 - 코스 설정 - 5단계: 새 SharePoint 사이트 만들기]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})로 돌아가 설정하세요.
 
 - **솔루션**
 
-[레슨 04 - 에이전트용 솔루션 만들기](/chapters/academy-recruit-04-creating-a-solution/)에서 만든 **Contoso Helpdesk Agent** 솔루션을 사용합니다.
+[미션 04 - 새 솔루션 만들기]({{ '/chapters/academy-recruit-04-creating-a-solution/' | relative_url }})에서 만든 **Contoso Helpdesk Agent** 솔루션을 사용합니다.
 
-**Contoso Agent** 솔루션을 아직 설정하지 않았다면, [레슨 04 - 에이전트용 솔루션 만들기](/chapters/academy-recruit-04-creating-a-solution/)로 돌아가 설정하세요.
+**Contoso Helpdesk Agent** 솔루션을 아직 설정하지 않았다면, [미션 04 - 새 솔루션 만들기]({{ '/chapters/academy-recruit-04-creating-a-solution/' | relative_url }})로 돌아가 설정하세요.
 
 ### 6.1 자연어와 AI로 에이전트 만들기
 
@@ -302,9 +304,9 @@ SharePoint나 Dataverse 같은 일부 소스는 사용자 인증이 필요합니
 
     <figure class="screenshot"><img src="{{ '/assets/academy/recruit-06-create-agent-from-conversation/6.1_01_Prompt.png' | relative_url }}" alt="Enter prompt" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Enter prompt</figcaption></figure>
 
-1. [레슨 04 - 새 솔루션 만들기](/chapters/academy-recruit-04-creating-a-solution/)에서 선호 솔루션으로 선택한 솔루션에 에이전트가 만들어지는지 다시 한번 확인합니다.
+1. [미션 04 - 새 솔루션 만들기]({{ '/chapters/academy-recruit-04-creating-a-solution/' | relative_url }})에서 선호 솔루션으로 선택한 솔루션에 에이전트가 만들어지는지 다시 한번 확인합니다.
 
-    **wheel cog(톱니바퀴)** 아이콘을 선택하면 **Agent Settings** 모달이 나타나며, 앞서 만든 솔루션이 기본으로 선택되어 있는 것을 볼 수 있습니다. 이는 [레슨 04 - 새 솔루션 만들기](/chapters/academy-recruit-04-creating-a-solution/)에서 해당 솔루션을 선호 솔루션으로 선택했기 때문입니다.
+    **Agent Settings**(톱니바퀴 아이콘)를 선택합니다. 대화 상자에서 미션 04의 솔루션이 기본으로 선택되어 있는지 확인합니다.
 
     <figure class="screenshot"><img src="{{ '/assets/academy/recruit-06-create-agent-from-conversation/6.1_02_AgentSettings.png' | relative_url }}" alt="View of Agent Settings" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>View of Agent Settings</figcaption></figure>
 
@@ -370,7 +372,7 @@ SharePoint나 Dataverse 같은 일부 소스는 사용자 인증이 필요합니
 
     <figure class="screenshot"><img src="{{ '/assets/academy/recruit-06-create-agent-from-conversation/6.1_14_DisableWebSearch.png' | relative_url }}" alt="Disable Web Search" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Disable Web Search</figcaption></figure>
 
-1. 이제 새로 만든 에이전트를 테스트해봅시다. 오른쪽 **Testing** 패널에서 **new test session** 아이콘을 선택합니다.
+1. 이제 새로 만든 에이전트를 테스트해봅시다. **Testing** 패널에서 **Start a new test session**을 선택합니다.
 
     <figure class="screenshot"><img src="{{ '/assets/academy/recruit-06-create-agent-from-conversation/6.1_15_StartNewTestSession.png' | relative_url }}" alt="Select start new test session in testing pane" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Select start new test session in testing pane</figcaption></figure>
 
@@ -392,13 +394,13 @@ SharePoint나 Dataverse 같은 일부 소스는 사용자 인증이 필요합니
 
 ### 6.2 SharePoint 사이트를 활용한 내부 지식 소스 추가
 
-앞서 대화형 생성 경험 중에 외부 지식 소스로 퍼블릭 웹사이트를 추가했습니다. 이번에는 SharePoint 사이트를 활용한 내부 지식 소스를 추가합니다. [레슨 00 - 코스 설정](/chapters/academy-recruit-00-course-setup/)에서 만든 SharePoint 사이트를 사용합니다.
+앞서 대화형 생성 경험 중에 외부 지식 소스로 퍼블릭 웹사이트를 추가했습니다. 이번에는 SharePoint 사이트를 활용한 내부 지식 소스를 추가합니다. [미션 00 - 코스 설정]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})에서 만든 SharePoint 사이트를 사용합니다.
 
 1. **Knowledge** 섹션에서 **+ Add knowledge**를 선택하고 **SharePoint**를 선택합니다.
 
     <figure class="screenshot"><img src="{{ '/assets/academy/recruit-06-create-agent-from-conversation/6.2_01_SelectSharePoint.png' | relative_url }}" alt="Select SharePoint" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Select SharePoint</figcaption></figure>
 
-1. [레슨 00 - 코스 설정](/chapters/academy-recruit-00-course-setup/)에서 만든 **SharePoint 사이트 주소**를 SharePoint URL 필드에 붙여넣고 **Add**를 선택합니다.
+1. [미션 00 - 코스 설정]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})에서 만든 사이트 주소를 **SharePoint URL** 필드에 붙여넣고 **Add**를 선택합니다.
 
     SharePoint 사이트의 **이름**을 `Contoso IT`로 업데이트하고 **Add to agent**를 선택합니다.
 
@@ -490,22 +492,23 @@ Contoso Helpdesk Agent에 질문을 하여 네 가지 지식 소스를 모두 �
 
 ## ✅ 미션 완료
 
-축하합니다! 👏🏻 설명으로 시작해 나만의 커스텀 에이전트를 만드는 법을 배웠습니다. 여러분의 커스텀 에이전트는 네 가지 다른 지식 소스에 대해 채팅할 수 있습니다 🙌🏻
+성공적으로 완료한 내용은 다음과 같습니다:
 
-이것으로 **랩 06 - AI로 에이전트 만들기**가 끝났습니다. 다음 레슨으로 이동하려면 아래 링크를 선택하세요. 이 랩에서 만든 커스텀 에이전트는 다음 레슨의 랩에서 사용됩니다.
+- **자연어 작성**: 설명에서 커스텀 에이전트를 만들었습니다.
+- **엔터프라이즈 그라운딩**: SharePoint, 파일, 퍼블릭 웹사이트 지식 소스를 추가했습니다.
+- **생성형 오케스트레이션**: 여러 소스를 검색하도록 에이전트를 구성했습니다.
+- **테스트**: 생성된 답변을 원본 참조와 대조해 검증했습니다.
 
-⏭️ [**새 토픽과 트리거 추가하기** 레슨으로 이동](/chapters/academy-recruit-07-add-new-topic-with-trigger/)
-
-엘리트에 온 것을 환영합니다. 이제 여러분의 언어로 말하고, 여러분의 데이터를 참조하고, 팀을 지원하는 디지털 에이전트를 만드는 법을 알게 되었습니다. 계속 나아가세요—미션은 이제 막 시작되었습니다.
+다음으로 [미션 07: 트리거가 있는 토픽 추가]({{ '/chapters/academy-recruit-07-add-new-topic-with-trigger/' | relative_url }})를 계속 진행하세요.
 
 ## 📚 전술 자료
 
-🔗 [빠른 시작: 에이전트 만들고 배포하기](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-get-started?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-172617-ebenitez)
+- [빠른 시작: 에이전트 만들고 배포하기](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-get-started?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-172617-ebenitez)
 
-🔗 [에이전트 만들고 삭제하기](https://learn.microsoft.com/microsoft-copilot-studio/authoring-first-bot?WT.mc_id=power-172617-ebenitez)
+- [에이전트 만들고 삭제하기](https://learn.microsoft.com/microsoft-copilot-studio/authoring-first-bot?WT.mc_id=power-172617-ebenitez)
 
-🔗 [핵심 개념 - 에이전트 작성](https://learn.microsoft.com/microsoft-copilot-studio/authoring-fundamentals/?WT.mc_id=power-172617-ebenitez)
+- [핵심 개념: 에이전트 작성](https://learn.microsoft.com/microsoft-copilot-studio/authoring-fundamentals/?WT.mc_id=power-172617-ebenitez)
 
-📺 [자연어로 커스텀 에이전트 만들기](https://aka.ms/ai-in-action/copilot-studio/ep1)
+- [자연어로 커스텀 에이전트 만들기](https://aka.ms/ai-in-action/copilot-studio/ep1)
 
-📺 [에이전트에 지식 추가하기](https://aka.ms/ai-in-action/copilot-studio/ep2)
+- [에이전트에 지식 추가하기](https://aka.ms/ai-in-action/copilot-studio/ep2)

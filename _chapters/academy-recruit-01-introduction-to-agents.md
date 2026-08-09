@@ -1,6 +1,6 @@
 ---
 layout: "chapter"
-date: 2026-03-13
+date: 2026-08-06
 title: "미션 01: 에이전트 소개"
 short_title: "에이전트 소개"
 description: "대화형 AI, LLM, RAG, 대화형·자율형 에이전트의 핵심 차이를 이해합니다."
@@ -10,11 +10,11 @@ parent: "arecruit"
 source_url: "https://microsoft.github.io/agent-academy/recruit/01-introduction-to-agents/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-03-13"
+source_published: "2026-08-06"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/01-introduction-to-agents/"
 ---
 
-<div class="info-box note translated-post" markdown="1">
+<div class="info-box note" markdown="1">
 **원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🚨 Mission 01: Introduction to Agents](https://microsoft.github.io/agent-academy/recruit/01-introduction-to-agents/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 
@@ -56,8 +56,8 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/01-introductio
 3. **컨텍스트 윈도우(Context Window)**: 각 LLM은 한 번에 “볼 수 있는” 토큰 수에 한계가 있습니다. 이 한계를 넘어서면 앞선 토큰 정보는 줄어들거나 잘립니다.  
 4. **프롬프팅(Prompting)**: 사용자는 프롬프트(질문이나 요청이 담긴 텍스트 블록)를 보내 LLM과 상호작용합니다. 프롬프트가 좋을수록 응답도 더 초점이 맞고 관련성이 높아집니다.
 
-<div class="info-box note translated-post" markdown="1">
-**팁**  
+<div class="info-box note" markdown="1">
+**프로 팁**  
 LLM을 흔히 “매우 똑똑한 자동완성”에 비유합니다. 인간의 뇌처럼 의미를 진짜로 이해하는 것은 아니지만, 주어진 순서에서 다음에 올 가장 적절한 단어(또는 구문)를 예측하는 데 매우 뛰어납니다.
 </div>
 
@@ -114,21 +114,15 @@ Copilot Studio 맥락에서 **에이전트(agent)** 는 여러 형태의 AI 도�
 
 ## 미션 완료
 
-이제 에이전트와 핵심 AI 개념의 기초를 마쳤습니다. 다음 내용을 이해하게 되었습니다.
+성공적으로 다음을 완료했습니다.
 
-1. **LLM = 에이전트의 “두뇌”**  
-   - 언어 이해와 생성의 중심 역할을 합니다.  
-2. **RAG = 실시간 지식 결합**  
-   - 정적인 LLM과 계속 바뀌는 데이터 원본 사이의 간극을 메웁니다.  
-   - 관련 문서나 레코드를 가져와 LLM 프롬프트에 주입합니다.  
-3. **대화형 vs. 자율형**  
-   - **대화형**: 주고받는 대화 중심  
-   - **자율형**: 대화 없이도 외부 트리거로 시작해 스스로 작업 수행
+- **대규모 언어 모델**: LLM이 언어를 이해하고 생성하는 방식을 설명했습니다.
+- **검색 증강 생성**: RAG가 최신 정보에 근거한 응답을 제공하는 방식을 설명했습니다.
+- **에이전트 동작 방식**: 대화형 에이전트와 자율형 에이전트를 구분했습니다.
+- **Copilot Studio**: Copilot Studio가 AI, 지식, 도구, 게시 채널을 결합하는 방식을 확인했습니다.
 
 다음 단계에서는 [Copilot Studio 기초]({{ '/chapters/academy-recruit-02-copilot-studio-fundamentals/' | relative_url }})를 살펴봅니다.
 
-긴장을 늦추지 마세요, Recruit. AI 여정은 이제 시작입니다.
-
 ## 참고 자료
 
-- [Copilot Studio Documentation Home](https://learn.microsoft.com/microsoft-copilot-studio/)
+- [Copilot Studio 설명서](https://learn.microsoft.com/microsoft-copilot-studio/)

@@ -1,6 +1,6 @@
 ---
 layout: "chapter"
-date: 2026-02-19
+date: 2026-08-06
 title: "토픽에 에이전트 흐름 추가해 자동화하기"
 short_title: "에이전트 흐름 추가"
 description: "Adaptive Card 입력으로 백엔드 흐름을 트리거하는 방법을 배웁니다."
@@ -10,7 +10,7 @@ parent: "arecruit"
 source_url: "https://microsoft.github.io/agent-academy/recruit/09-add-an-agent-flow/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-02-19"
+source_published: "2026-08-06"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/09-add-an-agent-flow/"
 ---
 
@@ -24,28 +24,30 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/09-add-an-agen
 
 ## 🎯 미션 브리핑
 
-이제 에이전트는 사용자와 대화하고 정보를 제공할 수 있습니다. 하지만 실제 업무 가치를 만들려면 **행동**까지 해야 합니다. 이번 미션에서는 agent flow를 추가해 대화형 에이전트를 자동화 중심 에이전트로 확장합니다.
+다시 오신 것을 환영합니다, Recruit. 이제 agent는 사용자와 대화하고 정보를 제공할 수 있지만, 다음 요구 사항은 실제로 **행동**하는 것입니다. 이번 미션에서는 agent에 agent flow를 장착합니다.
 
 이번 미션이 끝나면 Adaptive Card로 입력을 받고, SharePoint에서 데이터를 조회하고, 관리자에게 이메일을 보내고, 사용자에게 자연스럽게 결과를 알려주는 **종단간 장치 요청 자동화**를 구성하게 됩니다.
 
 <div class="info-box note" markdown="1">
-**참고**
+**중요**
 
-이 실습의 스크린샷과 Copilot Studio 화면이 다르면 오른쪽 위의 **New Experience**를 꺼서 여기에서 사용하는 **classic experience**로 전환하세요.
+이 미션은 classic Copilot Studio experience를 사용합니다.
+
+이 미션의 스크린샷과 Copilot Studio 화면이 다르면 오른쪽 위의 **New Experience**를 꺼서 여기에서 사용하는 **classic experience**로 전환하세요.
 </div>
 
 ## 🔎 학습 목표
 
 이번 미션에서는 다음을 배웁니다.
 
-1. agent flow가 무엇인지, 자동화를 위한 Power Automate cloud flow와 어떻게 다른지 이해합니다.
-1. AI 작업, 자연어 작성 등 agent flow를 강력하게 만드는 핵심 기능을 이해합니다.
-1. agent flow 디자이너와 동적 데이터 처리를 위한 식(expression) 사용법을 익힙니다.
-1. SharePoint 데이터와 이메일 알림을 연결하는 장치 요청 자동화를 완성합니다.
+1. agent flow가 무엇인지, Power Automate cloud flow와 어떻게 다른지 이해합니다.
+1. agent flow가 AI actions와 자연어 작성을 어떻게 지원하는지 배웁니다.
+1. agent flow 디자이너와 expressions 사용법을 익힙니다.
+1. SharePoint와 이메일로 장치 요청을 자동화하는 방법을 배웁니다.
 
 ## 🤔 agent flow란?
 
-agent flow는 반복 작업을 자동화하고 앱·서비스를 연결하는 강력한 방식입니다. 에이전트가 실행할 수 있는 **구조화된 단계별 워크플로**라고 생각하면 됩니다. 알림 전송, 레코드 업데이트, 이벤트 대응 같은 일을 자동으로 처리하게 해줍니다.
+agent flow는 반복 작업을 자동화하고 앱·서비스를 연결하는 강력한 방식입니다. agent가 작업을 자동화하거나 다른 애플리케이션 및 서비스와 연결하기 위해 실행할 수 있는 **구조화된 단계별 워크플로**라고 생각하면 됩니다. 알림 전송, 레코드 업데이트, 이벤트 대응 같은 일을 agent가 처리하도록 돕는 작은 워크플로라고 볼 수 있습니다.
 
 자율형 에이전트가 상황에 따라 AI로 판단하는 것과 달리, agent flow는 **결정적(deterministic) 워크플로**입니다. 즉 같은 입력이 들어오면 항상 같은 경로를 따라가므로 결과가 일관되고 신뢰할 수 있습니다.
 
@@ -118,7 +120,7 @@ agent flow는 항상 **고정된 경로**를 따라가며, 같은 입력에 대�
 - **긴밀한 통합** — agent 로직 일부로 동작하며, 사용자 메시지나 대화 중 액션으로 직접 호출됩니다.
 - **확장성** — 여러 agent나 시나리오에서 재사용할 수 있습니다.
 - **노코드/로우코드** — 자연어 또는 시각적 디자이너로 구성할 수 있습니다.
-- **올인원 플랫폼** — 설계, 테스트, 배포를 모두 Copilot Studio 안에서 처리합니다.
+- **올인원 플랫폼** — Copilot Studio 한곳에서 agent flow를 설계, 테스트, 배포할 수 있습니다. 플랫폼을 오갈 필요가 없습니다.
 
 ## 🏄🏻‍♂️ agent flow가 agent를 어떻게 강화할까요?
 
@@ -150,7 +152,7 @@ Copilot Studio의 agent flow를 사용하면 이 과정을 자동화할 수 있�
 1. **자연어 작성**
    - 하고 싶은 일을 평문 영어로 설명할 수 있습니다.
    - Copilot이 의도를 이해해 흐름을 구성합니다.
-   - 코드를 직접 작성할 필요가 없습니다.
+   - 코드를 직접 작성할 필요 없이 아이디어를 설명하면 됩니다.
 
 1. **AI actions**
    - 문서나 이미지를 읽고 이해합니다.
@@ -162,8 +164,8 @@ Copilot Studio의 agent flow를 사용하면 이 과정을 자동화할 수 있�
    - 바뀌는 정보에 따라 단계 계획을 조정할 수 있습니다.
 
 1. **Integration actions**
-   - Outlook, Microsoft Teams, ServiceNow, SharePoint 등과 연결합니다.
-   - 기본 제공 1400+ 커넥터 또는 직접 만든 커스텀 커넥터를 사용할 수 있습니다.
+   - Outlook, Microsoft Teams, ServiceNow, SharePoint 같은 도구와 기타 애플리케이션·서비스를 기본 제공 1400+ 커넥터 또는 직접 만든 커스텀 커넥터로 연결합니다.
+   - 팀이 이미 사용하는 앱과 agent가 함께 동작하도록 도와줍니다.
 
 1. **Human in the loop**
    - 사람이 검토하거나 승인해야 하는 단계를 추가할 수 있습니다.
@@ -359,9 +361,9 @@ Copilot Studio에서 agent flow를 만들 때 다음을 권장합니다.
 
 1. **SharePoint list**
 
-   [Lesson 00 - Course Setup - Step 3: Create new SharePoint site]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})에서 만든 **Devices** SharePoint list를 사용합니다.
+   [Mission 00 - Course Setup - Step 5: Create new SharePoint site]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})에서 만든 **Devices** SharePoint list를 사용합니다.
 
-   아직 **Devices** SharePoint list를 준비하지 않았다면 먼저 [Lesson 00 - Course Setup]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})를 완료하세요.
+   아직 **Devices** SharePoint list를 준비하지 않았다면 [Mission 00 - Course Setup - Step 5: Create new SharePoint site]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }})로 돌아가 설정을 완료하세요.
 
 1. **Contoso Helpdesk Agent**
 
@@ -1227,16 +1229,23 @@ Copilot Studio에서 agent flow를 만들 때 다음을 권장합니다.
    </figure>
 ## ✅ Mission Complete
 
-축하합니다! 기존 **Request device** topic에 agent flow를 만들고 연결하는 방법, 그리고 agent를 다른 topic으로 리디렉션하는 방법을 익혔습니다.
+성공적으로 다음을 완료했습니다.
 
-이제 **Lab 09 - 자동화를 위한 agent flow 추가와 topic 기능 확장**이 끝났습니다. 다음 단계에서는 이 시나리오를 더 확장합니다.
+- **Agent flow**: 장치 요청용 flow를 만들고 게시했습니다.
+- **Dynamic content**: trigger 입력과 SharePoint 데이터를 이메일에 사용했습니다.
+- **Power Fx**: topic 변수를 flow 입력으로 전달했습니다.
+- **Topic integration**: request-device 대화에 flow를 추가했습니다.
 
-⏭️ [다음: Add Event Triggers - Enable autonomous agent capabilities]({{ '/chapters/academy-recruit-10-add-event-triggers/' | relative_url }})
+다음은 [Mission 10: Add Event Triggers]({{ '/chapters/academy-recruit-10-add-event-triggers/' | relative_url }})로 계속 진행하세요.
 
 ## 📚 Tactical Resources
 
 - [Introducing agent flows: Transforming automation with AI-first workflows](https://www.microsoft.com/microsoft-copilot/blog/copilot-studio/introducing-agent-flows-transforming-automation-with-ai-first-workflows/)
+
 - [Agent flows overview](https://learn.microsoft.com/microsoft-copilot-studio/flows-overview?WT.mc_id=power-172621-ebenitez)
+
 - [Use agent flows with your agent](https://learn.microsoft.com/microsoft-copilot-studio/advanced-flow?WT.mc_id=power-172621-ebenitez)
-- [List of functions in the reference guide](https://learn.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez)
-- [Agent Flows in Copilot Studio](https://www.youtube.com/watch?v=VJTKyk3Pr7s)
+
+- [Workflow Definition Language functions](https://learn.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez)
+
+- [Agent flows in Copilot Studio](https://www.youtube.com/watch?v=VJTKyk3Pr7s)

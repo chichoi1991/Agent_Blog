@@ -1,6 +1,6 @@
 ---
 layout: "chapter"
-date: 2026-03-18
+date: 2026-08-06
 title: "Microsoft 365 Copilot용 선언형 에이전트 배포"
 short_title: "선언형 에이전트 배포"
 description: "프롬프트를 기반으로 Microsoft 365 Copilot에 나만의 에이전트를 추가하는 방법."
@@ -10,11 +10,11 @@ parent: "arecruit"
 source_url: "https://microsoft.github.io/agent-academy/recruit/03-create-a-declarative-agent-for-M365Copilot/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-03-18"
+source_published: "2026-08-06"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/03-create-a-declarative-agent-for-M365Copilot/"
 ---
 
-<div class="info-box note translated-post" markdown="1">
+<div class="info-box note" markdown="1">
 **원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🚨 Mission 03: Deploy a Declarative Agent for Microsoft 365 Copilot](https://microsoft.github.io/agent-academy/recruit/03-create-a-declarative-agent-for-M365Copilot/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 
@@ -31,14 +31,14 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/03-create-a-de
 
 ## 미션 브리프
 
-Agent Maker, 첫 현장 임무에 오신 것을 환영합니다. 이번 미션에서는 Microsoft 365 Copilot과 Microsoft Teams에 직접 포함되는 특수 임무형 에이전트, **Declarative Agent**를 설계하고 구성하고 배포합니다.
+Recruit, 다시 오신 것을 환영합니다. 이번 미션에서는 Microsoft 365 Copilot과 Microsoft Teams에 직접 포함되는 특수 임무형 에이전트, **Declarative Agent**를 설계하고 구성하고 배포합니다.
 
 기존 에이전트와 달리 선언형 에이전트는 명확한 임무(지침), 도구(프롬프트/커넥터), 내부 지식(SharePoint, Dataverse 등)에 대한 전략적 접근을 바탕으로 동작합니다. 여러분의 임무는 Microsoft Copilot Studio라는 노코드 지휘 본부에서 이 에이전트를 구축하는 것입니다.
 
 바로 시작해 보겠습니다.
 
 <div class="info-box note" markdown="1">
-**참고**
+**중요: 이 미션은 Copilot Studio classic experience를 사용합니다**
 이 실습의 스크린샷과 Copilot Studio 화면이 다르게 보인다면, 오른쪽 위의 **New Experience**를 꺼서 여기서 사용하는 **classic experience**로 전환하세요.
 </div>
 
@@ -49,7 +49,7 @@ Agent Maker, 첫 현장 임무에 오신 것을 환영합니다. 이번 미션�
 1. 선언형 에이전트가 무엇이며 Microsoft 365 Copilot을 어떻게 확장하는지 이해하기
 2. 선언형 에이전트 구축 시 Microsoft Copilot Studio와 Agent Builder 비교하기
 3. Copilot Studio에서 Microsoft 365 Copilot용 선언형 에이전트 만들기
-4. AI 프롬프트를 도구로 추가해 에이전트의 전문 지식과 문제 해결 능력 강화하기
+4. AI 프롬프트를 도구로 추가하기
 5. Microsoft 365 Copilot과 Microsoft Teams에서 선언형 에이전트 게시 및 테스트하기
 
 ## Microsoft 365 Copilot용 선언형 에이전트란?
@@ -119,15 +119,15 @@ Microsoft Copilot Studio는 Agent Builder의 한계를 넘어서는 더 폭넓�
   <figcaption>선언형 에이전트 고급 기능</figcaption>
 </figure>
 
-정리하면, Microsoft Copilot Studio의 선언형 에이전트는 조직 지식 시스템, 외부 서비스 연결 도구, AI 모델을 통합해 Microsoft 365 Copilot을 업무 요구에 맞게 맞춤화할 수 있게 해줍니다.
+정리하면, Microsoft Copilot Studio의 선언형 에이전트는 조직 지식 시스템, 외부 서비스 또는 AI GPT 모델에 연결되는 도구를 통합해 Microsoft 365 Copilot을 업무 요구에 맞게 맞춤화할 수 있게 해줍니다.
 
 ## 실습 03: Microsoft 365 Copilot용 선언형 에이전트 만들기
 
-이번에는 “Business-to-Employee” 시나리오의 **IT helpdesk agent**를 만들어 보겠습니다.
+다음으로 “Business-to-Employee” 사용 사례에 맞는 **IT helpdesk agent** 역할의 선언형 에이전트를 만들어 보겠습니다.
 
 <div class="info-box note" markdown="1">
 **참고**
-이번 실습에서는 Prompt를 도구로 추가하는 단계까지 다룹니다. 이후 실습에서 지식 소스 추가와 다른 도구 활용을 더 자세히 살펴봅니다.
+이번 실습에서는 Prompt를 도구로 추가하는 단계까지 다룹니다. 이후 레슨에서 지식 소스 추가와 사용할 수 있는 다른 도구 추가를 더 자세히 살펴봅니다. 학습을 위해 간단하게 진행해 보겠습니다 😊
 </div>
 
 ### Business-to-Employee (B2E) 이해하기
@@ -151,7 +151,7 @@ Business-to-Employee (B2E)는 기업이 직원에게 직접 제공하는 상호�
 <div class="info-box note" markdown="1">
 **라이선스 참고**
 
-이번 실습에서는 Prompt를 도구로 추가하는 단계만 다룹니다. 이후 실습에서 지식 소스와 다른 도구를 이어서 다룹니다.
+이번 실습에서는 Prompt를 도구로 추가하는 단계만 다룹니다. 이후 레슨에서 지식 소스 추가와 사용할 수 있는 다른 도구 추가를 더 자세히 살펴봅니다. 학습을 위해 간단하게 진행해 보겠습니다 😊
 
 Copilot Studio에서 만든 선언형 에이전트를 Microsoft 365 Copilot에 게시하는 **작성자**는 Microsoft 365 Copilot 사용자 라이선스가 없어도 됩니다. 하지만 게시된 선언형 에이전트를 Microsoft 365 Copilot에서 사용하는 **사용자**는 Microsoft 365 Copilot 사용자 라이선스가 필요합니다.
 </div>
@@ -403,6 +403,11 @@ Instructions는 에이전트가 어떻게 동작할지 알려주는 운영 지�
 
    이번에는 **trash bin** 아이콘으로 지운 뒤 prompt library 방식을 사용해 보겠습니다.
 
+<figure class="screenshot">
+  <img src="{{ '/assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_07_CopilotGeneratedInstructions.png' | relative_url }}" alt="Copilot이 생성한 프롬프트 지침과 사용 가능한 옵션 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Copilot 생성 지침 옵션 확인</figcaption>
+</figure>
+
 10. **prompt template** 링크를 선택합니다.
 
 <figure class="screenshot">
@@ -488,14 +493,14 @@ Instructions는 에이전트가 어떻게 동작할지 알려주는 운영 지�
   <figcaption>응답 생성 중</figcaption>
 </figure>
 
-19. 생성된 응답을 확인합니다. 지침대로 제목과 글머리표가 포함되어 있는지 살펴보세요.
+19. 생성된 응답을 확인합니다. 지침대로 제목과 글머리표가 포함되어 있는지 살펴보세요. 아래로 스크롤해 모델 응답의 나머지 내용도 검토합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_17_ModelResponse.png' | relative_url }}" alt="생성된 모델 응답 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>프롬프트 응답 검토</figcaption>
 </figure>
 
-20. 저장 전에 프롬프트 설정도 확인합니다. **ellipsis (...) icon**을 선택합니다.
+20. 저장 전에 이 프롬프트에 구성할 수 있는 설정도 알아보겠습니다. **More options**(**...**)를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.2_18_PromptSettings.png' | relative_url }}" alt="프롬프트 설정 메뉴 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
@@ -636,9 +641,9 @@ AI가 생성한 응답은 비결정적이므로 같은 프롬프트라도 매번
 
    | Availability option | Description |
    |---|---|
-   | Share Link | Microsoft 365 Copilot에서 에이전트를 열 수 있는 링크를 복사해 공유 |
-   | Show to my teammates and shared users | 다른 작성자나 보안 그룹에 사용 권한을 부여 |
-   | Show to everyone in my org | 테넌트 관리자에게 제출해 조직 카탈로그에 추가 |
+   | Share Link | 공유된 사용자가 Microsoft 365 Copilot에서 에이전트를 열 수 있도록 링크를 복사해 배포 |
+   | Show to my teammates and shared users | 다른 사용자가 에이전트 작성에 참여하도록 접근 권한을 부여하거나, 보안 그룹에 Microsoft 365 Chat 또는 Microsoft Teams에서 에이전트를 사용할 권한을 부여 |
+   | Show to everyone in my org | 모든 테넌트 사용자가 에이전트를 추가할 수 있도록 테넌트 관리자에게 제출해 조직 카탈로그에 추가. 에이전트는 Microsoft 365 Copilot과 Microsoft Teams의 Built by your org 아래에 표시됩니다 |
    | Download as a .zip | Microsoft Teams에 custom app으로 업로드할 zip 파일 다운로드 |
 
 <figure class="screenshot">
@@ -650,7 +655,7 @@ AI가 생성한 응답은 비결정적이므로 같은 프롬프트라도 매번
 
    추가로 다음 체크박스도 있습니다.
 
-   - _Show in Built By Your Colleagues_ - Teams app store의 Built with Power Platform 섹션에 에이전트를 노출
+   - _Show in Built By Your Colleagues_ - 에이전트가 Teams app store의 Built with Power Platform 섹션에 표시됩니다.
 
    자세한 내용은 [Connect and configure an agent for Teams and Microsoft 365](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams/?WT.mc_id=power-172614-ebenitez)를 참고하세요.
 
@@ -707,7 +712,7 @@ AI가 생성한 응답은 비결정적이므로 같은 프롬프트라도 매번
 
 <div class="info-box note" markdown="1">
 **팁**
-Microsoft 365 Copilot에서 [developer mode](https://learn.microsoft.com/microsoft-365-copilot/extensibility/debugging-copilot-agent#use-developer-mode-in-copilot-chat/?WT.mc_id=power-172614-ebenitez)를 켜면 에이전트를 테스트하고 디버깅할 수 있습니다.
+Microsoft 365 Copilot에서 [developer mode](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#enabling-developer-mode)를 켜면 에이전트를 테스트하고 디버깅할 수 있습니다.
 </div>
 
    Copilot 입력란에 아래 명령을 입력하고 제출합니다.
@@ -771,7 +776,7 @@ Microsoft 365 Copilot에서 [developer mode](https://learn.microsoft.com/microso
    -developer off
    ```
 
-   developer mode가 꺼졌다는 확인 메시지가 나타납니다.
+   developer mode가 꺼졌다는 확인 메시지가 나타납니다. 좋습니다. 이제 Microsoft 365 Copilot의 선언형 에이전트가 Prompt를 호출했는지 확인하는 방법을 알게 되었습니다 🌞
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_15_DeveloperModeDisabled.png' | relative_url }}" alt="Developer mode 비활성화 메시지 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
@@ -799,9 +804,9 @@ Microsoft 365 Copilot에서 [developer mode](https://learn.microsoft.com/microso
   <figcaption>Teams에서 에이전트 보기</figcaption>
 </figure>
 
-20. 왼쪽 메뉴의 **ellipsis icon (...)**을 선택하고 검색하거나 목록에서 **Contoso Tech Support Pro**를 선택합니다.
+20. Teams 탐색 영역에서 **More options**(**...**)를 선택합니다. **Contoso Tech Support Pro**를 검색하거나 이미 목록에 있으면 선택합니다.
 
-   마우스 오른쪽 버튼으로 **Pin**해 빠르게 접근할 수도 있습니다.
+   Teams 탐색 영역에 에이전트를 유지하려면 마우스 오른쪽 버튼을 클릭하거나 **Shift+F10**을 눌러 컨텍스트 메뉴를 연 다음 **Pin**을 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/recruit-03-create-a-declarative-agent-for-M365Copilot/3.4_19_SelectAndPinAgentFromApps.png' | relative_url }}" alt="Teams에서 에이전트를 선택하고 고정하는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
@@ -830,13 +835,14 @@ Microsoft 365 Copilot에서 [developer mode](https://learn.microsoft.com/microso
 
 ## 미션 완료
 
-축하합니다. Copilot Studio에서 선언형 에이전트를 만들고, Prompt를 추가하고, 그 Prompt를 호출하도록 지침을 작성했으며, Microsoft 365 Copilot과 Microsoft Teams에 게시하고 테스트하는 방법까지 익혔습니다.
+성공적으로 완료한 내용은 다음과 같습니다.
 
-이제 여러분의 에이전트는 실제 사용자 지원, 문제 해결, 내부 업무 보조를 수행할 준비가 되었습니다.
+- **Declarative agent**: Microsoft 365 Copilot을 확장하는 에이전트 구축
+- **AI prompt**: Prompt를 도구로 추가하고 에이전트가 언제 사용할지 지시
+- **Testing**: Microsoft 365 Copilot과 Microsoft Teams에서 에이전트 테스트
+- **Publishing**: Microsoft 365에서 사용할 수 있도록 에이전트 게시
 
-이로써 **Lab 03 - Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot**를 마칩니다. 다음 학습은 [/chapters/academy-recruit-04-creating-a-solution/](/chapters/academy-recruit-04-creating-a-solution/)에서 이어집니다.
-
-다음에도 계속 멋진 에이전트를 만들어 보세요. 앞으로의 엔터프라이즈 업무는 에이전트를 중심으로 발전하며, 이제 여러분은 그 출발점을 직접 구현할 수 있습니다.
+다음은 [미션 04: 솔루션 만들기]({{ '/chapters/academy-recruit-04-creating-a-solution/' | relative_url }})로 이어집니다.
 
 ## 참고 자료
 
