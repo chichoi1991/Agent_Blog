@@ -1,3 +1,29 @@
 {
-  "items": []
+  "items": [
+    {
+      "slug": "recruit-choose",
+      "src_path": "recruit/choose",
+      "sha": "a8334d5f7c0a8f2b64640f33834f7687f9879b59",
+      "title": "Welcome Recruit",
+      "description": "",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/choose/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "",
+      "images": [
+        {
+          "src": "../../images/banner_recruit.png",
+          "local": "assets/academy/recruit-choose/banner_recruit.png"
+        }
+      ],
+      "staged_at": "2026-08-10T02:57:19.122Z",
+      "status": "pending-translation"
+    }
+  ]
 }
