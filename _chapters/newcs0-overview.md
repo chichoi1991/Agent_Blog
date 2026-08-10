@@ -18,6 +18,21 @@ category: newcs
 
 ---
 
+## 📎 전체 슬라이드 자료 (0~3부 완본)
+
+시리즈 0~3부 전체를 한 파일로 정리한 **60장 슬라이드 덱**입니다. 본문 스크린샷과 실습 첨부파일 안내가 모두 포함되어 있어, 사내 공유·발표 자료로 그대로 쓰실 수 있습니다.
+
+<div class="info-box note" markdown="1">
+- [**`New Copilot Studio 0~3부 완본.pptx`** 다운로드]({{ '/assets/newcs/deck/NewCopilotStudio-0-3.pptx' | relative_url }}) — 60장 · 편집 가능
+- [**`New Copilot Studio 0~3부 완본.pdf`** 다운로드]({{ '/assets/newcs/deck/NewCopilotStudio-0-3.pdf' | relative_url }}) — 60장 · 열람·배포용
+
+**구성** — 표지 / 0부 개요(3장) / 1부 개념편(16장) / 2부 빌드 개념편(17장) / 3부 실습편(21장) / 첨부 인벤토리 · 마무리(2장)
+</div>
+
+> 실습에 쓰이는 데이터·스킬 패키지는 각각 [3부 2장 · 참조자료 추가]({{ '/chapters/newcs3-2-knowledge/' | relative_url }})와 [3부 4장 · 스킬 패키지 임포트]({{ '/chapters/newcs3-4-skill-package/' | relative_url }})에서 내려받을 수 있습니다.
+
+---
+
 ## 왜 다시 지었나 — 한눈에
 
 기존(클래식) Copilot Studio는 본질적으로 **대화 흐름 설계 도구**였습니다. 메이커가 모든 경로를 미리 그려야 했고, 시나리오가 복잡해지면 분기가 폭발하고 다단계·장기 작업에서 흐름이 끊겼습니다.
