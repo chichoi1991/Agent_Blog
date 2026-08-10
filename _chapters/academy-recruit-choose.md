@@ -39,10 +39,10 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/choose/"
 
 ## 🧭 경로 선택하기
 
-Recruit 과정은 같은 IT 지원 시나리오를 두 가지 방식으로 학습할 수 있게 구성되어 있습니다.
+Recruit 과정은 같은 IT 지원 시나리오를 두 가지 방식으로 학습할 수 있게 구성되어 있습니다. 원하는 학습 흐름을 선택해 시작하세요.
 
-- **Standard harness 경로**: Copilot Studio의 classic experience에서 토픽, 트리거, 노드, 분기 등 구조화된 대화 흐름을 설계합니다.
-- **GitHub Copilot harness 경로**: Copilot Studio의 **New experience**에서 instructions, skills, tools, workflows를 사용해 목표 중심으로 추론하는 에이전트를 만듭니다.
+- **Standard harness 경로 시작**: [Recruit (Standard)](https://microsoft.github.io/agent-academy/recruit/00-course-setup/)
+- **GitHub Copilot harness 경로 시작**: [Recruit (GitHub Copilot harness)](https://microsoft.github.io/agent-academy/recruit-nextgen/00-course-setup/)
 
 ### 🤔 어떤 경로를 선택해야 할까요?
 
@@ -72,9 +72,9 @@ Copilot Studio는 **harness** 위에서 에이전트를 실행합니다. harness
 | `00` | 🧰 [Course Setup](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) | 🧰 [Course Setup](https://microsoft.github.io/agent-academy/recruit-nextgen/00-course-setup/) |
 | `01` | 🧠 [Introduction to Agents](https://microsoft.github.io/agent-academy/recruit/01-introduction-to-agents/) | 🧠 [Introduction to Agents](https://microsoft.github.io/agent-academy/recruit-nextgen/01-introduction-to-agents/) |
 | `02` | 🛠️ [Copilot Studio Fundamentals](https://microsoft.github.io/agent-academy/recruit/02-copilot-studio-fundamentals/) | 🛠️ [Copilot Studio Fundamentals](https://microsoft.github.io/agent-academy/recruit-nextgen/02-copilot-studio-fundamentals/) |
-| `03` | 👩‍💻 [Create a Declarative Agent](https://microsoft.github.io/agent-academy/recruit/03-create-a-declarative-agent-for-M365Copilot/) | 🧩 [Creating a Solution](https://microsoft.github.io/agent-academy/recruit-nextgen/03-creating-a-solution/) |
+| `03` | 👩‍💻 [Deploy a Declarative Agent](https://microsoft.github.io/agent-academy/recruit/03-create-a-declarative-agent-for-M365Copilot/) | 🧩 [Creating a Solution](https://microsoft.github.io/agent-academy/recruit-nextgen/03-creating-a-solution/) |
 | `04` | 🧩 [Creating a Solution](https://microsoft.github.io/agent-academy/recruit/04-creating-a-solution/) | ✍️ [Build with the GitHub Copilot Harness](https://microsoft.github.io/agent-academy/recruit-nextgen/04-build-a-custom-agent/) |
-| `05` | 🚀 [Get Started with Pre-Built Agents](https://microsoft.github.io/agent-academy/recruit/05-using-prebuilt-agents/) | 🪪 [Add a Tool](https://microsoft.github.io/agent-academy/recruit-nextgen/05-add-tools/) |
+| `05` | 🚀 [Using a Pre-Built Agent](https://microsoft.github.io/agent-academy/recruit/05-using-prebuilt-agents/) | 🪪 [Add a Tool](https://microsoft.github.io/agent-academy/recruit-nextgen/05-add-tools/) |
 | `06` | ✍️ [Build a Custom Agent](https://microsoft.github.io/agent-academy/recruit/06-create-agent-from-conversation/) | 🧠 [Add Skills](https://microsoft.github.io/agent-academy/recruit-nextgen/06-add-skills/) |
 | `07` | 🧠 [Add a Topic with Triggers](https://microsoft.github.io/agent-academy/recruit/07-add-new-topic-with-trigger/) | 🔁 [Automate with Workflows](https://microsoft.github.io/agent-academy/recruit-nextgen/07-automate-with-workflows/) |
 | `08` | 🪪 [Enhance with Adaptive Cards](https://microsoft.github.io/agent-academy/recruit/08-add-adaptive-card/) | 📢 [Publish Your Agent](https://microsoft.github.io/agent-academy/recruit-nextgen/08-publish-your-agent/) |
