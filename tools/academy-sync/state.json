@@ -27,15 +27,15 @@
     "recruit/11-publish-your-agent": "8801b3a553736ccd0aa30b803a39233b1d087af0",
     "recruit/12-understanding-licensing": "ca75afd16126a2dde7c675ae6bac367358cbc57e",
     "recruit/course-completion-badges-recruit": "2b1a8a790c6172d95a3a530fd1a49151fc1e3051",
-    "special-ops/docusign-mcp": "8559bfcac91d36a1bce42ec262d9752c5610b6cc",
-    "special-ops/mcs-mcp": "c0e7eefb19f0f73499345026dccdb6b98ffa985f",
-    "special-ops/ms-learn-mcp": "6e21b41f6963d7d880b380994707dc32cf47ff52",
-    "special-ops/pac-cli-mcp": "78ababd673cfb99d669a03fc3bfa81608db08292",
+    "special-ops/docusign-mcp": "d97b33505ec82ecce5a5aa2be4d35d9c5a179a03",
+    "special-ops/mcs-mcp": "7baab0ae97b1ac30da8b215b38b62e1bf8dbf471",
+    "special-ops/ms-learn-mcp": "9714f400af0f3b831269161acd2ed968dc6e0f1b",
+    "special-ops/pac-cli-mcp": "0dc8fca0281cff6f3b718e2e04049de7146194e6",
     "special-ops/pac-cli-mcp/power-platform-plan": "90864c398779413006733fe55a4ccb391066a3c6",
-    "special-ops/yaml-specialist": "0633c82ffccade4f99a81afb67a25033eb964bed",
-    "special-ops/azure-ai-search-rag": "cf62e6ca458520a237bd7d5864c09565f734faaf",
-    "special-ops/mcp-oauth": "6c1951f0a1c167b7467f97c77b08bb658be5d639",
-    "special-ops/ghostwriter": "45d60fd3ca24e1994f7448a0be86f1eac0cf25ac",
+    "special-ops/yaml-specialist": "3497e079f5803bae0e2101eff5e52e923e657418",
+    "special-ops/azure-ai-search-rag": "49bb69340084381be46bacdb9de2d2f356dc2efc",
+    "special-ops/mcp-oauth": "a4bfd653cab71ea5a46540f3f0d10de4ea31b15d",
+    "special-ops/ghostwriter": "1639345e43e91d497364638b0e3832e0b2517680",
     "recruit/choose": "a8334d5f7c0a8f2b64640f33834f7687f9879b59"
   }
 }
