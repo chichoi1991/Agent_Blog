@@ -10,12 +10,12 @@ parent: "aspecialops"
 source_url: "https://microsoft.github.io/agent-academy/special-ops/azure-ai-search-rag/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-07-02"
+source_published: "2026-08-10"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/azure-ai-search-rag/"
 ---
 
 <div class="info-box note" markdown="1">
-**원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🔎 Azure AI Search RAG](https://microsoft.github.io/agent-academy/special-ops/azure-ai-search-rag/)를 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
+**원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🔎 Build a RAG Agent with Azure AI Search](https://microsoft.github.io/agent-academy/special-ops/azure-ai-search-rag/)를 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 
 # 🔎 Azure AI Search RAG
@@ -25,8 +25,19 @@ canonical_url: "https://microsoft.github.io/agent-academy/special-ops/azure-ai-s
 에이전트 여러분, 이번 미션 **Operation Vector Vault**의 목표는 Azure AI Search 벡터 검색 기반 **RAG(Retrieval-Augmented Generation)** 를 사용해 Copilot Studio 에이전트가 조직의 실제 문서를 근거로 답변하게 만드는 것입니다. 검색 서비스를 만들고, 이력서 문서를 벡터화해 인덱싱하고, 이를 **HR Knowledge Agent**에 연결해 키워드가 아닌 의미 중심으로 답변하고 출처를 제시하도록 구성합니다.
 
 <div class="info-box note" markdown="1">
-**참고**: 이 미션은 **새 Copilot Studio 작성 환경(New Experience)** 기준으로 작성되었습니다(2026-07-02). 오른쪽 위에서 **New Experience**를 켜 둔 상태로 진행하세요. 기존 RAG 가이드와의 핵심 차이는 **Azure AI Search를 더 이상 Knowledge 소스로 추가하지 않고, 커넥터 도구(Connector Tool)로 연결**한다는 점입니다.
+**중요**: 이 미션의 Copilot Studio 단계에는 **GitHub Copilot harness**로 구동되는 에이전트가 필요합니다. 에이전트를 만들기 전에 **New Experience**를 켜세요. 기존 RAG 가이드와의 핵심 차이는 **Azure AI Search를 더 이상 Knowledge 소스로 추가하지 않고, 커넥터 도구(Connector Tool)로 연결**한다는 점입니다.
 </div>
+
+**커리큘럼 출처**: 이 미션은 [Microsoft Copilot Developer Camp](https://aka.ms/copilot-camp)의 자료를 각색했습니다. 원래 커리큘럼을 만든 [Paolo Pialorsi](https://github.com/PaoloPia)와 Copilot Camp 기여자들에게 감사드립니다. Agent Academy 버전에서는 GitHub Copilot harness와 Special Ops 형식에 맞게 랩을 업데이트했습니다.
+
+## 🎯 미션 목표
+
+이 미션에서 다음을 배웁니다.
+
+- Azure AI Search 벡터 인덱스 생성 및 데이터 채우기
+- Azure AI Search를 Copilot Studio 에이전트에 연결하기
+- 자체 문서를 근거로 에이전트 응답 만들기
+- 의미 기반 검색과 문서 출처 인용 테스트하기
 
 ## ❓ Retrieval-Augmented Generation(RAG)이란?
 

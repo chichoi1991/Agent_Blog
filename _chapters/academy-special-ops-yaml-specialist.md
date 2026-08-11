@@ -10,7 +10,7 @@ parent: "aspecialops"
 source_url: "https://microsoft.github.io/agent-academy/special-ops/yaml-specialist/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-08-07"
+source_published: "2026-08-10"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/yaml-specialist/"
 ---
 
