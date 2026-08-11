@@ -401,6 +401,36 @@
       ],
       "staged_at": "2026-07-31T01:22:10.306Z",
       "status": "published"
+    },
+    {
+      "slug": "copilot-harness-cost-governance",
+      "title": "Adopting the GitHub Copilot Harness: Cost Control and Governance in Copilot Studio",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/copilot-harness-cost-governance/",
+      "source_author": "lewisdoesdev",
+      "source_published": "2026-08-07",
+      "source_updated": "2026-08-07",
+      "categories": [
+        "copilot-studio",
+        "governance"
+      ],
+      "summary": "Identify GitHub Copilot harness agents, review their environments, and apply Power Platform controls to manage Copilot Credit consumption during maker development and production use.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-08-07-copilot-harness-cost-governance.md",
+      "images": [
+        {
+          "src": "/assets/posts/copilot-harness-cost-governance/manage-environment-capacity.png",
+          "local": "assets/catblog/copilot-harness-cost-governance/manage-environment-capacity.png"
+        },
+        {
+          "src": "/assets/posts/copilot-harness-cost-governance/set-agent-limit.png",
+          "local": "assets/catblog/copilot-harness-cost-governance/set-agent-limit.png"
+        },
+        {
+          "src": "/assets/posts/copilot-harness-cost-governance/header.png",
+          "local": "assets/catblog/copilot-harness-cost-governance/header.png"
+        }
+      ],
+      "staged_at": "2026-08-11T22:28:09.545Z",
+      "status": "pending-translation"
     }
   ]
 }
