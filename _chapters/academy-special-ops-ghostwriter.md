@@ -9,12 +9,12 @@ parent: "aspecialops"
 source_url: "https://microsoft.github.io/agent-academy/special-ops/ghostwriter/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-08-07"
+source_published: "2026-08-10"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/ghostwriter/"
 ---
 
 <div class="info-box note" markdown="1">
-**원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [✍️ Operation Ghostwriter: A Marketing Content Agent Built on Skills](https://microsoft.github.io/agent-academy/special-ops/ghostwriter/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
+**원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [✍️ Build a Marketing Content Agent with Skills](https://microsoft.github.io/agent-academy/special-ops/ghostwriter/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 
 # ✍️ Operation Ghostwriter: Skills로 만드는 마케팅 콘텐츠 에이전트

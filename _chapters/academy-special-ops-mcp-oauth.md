@@ -9,12 +9,12 @@ parent: "aspecialops"
 source_url: "https://microsoft.github.io/agent-academy/special-ops/mcp-oauth/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-07-23"
+source_published: "2026-08-10"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/mcp-oauth/"
 ---
 
 <div class="info-box note" markdown="1">
-**원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🔐 Consuming a Secured MCP Server with OAuth 2.0](https://microsoft.github.io/agent-academy/special-ops/mcp-oauth/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
+**원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🔐 Secure an MCP Server with OAuth 2.0](https://microsoft.github.io/agent-academy/special-ops/mcp-oauth/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 
 # 🔐 OAuth 2.0으로 보안 MCP 서버 연동하기
@@ -31,7 +31,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/special-ops/mcp-oauth/
 
 ## 🔧 만들 것들
 
-- OAuth 2.0 JWT ****** 검증하는 사전 제작 **HR MCP 서버** (.NET)
+- OAuth 2.0 JWT bearer 토큰을 검증하는 사전 제작 **HR MCP 서버** (.NET)
 - 두 개의 **Microsoft Entra ID** 앱 등록 — 백엔드(API)용과 클라이언트(Copilot Studio)용
 - **OAuth 2.0 인증**을 사용해 보안 MCP 도구를 호출하는 Copilot Studio 에이전트
 
@@ -86,7 +86,7 @@ Zava의 HR 팀은 민감한 인사 데이터를 노출하는 후보 관리 MCP �
     - `Program.cs` — 진입점. MCP 서버가 JWT 인증을 초기화하는 곳
 
 <div class="info-box note" markdown="1">
-**참고**: 서버에는 Entra ID 테넌트 기준으로 수신 토큰을 검증하는 JWT ****** 미들웨어가 포함되어 있습니다. 인증된 사용자만 HR 도구에 접근할 수 있습니다.
+**참고**: 서버에는 Entra ID 테넌트 기준으로 수신 토큰을 검증하는 JWT bearer 인증 미들웨어가 포함되어 있습니다. 인증된 사용자만 HR 도구에 접근할 수 있습니다.
 </div>
 
 <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-mcp-oauth/mcp-server-secured-01.png' | relative_url }}" alt="보안 MCP 서버 코드" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>JWT 인증이 적용된 보안 MCP 서버 코드</figcaption></figure>
@@ -250,6 +250,8 @@ Zava의 HR 팀은 민감한 인사 데이터를 노출하는 후보 관리 MCP �
 이제 보안 MCP 서버를 사용할 에이전트를 만듭니다.
 
 1. [Microsoft Copilot Studio](https://copilotstudio.microsoft.com)로 이동해 로그인합니다. 홈 페이지에서 **또는 빌드할 항목 선택** 아래 **에이전트** 카드를 선택합니다. Build 편집기로 바로 이동됩니다.
+
+    <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-mcp-oauth/1.1_01_CreateAgent.png' | relative_url }}" alt="에이전트 만들기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>에이전트 만들기</figcaption></figure>
 
 1. **에이전트 이름 지정** 필드에 다음을 붙여넣습니다.
 

@@ -10,7 +10,7 @@ parent: "aspecialops"
 source_url: "https://microsoft.github.io/agent-academy/special-ops/mcs-mcp/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-08-04"
+source_published: "2026-08-10"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/mcs-mcp/"
 ---
 
@@ -23,6 +23,19 @@ canonical_url: "https://microsoft.github.io/agent-academy/special-ops/mcs-mcp/"
 <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-mcs-mcp/MCP_Joker_Badge.png' | relative_url }}" alt="MCP Joker Badge" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>MCP Joker Badge</figcaption></figure>
 
 에이전트 여러분, 임무를 받아들인다면 — 적진 뒤에 **MCP 서버**를 배포하고 **Microsoft Copilot Studio**에 연결하세요. 난기류를 만날 수 있습니다. 프로토콜을 믿고, 어떤 엔드포인트도 설정되지 않은 채 남겨두지 마세요. 🎯
+
+<div class="info-box note" markdown="1">
+**중요**: 이 미션의 Copilot Studio 단계에는 **GitHub Copilot harness**로 구동되는 에이전트가 필요합니다. 에이전트를 만들기 전에 **New Experience**를 켜세요. MCP 서버 테스트에는 Visual Studio Code의 GitHub Copilot도 별도로 사용합니다.
+</div>
+
+## 🎯 미션 목표
+
+이 미션에서 다음을 배웁니다.
+
+- MCP 서버를 로컬에서 실행하거나 Azure에 배포하기
+- Visual Studio Code의 GitHub Copilot으로 MCP 서버 연결 및 테스트하기
+- GitHub Copilot harness 기반 Copilot Studio 에이전트에 MCP 서버 추가하기
+- 미션을 마친 뒤 Azure 리소스 제거하기
 
 ## ❓ MCP란 무엇인가요?
 
@@ -43,7 +56,11 @@ MCP 서버는 커넥터 인프라를 사용해 Copilot Studio에서 사용할 �
 - Docker 설치 ([다운로드](http://aka.ms/azure-dev/docker-install))
 - Azure Developer CLI 설치 ([다운로드](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd))
 - Azure 구독 (결제 수단 추가)
-- Copilot Studio 평가판 또는 개발자 계정
+- **GitHub Copilot harness**에 접근할 수 있는 Copilot Studio 평가판 또는 개발자 계정
+
+<div class="info-box note" markdown="1">
+**GitHub Copilot harness 청구**: 이 미션에서 사용하는 Microsoft Copilot Studio의 **GitHub Copilot harness**는 사용량 기반 청구 방식입니다. 에이전트 작성, 미리 보기 테스트, 평가, 사용 과정에서 Copilot Credits가 소진될 수 있으므로 시작 전 [Copilot Credits 청구 개요](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview)를 확인하세요.
+</div>
 
 ## 🧪 Lab 1.1 - MCP 서버 설정
 

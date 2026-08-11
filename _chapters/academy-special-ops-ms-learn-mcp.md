@@ -10,7 +10,7 @@ parent: "aspecialops"
 source_url: "https://microsoft.github.io/agent-academy/special-ops/ms-learn-mcp/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-07-27"
+source_published: "2026-08-10"
 canonical_url: "https://microsoft.github.io/agent-academy/special-ops/ms-learn-mcp/"
 ---
 
@@ -78,7 +78,7 @@ Zava 팀은 Microsoft 365, Azure, Power Platform 관련 내부 지원 에이전�
 1. [Microsoft Copilot Studio](https://copilotstudio.microsoft.com)에 로그인하고 오른쪽 위 New Experience가 켜져 있는지 확인합니다.
 1. 홈 화면의 **select what you want to build**에서 **Agent**를 선택합니다.
 
-<figure class="screenshot"><img src="{{ '/assets/academy/special-ops-ms-learn-mcp/step-01.png' | relative_url }}" alt="Create Agent" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Agent 생성 시작</figcaption></figure>
+<figure class="screenshot"><img src="{{ '/assets/academy/special-ops-ms-learn-mcp/1.1.01_new.png' | relative_url }}" alt="에이전트 만들기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>에이전트 만들기</figcaption></figure>
 
 1. 왼쪽 상단 **Name your agent**에 아래 이름을 입력합니다.
 
