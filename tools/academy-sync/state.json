@@ -33,7 +33,7 @@
     "special-ops/pac-cli-mcp": "0dc8fca0281cff6f3b718e2e04049de7146194e6",
     "special-ops/pac-cli-mcp/power-platform-plan": "90864c398779413006733fe55a4ccb391066a3c6",
     "special-ops/yaml-specialist": "3497e079f5803bae0e2101eff5e52e923e657418",
-    "special-ops/azure-ai-search-rag": "49bb69340084381be46bacdb9de2d2f356dc2efc",
+    "special-ops/azure-ai-search-rag": "93e7fb8e16b5b08faf2c295c0376dfaeb5b891d3",
     "special-ops/mcp-oauth": "a4bfd653cab71ea5a46540f3f0d10de4ea31b15d",
     "special-ops/ghostwriter": "1639345e43e91d497364638b0e3832e0b2517680",
     "recruit/choose": "a8334d5f7c0a8f2b64640f33834f7687f9879b59"
