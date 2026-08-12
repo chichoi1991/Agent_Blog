@@ -25,7 +25,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/special-ops/azure-ai-s
 에이전트 여러분, 이번 미션 **Operation Vector Vault**의 목표는 Azure AI Search 벡터 검색 기반 **RAG(Retrieval-Augmented Generation)** 를 사용해 Copilot Studio 에이전트가 조직의 실제 문서를 근거로 답변하게 만드는 것입니다. 검색 서비스를 만들고, 이력서 문서를 벡터화해 인덱싱하고, 이를 **HR Knowledge Agent**에 연결해 키워드가 아닌 의미 중심으로 답변하고 출처를 제시하도록 구성합니다.
 
 <div class="info-box note" markdown="1">
-**중요**: 이 미션의 Copilot Studio 단계에는 **GitHub Copilot harness**로 구동되는 에이전트가 필요합니다. 에이전트를 만들기 전에 **New Experience**를 켜세요. 기존 RAG 가이드와의 핵심 차이는 **Azure AI Search를 더 이상 Knowledge 소스로 추가하지 않고, 커넥터 도구(Connector Tool)로 연결**한다는 점입니다.
+**중요 — 이 미션은 GitHub Copilot harness를 사용합니다**: Copilot Studio 단계에는 **GitHub Copilot harness**로 구동되는 에이전트가 필요합니다. 에이전트를 만들기 전에 **New Experience**를 켜세요.
 </div>
 
 **커리큘럼 출처**: 이 미션은 [Microsoft Copilot Developer Camp](https://aka.ms/copilot-camp)의 자료를 각색했습니다. 원래 커리큘럼을 만든 [Paolo Pialorsi](https://github.com/PaoloPia)와 Copilot Camp 기여자들에게 감사드립니다. Agent Academy 버전에서는 GitHub Copilot harness와 Special Ops 형식에 맞게 랩을 업데이트했습니다.
@@ -68,19 +68,19 @@ RAG는 모델이 답변을 생성하기 전에 관련 정보를 먼저 검색해
 
 ## ⚙️ 사전 요구사항
 
-- **New Experience**가 활성화된 Microsoft Copilot Studio 계정(체험판/유료)
+- **GitHub Copilot harness**를 사용할 수 있는 Microsoft Copilot Studio 체험판/유료 계정. 계정이 없다면 [코스 설정 안내](https://microsoft.github.io/agent-academy/recruit/00-course-setup/)에서 무료 체험 방법을 확인하세요.
 - 리소스 생성 권한이 있는 **Azure 구독**(Azure AI Search, Storage, Azure OpenAI/Microsoft Foundry)
 - Copilot Studio 에이전트 생성 및 Azure 리소스 기본 관리 경험
 
 <div class="info-box note" markdown="1">
-**참고**: Exercise 1~2는 Copilot Studio 밖의 **Azure Portal** 및 **Microsoft Foundry**에서 진행합니다. Copilot Studio 변경점은 **Exercise 3**부터 반영됩니다.
+**중요 — GitHub Copilot harness 과금**: 이 미션은 **Microsoft Copilot Studio의 GitHub Copilot harness**를 사용하며, 사용량 기반으로 과금됩니다. 에이전트를 만들고 Preview에서 테스트·평가·사용하는 과정에서 **Copilot Credits**가 소모될 수 있습니다. 시작 전에 [Copilot Credits 과금 개요](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview)를 확인하세요.
 </div>
 
 ## 🎯 시나리오
 
 Contoso HR 팀은 여러 형식·여러 언어의 이력서를 대량으로 다뤄야 합니다. 채용 담당자가 "스페인어 가능 + Python 경험자"처럼 자연어로 질문하면, 실제 이력서 문서를 근거로 정확하게 답변하는 에이전트가 필요합니다. 여러분의 역할은 Azure AI Search 기반 RAG를 연결하는 에이전트 빌더입니다.
 
-## 🧪 Exercise 1 — Azure AI Search 서비스 준비
+## 🧪 Lab 1.1: Azure AI Search 서비스 준비
 
 ### Step 1 — Azure AI Search 서비스 생성
 
@@ -103,7 +103,7 @@ Contoso HR 팀은 여러 형식·여러 언어의 이력서를 대량으로 다�
 1. **Settings → Keys**의 **Primary admin key**
 
 <div class="info-box note" markdown="1">
-**팁**: Exercise 3에서 Copilot Studio Azure AI Search 연결을 만들 때 endpoint URL과 admin key가 필요합니다.
+**팁**: Lab 1.3에서 Copilot Studio의 Azure AI Search **연결(connection)** 을 만들 때 endpoint URL과 admin key를 붙여넣어야 하므로 안전한 곳에 보관하세요.
 </div>
 
 ### Step 2 — Azure Storage 계정 생성
@@ -143,13 +143,13 @@ Contoso HR 팀은 여러 형식·여러 언어의 이력서를 대량으로 다�
 **`text-embedding-ada-002`의 역할**: 텍스트를 의미 기반 숫자 벡터로 변환해, 언어와 표현이 달라도 의미상 유사한 문서를 찾을 수 있게 합니다. Azure AI Search와 결합하면 키워드 정확 일치가 아닌 문맥 기반 검색이 가능합니다.
 </div>
 
-## 🧪 Exercise 2 — 검색 인덱스 생성 및 데이터 적재
+## 🧪 Lab 1.2: 검색 인덱스 생성 및 데이터 적재
 
 ### Step 1 — 샘플 문서 준비
 
 실습용 이력서 문서를 다운로드해 압축 해제합니다.
 
-- [fictitious_resumes.zip](https://microsoft.github.io/agent-academy/special-ops/azure-ai-search-rag/assets/fictitious_resumes%20(1).zip)
+- [fictitious_resumes.zip](https://github.com/microsoft/agent-academy/raw/refs/heads/main/docs/special-ops/azure-ai-search-rag/assets/fictitious_resumes.zip)
 
 샘플 문서에는 후보자 이름/연락처, 기술 역량, 경력, 학력, 언어 능력, 자격증 같은 정보가 포함됩니다. 문서가 여러 언어로 작성되어 있어도 임베딩 + 벡터 인덱스에서 검색 가능합니다.
 
@@ -157,8 +157,8 @@ Contoso HR 팀은 여러 형식·여러 언어의 이력서를 대량으로 다�
 
 1. [Azure Portal](https://portal.azure.com/)에서 Storage Account 인스턴스를 엽니다.
 1. 왼쪽 **Data storage** 아래 **Containers** 선택
-1. **+ Add container** 선택
-1. 컨테이너 이름 입력(예: `resumes`) 후 **Create**
+1. **+ Container** 선택
+1. 컨테이너 이름으로 `resumes` 입력 후 **Create**
 
 <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-azure-ai-search-rag/azure-storage-02.png' | relative_url }}" alt="컨테이너 생성" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>스토리지 컨테이너 생성</figcaption></figure>
 
@@ -210,7 +210,7 @@ Contoso HR 팀은 여러 형식·여러 언어의 이력서를 대량으로 다�
 
 <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-azure-ai-search-rag/azure-search-06.png' | relative_url }}" alt="인덱스 검색 확인" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>인덱스 검색 확인</figcaption></figure>
 
-## 🧪 Exercise 3 — RAG 에이전트 만들기
+## 🧪 Lab 1.3 — RAG 에이전트 만들기
 
 ### Step 1 — HR Knowledge Agent 생성
 
@@ -258,7 +258,7 @@ If the search returns no relevant results, say so clearly rather than guessing. 
 ### Step 2 — Azure AI Search를 도구로 연결
 
 <div class="info-box note" markdown="1">
-**중요**: 새 Copilot Studio 환경에서는 **Azure AI Search가 Knowledge 소스가 아닙니다**. **Add knowledge**에서는 Public websites, SharePoint, OneDrive만 보이며, Azure AI Search는 **커넥터 도구(Add tool)** 로 연결해야 합니다.
+**중요**: **GitHub Copilot harness**로 구동되는 에이전트에서는 **Azure AI Search가 Knowledge 소스가 아닙니다**. **Add knowledge** 대화 상자에는 Public websites, SharePoint, OneDrive만 표시되며, Azure AI Search는 **커넥터 도구(Connector Tool)** 로 연결해 에이전트가 검색에 호출하도록 해야 합니다.
 
 <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-azure-ai-search-rag/rag-knowledge-no-azure-search.png' | relative_url }}" alt="Add knowledge에는 Azure AI Search가 없음" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Add knowledge 검색 결과</figcaption></figure>
 </div>
@@ -272,9 +272,9 @@ If the search returns no relevant results, say so clearly rather than guessing. 
 
 <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-azure-ai-search-rag/rag-tool-azure-search-actions.png' | relative_url }}" alt="Azure AI Search 커넥터 액션" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Azure AI Search 도구 선택</figcaption></figure>
 
-1. **Semantic Hybrid Search**를 선택하고 **Add**
+1. **Semantic Hybrid Search**를 선택하고 **Add**. 이 액션은 인덱스에 대해 벡터 검색과 키워드 검색을 결합한 시맨틱 하이브리드 검색을 수행합니다. 순수 벡터 질의가 필요하면 **Search vectors with natural language**도 좋은 대안입니다.
 1. 추가된 도구를 열어 **Tool details**에서 Name/Description/Authentication mode(User 또는 Maker)를 설정
-1. Exercise 1에서 저장한 **endpoint URL**, **admin key**로 연결을 만들고 `resumes` 인덱스 지정
+1. Lab 1.1에서 저장한 **endpoint URL**, **admin key**로 커넥터 **연결**을 만들고 `resumes` 인덱스 지정
 
 <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-azure-ai-search-rag/rag-tool-details-auth.png' | relative_url }}" alt="도구 상세 및 인증 모드" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Tool details 및 인증 설정</figcaption></figure>
 
@@ -288,7 +288,7 @@ If the search returns no relevant results, say so clearly rather than guessing. 
 **주의**: 저장하지 않고 빌드 화면을 벗어나면 변경 사항이 사라질 수 있습니다. 항상 Save 버튼 비활성화를 확인하세요.
 </div>
 
-## 🧪 Exercise 4 — 에이전트 테스트
+## 🧪 Lab 1.4 — 에이전트 테스트
 
 1. **Preview** 탭으로 이동
 1. 방금 도구를 추가했다면 **New chat**을 눌러 도구 컨텍스트를 새로고침
@@ -338,11 +338,13 @@ Who has project management experience combined with technical skills?
 
 이번 랩에서 달성한 내용:
 
-- ✅ Azure AI Search 서비스 생성/구성
-- ✅ PDF 기반 통합 벡터화 인덱스 구축
-- ✅ 새 Copilot Studio 환경에서 Azure AI Search를 Knowledge가 아닌 **도구**로 연결
-- ✅ 검색 도구 호출 및 출처 인용을 유도하는 지시문 설계
-- ✅ 기본/복합 질의로 의미 기반 검색 검증
+- ✅ **Azure AI Search**: 엔터프라이즈 지식용 검색 서비스 생성/구성
+- ✅ **통합 벡터화**: 임베딩 모델로 PDF 기반 벡터 인덱스 구축
+- ✅ **커넥터 기반 RAG**: GitHub Copilot harness 에이전트에서 더 이상 제공되지 않는 **Azure AI Search Knowledge 소스** 대신, Azure AI Search를 **도구**로 연결
+- ✅ **지시문 설계**: 검색 도구 호출과 출처 인용을 유도하는 지시문 작성
+- ✅ **의미 기반 테스트**: 기본/복합 질의로 검색 품질 검증
+
+여기서 만든 RAG 패턴은 HR에만 국한되지 않습니다. 고객 지원 지식 베이스, 기술 문서, 정책 가이드 등 대량의 문서를 자연어 대화로 찾아야 하는 모든 영역에 그대로 적용할 수 있습니다.
 
 ## 🏅 완료 배지 받기
 
@@ -350,7 +352,7 @@ Who has project management experience combined with technical skills?
 
 배지 신청 폼에 필수 항목을 제출하세요.
 
-[https://aka.ms/agent-academy-special-ops/azure-ai-search-rag/form](https://aka.ms/agent-academy-special-ops/azure-ai-search-rag/form)
+[https://aka.ms/agent-academy-special-ops/vector-vanguard/form](https://aka.ms/agent-academy-special-ops/vector-vanguard/form)
 
 검토 후 Global AI Community 이메일로 배지 수령 안내가 발송됩니다.
 
