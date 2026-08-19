@@ -1,3 +1,54 @@
 {
-  "items": []
+  "items": [
+    {
+      "slug": "agent-review-tool",
+      "title": "Review Before Release: Using Agent Review Tool for Copilot Studio Agents",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/agent-review-tool/",
+      "source_author": "ramakrishnan24689",
+      "source_published": "2026-08-18",
+      "source_updated": "2026-08-18",
+      "categories": [
+        "copilot-studio",
+        "agents"
+      ],
+      "summary": "Use Agent Review Tool to investigate findings, assess skill quality, and understand configuration relationships before releasing a Copilot Studio agent.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-08-18-agent-review-tool.md",
+      "images": [
+        {
+          "src": "/assets/posts/agent-review-tool/zava-review-summary.png",
+          "local": "assets/catblog/agent-review-tool/zava-review-summary.png"
+        },
+        {
+          "src": "/assets/posts/agent-review-tool/zava-review-findings.png",
+          "local": "assets/catblog/agent-review-tool/zava-review-findings.png"
+        },
+        {
+          "src": "/assets/posts/agent-review-tool/zava-skill-evaluator.png",
+          "local": "assets/catblog/agent-review-tool/zava-skill-evaluator.png"
+        },
+        {
+          "src": "/assets/posts/agent-review-tool/zava-skill-finding-before.png",
+          "local": "assets/catblog/agent-review-tool/zava-skill-finding-before.png"
+        },
+        {
+          "src": "/assets/posts/agent-review-tool/zava-agent-map.png",
+          "local": "assets/catblog/agent-review-tool/zava-agent-map.png"
+        },
+        {
+          "src": "/assets/posts/agent-review-tool/zava-review-summary-after.png",
+          "local": "assets/catblog/agent-review-tool/zava-review-summary-after.png"
+        },
+        {
+          "src": "/assets/posts/agent-review-tool/zava-skill-evaluator-after.png",
+          "local": "assets/catblog/agent-review-tool/zava-skill-evaluator-after.png"
+        },
+        {
+          "src": "/assets/posts/agent-review-tool/header-v2.png",
+          "local": "assets/catblog/agent-review-tool/header-v2.png"
+        }
+      ],
+      "staged_at": "2026-08-19T13:13:14.689Z",
+      "status": "pending-translation"
+    }
+  ]
 }
