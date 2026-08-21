@@ -45,7 +45,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/09-add-an-agen
 1. agent flow 디자이너와 expressions 사용법을 익힙니다.
 1. SharePoint와 이메일로 장치 요청을 자동화하는 방법을 배웁니다.
 
-## 🤔 agent flow란?
+## 🤔 에이전트 흐름(agent flow)이란?
 
 agent flow는 반복 작업을 자동화하고 앱·서비스를 연결하는 강력한 방식입니다. agent가 작업을 자동화하거나 다른 애플리케이션 및 서비스와 연결하기 위해 실행할 수 있는 **구조화된 단계별 워크플로**라고 생각하면 됩니다. 알림 전송, 레코드 업데이트, 이벤트 대응 같은 일을 agent가 처리하도록 돕는 작은 워크플로라고 볼 수 있습니다.
 
@@ -56,11 +56,11 @@ agent flow는 반복 작업을 자동화하고 앱·서비스를 연결하는 �
 - 사용자에게 _말만 하는_ 것이 아니라 실제로 _일을 처리_ 하게 도와줍니다.
 - 여러 topic과 agent에서 재사용할 수 있고, 사용자 메시지·이벤트·다른 앱/서비스에서 트리거될 수 있습니다.
 
-## 🙋🏽 그런데 Power Automate cloud flow와는 무엇이 다를까요?
+## 🙋🏽 그런데 Power Automate 클라우드 흐름과는 무엇이 다를까요?
 
 agent flow와 Power Automate cloud flow는 모두 자동화를 돕지만, 목적과 동작 방식이 다릅니다.
 
-### 🤖 Copilot Studio의 agent flow
+### 🤖 Copilot Studio의 에이전트 흐름
 
 **용도**
 
@@ -79,7 +79,7 @@ agent flow와 Power Automate cloud flow는 모두 자동화를 돕지만, 목적
 - Copilot Studio 안에서만 보이고 사용할 수 있습니다.
 - 현재 agent의 event trigger는 Power Automate maker portal에서 편집할 수 있습니다.
 
-### ☁️ Power Automate cloud flow
+### ☁️ Power Automate 클라우드 흐름
 
 **용도**
 
@@ -103,7 +103,7 @@ agent flow와 Power Automate cloud flow는 모두 자동화를 돕지만, 목적
 | Agent flow | agent 내부에서 작업을 자동화하고, AI를 활용하며, 모든 구성을 Copilot Studio 안에 유지하고 싶을 때 |
 | Power Automate cloud flow | 여러 앱과 서비스를 연결하거나, agent 밖에서 동작하는 워크플로를 만들고 싶을 때 |
 
-## 👍🏻 왜 agent flow를 사용할까요?
+## 👍🏻 왜 에이전트 흐름을 사용할까요?
 
 agent flow는 항상 **고정된 경로**를 따라가며, 같은 입력에 대해 같은 결과를 냅니다.
 
@@ -122,7 +122,7 @@ agent flow는 항상 **고정된 경로**를 따라가며, 같은 입력에 대�
 - **노코드/로우코드** — 자연어 또는 시각적 디자이너로 구성할 수 있습니다.
 - **올인원 플랫폼** — Copilot Studio 한곳에서 agent flow를 설계, 테스트, 배포할 수 있습니다. 플랫폼을 오갈 필요가 없습니다.
 
-## 🏄🏻‍♂️ agent flow가 agent를 어떻게 강화할까요?
+## 🏄🏻‍♂️ 에이전트 흐름이 에이전트를 어떻게 강화할까요?
 
 agent flow는 agent가 사용자와 대화하는 수준을 넘어 실제 시스템과 상호작용하며 일을 처리하도록 만들어 줍니다.
 
@@ -147,7 +147,7 @@ Copilot Studio의 agent flow를 사용하면 이 과정을 자동화할 수 있�
 - 비즈니스 요구가 바뀌어도 쉽게 수정하고 확장할 수 있습니다.
 - 여러 팀으로 자동화를 확장할 수 있습니다.
 
-## 🔌 agent flow를 강력하게 만드는 핵심 기능
+## 🔌 에이전트 흐름을 강력하게 만드는 핵심 기능
 
 1. **자연어 작성**
    - 하고 싶은 일을 평문 영어로 설명할 수 있습니다.
@@ -181,16 +181,16 @@ Copilot Studio의 agent flow를 사용하면 이 과정을 자동화할 수 있�
 
    그다음 agent가 수행할 단계입니다. 예를 들어 이메일 보내기, API 호출, ServiceNow 티켓 업데이트 등이 여기에 해당합니다.
 
-## 🧶 agent flow 만드는 방법
+## 🧶 에이전트 흐름을 만드는 방법
 
 1. **Natural language**: agent가 무엇을 하길 원하는지 설명하면 Copilot이 흐름을 생성합니다.
 1. **Designer canvas**: agent flow 디자이너에서 액션, 조건, 루프를 끌어다 놓아 구성합니다.
 
-## 🎨 agent flow 디자이너란?
+## 🎨 에이전트 흐름 디자이너란?
 
 Copilot Studio의 시각적 도구로, 작업 수행에 필요한 단계별 흐름을 만들고 편집하고 관리할 수 있습니다. agent flow가 익숙하지 않아도 비교적 쉽게 사용할 수 있도록 설계되었습니다.
 
-### agent flow 디자이너의 핵심 기능
+### 에이전트 흐름 디자이너의 핵심 기능
 
 1. **시각적 캔버스**
    - 흐름 전체를 다이어그램처럼 볼 수 있습니다.
@@ -217,17 +217,17 @@ Copilot Studio의 시각적 도구로, 작업 수행에 필요한 단계별 흐�
    - 오류가 없으면 게시해 라이브로 전환합니다.
    - _Test_ 기능으로 수동 또는 자동 실행 후 동작을 검증할 수 있습니다.
 
-### 왜 agent flow 디자이너를 사용할까요?
+### 왜 에이전트 흐름 디자이너를 사용할까요?
 
 - **시각적이고 직관적** — 드래그와 클릭만으로 흐름을 만들 수 있습니다.
 - **안전한 실험** — 버전 기록으로 언제든 되돌릴 수 있습니다.
 - **내장 테스트** — 운영에 올리기 전에 검증할 수 있습니다.
 
-## 🔤 expression이란 무엇인가요?
+## 🔤 식(expression)이란 무엇인가요?
 
 expression은 agent flow가 데이터를 다루도록 돕는 작은 수식 또는 명령입니다. 값 계산, 텍스트 서식 지정, 조건 판단, 특정 입력 추출 등에 사용합니다.
 
-### 왜 expression을 쓰나요?
+### 왜 식을 쓰나요?
 
 expression으로 다음을 할 수 있습니다.
 
@@ -236,7 +236,7 @@ expression으로 다음을 할 수 있습니다.
 - **데이터 변환** — 소문자 변환, 문자열 일부 추출
 - **자동화 로직 구현** — 전체 코드를 쓰지 않고도 로직 구성
 
-### expression은 어떻게 생겼나요?
+### 식은 어떻게 생겼나요?
 
 expression은 함수(function)를 사용합니다. 아래 설명은 전 Microsoft MVP Jerry Weinstock의 설명을 바탕으로 정리한 것입니다.
 
@@ -343,7 +343,7 @@ Copilot Studio에서 agent flow를 만들 때 다음을 권장합니다.
 1. **사용하지 않는 액션 삭제하기**
    - 더 이상 필요 없는 액션은 제거해 흐름을 깔끔하게 유지합니다.
 
-## 🧪 Lab 09 - 자동화를 위한 agent flow 추가와 topic 기능 확장
+## 🧪 실습 09 - 자동화를 위한 에이전트 흐름 추가와 토픽 기능 확장
 
 이제 adaptive card와 topic/node의 고급 기능을 활용해 기존 topic을 더 강력하게 만들어 보겠습니다.
 
@@ -357,7 +357,7 @@ Copilot Studio에서 agent flow를 만들 때 다음을 권장합니다.
 
 시작해 봅시다.
 
-### Prerequisites
+### 사전 준비 사항
 
 1. **SharePoint list**
 
@@ -369,7 +369,7 @@ Copilot Studio에서 agent flow를 만들 때 다음을 권장합니다.
 
    이전에 [Lesson 06 - Create a custom agent using natural language with AI and grounding it with your data]({{ '/chapters/academy-recruit-06-create-agent-from-conversation/' | relative_url }})에서 만든 agent를 계속 사용합니다.
 
-### 9.1 agent flow 만들기
+### 9.1 에이전트 흐름 만들기
 
 이번 실습에서는 선택한 장치의 SharePoint 항목을 조회하고, 장치 세부 정보를 관리자에게 이메일로 보내는 agent flow를 만듭니다.
 
@@ -881,7 +881,7 @@ Copilot Studio에서 agent flow를 만들 때 다음을 권장합니다.
      <img src="{{ '/assets/academy/recruit-09-add-an-agent-flow/9.1_53_Confirmation.png' | relative_url }}" alt="게시 확인 메시지" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
      <figcaption>게시 확인 메시지</figcaption>
    </figure>
-### 9.2 topic에 agent flow 추가하기
+### 9.2 토픽에 에이전트 흐름 추가하기
 
 이제 방금 만든 agent flow를 **Request device** topic에 연결합니다.
 
@@ -1012,7 +1012,7 @@ Copilot Studio에서 agent flow를 만들 때 다음을 권장합니다.
    </figure>
 1. topic을 **Save** 합니다.
 
-### 9.3 Request device topic에 노드 추가해 사용자 경험 개선하기
+### 9.3 Request device 토픽에 노드를 추가해 사용자 경험 개선하기
 
 이제 노드 두 개를 더 추가합니다.
 
@@ -1081,7 +1081,7 @@ Copilot Studio에서 agent flow를 만들 때 다음을 권장합니다.
      <img src="{{ '/assets/academy/recruit-09-add-an-agent-flow/9.3_07_SaveTopic.png' | relative_url }}" alt="topic 저장" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
      <figcaption>topic 저장</figcaption>
    </figure>
-### 9.4 여러 시나리오로 agent 테스트하기
+### 9.4 여러 시나리오로 에이전트 테스트하기
 
 수고하셨습니다. 이제 agent를 테스트해 보겠습니다.
 
@@ -1227,7 +1227,7 @@ Copilot Studio에서 agent flow를 만들 때 다음을 권장합니다.
      <img src="{{ '/assets/academy/recruit-09-add-an-agent-flow/9.4_18_Goodbye.png' | relative_url }}" alt="Goodbye topic 호출" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
      <figcaption>Goodbye topic 호출</figcaption>
    </figure>
-## ✅ Mission Complete
+## ✅ 미션 완료
 
 성공적으로 다음을 완료했습니다.
 
@@ -1238,7 +1238,7 @@ Copilot Studio에서 agent flow를 만들 때 다음을 권장합니다.
 
 다음은 [Mission 10: Add Event Triggers]({{ '/chapters/academy-recruit-10-add-event-triggers/' | relative_url }})로 계속 진행하세요.
 
-## 📚 Tactical Resources
+## 📚 참고 자료
 
 - [Introducing agent flows: Transforming automation with AI-first workflows](https://www.microsoft.com/microsoft-copilot/blog/copilot-studio/introducing-agent-flows-transforming-automation-with-ai-first-workflows/)
 

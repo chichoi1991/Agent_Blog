@@ -124,7 +124,7 @@ source(developer) environment에서는 에이전트를 전용 솔루션 안에 �
 
 - Developers와 makers는 개발 중 unmanaged solutions를 사용해 함께 작업한 다음, 배포를 위해 managed solution을 넘길 수 있습니다.
 
-## Solution Publisher 이해하기
+## 솔루션 게시자 이해하기
 
 Power Platform의 Solution Publisher는 솔루션을 만든 사람 또는 소유한 주체를 식별하는 라벨 또는 브랜드와 같습니다. 앱, 에이전트, flow 사용자 지정을 관리할 때 작지만 중요한 요소이며, 특히 팀으로 작업하거나 여러 환경을 오갈 때 중요합니다.
 
@@ -152,7 +152,7 @@ _Priority_ 라는 custom column을 추가하면 솔루션에는 `cts_Priority`�
 어떤 환경에서든 솔루션 수준에서 그 column을 보는 사람은 그것이 Contoso Solutions와 연결된 column임을 쉽게 식별할 수 있습니다.
 </div>
 
-## Power Platform solution lifecycle
+## Power Platform 솔루션 수명 주기
 
 이제 Solution의 목적을 이해했으니 다음으로 lifecycle을 살펴보겠습니다.
 
@@ -180,7 +180,7 @@ _Priority_ 라는 custom column을 추가하면 솔루션에는 `cts_Priority`�
 - 테스트가 끝나면 원래 개발 버전을 건드리지 않고 Production 환경으로 이동합니다.
 </div>
 
-## 실습 04: 새 Solution 만들기
+## 실습 04: 새 솔루션 만들기
 
 이제 다음 두 가지를 배웁니다.
 
@@ -221,7 +221,7 @@ Copilot Studio에서 Solution Explorer로 _할 수 있는_ 작업은 사용자�
   <figcaption>전용 developer environment로 전환</figcaption>
 </figure>
 
-### 4.1 Solution publisher 만들기
+### 4.1 솔루션 게시자 만들기
 
 1. Copilot Studio 왼쪽 메뉴에서 **ellipsis icon (...)**을 선택합니다. **Explore** header 아래의 **Solutions**를 선택합니다.
 
@@ -308,7 +308,7 @@ Copilot Studio에서 Solution Explorer로 _할 수 있는_ 작업은 사용자�
 
 하이파이브, 이제 Solution Publisher를 만들었습니다! 🙌🏻 다음으로 새 custom solution을 만드는 방법을 배웁니다.
 
-### 4.2 새 Solution 만들기
+### 4.2 새 솔루션 만들기
 
 1. 이제 solutions를 만들었으므로 **New solution** pane의 나머지 form을 완성할 수 있습니다.
 

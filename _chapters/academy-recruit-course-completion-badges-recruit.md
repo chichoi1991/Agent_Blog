@@ -48,7 +48,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/course-complet
 
 아래 단계를 **순서대로 모두** 수행하세요.
 
-### 1. ⭐ Agent Academy GitHub Repo에 Star 남기기
+### 1. ⭐ Agent Academy GitHub 저장소에 Star 남기기
 
 👉 [Agent Academy GitHub Repo](https://github.com/microsoft/agent-academy)
 
@@ -60,7 +60,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/course-complet
 
 Star는 빠르고 무료이며, 배지 자격 요건에 포함됩니다.
 
-### 2. 🧾 Badge Validation Form 작성하기
+### 2. 🧾 배지 검증 양식 작성하기
 
 👉 [Badge Validation Form](https://aka.ms/agent-academy-recruit/form)
 
@@ -97,6 +97,6 @@ Star는 빠르고 무료이며, 배지 자격 요건에 포함됩니다.
 
 다음 단계는 [Operative 훈련](https://microsoft.github.io/agent-academy/operative/)입니다.
 
-## 📚 Tactical Resources
+## 📚 참고 자료
 
 - [Power Platform Advocacy Hub](https://aka.ms/power-advocates)

@@ -54,7 +54,7 @@ Copilot Credits는 Copilot Studio에서 **사용량을 측정하는 통화 단�
 
 [Copilot Credits는 pay-as-you-go meter, 사전 구매 플랜, Copilot Credit 선불 pack 구독으로 제공됩니다.](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing)
 
-### 1. Copilot Studio Pay-As-You-Go (PAYGO) Meter
+### 1. Copilot Studio 종량제(PAYGO) 미터
 
 [Pay-as-you-go는 Azure 구독을 사용해 Copilot Studio 비용을 지불하는 방식으로, 라이선스 약정이나 선구매 없이 agent 만들기를 시작할 수 있습니다.](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing) 매달 말 조직은 agent가 실제로 사용한 Copilot Credits만큼만 비용을 지불합니다.
 
@@ -63,7 +63,7 @@ Copilot Credits는 Copilot Studio에서 **사용량을 측정하는 통화 단�
 - billing policy를 통해 Power Platform 환경에 연결된 **활성 Azure 구독** 필요
 - 초기 개발, 변동성이 큰 사용량, 또는 월간 볼륨을 아직 예측할 준비가 되지 않은 경우에 적합
 
-### 2. Copilot Studio License (Copilot Credit Capacity Pack)
+### 2. Copilot Studio 라이선스(Copilot Credit 용량 팩)
 
 - 월 구독: pack당 **25,000 Copilot Credits**, **$200/pack/month**
 - 용량은 tenant 수준에서 풀링되며 여러 pack을 구매해 누적 가능
@@ -71,7 +71,7 @@ Copilot Credits는 Copilot Studio에서 **사용량을 측정하는 통화 단�
 - 예측 가능한 프로덕션 수준 사용량에 가장 적합
 - 월중에 pack 용량을 초과해도 agent가 계속 실행되도록 PAYGO를 백업으로 함께 설정하는 것을 Microsoft는 강력히 권장합니다.
 
-### 3. Copilot Credit Pre-Purchase Plan (P3)
+### 3. Copilot Credit 선구매 플랜(P3)
 
 [Copilot Credits를 1년 단위로 선결제하는 옵션입니다. Copilot Credit Commit Units(CCCUs) 풀을 Microsoft 적격 제품 전반에서 사용할 수 있습니다.](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing) 여기에는 Copilot Studio, Dynamics 365 first-party agents, Copilot Chat이 포함됩니다.
 
@@ -126,7 +126,7 @@ Microsoft Learn의 billing rates 표를 보면 classic answers, generative answe
 - **M365 Copilot 라이선스 사용자, 인증됨, 내부 채널** → Copilot Studio credits 사용 안 함(fair use 적용)
 - **비라이선스 사용자, 외부 채널 또는 자율 trigger** → Copilot Studio credits 사용
 
-## 💰 Credit Billing Rates 한눈에 보기
+## 💰 Credit 청구 요율 한눈에 보기
 
 [agent가 소비하는 Copilot Credits 수는 agent의 설계, 고객이 상호작용하는 빈도, 사용하는 기능에 따라 달라집니다.](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management) 각 feature type의 비용은 다음과 같습니다.
 
@@ -194,7 +194,7 @@ agent를 출시하기 전에 다음을 권장합니다.
 | reasoning model을 사용하는 agent | 표준 feature rate + premium AI tools rate 사용 |
 | agent를 만드는 maker | Copilot Studio User License(무료) 필요 |
 
-## 🏁 Mission Complete
+## 🏁 미션 완료
 
 성공적으로 다음을 완료했습니다.
 
@@ -205,7 +205,7 @@ agent를 출시하기 전에 다음을 권장합니다.
 
 다음으로 [Recruit Course Completion]({{ '/chapters/academy-recruit-course-completion-badges-recruit/' | relative_url }})으로 이동해 badge를 확보하세요.
 
-## 📚 Tactical Resources
+## 📚 참고 자료
 
 - [Copilot Studio licensing and billing](https://learn.microsoft.com/microsoft-copilot-studio/billing-licensing?WT.mc_id=power-170631-apdunnam)
 - [Billing rates and management](https://learn.microsoft.com/microsoft-copilot-studio/requirements-messages-management?WT.mc_id=power-170631-apdunnam)

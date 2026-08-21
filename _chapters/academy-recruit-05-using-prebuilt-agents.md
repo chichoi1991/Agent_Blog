@@ -54,7 +54,7 @@ Contoso IT helpdesk agent를 준비하는 동안 또 다른 요구 사항이 들
 1. 에이전트의 knowledge를 사용자 지정하는 방법
 1. pre-built agent를 테스트하고 게시하는 방법
 
-## Pre-Built Agents란?
+## 사전 구축 에이전트란?
 
 Pre-built agents는 Microsoft가 만든 즉시 활용 가능한 AI 에이전트로, 다음과 같은 특징이 있습니다.
 
@@ -76,7 +76,7 @@ Pre-built agents는 Microsoft가 만든 즉시 활용 가능한 AI 에이전트�
 
 1. Microsoft 365 회사 또는 학교 계정으로 로그인합니다.
 
-### 5.2 Safe Travels Agent Template 선택
+### 5.2 Safe Travels 에이전트 템플릿 선택
 
 1. 왼쪽 메뉴에서 **Agents** 탭을 선택합니다.
 

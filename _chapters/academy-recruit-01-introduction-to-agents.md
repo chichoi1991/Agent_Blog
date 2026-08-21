@@ -20,7 +20,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/01-introductio
 
 ## 영상으로 보기
 
-- YouTube walkthrough: https://www.youtube.com/watch?v=BhPz_zicUnM
+- [YouTube 워크스루](https://www.youtube.com/watch?v=BhPz_zicUnM)
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/recruit-01-introduction-to-agents/video-thumbnail.jpg' | relative_url }}" alt="Introduction to Agents 동영상 썸네일" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
