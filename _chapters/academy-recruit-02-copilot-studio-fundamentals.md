@@ -20,7 +20,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/02-copilot-stu
 
 ## 영상으로 보기
 
-- YouTube walkthrough: https://www.youtube.com/watch?v=x4OCwDRGeLE
+- [YouTube 워크스루](https://www.youtube.com/watch?v=x4OCwDRGeLE)
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/recruit-02-copilot-studio-fundamentals/video-thumbnail.jpg' | relative_url }}" alt="Copilot Studio Fundamentals 동영상 썸네일" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
@@ -84,11 +84,11 @@ Microsoft 365 Copilot은 Office 앱 전반에서 범용 AI 지원을 제공하�
 
 아래에서는 각 요소를 정의하고, 이들이 어떻게 함께 작동해 효과적인 에이전트를 만드는지 설명합니다.
 
-### 1. Knowledge
+### 1. 지식(Knowledge)
 
 **Knowledge** 는 에이전트가 질문에 정확하게 답하기 위해 사용하는 데이터와 컨텍스트입니다. 크게 두 부분으로 나뉩니다.
 
-#### Custom Instructions & Context
+#### 사용자 지정 지침과 컨텍스트
 
 - 에이전트의 목적과 말투를 짧게 설명합니다. 예를 들면 다음과 같습니다.
 
@@ -98,7 +98,7 @@ You are an IT support agent. You help employees troubleshoot common software iss
 
 - 대화 중 에이전트는 이전 턴을 기억하므로, 이미 논의한 내용을 이어서 참조할 수 있습니다. 예를 들어 사용자가 먼저 “프린터가 오프라인이에요”라고 말하고 나중에 “잉크 잔량은 확인했나요?”라고 물으면, 에이전트는 프린터 맥락을 기억한 채 답할 수 있습니다.
 
-#### Knowledge Sources (Grounding Data)
+#### 지식 원본(그라운딩 데이터)
 
 - 에이전트를 SharePoint 라이브러리, 문서 사이트, 위키, 기타 데이터베이스 등 여러 데이터 원본에 연결할 수 있습니다.  
 - 사용자가 질문하면, 에이전트는 해당 원본에서 관련 내용을 가져와 답변을 조직의 실제 정책, 제품 설명서, 독점 정보에 **근거(grounded)** 하도록 만듭니다.  
@@ -109,7 +109,7 @@ You are an IT support agent. You help employees troubleshoot common software iss
 “Policy Assistant” 에이전트가 HR SharePoint 사이트에 연결되어 있다고 가정해 보세요. 사용자가 “우리 PTO 적립률이 얼마예요?”라고 물으면, 일반적인 AI 답변에 의존하는 대신 HR 정책 문서의 정확한 문구를 가져와 답할 수 있습니다.
 </div>
 
-### 2. Tools (Actions)
+### 2. 도구(Tools 및 Actions)
 
 **Tools (Actions)** 는 에이전트가 단순 대화 이상으로 무엇을 할 수 있는지를 정의합니다. 각 Action은 다음과 같은 작업을 프로그래밍 방식으로 실행하는 단위입니다.
 
@@ -118,7 +118,7 @@ You are an IT support agent. You help employees troubleshoot common software iss
 - 데이터베이스 레코드 추가/수정(예: SharePoint 목록, Dataverse 테이블)  
 - Power Automate 흐름 또는 REST API 호출
 
-#### Actions는 어떻게 동작하는가
+#### 작업은 어떻게 동작하는가
 
 - **입력과 출력 정의**  
   - 예를 들어 Send Email 액션은 다음 값을 입력으로 받을 수 있습니다.  
@@ -148,16 +148,16 @@ You are an IT support agent. You help employees troubleshoot common software iss
 4. “Send Email” 액션을 트리거해 승인자에게 알립니다.
 </div>
 
-### 3. Topics
+### 3. 토픽(Topics)
 
 **Topics** 는 에이전트의 대화 트리거 또는 진입점을 정의합니다. 각 토픽은 하나의 기능 또는 질문 범주에 대응합니다.
 
-#### Conversational Triggers
+#### 대화형 트리거
 
 - 예를 들어 “Submit IT Ticket”, “Check Vacation Balance”, “Create Sales Report” 같은 토픽이 있을 수 있습니다.  
 - Copilot Studio는 내부적으로 **generative orchestration**을 사용합니다. 즉, 정확히 일치하는 키워드에만 의존하지 않고, 사용자가 입력한 의도를 해석한 뒤 여러분이 작성한 짧은 설명을 바탕으로 적절한 토픽을 선택합니다.
 
-#### Topic Descriptions
+#### 토픽 설명
 
 - 각 토픽에는 해당 토픽이 다루는 범위를 짧고 명확하게 설명하는 문장을 작성합니다.
 
@@ -168,7 +168,7 @@ You are an IT support agent. You help employees troubleshoot common software iss
 
 - AI는 이 설명을 바탕으로, 사용자의 표현이 정확히 일치하지 않더라도 언제 이 토픽을 활성화해야 하는지 판단합니다.
 
-#### Topics와 Actions의 연결
+#### 토픽과 작업의 연결
 
 - 각 토픽은 하나 이상의 액션 또는 데이터 조회 단계와 연결됩니다.  
 - AI가 토픽을 선택하면, 여러분이 정의한 순서에 따라 대화를 이끌고(후속 질문, 액션 호출, 결과 반환) 작업을 진행합니다.
@@ -178,23 +178,23 @@ You are an IT support agent. You help employees troubleshoot common software iss
 사용자가 “새 노트북 설정을 도와주세요”라고 말하면, AI는 이 의도를 “Submit IT Ticket” 토픽과 연결할 수 있습니다. 그러면 에이전트는 노트북 모델과 사용자 정보를 묻고, 자동으로 헬프데스크 시스템에 티켓을 등록합니다.
 </div>
 
-### 4. Instructions
+### 4. 지침(Instructions)
 
 **Instructions**(때로는 “Prompts” 또는 “System Messages”)는 LLM의 말투, 스타일, 경계 조건을 안내합니다. 즉, 어떤 상황에서든 에이전트가 어떻게 답해야 하는지 방향을 잡아 줍니다.
 
-#### Role & Persona
+#### 역할과 페르소나
 
 - 에이전트가 누구인지 알려 줍니다(예: “당신은 Contoso Retail의 고객 서비스 에이전트입니다.”).  
 - 이를 통해 친근한 톤, 간결한 톤, 격식 있는 톤 등 상황에 맞는 응답 스타일을 정할 수 있습니다.
 
-#### Response Guidelines
+#### 응답 지침
 
 - 에이전트가 반드시 따라야 할 규칙을 지정합니다. 예를 들면 다음과 같습니다.  
   - “정책 정보는 항상 글머리표로 요약할 것.”  
   - “답을 모르면 ‘죄송하지만 해당 정보를 가지고 있지 않습니다.’라고 말할 것.”  
   - “맥락 밖의 기밀 데이터는 절대 포함하지 말 것.”
 
-#### Memory & Context Rules
+#### 메모리와 컨텍스트 규칙
 
 - 에이전트가 몇 턴까지 대화를 기억할지 지시할 수 있습니다.  
 - 예: “이 사용자의 요청 세부 정보는 후속 질문 3회까지 기억할 것.”
@@ -244,7 +244,7 @@ sequenceDiagram
 - **Topics**: 에이전트가 정의된 대화 경로를 처리하는 방식을 설명했습니다.
 - **Instructions**: 규칙, 톤, 경계가 응답을 안내하는 방식을 설명했습니다.
 
-다음으로 [Mission 03: Deploy a Declarative Agent for Microsoft 365 Copilot]({{ '/chapters/academy-recruit-03-create-a-declarative-agent-for-m365copilot/' | relative_url }})을 계속 진행하세요.
+다음으로 [미션 03: Microsoft 365 Copilot용 선언형 에이전트 배포]({{ '/chapters/academy-recruit-03-create-a-declarative-agent-for-m365copilot/' | relative_url }})를 계속 진행하세요.
 
 ## 전술 리소스
 

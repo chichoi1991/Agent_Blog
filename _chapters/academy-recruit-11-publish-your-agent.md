@@ -46,7 +46,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/11-publish-you
 1. Microsoft Teams에서 agent를 추가하는 방법
 1. 조직 전체에서 agent를 사용할 수 있게 만드는 방법
 
-## 🚀 agent 게시하기
+## 🚀 에이전트 게시하기
 
 Copilot Studio에서 agent를 작업할 때마다 지식이나 tool을 추가해 업데이트할 수 있습니다. 모든 변경을 마치고 충분히 테스트했다면 이제 publish할 준비가 된 것입니다. publish하면 최신 업데이트가 라이브로 반영됩니다. 새 tool로 agent를 업데이트했더라도 publish 버튼을 누르지 않으면 아직 최종 사용자에게 제공되지 않습니다.
 
@@ -58,7 +58,7 @@ agent 사용자에게 업데이트를 전달하려면 항상 publish 버튼을 �
 ❗ 최근 Copilot Studio Trial 환경 정책이 바뀌어 trial 환경에서는 agent publish가 제한됩니다. Trial 환경이라면 이 모듈에서 agent 게시를 완료할 수 없고, agent를 publish하려면 유료 환경이 필요합니다. 다만 배지를 받기 위해 agent 게시가 필수인 것은 아닙니다.
 </div>
 
-## ⚙️ channel 구성하기
+## ⚙️ 채널 구성하기
 
 channel은 사용자가 agent에 접근하고 상호작용할 수 있는 위치를 결정합니다. agent를 publish한 뒤 여러 channel에서 사용할 수 있게 만들 수 있습니다. channel마다 agent 콘텐츠가 표시되는 방식이 다를 수 있습니다.
 
@@ -80,7 +80,7 @@ channel을 추가하려면 agent의 **Channels** 탭으로 이동해 구성할 c
   <figcaption>Agent의 Channels 탭</figcaption>
 </figure>
 
-## 📺 channel별 사용자 경험
+## 📺 채널별 사용자 경험
 
 channel마다 사용자 경험이 다릅니다. 여러 channel용 agent를 빌드한다면 channel별 차이를 알고 있어야 합니다. agent가 의도한 대로 실제로 동작하는지 확인하려면 여러 channel에서 테스트하는 것이 항상 좋은 전략입니다.
 
@@ -114,7 +114,7 @@ channel별로 서로 다른 로직을 사용할 수 있는 예시가 몇 가지 
 Henry Jammes가 공유한 [Adaptive Card channel-logic 예제](https://github.com/pnp/powerplatform-snippets/blob/main/copilot-studio/multiple-topics-matched-topic/source/multiple-topics-matched.yaml#L40)는 channel이 Microsoft Teams일 때 다른 card를 보여주는 방법을 설명합니다.
 </div>
 
-## 🧪 Lab 11: agent를 Teams와 Microsoft 365 Copilot에 게시하기
+## 🧪 실습 11: 에이전트를 Teams와 Microsoft 365 Copilot에 게시하기
 
 ### 🎯 사용 사례
 
@@ -134,7 +134,7 @@ Teams와 Microsoft 365 Copilot channel을 추가하는 것도 마찬가지로 �
 
 이 미션은 여러분의 개발 결과를 조직의 최종 사용자에게 실제 가치를 제공하는 프로덕션 준비 솔루션으로 전환합니다.
 
-### Prerequisites
+### 사전 준비 사항
 
 이 실습을 시작하기 전에 다음을 확인하세요.
 
@@ -143,7 +143,7 @@ Teams와 Microsoft 365 Copilot channel을 추가하는 것도 마찬가지로 �
 - ✅ Copilot Studio 환경에서 agent를 publish할 권한이 있음
 - ✅ 조직의 Microsoft Teams에 접근할 수 있음
 
-### 11.1 agent 게시하기
+### 11.1 에이전트 게시하기
 
 이제 agent에 대한 모든 작업을 마쳤으므로 agent를 사용할 최종 사용자에게 우리의 작업이 제공되도록 해야 합니다. 모든 사용자가 콘텐츠를 사용할 수 있게 하려면 agent를 publish해야 합니다.
 
@@ -179,7 +179,7 @@ Teams와 Microsoft 365 Copilot channel을 추가하는 것도 마찬가지로 �
    </figure>
 agent는 게시되었지만 아직 channel을 통해 사용할 수 없습니다. 이제 그 부분을 해결해 봅시다.
 
-### 11.2 Teams and Microsoft 365 Copilot channel 추가하기
+### 11.2 Teams 및 Microsoft 365 Copilot 채널 추가하기
 
 1. agent 탐색에서 **Channels** 를 선택합니다.
 
@@ -235,7 +235,7 @@ agent는 게시되었지만 아직 channel을 통해 사용할 수 없습니다.
    </figure>
 이제 Microsoft Teams에서 여러분이 사용할 수 있도록 agent를 게시했습니다. 하지만 더 많은 사람이 사용할 수 있게 만들고 싶을 수 있습니다.
 
-### 11.3 테넌트 전체 사용자에게 agent 제공하기
+### 11.3 테넌트 전체 사용자에게 에이전트 제공하기
 
 1. Contoso Helpdesk Agent가 열린 브라우저 탭을 닫습니다.
 
@@ -295,7 +295,7 @@ agent는 게시되었지만 아직 channel을 통해 사용할 수 없습니다.
    </figure>
 여기에는 더 많은 가능성이 있습니다. 관리자는 global setup policy를 변경해 tenant의 모든 사용자에게 Contoso Helpdesk Agent를 자동 설치할 수 있습니다. 또한 Contoso Helpdesk Agent를 왼쪽 레일에 고정해 모든 사용자가 쉽게 접근하게 할 수도 있습니다.
 
-## ✅ Mission Complete
+## ✅ 미션 완료
 
 성공적으로 완료한 내용은 다음과 같습니다.
 
@@ -306,6 +306,6 @@ agent는 게시되었지만 아직 channel을 통해 사용할 수 없습니다.
 
 다음으로 [Mission 12: Understanding Licensing]({{ '/chapters/academy-recruit-12-understanding-licensing/' | relative_url }})을 계속 진행하세요.
 
-## 📚 Tactical Resources
+## 📚 참고 자료
 
 - [agent publish 및 channel 관리](https://learn.microsoft.com/microsoft-copilot-studio/publication-fundamentals-publish-channels)

@@ -18,13 +18,11 @@ canonical_url: "https://microsoft.github.io/agent-academy/recruit/10-add-event-t
 **원문 번역 게시물** — 이 글은 [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/)의 원문 [🚨 Mission 10: Add Event Triggers - Enable autonomous agent capabilities](https://microsoft.github.io/agent-academy/recruit/10-add-event-triggers/)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 
-## 영상으로 보기
-
-- YouTube walkthrough: https://www.youtube.com/watch?v=ZgwHL8PQ1nY
+🎥 **워크스루 영상 보기**
 
 <figure class="screenshot">
-  <img src="{{ '/assets/academy/recruit-10-add-event-triggers/video-thumbnail.jpg' | relative_url }}" alt="Add Event Triggers 동영상 썸네일" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>Add Event Triggers 동영상 썸네일</figcaption>
+  <img src="{{ '/assets/academy/recruit-10-add-event-triggers/video-thumbnail.jpg' | relative_url }}" alt="Event Trigger 추가 동영상 썸네일" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption><a href="https://www.youtube.com/watch?v=ZgwHL8PQ1nY">YouTube에서 워크스루 보기</a></figcaption>
 </figure>
 
 ## 🎯 미션 브리핑
@@ -99,13 +97,13 @@ Event Trigger는 agent를 반응형 도우미에서 사전 대응형 자율 도�
 
 Event Trigger는 외부 이벤트에 자율적으로 반응할 수 있도록 다음 세 단계로 동작합니다.
 
-### Trigger workflow
+### 트리거 워크플로
 
 1. **Event Detection** - SharePoint, Teams, Outlook 등 연결된 시스템에서 특정 이벤트가 발생합니다.
 1. **Trigger Activation** - Event Trigger가 이를 감지하고 Power Automate Cloud Flow를 통해 payload를 agent로 보냅니다.
 1. **Agent Response** - agent가 payload를 받아 정의된 지침을 실행합니다.
 
-### Event Trigger vs Topic Trigger
+### Event Trigger와 Topic Trigger 비교
 
 두 trigger 유형의 차이를 이해하는 것이 중요합니다.
 
@@ -137,7 +135,7 @@ Event Trigger는 외부 이벤트에 자율적으로 반응할 수 있도록 다
 - 어떤 데이터를 어떻게 사용할지 명시
 - 복잡한 워크플로에 더 적합
 
-### Agent Instructions vs Payload Instructions
+### 에이전트 지침과 페이로드 지침 비교
 
 Event Trigger에서 agent 동작을 유도하는 위치는 두 군데입니다.
 
@@ -159,27 +157,27 @@ Event Trigger에서 agent 동작을 유도하는 위치는 두 군데입니다.
 
 Event Trigger가 agent를 어떻게 향상할 수 있는지 보여 주는 실용적인 예시는 다음과 같습니다.
 
-### IT Help Desk Agent
+### IT 헬프 데스크 에이전트
 
 - **Trigger**: 새 SharePoint list item(지원 티켓)
 - **Action**: 자동 분류, 우선순위 지정, 적절한 팀원에게 알림
 
-### Employee Onboarding Agent
+### 직원 온보딩 에이전트
 
 - **Trigger**: Dataverse에 새 사용자 추가
 - **Action**: 환영 메시지 전송, 온보딩 작업 생성, 접근 권한 준비
 
-### Project Management Agent
+### 프로젝트 관리 에이전트
 
 - **Trigger**: Planner 작업 완료
 - **Action**: 프로젝트 대시보드 갱신, 이해관계자 알림, blocker 확인
 
-### Document Management Agent
+### 문서 관리 에이전트
 
 - **Trigger**: 특정 SharePoint 폴더에 파일 업로드
 - **Action**: 메타데이터 추출, 태그 적용, 문서 소유자 알림
 
-### Meeting Assistant Agent
+### 회의 도우미 에이전트
 
 - **Trigger**: 일정 이벤트 생성
 - **Action**: 사전 알림과 아젠다 발송, 리소스 예약
@@ -227,7 +225,7 @@ Event Trigger로 작업할 때는 다음 중요한 고려 사항을 염두에 �
 - 관리자는 Event Trigger를 완전히 차단할 수 있습니다.
 - 필요한 trigger가 보이지 않으면 관리자에게 문의하세요.
 
-## 🧪 Lab 10 - 자율형 agent를 위한 Event Trigger 추가
+## 🧪 실습 10 - 자율형 에이전트를 위한 Event Trigger 추가
 
 ### 🎯 사용 사례
 
@@ -239,7 +237,7 @@ IT Help Desk agent가 새 지원 요청에 자동으로 반응하도록 확장�
 
 이 실습은 Event Trigger가 어떻게 진짜 자율형 agent 동작을 구현하는지 보여줍니다.
 
-### Prerequisites
+### 사전 준비 사항
 
 실습 전 다음을 준비하세요.
 
@@ -249,7 +247,7 @@ IT Help Desk agent가 새 지원 요청에 자동으로 반응하도록 확장�
 - ✅ agent에 generative orchestration이 활성화되어 있음
 - ✅ SharePoint 및 Copilot Studio 환경에 대한 적절한 권한
 
-### 10.1 Generative AI를 켜고 SharePoint item creation trigger 만들기
+### 10.1 생성형 AI를 켜고 SharePoint 항목 생성 트리거 만들기
 
 1. **Copilot Studio** 에서 **Contoso Helpdesk agent** 를 엽니다.
 
@@ -310,7 +308,7 @@ IT Help Desk agent가 새 지원 요청에 자동으로 반응하도록 확장�
 
 1. **Close** 를 선택합니다.
 
-### 10.2 Trigger 편집하기
+### 10.2 트리거 편집하기
 
 1. **Overview** 탭의 **Triggers** 섹션에서 **New Support Ticket Created in SharePoint** trigger의 **...** 메뉴를 선택합니다.
 
@@ -344,7 +342,7 @@ IT Help Desk agent가 새 지원 요청에 자동으로 반응하도록 확장�
    </figure>
 1. 오른쪽 위 도구 모음에서 **Publish** 를 선택합니다.
 
-### 10.3 이메일 확인용 tool 만들기
+### 10.3 이메일 확인용 도구 만들기
 
 1. **Copilot Studio** 로 돌아갑니다.
 
@@ -382,7 +380,7 @@ IT Help Desk agent가 새 지원 요청에 자동으로 반응하도록 확장�
    </figure>
 1. **Save** 를 선택합니다.
 
-### 10.4 Trigger 테스트하기
+### 10.4 트리거 테스트하기
 
 1. **Help Desk Agent** 내부에서 **Overview** 탭을 선택합니다.
 1. **New Support Ticket Created in SharePoint** trigger 옆의 **Test Trigger** 아이콘을 클릭합니다. 그러면 **Test your trigger** 창이 열립니다.
@@ -428,7 +426,7 @@ IT Help Desk agent가 새 지원 요청에 자동으로 반응하도록 확장�
    </figure>
 1. Copilot Studio의 **Activity** 탭에서 전체 trigger 및 tool 실행 내역을 검토합니다.
 
-## ✅ Mission Complete
+## ✅ 미션 완료
 
 성공적으로 다음을 완료했습니다.
 
@@ -439,7 +437,7 @@ IT Help Desk agent가 새 지원 요청에 자동으로 반응하도록 확장�
 
 다음으로 [Mission 11: Publish Your Agent]({{ '/chapters/academy-recruit-11-publish-your-agent/' | relative_url }})를 계속 진행하세요.
 
-## 📚 Tactical Resources
+## 📚 참고 자료
 
 - [Make your agent autonomous in Copilot Studio](https://learn.microsoft.com/training/modules/autonomous-agents-online-workshop/?WT.mc_id=power-177340-scottdurow)
 - [Add an event trigger](https://learn.microsoft.com/microsoft-copilot-studio/authoring-trigger-event?WT.mc_id=power-177340-scottdurow)
