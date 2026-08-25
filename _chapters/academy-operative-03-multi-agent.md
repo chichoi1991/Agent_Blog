@@ -880,8 +880,8 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 1. **+Add an agent**를 선택한 뒤 **Interview Agent**를 선택합니다.
 
     <figure class="screenshot">
-      <img src="{{ '/assets/academy/operative-03-multi-agent/02_selectedConnectedAgent.png' | relative_url }}" alt="게시" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-      <figcaption>게시</figcaption>
+      <img src="{{ '/assets/academy/operative-03-multi-agent/02_selectedConnectedAgent.png' | relative_url }}" alt="연결된 Agent 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>연결된 Agent 선택</figcaption>
     </figure>
 
     <div class="info-box note" markdown="1">
