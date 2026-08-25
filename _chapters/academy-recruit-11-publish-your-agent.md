@@ -55,7 +55,7 @@ agent 사용자에게 업데이트를 전달하려면 항상 publish 버튼을 �
 <div class="info-box note" markdown="1">
 **중요**
 
-❗ 최근 Copilot Studio Trial 환경 정책이 바뀌어 trial 환경에서는 agent publish가 제한됩니다. Trial 환경이라면 이 모듈에서 agent 게시를 완료할 수 없고, agent를 publish하려면 유료 환경이 필요합니다. 다만 배지를 받기 위해 agent 게시가 필수인 것은 아닙니다.
+❗ Copilot Studio 평가판 환경에서는 기본적으로 publish가 허용되지 않습니다. [과정 준비의 4단계]({{ '/chapters/academy-recruit-00-course-setup/' | relative_url }}#step-4-enable-ability-to-publish-with-the-copilot-studio-trial)에서 다룬 **Copilot Studio authors** 테넌트 설정에 자신을 추가하면 다시 켤 수 있습니다. 이 단계에는 테넌트 관리자 권한이 필요하므로 직접 설정을 바꿀 수 없다면 같은 실습의 1단계를 참고해 별도의 평가판 테넌트를 만드세요. 배지를 받기 위해 publish가 필수인 것은 아닙니다.
 </div>
 
 ## ⚙️ 채널 구성하기
