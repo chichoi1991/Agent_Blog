@@ -24,6 +24,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/operative/03-multi-age
   <a href="https://www.youtube.com/watch?v=X-nyqdk6tcc" target="_blank" rel="noopener">
     <img src="{{ '/assets/academy/operative-03-multi-agent/03-multi-agent-thumbnail_PlayButton.png' | relative_url }}" alt="멀티 에이전트 시스템" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   </a>
+  <figcaption>멀티 에이전트 시스템</figcaption>
 </figure>
 
 ## 🎯 미션 개요
@@ -258,12 +259,14 @@ Interview Prep Agent가 connected agent로 더 적합한 이유는 다음과 같
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-select-solutions.png' | relative_url }}" alt="Solutions 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Solutions 선택</figcaption>
     </figure>
 
 1. Operative solution을 찾은 다음, 그 옆의 **ellipsis (...)**를 선택하고 **Set preferred solution**을 고릅니다. 팝업 대화 상자에서 **Apply**를 선택합니다. 이렇게 하면 앞으로 수행하는 모든 작업이 이 solution에 추가됩니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-select-preferred-solution.png' | relative_url }}" alt="선호 Solution 설정" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>선호 Solution 설정</figcaption>
     </figure>
 
 ### 3.1.2 Hiring Agent의 agent instructions 구성
@@ -274,6 +277,7 @@ Interview Prep Agent가 connected agent로 더 적합한 이유는 다음과 같
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02-editinstructions.png' | relative_url }}" alt="Instructions 편집" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Instructions 편집</figcaption>
     </figure>
 
     instructions 입력란에 다음 지침을 복사해 붙여 넣습니다.
@@ -286,12 +290,14 @@ Interview Prep Agent가 connected agent로 더 적합한 이유는 다음과 같
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-hiring-agent-instructions.png' | relative_url }}" alt="Hiring Agent 지침" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Hiring Agent 지침</figcaption>
     </figure>
 
 1. 화면 오른쪽 위의 **Settings** 버튼을 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_settingsbtn.png' | relative_url }}" alt="설정" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>설정</figcaption>
     </figure>
 
 1. 페이지를 검토하고 다음 설정이 적용되어 있는지 확인합니다.
@@ -311,22 +317,26 @@ Interview Prep Agent가 connected agent로 더 적합한 이유는 다음과 같
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-gen-orchestration.png' | relative_url }}" alt="Generative Orchestration 사용" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Generative Orchestration 사용</figcaption>
     </figure>
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-set-medium-moderation.png' | relative_url }}" alt="중간 Moderation 설정" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>중간 Moderation 설정</figcaption>
     </figure>
 
 1. **Save**를 클릭합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-settings-knowledge-web.png' | relative_url }}" alt="Knowledge 및 Web 설정" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Knowledge 및 Web 설정</figcaption>
     </figure>
 
 1. 오른쪽 위의 **X**를 클릭해 settings 메뉴를 닫습니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_closesettings.png' | relative_url }}" alt="설정 닫기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>설정 닫기</figcaption>
     </figure>
 
 ### 3.1.3 Application Intake child agent 추가
@@ -335,12 +345,14 @@ Interview Prep Agent가 connected agent로 더 적합한 이유는 다음과 같
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_agentsadd.png' | relative_url }}" alt="추가 버튼" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>추가 버튼</figcaption>
     </figure>
 
 1. **New child agent**를 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_newchildagent.png' | relative_url }}" alt="Child Agent 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Child Agent 추가</figcaption>
     </figure>
 
 1. agent 이름을 ```Application Intake Agent```로 지정합니다.
@@ -353,12 +365,14 @@ Interview Prep Agent가 connected agent로 더 적합한 이유는 다음과 같
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_agentnamedesc.png' | relative_url }}" alt="Application Intake Agent 설명" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Application Intake Agent 설명</figcaption>
     </figure>
 
 1. **Advanced**를 펼치고 Priority를 `10000`으로 설정합니다. 이렇게 하면 나중에 Interview Agent가 일반 질문에 먼저 응답한 후 이 agent가 사용됩니다. 여기에 첨부 파일이 최소 하나 있어야 한다는 조건도 설정할 수 있습니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_priority.png' | relative_url }}" alt="우선순위" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>우선순위</figcaption>
     </figure>
 
 1. **Web Search** 토글이 **Disabled**로 설정되어 있는지 확인합니다. parent agent가 제공한 정보만 사용하려고 하기 때문입니다.
@@ -366,6 +380,7 @@ Interview Prep Agent가 connected agent로 더 적합한 이유는 다음과 같
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_websearchdisabled.png' | relative_url }}" alt="Web Search" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Web Search</figcaption>
     </figure>
 
 ### 3.1.4 Resume Upload agent flow 구성
@@ -380,12 +395,14 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_addtool.png' | relative_url }}" alt="Tool 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Tool 추가</figcaption>
     </figure>
 
 1. **+ New tool**을 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-new-tool-2.png' | relative_url }}" alt="새 tool 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>새 tool 추가</figcaption>
     </figure>
 
 1. **Agent flow**를 선택합니다.
@@ -393,12 +410,14 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-add-agent-flow.png' | relative_url }}" alt="Agent Flow 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Agent Flow 추가</figcaption>
     </figure>
 
 1. **When an agent calls the flow** 노드를 선택하고 **+ Add an input**을 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_flowaddinput.png' | relative_url }}" alt="입력 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>입력 추가</figcaption>
     </figure>
 
 1. 아래 표에 있는 각 Parameter에 대해 입력을 추가합니다. 표에 표시된 적절한 input type을 선택하고, name과 description을 모두 추가해야 합니다. description을 포함하는 것이 중요한데, agent가 입력값에 무엇을 채워야 하는지 이해하는 데 도움이 되기 때문입니다.
@@ -411,12 +430,14 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-upload-resume-trigger.png' | relative_url }}" alt="입력 매개변수 구성" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>입력 매개변수 구성</figcaption>
     </figure>
 
 1. **When an agent calls the flow** 노드 아래의 **+ icon**을 선택하고 `Dataverse add`를 검색한 다음, **Microsoft Dataverse** 섹션의 **Add a new row** action을 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02-dataverseaddaction.png' | relative_url }}" alt="새 행 추가 노드" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>새 행 추가 노드</figcaption>
     </figure>
 
     <div class="info-box note" markdown="1">
@@ -427,12 +448,14 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02-renamecreateresume.png' | relative_url }}" alt="노드 이름 바꾸기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>노드 이름 바꾸기</figcaption>
     </figure>
 
 1. **Table name**을 **Resumes**로 설정한 뒤 **Show all**을 선택해 모든 매개변수를 표시합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_resumeshowall.png' | relative_url }}" alt="모두 표시" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>모두 표시</figcaption>
     </figure>
 
 1. 다음 **properties**를 설정합니다.
@@ -446,12 +469,14 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-upload-resume-add-resume-props.png' | relative_url }}" alt="속성 편집" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>속성 편집</figcaption>
     </figure>
 
 1. Create Resume 노드 아래의 **+ icon**을 선택하고 `Dataverse upload`를 검색한 뒤 **Upload a file or an image** action을 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_dataverseupload.png' | relative_url }}" alt="업로드 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>업로드 선택</figcaption>
     </figure>
 
    **중요:** Upload a file or an image to the selected environment action은 선택하지 않도록 주의하세요.
@@ -469,6 +494,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-upload-resume-upload-resume-file.png' | relative_url }}" alt="속성 설정" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>속성 설정</figcaption>
     </figure>
 
 1. **Respond to the agent node**를 선택한 다음 **+ Add an output**을 선택합니다. 아래 표의 속성으로 output을 생성합니다.
@@ -482,12 +508,14 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
      <figure class="screenshot">
        <img src="{{ '/assets/academy/operative-03-multi-agent/2-upload-resume-return.png' | relative_url }}" alt="속성 설정" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+       <figcaption>속성 설정</figcaption>
      </figure>
 
 1. 오른쪽 위에서 **Save draft**를 선택합니다.
 
      <figure class="screenshot">
        <img src="{{ '/assets/academy/operative-03-multi-agent/2-upload-resume-save-draft.png' | relative_url }}" alt="초안으로 저장" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+       <figcaption>초안으로 저장</figcaption>
      </figure>
 
 1. **Overview** 탭을 선택한 뒤 **Details** 패널에서 **Edit**를 선택합니다. 아래와 같이 이름과 설명을 입력하고 **Save**를 선택합니다.
@@ -497,12 +525,14 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
      <figure class="screenshot">
        <img src="{{ '/assets/academy/operative-03-multi-agent/2-upload-resume-rename.png' | relative_url }}" alt="Agent flow 이름 바꾸기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+       <figcaption>Agent flow 이름 바꾸기</figcaption>
      </figure>
 
 1. 다시 **Designer** 탭을 선택한 뒤 **Publish**를 선택합니다.
 
      <figure class="screenshot">
        <img src="{{ '/assets/academy/operative-03-multi-agent/2-upload-resume-publish.png' | relative_url }}" alt="게시" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+       <figcaption>게시</figcaption>
      </figure>
 
 ### 3.1.5 flow를 agent에 연결
@@ -517,24 +547,28 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-add-agent-flow-to-agent.png' | relative_url }}" alt="Agent에 Agent flow 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Agent에 Agent flow 추가</figcaption>
     </figure>
 
 1. **+ Add**를 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_addtool.png' | relative_url }}" alt="Tool 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Tool 추가</figcaption>
     </figure>
 
 1. **Flow** 필터를 선택하고 `Resume Upload`를 검색합니다. **Resume Upload** flow를 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_selectResumeUploadFlow.png' | relative_url }}" alt="Tool 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Tool 선택</figcaption>
     </figure>
 
 1. **Add and configure**를 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_addconfigResupl.png' | relative_url }}" alt="추가 및 구성" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>추가 및 구성</figcaption>
     </figure>
 
 1. description과 tool 사용 시점에 대해 다음 매개변수를 설정합니다.
@@ -546,6 +580,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-resume-upload-tool-props-1.png' | relative_url }}" alt="Resume Upload 세부 정보 1" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Resume Upload 세부 정보 1</figcaption>
     </figure>
 
     <div class="info-box note" markdown="1">
@@ -561,6 +596,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-resume-upload-tool-props-2.png' | relative_url }}" alt="입력 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>입력 추가</figcaption>
     </figure>
 
 1. 이제 입력 속성을 설정해야 합니다. 먼저 실제 이력서 파일을 저장할 **contentBytes** 입력부터 시작합니다. **contentBytes** 입력 옆의 **Fill using** 드롭다운에서 **Custom value**를 선택합니다.
@@ -570,6 +606,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_contentbytesconfig.png' | relative_url }}" alt="Content Bytes 구성" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Content Bytes 구성</figcaption>
     </figure>
 
 1. 이제 이력서 파일 이름을 저장할 **name** 입력을 구성합니다. 이 값도 하드코딩하므로 **Fill using** 열에서 **Custom value** 옵션을 선택합니다.
@@ -579,12 +616,14 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_nameconfig.png' | relative_url }}" alt="name 구성" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>name 구성</figcaption>
     </figure>
 
 1. 이제 **Message** 입력을 구성합니다. 이 입력은 AI가 동적으로 채우도록 할 것이므로 fill using은 그대로 둡니다. **Value** 열의 **Customize** 버튼을 선택해 이 입력을 어떻게 채울지에 대한 추가 세부 정보를 입력합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_messagecustomize.png' | relative_url }}" alt="Message 사용자 지정" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Message 사용자 지정</figcaption>
     </figure>
 
 1. 입력의 **Description** 필드에 다음 내용을 입력합니다.
@@ -601,6 +640,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_messagereprompts.png' | relative_url }}" alt="재프롬프트" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>재프롬프트</figcaption>
     </figure>
 
     <div class="info-box note" markdown="1">
@@ -611,6 +651,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_messageentitynotfound.png' | relative_url }}" alt="엔터티를 찾지 못함" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>엔터티를 찾지 못함</figcaption>
     </figure>
 
     <div class="info-box note" markdown="1">
@@ -621,12 +662,14 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_useremailconfig.png' | relative_url }}" alt="User Email 구성" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>User Email 구성</figcaption>
     </figure>
 
 1. **Save**를 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_saveresup.png' | relative_url }}" alt="저장" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>저장</figcaption>
     </figure>
 
 ### 3.1.6 agent instructions 정의
@@ -655,6 +698,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-application-agent-instructions.png' | relative_url }}" alt="지침 편집" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>지침 편집</figcaption>
     </figure>
 
 1. **Save**를 선택합니다.
@@ -671,6 +715,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-test-multi-uploads.png' | relative_url }}" alt="여러 업로드 테스트" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>여러 업로드 테스트</figcaption>
     </figure>
 
 1. 이제 **이력서 하나만** 업로드하고 `Process this resume` 메시지를 입력해 봅니다.
@@ -681,6 +726,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-upload-activity-map.png' | relative_url }}" alt="Resume Upload Activity Map" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Resume Upload Activity Map</figcaption>
     </figure>
 
 1. make.powerapps.com으로 이동하고 오른쪽 위 **Environment Picker**에서 환경이 선택되어 있는지 확인합니다.
@@ -688,6 +734,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-open-model-driven-app.png' | relative_url }}" alt="Model Driven App 열기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Model Driven App 열기</figcaption>
     </figure>
 
     <div class="info-box note" markdown="1">
@@ -698,6 +745,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-resume-uploade.png' | relative_url }}" alt="Dataverse에 업로드된 이력서" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Dataverse에 업로드된 이력서</figcaption>
     </figure>
 
 ## 🧪 실습 3.2 - Interview Prep connected agent 추가하기
@@ -711,6 +759,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_newConnectedAgent.png' | relative_url }}" alt="새 Agent" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>새 Agent</figcaption>
     </figure>
 
 1. **Configure** 탭을 선택하고 다음 속성을 입력합니다.
@@ -754,18 +803,21 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_connectedAdvancedSettings.png' | relative_url }}" alt="고급 설정" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>고급 설정</figcaption>
     </figure>
 
 1. Solution 드롭다운에서 **Operative**를 선택해 이것이 올바른 solution에 추가되도록 한 뒤 **Update**를 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_connectedSolution.png' | relative_url }}" alt="Solution 업데이트" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Solution 업데이트</figcaption>
     </figure>
 
 1. **Create**를 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-create-interview-agent.png' | relative_url }}" alt="Interview Agent 만들기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Interview Agent 만들기</figcaption>
     </figure>
 
 ### 3.2.2 데이터 액세스 구성 및 게시
@@ -774,12 +826,14 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-interview-agent-add-knowledge.png' | relative_url }}" alt="Knowledge 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Knowledge 추가</figcaption>
     </figure>
 
 1. **Dataverse**를 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-interview-agent-add-knowledge-select-dataverse.png' | relative_url }}" alt="Dataverse 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Dataverse 선택</figcaption>
     </figure>
 
 1. **Search box**에 `ppa_`를 입력합니다. 이는 Module 01에서 이전에 가져온 테이블의 접두사입니다.
@@ -788,12 +842,14 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-interview-agent-add-knowledge-select-tables.png' | relative_url }}" alt="Dataverse 테이블 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Dataverse 테이블 선택</figcaption>
     </figure>
 
 1. 오른쪽 위의 **Settings** 버튼을 선택합니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_connectedAgentSettings.png' | relative_url }}" alt="설정" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>설정</figcaption>
     </figure>
 
 1. 다음 설정이 구성되어 있는지 확인합니다.
@@ -807,12 +863,14 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_connectedAgentsSettingsConfig.png' | relative_url }}" alt="설정 구성" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>설정 구성</figcaption>
     </figure>
 
 1. **Publish**를 선택하고 게시가 완료될 때까지 기다립니다.
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_connectedAgentPublish.png' | relative_url }}" alt="게시" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>게시</figcaption>
     </figure>
 
 ### 3.2.3 Interview Prep Agent를 Hiring Agent에 연결
@@ -823,6 +881,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/02_selectedConnectedAgent.png' | relative_url }}" alt="게시" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>게시</figcaption>
     </figure>
 
     <div class="info-box note" markdown="1">
@@ -837,6 +896,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-add-connected-agent.png' | relative_url }}" alt="Connected Agent 세부 정보" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Connected Agent 세부 정보</figcaption>
     </figure>
 
     Pass conversation history to this agent가 체크되어 있는 것에 주목하세요. 이를 통해 parent agent가 connected agent에 전체 컨텍스트를 제공할 수 있습니다.
@@ -846,6 +906,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-child-and-connected.png' | relative_url }}" alt="Child Agent와 connected agent" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>Child Agent와 connected agent</figcaption>
     </figure>
 
 ### 3.2.4 멀티 에이전트 협업 테스트
@@ -859,6 +920,7 @@ Agents는 tools나 topics가 주어지지 않으면 아무 작업도 수행할 �
 
     <figure class="screenshot">
       <img src="{{ '/assets/academy/operative-03-multi-agent/2-multi-agent-test.png' | relative_url }}" alt="여러 agent 테스트" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+      <figcaption>여러 agent 테스트</figcaption>
     </figure>
 
 1. Hiring Agent가 업로드 작업을 child agent에 위임한 뒤, Interview Agent가 자신의 knowledge를 사용해 요약과 job role 매칭을 제공하도록 요청하는 모습을 확인해 보세요.
