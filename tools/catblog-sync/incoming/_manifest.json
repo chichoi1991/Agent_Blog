@@ -1,26 +1,3 @@
 {
-  "items": [
-    {
-      "slug": "copilot-credit-consumption-api",
-      "title": "Where Are Your Copilot Credits Going? Build a Tenant-Wide View with the Power Platform API",
-      "source_url": "https://microsoft.github.io/mcscatblog/posts/copilot-credit-consumption-api/",
-      "source_author": "PetrosFeleskouras",
-      "source_published": "2026-08-25",
-      "source_updated": "2026-08-25",
-      "categories": [
-        "copilot-studio",
-        "governance"
-      ],
-      "summary": "Use the Power Platform API to retrieve daily Copilot Credit consumption per agent, persist it in Dataverse, and build tenant-wide dashboards.",
-      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-08-25-copilot-credit-consumption-api.md",
-      "images": [
-        {
-          "src": "/assets/posts/copilot-credit-consumption-api/header.png",
-          "local": "assets/catblog/copilot-credit-consumption-api/header.png"
-        }
-      ],
-      "staged_at": "2026-08-28T11:25:53.688Z",
-      "status": "pending-translation"
-    }
-  ]
+  "items": []
 }
