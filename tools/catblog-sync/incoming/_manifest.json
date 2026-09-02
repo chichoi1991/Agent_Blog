@@ -21,6 +21,28 @@
       ],
       "staged_at": "2026-08-28T11:25:53.688Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "sharepoint-metadata-filtering",
+      "title": "SharePoint Metadata Filtering in Copilot Studio: From Topic Logic to Agent Decisions",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/sharepoint-metadata-filtering/",
+      "source_author": "adilei",
+      "source_published": "2026-09-01",
+      "source_updated": "2026-09-01",
+      "categories": [
+        "copilot-studio",
+        "knowledge"
+      ],
+      "summary": "How GitHub Copilot harness agents use SharePoint metadata to find applicable documents, scope knowledge search, and answer without hand-built routing logic.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-09-01-sharepoint-metadata-filtering.md",
+      "images": [
+        {
+          "src": "/assets/posts/sharepoint-metadata-filtering/header.png",
+          "local": "assets/catblog/sharepoint-metadata-filtering/header.png"
+        }
+      ],
+      "staged_at": "2026-09-02T04:37:53.909Z",
+      "status": "pending-translation"
     }
   ]
 }
