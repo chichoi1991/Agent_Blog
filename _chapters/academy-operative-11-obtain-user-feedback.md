@@ -22,6 +22,7 @@ canonical_url: "https://microsoft.github.io/agent-academy/operative/11-obtain-us
   <a href="https://youtu.be/QRBimOsgKEQ?si=05sjJwz6tv4MO6Z6" target="_blank" rel="noopener">
     <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11-collecting-feedback_Thumbnail_PlayButton.png' | relative_url }}" alt="피드백" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   </a>
+  <figcaption>피드백</figcaption>
 </figure>
 
 ## 🎯 미션 개요
@@ -117,6 +118,7 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.0_01_UserFeedbackSettings.png' | relative_url }}" alt="사용자 피드백 설정" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>사용자 피드백 설정</figcaption>
 </figure>
 
 - **데이터 저장소**: 사용자 의견을 포함한 모든 피드백 레코드는 agent의 Dataverse 환경에 대화 세션과 연결되어 저장됩니다. 필요하다면 고급 사용자는 Dataverse의 `conversationtranscript` 테이블을 직접 조회할 수도 있습니다. 예를 들어 모든 피드백 데이터를 오프라인 분석용으로 내보낼 수 있습니다. 하지만 대부분의 경우에는 기본 제공 analytics UI면 충분합니다.
@@ -266,6 +268,7 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.1_01_SubmitPositiveFeedback.png' | relative_url }}" alt="작성된 의견과 함께 긍정적 피드백 제출" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>작성된 의견과 함께 긍정적 피드백 제출</figcaption>
 </figure>
 
 1. 작성형 피드백이 포함된 reactions를 여러 건 제출할 때까지 반복합니다.
@@ -282,6 +285,7 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.2_01_Reactions.png' | relative_url }}" alt="제출된 reactions와 작성형 피드백" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>제출된 reactions와 작성형 피드백</figcaption>
 </figure>
 
 ### 11.3 맞춤형 피드백 수집용 adaptive card 만들기
@@ -301,6 +305,7 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.1_01_AddTopicFromBlank.png' | relative_url }}" alt="빈 상태에서 새 topic 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>빈 상태에서 새 topic 추가</figcaption>
 </figure>
 
 1. topic 이름을 다음과 같이 지정합니다.
@@ -313,36 +318,42 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.1_02_RenameTopicAndConfigureTrigger.png' | relative_url }}" alt="topic 이름 변경 및 trigger 구성" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>topic 이름 변경 및 trigger 구성</figcaption>
 </figure>
 
 1. 다음으로 사용자에게 맞춤형 adaptive card를 표시할 새 노드를 추가합니다. 이 카드는 CSAT 설문 응답에 기반한 불만족 피드백을 수집합니다. **+ 아이콘**을 선택한 다음 **Ask with adaptive card** 노드를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.1_03_AskWithAdaptiveCardNode.png' | relative_url }}" alt="Ask with Adaptive Card 노드 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Ask with Adaptive Card 노드 추가</figcaption>
 </figure>
 
 1. 이제 adaptive card를 구성할 차례입니다 😊 노드를 선택하면 **Adaptive Card Node properties** 창이 나타납니다. 이제 JSON을 편집하겠습니다. **Edit adaptive card**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.1_04_EditAdaptiveCard.png' | relative_url }}" alt="Adaptive Card 편집" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Adaptive Card 편집</figcaption>
 </figure>
 
 1. 여기는 **Adaptive Card Designer**이며, 카드를 설계하면서 실시간으로 결과를 볼 수 있습니다. **Card payload editor**를 클릭한 뒤 Windows 단축키 *Ctrl + A* 또는 Mac 단축키 *Command + A*로 전체 선택 후 내용을 삭제합니다. 그런 다음 [CSAT Feedback JSON file](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/operative/11-obtain-user-feedback/assets/11.3.1_CSATFeedback.json)의 JSON을 **붙여넣기** 하세요.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.1_05_UpdateJSON.png' | relative_url }}" alt="기본 JSON 값을 지우고 CSATFeedback.json 파일 내용 붙여넣기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>기본 JSON 값을 지우고 CSATFeedback.json 파일 내용 붙여넣기</figcaption>
 </figure>
 
 1. 이제 **Card Preview**에 텍스트와 사용 가능한 디바이스 목록을 보여 주는 요소들이 포함된 것을 확인할 수 있습니다. **Save**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.1_06_CardUpdated.png' | relative_url }}" alt="업데이트된 카드" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>업데이트된 카드</figcaption>
 </figure>
 
 1. **Preview**를 선택해 카드가 다양한 너비에서 어떻게 보이는지 확인합니다. 미리 보기 화면이 열리면 너비에 따라 다른 카드 출력이 표시됩니다. 이 JSON은 반응형 디자인을 고려하고 있으므로, 좁은 너비에서는 표준 너비와 다른 레이아웃이 표시됩니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.1_08_PreviewCardWidths.png' | relative_url }}" alt="다양한 너비에서 카드 미리 보기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>다양한 너비에서 카드 미리 보기</figcaption>
 </figure>
 
 1. **Preview** 화면에서 **x 아이콘** 또는 **Close**를 선택해 빠져나옵니다. 그런 다음 **Adaptive Card Node properties** 패널에서 **X Close**를 선택해 패널을 닫습니다.
@@ -351,6 +362,7 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.1_09_CardOutputs.png' | relative_url }}" alt="카드 출력" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>카드 출력</figcaption>
 </figure>
 
 #### 11.3.2 End of Conversation system topic 수정
@@ -361,24 +373,28 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_01_SelectEndOfConversationTopic.png' | relative_url }}" alt="End of Conversation system topic 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>End of Conversation system topic 선택</figcaption>
 </figure>
 
 1. `SurveyResponse` 변수를 검사하는 **Condition** 노드까지 아래로 스크롤합니다. 해당 노드 아래의 **+ 아이콘**을 선택하고 **Add node**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_02_AddNode.png' | relative_url }}" alt="노드 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>노드 추가</figcaption>
 </figure>
 
 1. **Variable management**를 선택한 뒤 **Set a variable value**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_03_SelectSetAVariableValue.png' | relative_url }}" alt="Set a variable value 노드 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Set a variable value 노드 선택</figcaption>
 </figure>
 
 1. **Create a new variable**를 선택합니다. 이는 사용자의 CSAT 질문 응답을 저장할 변수를 선언하기 위한 단계입니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_04_SelectCreateANewVariable.png' | relative_url }}" alt="새 변수 만들기 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>새 변수 만들기 선택</figcaption>
 </figure>
 
 1. 변수를 선택한 뒤 **Variable properties** 창에서 변수 이름을 다음과 같이 변경합니다.
@@ -395,12 +411,14 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_05_ConfigureVariableProperties.png' | relative_url }}" alt="Variable properties 구성" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Variable properties 구성</figcaption>
 </figure>
 
 1. **CSAT Question** 노드에서 **... ellipsis** 아이콘을 선택한 뒤 **Properties**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_06_CSATQuestionProperties.png' | relative_url }}" alt="CSAT Question 노드 속성 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>CSAT Question 노드 속성 선택</figcaption>
 </figure>
 
 1. **CSAT Question properties** 패널에는 최종 사용자가 선택한 응답 평점을 저장할 변수를 참조하는 필드가 표시됩니다. 앞서 만든 변수를 참조하도록 다음 값을 입력합니다.
@@ -411,12 +429,14 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_07_CSATQuestionProperties.png' | relative_url }}" alt="CSAT Question properties에서 변수 참조" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>CSAT Question properties에서 변수 참조</figcaption>
 </figure>
 
 1. 다음으로 사용자가 1점 또는 2점으로 응답했을 때 **Capture CSAT dissatisfied feedback** custom topic으로 리디렉션되는 로직을 추가합니다. **CSAT Question** 노드 아래의 **+ 아이콘**을 선택하고 **Add a condition**을 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_08_AddAConditionNode.png' | relative_url }}" alt="Condition 노드 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Condition 노드 추가</figcaption>
 </figure>
 
 1. 이제 **Condition** 노드가 system topic에 추가되었습니다.
@@ -432,12 +452,14 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_09_SelectAVariable.png' | relative_url }}" alt="변수 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>변수 선택</figcaption>
 </figure>
 
 1. **VarCSATRating** 변수를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_10_SelectVarCSATRating.png' | relative_url }}" alt="VarCSATRating 변수 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>VarCSATRating 변수 선택</figcaption>
 </figure>
 
 1. 조건의 **operator**로 `is greater or equal to`를 선택합니다.
@@ -458,24 +480,28 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_11_AddIntegerValue.png' | relative_url }}" alt="정수 값 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>정수 값 추가</figcaption>
 </figure>
 
 1. 이제 평점이 `3` 미만일 때(사용자가 1점 또는 2점을 선택했을 때)의 로직을 완성하겠습니다. **All other conditions** 분기에서 **+ 아이콘**을 선택해 새 노드를 추가합니다. **Topic management**를 선택한 뒤 **Go to another topic >**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_12_AddNodeInOtherConditionsPath.png' | relative_url }}" alt="Other Conditions 경로에 새 노드 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Other Conditions 경로에 새 노드 추가</figcaption>
 </figure>
 
 1. 앞서 만든 **Capture CSAT dissatisfied** custom topic을 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_13_SelectCaptureCSATDissatisfiedFeedbackTopic.png' | relative_url }}" alt="Capture CSAT dissatisfied custom topic 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Capture CSAT dissatisfied custom topic 선택</figcaption>
 </figure>
 
 1. 이제 해당 topic이 분기에 추가됩니다. 사용자가 CSAT 질문에 1점 또는 2점으로 응답하면 **End of Conversation** topic이 **Capture CSAT dissatisfied** custom topic을 명시적으로 호출하게 됩니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_14_RedirectNodeAdded.png' | relative_url }}" alt="Capture CSAT dissatisfied custom topic으로 리디렉션 노드 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Capture CSAT dissatisfied custom topic으로 리디렉션 노드 추가</figcaption>
 </figure>
 
 1. topic을 **Save**합니다.
@@ -484,12 +510,14 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_15_NewTestAndAskQuestion.png' | relative_url }}" alt="새 테스트 세션 시작 및 질문 입력" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>새 테스트 세션 시작 및 질문 입력</figcaption>
 </figure>
 
 1. agent가 응답을 반환합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_16_AgentResponse.png' | relative_url }}" alt="agent 응답" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>agent 응답</figcaption>
 </figure>
 
 1. **End of Conversation** system topic을 트리거하기 위해 다음 문구를 입력합니다.
@@ -500,30 +528,35 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_17_EndConversation.png' | relative_url }}" alt="End of Conversation system topic 트리거" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>End of Conversation system topic 트리거</figcaption>
 </figure>
 
 1. 이제 **End of Conversation** topic이 트리거되고, topic의 **Ask a question node**에 있는 텍스트(질문)가 표시됩니다. 대화를 종료할지 묻는 질문에 **Yes**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_18_YesEndConversation.png' | relative_url }}" alt="대화 종료에 Yes 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>대화 종료에 Yes 선택</figcaption>
 </figure>
 
 1. 다음으로, system topic의 다음 질문인 "질문이 해결되었는가"가 표시됩니다. **Yes**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_19_YesToAnsweringQuestion.png' | relative_url }}" alt="질문이 해결되었는지 묻는 질문에 Yes 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>질문이 해결되었는지 묻는 질문에 Yes 선택</figcaption>
 </figure>
 
 1. 이제 CSAT 질문이 표시됩니다. 평점으로 1점 또는 2점을 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_20_CSATSurvey.png' | relative_url }}" alt="CSAT 평점" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>CSAT 평점</figcaption>
 </figure>
 
 1. 제출한 CSAT 평점이 3 미만이므로, 이제 **End of Conversation** topic이 **Capture CSAT dissatisfied feedback** custom topic으로 리디렉션된 것을 볼 수 있습니다. 두 옵션 중 하나를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_21_RedirectToTopicForCustomFeedback.png' | relative_url }}" alt="맞춤형 피드백용 topic으로 리디렉션" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>맞춤형 피드백용 topic으로 리디렉션</figcaption>
 </figure>
 
 1. **Add comment** 또는 **^ caret** 아이콘을 선택해 작성형 피드백을 추가합니다. 다음은 선택한 이유별 예시 의견입니다.
@@ -556,18 +589,21 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_22_WrittenFeedbackAndSubmit.png' | relative_url }}" alt="작성형 피드백 입력 및 제출" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>작성형 피드백 입력 및 제출</figcaption>
 </figure>
 
 1. **Capture CSAT dissatisfied** topic의 작업이 완료되면 agent는 다시 **End of Conversation** topic으로 돌아갑니다. 이어서 추가로 도와줄 일이 있는지 묻는 질문이 표시되며, 여기서는 **No**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_23_ResumesEndOfConversationTopic.png' | relative_url }}" alt="End of Conversation system topic 재개" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>End of Conversation system topic 재개</figcaption>
 </figure>
 
 1. 마지막 노드가 최종 메시지를 보내고, **End of Conversation** topic이 완료됩니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_24_EndOfConversationTopicCompleted.png' | relative_url }}" alt="End of Conversation system topic 완료" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>End of Conversation system topic 완료</figcaption>
 </figure>
 
 훌륭합니다! 🙌🏻 이제 `3` 미만의 CSAT 평점에 대해 작성형 피드백을 처리하는 adaptive card가 포함된 custom topic을 추가했습니다. 다음으로는 이 정보를 **Azure Application Insights**의 이벤트로 기록해 보겠습니다.
@@ -589,12 +625,14 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_01_AddLogACustomTelemetryEvent.png' | relative_url }}" alt="Log a Custom Telemetry Event 노드 추가" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Log a Custom Telemetry Event 노드 추가</figcaption>
 </figure>
 
 1. **... ellipsis**를 선택하고 **Properties**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_02_SelecProperties.png' | relative_url }}" alt="속성 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>속성 선택</figcaption>
 </figure>
 
 1. 이제 Event name을 다음과 같이 정의합니다.
@@ -629,6 +667,7 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_03_EnterEventName.png' | relative_url }}" alt="Log custom telemetry event 속성" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Log custom telemetry event 속성</figcaption>
 </figure>
 </details>
 
@@ -663,6 +702,7 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_04_EnterFormula.png' | relative_url }}" alt="수식 입력" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>수식 입력</figcaption>
 </figure>
 
 1. topic을 **Save**합니다.
@@ -671,18 +711,21 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_05_AgentSettings.png' | relative_url }}" alt="agent 설정" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>agent 설정</figcaption>
 </figure>
 
 1. **Advanced**를 선택한 뒤 **Application Insights**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_06_ApplicationInsightSettings.png' | relative_url }}" alt="Application Insights 설정" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Application Insights 설정</figcaption>
 </figure>
 
 1. 새 브라우저 창에서 Application Insights resource를 열고 **Overview** 아래 **Connection string** 필드의 복사 아이콘을 선택합니다. 그러면 connection string 값이 복사됩니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_07_CopyConnectionStringValue.png' | relative_url }}" alt="Connection string 값 복사" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Connection string 값 복사</figcaption>
 </figure>
 
 1. Copilot Studio로 돌아와 복사한 connection string 값을 **Connection string** 필드에 붙여넣습니다.
@@ -691,6 +734,7 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_08_PasteConnectionStringAndSave.png' | relative_url }}" alt="Connection string 붙여넣기 및 저장" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Connection string 붙여넣기 및 저장</figcaption>
 </figure>
 
 1. 이제 CSAT 평점이 1점 또는 2점일 때 telemetry 이벤트가 Application Insights에 기록되는지 테스트할 수 있습니다. 앞서와 같은 단계를 반복하면서 agent에 질문을 하고, agent가 응답한 뒤 **End of conversation** topic을 트리거하기 위해 다음 문구를 입력합니다.
@@ -701,24 +745,28 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_17_EndConversation.png' | relative_url }}" alt="End of Conversation system topic 트리거" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>End of Conversation system topic 트리거</figcaption>
 </figure>
 
 1. 대화 종료를 묻는 질문에 **Yes**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_18_YesEndConversation.png' | relative_url }}" alt="대화 종료에 Yes 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>대화 종료에 Yes 선택</figcaption>
 </figure>
 
 1. 다음으로, 질문이 해결되었는지 묻는 system topic의 다음 질문에 **Yes**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_19_YesToAnsweringQuestion.png' | relative_url }}" alt="질문이 해결되었는지에 Yes 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>질문이 해결되었는지에 Yes 선택</figcaption>
 </figure>
 
 1. 이제 CSAT 질문이 표시됩니다. 평점으로 1점 또는 2점을 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_20_CSATSurvey.png' | relative_url }}" alt="CSAT 평점" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>CSAT 평점</figcaption>
 </figure>
 
 1. **End of Conversation** topic이 **Capture CSAT dissatisfied feedback** custom topic으로 리디렉션됩니다.
@@ -729,18 +777,21 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_14_SubmitFeedback.png' | relative_url }}" alt="피드백 제출" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>피드백 제출</figcaption>
 </figure>
 
 1. **Capture CSAT dissatisfied** topic의 작업이 끝나면 agent는 다시 **End of Conversation** topic으로 돌아갑니다. 이어서 추가 도움이 필요한지 묻는 질문이 표시되면 **No**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_23_ResumesEndOfConversationTopic.png' | relative_url }}" alt="End of Conversation system topic 재개" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>End of Conversation system topic 재개</figcaption>
 </figure>
 
 1. 마지막 노드가 최종 메시지를 보내고, **End of Conversation** topic이 완료됩니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.3.2_24_EndOfConversationTopicCompleted.png' | relative_url }}" alt="End of Conversation system topic 완료" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>End of Conversation system topic 완료</figcaption>
 </figure>
 
 1. 이제 Application Insights에 기록된 custom event를 확인해 봅시다.
@@ -749,12 +800,14 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_17_Events.png' | relative_url }}" alt="Application Insights 이벤트" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Application Insights 이벤트</figcaption>
 </figure>
 
 1. 아래로 스크롤해 **View More Insights**를 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_18_ViewMoreInsights.png' | relative_url }}" alt="추가 인사이트 보기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>추가 인사이트 보기</figcaption>
 </figure>
 
 1. 여기에서 agent가 기록한 custom event에 대한 더 자세한 정보를 볼 수 있습니다.
@@ -767,6 +820,7 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_19_ViewEventInsights.png' | relative_url }}" alt="이벤트 인사이트 보기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>이벤트 인사이트 보기</figcaption>
 </figure>
 
 1. 이제 **end-to-end transaction details**를 보고 있습니다. 이 화면은 이벤트 관련 telemetry를 깊이 있게 보여 주며, Traces & events 탭에 1개의 Event가 기록되었음을 나타냅니다.
@@ -778,6 +832,7 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_20_CustomEventInformation.png' | relative_url }}" alt="custom event 정보" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>custom event 정보</figcaption>
 </figure>
 
 1. 이제 Application Insights에 기록된 이벤트를 조회하는 또 다른 방법을 배워 보겠습니다. 시간이 지나면 여러 서비스에서 발생한 이벤트가 Application Insights에 매우 많이 쌓일 수 있습니다. 이벤트를 조회하려면 app insights 데이터에 대해 Kusto query(Kusto 쿼리 언어)를 실행할 수 있습니다.
@@ -786,30 +841,35 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_21_QueryLogs.png' | relative_url }}" alt="Queries hub 대화 상자 닫기" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Queries hub 대화 상자 닫기</figcaption>
 </figure>
 
 1. 기본적으로 이전에 실행한 Queries 목록이 표시됩니다. 데이터를 조회하려면 **Select a table**을 선택합니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_22_SelectATable.png' | relative_url }}" alt="조회할 테이블 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>조회할 테이블 선택</figcaption>
 </figure>
 
 1. `customEvents` 테이블을 선택하고 **Run**을 선택합니다. 그러면 `customEvents` 테이블에 대한 쿼리가 실행됩니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_23_RunCustomEvents.png' | relative_url }}" alt="customEvents 쿼리 실행" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>customEvents 쿼리 실행</figcaption>
 </figure>
 
 1. 쿼리 결과가 표시됩니다. 기본값으로 최근 *24시간*의 이벤트가 보이며, *1000건*의 결과만 표시됩니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_24_customEventsResults.png' | relative_url }}" alt="customEvents 결과" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>customEvents 결과</figcaption>
 </figure>
 
 1. 현재 표시된 뷰는 **Simple mode**입니다. 이제 Kusto query를 적용할 수 있도록 **KQL mode**로 변경해 보겠습니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_25_SelectKQLmode.png' | relative_url }}" alt="KQL 모드 선택" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>KQL 모드 선택</figcaption>
 </figure>
 
 1. Kusto query에는 다음을 입력합니다.
@@ -841,18 +901,21 @@ Copilot Studio는 수집된 반응을 이해할 수 있도록 전용 analytics �
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_26_KustoQuery.png' | relative_url }}" alt="Kusto 쿼리" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Kusto 쿼리</figcaption>
 </figure>
 
 1. 쿼리 결과가 표시됩니다. 결과 중 하나를 펼쳐 보세요.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_27_Results.png' | relative_url }}" alt="쿼리 결과" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>쿼리 결과</figcaption>
 </figure>
 
 1. 아래로 스크롤하면 Kusto query에서 정의한 새 `FeedbackData` 열을 볼 수 있습니다.
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/operative-11-obtain-user-feedback/11.4_28_ExtendSerializedData.png' | relative_url }}" alt="FeedbackData 열" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>FeedbackData 열</figcaption>
 </figure>
 
 ## ✅ 미션 완료
