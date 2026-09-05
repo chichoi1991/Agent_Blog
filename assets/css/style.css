@@ -1584,3 +1584,222 @@ a:hover { color: var(--link-hover); }
 /* Agent Resources — Detail hero color variants */
 .ar-detail-hero--dev { border-left-color: #E8720C; }
 .ar-detail-hero--agent365 { border-left-color: #C43574; }
+
+/* ===================================================================
+   Lab prompt cards — 실습용 대형 복사 버튼 & 시나리오 카드
+   IT에 익숙하지 않은 참가자를 위해 항상 보이는 큰 버튼을 제공한다.
+   =================================================================== */
+
+/* --- 시나리오 소개 카드 --- */
+.chapter-body .scenario {
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, #FBFAFF 0%, #FFFFFF 60%);
+  padding: 20px 24px 4px;
+  margin: 28px 0 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.chapter-body .scenario > h3:first-child,
+.chapter-body .scenario > h4:first-child {
+  margin-top: 0;
+}
+
+.chapter-body .scenario .scenario-tag {
+  display: inline-block;
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.chapter-body .scenario dl {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 8px 16px;
+  margin: 14px 0 18px;
+  font-size: 14.5px;
+}
+
+.chapter-body .scenario dt {
+  font-weight: 700;
+  color: var(--accent-dark);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.chapter-body .scenario dd {
+  margin: 0;
+  color: var(--text);
+}
+
+/* --- 프롬프트 박스 --- */
+.chapter-body .prompt-box {
+  margin: 20px 0 32px;
+  border: 2px solid #C4B5FD;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.10);
+}
+
+.chapter-body .prompt-box-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-bottom: 1px solid #DDD6FE;
+}
+
+.chapter-body .prompt-box-label::before {
+  content: "💬";
+  font-size: 15px;
+}
+
+.chapter-body .prompt-box pre {
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  font-size: 14px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: 18px 20px;
+}
+
+/* 프롬프트 박스 안에서는 작은 hover 복사 버튼을 숨긴다 */
+.chapter-body .prompt-box pre .code-copy-btn {
+  display: none;
+}
+
+/* --- 큰 복사 버튼 (항상 보임) --- */
+.chapter-body .prompt-copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #DDD6FE;
+  background: var(--accent);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.08s;
+}
+
+.chapter-body .prompt-copy:hover { background: var(--accent-dark); }
+.chapter-body .prompt-copy:active { transform: translateY(1px); }
+.chapter-body .prompt-copy:focus-visible {
+  outline: 3px solid #A78BFA;
+  outline-offset: -3px;
+}
+
+.chapter-body .prompt-copy svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+.chapter-body .prompt-copy.copied {
+  background: #16A34A;
+}
+
+.chapter-body .prompt-copy.failed {
+  background: #DC2626;
+}
+
+/* --- 기대 결과 박스 --- */
+.chapter-body .expect {
+  border: 1px dashed #BBF7D0;
+  background: #F0FDF4;
+  border-radius: var(--radius);
+  padding: 14px 18px 4px;
+  margin: -20px 0 30px;
+  font-size: 14px;
+  color: #14532D;
+}
+
+.chapter-body .expect > p:first-child { margin-top: 0; }
+
+.chapter-body .expect strong { color: #15803D; }
+
+/* --- 준비물 체크리스트 --- */
+.chapter-body .checklist {
+  list-style: none;
+  padding-left: 0;
+  margin: 16px 0 24px;
+}
+
+.chapter-body .checklist li {
+  position: relative;
+  padding: 10px 12px 10px 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  background: #FFFFFF;
+  font-size: 14.5px;
+}
+
+.chapter-body .checklist li::before {
+  content: "☐";
+  position: absolute;
+  left: 14px;
+  top: 9px;
+  font-size: 17px;
+  color: var(--accent);
+}
+
+/* --- 단계 진행 안내 --- */
+.chapter-body .steps-note {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin: 6px 0 22px;
+}
+
+@media (max-width: 640px) {
+  .chapter-body .scenario dl { grid-template-columns: 1fr; gap: 2px 0; }
+  .chapter-body .scenario dd { margin-bottom: 10px; }
+  .chapter-body .prompt-copy { font-size: 15px; padding: 14px 16px; }
+}
+
+/* Rouge wraps <pre> in .highlighter-rouge > .highlight — flatten it inside prompt boxes */
+.chapter-body .prompt-box .highlighter-rouge,
+.chapter-body .prompt-box .highlight {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Prompt text is Korean prose, not code — force readable dark-on-light and a
+   proportional font. Rouge's theme colors assume a dark background, so reset them. */
+.chapter-body .prompt-box pre,
+.chapter-body .prompt-box pre code,
+.chapter-body .prompt-box code {
+  background: #FAF9FF !important;
+  color: #1F2937 !important;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.chapter-body .prompt-box pre * {
+  color: #1F2937 !important;
+  background: transparent !important;
+}

@@ -52,6 +52,10 @@
                 <span class="chapter-badge workshop">Workshop</span>
               {% elsif page.category == 'workshop' and page.parent %}
                 <span class="chapter-badge workshop">Workshop · Step {{ page.order }}</span>
+              {% elsif page.category == 'cowork' and page.parent == 'cowork-lab' and page.is_parent %}
+                <span class="chapter-badge workshop">Cowork 실습</span>
+              {% elsif page.category == 'cowork' and page.parent == 'cowork-lab' %}
+                <span class="chapter-badge workshop">Cowork 실습 · {{ page.short_title | split: '.' | first }}</span>
               {% elsif page.category == 'cowork' and page.is_parent %}
                 <span class="chapter-badge workshop">Cowork Collective</span>
               {% elsif page.category == 'cowork' and page.parent %}
@@ -205,6 +209,74 @@
         });
       });
       pre.appendChild(btn);
+    });
+
+    // Big always-visible copy button for lab prompt boxes.
+    // Markdown authors just wrap a code fence in <div class="prompt-box">.
+    document.querySelectorAll('.chapter-body .prompt-box').forEach(box => {
+      const pre = box.querySelector('pre');
+      if (!pre || box.querySelector('.prompt-copy')) return;
+
+      if (!box.querySelector('.prompt-box-label')) {
+        const label = document.createElement('div');
+        label.className = 'prompt-box-label';
+        label.textContent = box.dataset.label || 'Cowork에 입력할 프롬프트';
+        // pre may be nested inside a highlighter wrapper, so anchor to the box itself.
+        box.insertBefore(label, box.firstChild);
+      }
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'prompt-copy';
+      const ICON = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4H2a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="5" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.6"/></svg>';
+      const CHECK = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      const IDLE = '프롬프트 복사하기';
+      btn.innerHTML = ICON + '<span>' + IDLE + '</span>';
+
+      const getText = () => {
+        const code = pre.querySelector('code');
+        return (code ? code.textContent : pre.textContent).replace(/\s+$/, '');
+      };
+
+      const flash = (cls, msg, icon) => {
+        btn.classList.remove('copied', 'failed');
+        if (cls) btn.classList.add(cls);
+        btn.innerHTML = icon + '<span>' + msg + '</span>';
+        setTimeout(() => {
+          btn.classList.remove('copied', 'failed');
+          btn.innerHTML = ICON + '<span>' + IDLE + '</span>';
+        }, 2600);
+      };
+
+      // Fallback for non-secure contexts where the Clipboard API is unavailable.
+      const legacyCopy = (text) => {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+        document.body.removeChild(ta);
+        return ok;
+      };
+
+      btn.addEventListener('click', () => {
+        const text = getText();
+        const done = () => flash('copied', '복사됨! Cowork 입력창에 붙여넣으세요 (Ctrl+V)', CHECK);
+        const fail = () => flash('failed', '복사 실패 — 아래 텍스트를 직접 선택해 주세요', ICON);
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(done).catch(() => {
+            legacyCopy(text) ? done() : fail();
+          });
+        } else {
+          legacyCopy(text) ? done() : fail();
+        }
+      });
+
+      box.appendChild(btn);
     });
 
     // Image lightbox — click a screenshot to enlarge
