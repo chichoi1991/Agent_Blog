@@ -106,6 +106,58 @@ Cowork는 Anthropic 모델에 의존합니다. **이것이 꺼져 있으면 Cowo
 **폴더 이름을 바꾸지 마세요** — 실습 프롬프트가 `01_RFP`, `04_Incidents_INC-4471` 같은 폴더명을 **직접 지목**합니다. 이름을 바꾸면 Cowork가 파일을 못 찾습니다.
 </div>
 
+### 2-2. 샘플 파일 내려받기
+
+아래에서 실습용 30개 파일을 그대로 받을 수 있습니다. 관리자는 **SharePoint 묶음**을 실습 사이트에 올리고, 참가자에게는 **OneDrive 묶음**을 안내하면 됩니다.
+
+<p>
+  <a class="download-btn" href="{{ '/assets/downloads/cowork-lab/cowork-lab-all.zip' | relative_url }}" download>⬇️ 전체 30개 내려받기 (.zip · 344KB)</a>
+</p>
+
+<p>
+  <a class="download-btn" href="{{ '/assets/downloads/cowork-lab/cowork-lab-sharepoint.zip' | relative_url }}" download>📁 SharePoint 24개 (.zip · 291KB)</a>
+  &nbsp;
+  <a class="download-btn" href="{{ '/assets/downloads/cowork-lab/cowork-lab-onedrive.zip' | relative_url }}" download>👤 OneDrive_Ava 6개 (.zip · 52KB)</a>
+</p>
+
+<div class="info-box tip" markdown="1">
+
+**압축을 풀면 폴더 구조가 그대로 나옵니다** — `SharePoint/01_RFP/…`, `OneDrive_Ava/…`. SharePoint에 올릴 때 `SharePoint` 폴더 **안의 7개 폴더**를 문서 라이브러리 루트에 올리세요(`SharePoint` 폴더 자체는 올리지 않습니다).
+</div>
+
+<details markdown="1">
+<summary><strong>개별 파일로 받기 (30개 전체 목록)</strong></summary>
+
+**SharePoint — 관리자가 실습 사이트에 업로드**
+
+| 폴더 | 파일 |
+|---|---|
+| `01_RFP` | [HAL_RFP_SmartGridAnalytics_v1.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/01_RFP/HAL_RFP_SmartGridAnalytics_v1.docx' | relative_url }}) · [HAL_EvaluationCriteria.xlsx]({{ '/assets/downloads/cowork-lab/files/SharePoint/01_RFP/HAL_EvaluationCriteria.xlsx' | relative_url }}) · [HAL_SubmissionChecklist.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/01_RFP/HAL_SubmissionChecklist.docx' | relative_url }}) |
+| `02_Contracts` | [KES_MSA_Renewal_v3.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/02_Contracts/KES_MSA_Renewal_v3.docx' | relative_url }}) · [KES_SLA_Appendix_A.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/02_Contracts/KES_SLA_Appendix_A.docx' | relative_url }}) · [KES_VendorRisk_CobaltCloud.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/02_Contracts/KES_VendorRisk_CobaltCloud.docx' | relative_url }}) |
+| `03_Project_Northstar` | [NS_StatusReport_W-1.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/03_Project_Northstar/NS_StatusReport_W-1.docx' | relative_url }}) · [NS_MeetingNotes_2026-08.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/03_Project_Northstar/NS_MeetingNotes_2026-08.docx' | relative_url }}) · [NS_Phase3_Options.xlsx]({{ '/assets/downloads/cowork-lab/files/SharePoint/03_Project_Northstar/NS_Phase3_Options.xlsx' | relative_url }}) · [NS_DeploymentTracker.xlsx]({{ '/assets/downloads/cowork-lab/files/SharePoint/03_Project_Northstar/NS_DeploymentTracker.xlsx' | relative_url }}) · [NS_ArchitectureOverview.pptx]({{ '/assets/downloads/cowork-lab/files/SharePoint/03_Project_Northstar/NS_ArchitectureOverview.pptx' | relative_url }}) · [NS_CustomerFacing_QBR_Aug.pptx]({{ '/assets/downloads/cowork-lab/files/SharePoint/03_Project_Northstar/NS_CustomerFacing_QBR_Aug.pptx' | relative_url }}) |
+| `04_Incidents_INC-4471` | [INC-4471_EngineeringNotes.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/04_Incidents_INC-4471/INC-4471_EngineeringNotes.docx' | relative_url }}) · [INC-4471_Metrics.xlsx]({{ '/assets/downloads/cowork-lab/files/SharePoint/04_Incidents_INC-4471/INC-4471_Metrics.xlsx' | relative_url }}) · [INC-4471_CustomerTimeline.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/04_Incidents_INC-4471/INC-4471_CustomerTimeline.docx' | relative_url }}) |
+| `05_Templates` | [Aurora_BrandGuide.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/05_Templates/Aurora_BrandGuide.docx' | relative_url }}) · [Aurora_SlideMaster.pptx]({{ '/assets/downloads/cowork-lab/files/SharePoint/05_Templates/Aurora_SlideMaster.pptx' | relative_url }}) · [Aurora_ProposalTemplate.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/05_Templates/Aurora_ProposalTemplate.docx' | relative_url }}) |
+| `06_Policies` | [POL_InformationSecurity.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/06_Policies/POL_InformationSecurity.docx' | relative_url }}) · [POL_DataProtection.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/06_Policies/POL_DataProtection.docx' | relative_url }}) · [POL_TravelAndExpense.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/06_Policies/POL_TravelAndExpense.docx' | relative_url }}) |
+| `07_Onboarding` | [Aurora_SE_TeamCharter.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/07_Onboarding/Aurora_SE_TeamCharter.docx' | relative_url }}) · [JD_SolutionEngineer.docx]({{ '/assets/downloads/cowork-lab/files/SharePoint/07_Onboarding/JD_SolutionEngineer.docx' | relative_url }}) · [Onboarding_ReadingList.xlsx]({{ '/assets/downloads/cowork-lab/files/SharePoint/07_Onboarding/Onboarding_ReadingList.xlsx' | relative_url }}) |
+
+**OneDrive_Ava — 참가자가 각자 자기 OneDrive에 업로드**
+
+| 파일 | 내용 |
+|---|---|
+| [Halcyon_pricing_scratch.xlsx]({{ '/assets/downloads/cowork-lab/files/OneDrive_Ava/Halcyon_pricing_scratch.xlsx' | relative_url }}) | 가격 검토 메모 |
+| [QBR_talking_points.docx]({{ '/assets/downloads/cowork-lab/files/OneDrive_Ava/QBR_talking_points.docx' | relative_url }}) | QBR 발표 포인트 |
+| [Q3_forecast_working.xlsx]({{ '/assets/downloads/cowork-lab/files/OneDrive_Ava/Q3_forecast_working.xlsx' | relative_url }}) | Q3 예측 작업본 |
+| [Solstice_save_plan_draft.docx]({{ '/assets/downloads/cowork-lab/files/OneDrive_Ava/Solstice_save_plan_draft.docx' | relative_url }}) | 이탈 방어 플랜 초안 |
+| [Alex_Chen_30-60-90_draft.docx]({{ '/assets/downloads/cowork-lab/files/OneDrive_Ava/Alex_Chen_30-60-90_draft.docx' | relative_url }}) | **빈 파일** — 실습에서 Cowork가 채웁니다 |
+| [Meridian_RCA_outline.docx]({{ '/assets/downloads/cowork-lab/files/OneDrive_Ava/Meridian_RCA_outline.docx' | relative_url }}) | **빈 파일** — 실습에서 Cowork가 채웁니다 |
+
+</details>
+
+<div class="info-box note" markdown="1">
+
+**전부 허구 데이터입니다** — Aurora Dynamics·Meridian Bank·Halcyon Energy·Kestrel Logistics는 실존하지 않는 가상 조직이고, 메일 도메인도 예약 TLD `.example`을 씁니다. 실제 고객 데이터가 아니므로 마음 놓고 실습에 쓰셔도 됩니다.
+</div>
+
 ---
 
 ## 3. OneDrive 파일 — 참가자가 직접 올려야 합니다
@@ -130,6 +182,7 @@ Cowork는 Anthropic 모델에 의존합니다. **이것이 꺼져 있으면 Cowo
 
 1. 실습 자료 사이트에 접속합니다.
    → (관리자가 공지한 SharePoint 사이트 URL)
+   → 또는 실습 가이드 "Step 0. 준비사항" 페이지의 다운로드 버튼
 
 2. OneDrive_Ava 폴더에서 파일 6개를 모두 다운로드합니다.
    - Halcyon_pricing_scratch.xlsx
@@ -158,6 +211,10 @@ Meridian_RCA_outline.docx)은 제목만 있고 내용이 비어 있습니다.
 <li>실습 시작 직후 "OneDrive 업로드 하신 분?" 으로 한 번 더 확인</li>
 <li>못 한 참가자를 위해 다운로드 링크를 화면에 띄워 둘 것</li>
 </ul>
+
+<p>
+  <a class="download-btn" href="{{ '/assets/downloads/cowork-lab/cowork-lab-onedrive.zip' | relative_url }}" download>👤 OneDrive_Ava 6개 바로 내려받기 (.zip)</a>
+</p>
 
 ---
 
