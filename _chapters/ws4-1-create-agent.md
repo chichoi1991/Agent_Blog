@@ -15,12 +15,12 @@ parent: "ws4"
 Copilot에서 **나만의 Agent**를 가장 간단하고 손쉽게 만드는 방법은 Agent Builder를 활용하는 것입니다.
 Agent Builder는 Teams 또는 M365 Copilot App에 위치하고 있으며, Copilot 창 좌측에 **[에이전트 만들기]** 를 통해 생성 가능합니다.
 
-<img width="1314" height="974" alt="image" src="https://github.com/user-attachments/assets/3ee3b7af-994c-41ec-9ee4-dda3f95ec23b" />
+<img width="1314" height="974" alt="image" src="{{ '/assets/image/github-attachments/3ee3b7af-994c-41ec-9ee4-dda3f95ec23b.png' | relative_url }}" />
 
 
 만약, 팀즈 좌측 탭에 Copilot 앱이 표시되지 않는다면, 아래와 같이 Copilot app을 추가하여 고정시킨 후 이용합니다.
 
-<img width="1323" height="974" alt="image" src="https://github.com/user-attachments/assets/cc3a453f-9e2e-41bc-b006-a6fb32d960c5" />
+<img width="1323" height="974" alt="image" src="{{ '/assets/image/github-attachments/cc3a453f-9e2e-41bc-b006-a6fb32d960c5.png' | relative_url }}" />
 
 
 ## 지침이 중요한가? <br>
@@ -64,7 +64,7 @@ Agent Builder는 Teams 또는 M365 Copilot App에 위치하고 있으며, Copilo
 
 이번 실습에서는 미팅 준비에 앞서, <br> 나와 내 조직, 외부 데이터를 모두 종합하여 미팅 대상자의 정보를 분석하고 효과적인 미팅을 진행할 수 있도록 준비에 도움을 주는 **파트너 인사이트 에이전트**를 만들어 봅니다.
 
-<img width="1200" height="666" alt="image" src="https://github.com/user-attachments/assets/ac8ac136-d80c-44d6-8312-c14dfc5c2a68" />
+<img width="1200" height="666" alt="image" src="{{ '/assets/image/github-attachments/ac8ac136-d80c-44d6-8312-c14dfc5c2a68.png' | relative_url }}" />
 
 
 먼저 에이전트 생성을 위해 Teams 앱 또는 브라우저에서 코파일럿을 선택합니다. <br>
@@ -76,7 +76,7 @@ Agent Builder는 Teams 또는 M365 Copilot App에 위치하고 있으며, Copilo
 
 Copilot 에서 좌측 탭을 확장하여 **에이전트 만들기** 를 선택하면 에이전트 생성 화면으로 이동하게 됩니다. .
 
-<img width="1195" height="672" alt="image" src="https://github.com/user-attachments/assets/9071c76e-3cfc-4a68-9621-2a0d1438957e" />
+<img width="1195" height="672" alt="image" src="{{ '/assets/image/github-attachments/9071c76e-3cfc-4a68-9621-2a0d1438957e.png' | relative_url }}" />
 
 
 
@@ -101,11 +101,11 @@ Copilot 에서 좌측 탭을 확장하여 **에이전트 만들기** 를 선택�
 ```
 <br>
 
-<img width="1606" height="1039" alt="image" src="https://github.com/user-attachments/assets/03f89d56-5a00-4311-82ea-ddf617173980" />
+<img width="1606" height="1039" alt="image" src="{{ '/assets/image/github-attachments/03f89d56-5a00-4311-82ea-ddf617173980.png' | relative_url }}" />
 
 입력하면 Copilot이 사용자의 의도에 맞춰 에이전트의 기본적인 정보, 예제 프롬프트, 지침을 작성하게 됩니다.
 
-<img width="1197" height="674" alt="image" src="https://github.com/user-attachments/assets/8f7a0ea0-6ac6-4c7d-a368-6f84cd0ffbc6" />
+<img width="1197" height="674" alt="image" src="{{ '/assets/image/github-attachments/8f7a0ea0-6ac6-4c7d-a368-6f84cd0ffbc6.png' | relative_url }}" />
 
 ### 2-2. 수동 구성을 통해 상세 지침, 작업 조정
 
@@ -115,7 +115,7 @@ Copilot 에서 좌측 탭을 확장하여 **에이전트 만들기** 를 선택�
 먼저 종합 인사이트 분석을 중심으로 참조 자료의 우선순위를 지정하는 세부 지침을 적용하기 위해
 아래의 지침을 복사하여 기존 지침에 덮어씁니다
 
-<img width="1200" height="638" alt="image" src="https://github.com/user-attachments/assets/3810c2a8-65b6-483e-a902-0a13e9701bf3" />
+<img width="1200" height="638" alt="image" src="{{ '/assets/image/github-attachments/3810c2a8-65b6-483e-a902-0a13e9701bf3.png' | relative_url }}" />
 
 
 ```

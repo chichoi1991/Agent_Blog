@@ -205,9 +205,6 @@ public class SayHello
 
 8. Local test: Press `F5` and select **"Use Local Emulator"** in the prompt to set up the local emulator (Azurite) for Azure Blob Storage. If `AzureWebJobStorage` connection validation fails, click **"Run Emulator"** to start it. Wait for the build to complete.
 
-<figure class="screenshot">
-  <img src="{{ '/assets/newcs/labs/newcslab3/p1-03.png' | relative_url }}" alt="MCP over VNet lab screenshot" loading="lazy">
-</figure>
 9. Confirm that the local server is running.
 
 <figure class="screenshot">

@@ -17,7 +17,7 @@ parent: "ws1"
 ## 1. Copilot Studio 사이트 접속
 
 ### 에이전트 생성을 위해 [Copilot Studio 페이지: copilotstudio.preview.microsoft.com ](https://copilotstudio.preview.microsoft.com) 에 접속 합니다.
-![image](https://github.com/user-attachments/assets/27577404-175d-4646-9caa-72be7e07b94d)
+![image]({{ '/assets/image/github-attachments/27577404-175d-4646-9caa-72be7e07b94d.png' | relative_url }})
 
 > 실습은 preview 사이트 (copilotstudio.preview.microsoft.com) 에서 진행합니다.
 
@@ -25,32 +25,32 @@ parent: "ws1"
 
 ## 2. 개발환경 변경
 사이트에 접속이 되면, 우측 상단에 환경을 선택하여 사전에 전달받은 실습 환경을 선택하여 이동합니다.
-<img width="1524" height="1392" alt="image" src="https://github.com/user-attachments/assets/68e1bdfd-bec8-4ca7-881b-56a0cbb4f1cf" />
+<img width="1524" height="1392" alt="image" src="{{ '/assets/image/github-attachments/68e1bdfd-bec8-4ca7-881b-56a0cbb4f1cf.png' | relative_url }}" />
 
 <br> <br> 
 
 만약 아래와 같은 화면이 처음 떴다면, 우측 상단의 ... 선택하여 에이전트 **생성 취소** 를 누르면 위의 화면으로 돌아가게 됩니다.
-<img width="1524" height="561" alt="image" src="https://github.com/user-attachments/assets/4794e942-e580-437b-ab0f-2388c6ef330d" />
+<img width="1524" height="561" alt="image" src="{{ '/assets/image/github-attachments/4794e942-e580-437b-ab0f-2388c6ef330d.png' | relative_url }}" />
 
 <br> <br> 
 
 ## 3. 에이전트 만들기
 환경을 이동하고 나면 에이전트 만들기를 시작합니다. <br>
 좌측 패널의 +Create 를 선택한 후, + New Agent를 클릭합니다.
-<img width="1528" height="469" alt="image" src="https://github.com/user-attachments/assets/dd5962f6-f5a4-4ddd-ad82-90683227473d" />
+<img width="1528" height="469" alt="image" src="{{ '/assets/image/github-attachments/dd5962f6-f5a4-4ddd-ad82-90683227473d.png' | relative_url }}" />
 
 <br> <br> 
 
 이후, 아래와 같은 에이전트 만들기 창이 나옵니다. 우측 ... 선택하여 언어가 Ko-Kr로 되어있는지 확인합니다. <br>
 만약 안되어 있을 경우 선택하여 언어를 변경해 줍니다.
 
-<img width="1524" height="755" alt="image" src="https://github.com/user-attachments/assets/5e562739-0f9f-4462-bda1-5146f5857766" />
+<img width="1524" height="755" alt="image" src="{{ '/assets/image/github-attachments/5e562739-0f9f-4462-bda1-5146f5857766.png' | relative_url }}" />
 
 <br> <br> 
 
 이후 최초 화면에서는 자연어를 통해 에이전트의 기본 설정들을 작성하는데 도움을 받을 수 있습니다. <br> 
 이번 실습에서는 따로 진행하지 않고 곧바로 만들기를 눌러 에이전트를 생성합니다. <br>
-<img width="1248" height="1261" alt="image" src="https://github.com/user-attachments/assets/ebe5a018-c2c1-4a0b-9fc5-b1be25928015" />
+<img width="1248" height="1261" alt="image" src="{{ '/assets/image/github-attachments/ebe5a018-c2c1-4a0b-9fc5-b1be25928015.png' | relative_url }}" />
 <br> <br> 
 
 ## 4. 에이전트 기본 설정
@@ -59,7 +59,7 @@ parent: "ws1"
 이제 이곳에 기본적인 에이전트의 이름과 설명, 지침을 입력합니다.
 
 먼저 우측 상단의 [설정] 을 선택하여 에이전트의 기본 설정들을 확인 및 구성합니다.
-<img width="1524" height="454" alt="image" src="https://github.com/user-attachments/assets/4dffbd0f-4bd3-4f64-8f5f-e4c9f84106a4" />
+<img width="1524" height="454" alt="image" src="{{ '/assets/image/github-attachments/4dffbd0f-4bd3-4f64-8f5f-e4c9f84106a4.png' | relative_url }}" />
 <br> <br>
 
 
@@ -77,10 +77,10 @@ parent: "ws1"
 
 > 클래식 vs 생성형의 차이는 [여기](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions)를 참고할 수 있습니다.
 
-<img width="1524" height="1050" alt="image" src="https://github.com/user-attachments/assets/3c1e81c2-6bdf-41d7-a987-7462d75a0d4b" />
+<img width="1524" height="1050" alt="image" src="{{ '/assets/image/github-attachments/3c1e81c2-6bdf-41d7-a987-7462d75a0d4b.png' | relative_url }}" />
 <br> <br> 
 설정을 모두 마쳤으면, 중앙 하단의 **저장** 버튼을 눌러 설정 저장하고 닫습니다.
-<img width="1504" height="1035" alt="image" src="https://github.com/user-attachments/assets/2220a13c-3551-4c14-b6f0-f52013d8c997" />
+<img width="1504" height="1035" alt="image" src="{{ '/assets/image/github-attachments/2220a13c-3551-4c14-b6f0-f52013d8c997.png' | relative_url }}" />
 
 <br> <br> 
 
@@ -89,7 +89,7 @@ parent: "ws1"
 다음은 에이전트의 이름, 설명 및 지침을 설정합니다.
 
 상세정보 탭과 지침 탭 우측의 [Edit] 을 선택하여 에이전트의 정보를 수정할 수 있습니다.
-<img width="1504" height="1035" alt="image" src="https://github.com/user-attachments/assets/ca8cb7e1-945e-40a0-9439-dac772520caa" />
+<img width="1504" height="1035" alt="image" src="{{ '/assets/image/github-attachments/ca8cb7e1-945e-40a0-9439-dac772520caa.png' | relative_url }}" />
 
 <br> <br> 
 
@@ -276,7 +276,7 @@ parent: "ws1"
 
 입력을 모두 마치고 Save 버튼을 눌러 에이전트 기본 정보와 지침을 저장합니다.
 
-<img width="1504" height="1035" alt="image" src="https://github.com/user-attachments/assets/813f3b32-d16b-44d2-bea0-98473b152280" />
+<img width="1504" height="1035" alt="image" src="{{ '/assets/image/github-attachments/813f3b32-d16b-44d2-bea0-98473b152280.png' | relative_url }}" />
 
 
 ---

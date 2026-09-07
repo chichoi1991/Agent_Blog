@@ -42,7 +42,7 @@ so that when a **specific event (for example, a new email arrives or a scheduled
 Go to the flow designer and add a new flow.  
 Select **Overview** → **+ Add a tool** → **+ New tool** → **Agent flow**, or select a new automated cloud flow in the Power Automate portal.
 
-<img width="1063" height="783" alt="image" src="https://github.com/user-attachments/assets/605cccab-5010-442e-9b80-7d7d8c786b70" />
+<img width="1063" height="783" alt="image" src="{{ '/assets/image/github-attachments/605cccab-5010-442e-9b80-7d7d8c786b70.png' | relative_url }}" />
 
 <br>
 
@@ -109,9 +109,9 @@ From the moment it is activated, the flow runs automatically whenever the trigge
 - **Recurrence trigger**: Wait until the next scheduled run time, then check whether it ran successfully in Power Automate **Run history**.
 - **Event trigger (email/SharePoint, etc.)**: Send a test email or add an item to verify that the trigger fires immediately.
 
-<img width="1278" height="1169" alt="image" src="https://github.com/user-attachments/assets/fbcf1326-89f0-4f7b-b3d9-bf84977d0f43" />
+<img width="1278" height="1169" alt="image" src="{{ '/assets/image/github-attachments/fbcf1326-89f0-4f7b-b3d9-bf84977d0f43.png' | relative_url }}" />
 <br>
-<img width="1803" height="526" alt="image" src="https://github.com/user-attachments/assets/a7341ff1-eb08-4bb1-a339-3fbd029d338d" />
+<img width="1803" height="526" alt="image" src="{{ '/assets/image/github-attachments/a7341ff1-eb08-4bb1-a339-3fbd029d338d.png' | relative_url }}" />
 
 <br>
 

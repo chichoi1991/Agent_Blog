@@ -41,7 +41,7 @@ An organization's report materials are collected in a **specific OneDrive/ShareP
 </div>
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/00-scenario-overview.png' | relative_url }}" alt="Scenario diagram — SharePoint folder → Knowledge/skills → workflow → Teams briefing" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/00-scenario-overview.png' | relative_url }}" alt="Scenario diagram — SharePoint folder → Knowledge/skills → workflow → Teams briefing" loading="lazy">
   <figcaption>Overall flow: SharePoint report-materials folder → Knowledge and skills → workflow trigger → Teams briefing</figcaption>
 </figure>
 
@@ -69,7 +69,7 @@ An organization's report materials are collected in a **specific OneDrive/ShareP
 - Prepare one or two sample reports (PDF/Word) for testing.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/01-sharepoint-folder-1.png' | relative_url }}" alt="SharePoint folder and sample files for collecting report materials" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/01-sharepoint-folder-1.png' | relative_url }}" alt="SharePoint folder and sample files for collecting report materials" loading="lazy">
   <figcaption>SharePoint folder #1 for collecting report materials (for example, Documents/report-materials)</figcaption>
 </figure>
 
@@ -110,7 +110,7 @@ You are an assistant that briefs the team on documents uploaded to a SharePoint 
 ```
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/02-create-agent-instructions.png' | relative_url }}" alt="Agent creation dialog and Instructions input screen" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/02-create-agent-instructions.png' | relative_url }}" alt="Agent creation dialog and Instructions input screen" loading="lazy">
   <figcaption>Create a new agent + enter Instructions</figcaption>
 </figure>
 
@@ -134,13 +134,13 @@ You are an assistant that briefs the team on documents uploaded to a SharePoint 
 </div>
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint-1.png' | relative_url }}" alt="Screen for connecting a SharePoint folder and OneDrive CEO risk document as Knowledge" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint.png-1.png' | relative_url }}" alt="Screen for connecting a SharePoint folder and OneDrive CEO risk document as Knowledge" loading="lazy">
 
-  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint-2.png' | relative_url }}" alt="Screen for connecting a SharePoint folder and OneDrive CEO risk document as Knowledge" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint.png-2.png' | relative_url }}" alt="Screen for connecting a SharePoint folder and OneDrive CEO risk document as Knowledge" loading="lazy">
  
-  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint-3.png' | relative_url }}" alt="Screen for connecting a SharePoint folder and OneDrive CEO risk document as Knowledge" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">  
+  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint.png-3.png' | relative_url }}" alt="Screen for connecting a SharePoint folder and OneDrive CEO risk document as Knowledge" loading="lazy">
    
-   <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint-4.png' | relative_url }}" alt="Screen for connecting a SharePoint folder and OneDrive CEO risk document as Knowledge" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"> 
+   <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint.png-4.png' | relative_url }}" alt="Screen for connecting a SharePoint folder and OneDrive CEO risk document as Knowledge" loading="lazy">
   <figcaption>Connect the SharePoint report-materials folder + OneDrive "CEO Risk Points" Word document as Knowledge</figcaption>
 </figure>
 
@@ -179,7 +179,7 @@ Add three skills.
 </div>
 
 <figure class="screenshot">
-   <img src="{{ '/assets/image/newcslab1/04-Skill-Create-upload-1.png' | relative_url }}" alt="Screen for creating a skill or importing a zip package" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"> 
+   <img src="{{ '/assets/image/newcslab1/04-Skill-Create-upload-1.png' | relative_url }}" alt="Screen for creating a skill or importing a zip package" loading="lazy">
   <figcaption>Select the Skills tab to configure your own workflow or upload pre-authored skills and skill packages</figcaption>
 </figure>
 
@@ -206,7 +206,7 @@ Skills themselves are **instructions (text)** and can run without tools, but the
 2. For the design skill, do not write the briefing card's **fixed formatting** directly in the skill. Collect it in `design.md` (color tokens, typography, layout, and signature) and have SKILL.md only point to `design.md`.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/04-skills-summary-keyword-design.png' | relative_url }}" alt="Screen with three added skills: summary, keyword extraction, and design" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/04-skills-summary-keyword-design-1.png' | relative_url }}" alt="Screen with three added skills: summary, keyword extraction, and design" loading="lazy">
   <figcaption>Summary · keyword/risk extraction · briefing design skill configuration</figcaption>
 </figure>
 
@@ -230,8 +230,8 @@ Skills themselves are **instructions (text)** and can run without tools, but the
 </div>
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/04b-tools-teams-mail-calendar.png' | relative_url }}" alt="Screen with Teams, Outlook (Mail), and Calendar tools (MCP) connected" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>Tool connections — Teams (send + search) · Outlook/Mail · Calendar (context analysis)</figcaption>
+  <img src="{{ '/assets/newcs/3-tools-add.png' | relative_url }}" alt="Add a tool dialog with Microsoft Teams and Office 365 Outlook options" loading="lazy">
+  <figcaption>Reference screenshot — the Add a tool dialog from another lab. Follow the steps above to connect Teams, Mail, and Calendar for this lab.</figcaption>
 </figure>
 
 ---
@@ -250,12 +250,12 @@ Skills themselves are **instructions (text)** and can run without tools, but the
 </div>
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/05-workflow-trigger.png' | relative_url }}" alt="Folder file-added trigger and summary → keyword → context → design → Teams sending flow" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/05-workflow-trigger.png' | relative_url }}" alt="Folder file-added trigger and summary → keyword → context → design → Teams sending flow" loading="lazy">
   <figcaption>Folder-detection trigger → M365 Copilot (WorkIQ) context enrichment → briefing agent invocation</figcaption>
 </figure>
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/05-workflow-trigger-2.png' | relative_url }}" alt="Briefing agent invocation node — passes new report upload notification and context data" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/05-workflow-trigger-2.png' | relative_url }}" alt="Briefing agent invocation node — passes new report upload notification and context data" loading="lazy">
   <figcaption>Final node: briefing agent invocation — pass upload notification and context data to generate and send the briefing</figcaption>
 </figure>
 
@@ -270,7 +270,7 @@ Skills themselves are **instructions (text)** and can run without tools, but the
 3. Check whether summary length, keyword separation, CEO perspective, context enrichment, and design formatting match your intent. If they do not, refine the Instructions, skills, or CEO document.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/06-teams-briefing-result.png' | relative_url }}" alt="Briefing card result screen in Teams" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/06-teams-briefing-result.png' | relative_url }}" alt="Briefing card result screen in Teams" loading="lazy">
   <figcaption>Briefing result automatically delivered in Teams</figcaption>
 </figure>
 
@@ -284,4 +284,3 @@ Skills themselves are **instructions (text)** and can run without tools, but the
   - Add **owner mentions/escalation** when risk keywords are detected.
   - Add a weekly **summary digest** workflow.
   - Update the CEO risk document quarterly to automatically reflect **changes in perspective and priorities**.
-

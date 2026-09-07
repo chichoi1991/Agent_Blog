@@ -16,12 +16,12 @@ parent: "ws4"
 The simplest and easiest way to create **your own Agent** in Copilot is to use Agent Builder.
 Agent Builder is available in Teams or the M365 Copilot App, and you can create an agent from **[Create an agent]** on the left side of the Copilot window.
 
-<img width="1314" height="974" alt="image" src="https://github.com/user-attachments/assets/3ee3b7af-994c-41ec-9ee4-dda3f95ec23b" />
+<img width="1314" height="974" alt="image" src="{{ '/assets/image/github-attachments/3ee3b7af-994c-41ec-9ee4-dda3f95ec23b.png' | relative_url }}" />
 
 
 If the Copilot app does not appear in the left tab of Teams, add and pin the Copilot app as shown below, then use it.
 
-<img width="1323" height="974" alt="image" src="https://github.com/user-attachments/assets/cc3a453f-9e2e-41bc-b006-a6fb32d960c5" />
+<img width="1323" height="974" alt="image" src="{{ '/assets/image/github-attachments/cc3a453f-9e2e-41bc-b006-a6fb32d960c5.png' | relative_url }}" />
 
 
 ## Are Instructions important? <br>
@@ -65,7 +65,7 @@ If the Copilot app does not appear in the left tab of Teams, add and pin the Cop
 
 In this lab, before preparing for a meeting, you will create a **Partner Insight Agent** that analyzes information about the person you are meeting with by combining information about you, your organization, and external data, helping you prepare for an effective meeting.
 
-<img width="1200" height="666" alt="image" src="https://github.com/user-attachments/assets/ac8ac136-d80c-44d6-8312-c14dfc5c2a68" />
+<img width="1200" height="666" alt="image" src="{{ '/assets/image/github-attachments/ac8ac136-d80c-44d6-8312-c14dfc5c2a68.png' | relative_url }}" />
 
 
 First, select Copilot in the Teams app or browser to create the agent. <br>
@@ -77,7 +77,7 @@ Site links <br>
 
 In Copilot, expand the left tab and select **Create an agent** to move to the agent creation screen.
 
-<img width="1195" height="672" alt="image" src="https://github.com/user-attachments/assets/9071c76e-3cfc-4a68-9621-2a0d1438957e" />
+<img width="1195" height="672" alt="image" src="{{ '/assets/image/github-attachments/9071c76e-3cfc-4a68-9621-2a0d1438957e.png' | relative_url }}" />
 
 
 
@@ -102,11 +102,11 @@ Its purpose is to provide related information and insights about users who have 
 ```
 <br>
 
-<img width="1606" height="1039" alt="image" src="https://github.com/user-attachments/assets/03f89d56-5a00-4311-82ea-ddf617173980" />
+<img width="1606" height="1039" alt="image" src="{{ '/assets/image/github-attachments/03f89d56-5a00-4311-82ea-ddf617173980.png' | relative_url }}" />
 
 After you enter it, Copilot writes the agent's basic information, example prompts, and Instructions based on the user's intent.
 
-<img width="1197" height="674" alt="image" src="https://github.com/user-attachments/assets/8f7a0ea0-6ac6-4c7d-a368-6f84cd0ffbc6" />
+<img width="1197" height="674" alt="image" src="{{ '/assets/image/github-attachments/8f7a0ea0-6ac6-4c7d-a368-6f84cd0ffbc6.png' | relative_url }}" />
 
 ### 2-2. Adjust detailed Instructions and tasks through manual configuration
 
@@ -116,7 +116,7 @@ After the agent's basic settings are automatically created through conversationa
 First, to apply detailed Instructions that prioritize reference materials around comprehensive insight analysis,
 copy the Instructions below and overwrite the existing Instructions.
 
-<img width="1200" height="638" alt="image" src="https://github.com/user-attachments/assets/3810c2a8-65b6-483e-a902-0a13e9701bf3" />
+<img width="1200" height="638" alt="image" src="{{ '/assets/image/github-attachments/3810c2a8-65b6-483e-a902-0a13e9701bf3.png' | relative_url }}" />
 
 
 ```

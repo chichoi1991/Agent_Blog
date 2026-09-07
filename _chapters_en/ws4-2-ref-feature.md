@@ -40,7 +40,7 @@ As shown in the screen below, click the SharePoint icon and select the following
 
 <br>
 
-<img width="484" height="584" alt="image" src="https://github.com/user-attachments/assets/529e30fb-9921-4715-bc59-fea300237eca" />
+<img width="484" height="584" alt="image" src="{{ '/assets/image/github-attachments/529e30fb-9921-4715-bc59-fea300237eca.png' | relative_url }}" />
 
 <br>
 
@@ -52,7 +52,7 @@ Optional) If internal organizational user information is registered (name, title
 
 <br>
 
-<img width="462" height="385" alt="image" src="https://github.com/user-attachments/assets/c52f2980-c35c-41d3-b32c-b35162d982af" />
+<img width="462" height="385" alt="image" src="{{ '/assets/image/github-attachments/c52f2980-c35c-41d3-b32c-b35162d982af.png' | relative_url }}" />
 <br>
 
 ### Enable capabilities
@@ -63,7 +63,7 @@ In particular, Python code execution (code interpreter) can be used in many scen
 Enable the code interpreter toggle in the current agent as shown below.
 <br>
 
-<img width="472" height="225" alt="image" src="https://github.com/user-attachments/assets/534c11d4-1d4a-4fc9-a04b-d81885663a41" />
+<img width="472" height="225" alt="image" src="{{ '/assets/image/github-attachments/534c11d4-1d4a-4fc9-a04b-d81885663a41.png' | relative_url }}" />
 
 Then enter the following request asking it to add a scenario to the Instructions to support an infographic creation skill.
 <br>
@@ -74,7 +74,7 @@ Based on the current Instructions, after comprehensive insight analysis, add a c
 
 <br>
 
-<img width="496" height="473" alt="image" src="https://github.com/user-attachments/assets/49811973-e4bf-4395-881e-9fb6a0099ec6" />
+<img width="496" height="473" alt="image" src="{{ '/assets/image/github-attachments/49811973-e4bf-4395-881e-9fb6a0099ec6.png' | relative_url }}" />
 <br>
 
 
@@ -84,8 +84,8 @@ The final Instructions for the agent are as follows.
 When writing is complete, click the Create button to create the agent. <br>
 
 
-<img width="940" height="544" alt="image" src="https://github.com/user-attachments/assets/427958d7-0b8c-4de8-b1b9-02be34d21871" />
-<img width="966" height="543" alt="image" src="https://github.com/user-attachments/assets/aa750bfd-1347-44e3-820b-5120ccdc459f" />
+<img width="940" height="544" alt="image" src="{{ '/assets/image/github-attachments/427958d7-0b8c-4de8-b1b9-02be34d21871.png' | relative_url }}" />
+<img width="966" height="543" alt="image" src="{{ '/assets/image/github-attachments/aa750bfd-1347-44e3-820b-5120ccdc459f.png' | relative_url }}" />
 
 
 

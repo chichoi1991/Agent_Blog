@@ -64,23 +64,23 @@ parent: "ws2"
 
 ## 1. 메일 발송 도구 추가
 에이전트 설정창에서 [도구] - [+ 도구 추가] 를 선택합니다.
-<img width="1166" height="598" alt="image" src="https://github.com/user-attachments/assets/671c05ef-8a90-4001-8ed0-a70f57bf84a8" />
+<img width="1166" height="598" alt="image" src="{{ '/assets/image/github-attachments/671c05ef-8a90-4001-8ed0-a70f57bf84a8.png' | relative_url }}" />
 
 추천 커넥터 또는 도구 검색에서 "Office 365 Outlook" 을 검색하여 선택합니다.
-<img width="1063" height="779" alt="image" src="https://github.com/user-attachments/assets/eb82dc7b-5d2b-454d-bcfb-8d27948be6f7" />
+<img width="1063" height="779" alt="image" src="{{ '/assets/image/github-attachments/eb82dc7b-5d2b-454d-bcfb-8d27948be6f7.png' | relative_url }}" />
 
 이후 "메일 보내기(V2)" 액션을 선택합니다.
-<img width="1063" height="779" alt="image" src="https://github.com/user-attachments/assets/1f89de44-65f9-4b70-b4c2-8963a507d00f" />
+<img width="1063" height="779" alt="image" src="{{ '/assets/image/github-attachments/1f89de44-65f9-4b70-b4c2-8963a507d00f.png' | relative_url }}" />
 
 도구를 선택하면, Office 365 outlook 커넥터를 이용하기 위한 OAuth 연결 창이 뜨며,
 [새 연결 만들기]를 통해 접속한 계정의 로그인 정보를 입력후 만들기를 클릭합니다.
-<img width="1009" height="738" alt="image" src="https://github.com/user-attachments/assets/d9b5c7f9-04cc-43da-b6a0-f32af54d6b6f" />
+<img width="1009" height="738" alt="image" src="{{ '/assets/image/github-attachments/d9b5c7f9-04cc-43da-b6a0-f32af54d6b6f.png' | relative_url }}" />
 
-<img width="1022" height="738" alt="image" src="https://github.com/user-attachments/assets/599eb77c-27b3-4ca8-834e-47078913cd4d" />
+<img width="1022" height="738" alt="image" src="{{ '/assets/image/github-attachments/599eb77c-27b3-4ca8-834e-47078913cd4d.png' | relative_url }}" />
 
 연결이 완료되면 아래 화면과 같이 연결된 계정 정보와 초록색 아이콘이 표시됩니다.
 [추가 및 구성] 을 선택하여, 메일 발송 커넥터의 상세 설정으로 이동합니다.
-<img width="1004" height="732" alt="image" src="https://github.com/user-attachments/assets/e27dc93e-d282-48dc-bcc9-a52b9bb0ddbe" />
+<img width="1004" height="732" alt="image" src="{{ '/assets/image/github-attachments/e27dc93e-d282-48dc-bcc9-a52b9bb0ddbe.png' | relative_url }}" />
 
 ## 2. 메일 발송 커넥터 기본 설정
 다음은 Agent가 메일을 발송하기 위해 필요한 설정들을 지정합니다.
@@ -89,7 +89,7 @@ parent: "ws2"
 
 이 설명은 Agent가 도구를 선택해야할 때 참조하는 설명으로 상황이 최대한 자세하게 설명되어 있어야 정확한 지시에 맞추어 동작합니다.
 
-<img width="1181" height="460" alt="image" src="https://github.com/user-attachments/assets/af5fd88b-afb1-4832-a465-4d2040e5114e" />
+<img width="1181" height="460" alt="image" src="{{ '/assets/image/github-attachments/af5fd88b-afb1-4832-a465-4d2040e5114e.png' | relative_url }}" />
 
 
 ```
@@ -105,7 +105,7 @@ parent: "ws2"
 특정 시스템에 접근이 가능한 계정이 한정되어 있을 경우(예, SAP, DB 접근 등) 
 제작자 제공 자격 증명으로 변경하여 사용자들이 로그인을 하지 않더라도 데이터 접근이 가능토록 구성합니다.
 
-<img width="801" height="336" alt="image" src="https://github.com/user-attachments/assets/3d359fd6-7af5-49c0-b1e7-99347b5e36f6" />
+<img width="801" height="336" alt="image" src="{{ '/assets/image/github-attachments/3d359fd6-7af5-49c0-b1e7-99347b5e36f6.png' | relative_url }}" />
 
 ---
 ## 3. 입력 파라미터 설정
@@ -119,11 +119,11 @@ parent: "ws2"
 |CC|사용자 지정|User.Email|
 
 파라미터 추가는  우측의 **[입력 추가]**를 선택하야 할 수 있습니다.
-<img width="839" height="480" alt="image" src="https://github.com/user-attachments/assets/21c78018-79a4-42ab-aaa0-fc97f0a32c35" />
+<img width="839" height="480" alt="image" src="{{ '/assets/image/github-attachments/21c78018-79a4-42ab-aaa0-fc97f0a32c35.png' | relative_url }}" />
 
 이후 AI로 동적으로 채우기로 설정된 파라미터의 경우 **사용자 지정**을 선택하면 해당 파라미터의 설명을 입력할 수 있습니다.
 
-<img width="792" height="642" alt="image" src="https://github.com/user-attachments/assets/d42a0d11-da72-430b-b683-02af538aace7" />
+<img width="792" height="642" alt="image" src="{{ '/assets/image/github-attachments/d42a0d11-da72-430b-b683-02af538aace7.png' | relative_url }}" />
 
 **사용자 지정 값**으로 설정된 파라미터의 경우, 수동으로 입력 또는 ... 을 클릭하여 시스템,환경 변수나 수식으로 입력이 가능합니다.
 이번 실습에서는 참조로 질문자의 이메일 주소를 입력할 수 있도록
@@ -135,7 +135,7 @@ parent: "ws2"
 실행후 액션을 **특정 응답 보내기(아래에 지정)** 으로 선택 후,
 다음 메세지를 지정합니다.
 
-<img width="846" height="397" alt="image" src="https://github.com/user-attachments/assets/fa991646-b33f-4dc1-b676-c1a85fa3fa1d" />
+<img width="846" height="397" alt="image" src="{{ '/assets/image/github-attachments/fa991646-b33f-4dc1-b676-c1a85fa3fa1d.png' | relative_url }}" />
 
 ```
 지시하신대로 해당 내용을 담당자에게 메일로 전송하였습니다.
@@ -154,7 +154,7 @@ parent: "ws2"
 따라서, 다시 **개요**로 돌아가, 추가된 도구에 대한 지침을 입력해 주도록 합니다.
 지침 수정 중 ** / ** 을 입력하면, 도구, 에이전트, 토픽을 직접 명시할 수 있습니다.
 
-<img width="972" height="707" alt="image" src="https://github.com/user-attachments/assets/3f41fb6f-62c0-482c-9d3e-109ddc49fd03" />
+<img width="972" height="707" alt="image" src="{{ '/assets/image/github-attachments/3f41fb6f-62c0-482c-9d3e-109ddc49fd03.png' | relative_url }}" />
 
 
 ```
@@ -181,9 +181,9 @@ parent: "ws2"
 
 지침 편집을 마치고 저장을 한 후, 테스트를 하여 메일이 정상적으로 발송되는지 확인해 봅니다.
 
-<img width="1195" height="1156" alt="image" src="https://github.com/user-attachments/assets/0459dfa8-5ae9-4bb6-b952-d89e6945e352" />
+<img width="1195" height="1156" alt="image" src="{{ '/assets/image/github-attachments/0459dfa8-5ae9-4bb6-b952-d89e6945e352.png' | relative_url }}" />
 
-<img width="580" height="614" alt="image" src="https://github.com/user-attachments/assets/59b02d08-861b-4c4a-994f-5820f7e3675e" />
+<img width="580" height="614" alt="image" src="{{ '/assets/image/github-attachments/59b02d08-861b-4c4a-994f-5820f7e3675e.png' | relative_url }}" />
 
 ---
 이로서 도구를 통해 에이전트가 추가적인 액션을 이용할 수 있게 되었습니다. <br>

@@ -68,20 +68,20 @@ In this lab, add an MCP tool that lets the agent send spec sheet content by emai
 
 ### 1. Add an email-sending tool
 In the agent settings window, select **Tools** - **+ Add a tool**.
-<img width="970" height="589" alt="image" src="https://github.com/user-attachments/assets/4ff4e0b4-8fd1-4bb0-9c79-9097c94156ff" />
+<img width="970" height="589" alt="image" src="{{ '/assets/image/github-attachments/4ff4e0b4-8fd1-4bb0-9c79-9097c94156ff.png' | relative_url }}" />
 
 Under Model Context Protocol, select **Email Management MCP Server**.
-<img width="543" height="396" alt="image" src="https://github.com/user-attachments/assets/9d324745-f91b-4588-9729-df8fa9cb315e" />
+<img width="543" height="396" alt="image" src="{{ '/assets/image/github-attachments/9d324745-f91b-4588-9729-df8fa9cb315e.png' | relative_url }}" />
 
 When you select the tool, an OAuth connection window appears for using the Office 365 Outlook connector. <br>
 Use **Create a new connection**, enter the sign-in information for the connected account, and click Create. <br>
-<img width="548" height="406" alt="image" src="https://github.com/user-attachments/assets/d4260866-c5ea-48fb-aaad-3a9d9f2552ec" />
+<img width="548" height="406" alt="image" src="{{ '/assets/image/github-attachments/d4260866-c5ea-48fb-aaad-3a9d9f2552ec.png' | relative_url }}" />
 <br>
-<img width="1022" height="738" alt="image" src="https://github.com/user-attachments/assets/599eb77c-27b3-4ca8-834e-47078913cd4d" />
+<img width="1022" height="738" alt="image" src="{{ '/assets/image/github-attachments/599eb77c-27b3-4ca8-834e-47078913cd4d.png' | relative_url }}" />
 <br><br>
 When the connection is complete, the connected account information and a green icon appear as shown below. <br>
 Select **Add and configure** to move to the detailed settings for the email-sending connector. <br>
-<img width="1044" height="768" alt="image" src="https://github.com/user-attachments/assets/a669d0f8-228c-429f-88d2-93c7351db777" />
+<img width="1044" height="768" alt="image" src="{{ '/assets/image/github-attachments/a669d0f8-228c-429f-88d2-93c7351db777.png' | relative_url }}" />
 <br>
 <br>
 <br>
@@ -96,7 +96,7 @@ However, for the MCP server added here, the server description and the descripti
 <br>
 <br>
 Next, open the additional details pane and change the authentication policy to **Maker-provided credentials**.
-<img width="1056" height="694" alt="image" src="https://github.com/user-attachments/assets/e9ab862e-b6bf-473b-969f-bf1e92c9c5c6" />
+<img width="1056" height="694" alt="image" src="{{ '/assets/image/github-attachments/e9ab862e-b6bf-473b-969f-bf1e92c9c5c6.png' | relative_url }}" />
 
 By default, **End-user credentials** is selected. In this case, the user of the agent goes through a one-time sign-in process when using the action.
 
@@ -112,7 +112,7 @@ This step is optional, but if tools not defined in the instructions are availabl
 
 If you turn off the option to enable all functions for the tool, you can selectively allow individual tools. <br>
 In this scenario, only email sending is required, so disable all functions except the SendEmail tool. <br>
-<img width="1055" height="980" alt="image" src="https://github.com/user-attachments/assets/fc646c29-01d3-45bb-a25f-9c8670385adf" />
+<img width="1055" height="980" alt="image" src="{{ '/assets/image/github-attachments/fc646c29-01d3-45bb-a25f-9c8670385adf.png' | relative_url }}" />
 
 Then click the **Save** button at the top. The email-sending tool is now ready.
 Next, write instructions for how the agent should send email when it uses the tool.
@@ -142,12 +142,12 @@ Test prompt
 Create a newsletter about the dishwasher product line and email it to me.
 ```
 Copilot Studio test screen
-<img width="1704" height="1259" alt="image" src="https://github.com/user-attachments/assets/1b8124ba-fd06-4167-877a-22ab78461c49" />
+<img width="1704" height="1259" alt="image" src="{{ '/assets/image/github-attachments/1b8124ba-fd06-4167-877a-22ab78461c49.png' | relative_url }}" />
 
 > The agent creates and proposes a document format and draft according to the instructions, then sends the email.
 
 Email received screen
-<img width="1544" height="1528" alt="image" src="https://github.com/user-attachments/assets/a9879c4f-8caf-47b0-935d-47e89498d4a3" />
+<img width="1544" height="1528" alt="image" src="{{ '/assets/image/github-attachments/a9879c4f-8caf-47b0-935d-47e89498d4a3.png' | relative_url }}" />
 
 
 ---

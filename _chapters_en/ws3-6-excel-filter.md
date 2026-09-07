@@ -87,7 +87,7 @@ Add the tool, then enter the connector name and description in the detailed info
 | `Description` | Use this when you need analysis of electricity usage by district in Seoul and need to query the source time-series data.
  | 
 
-![1]({{ site.baseurl }}/assets/image/ws3/6-2)
+![1]({{ '/assets/image/ws3/6-2.png' | relative_url }})
 
 
 
@@ -153,7 +153,7 @@ Choose any model you want
 ```
 On the right side of the model response pane, change the output from basic text to JSON.
 ```
-![1](../assets/image/ws3/6-8.png)
+![1]({{ '/assets/image/ws3/6-8.png' | relative_url }})
 
 
 **Important! How to enter variables** <br>

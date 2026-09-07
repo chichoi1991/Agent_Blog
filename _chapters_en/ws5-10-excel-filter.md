@@ -82,7 +82,7 @@ Add the tool and enter the connector name and description in the details.
 | `Name` | Seoul electricity charges by district lookup |
 | `Description` | Use this when you need to analyze electricity usage by district in Seoul and query the time-series data source. |
 
-![1]({{ site.baseurl }}/assets/image/ws3/6-2)
+![1]({{ '/assets/image/ws3/6-2.png' | relative_url }})
 
 Then, in the **Inputs** window, enter the SharePoint path and table for the uploaded Excel file and save.
 

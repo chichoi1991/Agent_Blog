@@ -65,23 +65,23 @@ In this workshop, you will add an email-sending tool so the agent can send an em
 
 ## 1. Add an email-sending tool
 In the agent settings window, select [Tools] - [+ Add a tool].
-<img width="1166" height="598" alt="image" src="https://github.com/user-attachments/assets/671c05ef-8a90-4001-8ed0-a70f57bf84a8" />
+<img width="1166" height="598" alt="image" src="{{ '/assets/image/github-attachments/671c05ef-8a90-4001-8ed0-a70f57bf84a8.png' | relative_url }}" />
 
 Search for and select "Office 365 Outlook" from recommended connectors or tool search.
-<img width="1063" height="779" alt="image" src="https://github.com/user-attachments/assets/eb82dc7b-5d2b-454d-bcfb-8d27948be6f7" />
+<img width="1063" height="779" alt="image" src="{{ '/assets/image/github-attachments/eb82dc7b-5d2b-454d-bcfb-8d27948be6f7.png' | relative_url }}" />
 
 Then select the "Send an email (V2)" action.
-<img width="1063" height="779" alt="image" src="https://github.com/user-attachments/assets/1f89de44-65f9-4b70-b4c2-8963a507d00f" />
+<img width="1063" height="779" alt="image" src="{{ '/assets/image/github-attachments/1f89de44-65f9-4b70-b4c2-8963a507d00f.png' | relative_url }}" />
 
 When you select the tool, an OAuth connection window appears so you can use the Office 365 Outlook connector.
 Use [Create new connection], enter the sign-in information for the connected account, and click Create.
-<img width="1009" height="738" alt="image" src="https://github.com/user-attachments/assets/d9b5c7f9-04cc-43da-b6a0-f32af54d6b6f" />
+<img width="1009" height="738" alt="image" src="{{ '/assets/image/github-attachments/d9b5c7f9-04cc-43da-b6a0-f32af54d6b6f.png' | relative_url }}" />
 
-<img width="1022" height="738" alt="image" src="https://github.com/user-attachments/assets/599eb77c-27b3-4ca8-834e-47078913cd4d" />
+<img width="1022" height="738" alt="image" src="{{ '/assets/image/github-attachments/599eb77c-27b3-4ca8-834e-47078913cd4d.png' | relative_url }}" />
 
 When the connection is complete, the connected account information and a green icon appear as shown below.
 Select [Add and configure] to go to the detailed settings for the email-sending connector.
-<img width="1004" height="732" alt="image" src="https://github.com/user-attachments/assets/e27dc93e-d282-48dc-bcc9-a52b9bb0ddbe" />
+<img width="1004" height="732" alt="image" src="{{ '/assets/image/github-attachments/e27dc93e-d282-48dc-bcc9-a52b9bb0ddbe.png' | relative_url }}" />
 
 ## 2. Configure the email-sending connector basics
 Next, specify the settings required for the agent to send email.
@@ -90,7 +90,7 @@ The first thing to do is to enter when and how this tool should be used in the *
 
 This description is referenced when the agent needs to choose a tool, so it should explain the situation in as much detail as possible to help the agent follow instructions accurately.
 
-<img width="1181" height="460" alt="image" src="https://github.com/user-attachments/assets/af5fd88b-afb1-4832-a465-4d2040e5114e" />
+<img width="1181" height="460" alt="image" src="{{ '/assets/image/github-attachments/af5fd88b-afb1-4832-a465-4d2040e5114e.png' | relative_url }}" />
 
 
 ```
@@ -106,7 +106,7 @@ Keep this setting when the user's permissions should be used to search their mai
 When only a limited account can access a specific system (for example, SAP or DB access), 
 change it to maker-provided credentials so users can access the data without signing in.
 
-<img width="801" height="336" alt="image" src="https://github.com/user-attachments/assets/3d359fd6-7af5-49c0-b1e7-99347b5e36f6" />
+<img width="801" height="336" alt="image" src="{{ '/assets/image/github-attachments/3d359fd6-7af5-49c0-b1e7-99347b5e36f6.png' | relative_url }}" />
 
 ---
 ## 3. Configure input parameters
@@ -120,11 +120,11 @@ For sending email, specify the required input parameters and write descriptions 
 |CC|Custom value|User.Email|
 
 You can add parameters by selecting **[Add input]** on the right.
-<img width="839" height="480" alt="image" src="https://github.com/user-attachments/assets/21c78018-79a4-42ab-aaa0-fc97f0a32c35" />
+<img width="839" height="480" alt="image" src="{{ '/assets/image/github-attachments/21c78018-79a4-42ab-aaa0-fc97f0a32c35.png' | relative_url }}" />
 
 Then, for parameters set to Dynamically fill with AI, select **Custom** to enter that parameter's description.
 
-<img width="792" height="642" alt="image" src="https://github.com/user-attachments/assets/d42a0d11-da72-430b-b683-02af538aace7" />
+<img width="792" height="642" alt="image" src="{{ '/assets/image/github-attachments/d42a0d11-da72-430b-b683-02af538aace7.png' | relative_url }}" />
 
 For parameters set to **Custom value**, you can enter them manually or click ... to enter system/environment variables or formulas.
 In this workshop, select **User.Email** from system variables so the requester's email address can be entered as a reference.
@@ -134,7 +134,7 @@ Finally, in **[Completion]**, configure the message shown when the tool finishes
 For the post-run action, select **Send a specific response (specified below)**,
 then specify the following message.
 
-<img width="846" height="397" alt="image" src="https://github.com/user-attachments/assets/fa991646-b33f-4dc1-b676-c1a85fa3fa1d" />
+<img width="846" height="397" alt="image" src="{{ '/assets/image/github-attachments/fa991646-b33f-4dc1-b676-c1a85fa3fa1d.png' | relative_url }}" />
 
 ```
 As requested, I sent this content to the owner by email.
@@ -152,7 +152,7 @@ but if a user enters "send an email," the tool may be selected and run, while de
 Therefore, return to the **Overview** and enter Instructions for the added tool.
 When editing Instructions, enter ** / ** to explicitly mention Tools, agents, or Topics.
 
-<img width="972" height="707" alt="image" src="https://github.com/user-attachments/assets/3f41fb6f-62c0-482c-9d3e-109ddc49fd03" />
+<img width="972" height="707" alt="image" src="{{ '/assets/image/github-attachments/3f41fb6f-62c0-482c-9d3e-109ddc49fd03.png' | relative_url }}" />
 
 
 ```
@@ -179,9 +179,9 @@ Inquiry details: Enter a detailed summary of the user's inquiry.
 
 After you finish editing the Instructions and save them, test whether the email is sent correctly.
 
-<img width="1195" height="1156" alt="image" src="https://github.com/user-attachments/assets/0459dfa8-5ae9-4bb6-b952-d89e6945e352" />
+<img width="1195" height="1156" alt="image" src="{{ '/assets/image/github-attachments/0459dfa8-5ae9-4bb6-b952-d89e6945e352.png' | relative_url }}" />
 
-<img width="580" height="614" alt="image" src="https://github.com/user-attachments/assets/59b02d08-861b-4c4a-994f-5820f7e3675e" />
+<img width="580" height="614" alt="image" src="{{ '/assets/image/github-attachments/59b02d08-861b-4c4a-994f-5820f7e3675e.png' | relative_url }}" />
 
 ---
 The agent can now use additional actions through Tools. <br>

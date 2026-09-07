@@ -49,10 +49,10 @@ In this workshop, you will extend the email-sending connector scenario from earl
 ## 1. Create a Flow
 
 To create a Flow, select **[+ Add tool]** -> **[+ New tool]** from **[Overview]**.
-<img width="1081" height="779" alt="image" src="https://github.com/user-attachments/assets/d963a73a-b1e3-4471-8547-e99663380b18" />
+<img width="1081" height="779" alt="image" src="{{ '/assets/image/github-attachments/d963a73a-b1e3-4471-8547-e99663380b18.png' | relative_url }}" />
 
 Next, select **[Agent flow]** to move to the designer page for creating a new Flow.
-<img width="1063" height="783" alt="image" src="https://github.com/user-attachments/assets/605cccab-5010-442e-9b80-7d7d8c786b70" />
+<img width="1063" height="783" alt="image" src="{{ '/assets/image/github-attachments/605cccab-5010-442e-9b80-7d7d8c786b70.png' | relative_url }}" />
 
 When you move to the Flow designer, two actions are added by default.
 - When an agent calls the flow: Acts as a trigger. You can specify the input variables to use here. 
@@ -61,15 +61,15 @@ When you move to the Flow designer, two actions are added by default.
 In this scenario, you only need inputs for the email address, cc, subject, and body values required for sending email and creating a post.<br>
 Because there is no need to return a separate output result, add only input variables under "When an agent calls the flow."
 <br>
-<img width="675" height="395" alt="image" src="https://github.com/user-attachments/assets/722d2663-b985-4f0e-8117-347ffb671346" />
+<img width="675" height="395" alt="image" src="{{ '/assets/image/github-attachments/722d2663-b985-4f0e-8117-347ffb671346.png' | relative_url }}" />
 <br>
 To add input variables, select "When an agent calls the flow" and click "[+ Add an input]."<br>
 Add the input variables as shown below.
 
-<img width="648" height="225" alt="image" src="https://github.com/user-attachments/assets/4585ee60-3a34-481b-b959-8416ce75efc2" />
+<img width="648" height="225" alt="image" src="{{ '/assets/image/github-attachments/4585ee60-3a34-481b-b959-8416ce75efc2.png' | relative_url }}" />
 
 <br>
-<img width="666" height="275" alt="image" src="https://github.com/user-attachments/assets/6833cedd-c723-408f-8f36-66ae1c114cf0" />
+<img width="666" height="275" alt="image" src="{{ '/assets/image/github-attachments/6833cedd-c723-408f-8f36-66ae1c114cf0.png' | relative_url }}" />
 
 |Variable name|Type|
 |---|---|
@@ -86,25 +86,25 @@ After you finish entering variables, add and configure the two tasks to run in t
 2. Post a message to a Teams channel
 
 First, click the [+] button under "When an agent calls the flow" to view the tasks you can add.<br>
-<img width="976" height="845" alt="image" src="https://github.com/user-attachments/assets/281c490c-f6a5-4f0e-9d45-d889db12748d" />
+<img width="976" height="845" alt="image" src="{{ '/assets/image/github-attachments/281c490c-f6a5-4f0e-9d45-d889db12748d.png' | relative_url }}" />
 
 Select "Office 365 Outlook" from search or from the connector list at the bottom, <br>then select "Send an email (V2)" as before.
-<img width="601" height="522" alt="image" src="https://github.com/user-attachments/assets/d0053a79-95b1-491d-a4c6-40ab7946b7c5" />
+<img width="601" height="522" alt="image" src="{{ '/assets/image/github-attachments/d0053a79-95b1-491d-a4c6-40ab7946b7c5.png' | relative_url }}" />
 
 When the email connector is added, a UI similar to the previous session appears.<br>
 Select advanced parameters and add CC.
-<img width="758" height="703" alt="image" src="https://github.com/user-attachments/assets/7997a038-ca65-43b0-b5b2-6da15c198873" />
+<img width="758" height="703" alt="image" src="{{ '/assets/image/github-attachments/7997a038-ca65-43b0-b5b2-6da15c198873.png' | relative_url }}" />
 <br>
 
 To enter variables, select the **gear icon** in the upper-right corner of the email connector and click **Use dynamic content**.
-<img width="797" height="218" alt="image" src="https://github.com/user-attachments/assets/c68a61b3-b360-47d3-a5b4-438e9391e183" />
+<img width="797" height="218" alt="image" src="{{ '/assets/image/github-attachments/c68a61b3-b360-47d3-a5b4-438e9391e183.png' | relative_url }}" />
 
 Then enter / in each parameter value and insert the variable names declared under "When an agent calls the flow."
-<img width="427" height="359" alt="image" src="https://github.com/user-attachments/assets/fa2921eb-1cd4-455d-9abd-f100ce4fb41b" />
+<img width="427" height="359" alt="image" src="{{ '/assets/image/github-attachments/fa2921eb-1cd4-455d-9abd-f100ce4fb41b.png' | relative_url }}" />
 
-<img width="883" height="783" alt="image" src="https://github.com/user-attachments/assets/2cde6243-e7a3-40ad-88fb-2b2b37548717" />
+<img width="883" height="783" alt="image" src="{{ '/assets/image/github-attachments/2cde6243-e7a3-40ad-88fb-2b2b37548717.png' | relative_url }}" />
 
-<img width="821" height="783" alt="image" src="https://github.com/user-attachments/assets/a74ee7b7-c4a6-48ca-9c1b-b301b1cb22f1" />
+<img width="821" height="783" alt="image" src="{{ '/assets/image/github-attachments/a74ee7b7-c4a6-48ca-9c1b-b301b1cb22f1.png' | relative_url }}" />
 
 After you declare all variables, the email-sending Flow task is complete.<br>
 When the Flow is called, the values of each variable passed by the agent are mapped to the email connector parameters, and the email is sent.
@@ -117,7 +117,7 @@ Next, add a new connector so a message can automatically be posted to a Teams ch
 As in the previous task, click the [+] button under the email action and add the 
 **[Microsoft Teams] - [Post message in a chat or channel]** action.
 
-<img width="762" height="683" alt="image" src="https://github.com/user-attachments/assets/3c7439ac-5fdf-402f-9780-1e1a9d12323e" />
+<img width="762" height="683" alt="image" src="{{ '/assets/image/github-attachments/3c7439ac-5fdf-402f-9780-1e1a9d12323e.png' | relative_url }}" />
 
 Specify the channel where the notification message will be uploaded with the following settings.
 
@@ -137,13 +137,13 @@ For the message, add a dynamic variable so you can use the text used when sendin
 A new inquiry has arrived. Please check it!<br> @{triggerBody()?['text_3']}
 ```
 
-<img width="695" height="583" alt="image" src="https://github.com/user-attachments/assets/1ee9844e-50e0-4752-b185-da3a89fd1d08" />
+<img width="695" height="583" alt="image" src="{{ '/assets/image/github-attachments/1ee9844e-50e0-4752-b185-da3a89fd1d08.png' | relative_url }}" />
 <br>
 
 When the task is complete, click the **Publish** button at the top to publish the Flow. Then select [Back to agent], and you can automatically see the added Flow on the agent Overview page. 
-<img width="813" height="393" alt="image" src="https://github.com/user-attachments/assets/a3910866-899d-42ec-82fc-b8147b630d2e" />
+<img width="813" height="393" alt="image" src="{{ '/assets/image/github-attachments/a3910866-899d-42ec-82fc-b8147b630d2e.png' | relative_url }}" />
 <br>
-<img width="981" height="408" alt="image" src="https://github.com/user-attachments/assets/b6fabf2c-cf60-469b-934f-b9c84f150b96" />
+<img width="981" height="408" alt="image" src="{{ '/assets/image/github-attachments/b6fabf2c-cf60-469b-934f-b9c84f150b96.png' | relative_url }}" />
 
 ---
 ## 4. Apply the Flow
@@ -152,7 +152,7 @@ Next, add Instructions and parameter descriptions so the Flow can actually run.<
 When you go to **[Tools]**, you can see that the Flow you created earlier has been added with the name **Untitled**.
 
 However, because the current configuration duplicates the email-sending task you did earlier, first turn off the **Send an email (V2)** task toggle in **Tools**.
-<img width="1258" height="379" alt="image" src="https://github.com/user-attachments/assets/69e1c73e-aaae-4a62-bb5b-9b7c22a941d4" />
+<img width="1258" height="379" alt="image" src="{{ '/assets/image/github-attachments/69e1c73e-aaae-4a62-bb5b-9b7c22a941d4.png' | relative_url }}" />
 
 Then go to the **Untitled** Flow and apply the same work you did for **Send an email (V2)**.
 |Parameter|Value|
@@ -165,7 +165,7 @@ Then go to the **Untitled** Flow and apply the same work you did for **Send an e
 |CC|Custom value - User.Email|
 |After running|Send a specific response - As requested, I sent this content to the owner by email. <br> The owner will contact you separately as soon as possible.|
 <br>
-<img width="1181" height="1145" alt="image" src="https://github.com/user-attachments/assets/7d09943b-5053-4853-9cae-a95ed665b2db" />
+<img width="1181" height="1145" alt="image" src="{{ '/assets/image/github-attachments/7d09943b-5053-4853-9cae-a95ed665b2db.png' | relative_url }}" />
 
 <br>
 
@@ -174,21 +174,21 @@ After configuration is complete, select **Save**, then go to **Overview** and mo
 Because the existing Instructions were configured to use the **Send an email (V2)** tool when escalation occurs,
 remove the declaration for that tool from the Instructions, declare **Send email and notification flow**, and save.
 
-<img width="1010" height="639" alt="image" src="https://github.com/user-attachments/assets/e56bbe69-d6e2-4bd5-b90c-280c0e7b226a" />
+<img width="1010" height="639" alt="image" src="{{ '/assets/image/github-attachments/e56bbe69-d6e2-4bd5-b90c-280c0e7b226a.png' | relative_url }}" />
 
 ---
 
 Test whether the Flow actually runs.
 
-<img width="1278" height="1169" alt="image" src="https://github.com/user-attachments/assets/fbcf1326-89f0-4f7b-b3d9-bf84977d0f43" />
+<img width="1278" height="1169" alt="image" src="{{ '/assets/image/github-attachments/fbcf1326-89f0-4f7b-b3d9-bf84977d0f43.png' | relative_url }}" />
 <br>
 <br>
 
-<img width="1803" height="526" alt="image" src="https://github.com/user-attachments/assets/a7341ff1-eb08-4bb1-a339-3fbd029d338d" />
+<img width="1803" height="526" alt="image" src="{{ '/assets/image/github-attachments/a7341ff1-eb08-4bb1-a339-3fbd029d338d.png' | relative_url }}" />
 <br>
 <br>
 
-<img width="633" height="705" alt="image" src="https://github.com/user-attachments/assets/c4d2c9bd-d5a3-4d38-92b2-7778793fdc4a" />
+<img width="633" height="705" alt="image" src="{{ '/assets/image/github-attachments/c4d2c9bd-d5a3-4d38-92b2-7778793fdc4a.png' | relative_url }}" />
 <br>
 <br>
 

@@ -40,7 +40,7 @@ Before deploying the agent to Teams, review the checklist below.
 
 Click the **Publish** button in the upper-right corner of the agent overview screen.
 
-<img width="854" height="391" alt="image" src="https://github.com/user-attachments/assets/1bdf16ac-b7ce-470d-b89f-c9c48f7fcf91" />
+<img width="854" height="391" alt="image" src="{{ '/assets/image/github-attachments/1bdf16ac-b7ce-470d-b89f-c9c48f7fcf91.png' | relative_url }}" />
 
 <br>
 
@@ -53,7 +53,7 @@ In the publishing pop-up, review the content and click **Publish**.
 
 Publishing may take 1-2 minutes to complete.
 
-<img width="1065" height="549" alt="image" src="https://github.com/user-attachments/assets/fa5f499a-37cf-4f5e-a922-de21133dc27d" />
+<img width="1065" height="549" alt="image" src="{{ '/assets/image/github-attachments/fa5f499a-37cf-4f5e-a922-de21133dc27d.png' | relative_url }}" />
 
 <br>
 

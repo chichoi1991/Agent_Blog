@@ -11,7 +11,7 @@ parent: "ws1"
 
 ## Step 5: 게시 및 배포
 
-<img width="1720" height="1065" alt="image" src="https://github.com/user-attachments/assets/5755a4eb-59a3-4d20-b638-c7d7ddf5d182" /><img width="1720" height="1065" alt="image" src="https://github.com/user-attachments/assets/54418a6f-82bd-491e-acf3-0a8696b38e18" /># 에이전트 게시 및 배포
+<img width="1720" height="1065" alt="image" src="{{ '/assets/image/github-attachments/5755a4eb-59a3-4d20-b638-c7d7ddf5d182.png' | relative_url }}" /><img width="1720" height="1065" alt="image" src="{{ '/assets/image/github-attachments/54418a6f-82bd-491e-acf3-0a8696b38e18.png' | relative_url }}" /># 에이전트 게시 및 배포
 
 앞서 1~4 단계를 완료하여 에이전트가 테스트 패널에서 정상 동작을 한다면,
 이제 이 에이전트를 실제 배포하여 팀즈에서 이용할 수 있도록 해보겠습니다.
@@ -19,44 +19,44 @@ parent: "ws1"
 
 ## 에이전트 게시
 설정이 완료된 에이전트에 대해 우측 상단 [게시] 버튼을 선택하여 게시를 합니다.
-<img width="854" height="391" alt="image" src="https://github.com/user-attachments/assets/1bdf16ac-b7ce-470d-b89f-c9c48f7fcf91" />
-<img width="1065" height="549" alt="image" src="https://github.com/user-attachments/assets/fa5f499a-37cf-4f5e-a922-de21133dc27d" />
+<img width="854" height="391" alt="image" src="{{ '/assets/image/github-attachments/1bdf16ac-b7ce-470d-b89f-c9c48f7fcf91.png' | relative_url }}" />
+<img width="1065" height="549" alt="image" src="{{ '/assets/image/github-attachments/fa5f499a-37cf-4f5e-a922-de21133dc27d.png' | relative_url }}" />
 
 
 ## 에이전트 채널 추가
 게시가 완료되었으면, 이제 이 에이전트에게 프롬프트를 입력할 채널을 선택합니다.
 우측 상단의 채널탭을 선택해 이동합니다.
-<img width="570" height="464" alt="image" src="https://github.com/user-attachments/assets/06d0c73b-4c26-40fc-b6a3-03d638559a7d" />
+<img width="570" height="464" alt="image" src="{{ '/assets/image/github-attachments/06d0c73b-4c26-40fc-b6a3-03d638559a7d.png' | relative_url }}" />
 <br> <br> 
 
 Copilot studio에서는 팀즈, Microsoft 365 copilot 앱을 포함한 다양한 인터페이스에서 에이전트를 이용할 수 있도록 채널을 제공하고 있습니다. <br>
 이번 실습은 팀즈, Copilot app에 에이전트를 배포하는것이 목적이기 때문에,** Microsoft 채널에 있는 Teams 및 Microsoft 365 Copilot** 을 선택합니다.<br>
-<img width="566" height="286" alt="image" src="https://github.com/user-attachments/assets/6961a343-7896-4939-aae9-4633543bccc5" />
+<img width="566" height="286" alt="image" src="{{ '/assets/image/github-attachments/6961a343-7896-4939-aae9-4633543bccc5.png' | relative_url }}" />
 
 
 Teams 및 Microsoft 365 Copilot 을 선택하면, 우측 패널에 채널 추가 정보가 나옵니다. <br>
 Microsoft 365 켜기가 체크 되어있는지 확인하고, **채널 추가**를 선택합니다. <br>
-<img width="575" height="326" alt="image" src="https://github.com/user-attachments/assets/f4d2c2f9-5311-4d36-85d2-1f008592188f" />
+<img width="575" height="326" alt="image" src="{{ '/assets/image/github-attachments/f4d2c2f9-5311-4d36-85d2-1f008592188f.png' | relative_url }}" />
 <br> <br> 
 추가가 완료되면 패널을 닫은 뒤, 다시 에이전트를 게시합니다.
-<img width="1708" height="951" alt="image" src="https://github.com/user-attachments/assets/a16cff64-4d14-47a7-9525-a643c1c24842" />
+<img width="1708" height="951" alt="image" src="{{ '/assets/image/github-attachments/a16cff64-4d14-47a7-9525-a643c1c24842.png' | relative_url }}" />
 <br> <br> 
 
 ## 채널 공유 정책 변경
 채널 추가 및 게시가 완료되면 지금부터 이 에이전트는 Teams에서 이용할 수 있습니다. <br> 
 다만, 기본설정은 제작자만 이용할 수 있기에, 설정을 통해 공유 옵션을 주도록 합니다. <br>
 다시 ** Microsoft 채널에 있는 Teams 및 Microsoft 365 Copilot** 로 이동하여 **가용성 옵션**을 선택합니다.
-<img width="860" height="533" alt="image" src="https://github.com/user-attachments/assets/70248bc8-7223-4798-a661-afd46f249372" />
+<img width="860" height="533" alt="image" src="{{ '/assets/image/github-attachments/70248bc8-7223-4798-a661-afd46f249372.png' | relative_url }}" />
 <br> <br> 
 
 다음으로 **공유 관리** 버튼을 클릭합니다.
-<img width="860" height="533" alt="image" src="https://github.com/user-attachments/assets/bd51e0e4-b303-478e-bab3-12a58ef3cc35" />
+<img width="860" height="533" alt="image" src="{{ '/assets/image/github-attachments/bd51e0e4-b303-478e-bab3-12a58ef3cc35.png' | relative_url }}" />
 <br> <br>
 이후 내조직을 선택하여, **뷰어** 권한을 지정한 후, 업데이트를 클릭합니다.
-<img width="1720" height="1065" alt="image" src="https://github.com/user-attachments/assets/cf22aef1-0b65-4a31-acb0-56d851cd656b" />
+<img width="1720" height="1065" alt="image" src="{{ '/assets/image/github-attachments/cf22aef1-0b65-4a31-acb0-56d851cd656b.png' | relative_url }}" />
 <br> <br> 
 업데이트가 완료되면 다시 가용성 옵션으로 돌아가 **링크 복사**를 선택하여 해당 링크를 브라우저 또는 팀즈에 공유하게 되면 나를 포함한 조직원들이 에이전트를 이용할 수 있게 됩니다.
-<img width="860" height="533" alt="image" src="https://github.com/user-attachments/assets/225c923d-d20b-4960-97a6-ff15808617b1" />
+<img width="860" height="533" alt="image" src="{{ '/assets/image/github-attachments/225c923d-d20b-4960-97a6-ff15808617b1.png' | relative_url }}" />
 <br> <br> 
 
 스토어에 표시 기능은, 팀즈,Copilot 앱 스토어에 구축한 에이전트가 표시되도록 하는 기능이며, <br> 
@@ -64,14 +64,14 @@ Microsoft 365 켜기가 체크 되어있는지 확인하고, **채널 추가**�
 **내 조직의 모든 사람에게 표시**는 IT관리자의 승인 이후 배포가 됩니다. <br> 
 
 실습을 위해 복사한 링크를 팀즈의 나와의 채팅을 통해 올려, 링크를 클릭합니다.
-<img width="1720" height="1065" alt="image" src="https://github.com/user-attachments/assets/255cefe8-fac7-4519-ab15-37b8568bb72c" />
+<img width="1720" height="1065" alt="image" src="{{ '/assets/image/github-attachments/255cefe8-fac7-4519-ab15-37b8568bb72c.png' | relative_url }}" />
 <br> <br>
 해당 링크를 클릭하면 다음과 같이 표시되며, [추가] 버튼을 클릭합니다.
-<img width="1720" height="1065" alt="image" src="https://github.com/user-attachments/assets/78592e35-93a7-43dd-af24-67a1f60304a8" />
+<img width="1720" height="1065" alt="image" src="{{ '/assets/image/github-attachments/78592e35-93a7-43dd-af24-67a1f60304a8.png' | relative_url }}" />
 <br> <br>
 추가가 완료되었다면 Copilot 으로 열기를 눌러 Copilot 환경에서 Agent를 실행합니다.
-<img width="1720" height="1065" alt="image" src="https://github.com/user-attachments/assets/b34d09ce-ec5c-47d9-b044-d145eeeb49db" />
-<img width="1720" height="1065" alt="image" src="https://github.com/user-attachments/assets/d190c50c-5e38-41f1-a196-2c524936a527" />
+<img width="1720" height="1065" alt="image" src="{{ '/assets/image/github-attachments/b34d09ce-ec5c-47d9-b044-d145eeeb49db.png' | relative_url }}" />
+<img width="1720" height="1065" alt="image" src="{{ '/assets/image/github-attachments/d190c50c-5e38-41f1-a196-2c524936a527.png' | relative_url }}" />
 
 <br> <br>
  
@@ -81,24 +81,24 @@ Microsoft 365 켜기가 체크 되어있는지 확인하고, **채널 추가**�
 Copilot studio에 대한 기초 소개를 주제로 블로그 초안을 작성하고 싶어
 ```
 <br> 
-<img width="1720" height="1392" alt="image" src="https://github.com/user-attachments/assets/4c63f83e-2372-423e-b046-b3f07f8c23e1" />
+<img width="1720" height="1392" alt="image" src="{{ '/assets/image/github-attachments/4c63f83e-2372-423e-b046-b3f07f8c23e1.png' | relative_url }}" />
 <br> 
 
 ```
 이 내용을 chiwonchoi@microsoft.com 으로 메일 발송해줘
 ```
-<img width="1720" height="1392" alt="image" src="https://github.com/user-attachments/assets/53e731e6-8935-495f-9738-91b35121f862" />
+<img width="1720" height="1392" alt="image" src="{{ '/assets/image/github-attachments/53e731e6-8935-495f-9738-91b35121f862.png' | relative_url }}" />
 <br> <br> 
 ```
 우리회사 냉장고 스펙시트를 리스트업 해줘
 ```
-<img width="1720" height="1392" alt="image" src="https://github.com/user-attachments/assets/68c54b54-2567-4042-bbd5-d6afc7cb3967" />
+<img width="1720" height="1392" alt="image" src="{{ '/assets/image/github-attachments/68c54b54-2567-4042-bbd5-d6afc7cb3967.png' | relative_url }}" />
 
 <br> <br> 
 ```
 SKSCW241RP 제품에 대한 소개 뉴스레터를 만들어서 팀즈에 게시해줘
 ```
-<img width="1720" height="1392" alt="image" src="https://github.com/user-attachments/assets/85874535-3f6c-43c7-90a6-8b015bd461a1" />
+<img width="1720" height="1392" alt="image" src="{{ '/assets/image/github-attachments/85874535-3f6c-43c7-90a6-8b015bd461a1.png' | relative_url }}" />
 
 <br> <br> 
 

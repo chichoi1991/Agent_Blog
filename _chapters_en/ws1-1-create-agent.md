@@ -14,74 +14,70 @@ parent: "ws1"
 
 # Create a Custom Engine Agent and write Instructions
 
+> **English UI screenshots, September 7, 2026:** These are actual captures from an English-language demo environment, not translated image overlays. The current preview navigation differs from the older Korean screenshots. Keep the agent private while completing the workshop.
 
 ## 1. Go to the Copilot Studio site
 
 ### To create an agent, go to the [Copilot Studio page: copilotstudio.preview.microsoft.com](https://copilotstudio.preview.microsoft.com).
-![image](https://github.com/user-attachments/assets/27577404-175d-4646-9caa-72be7e07b94d)
+![Copilot Studio home in the English-language demo environment]({{ '/assets/image/en/caldova/newcs-home.png' | relative_url }})
 
 > This workshop uses the preview site (copilotstudio.preview.microsoft.com).
 
 <br>
 
 ## 2. Change the development environment
-After the site opens, select the environment in the upper-right corner and switch to the workshop environment shared with you in advance.
-<img width="1524" height="1392" alt="image" src="https://github.com/user-attachments/assets/68e1bdfd-bec8-4ca7-881b-56a0cbb4f1cf" />
+Select the environment name near the bottom-left of the current navigation pane, then choose the workshop environment shared with you in advance. The picker below was opened in the same demo environment after agent creation; its location is the same on Home.
+![Environment picker in the current English Copilot Studio navigation]({{ '/assets/image/en/caldova/classic-environment-picker.png' | relative_url }})
 
 <br> <br> 
 
-If the following screen appears first, select ... in the upper-right corner and choose **Cancel agent creation** to return to the screen above.
-<img width="1524" height="561" alt="image" src="https://github.com/user-attachments/assets/4794e942-e580-437b-ab0f-2388c6ef330d" />
+If a creation dialog is already open, select **Cancel** before switching environments.
 
 <br> <br> 
 
 ## 3. Create an agent
 After switching environments, start creating the agent. <br>
-Select +Create in the left pane, then click + New agent.
-<img width="1528" height="469" alt="image" src="https://github.com/user-attachments/assets/dd5962f6-f5a4-4ddd-ad82-90683227473d" />
+On **Home**, select **Other ways to build**, then select the **Agent** card marked **Standard**. This is the agent type used by this Classic workshop, rather than the newer GitHub Copilot-powered agent.
+![Other ways to build, with the Standard Agent creation card]({{ '/assets/image/en/caldova/classic-create-entry.png' | relative_url }})
 
 <br> <br> 
 
-Next, the agent creation window shown below appears. Select ... on the right and check that the language is set to Ko-Kr. <br>
-If it is not, select it and change the language.
+In **Name your agent**, enter `Blog Post Agent - [Your name]`. Expand **Agent settings (Optional)** and set **Language** to **English (United States)**. Keep the workshop's assigned solution, or the default solution if none was specified.
 
-<img width="1524" height="755" alt="image" src="https://github.com/user-attachments/assets/5e562739-0f9f-4462-bda1-5146f5857766" />
+![Name your agent dialog with English (United States) selected]({{ '/assets/image/en/caldova/classic-create-english.png' | relative_url }})
 
 <br> <br> 
 
-On the first screen, you can use natural language to get help writing the agent's basic settings. <br> 
-In this workshop, we will skip that and create the agent immediately by selecting Create. <br>
-<img width="1248" height="1261" alt="image" src="https://github.com/user-attachments/assets/ebe5a018-c2c1-4a0b-9fc5-b1be25928015" />
+Select **Create** and wait for provisioning to finish. The current Standard-agent creation dialog does not require the older conversational setup step.
 <br> <br> 
 
 ## 4. Configure the agent basics
 
-After selecting Create, the agent settings page appears as shown below.
+After selecting Create, the agent **Overview** page appears.
 Now enter the agent's basic name, description, and Instructions here.
 
-First, select [Settings] in the upper-right corner to review and configure the agent's basic settings.
-<img width="1524" height="454" alt="image" src="https://github.com/user-attachments/assets/4dffbd0f-4bd3-4f64-8f5f-e4c9f84106a4" />
+On **Overview**, use **Select your agent's model** to select **GPT-4.1**, if it is available in your environment. Model availability can change. Then select **Settings** at the top to review orchestration and knowledge capabilities.
+![The agent model selector on Overview, showing GPT-4.1]({{ '/assets/image/en/caldova/classic-model-gpt41.png' | relative_url }})
 <br> <br>
 
 
-In Settings, you can configure various agent capabilities, such as whether to use generative orchestration, the reasoning model, and the language model.
-For this workshop, enable the following features. <br>
+In **Settings**, review the following capabilities. Premium and preview features depend on the environment's licensing and policies; enable them only when permitted for your workshop. <br>
 
 | Feature | Setting |
 | :---: | --- |
-| Use generative orchestration | Enabled |
-| Agent language model | GPT-4.1 |
-| Use general knowledge | Enabled |
-| Use information from the web | Enabled |
-| Code interpreter | Enabled |
-| Ground tenant graph with semantic search | Enabled |
+| Use generative AI orchestration | Yes |
+| Agent language model (on Overview) | GPT-4.1, where available |
+| Allow ungrounded responses | On for this workshop |
+| Use information from the Web | On |
+| Code interpreter | Optional; enable only if permitted and needed |
+| Tenant graph grounding with semantic search | On, where licensed and available |
 
 > You can learn about the difference between classic and generative [here](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions).
 
-<img width="1524" height="1050" alt="image" src="https://github.com/user-attachments/assets/3c1e81c2-6bdf-41d7-a987-7462d75a0d4b" />
+![English orchestration settings for the demo agent]({{ '/assets/image/en/caldova/classic-settings-orchestration.png' | relative_url }})
 <br> <br> 
-After you finish all settings, select the **Save** button at the bottom center to save and close the settings.
-<img width="1504" height="1035" alt="image" src="https://github.com/user-attachments/assets/2220a13c-3551-4c14-b6f0-f52013d8c997" />
+Scroll down to the knowledge, file processing, and search settings. The actual demo capture below shows **Code interpreter Off**; it was not enabled solely to take a screenshot. Select **Save** after any permitted changes, then return to **Overview**.
+![Knowledge, file processing, and search settings, including the Save button]({{ '/assets/image/en/caldova/classic-settings-knowledge.png' | relative_url }})
 
 <br> <br> 
 
@@ -89,8 +85,10 @@ After you finish all settings, select the **Save** button at the bottom center t
 
 Next, set the agent name, description, and Instructions.
 
-Select [Edit] to the right of the Details tab and the Instructions tab to edit the agent information.
-<img width="1504" height="1035" alt="image" src="https://github.com/user-attachments/assets/ca8cb7e1-945e-40a0-9439-dac772520caa" />
+Select **Edit** on the **Details** and **Instructions** cards to edit the agent information. Save each card and wait for the save to complete before navigating away.
+![Editing the name and description of the English demo agent]({{ '/assets/image/en/caldova/classic-details-edit.png' | relative_url }})
+
+![Editing the actual agent instructions with English responses configured]({{ '/assets/image/en/caldova/classic-instructions-edit.png' | relative_url }})
 
 <br> <br> 
 
@@ -105,14 +103,14 @@ Blog Post Agent - [Your name]
 
 ### Agent description
 ```
-An agent that uses internet and SharePoint materials to help write blog posts, review drafts, and create images
+An agent that uses web and SharePoint materials to help write blog posts, review drafts, and prepare prompts for image generation.
 ```
 
 ### Instructions
 ```
 ## 0) Define the agent role
 You are a declarative agent that helps users efficiently write and review blog posts, send emails, create prompts for image generation, and create images.  
-Write all responses in Korean.
+Write all responses in English.
 ---
 
 ## 1) Supported capabilities
@@ -277,7 +275,13 @@ Next, I will continue with the 'Benefits of AI in Microsoft 365' section. The ke
 
 After entering everything, select the Save button to save the agent's basic information and Instructions.
 
-<img width="1504" height="1035" alt="image" src="https://github.com/user-attachments/assets/813f3b32-d16b-44d2-bea0-98473b152280" />
+![Saved English demo agent overview]({{ '/assets/image/en/caldova/classic-agent-overview.png' | relative_url }})
+
+You can check the response language in **Test** before adding tools. For example: `I want to write a blog post about energy-efficient refrigerators. What writing modes can I choose?`
+
+![Actual English test response describing the agent's writing modes]({{ '/assets/image/en/caldova/classic-test-english.png' | relative_url }})
+
+> A new draft may show a warning that no evaluation has been run. Complete an evaluation before publishing; the screenshots here do not imply that the agent has been published or evaluated.
 
 
 ---

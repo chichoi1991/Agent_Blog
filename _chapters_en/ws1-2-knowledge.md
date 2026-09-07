@@ -14,6 +14,8 @@ parent: "ws1"
 
 # Add reference materials to the agent
 
+> **English UI screenshots, September 7, 2026:** These are actual captures from the Caldova demo environment. Its `English Screenshot Demo` SharePoint folder contains two public product specification PDFs. Use your assigned workshop folder if it has a different name.
+
 In this workshop, you will configure Knowledge so the agent can answer based on web search information and PDF data sheets stored in SharePoint in advance.
 
 ## 📚 The role of Knowledge in Copilot Studio
@@ -45,55 +47,66 @@ In Copilot Studio custom engine agents, you can use not only data in Microsoft 3
 | **API-based** | External HTTP APIs, YAML definitions | Enables real-time API calls through the OnKnowledgeRequested trigger |
 
 
-<img width="1023" height="742" alt="image" src="https://github.com/user-attachments/assets/b01a1a1c-75cd-46ec-9daa-015792a8f561" />
-<img width="1023" height="740" alt="image" src="https://github.com/user-attachments/assets/566c5a93-4c17-4a44-a229-35d3eb43ca51" />
+The **Add knowledge** dialog groups the currently available sources into Featured and Advanced categories. Availability depends on your environment and connections.
 
 ---
 
 ## Workshop
 
-First, scroll down in the agent overview to find the Knowledge tab. <br>
-Turn on the **Web search** toggle here. <br> 
-<img width="512" height="254" alt="image" src="https://github.com/user-attachments/assets/c2b81140-34b5-46ba-935e-3d0c991b775c" />
+First, open **Settings** and review **Knowledge → Use information from the Web**. In the current English UI, this setting is on the settings page rather than the older Overview card. <br>
+![English knowledge settings, including Use information from the Web]({{ '/assets/image/en/caldova/classic-settings-knowledge.png' | relative_url }})
 <br> 
 When this feature is enabled, the agent can answer user questions based on Bing Search information. <br>
 
-Next, click **+ Add Knowledge** so the agent can reference SharePoint data. <br>
-<img width="512" height="254" alt="image" src="https://github.com/user-attachments/assets/5e796dd8-8272-4486-b465-028dbdcf5f4e" />
+Next, open the **Knowledge** tab and select **Add knowledge** so the agent can reference SharePoint data. <br>
+![Actual English Add knowledge source catalog]({{ '/assets/image/en/caldova/classic-knowledge-catalog.png' | relative_url }})
 <br> <br> 
 
 When you click the button, a pop-up appears asking where the Knowledge you want to add is stored. <br> 
 Because this workshop uses SharePoint data, select SharePoint. <br>
-<img width="538" height="392" alt="image" src="https://github.com/user-attachments/assets/87cc18ab-1ed9-444d-ba8e-dc86efe8ff84" />
+![SharePoint knowledge dialog with Browse items and a URL input]({{ '/assets/image/en/caldova/classic-sharepoint-add.png' | relative_url }})
 <br> <br> 
 
-Next, either enter the SharePoint site address directly or click **Browse items** and select a recently accessed site.
-<img width="554" height="404" alt="image" src="https://github.com/user-attachments/assets/05fe197d-56ef-4af7-b481-2f186c10be93" />
+Next, either enter the SharePoint folder address directly or select **Browse items**. In the demo, select the checkbox beside **English Screenshot Demo** in **Communication site → Documents**, then select **Confirm selection**.
+![Selecting the English Screenshot Demo folder containing the two approved PDF files]({{ '/assets/image/en/caldova/classic-sharepoint-select-folder.png' | relative_url }})
 
   
 As in the previous Copilot Studio lite workshop, this workshop will reference only the files inside a specific library folder on a SharePoint site, so enter the path to the SharePoint folder.
 
-To find the exact site address, go to the SharePoint site. <br>
-Then go to the library folder you want to add, click **Details** on the right, and open the details side panel on the right. <br>
-Finally, copy the **Path** at the bottom to get the location of the library folder.
+Prepare or locate the workshop folder in SharePoint before selecting it. The actual demo folder contains `LSSB2692ST_Core_Refrig-Spec_Sheet.pdf` and `SKSDW2401S_Stainless_Steel_Dishwasher-Spec_Sheet.pdf`.
 
-<img width="1380" height="1278" alt="image" src="https://github.com/user-attachments/assets/b4e30695-2f74-4c3d-a374-cdf90102e24d" />
+![The two public product specification PDFs uploaded to the actual demo SharePoint folder]({{ '/assets/image/en/caldova/sharepoint-demo-library.png' | relative_url }})
+
+To find the direct folder address, open that folder in SharePoint, select **Details**, and use **Copy direct link** beside **Path** at the bottom of the details pane. This is the folder's direct path, not the `Forms/AllItems.aspx` browser view URL.
+
+![Actual SharePoint folder details with Path and Copy direct link]({{ '/assets/image/en/caldova/sharepoint-folder-path.png' | relative_url }})
 <br> 
-Select the site and library through Browse items, or paste the link you copied into the site input box and add it. It will appear as shown below. <br>
-<img width="1092" height="792" alt="image" src="https://github.com/user-attachments/assets/02429176-066d-47c3-b1e9-f16f1fbe89f4" />
+Select the folder through **Browse items**, or paste its direct path into the URL input and select **Add**. Review the selected link, set **Name** to `Product Spec Sheets`, and enter the description below. <br>
 <br> 
 
 Finally, add the following content to the description field to clarify what this Knowledge source is about.
 ```
-This Knowledge source provides Spec Sheet information for refrigerators and dishwashers.
-The data is in PDF format, and filenames are stored in the model name_product type_spec sheet format.
-Example: LSSB2692ST_Core_Refrig-Spec_Sheet -> product name: LSSB2692ST, product type: Core_Refrig (refrigerator), document content: Spec_Sheet
+This knowledge source provides public PDF specification sheets for refrigerators and dishwashers. The filenames identify the product model and type. Use these documents for product specifications, dimensions, installation requirements, and features.
 
 ```
 
-Then click the **"Add agent"** button. The agent can now answer based on the PDF files in the SharePoint site and web information.
+![Reviewing the actual SharePoint folder, English knowledge name, and description before adding it]({{ '/assets/image/en/caldova/classic-sharepoint-review.png' | relative_url }})
 
-<img width="1720" height="1392" alt="image" src="https://github.com/user-attachments/assets/ac38d914-1667-4872-a022-2a63d237f5f4" />
+Select **Add to agent**, then wait for the source to show **Ready** in the Knowledge tab. Open the source to review its saved URL and description.
+
+![The actual Product Spec Sheets knowledge source with Ready status]({{ '/assets/image/en/caldova/classic-knowledge-ready.png' | relative_url }})
+
+![Saved knowledge source details in the English Copilot Studio UI]({{ '/assets/image/en/caldova/classic-knowledge-details.png' | relative_url }})
+
+Open **Test** and ask:
+
+```text
+Using only Product Spec Sheets, list the refrigerator and dishwasher model numbers covered by the documents. Include citations.
+```
+
+The actual demo response below identifies **LSSB2692ST** and **SKSDW2401S** and cites the two uploaded PDFs. Check citations rather than assuming that Ready status alone proves a grounded response.
+
+![Actual English response grounded in the two SharePoint PDF documents, with citations]({{ '/assets/image/en/caldova/classic-knowledge-grounded-test.png' | relative_url }})
 
 <br>
 <br>

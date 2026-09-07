@@ -14,160 +14,86 @@ parent: "ws1"
 
 # Add a tool to the agent #2 (plugin connector)
 
-This time, you will add a general plugin connector as a tool instead of an MCP server. <br>
-For an MCP server, each tool description and input variable description is already written, so there is nothing more to do.
-When you call a general connector as a tool, however, you must write those descriptions yourself. <br>
+This time, you will add a general plugin connector as a tool instead of an MCP server. For an MCP server, tool descriptions and input schemas are supplied by the server. With a general connector action, you can configure its purpose, inputs, authentication, and completion behavior yourself.
 
-This can be extra work, but when the variables or scenarios entered into the connector are complex or uncommon, <br> 
-using a general connector for this type of work has the advantage of letting you provide clearer instructions.
-
+This is useful when a scenario requires explicit input values and more precise instructions about when the action should run.
 
 ---
 
 ## Workshop
-In this workshop, you will implement a tool that lets the agent publish a newsletter or blog post to a specific Teams channel as a post. <br>
 
-### Add a tool for posting messages to a Teams channel
+> **Actual English UI capture, September 7, 2026:** These screenshots show a real Teams connection and saved connector configuration in Caldova. No Teams message was posted. A destination channel was deliberately not hardcoded for this setup-only run.
 
-Similarly, select **+ Add tool** from the **Overview**.
-<img width="1186" height="686" alt="image" src="https://github.com/user-attachments/assets/68cf3d4d-bdf0-48a0-bfe7-28a368670d33" />
-<br> <br> 
-Search for and select **Microsoft Teams** from recommendations or tool search.
-<img width="746" height="464" alt="image" src="https://github.com/user-attachments/assets/f72d7d76-da73-43a1-8845-adf372f94009" />
-<br> <br>
+### 1. Add the Teams connector action
 
-From the Teams tool collection, select the **Post message in a chat or channel** tool.
-<img width="715" height="455" alt="image" src="https://github.com/user-attachments/assets/56fda9c2-bdc6-4214-b817-38e500dacacb" />
-<br> <br> 
+Open **Tools → Add tool** and select **Microsoft Teams** from the connector catalog.
 
-As before, if the connection is not already set up, use **Create new connection** to connect the tool to the agent. <br>
-Then select **Add and configure** to add the tool and continue configuring it. <br>
+![Actual English connector catalog, including Microsoft Teams]({{ '/assets/image/en/caldova/classic-tools-catalog.png' | relative_url }})
 
-<img width="697" height="451" alt="image" src="https://github.com/user-attachments/assets/6fe1a004-f626-421f-9ac2-d569287f7b1d" />
-<br> <br> <br> 
-### Tool settings
-After the tool is added, the details page shown below appears. 
-Unlike the earlier MCP server tool, you can see that you can configure information such as the name, description, and inputs.
-<img width="1111" height="1101" alt="image" src="https://github.com/user-attachments/assets/44b46518-e066-4c2e-beda-d70959129104" />
-<br> <br> 
-Change the description, inputs, and completion settings as follows.
+Select **Post message in a chat or channel**.
 
-**Description**
-```
-Use this tool when the user asks to publish or post content to Teams or a Teams channel.
-```
-<img width="1021" height="529" alt="image" src="https://github.com/user-attachments/assets/43630d5b-9f26-48c9-9a45-961f8983dafb" />
+![Selecting the actual Teams connector action in the English UI]({{ '/assets/image/en/caldova/teams-select-action.png' | relative_url }})
 
-<br> <br> 
+If no connection exists, open **Connection → Create new connection**. Enter an optional display name, select **Create**, and choose the approved workshop account in the Microsoft sign-in window.
 
-----
-**Inputs**
-<br> <br>
-On the Inputs tab, when you select the value for the Fill using field, you can choose one of two options: dynamically fill with AI or custom value.
-<br> 
-Select custom value for both Post as and Post in. <br> 
-<img width="495" height="239" alt="image" src="https://github.com/user-attachments/assets/d9228dec-3709-4f7a-b574-40827b817c54" />
-<br> <br> 
-After selecting the value, the available options appear as shown below. <br> 
-For Post as, select User. For Post in, select Channel.<br> 
-<img width="443" height="203" alt="image" src="https://github.com/user-attachments/assets/cb2db0c1-b8ec-4483-bb1b-ad11e050d616" />
-<br> 
-<img width="469" height="233" alt="image" src="https://github.com/user-attachments/assets/cdad9ffd-40c2-4a3e-ae3b-1dd5f780c2db" />
-<br> <br> 
-When Post in is set to Channel, new input variables named Team, Channel, and Message are added. <br> 
-Team and Channel specify where to upload the Teams post, and Message is the post body. <br> 
+![Actual Microsoft Teams connection dialog with an English display name]({{ '/assets/image/en/caldova/teams-create-connection.png' | relative_url }})
 
-As above, change Team and channel to **custom value**,
-and keep Message as **Dynamically fill with AI**.
+Confirm that the intended connection is selected, then choose **Add and configure**.
 
-#### Important
+![The actual Teams connection selected before adding the action]({{ '/assets/image/en/caldova/teams-connected.png' | relative_url }})
 
-Normally, Team and Channel should automatically show the teams and channels assigned to you,
-but because this is still in Preview, IDs may not display correctly.
-<img width="987" height="426" alt="image" src="https://github.com/user-attachments/assets/8c594558-feaa-47d5-9f21-3a5855daaac8" />
+### 2. Configure purpose, identity, and confirmation
 
-Therefore, check the Teams channel ID as follows. <br>
-First, go to Teams: [**Teams link**](https://teams.microsoft.com/v2/) <br> 
-Next, select the channel where you will publish the post, click ..., and select Copy link.<br>
-<img width="335" height="334" alt="image" src="https://github.com/user-attachments/assets/e4fb9e44-c9c0-4218-86f7-be8ef92d0c1e" />
-<br> <br>
+Set the tool description to:
 
-After copying it, paste it into Notepad. A URL in the following format appears.
-```
-https://teams.microsoft.com/l/channel/19%3Aafff7d3f3be242f38d6sasdada1f2aa%40thread.tacv2/20251022%20%EC%9B%8C%ED%81%AC%EC%83%B5?groupId=a5f8994e-c248-4e00-8993-a8f9e5bc2e8b&tenantId=7xxxxxx7-xxxx-xxxx-8d61-9xxxxxx4xx52
-```
-Here, the value shown after groupId= and before & is the Team (GroupID). 
-```
-a5f8994e-c248-4e00-8993-a8f9e5bc2e8b
-```
-The value after channel/ that starts with 19% and ends with .tacv2 is the channel ID.
-```
-19%3Aafff7d3f3be242f38d6sasdada1f2aa%40thread.tacv2
+```text
+Post approved content to a Teams channel. Ask for the exact team and channel and obtain explicit confirmation of the complete message before posting. Never use this tool during setup or screenshot capture.
 ```
 
-Extract these values and enter them in the Team and Channel fields.
-<img width="876" height="513" alt="image" src="https://github.com/user-attachments/assets/d9d503c6-d4d7-4073-ac96-d79b562ab38e" />
-<br> <br> 
+![Actual saved Teams tool details and English description]({{ '/assets/image/en/caldova/teams-tool-details.png' | relative_url }})
 
-Then save. The tool setup is complete.
+Expand **Additional details**. Keep **End user credentials**, set **Ask the end user before running** to **Yes**, and use the following confirmation message:
 
-### Add Instructions
-
-After the tool is added, return to the Overview and write the post creation workflow in the Instructions as follows.
-<br> 
-<img width="1071" height="709" alt="image" src="https://github.com/user-attachments/assets/8912e14c-8630-49ad-93a4-252baa402c76" />
-<br> <br> 
-
-Add the following under the 1) Supported capabilities section in the Instructions.
-```
-### 1.7 Create Teams posts
- - Publish the written document as a Teams post
- - Write Message using HTML and CSS formats
-
-```
-<br> 
-
-Add the following to 3) Example workflow (including the original scenario) in the Instructions.
-```
-User: "Update this content as a post" or "Publish this article as a Teams post"
-Agent: "Yes, I will create it in the Teams channel with HTML and CSS styles applied."
-```
-<br> 
-
-Add the following at the bottom of the Instructions.
-```
-## 9) Teams post publishing guide
- - message: The Teams post body. Write the body with HTML and CSS styles applied to add design elements
----
-```
-<br> 
-<br> 
-
-After you finish editing the Instructions and save them, test whether the email is sent correctly.
-Test prompt
-```
-Create a newsletter about dishwasher product lines and send it by email to **[email address]**
+```text
+Review the exact team, channel, and full message shown above. Do you approve posting this message now?
 ```
 
-### Test 
+The agent must show the actual destination and full message before asking this question; a generic confirmation alone is not a preview of the content.
 
-Use the prompt below to test whether a post is actually published to the channel.
-```
-Post "Hello, nice to meet you" to the Teams channel
-```
-<img width="1697" height="1270" alt="image" src="https://github.com/user-attachments/assets/d15802d6-1e09-4948-862a-3dbc7dff1ec8" />
+![Actual confirmation prompt and end-user credential settings]({{ '/assets/image/en/caldova/teams-confirmation-credentials.png' | relative_url }})
 
+### 3. Configure the inputs
 
-----
+Set **Post as** and **Post in** to **Custom value**, then choose **User** and **Channel** respectively. Wait for the connector to expose **Team**, **Channel**, and **Message**.
 
-Congratulations!
-By adding Tools, you have configured the agent so it can send emails and create Teams posts.
-Finally, publish the agent and test it in Teams.
+| Input | Demo configuration |
+|---|---|
+| Post as | Custom value → User |
+| Post in | Custom value → Channel |
+| Team | Dynamically fill with AI; require the user's exact team ID |
+| Channel | Dynamically fill with AI; require the user's exact channel ID |
+| Message | Dynamically fill with AI; preview the full text before confirmation |
 
+![Actual saved User/Channel inputs, with runtime destination and message fields]({{ '/assets/image/en/caldova/teams-channel-inputs.png' | relative_url }})
 
+**For a workshop with a fixed, approved destination**, change Team and Channel to **Custom value** and select the assigned team/channel. If the picker cannot resolve them, obtain the actual IDs from the channel link in [Teams](https://teams.microsoft.com/v2/): `groupId` is the team ID, and the URL-decoded value in the `/channel/…/` path is the channel ID. Do not invent IDs or use another team's destination.
 
+The screenshot above intentionally uses runtime inputs instead of a fixed channel. No claim is made that a particular channel has been selected or that delivery has been tested. Save the tool and wait for the save to finish.
 
----
+### 4. Keep the delivery guardrail
+
+Retain the compact **Delivery confirmation** Instructions from [Step 3]({{ '/en/chapters/ws1-3-tool-mcp/' | relative_url }}). Do not append a duplicate block; the combined Instructions must stay within 8,000 characters.
+
+![Actual saved delivery-confirmation guardrail in the English demo agent]({{ '/assets/image/en/caldova/classic-delivery-instructions.png' | relative_url }})
+
+### 5. Separate configuration from a posting test
+
+Connection and configuration do not prove that a message was delivered. A later, separately authorized test must identify the exact destination, preview the complete message, obtain explicit confirmation, and then verify the result in that channel.
+
+> No posting test was run for this screenshot refresh. The older posted-message screenshot is not reused as evidence of the current demo.
+
+The Outlook and Teams tools are now configured for a private demo. Publishing the agent or executing a send/post action is a separate step, not part of the setup shown here.
+
 ---
 
 ← [Previous: Step 3. Tools: MCP connector]({{ '/en/chapters/ws1-3-tool-mcp/' | relative_url }}) | [Next: Step 5. Publish and deploy]({{ '/en/chapters/ws1-5-publish/' | relative_url }}) →

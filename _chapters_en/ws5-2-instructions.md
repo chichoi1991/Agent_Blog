@@ -18,19 +18,19 @@ parent: "ws5"
 ## 1. Access the Copilot Studio site
 
 ### To create an agent, go to the [Copilot Studio page: copilotstudio.preview.microsoft.com](https://copilotstudio.preview.microsoft.com).
-![image](https://github.com/user-attachments/assets/27577404-175d-4646-9caa-72be7e07b94d)
+![image]({{ '/assets/image/github-attachments/27577404-175d-4646-9caa-72be7e07b94d.png' | relative_url }})
 
 <br>
 
 ## 2. Change the development environment
 Once the site opens, select the environment in the upper-right corner and move to the lab environment you received in advance.
-<img width="1524" height="1392" alt="image" src="https://github.com/user-attachments/assets/68e1bdfd-bec8-4ca7-881b-56a0cbb4f1cf" />
+<img width="1524" height="1392" alt="image" src="{{ '/assets/image/github-attachments/68e1bdfd-bec8-4ca7-881b-56a0cbb4f1cf.png' | relative_url }}" />
 
 <br>
 
 > If the screen below appears first, select **...** in the upper-right corner and choose **Cancel agent creation** to return to the screen above.
 
-<img width="1524" height="561" alt="image" src="https://github.com/user-attachments/assets/4794e942-e580-437b-ab0f-2388c6ef330d" />
+<img width="1524" height="561" alt="image" src="{{ '/assets/image/github-attachments/4794e942-e580-437b-ab0f-2388c6ef330d.png' | relative_url }}" />
 
 <br><br>
 
@@ -77,7 +77,7 @@ After you click Create, the agent settings page appears as shown below.
 Now enter the agent's basic name, description, and instructions here.
 
 First, select **Settings** in the upper-right corner to review and configure the agent's basic settings.
-<img width="1524" height="454" alt="image" src="https://github.com/user-attachments/assets/4dffbd0f-4bd3-4f64-8f5f-e4c9f84106a4" />
+<img width="1524" height="454" alt="image" src="{{ '/assets/image/github-attachments/4dffbd0f-4bd3-4f64-8f5f-e4c9f84106a4.png' | relative_url }}" />
 <br><br>
 
 

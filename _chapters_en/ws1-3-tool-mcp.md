@@ -14,6 +14,8 @@ parent: "ws1"
 
 # Add a tool to the agent #1 (MCP connector)
 
+> **Actual English UI capture, September 7, 2026:** The catalog now labels the original workshop server **Email Management MCP Server (deprecated)**. It is shown here to reproduce this existing workshop, not as a recommendation for new production agents. Connection and configuration were completed in the demo; no email was sent.
+
 ## ✅ The role of Tools in Copilot Studio
 
 **Tools** are **additional capabilities** that extend what Copilot can do by default.  
@@ -67,20 +69,22 @@ In this workshop, you will add a tool that lets the agent send generated blog/ne
 
 ### 1. Add an email-sending tool
 In the agent settings window, select [Tools] - [+ Add a tool].
-<img width="970" height="589" alt="image" src="https://github.com/user-attachments/assets/4ff4e0b4-8fd1-4bb0-9c79-9097c94156ff" />
+![Actual English Add tool catalog]({{ '/assets/image/en/caldova/classic-tools-catalog.png' | relative_url }})
 
-Under Model Context Protocol, select "Email Management MCP Server." 
-<img width="543" height="396" alt="image" src="https://github.com/user-attachments/assets/9d324745-f91b-4588-9729-df8fa9cb315e" />
+Under **Model Context Protocol**, locate **Email Management MCP Server (deprecated)**. If it is no longer available in your environment, do not assume the old workshop UI still applies; use a currently supported mail tool and review its permissions separately.
+![Actual MCP catalog showing the legacy Email Management server and its deprecation label]({{ '/assets/image/en/caldova/classic-mcp-catalog.png' | relative_url }})
 
 When you select the tool, an OAuth connection window appears so you can use the Office 365 Outlook connector. <br>
-Use [Create new connection], enter the sign-in information for the connected account, and click Create. <br>
-<img width="548" height="406" alt="image" src="https://github.com/user-attachments/assets/d4260866-c5ea-48fb-aaad-3a9d9f2552ec" />
+Open **Connection → Create new connection**. <br>
+![Creating a new Outlook connection from the actual connection picker]({{ '/assets/image/en/caldova/outlook-new-connection-menu.png' | relative_url }})
 <br> 
-<img width="1022" height="738" alt="image" src="https://github.com/user-attachments/assets/599eb77c-27b3-4ca8-834e-47078913cd4d" />
+Enter an optional display name, such as `English Screenshot Demo - Outlook`, and select **Create**. In the Microsoft sign-in window, explicitly choose the approved workshop account. Do not accidentally select another cached account.
+
+![Actual Connect to Office 365 Outlook dialog with an English display name]({{ '/assets/image/en/caldova/outlook-create-connection.png' | relative_url }})
 <br> <br> 
 When the connection is complete, the connected account information and a green icon appear as shown below. <br> 
 Select [Add and configure] to go to the detailed settings for the email-sending connector. <br> 
-<img width="1044" height="768" alt="image" src="https://github.com/user-attachments/assets/a669d0f8-228c-429f-88d2-93c7351db777" />
+![The actual Outlook connection selected before adding the MCP server]({{ '/assets/image/en/caldova/outlook-connected.png' | relative_url }})
 <br> 
 <br> 
 <br> 
@@ -94,14 +98,12 @@ This description is referenced when the agent needs to choose a tool, so it shou
 However, for the MCP server added here, the server description and each tool description have already been written and updated at the MCP server level, so you do not need to add a separate description.<br> 
 <br> 
 <br> 
-Next, open the additional details pane and change the authentication policy to **[Maker-provided credentials]**.
-<img width="1056" height="694" alt="image" src="https://github.com/user-attachments/assets/e9ab862e-b6bf-473b-969f-bf1e92c9c5c6" />
+Open **Additional details**. Set **Ask the end user before running** to **Yes** and keep **Credentials to use → End user credentials** for this workshop.
+![Saved confirmation and end-user credential settings in the actual English UI]({{ '/assets/image/en/caldova/outlook-confirmation-credentials.png' | relative_url }})
 
 By default, "End-user credentials" is selected. In this case, users of the agent complete a one-time sign-in flow when they use the action.
 
-Keep this setting when the user's permissions should be used to search their mailbox or retrieve data.
-When only a limited account can access a specific system (for example, SAP or DB access), 
-change it to maker-provided credentials so users can access the data without signing in.
+Keep this setting when the action should run with the user's own permissions. Maker-provided credentials change the identity and access boundary; they are not required for this demo and should not be used to expose an administrator's access to other agent users.
 
 ---
 ## 3. Configure the tools used by the Email Management MCP Server
@@ -111,7 +113,7 @@ This step is optional, but if there are tools that are not defined in the Instru
 
 If you turn off the option to enable all functions in the tool, you can selectively allow individual tools. <br>
 In this scenario, only email sending is needed, so disable every function except the SendEmail tool. <br>
-<img width="1055" height="980" alt="image" src="https://github.com/user-attachments/assets/fc646c29-01d3-45bb-a25f-9c8670385adf" />
+![Actual saved MCP tool allowlist: SendEmail on, all other operations off]({{ '/assets/image/en/caldova/outlook-sendemail-only.png' | relative_url }})
 
 After that, click the **Save** button at the top. The email-sending tool is now ready.
 Next, write Instructions that tell the agent how to send emails.
@@ -123,44 +125,19 @@ but if a user enters "send this by email," the agent may select and run the tool
 
 Therefore, return to the **Overview** and enter Instructions for the added tool.
 
-<img width="1094" height="828" alt="image" src="https://github.com/user-attachments/assets/0e13eae5-14b5-4374-9788-b815e090596e" />
+![Actual English delivery-confirmation instructions in the demo agent]({{ '/assets/image/en/caldova/classic-delivery-instructions.png' | relative_url }})
 
 
-Add the following under the 1) Supported capabilities section in the Instructions.
-```
-### 1.6 Send email
-- Send the completed blog draft as an email newsletter
-- For Subject, ask the user for the email newsletter title
-- For To, ask the user to enter the email address
-- Important! For Body, apply HTML and CSS styles to add layout and design
+Append this compact delivery guardrail to the existing Instructions. Keep the combined Instructions within the UI's 8,000-character limit; remove redundant examples if necessary. The same guardrail also covers the Teams tool in the next step.
 
+```text
+## 8) Delivery confirmation
+Before email or Teams posting, collect the recipients or exact team/channel. Show the complete subject and message. Use SendEmail or the Teams tool only after explicit confirmation. Never send messages during setup or screenshot capture.
 ```
-Add the following to 3) Example workflow (including the original scenario) in the Instructions.
-```
-User: "Send this content by email"
-Agent: "Yes, I will apply HTML and CSS styles to this content and send it by email."
-```
-Add the following at the bottom of the Instructions.
-```
-## 8) Email sending format guide
- - to: Enter the recipient mail address
- - subject: Email subject. Draft an email subject by summarizing the body content and present it to the user, then ask the user to finalize the email subject. 
- - body: The email body. Write the body with HTML and CSS styles applied to add design elements
 
----
-```
-After you finish editing the Instructions and save them, test whether the email is sent correctly.
-Test prompt
-```
-Create a newsletter about dishwasher product lines and send it by email to **[email address]**
-```
-Copilot Studio test screen
-<img width="1704" height="1259" alt="image" src="https://github.com/user-attachments/assets/1b8124ba-fd06-4167-877a-22ab78461c49" />
+Save the Instructions and wait for the save to finish. A connection being configured does not prove delivery. A separate, authorized end-to-end test must preview the exact recipients, subject, and body and obtain confirmation before sending.
 
-> Following the Instructions, the agent creates and suggests a document format and draft, then sends the email
-
-Email inbox screen
-<img width="1544" height="1528" alt="image" src="https://github.com/user-attachments/assets/a9879c4f-8caf-47b0-935d-47e89498d4a3" />
+> **Capture boundary:** No send operation or inbox delivery was performed for these screenshots. The previous sent-mail images are not presented as evidence of this demo run.
 
 
 ---

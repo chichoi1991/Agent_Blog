@@ -32,25 +32,25 @@ In this lab, implement the agent so it can create a newsletter or blog post as a
 ### Add a tool to post a message to a Teams channel
 
 As before, select **+ Add a tool** from the **Overview**.
-<img width="1186" height="686" alt="image" src="https://github.com/user-attachments/assets/68cf3d4d-bdf0-48a0-bfe7-28a368670d33" />
+<img width="1186" height="686" alt="image" src="{{ '/assets/image/github-attachments/68cf3d4d-bdf0-48a0-bfe7-28a368670d33.png' | relative_url }}" />
 <br><br>
 In Recommendations or tool search, search for and select **Microsoft Teams**.
-<img width="746" height="464" alt="image" src="https://github.com/user-attachments/assets/f72d7d76-da73-43a1-8845-adf372f94009" />
+<img width="746" height="464" alt="image" src="{{ '/assets/image/github-attachments/f72d7d76-da73-43a1-8845-adf372f94009.png' | relative_url }}" />
 <br><br>
 
 From the Teams tool collection, select the **Post message in a chat or channel** tool.
-<img width="715" height="455" alt="image" src="https://github.com/user-attachments/assets/56fda9c2-bdc6-4214-b817-38e500dacacb" />
+<img width="715" height="455" alt="image" src="{{ '/assets/image/github-attachments/56fda9c2-bdc6-4214-b817-38e500dacacb.png' | relative_url }}" />
 <br><br>
 
 As before, if the connection is not already configured, use **Create a new connection** to connect the agent and tool, <br>
 and select **Add and configure** to add the tool and continue configuration. <br>
 
-<img width="697" height="451" alt="image" src="https://github.com/user-attachments/assets/6fe1a004-f626-421f-9ac2-d569287f7b1d" />
+<img width="697" height="451" alt="image" src="{{ '/assets/image/github-attachments/6fe1a004-f626-421f-9ac2-d569287f7b1d.png' | relative_url }}" />
 <br><br><br>
 ### Tool settings
 After the tool is added, the details page below appears.
 Unlike the previous MCP server tool, you can see that you can configure information such as the name, description, and inputs.
-<img width="1111" height="1101" alt="image" src="https://github.com/user-attachments/assets/44b46518-e066-4c2e-beda-d70959129104" />
+<img width="1111" height="1101" alt="image" src="{{ '/assets/image/github-attachments/44b46518-e066-4c2e-beda-d70959129104.png' | relative_url }}" />
 <br><br>
 Here, change the description, inputs, and completion settings as follows.
 
@@ -58,7 +58,7 @@ Here, change the description, inputs, and completion settings as follows.
 ```
 Use this tool when the user asks to post or publish a post to Teams or a Teams channel.
 ```
-<img width="1021" height="529" alt="image" src="https://github.com/user-attachments/assets/43630d5b-9f26-48c9-9a45-961f8983dafb" />
+<img width="1021" height="529" alt="image" src="{{ '/assets/image/github-attachments/43630d5b-9f26-48c9-9a45-961f8983dafb.png' | relative_url }}" />
 
 <br><br>
 
@@ -68,13 +68,13 @@ Use this tool when the user asks to post or publish a post to Teams or a Teams c
 On the Inputs tab, when you select a value for the Fill using field, you can choose either dynamic fill with AI or a custom value, as shown below.
 <br>
 Select custom value for both Post as and Post in. <br>
-<img width="495" height="239" alt="image" src="https://github.com/user-attachments/assets/d9228dec-3709-4f7a-b574-40827b817c54" />
+<img width="495" height="239" alt="image" src="{{ '/assets/image/github-attachments/d9228dec-3709-4f7a-b574-40827b817c54.png' | relative_url }}" />
 <br><br>
 Then, when you select a value, the available options appear as shown below. <br>
 For Post as, select User; for Post in, select Channel.<br>
-<img width="443" height="203" alt="image" src="https://github.com/user-attachments/assets/cb2db0c1-b8ec-4483-bb1b-ad11e050d616" />
+<img width="443" height="203" alt="image" src="{{ '/assets/image/github-attachments/cb2db0c1-b8ec-4483-bb1b-ad11e050d616.png' | relative_url }}" />
 <br>
-<img width="469" height="233" alt="image" src="https://github.com/user-attachments/assets/cdad9ffd-40c2-4a3e-ae3b-1dd5f780c2db" />
+<img width="469" height="233" alt="image" src="{{ '/assets/image/github-attachments/cdad9ffd-40c2-4a3e-ae3b-1dd5f780c2db.png' | relative_url }}" />
 <br><br>
 When Post in is selected as Channel, new input variables named Team, Channel, and Message are added. <br>
 Team and Channel specify the location where the Teams post will be uploaded, and Message is the body of the post. <br>
@@ -86,12 +86,12 @@ and keep Message as **Dynamically fill with AI**.
 
 Normally, Team and Channel should automatically show the teams and channels assigned to you,
 but because this is still in Preview, there is an issue where the IDs may not display correctly.
-<img width="987" height="426" alt="image" src="https://github.com/user-attachments/assets/8c594558-feaa-47d5-9f21-3a5855daaac8" />
+<img width="987" height="426" alt="image" src="{{ '/assets/image/github-attachments/8c594558-feaa-47d5-9f21-3a5855daaac8.png' | relative_url }}" />
 
 Therefore, check the Teams channel ID as follows. <br>
 First, access Teams: [**Teams access link**](https://teams.microsoft.com/v2/) <br>
 Next, select the channel where you will post, click **...**, and select Copy link.<br>
-<img width="335" height="334" alt="image" src="https://github.com/user-attachments/assets/e4fb9e44-c9c0-4218-86f7-be8ef92d0c1e" />
+<img width="335" height="334" alt="image" src="{{ '/assets/image/github-attachments/e4fb9e44-c9c0-4218-86f7-be8ef92d0c1e.png' | relative_url }}" />
 <br><br>
 
 After copying it, paste it into Notepad. A URL in the following format is displayed.
@@ -108,7 +108,7 @@ The value after channel/ that starts with 19% and ends with .tacv2 is the channe
 ```
 
 Extract these values and enter them for the Team and Channel values.
-<img width="876" height="513" alt="image" src="https://github.com/user-attachments/assets/d9d503c6-d4d7-4073-ac96-d79b562ab38e" />
+<img width="876" height="513" alt="image" src="{{ '/assets/image/github-attachments/d9d503c6-d4d7-4073-ac96-d79b562ab38e.png' | relative_url }}" />
 <br><br>
 
 Then save, and the tool configuration is complete.
@@ -117,7 +117,7 @@ Then save, and the tool configuration is complete.
 
 After the tool has been added, return to the Overview and write the post creation workflow in the Instructions as follows.
 <br>
-<img width="1071" height="709" alt="image" src="https://github.com/user-attachments/assets/8912e14c-8630-49ad-93a4-252baa402c76" />
+<img width="1071" height="709" alt="image" src="{{ '/assets/image/github-attachments/8912e14c-8630-49ad-93a4-252baa402c76.png' | relative_url }}" />
 <br><br>
 
 Add the following under ## Step-by-step instructions in the Instructions.
@@ -141,7 +141,7 @@ Use the prompt below to test whether a post is actually created in the channel.
 ```
 Post "Hello, nice to meet you" to the Teams channel.
 ```
-<img width="1697" height="1270" alt="image" src="https://github.com/user-attachments/assets/d15802d6-1e09-4948-862a-3dbc7dff1ec8" />
+<img width="1697" height="1270" alt="image" src="{{ '/assets/image/github-attachments/d15802d6-1e09-4948-862a-3dbc7dff1ec8.png' | relative_url }}" />
 
 
 ----
