@@ -1,0 +1,20 @@
+{%- comment -%}
+  hreflang 대체 링크. 같은 slug 의 한/영 페이지가 모두 존재할 때만 출력한다.
+{%- endcomment -%}
+{% assign hl_lang = page.lang | default: site.default_lang | default: 'ko' %}
+{% if hl_lang == 'en' %}
+  {% assign hl_alt = page.url | remove_first: '/en' %}
+  {% assign hl_pool = site.chapters %}
+  {% assign hl_alt_code = 'ko' %}
+{% else %}
+  {% assign hl_alt = '/en' | append: page.url %}
+  {% assign hl_pool = site.chapters_en %}
+  {% assign hl_alt_code = 'en' %}
+{% endif %}
+{% assign hl_found = false %}
+{% for d in hl_pool %}{% if d.url == hl_alt %}{% assign hl_found = true %}{% break %}{% endif %}{% endfor %}
+{% unless hl_found %}{% for p in site.pages %}{% if p.url == hl_alt %}{% assign hl_found = true %}{% break %}{% endif %}{% endfor %}{% endunless %}
+{% if hl_found %}
+  <link rel="alternate" hreflang="{{ hl_alt_code }}" href="{{ hl_alt | absolute_url }}">
+  <link rel="alternate" hreflang="{{ hl_lang }}" href="{{ page.url | absolute_url }}">
+{% endif %}

@@ -1,0 +1,168 @@
+# UI 문자열 다국어 사전. 레이아웃·인클루드에서 site.data.i18n[lang] 으로 참조한다.
+# lang 은 page.lang(기본 'ko')로 결정된다. 새 문자열을 추가할 때는 ko/en 양쪽에 모두 넣을 것.
+
+ko:
+  html_lang: "ko"
+  site_desc: "Microsoft Copilot 에이전트 생태계 — 기술 업데이트·번역·핸즈온을 한곳에서"
+
+  # 헤더
+  home: "Home"
+  search_placeholder: "검색…"
+  search_aria: "블로그 검색"
+  search_empty: "결과 없음"
+  menu_aria: "메뉴 열기"
+  cta_studio: "Copilot Studio 접속하기 ↗"
+  cta_github: "Github 원본 보기↗"
+  lang_switch_aria: "언어 전환"
+  lang_switch_to: "English 로 보기"
+
+  # 사이드바 / 위젯
+  toc: "목차"
+  section_empty: "콘텐츠 준비 중"
+  recent_updates: "최근 업데이트"
+
+  # 챕터
+  published: "게시일"
+  prev: "← 이전"
+  next: "다음 →"
+  overview: "← 개요"
+  back_to_overview: "개요로 돌아가기 →"
+  step_one_prefix: "Step 1."
+
+  # 본문 UI(자바스크립트)
+  copy: "Copy"
+  copied: "Copied!"
+  prompt_box_label: "Cowork에 입력할 프롬프트"
+  prompt_copy_idle: "프롬프트 복사하기"
+  prompt_copy_done: "복사됨! Cowork 입력창에 붙여넣으세요 (Ctrl+V)"
+  prompt_copy_fail: "복사 실패 — 아래 텍스트를 직접 선택해 주세요"
+  lightbox_close: "닫기"
+
+  # 목록 페이지
+  no_posts: "아직 게시된 글이 없습니다. 곧 업데이트됩니다."
+
+  # 챕터 배지
+  badge:
+    newcs: "New Copilot Studio"
+    newcs_step: "New · Step"
+    newcslab: "New Copilot Studio · Lab"
+    newcslab_step: "New Lab · Step"
+    guide: "Guide · Chapter"
+    workshop: "Workshop"
+    workshop_step: "Workshop · Step"
+    cowork_lab: "Cowork 실습"
+    cowork_collective: "Cowork Collective"
+    cowork_mission: "Cowork · Mission"
+    academy_course: "Agent Academy · 코스"
+    academy_module: "Academy · Module"
+    academy_lab: "Agent Academy · 랩"
+    catblog: "CAT 블로그 번역"
+    updates: "Update"
+    chapter: "Chapter"
+
+  # 카테고리 라벨(카드·검색 공용)
+  cat:
+    updates: "기술 업데이트"
+    catblog: "CAT 블로그"
+    newcs: "New Copilot Studio"
+    newcslab: "핸즈온(New)"
+    academy-courses: "Academy 코스"
+    academy-labs: "Academy 랩"
+    cowork: "Copilot Cowork"
+    scout: "Microsoft Scout"
+    m365: "Microsoft 365"
+    agent-resources: "Microsoft Agent 통합 리소스"
+    guide: "실무 가이드"
+    workshop: "워크샵"
+    special: "특별 워크샵"
+
+  # 가로 스크롤 섹션 제목
+  hscroll:
+    newcslab: "핸즈온 워크샵"
+    academy-courses: "Agent Academy · 코스"
+    academy-labs: "Agent Academy · 랩"
+    cowork: "Copilot Cowork"
+    scout: "Microsoft Scout"
+
+en:
+  html_lang: "en"
+  site_desc: "The Microsoft Copilot agent ecosystem — technical updates, translations, and hands-on labs in one place"
+
+  # Header
+  home: "Home"
+  search_placeholder: "Search…"
+  search_aria: "Search the blog"
+  search_empty: "No results"
+  menu_aria: "Open menu"
+  cta_studio: "Open Copilot Studio ↗"
+  cta_github: "View source on GitHub ↗"
+  lang_switch_aria: "Switch language"
+  lang_switch_to: "한국어로 보기"
+
+  # Sidebar / widgets
+  toc: "Contents"
+  section_empty: "Coming soon"
+  recent_updates: "Recently updated"
+
+  # Chapter
+  published: "Published"
+  prev: "← Previous"
+  next: "Next →"
+  overview: "← Overview"
+  back_to_overview: "Back to overview →"
+  step_one_prefix: "Step 1."
+
+  # In-page UI (JavaScript)
+  copy: "Copy"
+  copied: "Copied!"
+  prompt_box_label: "Prompt to paste into Cowork"
+  prompt_copy_idle: "Copy prompt"
+  prompt_copy_done: "Copied! Paste it into Cowork (Ctrl+V)"
+  prompt_copy_fail: "Copy failed — please select the text below manually"
+  lightbox_close: "Close"
+
+  # Listing pages
+  no_posts: "No posts published yet. Check back soon."
+
+  # Chapter badges
+  badge:
+    newcs: "New Copilot Studio"
+    newcs_step: "New · Step"
+    newcslab: "New Copilot Studio · Lab"
+    newcslab_step: "New Lab · Step"
+    guide: "Guide · Chapter"
+    workshop: "Workshop"
+    workshop_step: "Workshop · Step"
+    cowork_lab: "Cowork Lab"
+    cowork_collective: "Cowork Collective"
+    cowork_mission: "Cowork · Mission"
+    academy_course: "Agent Academy · Course"
+    academy_module: "Academy · Module"
+    academy_lab: "Agent Academy · Lab"
+    catblog: "CAT blog translation"
+    updates: "Update"
+    chapter: "Chapter"
+
+  # Category labels (shared by cards and search)
+  cat:
+    updates: "Tech updates"
+    catblog: "CAT blog"
+    newcs: "New Copilot Studio"
+    newcslab: "Hands-on (New)"
+    academy-courses: "Academy courses"
+    academy-labs: "Academy labs"
+    cowork: "Copilot Cowork"
+    scout: "Microsoft Scout"
+    m365: "Microsoft 365"
+    agent-resources: "Microsoft Agent resources"
+    guide: "Practical guide"
+    workshop: "Workshops"
+    special: "Special workshop"
+
+  # Horizontal scroll section titles
+  hscroll:
+    newcslab: "Hands-on workshops"
+    academy-courses: "Agent Academy · Courses"
+    academy-labs: "Agent Academy · Labs"
+    cowork: "Copilot Cowork"
+    scout: "Microsoft Scout"

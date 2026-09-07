@@ -1,7 +1,10 @@
 {%- comment -%} "최근 업데이트" 위젯 — 콘텐츠 단위(부모 랜딩 + 독립 글)를 date 내림차순 상위 7개. {%- endcomment -%}
-{% assign ru_recent = site.chapters | sort: "date" | reverse %}
+{% assign lang = page.lang | default: site.default_lang | default: 'ko' %}
+{% assign t = site.data.i18n[lang] %}
+{% if lang == 'en' %}{% assign ru_pool = site.chapters_en %}{% else %}{% assign ru_pool = site.chapters %}{% endif %}
+{% assign ru_recent = ru_pool | sort: "date" | reverse %}
 <div class="widget widget-recent">
-  <h3 class="widget-title">최근 업데이트</h3>
+  <h3 class="widget-title">{{ t.recent_updates }}</h3>
   <ul class="widget-list">
     {% assign ru_shown = 0 %}
     {% for ch in ru_recent %}

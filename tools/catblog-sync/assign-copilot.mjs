@@ -41,7 +41,7 @@ function buildIssue(items) {
     )
     .join("\n");
 
-  const body = `The Custom Engine(microsoft/mcscatblog)에서 감지된 신규 글을 한글로 번역해 게시해줘.
+  const body = `The Custom Engine(microsoft/mcscatblog)에서 감지된 신규 글을 **한국어판과 영문판 두 벌**로 게시해줘.
 
 ## 대상 (원문 EN 은 \`tools/catblog-sync/incoming/<slug>.md\` 에 스테이징됨)
 ${list}
@@ -58,8 +58,19 @@ ${list}
    - 이미지는 이미 \`assets/catblog/<slug>/\` 에 다운로드돼 있음. 기존 컨벤션대로
      \`<figure class="screenshot"><img src="{{ '/assets/catblog/<slug>/<file>' | relative_url }}" ...><figcaption>...</figcaption></figure>\` 로 삽입.
    - \`mermaid\` 코드블록은 ASCII 다이어그램 또는 표로 재작도. Chirpy IAL(\`{: .shadow }\` 등) 제거.
-4. \`tools/catblog-sync/state.json\` 의 \`processed\` 에 \`<slug>\` 추가.
-5. 번역 완료한 \`tools/catblog-sync/incoming/<slug>.md\` 를 삭제하고, \`_manifest.json\` 에서도 해당 항목 제거.
+4. **\`_chapters_en/catblog<order>-<slug>.md\` 를 생성한다 (영어, 파일명은 한국어판과 완전히 동일).**
+   - 한국어판을 되옮기지 말고 **원문(EN)을 그대로 살려** 작성한다. 원저자의 영어 표현이 우선이다.
+   - frontmatter 에 \`lang: en\` 필수. \`order\`·\`category\`·\`source_*\`·\`canonical_url\` 은 한국어판과 **동일한 값**.
+   - 본문 최상단 콜아웃은 영문으로:
+     \`**Translated article** — This article is based on [<원문 제목>](<source_url>) by <원저자> on [The Custom Engine](https://microsoft.github.io/mcscatblog/) (<YYYY-MM-DD>). The original wording takes precedence.\`
+   - 이미지는 한국어판과 **같은 \`assets/catblog/<slug>/\` 경로**를 쓰고 \`alt\`·\`figcaption\` 만 영문으로.
+   - 사이트 내부 링크는 \`/en\` 접두사: \`/chapters/<slug>/\` → \`/en/chapters/<slug>/\` (슬러그 자체는 변경 금지).
+5. \`node tools/i18n/check-parity.mjs\` 를 실행해 한/영 짝이 모두 맞는지 확인한다.
+6. \`tools/catblog-sync/state.json\` 의 \`processed\` 에 \`<slug>\` 추가.
+7. 번역 완료한 \`tools/catblog-sync/incoming/<slug>.md\` 를 삭제하고, \`_manifest.json\` 에서도 해당 항목 제거.
+
+> ⚠️ **한 벌만 만들면 안 된다.** \`_chapters/\` 와 \`_chapters_en/\` 에 **같은 파일명**으로 둘 다 있어야
+> 언어 토글이 동작하고 \`i18n-parity\` 체크가 통과한다.
 
 완료되면 이 이슈를 참조하는 PR 을 열어줘. 사람 검수 후 merge 하면 GitHub Pages 로 자동 배포된다.`;
 

@@ -1,5 +1,8 @@
+{% assign lang = page.lang | default: site.default_lang | default: 'ko' %}
+{% assign t = site.data.i18n[lang] %}
+{% if lang == 'en' %}{% assign chapters = site.chapters_en %}{% else %}{% assign chapters = site.chapters %}{% endif %}
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="{{ t.html_lang }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +10,10 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  {% include hreflang.html %}
 </head>
-<body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="{{ '/' | relative_url }}" class="header-logo">
-        <svg class="logo-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Microsoft Copilot Agentic Blog</span>
-      </a>
-      <nav class="header-nav">
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <div class="header-search">
-          <input type="search" id="blog-search" class="search-input" placeholder="검색…" autocomplete="off" aria-label="블로그 검색">
-          <div class="search-results" id="search-results" hidden></div>
-        </div>
-        <a href="https://copilotstudio.microsoft.com" target="_blank">Copilot Studio 접속하기 ↗</a>
-        <a href="https://github.com/chichoi1991/Agent_Blog/tree/master/_chapters" target="_blank">Github 원본 보기↗</a>
-      </nav>
-      <button class="mobile-menu-btn" aria-label="메뉴 열기">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
-    </div>
-  </header>
+<body class="lang-{{ lang }}">
+  {% include header.html %}
 
   <div class="site-wrapper">
     {% include sidebar.html %}
@@ -39,41 +24,41 @@
           <div class="chapter-header">
             <div class="chapter-meta">
               {% if page.category == 'newcs' and page.parent and page.is_parent != true %}
-                <span class="chapter-badge newcs">New · Step {{ page.order }}</span>
+                <span class="chapter-badge newcs">{{ t.badge.newcs_step }} {{ page.order }}</span>
               {% elsif page.category == 'newcs' %}
-                <span class="chapter-badge newcs">New Copilot Studio</span>
+                <span class="chapter-badge newcs">{{ t.badge.newcs }}</span>
               {% elsif page.category == 'newcslab' and page.parent and page.is_parent != true %}
-                <span class="chapter-badge newcs">New Lab · Step {{ page.order }}</span>
+                <span class="chapter-badge newcs">{{ t.badge.newcslab_step }} {{ page.order }}</span>
               {% elsif page.category == 'newcslab' %}
-                <span class="chapter-badge newcs">New Copilot Studio · Lab</span>
+                <span class="chapter-badge newcs">{{ t.badge.newcslab }}</span>
               {% elsif page.category == 'guide' %}
-                <span class="chapter-badge">Guide · Chapter {{ page.order }}</span>
+                <span class="chapter-badge">{{ t.badge.guide }} {{ page.order }}</span>
               {% elsif page.category == 'workshop' and page.is_parent %}
-                <span class="chapter-badge workshop">Workshop</span>
+                <span class="chapter-badge workshop">{{ t.badge.workshop }}</span>
               {% elsif page.category == 'workshop' and page.parent %}
-                <span class="chapter-badge workshop">Workshop · Step {{ page.order }}</span>
+                <span class="chapter-badge workshop">{{ t.badge.workshop_step }} {{ page.order }}</span>
               {% elsif page.category == 'cowork' and page.parent == 'cowork-lab' and page.is_parent %}
-                <span class="chapter-badge workshop">Cowork 실습</span>
+                <span class="chapter-badge workshop">{{ t.badge.cowork_lab }}</span>
               {% elsif page.category == 'cowork' and page.parent == 'cowork-lab' %}
-                <span class="chapter-badge workshop">Cowork 실습 · {{ page.short_title | split: '.' | first }}</span>
+                <span class="chapter-badge workshop">{{ t.badge.cowork_lab }} · {{ page.short_title | split: '.' | first }}</span>
               {% elsif page.category == 'cowork' and page.is_parent %}
-                <span class="chapter-badge workshop">Cowork Collective</span>
+                <span class="chapter-badge workshop">{{ t.badge.cowork_collective }}</span>
               {% elsif page.category == 'cowork' and page.parent %}
-                <span class="chapter-badge workshop">Cowork · Mission {{ page.order }}</span>
+                <span class="chapter-badge workshop">{{ t.badge.cowork_mission }} {{ page.order }}</span>
               {% elsif page.category == 'academy-courses' and page.is_parent %}
-                <span class="chapter-badge newcs">Agent Academy · 코스</span>
+                <span class="chapter-badge newcs">{{ t.badge.academy_course }}</span>
               {% elsif page.category == 'academy-courses' and page.parent %}
-                {% if page.order >= 900 %}<span class="chapter-badge newcs">Agent Academy · 코스</span>{% else %}<span class="chapter-badge newcs">Academy · Module {{ page.order }}</span>{% endif %}
+                {% if page.order >= 900 %}<span class="chapter-badge newcs">{{ t.badge.academy_course }}</span>{% else %}<span class="chapter-badge newcs">{{ t.badge.academy_module }} {{ page.order }}</span>{% endif %}
               {% elsif page.category == 'academy-labs' and page.is_parent %}
-                <span class="chapter-badge newcs">Agent Academy · 랩</span>
+                <span class="chapter-badge newcs">{{ t.badge.academy_lab }}</span>
               {% elsif page.category == 'academy-labs' and page.parent %}
-                <span class="chapter-badge newcs">Agent Academy · 랩</span>
+                <span class="chapter-badge newcs">{{ t.badge.academy_lab }}</span>
               {% elsif page.category == 'catblog' %}
-                <span class="chapter-badge updates">CAT 블로그 번역</span>
+                <span class="chapter-badge updates">{{ t.badge.catblog }}</span>
               {% elsif page.category == 'updates' %}
-                <span class="chapter-badge updates">Update</span>
+                <span class="chapter-badge updates">{{ t.badge.updates }}</span>
               {% else %}
-                <span class="chapter-badge">Chapter {{ page.order }}</span>
+                <span class="chapter-badge">{{ t.badge.chapter }} {{ page.order }}</span>
               {% endif %}
             </div>
             <h1 class="chapter-title">{{ page.title }}</h1>
@@ -82,7 +67,7 @@
             {% endif %}
             {% include tag-badges.html tags=page.tags %}
             {% if page.date %}
-            <div class="chapter-postmeta">게시일 {{ page.date | date: "%Y-%m-%d" }}{% if page.source_author %} · {{ page.source_author }}{% endif %}</div>
+            <div class="chapter-postmeta">{{ t.published }} {{ page.date | date: "%Y-%m-%d" }}{% if page.source_author %} · {{ page.source_author }}{% endif %}</div>
             {% endif %}
           </div>
 
@@ -93,14 +78,14 @@
           <nav class="chapter-pagination">
             {% if page.parent %}
               {%- comment -%} Workshop sub-page: navigate within same parent group {%- endcomment -%}
-              {% assign siblings = site.chapters | where: "parent", page.parent | where_exp: "item", "item.is_parent != true" | sort: "order" %}
-              {% assign parent_page = site.chapters | where: "parent", page.parent | where: "is_parent", true | first %}
+              {% assign siblings = chapters | where: "parent", page.parent | where_exp: "item", "item.is_parent != true" | sort: "order" %}
+              {% assign parent_page = chapters | where: "parent", page.parent | where: "is_parent", true | first %}
               {% if page.is_parent %}
                 <div></div>
                 {% if siblings.size > 0 %}
                   <a href="{{ siblings[0].url | relative_url }}" class="pagination-link next">
-                    <span class="pagination-direction">다음 →</span>
-                    <span class="pagination-title">Step 1. {{ siblings[0].short_title }}</span>
+                    <span class="pagination-direction">{{ t.next }}</span>
+                    <span class="pagination-title">{{ t.step_one_prefix }} {{ siblings[0].short_title }}</span>
                   </a>
                 {% endif %}
               {% else %}
@@ -109,24 +94,24 @@
                     {% if forloop.index > 1 %}
                       {% assign prev_index = forloop.index0 | minus: 1 %}
                       <a href="{{ siblings[prev_index].url | relative_url }}" class="pagination-link prev">
-                        <span class="pagination-direction">← 이전</span>
+                        <span class="pagination-direction">{{ t.prev }}</span>
                         <span class="pagination-title">{{ siblings[prev_index].short_title }}</span>
                       </a>
                     {% else %}
                       <a href="{{ parent_page.url | relative_url }}" class="pagination-link prev">
-                        <span class="pagination-direction">← 개요</span>
+                        <span class="pagination-direction">{{ t.overview }}</span>
                         <span class="pagination-title">{{ parent_page.short_title }}</span>
                       </a>
                     {% endif %}
                     {% if forloop.last == false %}
                       {% assign next_index = forloop.index0 | plus: 1 %}
                       <a href="{{ siblings[next_index].url | relative_url }}" class="pagination-link next">
-                        <span class="pagination-direction">다음 →</span>
+                        <span class="pagination-direction">{{ t.next }}</span>
                         <span class="pagination-title">{{ siblings[next_index].short_title }}</span>
                       </a>
                     {% else %}
                       <a href="{{ parent_page.url | relative_url }}" class="pagination-link next">
-                        <span class="pagination-direction">개요로 돌아가기 →</span>
+                        <span class="pagination-direction">{{ t.back_to_overview }}</span>
                         <span class="pagination-title">{{ parent_page.short_title }}</span>
                       </a>
                     {% endif %}
@@ -135,13 +120,13 @@
               {% endif %}
             {% else %}
               {%- comment -%} Standalone pages: paginate across standalone + parent items only {%- endcomment -%}
-              {% assign same_category = site.chapters | where: "category", page.category | where_exp: "item", "item.parent == nil" | sort: "order" %}
+              {% assign same_category = chapters | where: "category", page.category | where_exp: "item", "item.parent == nil" | sort: "order" %}
               {% for ch in same_category %}
                 {% if ch.url == page.url %}
                   {% if forloop.index > 1 %}
                     {% assign prev_index = forloop.index0 | minus: 1 %}
                     <a href="{{ same_category[prev_index].url | relative_url }}" class="pagination-link prev">
-                      <span class="pagination-direction">← 이전</span>
+                      <span class="pagination-direction">{{ t.prev }}</span>
                       <span class="pagination-title">{{ same_category[prev_index].short_title }}</span>
                     </a>
                   {% else %}
@@ -150,7 +135,7 @@
                   {% if forloop.last == false %}
                     {% assign next_index = forloop.index0 | plus: 1 %}
                     <a href="{{ same_category[next_index].url | relative_url }}" class="pagination-link next">
-                      <span class="pagination-direction">다음 →</span>
+                      <span class="pagination-direction">{{ t.next }}</span>
                       <span class="pagination-title">{{ same_category[next_index].short_title }}</span>
                     </a>
                   {% endif %}
@@ -168,7 +153,7 @@
     <aside class="site-aside">
       {% include recently-updated.html %}
       <div class="widget toc-widget" id="toc-widget" hidden>
-        <h3 class="widget-title">목차</h3>
+        <h3 class="widget-title">{{ t.toc }}</h3>
         <nav class="toc-nav" id="toc"></nav>
       </div>
     </aside>
@@ -177,6 +162,16 @@
   <div class="mobile-overlay" id="overlay"></div>
 
   <script>
+    const I18N = {
+      copy: {{ t.copy | jsonify }},
+      copied: {{ t.copied | jsonify }},
+      promptLabel: {{ t.prompt_box_label | jsonify }},
+      promptIdle: {{ t.prompt_copy_idle | jsonify }},
+      promptDone: {{ t.prompt_copy_done | jsonify }},
+      promptFail: {{ t.prompt_copy_fail | jsonify }},
+      close: {{ t.lightbox_close | jsonify }}
+    };
+
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
@@ -195,16 +190,16 @@
     document.querySelectorAll('.chapter-body pre').forEach(pre => {
       const btn = document.createElement('button');
       btn.className = 'code-copy-btn';
-      btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none"><path d="M4 4H2a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/></svg><span>Copy</span>';
+      btn.innerHTML = '<svg viewBox="0 0 16 16" fill="none"><path d="M4 4H2a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/></svg><span>' + I18N.copy + '</span>';
       btn.addEventListener('click', () => {
         const code = pre.querySelector('code');
         const text = code ? code.textContent : pre.textContent;
         navigator.clipboard.writeText(text).then(() => {
           btn.classList.add('copied');
-          btn.querySelector('span').textContent = 'Copied!';
+          btn.querySelector('span').textContent = I18N.copied;
           setTimeout(() => {
             btn.classList.remove('copied');
-            btn.querySelector('span').textContent = 'Copy';
+            btn.querySelector('span').textContent = I18N.copy;
           }, 2000);
         });
       });
@@ -220,7 +215,7 @@
       if (!box.querySelector('.prompt-box-label')) {
         const label = document.createElement('div');
         label.className = 'prompt-box-label';
-        label.textContent = box.dataset.label || 'Cowork에 입력할 프롬프트';
+        label.textContent = box.dataset.label || I18N.promptLabel;
         // pre may be nested inside a highlighter wrapper, so anchor to the box itself.
         box.insertBefore(label, box.firstChild);
       }
@@ -230,7 +225,7 @@
       btn.className = 'prompt-copy';
       const ICON = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4H2a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="5" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.6"/></svg>';
       const CHECK = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-      const IDLE = '프롬프트 복사하기';
+      const IDLE = I18N.promptIdle;
       btn.innerHTML = ICON + '<span>' + IDLE + '</span>';
 
       const getText = () => {
@@ -265,8 +260,8 @@
 
       btn.addEventListener('click', () => {
         const text = getText();
-        const done = () => flash('copied', '복사됨! Cowork 입력창에 붙여넣으세요 (Ctrl+V)', CHECK);
-        const fail = () => flash('failed', '복사 실패 — 아래 텍스트를 직접 선택해 주세요', ICON);
+        const done = () => flash('copied', I18N.promptDone, CHECK);
+        const fail = () => flash('failed', I18N.promptFail, ICON);
         if (navigator.clipboard && window.isSecureContext) {
           navigator.clipboard.writeText(text).then(done).catch(() => {
             legacyCopy(text) ? done() : fail();
@@ -285,7 +280,7 @@
       if (!figImgs.length) return;
       const overlay = document.createElement('div');
       overlay.className = 'lightbox-overlay';
-      overlay.innerHTML = '<button class="lightbox-close" aria-label="닫기">&times;</button><img alt=""><div class="lightbox-caption"></div>';
+      overlay.innerHTML = '<button class="lightbox-close" aria-label="' + I18N.close + '">&times;</button><img alt=""><div class="lightbox-caption"></div>';
       document.body.appendChild(overlay);
       const bigImg = overlay.querySelector('img');
       const cap = overlay.querySelector('.lightbox-caption');
