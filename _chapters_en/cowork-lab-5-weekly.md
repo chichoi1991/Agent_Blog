@@ -2,9 +2,9 @@
 layout: chapter
 lang: en
 date: 2026-09-05
-title: "Step 5 — Friday: Calendar Cleanup and Welcoming a New Hire"
+title: "Step 5 — Friday, calendar cleanup and welcoming a new hire"
 short_title: "Step 5. Weekly wrap-up and onboarding"
-description: "Find meetings you can decline, detect double bookings, and create an onboarding package for next week's new hire all at once."
+description: "Find meetings you can decline, detect double bookings, and prepare onboarding for next week's new hire."
 order: 906
 category: cowork
 parent: "cowork-lab"
@@ -13,10 +13,10 @@ tags: ["Copilot Cowork", "Calendar management", "Onboarding", "Hands-on"]
 
 <div class="info-box note" markdown="1">
 
-**▶ What you learn in this step** — Cowork can **read and judge your calendar**, and even **schedule meetings by matching multiple people's availability**. Up to now, you have seen "read and write." From here, it becomes **scheduling**.
+**▶ What you learn** — Cowork **reads and judges your calendar** and **finds meeting times across multiple people**. Until now it read and wrote; from here, it schedules.
 </div>
 
-**Friday afternoon.** Two tasks remain. Your next two weeks are packed with meetings and need cleanup, and **Alex Chen, a new hire, starts next Monday.**
+**Friday afternoon.** Next week's calendar is packed, and **new hire Alex Chen starts on Monday.**
 
 ---
 
@@ -24,21 +24,21 @@ tags: ["Copilot Cowork", "Calendar management", "Onboarding", "Hands-on"]
 
 <div class="scenario" markdown="1">
 
-<span class="scenario-tag">Scenario 11</span>
+<span class="scenario-tag">Scenario 12</span>
 
-### 📌 What is the situation?
+### 📌 What is happening
 
-There are **34 meetings** on your calendar over the next two weeks. Many have no agenda, include 18 attendees, or have little to do with your role. The problem is that **you have to open them one by one to decide**.
+There are **34 meetings** over the next 2 weeks. Some have no agenda, some have 18 attendees, and some are unrelated to your role. The problem is you must **open them one by one to decide**.
 
 <dl>
 <dt>🎯 Expected output</dt>
-<dd>List of meeting-decline candidates with reasons · <strong>calendar conflicts flagged</strong> · 3–5 decline-email drafts · action plan</dd>
+<dd><strong>Table</strong> of decline candidates with reasons · <strong>calendar conflict flagged</strong></dd>
 
 <dt>💡 Efficiency point</dt>
-<dd>Meeting cleanup is something <strong>everyone thinks is necessary but nobody does</strong>. It takes 30 minutes to open 34 meetings one by one, and writing decline emails feels awkward, so people end up attending anyway. Cowork handles the judgment and <strong>writes the decline language</strong> at the same time.</dd>
+<dd>Meeting cleanup is work <strong>everyone needs but nobody does</strong>. Opening 34 meetings takes 30 minutes, and decline emails feel awkward, so people just attend.</dd>
 
-<dt>⚠️ What to verify</dt>
-<dd>One <strong>double booking</strong> is seeded in the calendar. Check whether Cowork finds it.</dd>
+<dt>⚠️ What to check</dt>
+<dd>One <strong>double booking</strong> is seeded. Check whether Cowork finds it.</dd>
 </dl>
 
 </div>
@@ -46,10 +46,9 @@ There are **34 meetings** on your calendar over the next two weeks. Many have no
 <div class="prompt-box" markdown="1">
 
 ~~~text
-Review my calendar for the next two weeks and find meetings I can decline.
-Criteria: no agenda / too many attendees / low relevance to my role.
-Protect existing focus time, and flag calendar conflicts separately.
-For low-priority meetings, also draft decline emails and show them as an action plan.
+Look only at my calendar for next week and show meetings I can decline as a table.
+Criteria: no agenda / too many attendees / irrelevant to my role. Also flag calendar conflicts.
+Do not touch focus time, and do not draft emails yet.
 ~~~
 
 </div>
@@ -58,53 +57,53 @@ For low-priority meetings, also draft decline emails and show them as an action 
 
 **✅ Result check**
 
-- ⭐ **Did it find the double booking?** — The Northstar steering meeting and Halcyon internal review are scheduled for **the same time slot**
-- Did it identify **three types** of recurring meetings without agendas? (18-person weekly Ops Sync, biweekly tooling review, weekly All-Hands replay)
-- Did it leave the **four focus-time blocks** untouched?
-- Were decline-email drafts created and **not sent**?
+- ⭐ **Double booking** — Northstar steering and Halcyon internal review are in **the same time slot**
+- **3 recurring meetings** with no agenda (18-person weekly Ops Sync, biweekly tooling review, weekly All-Hands replay)
+- Did it leave **focus-time blocks** untouched?
+
 </div>
 
 <div class="info-box tip" markdown="1">
 
-**Check the tone of the decline email** — A good decline message gives a brief reason, suggests an alternative, and mentions a substitute attendee if needed. If Cowork's draft feels too blunt, revise it by saying: *"Make it more polite and add that I will follow up through the meeting notes."*
+**If you need decline text** — *"Draft a polite decline email only for the Ops Sync item above. Say I will follow up through meeting notes."* This is faster than drafting 3–5 at once.
 </div>
 
 ---
 
-## 5-2. New-hire onboarding package
+## 5-2. New-hire onboarding
 
 <div class="scenario" markdown="1">
 
-<span class="scenario-tag">Scenario 12</span>
+<span class="scenario-tag">Scenario 13</span>
 
-### 📌 What is the situation?
+### 📌 What is happening
 
-**Alex Chen** starts next Monday as a Solution Engineer. There is a lot to prepare: a required-reading list, six introductory meetings, a welcome message, a team-channel introduction, and a 30/60/90-day plan.
-
-In particular, a proper **30/60/90-day plan** requires reading the job description and team charter, but most people do not have enough time and create a superficial version.
+**Alex Chen** starts Monday as a Solution Engineer. You need required reading, intro meetings, a welcome message, and a 30/60/90-day plan.
 
 <dl>
 <dt>🎯 Expected output</dt>
-<dd>Required-reading list · <strong>six 30-minute introductory meetings scheduled</strong> · Day-1 welcome message · team-channel introduction · <strong>30/60/90-day plan document</strong></dd>
+<dd>Required-reading list + <strong>30/60/90-day plan outline</strong></dd>
 
 <dt>💡 Efficiency point</dt>
-<dd>This is the first time the lab <strong>checks multiple people's calendars at once</strong>. Looking at six people's schedules for next week and finding 30-minute openings is one of the <strong>most tedious tasks</strong> for a person. And because the 30/60/90 plan is based on the <strong>job description</strong>, it is not just a formality.</dd>
+<dd>The 30/60/90 plan is based on the <strong>job description</strong>, so it is not generic. Most people rush it because they lack time.</dd>
 
-<dt>⚠️ What to verify</dt>
-<dd>Check whether the plan actually reflects the <strong>six responsibilities and three 90-day expectations</strong> from the job description.</dd>
+<dt>⚠️ What to check</dt>
+<dd>Check whether it reflects the job description's <strong>6 responsibilities and 3 90-day expectations</strong>.</dd>
 </dl>
 
+</div>
+
+<div class="info-box tip" markdown="1">
+
+**Do not ask for five things at once** — Asking for lists, 6 meetings, welcome message, intro post, and plan together overlaps calendar checks and document creation. **Reading first, writing later.**
 </div>
 
 <div class="prompt-box" markdown="1">
 
 ~~~text
-Create an onboarding package for Alex Chen (Solution Engineer), who starts next Monday.
-- Required-reading list from the 07_Onboarding folder and 06_Policies
-- Schedule six 30-minute introductory meetings during the first week (Marcus, Priya, Diego, Lena, Tom, Sofia)
-- Draft a Day-1 welcome message
-- Draft an introduction post for the team channel
-- Create a 30/60/90-day plan based on the job description and team charter
+For Alex Chen (Solution Engineer), who starts Monday, summarize only two things in chat.
+① Required-reading list based on 07_Onboarding and 06_Policies (mark what to read on Day 1)
+② 30/60/90-day plan outline based on the job description — 3 goals per period
 ~~~
 
 </div>
@@ -115,33 +114,34 @@ Create an onboarding package for Alex Chen (Solution Engineer), who starts next 
 
 | Item | Expected value |
 |---|---|
-| Required-reading list | Six items based on `Onboarding_ReadingList.xlsx`. The **Information Security Policy must be scheduled for Day 1** |
-| Introductory meetings | 30 minutes with each of six people. **Calendars are tightly packed**, so finding openings is not easy |
-| 30/60/90 plan | Reflects the **six responsibilities, five competencies, and three 90-day expectations** from the job description |
-| Welcome message | Draft for Day-1 sending, not sent yet |
-| Channel introduction | Draft for posting to the team channel |
+| Required reading | 6 items based on `Onboarding_ReadingList.xlsx`. **Information Security Policy is Day 1** |
+| 30/60/90 | Reflects the job description's **6 responsibilities and 3 90-day expectations** |
 
-**⭐ Additional check** — If Cowork reports constraints such as *"some of the six people have packed calendars next week, making it difficult to find time,"* it actually checked the calendars. If it simply created six meetings at arbitrary times, it did not check.
+</div>
+
+<div class="info-box tip" markdown="1">
+
+**Continue one by one** — *"Schedule 30-minute intro meetings next week with Marcus, Priya, and Lena. Show me before booking."* / *"Draft a Day-1 welcome message."* / *"Draft a team-channel introduction."*
 </div>
 
 ---
 
-## 5-3. Fill in the empty 30/60/90 document (optional)
+## 5-3. Fill the empty 30/60/90 document (optional)
 
 <div class="scenario" markdown="1">
 
-<span class="scenario-tag">Scenario 13 · Optional</span>
+<span class="scenario-tag">Scenario 14 · Optional</span>
 
-### 📌 What is the situation?
+### 📌 What is happening
 
-Like the RCA document in Step 4, there is an `Alex_Chen_30-60-90_draft.docx` file in OneDrive that has **only the title and is otherwise empty**.
+Like the RCA in Step 4, `Alex_Chen_30-60-90_draft.docx` in OneDrive has **only a title and is empty**.
 
 <dl>
 <dt>🎯 Expected output</dt>
-<dd>A plan document with all three periods filled in: First 30 days / Days 31-60 / Days 61-90</dd>
+<dd>A plan document with all three periods filled</dd>
 
 <dt>💡 Efficiency point</dt>
-<dd>Cowork moves the onboarding-package content you just created into the <strong>existing file format</strong>. Creating a new file and <strong>filling an existing file</strong> are different tasks.</dd>
+<dd>Creating a new file and <strong>filling an existing file in its format</strong> are different tasks.</dd>
 </dl>
 
 </div>
@@ -149,10 +149,8 @@ Like the RCA document in Step 4, there is an `Alex_Chen_30-60-90_draft.docx` fil
 <div class="prompt-box" markdown="1">
 
 ~~~text
-There is an Alex_Chen_30-60-90_draft.docx file in my OneDrive Cowork-demo/OneDrive_Ava folder.
-It has only a title and three section headings, with the body empty.
-Fill each period with the onboarding plan you just created.
-For each period, include three goals and the evidence that can verify those goals were achieved.
+Fill Alex_Chen_30-60-90_draft.docx in my OneDrive Cowork-demo/OneDrive_Ava folder
+with the plan you just made. For each period, include 3 goals and one line of evidence. Write into the existing file.
 ~~~
 
 </div>
@@ -161,19 +159,20 @@ For each period, include three goals and the evidence that can verify those goal
 
 **✅ Result check**
 
-- Are all three periods filled in?
-- Does each period include **measurable evidence**? (The job description's 90-day expectations are written in an evidence-based way.)
-- Was the existing file **overwritten**?
+- Are all three periods filled?
+- Does each period include **measurable evidence**?
+- Was the **existing file edited**, not a new file created?
+
 </div>
 
 ---
 
 ## What you verified in this step
 
-- ✅ It reads your calendar and **judges decline candidates** (agenda, attendee count, role relevance)
+- ✅ It reads the calendar and **judges decline candidates**
 - ✅ It detects **conflicts such as double bookings**
-- ✅ It checks **multiple people's calendars at once** to find open times
-- ✅ It creates a **non-generic plan** grounded in a document (job description)
-- ✅ Actions such as scheduling meetings and posting messages **go through approval**
+- ✅ It checks **multiple people's calendars** to find open time
+- ✅ It creates a **non-generic plan** grounded in the job description
+- ✅ Actions such as booking and posting **go through approval**
 
-Go to **[Step 6 — Automation: make it run every week on its own]({{ '/en/chapters/cowork-lab-6-automation/' | relative_url }})**.
+Go to **[Step 6 — Automation, make it run every week on its own]({{ '/en/chapters/cowork-lab-6-automation/' | relative_url }})**.

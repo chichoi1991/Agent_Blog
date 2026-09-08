@@ -2,9 +2,9 @@
 layout: chapter
 lang: en
 date: 2026-09-05
-title: "Step 2 — 30 minutes before the meeting, create a briefing from six sources"
+title: "Step 2 — 30 minutes before the meeting, brief from multiple sources"
 short_title: "Step 2. Meeting briefing"
-description: "The quarterly review with your largest customer is in 30 minutes. Create a one-page briefing that synthesizes email, calendar, meeting notes, status reports, commitment lists, and Teams at once."
+description: "The quarterly review with your largest customer is in 30 minutes. Create a short briefing by combining email, meeting notes, status reports, and Teams."
 order: 903
 category: cowork
 parent: "cowork-lab"
@@ -13,27 +13,25 @@ tags: ["Copilot Cowork", "Meeting prep", "Cross-referencing", "Hands-on"]
 
 <div class="info-box note" markdown="1">
 
-**▶ What you learn in this step** — Cowork reads **six different repositories** and assembles them into one document. This is the first point in the lab where it starts to feel truly agentic.
+**▶ What you learn** — Cowork reads **multiple repositories** and assembles them into one answer. This is the first point where it feels agentic.
 </div>
 
-**The current time is 13:30.** In 30 minutes, you have an **FY26 Q3 quarterly business review (QBR) with Meridian Bank**. Meridian is Aurora's largest revenue account, Project Northstar (USD 4.2M) is underway, and there was an **incident six days ago**.
-
-The problem is that you have only 30 minutes to prepare.
+**13:30.** In 30 minutes, you have the **Meridian Bank FY26 Q3 quarterly business review (QBR)**. It is your largest account, Project Northstar (USD 4.2M) is in progress, and there was an **incident six days ago.**
 
 ---
 
-## What would a person have to review manually?
+## If a person did it manually
 
-| What to review | Where it is | Time |
+| What to review | Where | Time |
 |---|---|---|
 | Attendees and agenda | Calendar invite | 2 min |
-| Recent conversation | 3 email threads / 11 emails | 15 min |
-| Commitments from the last meeting | SharePoint meeting notes | 8 min |
-| Current project status | SharePoint weekly status report | 8 min |
-| Unfulfilled commitments | SharePoint list | 5 min |
-| Internal team discussion | 22 Teams channel messages | 12 min |
+| Recent conversation | 3 email threads, 11 emails | 15 min |
+| Commitments from last meeting | SharePoint meeting notes | 8 min |
+| Project status | SharePoint status report | 8 min |
+| Open commitments | SharePoint list | 5 min |
+| Internal discussion | 22 Teams channel messages | 12 min |
 
-**Total: 50 minutes.** You have 30 minutes left. So people usually skim only the emails before joining, then get called out by the customer for **forgetting what was promised in the previous meeting**.
+**Total: 50 minutes.** You have 30 minutes left. So people usually skim only email and enter the meeting, then get called out for **forgetting last meeting's promises**.
 
 ---
 
@@ -45,48 +43,58 @@ The problem is that you have only 30 minutes to prepare.
 
 ### 📌 What is happening
 
-Within 30 minutes, you need to read six sources, decide what to say first, and anticipate the questions the customer may ask.
+Within 30 minutes, you need to read multiple sources and decide what to say first.
 
 <dl>
 <dt>🎯 Expected output</dt>
-<dd><strong>One-page HTML briefing</strong> — three conversation starters · ten expected questions · risk summary</dd>
+<dd>A <strong>short briefing</strong> in chat — 3 conversation points · unfulfilled promise · 1 risk</dd>
 
 <dt>💡 Efficiency point</dt>
-<dd>The key is <strong>not speed, but preventing omissions</strong>. When people are short on time, they drop sources. Cowork can read all six in two minutes. Items surfaced from documents no one reopens — especially <strong>unfulfilled commitments from the previous meeting</strong> — can decide whether the meeting succeeds.</dd>
+<dd>The point is not speed but <strong>preventing omissions</strong>. When people are short on time, they drop sources. Items from documents no one reopens, especially <strong>unfulfilled promises from the last meeting</strong>, can decide the meeting.</dd>
 
 <dt>⚠️ What to check</dt>
-<dd>Check whether the briefing includes the <strong>item the customer requested in the August meeting that has not yet been fulfilled</strong>. That is the answer for this scenario.</dd>
+<dd>Check whether it includes the <strong>item the customer requested in the August meeting that is still unfulfilled</strong>. That is the answer.</dd>
 </dl>
 
+</div>
+
+<div class="info-box tip" markdown="1">
+
+**Why not create an HTML file** — File generation is the slowest part of this scenario. A chat briefing is faster to read and shows results immediately in a demo.
 </div>
 
 <div class="prompt-box" markdown="1">
 
 ~~~text
-Prepare a briefing for today's 2 PM quarterly review meeting with Meridian Bank.
-Use recent emails, open action items, the most recent meeting notes, current commitments,
-and recent news mentions to identify three conversation starters I can use to open the discussion.
-Also organize 10 likely questions and create a one-page HTML briefing.
+Create a short chat briefing for today's 14:00 Meridian Bank quarterly review.
+You only need recent emails, the most recent meeting notes, and open action items.
+① 3 conversation openers ② promises not yet fulfilled ③ 1 risk.
+One or two lines for each item is enough. Do not create a file.
 ~~~
 
 </div>
 
 <div class="expect" markdown="1">
 
-**✅ Check the result** — The briefing should include the following.
+**✅ Result check**
 
-- Attendees **Helena Vargas** (Head of Infrastructure) and **Rajiv Menon** (IT Operations Manager)
-- Rollout progress: **1,870 / 3,200 (58%)**, 9 countries completed
-- Mention of the **INC-4471 incident** from six days ago — post-incident report not yet submitted
-- ⭐ **Unfulfilled commitment** — *"The customer asked in August for the downtime-avoidance impact to be converted into EUR, but no response has been sent yet"*
-- 10 likely questions
+- Attendees **Helena Vargas** (Head of Infrastructure), **Rajiv Menon** (IT Operations Manager)
+- Rollout progress **1,870 / 3,200 (58%)**
+- Mention of **INC-4471 incident** six days ago, post-incident report not submitted
+- ⭐ **Unfulfilled promise** — *"No response yet to the August request to convert downtime-avoidance impact into EUR"*
 
-**The ⭐ item is the highlight of this step.** This fact appears only as an "Open" item in the August meeting notes. It is not in email or the status report. If Cowork found it, that proves it **actually opened the meeting notes file**.
+**The ⭐ item is the highlight.** This fact appears only as an "Open" item in the August meeting notes. It is not in email or the status report. If Cowork found it, it **actually opened the meeting notes**.
+
+</div>
+
+<div class="info-box tip" markdown="1">
+
+**If you need likely questions** — *"Only 5 questions the customer may ask in this meeting."* Asking for 10 from the start is slower.
 </div>
 
 ---
 
-## 2-2. Send the briefing to your manager
+## 2-2. Tell your manager in 3 lines
 
 <div class="scenario" markdown="1">
 
@@ -94,17 +102,17 @@ Also organize 10 likely questions and create a one-page HTML briefing.
 
 ### 📌 What is happening
 
-Lena Hoffmann, VP Sales, will attend this meeting. She does not want the full briefing; she wants **"the three lines I need to know."**
+VP Sales Lena Hoffmann will attend. She does not want the full briefing; she wants **"the 3 lines I need to know."**
 
 <dl>
 <dt>🎯 Expected output</dt>
-<dd>An <strong>email draft</strong> compressed for an executive audience, waiting for approval before sending</dd>
+<dd><strong>3 lines + 1 risk</strong> for an executive</dd>
 
 <dt>💡 Efficiency point</dt>
-<dd><strong>Rewriting the same information for each recipient</strong> takes more time than you might expect. Cowork already has the briefing in the session, so it rewrites it by <strong>changing only the perspective</strong>, without reading everything again.</dd>
+<dd><strong>Rewriting the same information for each recipient</strong> takes time. Cowork keeps the briefing in the session, so it can change only the <strong>perspective</strong> without rereading.</dd>
 
 <dt>⚠️ What to check</dt>
-<dd>The executive version should focus on <strong>numbers and risk</strong>. If it includes all the implementation details unchanged, the compression failed.</dd>
+<dd>The executive version should focus on <strong>numbers and risk</strong>.</dd>
 </dl>
 
 </div>
@@ -112,43 +120,45 @@ Lena Hoffmann, VP Sales, will attend this meeting. She does not want the full br
 <div class="prompt-box" markdown="1">
 
 ~~~text
-Based on the briefing you just created, draft a pre-read email to VP Sales Lena Hoffmann,
-who will attend this meeting.
-Include only a three-line executive summary, decisions needed today, and one risk.
-Do not send it; show it to me as a draft.
+Reduce the briefing you just made to 3 lines for VP Sales Lena Hoffmann.
+Add only 1 decision needed today and 1 risk. Do not create an email yet.
 ~~~
 
 </div>
 
 <div class="expect" markdown="1">
 
-**✅ Check the result**
+**✅ Result check**
 
-- Does it start with a **compressed three-line summary**, not the full briefing?
-- Does it include **executive-level numbers** such as contract size (USD 4.2M) and progress (58%)?
-- Is it a draft and **not sent**?
+- Is it a **compressed 3 lines**, not the full briefing?
+- Does it include **executive numbers** such as USD 4.2M and 58%?
+- Are working-level details removed?
+
+</div>
+
+<div class="info-box tip" markdown="1">
+
+**To send by email** — *"Turn the above into an email draft to Lena. Do not send it."*
 </div>
 
 ---
 
 ## Why this step matters
 
-The inbox triage in Step 1 is convenient, but a rules-based tool can imitate some of it. **Step 2 is different.**
-
 <div class="info-box tip" markdown="1">
 
-**It decides for itself "which sources to look at"** — The prompt does not say *"open the meeting notes file."* It only says "the most recent meeting notes." Cowork **found and opened the right file in SharePoint, then identified the unfulfilled item inside it**. You did not even tell it which folder to use.
+**It decides for itself "which sources to look at"** — The prompt does not say *"open the meeting notes file."* It only says "the most recent meeting notes." Cowork **found it in SharePoint, opened it, and picked out the unfulfilled item**.
 </div>
 
-This is the difference between search and an agent. With search, you need to know where to look. An agent finds it on its own.
+Search requires you to know where to look. An agent finds it on its own.
 
 ---
 
 ## What you verified in this step
 
-- ✅ It synthesizes **six repositories** at once: email, calendar, meeting notes, status reports, lists, and channels
+- ✅ It synthesizes **multiple repositories** at once
 - ✅ It **decides for itself** which file to open
-- ✅ It surfaces **unfulfilled commitments from documents no one revisits**
+- ✅ It surfaces **unfulfilled promises from documents no one reads**
 - ✅ It **rewrites the same information for the recipient**
 
-Go to **[Step 3 — In the afternoon, wrestle with the document pile]({{ '/en/chapters/cowork-lab-3-documents/' | relative_url }})**.
+Go to **[Step 3 — Afternoon, wrestle with the document pile]({{ '/en/chapters/cowork-lab-3-documents/' | relative_url }})**.

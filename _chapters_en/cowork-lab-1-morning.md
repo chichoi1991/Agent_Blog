@@ -2,21 +2,21 @@
 layout: chapter
 lang: en
 date: 2026-09-05
-title: "Step 1 — 08:30 in the morning, clear the backlog first"
+title: "Step 1 — 08:30, clear the backlog first"
 short_title: "Step 1. Morning triage"
-description: "Delegate the email, calendar, and Teams cleanup that eats the first 30 minutes of the workday to Cowork: triage, priority discovery, and unanswered-message tracking."
+description: "Delegate the email cleanup that eats the first 30 minutes after sign-in to Cowork: triage, priorities, and unanswered-reply tracking."
 order: 902
 category: cowork
 parent: "cowork-lab"
-tags: ["Copilot Cowork", "Inbox triage", "Prioritisation", "Hands-on"]
+tags: ["Copilot Cowork", "Inbox triage", "Priorities", "Hands-on"]
 ---
 
 <div class="info-box note" markdown="1">
 
-**▶ What you learn in this step** — Cowork can handle not just "summarize this," but **"classify, organize, and draft responses too."** This is where the difference between a read-only tool and an agent that acts first becomes clear.
+**▶ What you learn** — Cowork takes not "summarize this" but **"classify and organize this."** This is where the difference between a reading tool and an acting agent first appears.
 </div>
 
-**The current time is 08:30.** You are Ava Nakamura, a sales representative at Aurora Dynamics. You open your laptop to find overnight email piled up, today's calendar already packed, and Teams messages from yesterday still waiting for replies.
+**08:30.** You are Ava Nakamura, a sales rep at Aurora Dynamics. Email piled up overnight, today's calendar is packed, and Teams has messages waiting for replies.
 
 ---
 
@@ -28,17 +28,17 @@ tags: ["Copilot Cowork", "Inbox triage", "Prioritisation", "Hands-on"]
 
 ### 📌 What is happening
 
-About 20 emails came in overnight. Only two are truly urgent, but they are buried among six newsletters and simple confirmation requests. This **daily morning classification work** usually takes 20–30 minutes.
+Twenty emails arrived overnight. Only two are truly urgent, but they are buried among newsletters. This takes 20–30 minutes every morning.
 
 <dl>
 <dt>🎯 Expected output</dt>
-<dd><strong>Flag</strong> urgent emails · <strong>Archive</strong> newsletters · Create <strong>three reply drafts</strong> for items that need quick responses (not sent yet) · Overall summary</dd>
+<dd><strong>Flag</strong> urgent emails · <strong>Archive</strong> newsletters · 3-line summary</dd>
 
 <dt>💡 Efficiency point</dt>
-<dd>When a person does this, they must <strong>open emails one by one</strong> to know what is urgent. Cowork evaluates sender, subject, body, and thread context together, and it does not stop at classification — it also <strong>prepares reply drafts</strong>. 20 minutes → 2 minutes.</dd>
+<dd>A person must open emails one by one to judge urgency. Cowork sees sender, subject, and body together, and <strong>does not stop at classification; it actually handles them</strong>.</dd>
 
 <dt>⚠️ What to check</dt>
-<dd>Check that Cowork <strong>creates drafts only and does not send</strong>. Any action that leaves the organization always requires approval.</dd>
+<dd>Check that it only <strong>classifies and archives</strong>, without sending anything.</dd>
 </dl>
 
 </div>
@@ -46,27 +46,25 @@ About 20 emails came in overnight. Only two are truly urgent, but they are burie
 <div class="prompt-box" markdown="1">
 
 ~~~text
-Review the emails I received over the last 24 hours and:
-- flag urgent items
-- archive newsletters and promotional emails
-- draft replies for items that need a quick response.
-When you are done, show me a summary.
+Review only 20 emails from the last 24 hours. Flag urgent items and archive newsletters.
+Summarize the result in only 3 lines. Do not draft replies.
 ~~~
 
 </div>
 
 <div class="expect" markdown="1">
 
-**✅ Check the result** — It is successful if you see the following.
+**✅ Result check**
 
-- **2 emails** classified as urgent — Rajiv Menon's incident follow-up request from Meridian Bank, and Ingrid Bauer's RFP question deadline notice from Halcyon Energy
+- **2 urgent emails** — Rajiv Menon (Meridian Bank) incident follow-up, Ingrid Bauer (Halcyon Energy) RFP question deadline
 - **6 newsletters** archived
-- **3 reply drafts** created but **not sent**
+- Summary is within 3 lines
+
 </div>
 
 <div class="info-box tip" markdown="1">
 
-**If you do not like the classification, do not rerun everything** — In the same conversation, say something like *"Change the Ingrid Bauer email from urgent to normal."* Cowork will adjust only that part instead of doing everything again. Conversational correction is much faster than starting over.
+**If you need drafts, continue with** — *"Draft 3-sentence replies only for the 2 items you just marked urgent. Do not send them."* It is faster than asking for everything at once.
 </div>
 
 ---
@@ -79,17 +77,17 @@ When you are done, show me a summary.
 
 ### 📌 What is happening
 
-Email is organized, but **"So what should I do first today?"** remains unanswered. The calendar, inbox, and Teams are each in different windows, and you have to combine all three in your head before you get the answer.
+Email is organized, but **"so what should I do first?"** remains. Calendar, inbox, and Teams are in separate windows.
 
 <dl>
 <dt>🎯 Expected output</dt>
-<dd><strong>Top three priorities</strong> with evidence · <strong>Reply drafts within three sentences</strong> for the top two urgent items</dd>
+<dd><strong>Three priorities</strong> with evidence, one line each</dd>
 
 <dt>💡 Efficiency point</dt>
-<dd>This is the first time you look across <strong>three repositories at once</strong>: calendar + email + Teams. A person has to move between three windows and loses context while switching. Cowork reads them together and <strong>cross-compares</strong>.</dd>
+<dd>This is the first time Cowork reads <strong>calendar + email + Teams</strong> together. People lose context while moving across three windows.</dd>
 
 <dt>⚠️ What to check</dt>
-<dd>Check whether each priority includes evidence for <strong>"why this is number 1."</strong> A list without evidence cannot be trusted.</dd>
+<dd>Check whether each item includes evidence for <strong>"why it is number 1."</strong></dd>
 </dl>
 
 </div>
@@ -97,20 +95,20 @@ Email is organized, but **"So what should I do first today?"** remains unanswere
 <div class="prompt-box" markdown="1">
 
 ~~~text
-Combine today's calendar, important unread emails since yesterday, and Teams messages I have not replied to yet.
-Recommend my top three priorities for this morning.
-For the top two urgent items, also draft replies in three sentences or fewer. Do not send them.
+Look at today's calendar, important unread emails, and Teams messages I have not replied to.
+Tell me only my top 3 priorities for this morning, one line each. Add one line of evidence each. Do not draft anything.
 ~~~
 
 </div>
 
 <div class="expect" markdown="1">
 
-**✅ Check the result**
+**✅ Result check**
 
-- Is today's **14:00 Meridian Bank QBR** reflected in the priorities?
-- Did Cowork find **4 Teams messages waiting for a reply**?
-- Does each priority include evidence, such as which email or calendar item caused it?
+- Is the **14:00 Meridian Bank QBR** included as a priority?
+- Did it find **4 Teams messages waiting for a reply**?
+- Does each item include evidence (which email or which event)?
+
 </div>
 
 ---
@@ -123,17 +121,17 @@ For the top two urgent items, also draft replies in three sentences or fewer. Do
 
 ### 📌 What is happening
 
-Received emails are visible, but **emails I sent and never got a reply to** are not. This is one of the most common leaks in sales work: waiting for a contract response, partner resource confirmation, renewal data requests — all quietly forgotten.
+Received email is visible, but **email I sent that never got a reply** is not. This is the most common leak in sales.
 
 <dl>
 <dt>🎯 Expected output</dt>
-<dd>A list of unanswered emails and <strong>four polite follow-up drafts</strong>, one for each item</dd>
+<dd>One <strong>table</strong> of unanswered emails</dd>
 
 <dt>💡 Efficiency point</dt>
-<dd>This is work that people <strong>structurally miss</strong>. Unless you intentionally dig through Sent Items, you cannot see it. Even then, you must check each thread to see whether a reply came in. Cowork compares Sent Items and Inbox <strong>at the thread level</strong>.</dd>
+<dd>This is work people <strong>structurally miss</strong>. Even in Sent Items, you must check each thread for a reply. Cowork compares at the <strong>thread level</strong>.</dd>
 
 <dt>⚠️ What to check</dt>
-<dd>Check the <strong>tone</strong> of the drafts. They should be polite confirmations, not pressure. The recipients are customers and partners.</dd>
+<dd>Check that it does not create drafts when you did not ask for them.</dd>
 </dl>
 
 </div>
@@ -141,15 +139,15 @@ Received emails are visible, but **emails I sent and never got a reply to** are 
 <div class="prompt-box" markdown="1">
 
 ~~~text
-Find emails I sent over the last week that have not received a reply yet.
-For each one, draft a polite follow-up. Show them to me before sending.
+Make a table of only the emails I sent in the last week that have not received a reply.
+Use 3 columns: recipient / organization / what I am waiting for. Do not draft anything yet.
 ~~~
 
 </div>
 
 <div class="expect" markdown="1">
 
-**✅ Check the result** — You should see **4 unanswered items**.
+**✅ Result check** — You should see **4 unanswered items**.
 
 | Recipient | Organization | Waiting for |
 |---|---|---|
@@ -157,20 +155,21 @@ For each one, draft a polite follow-up. Show them to me before sending.
 | Claire Dubois | Ironwood Consulting | Resource confirmation |
 | Diego Ferrer | Internal CSM | Solstice renewal data |
 | Yuki Tanaka | Internal Finance | Q3 numbers confirmation |
+
+</div>
+
+<div class="info-box tip" markdown="1">
+
+**If you need a follow-up** — *"For the Peter Novak item only, draft a polite follow-up."* This is much faster than drafting all 4 at once.
 </div>
 
 ---
 
 ## What you verified in this step
 
-- ✅ Cowork does **not stop at classification**; it performs **real actions** such as archiving and flagging
-- ✅ It reads and cross-compares **three repositories at once**: email, calendar, and Teams
-- ✅ Actions that go outside the organization, such as sending email, **always require approval**
-- ✅ When a result is wrong, **correcting it in conversation** is faster than asking again from scratch
-
-<div class="info-box note" markdown="1">
-
-**This is still the warm-up** — So far, the work has happened "inside the mailbox." Starting with the next step, Cowork begins **moving across documents and channels** to assemble scattered facts.
-</div>
+- ✅ It does **real actions** such as archive and flag, not just classification
+- ✅ It reads **three repositories at once**: email, calendar, and Teams
+- ✅ External actions **require approval**
+- ✅ Short prompts and **follow-up expansion** are faster
 
 Go to **[Step 2 — 30 minutes before the meeting, create a briefing]({{ '/en/chapters/cowork-lab-2-briefing/' | relative_url }})**.
