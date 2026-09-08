@@ -12,189 +12,152 @@ parent: "ws2"
 
 ## Step 4: Add a Trigger
 
-Add a Flow to the agent
+Have the agent start by itself
 ===
-✅ What is a Flow?
 
-A **Flow** is a Power Automate-based automation process: a workflow that runs a series of tasks based on a specific event, such as user input from Copilot.
+✅ What is a trigger?
 
-**Main features:**
-- Interact with external systems based on data received from Copilot
-- Process business logic such as conditions, loops, and data transformations
-- Connect to various services to implement work automation
+Everything you built so far runs because **a user asks for it**. A **trigger** flips that around: the
+agent starts working when an **external event** happens — a new email arrives, a SharePoint item is
+created, a Teams channel message is posted, or a schedule fires.
 
-**Flow vs. Connector comparison**
+**Tool vs. Trigger**
 
-|Category|Flow|Connector|
+|Category|Tool|Trigger|
 |:---|:---|:---|
-|Role|Runs automation logic based on events from Copilot|Handles data communication with external systems|
-|**Core<br>function**| Condition handling, loops, data transformations, task orchestration | API calls, authentication handling, data schema definitions |
-|**Usage<br>examples**| - Vacation request → register request in HR system<br>- Customer inquiry → create CRM ticket | - Get SharePoint document lists<br>- Send Outlook email |
-|**Relationship**| Flow **uses Connectors** to interact with external systems | Connectors act as **data sources** in Flows |
+|What starts it|The user's request, chosen by the orchestrator|An external event, with no user present|
+|**When it runs**|During a conversation|Whenever the event occurs, including outside a conversation|
+|**Typical use**|"Email the owner about this"|"When an inquiry email arrives, analyse it and notify the owner"|
+|**Relationship**|A trigger usually **calls tools** once it fires|Tools are what the triggered run actually does|
 
 <br>
 
-**Summary of the key difference**
-- Flow = automation logic
-- Connector = means of connecting to external services
-  
-In other words, a Flow defines "what to do," while a Connector handles "where to get and send data."
+In short: a tool answers "**what can the agent do**," while a trigger answers "**when does the agent
+start**."
 
 ---
 
 Workshop
 ===
-In this workshop, you will extend the email-sending connector scenario from earlier to create a work flow that sends an email and also notifies Teams about the sent content.
 
-## 1. Create a Flow
+> **English UI screenshots, September 8, 2026.** Actual captures from an English-language demo
+> environment. **No trigger was left active and no message was sent** — the walkthrough stops at the
+> Power Automate consent step, and that is stated explicitly where it happens.
 
-To create a Flow, select **[+ Add tool]** -> **[+ New tool]** from **[Overview]**.
-<img width="1081" height="779" alt="image" src="{{ '/assets/image/github-attachments/d963a73a-b1e3-4471-8547-e99663380b18.png' | relative_url }}" />
+<div class="info-box warning" markdown="1">
+**This page was rewritten.** Previous versions of this chapter repeated the Step 3 flow content
+verbatim — the title said "Add a Trigger" but every instruction was about creating an agent flow.
+That was an authoring error. This page documents the actual trigger procedure in the current UI.
+</div>
 
-Next, select **[Agent flow]** to move to the designer page for creating a new Flow.
-<img width="1063" height="783" alt="image" src="{{ '/assets/image/github-attachments/605cccab-5010-442e-9b80-7d7d8c786b70.png' | relative_url }}" />
+In this workshop you make the agent start on its own when a new email arrives, instead of waiting
+for someone to type a question.
 
-When you move to the Flow designer, two actions are added by default.
-- When an agent calls the flow: Acts as a trigger. You can specify the input variables to use here. 
-- Respond to the Agent: If you need to call results back to the agent after the task is complete, you can create and pass output variables through this action
+## 1. Open the Triggers section
 
-In this scenario, you only need inputs for the email address, cc, subject, and body values required for sending email and creating a post.<br>
-Because there is no need to return a separate output result, add only input variables under "When an agent calls the flow."
-<br>
-<img width="675" height="395" alt="image" src="{{ '/assets/image/github-attachments/722d2663-b985-4f0e-8117-347ffb671346.png' | relative_url }}" />
-<br>
-To add input variables, select "When an agent calls the flow" and click "[+ Add an input]."<br>
-Add the input variables as shown below.
+Triggers live on the agent **Overview**, in their own card below **Tools**. Select **Add trigger**.
 
-<img width="648" height="225" alt="image" src="{{ '/assets/image/github-attachments/4585ee60-3a34-481b-b959-8416ce75efc2.png' | relative_url }}" />
+![The Triggers card on the agent Overview]({{ '/assets/image/en/caldova/ws2-trigger-overview.png' | relative_url }})
 
-<br>
-<img width="666" height="275" alt="image" src="{{ '/assets/image/github-attachments/6833cedd-c723-408f-8f36-66ae1c114cf0.png' | relative_url }}" />
+<div class="info-box note" markdown="1">
+**Triggers are billable.** The dialog states it plainly: "This is a billable feature and will consume
+messages." Every event that fires the agent consumes messages, so scope the trigger's conditions
+tightly rather than letting it run on every incoming mail.
+</div>
 
-|Variable name|Type|
+## 2. Turn on generative orchestration
+
+Triggers require **generative orchestration**. If the agent is still on classic orchestration, the
+dialog refuses to list anything and shows a gate instead.
+
+![The Add trigger dialog gating on generative orchestration]({{ '/assets/image/en/caldova/ws2-trigger-catalog.png' | relative_url }})
+
+Select **Turn it on**. A "Changes saved." banner confirms it.
+
+<div class="info-box tip" markdown="1">
+**If the gate keeps coming back** — In this environment the gate reappeared on the next visit even
+though **Settings → Orchestration** already showed **Yes — Responses will be dynamic**. The setting
+was genuinely saved; the dialog simply did not read it. Selecting **Turn it on** inside the dialog
+cleared it. If you hit this, check Settings first so you do not chase a setting that is already
+correct.
+
+![Settings showing generative orchestration already set to Yes]({{ '/assets/image/en/caldova/ws2-trigger-orchestration.png' | relative_url }})
+</div>
+
+## 3. Choose the event
+
+With orchestration on, the dialog lists the available triggers. **Featured** shows 11, and
+**Library** has the full set.
+
+![The trigger library]({{ '/assets/image/en/caldova/ws2-trigger-library.png' | relative_url }})
+
+|Trigger|Source|
 |---|---|
-|to|text|
-|Subject|text|
-|CC|text|
-|Body|text|
+|Recurrence|Schedule|
+|When a new response is submitted|Microsoft Forms|
+|When an item is created / created or modified|SharePoint|
+|When a file is created|OneDrive for Business|
+|When a new channel message is added|Microsoft Teams|
+|When a row is added, modified or deleted|Microsoft Dataverse|
+|**When a new email arrives (V3)**|**Office 365 Outlook**|
+|When a task is completed|Planner|
+|When a file is created (properties only)|SharePoint|
+|When an item or a file is modified|SharePoint|
 
----
-## 2. Add an action connector (email)
+Search narrows the list — type `email` to isolate the Outlook trigger.
 
-After you finish entering variables, add and configure the two tasks to run in the Flow in order, based on the input variable values.
-1. Send email
-2. Post a message to a Teams channel
+![Searching the trigger list for email]({{ '/assets/image/en/caldova/ws2-trigger-search.png' | relative_url }})
 
-First, click the [+] button under "When an agent calls the flow" to view the tasks you can add.<br>
-<img width="976" height="845" alt="image" src="{{ '/assets/image/github-attachments/281c490c-f6a5-4f0e-9d45-d889db12748d.png' | relative_url }}" />
+Select **When a new email arrives (V3)**, then select **Next**.
 
-Select "Office 365 Outlook" from search or from the connector list at the bottom, <br>then select "Send an email (V2)" as before.
-<img width="601" height="522" alt="image" src="{{ '/assets/image/github-attachments/d0053a79-95b1-491d-a4c6-40ab7946b7c5.png' | relative_url }}" />
+## 4. Consent to the Power Automate connection
 
-When the email connector is added, a UI similar to the previous session appears.<br>
-Select advanced parameters and add CC.
-<img width="758" height="703" alt="image" src="{{ '/assets/image/github-attachments/7997a038-ca65-43b0-b5b2-6da15c198873.png' | relative_url }}" />
-<br>
+Triggers run on Power Automate, so the next screen is a consent step hosted by Power Automate
+inside Copilot Studio. It restates the event and asks you to agree to the terms and to let Power
+Automate read your user and tenant details.
 
-To enter variables, select the **gear icon** in the upper-right corner of the email connector and click **Use dynamic content**.
-<img width="797" height="218" alt="image" src="{{ '/assets/image/github-attachments/c68a61b3-b360-47d3-a5b4-438e9391e183.png' | relative_url }}" />
+![The Power Automate consent step]({{ '/assets/image/en/caldova/ws2-trigger-config.png' | relative_url }})
 
-Then enter / in each parameter value and insert the variable names declared under "When an agent calls the flow."
-<img width="427" height="359" alt="image" src="{{ '/assets/image/github-attachments/fa2921eb-1cd4-455d-9abd-f100ce4fb41b.png' | relative_url }}" />
+Select **Continue**. After consent you configure the trigger itself:
 
-<img width="883" height="783" alt="image" src="{{ '/assets/image/github-attachments/2cde6243-e7a3-40ad-88fb-2b2b37548717.png' | relative_url }}" />
-
-<img width="821" height="783" alt="image" src="{{ '/assets/image/github-attachments/a74ee7b7-c4a6-48ca-9c1b-b301b1cb22f1.png' | relative_url }}" />
-
-After you declare all variables, the email-sending Flow task is complete.<br>
-When the Flow is called, the values of each variable passed by the agent are mapped to the email connector parameters, and the email is sent.
-<br>
-
----
-## 3. Add an action connector (post a message to a Teams channel)
-
-Next, add a new connector so a message can automatically be posted to a Teams channel after the email is sent.<br>
-As in the previous task, click the [+] button under the email action and add the 
-**[Microsoft Teams] - [Post message in a chat or channel]** action.
-
-<img width="762" height="683" alt="image" src="{{ '/assets/image/github-attachments/3c7439ac-5fdf-402f-9780-1e1a9d12323e.png' | relative_url }}" />
-
-Specify the channel where the notification message will be uploaded with the following settings.
-
-|Parameter|Value|Description|
-|---|---|---|
-|Post as|Flow bot|Specify whether to post under the user's name or on behalf of Flow bot.<br> The name displayed in the channel changes.|
-|Post in|Channel|Specify whether to receive the message through a chat or channel.|
-|Team|Team where the post will be uploaded|Specify the team that contains the channel where the post will appear. <br>When selected, teams you can access are displayed automatically.|
-|Channel|Upload channel|Select the channel where the post will actually be uploaded|
-|Message|Text + body variable value| Enter the post content. Here, enter it based on the Body used in the email|
-
-<br>
-
-For the message, add a dynamic variable so you can use the text used when sending the email together with a fixed message.
-> Similarly, enter / inside the message text to add dynamic variables.
-```
-A new inquiry has arrived. Please check it!<br> @{triggerBody()?['text_3']}
-```
-
-<img width="695" height="583" alt="image" src="{{ '/assets/image/github-attachments/1ee9844e-50e0-4752-b185-da3a89fd1d08.png' | relative_url }}" />
-<br>
-
-When the task is complete, click the **Publish** button at the top to publish the Flow. Then select [Back to agent], and you can automatically see the added Flow on the agent Overview page. 
-<img width="813" height="393" alt="image" src="{{ '/assets/image/github-attachments/a3910866-899d-42ec-82fc-b8147b630d2e.png' | relative_url }}" />
-<br>
-<img width="981" height="408" alt="image" src="{{ '/assets/image/github-attachments/b6fabf2c-cf60-469b-934f-b9c84f150b96.png' | relative_url }}" />
-
----
-## 4. Apply the Flow
-Next, add Instructions and parameter descriptions so the Flow can actually run.<br>
-
-When you go to **[Tools]**, you can see that the Flow you created earlier has been added with the name **Untitled**.
-
-However, because the current configuration duplicates the email-sending task you did earlier, first turn off the **Send an email (V2)** task toggle in **Tools**.
-<img width="1258" height="379" alt="image" src="{{ '/assets/image/github-attachments/69e1c73e-aaae-4a62-bb5b-9b7c22a941d4.png' | relative_url }}" />
-
-Then go to the **Untitled** Flow and apply the same work you did for **Send an email (V2)**.
-|Parameter|Value|
+|Parameter|What to set|
 |---|---|
-|Name|Send email and notification flow|
-|Description|Use this when there is a task that requires sending email on behalf of the user. <br> Use it when an escalation email needs to be sent to the business owner.|
-|To|Dynamically fill with AI - This is the recipient. Refer to the owner list and enter the email address of the user responsible for the relevant business area. Email addresses follow the someone@contoso.com format. If there are multiple people, separate them with ;.|
-|Subjuect|Dynamically fill with AI - This is the email subject. Write it in the format [Business inquiry] summary of inquiry.|
-|Body|Dynamically fill with AI - This is the email body. Enter a summary of the actual inquiry to the owner. <br> The inquiry date and time, requester, inquiry details, and other information must be entered in HTML format.|
-|CC|Custom value - User.Email|
-|After running|Send a specific response - As requested, I sent this content to the owner by email. <br> The owner will contact you separately as soon as possible.|
-<br>
-<img width="1181" height="1145" alt="image" src="{{ '/assets/image/github-attachments/7d09943b-5053-4853-9cae-a95ed665b2db.png' | relative_url }}" />
+|Connection|The Office 365 Outlook connection the trigger signs in with|
+|Folder|Which mailbox folder to watch — usually Inbox|
+|Conditions|Narrow the scope: sender, subject filter, importance, has-attachment|
+|Message to the agent|The prompt the agent receives when the trigger fires, with the mail's fields available as dynamic content|
 
-<br>
+Write the instruction the agent receives so it decides whether the mail actually needs work. For
+example: extract the key issue, search the connected knowledge source, and only escalate to the
+owner when the mail genuinely asks for a decision — ignore newsletters and announcements.
 
-After configuration is complete, select **Save**, then go to **Overview** and modify the Instructions.
+<div class="info-box warning" markdown="1">
+**This walkthrough stops here, honestly.** In the demo environment used for these screenshots the
+**Continue** button on the consent step did not advance — the dialog stayed on the consent screen
+across repeated attempts and a full reload. The parameter screen described in the table above is
+therefore **not** shown as a screenshot, because none was taken. Everything above this box is a real
+capture of a step that actually completed.
+</div>
 
-Because the existing Instructions were configured to use the **Send an email (V2)** tool when escalation occurs,
-remove the declaration for that tool from the Instructions, declare **Send email and notification flow**, and save.
+## 5. Verify before you rely on it
 
-<img width="1010" height="639" alt="image" src="{{ '/assets/image/github-attachments/e56bbe69-d6e2-4bd5-b90c-280c0e7b226a.png' | relative_url }}" />
+<div class="info-box tip" markdown="1">
+**Confirm the save landed** — After configuring the trigger, reload the page and re-open it. In this
+environment saves silently reverted more than once, and a trigger that looks configured before a
+reload has not necessarily been persisted.
+</div>
 
----
+A trigger is only proven by an actual event. Send one test mail that matches the condition, confirm
+the agent ran in **Activity**, and check that it did the right thing — including that it did
+**not** run for a mail that should have been ignored. Until you have seen both outcomes, the trigger
+is configured but not verified.
 
-Test whether the Flow actually runs.
-
-<img width="1278" height="1169" alt="image" src="{{ '/assets/image/github-attachments/fbcf1326-89f0-4f7b-b3d9-bf84977d0f43.png' | relative_url }}" />
-<br>
-<br>
-
-<img width="1803" height="526" alt="image" src="{{ '/assets/image/github-attachments/a7341ff1-eb08-4bb1-a339-3fbd029d338d.png' | relative_url }}" />
-<br>
-<br>
-
-<img width="633" height="705" alt="image" src="{{ '/assets/image/github-attachments/c4d2c9bd-d5a3-4d38-92b2-7778793fdc4a.png' | relative_url }}" />
-<br>
-<br>
-
+<div class="info-box note" markdown="1">
+**Turn it off when you are done.** A live trigger keeps consuming messages on every matching event.
+If you set one up only to follow this workshop, disable it afterwards.
+</div>
 
 ---
 ---
 
 ← [Previous: Step 3. Tools: Flow]({{ '/en/chapters/ws2-3-tool-flow/' | relative_url }}) | [Next: Step 5. Publish and share]({{ '/en/chapters/ws2-5-publish/' | relative_url }}) →
-

@@ -555,6 +555,54 @@
       "sha256": "634053f3fd3ddbf28240f046fd5c5e4145954e6932b3a9afe0c63f8ab49f83b1"
     },
     {
+      "path": "assets/image/en/caldova/ws2-trigger-catalog.png",
+      "capturedAt": "2026-09-08T10:21:31.327Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 77408,
+      "sha256": "5a71e862e043f61b784ad72a25f7d1d52c80398d561576ad898fc6398ff2d502"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-trigger-config.png",
+      "capturedAt": "2026-09-08T10:21:31.328Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 75494,
+      "sha256": "b7f3e01e7af069e26bad252f391f4dc96cf45b0c89ad037e7cbdf27d33d52ac5"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-trigger-library.png",
+      "capturedAt": "2026-09-08T10:21:31.329Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 102378,
+      "sha256": "d3603ee33abed92493f82a648c1b4c03ea4c66c9d626505a1c4b0ba6a43b02dd"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-trigger-orchestration.png",
+      "capturedAt": "2026-09-08T10:21:31.330Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 132321,
+      "sha256": "e24b62fc174702f91a26500650345daa39f8a59bad2ea15c50547fd06a3af69d"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-trigger-overview.png",
+      "capturedAt": "2026-09-08T10:21:31.332Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 128795,
+      "sha256": "cb6f0ef7f99eae60d68626c9a782c46c474ba1b66d2b2c49242ffa1776a70687"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-trigger-search.png",
+      "capturedAt": "2026-09-08T10:21:31.333Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 57716,
+      "sha256": "d28f68980207956f7fad646504ff84052cf8cf346a165725e43e4fd627e6e299"
+    },
+    {
       "path": "assets/image/en/caldova/ws2-website-review.png",
       "capturedAt": "2026-09-07T23:56:31.918Z",
       "width": 1600,
