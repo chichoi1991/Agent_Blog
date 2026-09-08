@@ -15,71 +15,133 @@ parent: "ws2"
 Create a Custom Engine Agent and write Instructions
 ===
 
-### 1. Go to the URL [here](https://copilotstudio.preview.microsoft.com), then select **Create** on the left.
-![image]({{ '/assets/image/github-attachments/27577404-175d-4646-9caa-72be7e07b94d.png' | relative_url }})
-    > https://copilotstudio.preview.microsoft.com/
+> **English UI screenshots, September 8, 2026.** These are actual captures from an
+> English-language demo environment. The current Copilot Studio release no longer offers the
+> conversational "describe your agent" draft that this workshop originally used for a Standard
+> agent, so the steps below match the UI as it ships today. The demo connects a public company
+> news site rather than a specific customer site, so anyone can follow along.
 
-<br/>
+### 1. Create the agent
 
+Go to [Copilot Studio](https://copilotstudio.preview.microsoft.com). On **Home**, select
+**Other ways to build**, then select the **Agent** card marked **Standard**.
 
-### 2. Create an agent draft with natural language
-Create an agent draft using Copilot capabilities.   
-This is where you create a draft, but you can also simply **click Create** and configure it yourself.
-<img width="1248" height="1261" alt="image" src="{{ '/assets/image/github-attachments/ebe5a018-c2c1-4a0b-9fc5-b1be25928015.png' | relative_url }}" />
+![Other ways to build, with the Standard Agent card]({{ '/assets/image/en/caldova/ws2-other-ways.png' | relative_url }})
 
+In **Name your agent**, enter a name such as `Internal Info Assistant - [Your name]`. Expand
+**Agent settings (Optional)** and confirm **Language** is **English (United States)**. Keep the
+solution assigned for your workshop.
 
+![Name your agent, with English (United States) selected]({{ '/assets/image/en/caldova/ws2-create-dialog.png' | relative_url }})
 
-Enter the following prompts.
+Select **Create** and wait for provisioning to finish.
 
-```
-I want to create an agent that answers questions based on internal site information
-```
+<div class="info-box note" markdown="1">
+**What changed** — Earlier releases let you build a Standard agent by chatting with Copilot and
+then reviewing the result under **Configure**. That path is gone. The prompt box on the current
+Home page builds the newer agent type, not the Standard agent this workshop configures, so use
+**Other ways to build** instead.
+</div>
 
-```
-Yes
-```
+### 2. Set the description
 
-```
-I also want to implement email-based escalation to the business owner when needed.
-If the agent cannot find materials and information suitable for the user's question, it can escalate the inquiry to the owner.
-Add a question that asks: Would you like to escalate this?
-```
-
-After the interactive setup is complete, you can review the currently configured agent information under [Configure].
-Click the [Create] button to create the agent.
-<img width="1247" height="1204" alt="image" src="{{ '/assets/image/github-attachments/0f0121e0-a5f4-46c5-a15d-e0cd8becf117.png' | relative_url }}" />
-
-</br>
-
-### 3. Enable generative AI orchestration
-Enable the feature to test here. For the difference between classic and generative orchestration, see [here](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions).
-
-<img width="688" height="419" alt="image" src="{{ '/assets/image/github-attachments/bf0ab9b1-9e19-4318-b035-d1909fd8d8e5.png' | relative_url }}" />
-</br>
-</br>
-You can also change the "response model" in Settings.
-
-
-<img width="1176" height="714" alt="image" src="{{ '/assets/image/github-attachments/1e6ae064-65ad-4b83-9a27-5436c2647fe2.png' | relative_url }}" />
-</br>
+On **Overview**, select **Edit** on the **Details** card and enter a description. The
+orchestrator uses this text, so state what the agent answers and what it escalates.
 
 ```
-As of August 10, 2025, GPT-4o and GPT-5 are available
+An agent that answers questions from a connected public news site and escalates unanswered questions to the business owner by email after confirmation.
 ```
 
-### 4. Add more description to Knowledge
-On the Knowledge screen, add a more detailed description to the website URL that was automatically connected above, then save it.
-<img width="1262" height="575" alt="image" src="{{ '/assets/image/github-attachments/f9431b04-3eb9-44ea-8c62-e43e19235470.png' | relative_url }}" />
+![Saved agent details in the English UI]({{ '/assets/image/en/caldova/ws2-agent-overview.png' | relative_url }})
 
+### 3. Write the Instructions
 
+Select **Edit** on the **Instructions** card and enter the following. The escalation wording is
+deliberate: the agent must admit when it cannot find an answer, ask before escalating, and show
+the full message before anything is sent.
 
 ```
-This Knowledge source is a site that provides a consolidated view of media news information from LG Innotek. You can check press releases, news, announcements, and other information related to LG Innotek.
-Use it when users request searches for news or disclosure materials related to LG Innotek or LG이노텍.
+## Role
+You answer questions about company information using the connected public news site.
+Write all responses in English.
+
+## Answering
+1. Search the connected knowledge source first, then answer with citations.
+2. Keep answers short: a two sentence summary followed by key points.
+3. Never state facts that are not supported by the source.
+
+## Escalation
+If the knowledge source does not contain the answer:
+1. Tell the user plainly that you could not find it.
+2. Ask exactly: "Would you like to escalate this to the business owner?"
+3. If the user agrees, collect the owner's email address, the original question, and any context.
+4. Show the complete recipient, subject, and body, and send only after explicit confirmation.
+5. Never send a message during setup or screenshot capture.
 ```
 
-<img width="1167" height="978" alt="image" src="{{ '/assets/image/github-attachments/352ffe92-dd52-42dd-9aa6-1339254f9a6e.png' | relative_url }}" />
+Select **Save** and wait for the save to complete.
 
+![Saved Instructions for the escalation scenario]({{ '/assets/image/en/caldova/ws2-instructions.png' | relative_url }})
+
+<div class="info-box tip" markdown="1">
+**Confirm the save landed** — Reload the page and check that the Instructions card still shows
+your text. A card that looks correct immediately after selecting **Save** has not necessarily
+been persisted; this environment showed a transient server error that silently discarded the
+first attempt.
+</div>
+
+### 4. Choose the response model
+
+The **Select your agent's model** card on **Overview** controls the model used for reasoning and
+responding. The capture above shows the environment default. Pick the model your workshop
+specifies; availability changes over time and differs per environment.
+
+### 5. Connect the knowledge source
+
+Open the **Knowledge** tab and select **Add knowledge**.
+
+![Add knowledge source catalog]({{ '/assets/image/en/caldova/ws2-knowledge-catalog.png' | relative_url }})
+
+Choose **Public websites**, enter the site you want the agent to search, and select **Add**.
+Then give the source a clear name and description, because the orchestrator reads the
+description when deciding whether to search this source.
+
+```
+This knowledge source is a public company news site that consolidates press releases, announcements, and company news. Use it when the user asks to look up news, announcements, or press material about the company.
+```
+
+![Reviewing the public website link, name, and description]({{ '/assets/image/en/caldova/ws2-website-review.png' | relative_url }})
+
+Select **Add to agent**, then wait for the source to reach **Ready**.
+
+![The public website knowledge source showing Ready]({{ '/assets/image/en/caldova/ws2-knowledge-ready.png' | relative_url }})
+
+<div class="info-box note" markdown="1">
+**Where the web toggles live now** — **Use information from the Web** and the other knowledge
+switches moved to **Settings → Knowledge**. Adding a public website or enabling web search uses
+Grounding with Bing Search, which the dialog notes may send data outside your compliance
+boundary.
+</div>
+
+![Orchestration and related settings]({{ '/assets/image/en/caldova/ws2-settings-orchestration.png' | relative_url }})
+
+### 6. Test the grounded answer
+
+Open **Test** and ask a question the connected site can answer.
+
+```text
+What recent announcements are on the company news site? Summarize two of them with citations.
+```
+
+The actual response below follows the Instructions — a short summary, key points, and numbered
+citations back to the site.
+
+![Actual English response grounded in the connected news site, with citations]({{ '/assets/image/en/caldova/ws2-grounded-test.png' | relative_url }})
+
+Check the citations rather than assuming a **Ready** source means the answer was grounded.
+
+> A new draft reports a warning that no evaluation has been run. Run an evaluation before
+> publishing; nothing here implies the agent has been evaluated or published.
 
 ---
 You have finished setting the agent's basic Instructions.

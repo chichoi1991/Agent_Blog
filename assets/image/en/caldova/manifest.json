@@ -1,310 +1,430 @@
 {
   "products": [
     "Microsoft Copilot Studio",
-    "Microsoft SharePoint"
+    "Microsoft SharePoint",
+    "Microsoft Power Automate"
   ],
   "locale": "en-US",
-  "environment": "Caldova demo",
+  "environment": "Caldova demo tenant",
   "method": "Actual browser UI screenshots; no translated pixel overlays",
   "sentEmailOrTeamsMessagesDuringCapture": false,
   "publishedAgentDuringCapture": false,
-  "captureDate": "2026-09-07",
   "captures": [
     {
       "path": "assets/image/en/caldova/classic-agent-overview.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:47:10.689Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 141418,
       "sha256": "403583edb8e94433516902cba8f0bcd67d4dbc6eac29b8f2bb3569096fb728a9"
     },
     {
       "path": "assets/image/en/caldova/classic-create-english.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:08:21.557Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 49993,
       "sha256": "62f0ef78bbac392525538ed4ab4c4217f3efadb91f8d8fa1b074600a9f4b62d0"
     },
     {
       "path": "assets/image/en/caldova/classic-create-entry.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:03:29.303Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 120823,
       "sha256": "c82b14786bb91bd1e3e8d8c1cd9ea4067ce9d5a05077bc2115c274bd39abebbd"
     },
     {
       "path": "assets/image/en/caldova/classic-delivery-instructions.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T14:11:08.519Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 139794,
       "sha256": "d32b79f07adda026e74b0074b15b6e7c8f9a292b93d26e33fb9466bfe502544e"
     },
     {
       "path": "assets/image/en/caldova/classic-details-edit.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:47:11.021Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 142849,
       "sha256": "63bb1b275245f61149793cf70fc2bd02492e5231100350f674e9b1dc24638963"
     },
     {
       "path": "assets/image/en/caldova/classic-environment-picker.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:15:15.175Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 158245,
       "sha256": "5a1ddf452ba376b2c8e6530cabc54e5c018c42cf5d89b42405cb24dd9afbd044"
     },
     {
       "path": "assets/image/en/caldova/classic-instructions-edit.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:47:13.514Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 139768,
       "sha256": "6779c8617ae1fde82f203ca49e3cc31e24a3c2531549462e0179ac587353802d"
     },
     {
       "path": "assets/image/en/caldova/classic-knowledge-catalog.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:25:55.142Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 132940,
       "sha256": "99f5c1d6a19fa0f9aebd007caa7e38ffbe86b0de00f5b5720709ae6c4c62147c"
     },
     {
       "path": "assets/image/en/caldova/classic-knowledge-details.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T13:37:00.852Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 83590,
       "sha256": "25af261021dc6136928661fb36761cb2e5e7007fb9109fef80cbf2125bbbb11c"
     },
     {
       "path": "assets/image/en/caldova/classic-knowledge-grounded-test.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T13:38:40.725Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 183701,
       "sha256": "c027ed3e63a143b0560fad819c1bdf78c73b42ae070224f67de09b41d4a8a3f0"
     },
     {
       "path": "assets/image/en/caldova/classic-knowledge-ready.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T13:36:03.885Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 60454,
       "sha256": "428b4d00244e31132411fc5942800af99603b3acda343ea820266153ccbd8145"
     },
     {
       "path": "assets/image/en/caldova/classic-mcp-catalog.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:38:32.186Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 161405,
       "sha256": "59579a15b39afbeeb7567b4642fcf9cd389b0ca73ed5ccd4bb5e3b95c5ed0c9b"
     },
     {
       "path": "assets/image/en/caldova/classic-mcp-connection-required.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:41:18.990Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 74205,
       "sha256": "231e2564e1902ff7b3bd497cbc6ad66a9d2cf4998ed5f5e8462a2f76d344fafa"
     },
     {
       "path": "assets/image/en/caldova/classic-model-gpt41.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:21:38.058Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 141537,
       "sha256": "269dadca067f0a581c8c981a652b7114a3668d62106ab9673a87e6101a9abdc9"
     },
     {
       "path": "assets/image/en/caldova/classic-settings-knowledge.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:14:43.928Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 147804,
       "sha256": "460d74d7d1df5f90d928d2c87b5b04a989b8b0da15b8f2cf641d440ae2bec4e8"
     },
     {
       "path": "assets/image/en/caldova/classic-settings-orchestration.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:14:13.448Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 143297,
       "sha256": "e70fa8a2bd87140b94aec92ac9ff67fe500e0e3c7074846c12a63acfcf9c1263"
     },
     {
       "path": "assets/image/en/caldova/classic-sharepoint-add.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:26:10.101Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 76234,
       "sha256": "580cc13ced2957e4355f9b22b5ab78e22209983c6a15413c91107c810a7aed66"
     },
     {
       "path": "assets/image/en/caldova/classic-sharepoint-empty-library.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:28:16.663Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 83600,
       "sha256": "93b67ee5fdb16f680b9ad9fd0cbc1519ba5efbc7b1b389b979bf056cb66928a3"
     },
     {
       "path": "assets/image/en/caldova/classic-sharepoint-review.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T13:35:10.942Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 71067,
       "sha256": "a431af7c7fd7fbf388ef047610ff5c68abd6303505da3e2ee11dfda28d6d3354"
     },
     {
       "path": "assets/image/en/caldova/classic-sharepoint-select-folder.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T13:34:21.476Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 73529,
       "sha256": "63d3ff385f8018264fa00ea6e69a92ce26d15fdd1533cc1134f8a111987443b1"
     },
     {
       "path": "assets/image/en/caldova/classic-test-english.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:24:04.109Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 246386,
       "sha256": "5a5572c2e92f10ee2a17bc9c928aac7585b6c7bd288b44446b65ce99aece454d"
     },
     {
       "path": "assets/image/en/caldova/classic-tools-catalog.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:36:35.966Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 117800,
       "sha256": "482fbea13d80577508fd20324b9f0318ff527af529e03126b2bd6bd0fb7c073b"
     },
     {
       "path": "assets/image/en/caldova/newcs-home.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T12:01:45.914Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 276377,
       "sha256": "77ea79891092c575040f672eb22e96807ec5e968f01a7c081caee533089b2d4a"
     },
     {
       "path": "assets/image/en/caldova/outlook-confirmation-credentials.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T13:49:20.880Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 139410,
       "sha256": "22916cb699b5566b84f55432488e7d1c59d3a955ba1c046c42af948a14ac6fd9"
     },
     {
       "path": "assets/image/en/caldova/outlook-connected.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T13:44:25.302Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 97116,
       "sha256": "32c347a2d57f2d43787f01503b9692f0af135367fa420cdfaac556511dc6c603"
     },
     {
       "path": "assets/image/en/caldova/outlook-create-connection.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T13:40:53.879Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 96657,
       "sha256": "bc174fc0df9124960544a9e438866d65ca181ef2259a18d3d6e7695ed5a6e454"
     },
     {
       "path": "assets/image/en/caldova/outlook-new-connection-menu.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T13:40:11.441Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 104713,
       "sha256": "48fd529ab2a5668a523d2703f6c6cadc4085002c9963254506d19b83e5a095b3"
     },
     {
       "path": "assets/image/en/caldova/outlook-sendemail-only.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T13:49:34.545Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 143373,
       "sha256": "e2fb5915f9d2fffa28638857adca060c124f8f8eb5e38737c8eb5364ddb0445d"
     },
     {
       "path": "assets/image/en/caldova/sharepoint-create-folder.png",
-      "product": "Microsoft SharePoint",
       "capturedAt": "2026-09-07T13:30:22.668Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 115763,
       "sha256": "d6f6d2f06514df0f5f973c5134d7e7c3a05ebf84379ad3765f195bfa15fc5d98"
     },
     {
       "path": "assets/image/en/caldova/sharepoint-demo-library.png",
-      "product": "Microsoft SharePoint",
       "capturedAt": "2026-09-07T13:32:16.012Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 85573,
       "sha256": "f8ff1ddead83e8ad5676a819d258d7eabd9d44a27cbeb9e31661d4ee6627b9fb"
     },
     {
       "path": "assets/image/en/caldova/sharepoint-folder-path.png",
-      "product": "Microsoft SharePoint",
       "capturedAt": "2026-09-07T13:33:10.385Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 123099,
       "sha256": "edff4cadeb4ef49cd76c5d9f8f85c0c80c3cf517bcb6bfc983c11663fed3139b"
     },
     {
       "path": "assets/image/en/caldova/teams-channel-inputs.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T14:12:05.112Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 111795,
       "sha256": "89930852e5404f40b571b4429f8c40688b76d13ffbeebdf5100a0f2ee3175d29"
     },
     {
       "path": "assets/image/en/caldova/teams-confirmation-credentials.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T14:12:04.995Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 115556,
       "sha256": "f02ef7cfcc825ee75d61c6e4faacc3d648f6899287263322a4e588da881c9f66"
     },
     {
       "path": "assets/image/en/caldova/teams-connected.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T14:03:21.722Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 92703,
       "sha256": "e9431abbd3abaf151dad39b2791333885d36866cd09665c81a0c054e837700fa"
     },
     {
       "path": "assets/image/en/caldova/teams-create-connection.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T14:00:14.354Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 92718,
       "sha256": "82fbf31cfb2fd975a6a78785425c8dae2afdc9462d92f40d4b6e2b438991307b"
     },
     {
       "path": "assets/image/en/caldova/teams-select-action.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T13:59:43.338Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 133966,
       "sha256": "641f91d8a2cd399fd2f39018703c0620f70455e9b0c5a7ab7e3075c68e96093e"
     },
     {
       "path": "assets/image/en/caldova/teams-tool-details.png",
-      "product": "Microsoft Copilot Studio",
       "capturedAt": "2026-09-07T14:12:04.888Z",
       "width": 1600,
       "height": 1100,
+      "bytes": 116180,
       "sha256": "57b28098d9a27aa86e82e6f5d81254d564a2485c45bac18bb2438a7207664c48"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-agent-overview.png",
+      "capturedAt": "2026-09-08T00:12:11.192Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 134051,
+      "sha256": "3b34295c20b32f1598fb66a867720d4bf0c742fff6deac409ee97e6da8c7ff4f"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-create-dialog.png",
+      "capturedAt": "2026-09-07T23:53:11.505Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 49260,
+      "sha256": "1e4c1739648822c7ffe634ec9e2d671c982d717e7ab9f76b1a19912d53cd750d"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-grounded-test.png",
+      "capturedAt": "2026-09-08T00:12:10.863Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 235571,
+      "sha256": "f8d5f63a77fda593927db719f5efca48a8d0ea41bda507116cbeb274fa65eaf9"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-instructions.png",
+      "capturedAt": "2026-09-08T00:12:11.483Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 135056,
+      "sha256": "089a8757cf3e6dbe94b6894562d41b451f7291336ae6bf5c41415c4816ce2d29"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-knowledge-catalog.png",
+      "capturedAt": "2026-09-07T23:54:25.912Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 158572,
+      "sha256": "de942495457a4fd23a94e202c2ae8f8e2f0c49921ca5bf8c3fa4176a31435c49"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-knowledge-ready.png",
+      "capturedAt": "2026-09-07T23:57:42.274Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 62063,
+      "sha256": "2855ebff7fab201e74a96e64ef790924ea3d358eb533c384eeada8732a0b7851"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-other-ways.png",
+      "capturedAt": "2026-09-07T23:53:07.789Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 120604,
+      "sha256": "e9638a575186296722b1202dc11e95086d3e919c63e78cb2f0b8c6e1be4679b4"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-outlook-actions.png",
+      "capturedAt": "2026-09-08T00:15:12.626Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 59908,
+      "sha256": "bc0c417ac8ceb0017c34a6f4fdcee366b01bca2ccc1d5fd1875f70dce8a2f290"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-outlook-connection.png",
+      "capturedAt": "2026-09-08T00:15:42.256Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 71177,
+      "sha256": "0189c8cd68eecd4f17b73c0d60618f070438506a30faceb87278bdbff2e58e3c"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-settings-orchestration.png",
+      "capturedAt": "2026-09-07T23:58:24.287Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 142406,
+      "sha256": "bce96ff85748a404e4547b8eaa1736fecbbcd8afbff542c8efe5ceefb199291e"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-tool-confirmation.png",
+      "capturedAt": "2026-09-08T00:23:58.609Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 148930,
+      "sha256": "e3040d598d036a3b9f9dc160f8ecc9be0fc7e42f7d4b2882bd4382e7b84fd5d1"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-tool-details.png",
+      "capturedAt": "2026-09-08T00:23:58.480Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 148930,
+      "sha256": "e3040d598d036a3b9f9dc160f8ecc9be0fc7e42f7d4b2882bd4382e7b84fd5d1"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-tool-inputs.png",
+      "capturedAt": "2026-09-08T00:23:58.716Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 131582,
+      "sha256": "58b48723fbdd6a408911be7969e9cc515e39ab00b8ffae5945635c96bab607df"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-tools-catalog.png",
+      "capturedAt": "2026-09-08T00:15:05.470Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 85971,
+      "sha256": "634053f3fd3ddbf28240f046fd5c5e4145954e6932b3a9afe0c63f8ab49f83b1"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-website-review.png",
+      "capturedAt": "2026-09-07T23:56:31.918Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 110399,
+      "sha256": "c44472d386227d0ddd70379bd4406754953b06bdf0b7591e6cc68ae07dc4650f"
     }
   ]
 }
