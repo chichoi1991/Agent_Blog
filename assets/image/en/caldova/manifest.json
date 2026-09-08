@@ -323,6 +323,142 @@
       "sha256": "1e4c1739648822c7ffe634ec9e2d671c982d717e7ab9f76b1a19912d53cd750d"
     },
     {
+      "path": "assets/image/en/caldova/ws2-flow-action-search.png",
+      "capturedAt": "2026-09-08T10:02:29.676Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 97282,
+      "sha256": "37e221311f986a00d7bd1812c7bbba4ba1cf1c9b7bbe382ffdde484b52e0e770"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-add-tool.png",
+      "capturedAt": "2026-09-08T10:02:29.678Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 136513,
+      "sha256": "d8763faac8438a4b599871aedfe4959ae22715ce3beb21633a334d8d0bdbe5b7"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-advanced-params.png",
+      "capturedAt": "2026-09-08T10:02:29.680Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 82528,
+      "sha256": "a61c6c65f2168cb585b9e279a97d31ffc0141a3c253cf1ddd42297a65e7d3818"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-designer.png",
+      "capturedAt": "2026-09-08T10:02:29.681Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 41411,
+      "sha256": "47ff9930bb1ead24e00736280be286779fbc52d8a34eb94f69204a3fb83bc409"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-dynamic-list.png",
+      "capturedAt": "2026-09-08T10:02:29.682Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 122168,
+      "sha256": "7fd30021ae0ed13939363e7bdf364be5c06165d0e271e401774f13c05af8817c"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-dynamic-menu.png",
+      "capturedAt": "2026-09-08T10:02:29.683Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 89011,
+      "sha256": "95295f5adc52477d42fc27479cf2379fce3e994be2c1c5b6d38a168797f3a25c"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-dynamic-picker.png",
+      "capturedAt": "2026-09-08T10:02:29.684Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 86248,
+      "sha256": "91d029db34b4d0570d626042039fc6c98798c788997fc7c66922bfc7ea069e8f"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-email-added.png",
+      "capturedAt": "2026-09-08T10:02:29.685Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 86203,
+      "sha256": "cf8df8cf82c9eb06004f83ca0bfc25a6bc5dadcc536750d1c1ee1ad6994f0fc7"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-email-mapped.png",
+      "capturedAt": "2026-09-08T10:02:29.686Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 80664,
+      "sha256": "20fa6f29d45273bca2fed7aff9a652845ea7da2fa9bbe69c1df8c483ab96c0aa"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-email-panel.png",
+      "capturedAt": "2026-09-08T10:02:29.689Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 107499,
+      "sha256": "a25f63c2c098b815b64bcfcbe74f22fa50a6ee3f2fd1253f125997d0b0f4a250"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-input-types.png",
+      "capturedAt": "2026-09-08T10:02:29.690Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 62170,
+      "sha256": "81cb1b6a7de5a303bd87cafd73a9954aa00aac74e77e24654beb46518cc45a83"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-inputs-done.png",
+      "capturedAt": "2026-09-08T10:02:29.691Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 67121,
+      "sha256": "d7f3e08aa844893c0a1ab6bfd1fd05af8fc859202ee983d9a8c69c0bb5fabc5e"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-teams-added.png",
+      "capturedAt": "2026-09-08T10:02:29.692Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 81575,
+      "sha256": "1e64dee5191a74f1697202e4cf17736debae10b39492a0bfe517ecd869bd3b3d"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-teams-channel.png",
+      "capturedAt": "2026-09-08T10:02:29.694Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 81861,
+      "sha256": "ac028cce8e20294b5e937631730c2f71d21a23ee87d9c660cfe7b6783b740509"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-teams-postin.png",
+      "capturedAt": "2026-09-08T10:02:29.695Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 79520,
+      "sha256": "897125c5746cc1cc667037ce9d32264d30b688e9e1c32675454b98bb2092e802"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-teams-search.png",
+      "capturedAt": "2026-09-08T10:02:29.695Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 93140,
+      "sha256": "c81fe0511a3bc91f2388bd8237d31a3709248c987472709e87c585b59c46d2bd"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-trigger-inputs.png",
+      "capturedAt": "2026-09-08T10:02:29.697Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 52680,
+      "sha256": "d0c88a7e6ff00ba2ea5ee18626899c398e5c7fb597aaadee1f677cfbf3dda810"
+    },
+    {
       "path": "assets/image/en/caldova/ws2-grounded-test.png",
       "capturedAt": "2026-09-08T00:12:10.863Z",
       "width": 1600,
