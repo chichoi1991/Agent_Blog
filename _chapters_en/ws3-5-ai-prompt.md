@@ -384,4 +384,4 @@ Summarize today's work status and send it to me
 
 ---
 
-← [Previous: Step 4. ThinQ MCP]({{ '/en/chapters/ws3-4-thinq-mcp/' | relative_url }}) | [Next: Step 6. Excel filtering]({{ '/en/chapters/ws3-6-excel-filter/' | relative_url }}) →
+← [Previous: Step 4. Add an external MCP tool]({{ '/en/chapters/ws3-4-external-mcp/' | relative_url }}) | [Next: Step 6. Excel filtering]({{ '/en/chapters/ws3-6-excel-filter/' | relative_url }}) →

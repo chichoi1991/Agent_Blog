@@ -189,4 +189,4 @@ Power Automate 플로우 없이 **에이전트 지침만으로** 다단계 워�
 
 ---
 
-← [이전: Step 2. 지식 소스 연결]({{ '/chapters/ws3-2-knowledge/' | relative_url }}) | [다음: Step 4. ThinQ MCP]({{ '/chapters/ws3-4-thinq-mcp/' | relative_url }}) →
+← [이전: Step 2. 지식 소스 연결]({{ '/chapters/ws3-2-knowledge/' | relative_url }}) | [다음: Step 4. 외부 MCP 도구 추가]({{ '/chapters/ws3-4-external-mcp/' | relative_url }}) →

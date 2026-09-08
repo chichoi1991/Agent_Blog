@@ -191,4 +191,4 @@ Report this week's work status by email to my team leader (manager@company.com)
 
 ---
 
-← [Previous: Step 2. Connect knowledge sources]({{ '/en/chapters/ws3-2-knowledge/' | relative_url }}) | [Next: Step 4. ThinQ MCP]({{ '/en/chapters/ws3-4-thinq-mcp/' | relative_url }}) →
+← [Previous: Step 2. Connect knowledge sources]({{ '/en/chapters/ws3-2-knowledge/' | relative_url }}) | [Next: Step 4. Add an external MCP tool]({{ '/en/chapters/ws3-4-external-mcp/' | relative_url }}) →

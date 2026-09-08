@@ -153,7 +153,7 @@ Before the workshop, check the following items.
 | ⚙️ | [Step 1. Create an agent]({{ '/en/chapters/ws3-1-create-agent/' | relative_url }}) | Create an agent and write Instructions |
 | 📂 | [Step 2. Connect knowledge sources]({{ '/en/chapters/ws3-2-knowledge/' | relative_url }}) | Connect knowledge sources |
 | 📧 | [Step 3. Work IQ MCP]({{ '/en/chapters/ws3-3-workiq-mcp/' | relative_url }}) | Add Work IQ MCP tools |
-| 📱 | [Step 4. ThinQ MCP]({{ '/en/chapters/ws3-4-thinq-mcp/' | relative_url }}) | Add ThinQ MCP tools |
+| 📱 | [Step 4. Add an external MCP tool]({{ '/en/chapters/ws3-4-external-mcp/' | relative_url }}) | Add an external MCP tool |
 | 🤖 | [Step 5. AI Prompt tool]({{ '/en/chapters/ws3-5-ai-prompt/' | relative_url }}) | Add an AI Prompt tool |
 | 📊 | [Step 6. Excel filtering]({{ '/en/chapters/ws3-6-excel-filter/' | relative_url }}) | Filter Excel data (advanced) |
 | 🚀 | [Step 7. Teams deployment]({{ '/en/chapters/ws3-7-teams-deploy/' | relative_url }}) | Deploy to Teams |

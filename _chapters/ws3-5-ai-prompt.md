@@ -383,4 +383,4 @@ HTML 결과물 생성을 위해 /HTML_Response_Generator 를 호출하여 반환
 
 ---
 
-← [이전: Step 4. ThinQ MCP]({{ '/chapters/ws3-4-thinq-mcp/' | relative_url }}) | [다음: Step 6. Excel 필터링]({{ '/chapters/ws3-6-excel-filter/' | relative_url }}) →
+← [이전: Step 4. 외부 MCP 도구 추가]({{ '/chapters/ws3-4-external-mcp/' | relative_url }}) | [다음: Step 6. Excel 필터링]({{ '/chapters/ws3-6-excel-filter/' | relative_url }}) →

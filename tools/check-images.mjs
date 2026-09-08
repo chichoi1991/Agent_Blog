@@ -14,6 +14,7 @@ const { values } = parseArgs({
     page: { type: 'string', multiple: true },
     offset: { type: 'string', default: '0' },
     limit: { type: 'string', default: 'Infinity' },
+    'allow-stale': { type: 'boolean', default: false },
   },
 });
 const root = resolve(values.site);
@@ -28,6 +29,52 @@ function walk(dir) {
   }
 }
 walk(root);
+
+// A stale _site silently turns this audit into fiction: it reports images that were
+// fixed weeks ago and stays blind to pages that do not exist in the old build yet.
+// Refuse to run when the build predates the newest file that can change the output.
+if (!values['allow-stale']) {
+  const newestBuild = files.reduce((max, f) => {
+    const t = statSync(resolve(root, f)).mtimeMs;
+    return t > max ? t : max;
+  }, 0);
+  // Only inputs Jekyll actually renders from. Tooling and scratch files do not
+  // change the built HTML, so they must not trip the guard.
+  const sourceRoots = [
+    '_chapters', '_chapters_en', '_layouts', '_includes', '_data',
+    '_posts', '_pages', 'assets', '_config.yml',
+  ];
+  let newestSource = 0;
+  let newestSourcePath = '';
+  const projectRoot = resolve(root, '..');
+  const consider = (p) => {
+    const t = statSync(p).mtimeMs;
+    if (t > newestSource) { newestSource = t; newestSourcePath = relative(projectRoot, p); }
+  };
+  const scan = (dir) => {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const p = resolve(dir, entry.name);
+      if (entry.isDirectory()) scan(p);
+      else consider(p);
+    }
+  };
+  for (const name of sourceRoots) {
+    const p = resolve(projectRoot, name);
+    let st;
+    try { st = statSync(p); } catch { continue; }
+    st.isDirectory() ? scan(p) : consider(p);
+  }
+  if (newestSource > newestBuild) {
+    const hours = ((newestSource - newestBuild) / 3600000).toFixed(1);
+    console.error(
+      `Stale build: ${values.site} is ${hours}h older than ${newestSourcePath}. ` +
+      `Run "bundle exec jekyll build" first — auditing a stale build reports phantom ` +
+      `errors and misses real ones. Use --allow-stale to override.`
+    );
+    process.exit(2);
+  }
+}
+
 const fileSet = new Set(files);
 const images = new Map();
 const errors = [];
