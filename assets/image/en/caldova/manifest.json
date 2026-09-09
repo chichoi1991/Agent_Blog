@@ -609,6 +609,46 @@
       "height": 1100,
       "bytes": 110399,
       "sha256": "c44472d386227d0ddd70379bd4406754953b06bdf0b7591e6cc68ae07dc4650f"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-agent-created.png",
+      "capturedAt": "2026-09-09T15:04:06.709Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 147046,
+      "sha256": "4d09bc4dd4a9a2698a9ddc266bb73efa619619d69d3692b1d696bcdaaca306dd"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-authoring-complete.png",
+      "capturedAt": "2026-09-09T15:02:29.055Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 122630,
+      "sha256": "53d41bb4b47e23ca0f964a0f6bc4bf12d2a3e5ed1fd8a9694ead8f3073aea996"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-authoring-question.png",
+      "capturedAt": "2026-09-09T14:58:02.494Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 73884,
+      "sha256": "43a7bc0a33481094d1aecfacb5eb25d45af62e628d07a924e2a239f3199be7dc"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-home-prompt.png",
+      "capturedAt": "2026-09-09T14:50:18.989Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 294716,
+      "sha256": "10fb9d79887d1012dab9d510e23f70422ed60be2d4624d2b87fe01db440ce757"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-instructions-saved.png",
+      "capturedAt": "2026-09-09T15:12:56.871Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 201451,
+      "sha256": "e611c7717b38e781c6e74a7c0f641b828026c4e5f00377e7dcca35cf4ee161b7"
     }
   ]
 }
