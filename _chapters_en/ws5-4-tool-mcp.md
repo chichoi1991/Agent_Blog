@@ -4,7 +4,7 @@ lang: en
 date: 2026-04-23
 title: "Add MCP tools"
 short_title: "Add MCP tools"
-description: "[Renewal] Explore the basic features of Copilot Studio - Add a built-in MCP (email management) tool"
+description: "[Renewal] Explore the basic features of Copilot Studio - Add a built-in MCP (mail) tool"
 order: 4
 category: workshop
 parent: "ws5"
@@ -16,8 +16,8 @@ parent: "ws5"
 
 ## ✅ The role of Tools in Copilot Studio
 
-**Tools** are **additional capabilities** that extend what Copilot can do by default.  
-Simply put, they are a core element that **upgrades Copilot from a conversational AI into an AI that can execute work**.
+**Tools** are **additional capabilities** that extend what an agent can do by default.
+Simply put, they are the element that **upgrades an agent from a conversational AI into an AI that can execute work**.
 
 ---
 
@@ -34,123 +34,147 @@ Simply put, they are a core element that **upgrades Copilot from a conversationa
 
 ## **2. Why are they needed?**
 
-
-- By default, Copilot is a **conversational AI** → it cannot query data or execute system commands  
-- **When you connect tools, Copilot can execute real tasks**  
+- By default, an agent is a **conversational AI** → it cannot query data or execute system commands
+- **When you connect tools, the agent can execute real tasks**
 
 ---
 
 ## **3. Understand through examples**
 
-- **Without tools**  
-  > “Tell me this week's sales”  
-  → Copilot: “I can't access the data directly.”
+- **Without tools**
+  > "Tell me this week's sales"
+  → Agent: "I can't access the data directly."
 
-- **With tools connected**  
-  > “Tell me this week's sales”  
-  → Copilot: (calls ERP API) → “This week's sales are **₩120,000,000**.”
-
----
-
-## **4. Summary**
-
-
-✔ Tools are central to **extending Copilot's capabilities**  
-✔ They enable **work automation + data connections + system integration**  
-✔ They make it possible to **execute real business processes**  
+- **With tools connected**
+  > "Tell me this week's sales"
+  → Agent: (calls ERP API) → "This week's sales are **$120,000**."
 
 ---
-<br><br><br>
+
+## **4. What is MCP?**
+
+**Model Context Protocol (MCP)** is an open standard for exposing a set of related tools through a
+single server. Instead of adding one action at a time, you add the server once and then choose which
+of its tools the agent may call.
+
+| | Connector action | MCP server |
+|---|---|---|
+|Granularity|One action per tool|Many tools behind one entry|
+|Descriptions|You usually write them|Supplied by the server|
+|Maintenance|You update each action|The server owner updates the catalog|
+
+---
+<br>
 
 ## Lab
 
-In this lab, add an MCP tool that lets the agent send spec sheet content by email on behalf of the user.
+> **English UI screenshots, September 10, 2026.** Actual captures from an English-language demo
+> environment. Two things changed since this lab was first written:
+>
+> - The old **Email Management MCP Server** entry is gone. Outlook mail operations now live in the
+>   **Mail** MCP server.
+> - Tools are added from the **Tools** section of the agent configuration panel on the **Build**
+>   page, not from a separate Tools tab.
+>
+> **Nothing was sent.** This lab is scoped to draft creation, so no mail left the demo tenant.
 
-### 1. Add an email-sending tool
-In the agent settings window, select **Tools** - **+ Add a tool**.
-<img width="970" height="589" alt="image" src="{{ '/assets/image/github-attachments/4ff4e0b4-8fd1-4bb0-9c79-9097c94156ff.png' | relative_url }}" />
+### 1. Open the tool catalog
 
-Under Model Context Protocol, select **Email Management MCP Server**.
-<img width="543" height="396" alt="image" src="{{ '/assets/image/github-attachments/9d324745-f91b-4588-9729-df8fa9cb315e.png' | relative_url }}" />
+On the **Build** page, select **+** beside **Tools**. The catalog opens on **Featured**, which lists
+the most common Microsoft 365 connectors.
 
-When you select the tool, an OAuth connection window appears for using the Office 365 Outlook connector. <br>
-Use **Create a new connection**, enter the sign-in information for the connected account, and click Create. <br>
-<img width="548" height="406" alt="image" src="{{ '/assets/image/github-attachments/d4260866-c5ea-48fb-aaad-3a9d9f2552ec.png' | relative_url }}" />
-<br>
-<img width="1022" height="738" alt="image" src="{{ '/assets/image/github-attachments/599eb77c-27b3-4ca8-834e-47078913cd4d.png' | relative_url }}" />
-<br><br>
-When the connection is complete, the connected account information and a green icon appear as shown below. <br>
-Select **Add and configure** to move to the detailed settings for the email-sending connector. <br>
-<img width="1044" height="768" alt="image" src="{{ '/assets/image/github-attachments/a669d0f8-228c-429f-88d2-93c7351db777.png' | relative_url }}" />
-<br>
-<br>
-<br>
-## 2. Configure basic settings for the email-sending connector
-Next, specify the settings required for the agent to send email.<br>
+![The Add a tool dialog on the Featured tab]({{ '/assets/image/en/caldova/ws5-tools-catalog.png' | relative_url }})
 
-By default, the first thing to do after adding a tool is to enter when and how this tool should be used in the **Description** field. <br>
+Switch to **Model Context Protocol (MCP)** to see the MCP servers available in the environment.
 
-The agent references this description when deciding which tool to select, so the situation must be described in as much detail as possible for it to follow instructions accurately.<br>
+![The MCP tab of the tool catalog]({{ '/assets/image/en/caldova/ws5-mcp-catalog.png' | relative_url }})
 
-However, for the MCP server added here, the server description and the descriptions for each tool have already been written and updated on the MCP server side, so you do not need to add a separate description.<br>
-<br>
-<br>
-Next, open the additional details pane and change the authentication policy to **Maker-provided credentials**.
-<img width="1056" height="694" alt="image" src="{{ '/assets/image/github-attachments/e9ab862e-b6bf-473b-969f-bf1e92c9c5c6.png' | relative_url }}" />
+Select **Mail**.
 
-By default, **End-user credentials** is selected. In this case, the user of the agent goes through a one-time sign-in process when using the action.
+### 2. Choose the connection
 
-Keep this setting if the agent needs to search mailboxes or retrieve data with the user's permissions.
-If access is limited to a specific account for a particular system (for example, SAP or database access),
-change it to Maker-provided credentials so users can access the data without signing in.
+The server needs a connection to act on a mailbox. If you have already signed in during this
+workshop, the existing connection is offered with a green check; otherwise create a new one and
+complete the sign-in prompt.
+
+![Selecting the connection for the Mail MCP server]({{ '/assets/image/en/caldova/ws5-mcp-connection.png' | relative_url }})
+
+Select **Add**. **Mail** now appears under **Tools** in the configuration panel.
+
+![The configuration panel with the Mail tool added]({{ '/assets/image/en/caldova/ws5-mcp-panel.png' | relative_url }})
+
+### 3. Review what the server exposes
+
+Select **Mail** to open its settings. The **Tools** tab lists every operation the server offers,
+each with a description written by the server owner.
+
+![The Mail MCP server tool list]({{ '/assets/image/en/caldova/ws5-mcp-tool-list.png' | relative_url }})
+
+<div class="info-box note" markdown="1">
+**You do not write these descriptions.** The agent reads the server's own descriptions when it
+decides which tool to call, which is the main practical difference from a connector action, where
+the description is yours to write.
+</div>
+
+### 4. Enable only the tools you need
+
+Turn off **Enable all tools** at the top of the list. The individual switches become selectable.
+Turn off everything except the one operation this lab uses — **CreateDraftMessage**.
+
+![Only CreateDraftMessage enabled on the Mail server]({{ '/assets/image/en/caldova/ws5-mcp-scoped.png' | relative_url }})
+
+<div class="info-box tip" markdown="1">
+**Scoping is a safety control, not just tidiness.** The Mail server also exposes
+`SendEmailWithAttachments`, `DeleteMessage` and `ForwardMessage`. Leaving them enabled means a
+misread instruction can send or delete real mail. Enabling only `CreateDraftMessage` means the worst
+case is an unwanted draft.
+</div>
+
+### 5. Set the authentication mode
+
+Below the tool list, **Authentication mode** offers **User** or **Maker**.
+
+| Mode | Who the tool runs as | Use it when |
+|---|---|---|
+| **User** (default) | The person talking to the agent | The agent should act with each user's own permissions — read their mailbox, send as them |
+| **Maker** | The account that built the agent | Access must be limited to one service account, for example a shared SAP or database login |
+
+![The Inputs tab showing the connection and authentication mode]({{ '/assets/image/en/caldova/ws5-mcp-inputs.png' | relative_url }})
+
+Select **Confirm**, then **Save** on the agent toolbar.
+
+<div class="info-box warning" markdown="1">
+**Reload and re-check.** Tool scoping is one of the settings that can look saved and silently
+revert. Refresh the page, reopen **Mail**, and confirm only **CreateDraftMessage** is still on. The
+capture above was verified this way.
+</div>
+
+### 6. Test the tool
+
+Open the **Preview** tab and ask for something that needs both the Knowledge source and the tool.
+
+```
+Draft an email to <your address> summarising the dishwasher spec sheet. Create it as a draft only - do not send it.
+```
+
+Before the tool runs, the agent stops and asks for permission, naming the exact operation it wants
+to perform.
+
+![The agent asking permission to call CreateDraftMessage]({{ '/assets/image/en/caldova/ws5-mcp-permission.png' | relative_url }})
+
+Select **Allow**. The agent reads the spec sheet from SharePoint, composes the summary, creates the
+draft in the mailbox, and reports what it wrote — with a citation back to the source PDF.
+
+![The agent confirming the draft was created, with a citation]({{ '/assets/image/en/caldova/ws5-mcp-draft-result.png' | relative_url }})
+
+<div class="info-box note" markdown="1">
+**The permission prompt is per operation.** It names the server and the tool
+(`Mail — Mail`, `CreateDraftMessage`), so a user can tell the difference between drafting and
+sending before approving.
+</div>
 
 ---
-## 3. Configure tools used by the Email Management MCP Server
 
-Enable only the tools provided by the MCP server that you will actually use. <br>
-This step is optional, but if tools not defined in the instructions are available, they can reduce the agent's accuracy when selecting tools. Therefore, enable only the tools you need whenever possible.
-
-If you turn off the option to enable all functions for the tool, you can selectively allow individual tools. <br>
-In this scenario, only email sending is required, so disable all functions except the SendEmail tool. <br>
-<img width="1055" height="980" alt="image" src="{{ '/assets/image/github-attachments/fc646c29-01d3-45bb-a25f-9c8670385adf.png' | relative_url }}" />
-
-Then click the **Save** button at the top. The email-sending tool is now ready.
-Next, write instructions for how the agent should send email when it uses the tool.
-
-
-## 4. Edit the agent Instructions
-The email-sending tool configuration is complete.
-If the user enters “send an email,” the tool will likely be selected and run,
-but detailed instructions are not yet specified, such as who the recipient is, what the subject should be, and what to enter in the body.
-
-Therefore, return to the **Overview** and enter instructions for the added tool.
-
-![4-1]({{ site.baseurl }}/assets/image/ws5/4-1.png)
-
-
-```
-
-## Email sending format guide
- - to: Enter the recipient's email address.
- - subject: Email subject. Draft an email subject that summarizes the body content and present it to the user, but ask the user to confirm or provide the final subject.
- - body: Email body. Write the body with design elements by applying HTML and CSS styles.
-
-```
-After finishing the Instructions edit and saving, test whether the email is sent successfully.
-Test prompt
-```
-Create a newsletter about the dishwasher product line and email it to me.
-```
-Copilot Studio test screen
-<img width="1704" height="1259" alt="image" src="{{ '/assets/image/github-attachments/1b8124ba-fd06-4167-877a-22ab78461c49.png' | relative_url }}" />
-
-> The agent creates and proposes a document format and draft according to the instructions, then sends the email.
-
-Email received screen
-<img width="1544" height="1528" alt="image" src="{{ '/assets/image/github-attachments/a9879c4f-8caf-47b0-935d-47e89498d4a3.png' | relative_url }}" />
-
-
----
 With this, the agent can use additional actions through tools. <br>
 Next, add email and Teams post tools using standard connectors.
 

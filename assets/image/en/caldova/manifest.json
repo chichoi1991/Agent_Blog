@@ -635,6 +635,86 @@
       "sha256": "43a7bc0a33481094d1aecfacb5eb25d45af62e628d07a924e2a239f3199be7dc"
     },
     {
+      "path": "assets/image/en/caldova/ws5-connector-action-details.png",
+      "capturedAt": "2026-09-09T16:13:43.570Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 23580,
+      "sha256": "67f406014ff9f2a20f14e6b659408f8c3d3e66e6187ee9ebaeb239cb5af5d49d"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-denied.png",
+      "capturedAt": "2026-09-09T16:25:17.683Z",
+      "width": 1024,
+      "height": 812,
+      "bytes": 76646,
+      "sha256": "e0e32fefd542ac2406791514d6cd30b698e59a6bb0f3951553faafbf4df27ee7"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-description.png",
+      "capturedAt": "2026-09-09T16:15:09.171Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 36487,
+      "sha256": "3418926bf121c09681b28be5c6a399e3e1fea3ed336df45c03640559b72383cb"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-inputs.png",
+      "capturedAt": "2026-09-09T16:15:31.178Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 31657,
+      "sha256": "6bc92f2602d775cf3f437cd508558a5f6acc5832fecbdb73263f1f8260cf6565"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-panel.png",
+      "capturedAt": "2026-09-09T16:19:37.019Z",
+      "width": 400,
+      "height": 614,
+      "bytes": 42705,
+      "sha256": "a8de3b777479c8f3dfb3f68d3ae1394ece8f760463de1e8350218bdaa8557688"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-permission-list.png",
+      "capturedAt": "2026-09-09T16:21:51.143Z",
+      "width": 1024,
+      "height": 812,
+      "bytes": 57728,
+      "sha256": "d8356c559d17314fd5bd7a2b90c7482830001746ad0c5dd070f4994318c7687d"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-permission-post.png",
+      "capturedAt": "2026-09-09T16:24:26.742Z",
+      "width": 1024,
+      "height": 812,
+      "bytes": 65499,
+      "sha256": "eaaa86e754a6de4bc8ddaba77f6c546b4f6369cb41920f4b5b79e4ed8a6249ee"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-search.png",
+      "capturedAt": "2026-09-09T16:13:14.781Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 14523,
+      "sha256": "337e4632f4b4456a221ae7b970730b1dc006f4ebe05f5586d1422dab88ef211e"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-teams-actions.png",
+      "capturedAt": "2026-09-09T16:12:53.523Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 38992,
+      "sha256": "416a15b50ecf2104682cbd38e0fe73e1159c0f09b5c4f19855dcd808780fdac1"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-value-picker.png",
+      "capturedAt": "2026-09-09T16:17:43.988Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 229085,
+      "sha256": "f8d610cab698ba2050e8f30f61448dc1c5381cc86a849b9fab14b0ac925be92d"
+    },
+    {
       "path": "assets/image/en/caldova/ws5-home-prompt.png",
       "capturedAt": "2026-09-09T14:50:18.989Z",
       "width": 1600,
@@ -649,6 +729,150 @@
       "height": 1100,
       "bytes": 201451,
       "sha256": "e611c7717b38e781c6e74a7c0f641b828026c4e5f00377e7dcca35cf4ee161b7"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-added.png",
+      "capturedAt": "2026-09-09T15:52:09.320Z",
+      "width": 400,
+      "height": 574,
+      "bytes": 37674,
+      "sha256": "05b7008b005203d44786a3b783a18e731ba96fbfc486dfd3ed220f0b1eaddd12"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-browse.png",
+      "capturedAt": "2026-09-09T15:48:00.285Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 31310,
+      "sha256": "4b27343f2154de7260c6561df8619c586dea23d6e5e25020e790ac8bba7c7255"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-catalog.png",
+      "capturedAt": "2026-09-09T15:44:13.662Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 53286,
+      "sha256": "115503e7b822b0257646b11f0375eff80d5c330a7470516cbb16ba45c0be57dc"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-configured.png",
+      "capturedAt": "2026-09-09T15:50:26.459Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 31166,
+      "sha256": "e7e11161109eb91d5daa9eae6f563f38e5060734869e81a37ad40f71478ebaeb"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-details.png",
+      "capturedAt": "2026-09-09T15:43:07.581Z",
+      "width": 900,
+      "height": 880,
+      "bytes": 31398,
+      "sha256": "946fef6c37f18df854804c6e6e04ae094a679e7ae86994c6fefb0bfe4e8ef4d2"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-grounded-test.png",
+      "capturedAt": "2026-09-09T15:53:58.219Z",
+      "width": 1024,
+      "height": 812,
+      "bytes": 77408,
+      "sha256": "b2063d7f593627158ae67a930b7efc12d7fece14c94191d5213eded346899614"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-panel.png",
+      "capturedAt": "2026-09-09T15:42:17.708Z",
+      "width": 400,
+      "height": 534,
+      "bytes": 34661,
+      "sha256": "e6f22f115bcc48752897e9f6d4728859ffa0415ca2e05d2e672d1f470387ff4a"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-selected.png",
+      "capturedAt": "2026-09-09T15:48:37.316Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 34087,
+      "sha256": "a3c446d07ba2c76fde291d1373205ca70d9175ea96982a362f340b4150700e0a"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-sharepoint.png",
+      "capturedAt": "2026-09-09T15:45:50.983Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 32975,
+      "sha256": "629ab915a50346c06ba038bb6323ddb5a99bb8812b15804608791142677a3f07"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-catalog.png",
+      "capturedAt": "2026-09-09T15:59:18.687Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 61460,
+      "sha256": "91555bdb341acd5f63b103bbc0e361a14f2552a15c2fd5d99e8eecdbc69dc5e4"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-connection.png",
+      "capturedAt": "2026-09-09T16:00:02.758Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 35002,
+      "sha256": "eebe69a934e750338c04ab09099d1d7fb4494e9e6d795b96831d75a6756efa43"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-draft-result.png",
+      "capturedAt": "2026-09-09T16:09:11.387Z",
+      "width": 1024,
+      "height": 812,
+      "bytes": 100498,
+      "sha256": "4e580140f9c965a2ad89c7c444ed0c7b4d737ee0b6cf5b45f5f0ea76ee0a712f"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-inputs.png",
+      "capturedAt": "2026-09-09T16:04:26.490Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 22109,
+      "sha256": "4b5dadebe9486c860971f31329007558f4ad5524184d3f127e11e40051ab9009"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-panel.png",
+      "capturedAt": "2026-09-09T16:04:02.351Z",
+      "width": 400,
+      "height": 574,
+      "bytes": 38169,
+      "sha256": "cbd71bb855cef7f64057201c852b71d0f91797dbdf247678e76f66108c30ffe5"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-permission.png",
+      "capturedAt": "2026-09-09T16:07:16.800Z",
+      "width": 1024,
+      "height": 812,
+      "bytes": 90679,
+      "sha256": "9837b8dc06e7cce4e27605a04566a2a9f9f35322860f7d4789df88b580150ab9"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-scoped.png",
+      "capturedAt": "2026-09-09T16:02:44.962Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 39985,
+      "sha256": "c4b875530c17369f27c2c9e73f3af8a00832d8f205aa72e394d4df3378d869a3"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-tool-list.png",
+      "capturedAt": "2026-09-09T16:01:11.705Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 41796,
+      "sha256": "eaa6e486c3c7a58e4928e95f58c209f72495a08a0a549962f8fda899cf396a44"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-tools-catalog.png",
+      "capturedAt": "2026-09-09T15:57:56.925Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 38384,
+      "sha256": "3cf31c735e2fe2a5215d52e341e9d2516ddda964a52725a19fd41242191d9ef0"
     }
   ]
 }

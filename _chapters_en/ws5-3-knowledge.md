@@ -14,12 +14,11 @@ parent: "ws5"
 
 # Add Knowledge to the agent
 
-In this lab, configure Knowledge so the agent can answer based on web search information and PDF data sheets stored in SharePoint in advance.
+In this lab, configure Knowledge so the agent can answer from PDF spec sheets stored in SharePoint.
 
 ## 📚 The role of Knowledge in Copilot Studio
-In Copilot Studio, **Knowledge** is a core feature that helps agents generate accurate and reliable answers based on internal company documents or external information.
 
-The table below briefly explains its role.
+In Copilot Studio, **Knowledge** is a core feature that helps agents generate accurate and reliable answers based on internal company documents or external information.
 
 | Item | Description |
 |:------:|------|
@@ -28,85 +27,125 @@ The table below briefly explains its role.
 | **Formats** | Supports documents in various formats such as PDF, HTML, Word, Excel, and web links |
 | **Examples** | - Search manuals stored in SharePoint<br>- Summarize internal reports<br>- Provide insights based on statistical data |
 | **Importance** | Without Knowledge, the agent answers only from general knowledge, making it **difficult to provide company-specific information** |
-| **Configuration location** | Can be connected from the **Knowledge** tab in Copilot Studio |
+| **Configuration location** | Added from the **Knowledge** section of the agent configuration panel |
 
-<br><br>
+<br>
 
-In a custom engine agent in Copilot Studio, you can use not only data in Microsoft 365,
-but also information stored in various data sources as Knowledge for answers.
+## 📥 Knowledge data source types available in Copilot Studio
 
-## 📥 Summary of Knowledge data source types available in Copilot Studio
 | Category | Data source | Description |
 |:----------:|:--------------:|------|
 | **Document-based** | Uploaded files such as PDF, Word, and Excel | Uploaded to Dataverse, automatically indexed, and searchable |
-| **Cloud storage** | SharePoint, OneDrive | Can directly reference document stores within the organization |
-| **Web-based** | Public website URLs | References webpage content through Bing search |
-| **Enterprise systems** | ServiceNow, Salesforce, Confluence, ZenDesk, etc. | References knowledge bases or ticket information from external systems through real-time connectors |
-| **Table data** | Dataverse tables | Supports question answering based on structured table data |
+| **Cloud storage** | SharePoint, OneDrive for Business | Can directly reference document stores within the organization |
+| **Web-based** | Public website URLs | References webpage content through search |
+| **Enterprise systems** | Salesforce, ServiceNow, Confluence, ZenDesk, etc. | References knowledge bases or ticket information from external systems through real-time connectors |
+| **Table data** | Dataverse tables, Azure SQL | Supports question answering based on structured table data |
 | **API-based** | External HTTP APIs, YAML definitions | Supports real-time API calls through the OnKnowledgeRequested trigger |
-
-
-<img width="1023" height="742" alt="image" src="{{ '/assets/image/github-attachments/b01a1a1c-75cd-46ec-9daa-015792a8f561.png' | relative_url }}" />
-<img width="1023" height="740" alt="image" src="{{ '/assets/image/github-attachments/566c5a93-4c17-4a44-a229-35d3eb43ca51.png' | relative_url }}" />
 
 ---
 
 ## Lab
 
-First, scroll down in the agent overview to find the Knowledge tab. <br>
+> **English UI screenshots, September 10, 2026.** Actual captures from an English-language demo
+> environment. This lab continues on the agent built in
+> [Step 2]({{ '/en/chapters/ws5-2-instructions/' | relative_url }}), which uses the
+> **Build / Preview / Evaluate / Monitor** surface. Knowledge is managed from the configuration
+> panel on the right of the **Build** page, not from a separate Knowledge tab.
 
-Click **+ Add Knowledge** so the agent can reference data in SharePoint. <br>
-<img width="512" height="254" alt="image" src="{{ '/assets/image/github-attachments/5e796dd8-8272-4486-b465-028dbdcf5f4e.png' | relative_url }}" />
-<br><br>
+### 1. Review what the agent already has
 
-> The **Web search** feature below Knowledge is an optional setting that lets the agent answer user questions based on Bing search information. <br>
+Open the agent and look at the **Knowledge** section in the right-hand configuration panel. The
+authoring session in Step 2 already attached a source for the SharePoint site you supplied.
 
+![The agent configuration panel showing the Model, Tools and Knowledge sections]({{ '/assets/image/en/caldova/ws5-knowledge-panel.png' | relative_url }})
 
-When you click the button, a pop-up appears asking where the Knowledge you want to add is stored. <br>
+Select an existing source to inspect it. Each source carries a **Name**, a **Description**, the
+**Knowledge URL** it points at, and a **Status** chip that reads **Ready** once indexing succeeds.
 
-Because this lab references data in SharePoint, select SharePoint. <br>
+![The Edit knowledge source dialog showing name, description, URL and Ready status]({{ '/assets/image/en/caldova/ws5-knowledge-details.png' | relative_url }})
 
-<img width="554" height="404" alt="image" src="{{ '/assets/image/github-attachments/05fe197d-56ef-4af7-b481-2f186c10be93.png' | relative_url }}" />
+<div class="info-box note" markdown="1">
+**The URL is fixed after creation.** The **Knowledge URL** field is read-only in the edit dialog.
+To point at a different location, add a new source and remove the old one.
+</div>
 
+### 2. Add a SharePoint source
 
-<br>
+Select **+** beside **Knowledge**. The catalog opens with a file drop zone at the top and the
+featured source types below.
 
-Then either enter the SharePoint site address directly, or click **Browse items** to select a site you accessed recently.
+![The Add knowledge dialog with the upload area and featured source types]({{ '/assets/image/en/caldova/ws5-knowledge-catalog.png' | relative_url }})
 
-<img width="538" height="392" alt="image" src="{{ '/assets/image/github-attachments/87cc18ab-1ed9-444d-ba8e-dc86efe8ff84.png' | relative_url }}" />
+Choose **SharePoint**. You can either paste a site URL or browse for the item.
 
-In this lab, we will reference only files inside a specific library folder in a SharePoint site or Teams channel, so enter the SharePoint folder path.
+![The SharePoint knowledge picker with Browse items and a URL box]({{ '/assets/image/en/caldova/ws5-knowledge-sharepoint.png' | relative_url }})
 
-To find the exact site address, go to the SharePoint site. <br>
-Then navigate to the folder library you want to add and click **Details** on the right to open the details side panel. <br>
-Finally, copy the **Path** at the bottom to get the library folder location.
+<div class="info-box tip" markdown="1">
+**Point at a folder, not the whole tenant.** A source scoped to one library folder gives the agent
+a much smaller, cleaner search surface than the root site, and it keeps answers on topic.
+</div>
 
-<img width="1380" height="1278" alt="image" src="{{ '/assets/image/github-attachments/b4e30695-2f74-4c3d-a374-cdf90102e24d.png' | relative_url }}" />
-<br>
-Select the site and library through Browse items, or paste the link you copied into the site input box and add it. It will appear as shown below. <br>
-> For the lab, select the SharePoint site or Teams channel where the provided SpecSheet folder is stored.
+### 3. Browse to the workshop folder
 
-<img width="1092" height="792" alt="image" src="{{ '/assets/image/github-attachments/02429176-066d-47c3-b1e9-f16f1fbe89f4.png' | relative_url }}" />
-<br>
+Select **Browse items**. The SharePoint file picker opens inside the dialog.
 
-Finally, add the following content to the description field to provide more detail about what this Knowledge source contains.
+![The SharePoint file picker listing the document library]({{ '/assets/image/en/caldova/ws5-knowledge-browse.png' | relative_url }})
+
+Tick the folder that holds the workshop spec sheets, then select **Confirm selection**.
+
+![The workshop folder selected in the file picker]({{ '/assets/image/en/caldova/ws5-knowledge-selected.png' | relative_url }})
+
+### 4. Name and describe the source
+
+The picker fills in a default name and description. Replace both — the agent reads the description
+when it decides whether a source is relevant, so describe what the folder actually contains.
+
 ```
-This Knowledge source provides Spec Sheet information for refrigerators and dishwashers.
-The data is in PDF format, and filenames are saved in the format model-name_product-type_spec sheet.
-Example: LSSB2692ST_Core_Refrig-Spec_Sheet -> Product name: LSSB2692ST, product type: Core_Refrig (refrigerator), document content: Spec_Sheet
+Name
+Product Spec Sheets
 
+Description
+Spec sheet PDFs for refrigerators and dishwashers. Filenames follow model-name_product-type_spec-sheet, for example LSSB2692ST_Core_Refrig-Spec_Sheet.
 ```
 
-Then click the **"Add to agent"** button. The agent can now answer based on PDF files in the SharePoint site.
+![The SharePoint source with a name and description entered]({{ '/assets/image/en/caldova/ws5-knowledge-configured.png' | relative_url }})
 
-<img width="1720" height="1392" alt="image" src="{{ '/assets/image/github-attachments/ac38d914-1667-4872-a022-2a63d237f5f4.png' | relative_url }}" />
+Select **Add to agent**, then **Save** on the agent toolbar.
 
-<br>
-<br>
+![The configuration panel with both knowledge sources attached]({{ '/assets/image/en/caldova/ws5-knowledge-added.png' | relative_url }})
 
-> Important! SharePoint Knowledge searches document content based on Microsoft Search. Therefore, it is effective for text-centric content retrieval, but when Excel data analysis is required, the structural limitations of LLMs and RAG prevent it from providing accurate answers.
+<div class="info-box warning" markdown="1">
+**Reload before you trust the save.** Saves on this surface can appear to succeed and then revert.
+Refresh the page and confirm the new source is still listed under **Knowledge** before moving on.
+</div>
 
-Therefore, if you need to generate answers by referencing Excel data, see the Excel data reference session at the end of the workshop.
+### 5. Test that answers are grounded
+
+Open the **Preview** tab and ask a question that can only be answered from the documents.
+
+```
+What refrigerator spec sheets do we have, and what capacity does the LSSB2692ST have?
+```
+
+The agent searches the source, reads the PDF, answers with the figures from the document, and lists
+the files it used under **Citations**.
+
+![The Preview tab answering from the spec sheets with citations]({{ '/assets/image/en/caldova/ws5-knowledge-grounded-test.png' | relative_url }})
+
+<div class="info-box note" markdown="1">
+**Citations are the check that matters.** If an answer arrives with no citation, it did not come
+from your Knowledge source. Confirm the source status is **Ready**, that the folder is the one you
+intended, and that the description tells the agent what lives there.
+</div>
+
+---
+
+> Important! SharePoint Knowledge searches document content based on Microsoft Search. It is
+> effective for text-centric retrieval, but when Excel data analysis is required, the structural
+> limitations of LLMs and RAG prevent it from providing accurate answers.
+
+If you need to generate answers by referencing Excel data, see the Excel data reference session at
+the end of the workshop.
 
 ---
 

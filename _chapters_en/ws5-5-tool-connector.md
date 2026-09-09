@@ -4,150 +4,143 @@ lang: en
 date: 2026-04-23
 title: "Add connector (post Teams channel message)"
 short_title: "Add connector (post Teams channel message)"
-description: "[Renewal] Explore the basic features of Copilot Studio - Add a standard plugin connector (Teams channel post example)"
+description: "[Renewal] Explore the basic features of Copilot Studio - Add a standard connector action (Teams channel post example)"
 order: 5
 category: workshop
 parent: "ws5"
 ---
 
-## Step 5: Add connector (send email)
+## Step 5: Add connector
 
-# Add tools to the agent #2 (plugin connector)
+# Add tools to the agent #2 (connector action)
 
-This time, add a standard plugin connector as a tool, rather than an MCP server. <br>
-For an MCP server, the descriptions of each tool and its input variables are already written, so there was no additional work to do.
-When calling a standard connector as a tool, however, you must write these descriptions yourself. <br>
+This time, add a **standard connector action** as a tool rather than an MCP server.
 
-This can be extra work, but when the variables or scenario entered into the connector are complex or uncommon, <br>
-using a standard connector for this kind of task has the advantage of letting you provide clearer instructions.
+An MCP server ships with its own descriptions for the server and every tool it exposes, so there is
+nothing to write. A connector action gives you one operation and expects **you** to describe it —
+more work, but it lets you say precisely when the agent should use it.
 
-> 💡 In this step, we use the **Microsoft Teams post a message in a channel connector** as an example.  
-> If you add the **Office 365 Outlook → Send an email (V2)** connector using the same procedure, you can use it as a standard connector for sending email.
+> 💡 This step uses the **Microsoft Teams → Post message in a chat or channel** action as the
+> example. Adding **Office 365 Outlook → Send an email (V2)** follows exactly the same procedure.
 
 ---
 
 ## Lab
-In this lab, implement the agent so it can create a newsletter or blog post as a post in a specific Teams channel. <br>
 
-### Add a tool to post a message to a Teams channel
+> **English UI screenshots, September 10, 2026.** Actual captures from an English-language demo
+> environment. This lab continues on the agent from
+> [Step 4]({{ '/en/chapters/ws5-4-tool-mcp/' | relative_url }}).
+>
+> **Nothing was posted.** The final permission prompt in this lab was answered with **Deny**, so no
+> message was published to any Teams channel.
 
-As before, select **+ Add a tool** from the **Overview**.
-<img width="1186" height="686" alt="image" src="{{ '/assets/image/github-attachments/68cf3d4d-bdf0-48a0-bfe7-28a368670d33.png' | relative_url }}" />
-<br><br>
-In Recommendations or tool search, search for and select **Microsoft Teams**.
-<img width="746" height="464" alt="image" src="{{ '/assets/image/github-attachments/f72d7d76-da73-43a1-8845-adf372f94009.png' | relative_url }}" />
-<br><br>
+### 1. Add the connector action
 
-From the Teams tool collection, select the **Post message in a chat or channel** tool.
-<img width="715" height="455" alt="image" src="{{ '/assets/image/github-attachments/56fda9c2-bdc6-4214-b817-38e500dacacb.png' | relative_url }}" />
-<br><br>
+On the **Build** page, select **+** beside **Tools**, then select **Microsoft Teams**. The connector
+opens with its MCP server at the top and its individual actions below.
 
-As before, if the connection is not already configured, use **Create a new connection** to connect the agent and tool, <br>
-and select **Add and configure** to add the tool and continue configuration. <br>
+![The Microsoft Teams entry showing the MCP server and single actions]({{ '/assets/image/en/caldova/ws5-connector-teams-actions.png' | relative_url }})
 
-<img width="697" height="451" alt="image" src="{{ '/assets/image/github-attachments/6fe1a004-f626-421f-9ac2-d569287f7b1d.png' | relative_url }}" />
-<br><br><br>
-### Tool settings
-After the tool is added, the details page below appears.
-Unlike the previous MCP server tool, you can see that you can configure information such as the name, description, and inputs.
-<img width="1111" height="1101" alt="image" src="{{ '/assets/image/github-attachments/44b46518-e066-4c2e-beda-d70959129104.png' | relative_url }}" />
-<br><br>
-Here, change the description, inputs, and completion settings as follows.
+<div class="info-box note" markdown="1">
+**MCP server or single action?** The same connector now offers both. Pick the **MCP server** when
+you want the whole capability set with descriptions maintained for you. Pick a **single action**
+when you want exactly one operation and full control over how it is described.
+</div>
 
-**Description**
-```
-Use this tool when the user asks to post or publish a post to Teams or a Teams channel.
-```
-<img width="1021" height="529" alt="image" src="{{ '/assets/image/github-attachments/43630d5b-9f26-48c9-9a45-961f8983dafb.png' | relative_url }}" />
+Search for `Post message` and select **Post message in a chat or channel**.
 
-<br><br>
+![Searching the catalog for the post message action]({{ '/assets/image/en/caldova/ws5-connector-search.png' | relative_url }})
 
-----
-**Inputs**
-<br><br>
-On the Inputs tab, when you select a value for the Fill using field, you can choose either dynamic fill with AI or a custom value, as shown below.
-<br>
-Select custom value for both Post as and Post in. <br>
-<img width="495" height="239" alt="image" src="{{ '/assets/image/github-attachments/d9228dec-3709-4f7a-b574-40827b817c54.png' | relative_url }}" />
-<br><br>
-Then, when you select a value, the available options appear as shown below. <br>
-For Post as, select User; for Post in, select Channel.<br>
-<img width="443" height="203" alt="image" src="{{ '/assets/image/github-attachments/cb2db0c1-b8ec-4483-bb1b-ad11e050d616.png' | relative_url }}" />
-<br>
-<img width="469" height="233" alt="image" src="{{ '/assets/image/github-attachments/cdad9ffd-40c2-4a3e-ae3b-1dd5f780c2db.png' | relative_url }}" />
-<br><br>
-When Post in is selected as Channel, new input variables named Team, Channel, and Message are added. <br>
-Team and Channel specify the location where the Teams post will be uploaded, and Message is the body of the post. <br>
+The action's summary page shows what it does, who publishes it, and a link to its documentation.
+Select **Add**.
 
-As above, change Team and Channel to **Custom value**,
-and keep Message as **Dynamically fill with AI**.
+![The connector action summary with the Add button]({{ '/assets/image/en/caldova/ws5-connector-action-details.png' | relative_url }})
 
-#### Important
+### 2. Describe the tool
 
-Normally, Team and Channel should automatically show the teams and channels assigned to you,
-but because this is still in Preview, there is an issue where the IDs may not display correctly.
-<img width="987" height="426" alt="image" src="{{ '/assets/image/github-attachments/8c594558-feaa-47d5-9f21-3a5855daaac8.png' | relative_url }}" />
-
-Therefore, check the Teams channel ID as follows. <br>
-First, access Teams: [**Teams access link**](https://teams.microsoft.com/v2/) <br>
-Next, select the channel where you will post, click **...**, and select Copy link.<br>
-<img width="335" height="334" alt="image" src="{{ '/assets/image/github-attachments/e4fb9e44-c9c0-4218-86f7-be8ef92d0c1e.png' | relative_url }}" />
-<br><br>
-
-After copying it, paste it into Notepad. A URL in the following format is displayed.
-```
-https://teams.microsoft.com/l/channel/19%3Aafff7d3f3be242f38d6sasdada1f2aa%40thread.tacv2/20251022%20%EC%9B%8C%ED%81%AC%EC%83%B5?groupId=a5f8994e-c248-4e00-8993-a8f9e5bc2e8b&tenantId=7xxxxxx7-xxxx-xxxx-8d61-9xxxxxx4xx52
-```
-Here, the value shown after groupId= and before & is the Team (GroupID),
-```
-a5f8994e-c248-4e00-8993-a8f9e5bc2e8b
-```
-The value after channel/ that starts with 19% and ends with .tacv2 is the channel ID.
-```
-19%3Aafff7d3f3be242f38d6sasdada1f2aa%40thread.tacv2
-```
-
-Extract these values and enter them for the Team and Channel values.
-<img width="876" height="513" alt="image" src="{{ '/assets/image/github-attachments/d9d503c6-d4d7-4073-ac96-d79b562ab38e.png' | relative_url }}" />
-<br><br>
-
-Then save, and the tool configuration is complete.
-
-### Add Instructions
-
-After the tool has been added, return to the Overview and write the post creation workflow in the Instructions as follows.
-<br>
-<img width="1071" height="709" alt="image" src="{{ '/assets/image/github-attachments/8912e14c-8630-49ad-93a4-252baa402c76.png' | relative_url }}" />
-<br><br>
-
-Add the following under ## Step-by-step instructions in the Instructions.
-```
-6. Publish a Teams post
- - Register the content requested by the user as a Teams post.
- - Write the Message using HTML and CSS formats.
+Select the new tool in the configuration panel to open **Tool details**. Unlike the MCP server, the
+name and description are yours to edit.
 
 ```
-
-
-After finishing the Instructions edit and saving, test whether the email is sent successfully.
-Test prompt
-```
-Create a newsletter about the dishwasher product line and email it to **[email address]**.
+Use this tool when the user asks to post or publish a message to Teams or a Teams channel. Write the Message as HTML.
 ```
 
-### Test 
+![The Tool details pane with the description entered]({{ '/assets/image/en/caldova/ws5-connector-description.png' | relative_url }})
 
-Use the prompt below to test whether a post is actually created in the channel.
+<div class="info-box tip" markdown="1">
+**The description is the routing rule.** The agent reads it to decide whether this tool fits the
+request. Name the trigger words a user would actually say ("post", "publish", "to Teams"), not just
+what the API does.
+</div>
+
+**Authentication mode** works the same as it does for an MCP server: **User** runs the action as the
+person talking to the agent, **Maker** runs it as the account that built the agent.
+
+### 3. Review the inputs
+
+Open the **Inputs** tab. Each input has a name, a description, and a **How is this filled?** choice.
+
+![The Inputs tab showing Post as and Post in]({{ '/assets/image/en/caldova/ws5-connector-inputs.png' | relative_url }})
+
+| Setting | What it does |
+|---|---|
+| **AI** | The agent works the value out at run time from the conversation |
+| **Value** | The input is bound to a **variable** you select or create |
+
+![The Value option opening the variable picker]({{ '/assets/image/en/caldova/ws5-connector-value-picker.png' | relative_url }})
+
+<div class="info-box warning" markdown="1">
+**This changed.** Earlier versions of this lab asked you to switch **Post as** and **Post in** to a
+custom value and choose *User* and *Channel* from a dropdown, which then revealed **Team**,
+**Channel** and **Message** fields. That dropdown no longer exists. **Value** now opens a variable
+picker, so the only literal way to pin a channel is to create a variable and bind it. Leaving both
+inputs on **AI** is the straightforward path, and it is what the test below uses.
+</div>
+
+Leave **Post as** and **Post in** on **AI**, select **Done**, then **Save** on the agent toolbar.
+
+![The configuration panel with the connector action added]({{ '/assets/image/en/caldova/ws5-connector-panel.png' | relative_url }})
+
+<div class="info-box note" markdown="1">
+**No more copying channel IDs.** The old lab had you open Teams, copy a channel link, and pull the
+`groupId` and the `19:...@thread.tacv2` channel ID out of the URL by hand. With **AI**-filled
+inputs the agent resolves the team and channel itself, as the test below shows.
+</div>
+
+### 4. Test it
+
+Open the **Preview** tab and ask for a post.
+
 ```
-Post "Hello, nice to meet you" to the Teams channel.
+Post "Hello, nice to meet you" to the General channel of the Sales team in Teams.
 ```
-<img width="1697" height="1270" alt="image" src="{{ '/assets/image/github-attachments/d15802d6-1e09-4948-862a-3dbc7dff1ec8.png' | relative_url }}" />
 
+The agent plans the work: list the teams you belong to, list that team's channels, then post. It
+asks permission before **each** operation, naming the exact action.
 
-----
+![The agent asking permission to list joined teams]({{ '/assets/image/en/caldova/ws5-connector-permission-list.png' | relative_url }})
+
+After the read-only lookups it reports what it found — here it matched "Sales" to the
+**Commercial Sales** team and located its **General** channel — and then asks for the one permission
+that actually writes.
+
+![The agent asking permission to post the message]({{ '/assets/image/en/caldova/ws5-connector-permission-post.png' | relative_url }})
+
+Selecting **Allow** publishes the post. In the capture below **Deny** was selected instead, and the
+agent reports that it could not complete the action.
+
+![The agent reporting that the post was not made after Deny]({{ '/assets/image/en/caldova/ws5-connector-denied.png' | relative_url }})
+
+<div class="info-box tip" markdown="1">
+**Read and write are separate approvals.** `List joined teams` and `List channels` only read; only
+`Post message in a chat or channel` publishes. Approving the lookups and then denying the post is a
+safe way to check the agent picked the right team and channel before anything goes live.
+</div>
+
+---
 
 Congratulations!
-By adding tools, you have finished configuring the agent so it can send email and create Teams posts.
+By adding tools, you have finished configuring the agent so it can draft email and post to Teams.
 Next, connect an external MCP server directly by URL to add a private MCP tool.
 
 ---
