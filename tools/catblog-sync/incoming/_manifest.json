@@ -43,6 +43,28 @@
       ],
       "staged_at": "2026-09-02T04:37:53.909Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "work-iq-context-layer-you-already-have",
+      "title": "Work IQ: How It's Used, Licensed, and Controlled",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/work-iq-context-layer-you-already-have/",
+      "source_author": "asfjordhoj",
+      "source_published": "2026-08-24",
+      "source_updated": "2026-08-24",
+      "categories": [
+        "copilot-studio",
+        "work-iq"
+      ],
+      "summary": "Understand how Work IQ is used, when Copilot Credits apply, and how to configure controls in the Microsoft 365 and Power Platform admin centers.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-08-24-work-iq-context-layer-you-already-have.md",
+      "images": [
+        {
+          "src": "/assets/posts/work-iq-context-layer-you-already-have/header.png",
+          "local": "assets/catblog/work-iq-context-layer-you-already-have/header.png"
+        }
+      ],
+      "staged_at": "2026-09-09T04:45:45.400Z",
+      "status": "pending-translation"
     }
   ]
 }
