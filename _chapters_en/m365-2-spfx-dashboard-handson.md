@@ -37,15 +37,15 @@ SPFx development starts with **Node.js + three global CLI tools**. Install and v
 ### 0-2. Installation commands
 
 ```bash
-# 1) Node 버전 확인 — 반드시 v22.x 여야 함
+# 1) Node Check the version — must be v22.x
 node -v          # → v22.x.x
 
-# 2) 전역 CLI 도구 설치 (Yeoman + SPFx 제너레이터 + gulp)
+# 2) Install the global CLI tools (Yeoman + SPFx generator + gulp)
 npm install -g yo gulp-cli @microsoft/generator-sharepoint
 
-# 3) 설치 확인
-yo --version                              # Yeoman 버전
-npm ls -g --depth=0 @microsoft/generator-sharepoint   # 제너레이터 설치 확인
+# 3) Verify the installation
+yo --version                              # Yeoman version
+npm ls -g --depth=0 @microsoft/generator-sharepoint   # Verify the generator installation
 ```
 
 <div class="info-box warning" markdown="1">
@@ -55,7 +55,7 @@ npm ls -g --depth=0 @microsoft/generator-sharepoint   # 제너레이터 설치 �
 ```bash
 nvm install 22.15.0
 nvm use 22.15.0
-node -v          # v22.15.0 확인 후 진행
+node -v          # v22.15.0 Continue after verifying
 ```
 </div>
 
@@ -153,20 +153,20 @@ In `src/webparts/projectDashboard/ProjectDashboardWebPart.ts`, do two things: **
 ```typescript
 export interface IProjectDashboardWebPartProps {
   description: string;
-  listName: string;               // ← 추가: 읽을 리스트 이름
+  listName: string;               // ← Add: Name of the list to read
 }
 
-// render() 안에서 컴포넌트에 listName 과 context 를 넘긴다
+// render() pass listName and context to the component
 const element: React.ReactElement<IProjectDashboardProps> = React.createElement(
   ProjectDashboard,
   {
     description: this.properties.description,
-    listName: this.properties.listName,          // ← 추가
-    context: this.context                         // ← 추가 (PnPjs 초기화용)
+    listName: this.properties.listName,          // ← Add
+    context: this.context                         // ← added for PnPjs initialization
   }
 );
 
-// 속성창(Property Pane)에 리스트 이름 입력 필드 추가
+// Add a List Name field to the Property Pane
 protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
   return {
     pages: [{
@@ -174,7 +174,7 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
       groups: [{
         groupName: strings.BasicGroupName,
         groupFields: [
-          PropertyPaneTextField('listName', { label: '리스트 이름 (표시 이름)' })
+          PropertyPaneTextField('listName', { label: 'List name (display name)' })
         ]
       }]
     }]
@@ -222,16 +222,16 @@ const ProjectDashboard: React.FC<IProjectDashboardProps> = (props) => {
     if (!listName) { setItems([]); return; }
     setLoading(true); setError('');
     try {
-      // ★ 현재 사이트 컨텍스트로 PnPjs 초기화 → 같은 사이트 리스트 접근
+      // ★ Initialize PnPjs with the current site context → Access a list on the same site
       const sp = spfi().using(SPFx(context));
       const results: IProject[] = await sp.web.lists
-        .getByTitle(listName)                            // ← 리스트 이름으로 참조
+        .getByTitle(listName)                            // ← Reference the list by name
         .items
         .select('Id','Title','Owner','PStatus','Progress','DueDate','Notes')
         .top(500)();
       setItems(results);
     } catch (e) {
-      setError(`리스트 "${listName}" 를 불러오지 못했습니다. 이름/권한을 확인하세요.`);
+      setError(`List "${listName}" could not be loaded. Check the name and permissions.`);
       console.error(e);
     } finally {
       setLoading(false);
@@ -240,11 +240,11 @@ const ProjectDashboard: React.FC<IProjectDashboardProps> = (props) => {
 
   useEffect(() => { void fetchItems(); }, [fetchItems]);
 
-  if (!listName) return <p className={styles.hint}>속성창에서 리스트 이름을 입력하세요.</p>;
-  if (loading)   return <p className={styles.hint}>불러오는 중…</p>;
+  if (!listName) return <p className={styles.hint}>Enter the list name in the property pane.</p>;
+  if (loading)   return <p className={styles.hint}>Loading…</p>;
   if (error)     return <p className={styles.error}>{error}</p>;
 
-  // 집계
+  // Aggregate
   const total = items.length;
   const completed = items.filter(i => i.PStatus === 'Completed').length;
   const inProgress = items.filter(i => i.PStatus === 'In Progress').length;
@@ -253,15 +253,15 @@ const ProjectDashboard: React.FC<IProjectDashboardProps> = (props) => {
 
   return (
     <div className={styles.projectDashboard}>
-      <h2 className={styles.title}>프로젝트 현황 · {listName} ({total})</h2>
+      <h2 className={styles.title}>Project status · {listName} ({total})</h2>
       <div className={styles.cards}>
-        <div className={styles.card}><div>진행 중</div><div>{inProgress}</div></div>
-        <div className={styles.card}><div>위험</div><div>{atRisk}</div></div>
-        <div className={styles.card}><div>완료</div><div>{completed}</div></div>
-        <div className={styles.card}><div>평균 진행률</div><div>{avgProgress}%</div></div>
+        <div className={styles.card}><div>In progress</div><div>{inProgress}</div></div>
+        <div className={styles.card}><div>At risk</div><div>{atRisk}</div></div>
+        <div className={styles.card}><div>Complete</div><div>{completed}</div></div>
+        <div className={styles.card}><div>Average progress</div><div>{avgProgress}%</div></div>
       </div>
       <table className={styles.table}>
-        <thead><tr><th>프로젝트</th><th>담당자</th><th>상태</th><th>진행률</th><th>마감일</th></tr></thead>
+        <thead><tr><th>Project</th><th>Owner</th><th>Status</th><th>Progress</th><th>Due date</th></tr></thead>
         <tbody>
           {items.map(it => (
             <tr key={it.Id}>
@@ -296,10 +296,10 @@ The `this.context` object that SPFx passes when a web part runs contains the **c
 SharePoint data is isolated by **site (more precisely, web)**. `sp.web.lists.getByTitle(...)` means a list **in the current site**. To read a list in another site, you must either specify that site explicitly (`Web(url)` in PnPjs) or specify a site ID through **Graph**, which handles M365-wide data.
 
 ```typescript
-// 현재 사이트 (기본)
+// Current site (default)
 await sp.web.lists.getByTitle("Project Status").items();
 
-// 다른 사이트를 명시적으로 지정 (PnPjs)
+// Explicitly target a different site (PnPjs)
 import { Web } from "@pnp/sp/webs";
 const otherWeb = Web([sp.web, "https://<tenant>.sharepoint.com/sites/OtherSite"]);
 await otherWeb.lists.getByTitle("Tasks").items();
@@ -335,7 +335,7 @@ const url = `${context.pageContext.web.absoluteUrl}`
   + `?$select=Title,Owner,PStatus,Progress&$top=500`;
 const res: SPHttpClientResponse = await context.spHttpClient.get(url, SPHttpClient.configurations.v1);
 const json = await res.json();
-const items = json.value;   // 리스트 아이템 배열
+const items = json.value;   // Array of list items
 ```
 
 **② Microsoft Graph — M365-wide data such as other sites/Teams/users**
@@ -343,9 +343,9 @@ const items = json.value;   // 리스트 아이템 배열
 import { MSGraphClientV3 } from '@microsoft/sp-http';
 
 const client: MSGraphClientV3 = await context.msGraphClientFactory.getClient('3');
-// 예: 다른 사이트의 리스트 아이템
+// e.g.: List items from another site
 const result = await client.api('/sites/{site-id}/lists/{list-id}/items').expand('fields').get();
-// 예: 내 프로필 / 내 최근 파일 / 팀 멤버 등도 동일 패턴
+// e.g.: My profile, my recent files, team members and so on follow the same pattern
 ```
 > To use Graph, declare permissions in `webApiPermissionRequests` in `config/package-solution.json`, and have the tenant admin approve them in **SharePoint admin center → Advanced → API access**.
 
@@ -359,9 +359,9 @@ const res = await client.get('https://api.contoso.com/orders', AadHttpClient.con
 
 ### 2-6. Local preview → build → package
 ```bash
-npm run start                       # 호스팅형 workbench.aspx 에서 미리보기
-npm run build                       # 프로덕션 빌드 + 패키징
-# → sharepoint/solution/project-dashboard.sppkg 생성
+npm run start                       # Preview in the hosted workbench.aspx
+npm run build                       # Production build + Packaging
+# → sharepoint/solution/project-dashboard.sppkg Create
 ```
 
 <div class="info-box warning" markdown="1">
@@ -390,7 +390,7 @@ First, build the package for production deployment.
 ```bash
 cd project-dashboard
 npm run build        # = heft test --production && heft package-solution --production
-# 결과물: sharepoint/solution/project-dashboard.sppkg
+# Output: sharepoint/solution/project-dashboard.sppkg
 ```
 
 <figure class="screenshot">
@@ -561,7 +561,7 @@ These are the issues encountered while setting up the development environment fo
 
 **Fix** — Start the development server in the project folder, **then** refresh the Workbench.
 ```bash
-npm run start        # = heft start (이 창을 켠 채로 유지)
+npm run start        # = heft start (keep this window open)
 ```
 When the server is running at `https://localhost:4321`, **refresh** the Workbench page → the web part appears in the **+ (add web part)** list.
 
@@ -599,10 +599,10 @@ When the server is running at `https://localhost:4321`, **refresh** the Workbenc
 
 **Fix** — Switch to a supported version with [nvm-windows](https://github.com/coreybutler/nvm-windows).
 ```powershell
-# 관리자 권한 PowerShell 필요 (nvm이 C:\Program Files\nodejs 심볼릭 링크를 갱신)
+# Requires an elevated PowerShell (nvm updates the C:\Program Files\nodejs symbolic link)
 nvm install 22.15.0
 nvm use 22.15.0
-node -v        # v22.15.0 확인
+node -v        # verify v22.15.0
 ```
 > nvm-windows requires administrator privileges to switch versions. In a normal window, `nvm use` may fail silently.
 
@@ -621,7 +621,7 @@ node -v        # v22.15.0 확인
 
 **Fix** — Use the official registry for this installation.
 ```powershell
-# 락파일·모듈 정리 후 공식 레지스트리로 재설치
+# Clean the lockfile and modules, then reinstall from the official registry
 Remove-Item node_modules -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item package-lock.json -Force -ErrorAction SilentlyContinue
 npm install --registry https://registry.npmjs.org/
@@ -649,8 +649,8 @@ To make it project-specific, create a `.npmrc` file in the folder and add one li
 **Fix (recommended) — move the project outside OneDrive**
 ```powershell
 New-Item -ItemType Directory -Force -Path "C:\dev"
-# node_modules 는 제외하고 복사(새 위치에서 새로 설치)
-robocopy "<OneDrive경로>\project-dashboard" "C:\dev\project-dashboard" /E /XD node_modules
+# node_modules copy without it and install fresh in the new location
+robocopy "<OneDrivePath>\project-dashboard" "C:\dev\project-dashboard" /E /XD node_modules
 cd C:\dev\project-dashboard
 npm install --registry https://registry.npmjs.org/
 npx heft trust-dev-cert
@@ -660,7 +660,7 @@ npm run start
 **Fix (if you continue in OneDrive)**
 - In File Explorer, right-click the project folder → select **"Always keep on this device"** (pin files locally), and **pause OneDrive syncing** while developing.
 ```powershell
-# node_modules 를 로컬에 강제 유지(pinned)로 표시
+# node_modules mark it as pinned locally
 attrib +P /S /D node_modules\*.*
 ```
 
@@ -680,7 +680,7 @@ attrib +P /S /D node_modules\*.*
 **Fix** — Install PnPjs. If `heft start` is running in watch mode, it will automatically recompile after installation.
 ```bash
 npm install @pnp/sp --save
-# (사내 프록시로 막히면) npm install @pnp/sp --save --registry https://registry.npmjs.org/
+# (if a corporate proxy blocks it) npm install @pnp/sp --save --registry https://registry.npmjs.org/
 ```
 After installation, it is working normally when you see `Found 0 errors` + `webpack compiled successfully`.
 

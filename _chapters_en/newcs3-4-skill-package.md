@@ -22,7 +22,7 @@ A single UI skill can contain only one file. But for email and reports, if you w
 
 | Package (ZIP) | Contents | Role |
 |---|---|---|
-| **Analysis rules skill** (`excel-analysis.zip`) | `SKILL.md` + `데이터-설명(선택).md` | Rules for accurately aggregating Excel data and formatting it as tables (multi-perspective purchase intent analysis) |
+| **Analysis rules skill** (`excel-analysis.zip`) | `SKILL.md` + `data-description (optional).md` | Rules for accurately aggregating Excel data and formatting it as tables (multi-perspective purchase intent analysis) |
 | **Email/report skill** (`brand-comms.zip`) | `SKILL.md` + `design-set.md` + `email_template.html` + `report_template.html` | Create email and HTML dashboards using the company design (ivory and magenta) |
 
 **📦 Download the ZIPs** — Do not unzip them. Upload the downloaded files as-is.

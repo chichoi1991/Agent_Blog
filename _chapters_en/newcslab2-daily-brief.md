@@ -11,7 +11,7 @@ parent: "ncslab2"
 is_parent: true
 tags: ["New Copilot Studio", "New Work Flow"]
 source_url: "https://baby-crows.github.io/Copilot-Studio-Handson-Blog/labs/daily-brief-kr/"
-source_author: "이영서 (Youngseo Lee)"
+source_author: "Youngseo Lee"
 source_blog: "Copilot Studio Hands-on"
 source_published: "2026-06-13"
 canonical_url: "https://baby-crows.github.io/Copilot-Studio-Handson-Blog/labs/daily-brief-kr/"
@@ -20,9 +20,9 @@ canonical_url: "https://baby-crows.github.io/Copilot-Studio-Handson-Blog/labs/da
 <div class="info-box note" markdown="1">
 ### 📎 Original author and source
 
-**Translated article** — This lab is based on [Daily Brief Workflow (Korean) · Copilot Studio Hands-on ↗](https://baby-crows.github.io/Copilot-Studio-Handson-Blog/labs/daily-brief-kr/) from Copilot Studio Hands-on. Author: 이영서 (Youngseo Lee). All copyrights belong to the original author; for the latest and most accurate content and screenshots, see the original article.
+**Translated article** — This lab is based on [Daily Brief Workflow (Korean) · Copilot Studio Hands-on ↗](https://baby-crows.github.io/Copilot-Studio-Handson-Blog/labs/daily-brief-kr/) from Copilot Studio Hands-on. Author: Youngseo Lee. All copyrights belong to the original author; for the latest and most accurate content and screenshots, see the original article.
 
-- **Original author**: 이영서 (Youngseo Lee)
+- **Original author**: Youngseo Lee
 - **Original article (Korean)**: [Daily Brief Workflow (Korean) · Copilot Studio Hands-on ↗](https://baby-crows.github.io/Copilot-Studio-Handson-Blog/labs/daily-brief-kr/)
 - **Original document (GitHub)**: [DailyBrief_HandsOn_Guide_kr.md ↗](https://github.com/baby-crows/Copilot-Studio-Hands-on/blob/main/daily-brief-workflow/DailyBrief_HandsOn_Guide_kr.md)
 - **Original repository**: [baby-crows/Copilot-Studio-Hands-on ↗](https://github.com/baby-crows/Copilot-Studio-Hands-on)
@@ -193,7 +193,7 @@ Copilot Studio → Flows (or Workflows) → **+ New Flow**
 ```
 You are a news scout. Your mission is to identify the 2 most important angles to investigate for "<TOPIC>" over the past 24 hours.
 
-Current time (KST): <현재 시각>
+Current time (KST): <Current time>
 Time range: the past 24 hours from now (KST)
 
 Angles to consider (choose 2 that are most likely to have real news today):
@@ -210,8 +210,8 @@ For each angle, write exactly one line in the following format:
 ANGLE: <English angle name> | KO: <2-4 Korean search keywords, comma-separated> | WHY: <one sentence explaining why this should be watched today>
 
 Examples:
-ANGLE: AI announcements | KO: 마이크로소프트 AI, Copilot 신기능, GPT 통합 | WHY: Recent Build conference just ended, so follow-up announcements are likely
-ANGLE: Partnerships | KO: 마이크로소프트 파트너십, 클라우드 계약 | WHY: It is large-deal announcement season near quarter end
+ANGLE: AI announcements | KO: Microsoft AI, new Copilot features, GPT integration | WHY: Recent Build conference just ended, so follow-up announcements are likely
+ANGLE: Partnerships | KO: Microsoft partnerships, cloud agreements | WHY: It is large-deal announcement season near quarter end
 
 Return only 3–5 lines. No preface. No closing remarks.
 ```
@@ -250,11 +250,11 @@ Do not ask clarifying questions. Execute and return the results.
 
 Topic (TOPIC): <TOPIC>
 
-Angles to investigate (passed from Prep): <Prep 출력>
+Angles to investigate (passed from Prep): <Prep Output>
 
 Time range (required, KST):
-  Start: <시작 시각>
-  End: <종료 시각>
+  Start: <Start time>
+  End: <End time>
   Treat "today" / "yesterday" based on KST.
 
 Task:
@@ -428,11 +428,11 @@ In the top UI `Output` dropdown, select **Structured output** → paste the JSON
 You are a senior business analyst. Convert verified news articles
 into a structured executive brief.
 
-Input (verified article JSON): <Critic 출력>
+Input (verified article JSON): <Critic Output>
 
 Topic (TOPIC): <TOPIC>
 
-Date (KST): <날짜>
+Date (KST): <Date>
 
 Tasks:
 1. Group articles into 2–4 themes (for example, "AI strategy," "financial performance,"
@@ -450,7 +450,7 @@ Strict rules (self-check before output):
   S2. Every KPI must cite the input source_url.
   S3. No speculation. If unclear, omit it.
   S4. If the input is empty or null, leave themes/kpi_cards empty and
-      return headline_kr = "오늘 검증된 뉴스가 부족합니다."
+      return headline_kr = "There is not enough verified news today."
   S5. All text is Korean. Be concise. Use an executive tone.
 
 Return only JSON that matches the schema.
@@ -819,4 +819,4 @@ Start HTML output immediately.
 
 ---
 
-*Document version: v0.1 · Written on: 2026-06-13 · Original author: 이영서(Youngseo Lee) · [Copilot Studio Hands-on](https://baby-crows.github.io/Copilot-Studio-Handson-Blog/). **Translated article** — based on [Daily Brief Workflow (Korean)](https://baby-crows.github.io/Copilot-Studio-Handson-Blog/labs/daily-brief-kr/) from Copilot Studio Hands-on.*
+*Document version: v0.1 · Written on: 2026-06-13 · Original author: Youngseo Lee · [Copilot Studio Hands-on](https://baby-crows.github.io/Copilot-Studio-Handson-Blog/). **Translated article** — based on [Daily Brief Workflow (Korean)](https://baby-crows.github.io/Copilot-Studio-Handson-Blog/labs/daily-brief-kr/) from Copilot Studio Hands-on.*

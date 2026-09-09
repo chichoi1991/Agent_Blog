@@ -48,12 +48,12 @@ Example
 
 | Column | Description | Example value |
 |-----------|------|---------|
-| `년월` | Point in time | 202501, 202502 ... |
-| `시도` | Metropolitan/provincial unit | 서울특별시 |
-| `시군구` | Local district | 동대문구, 강남구, 전체 ... |
-| `대상가구수(호)` | Number of measured households | 204,617 |
-| `가구당 평균 전력 사용량(kWh)` | Usage | 196 |
-| `가구당 평균 전기요금(원)` | Charge | 26,712 |
+| `YearMonth` | Point in time | 202501, 202502 ... |
+| `City/Province` | Metropolitan/provincial unit | Seoul |
+| `District` | Local district | Dongdaemun-gu, Gangnam-gu, All ... |
+| `Households covered` | Number of measured households | 204,617 |
+| `Average household electricity usage (kWh)` | Usage | 196 |
+| `Average household electricity bill (KRW)` | Charge | 26,712 |
 
 > In the actual lab, use the Excel file provided by the instructor.
 
@@ -106,10 +106,10 @@ The query is written automatically by AI, but the columns and keys required to w
 
 ```
 An ODATA filter query to restrict the entries returned.
-Target lookup column: select either [년월 | 시군구].
+Target lookup column: select either [YearMonth | District].
 Target lookup key value: the input value changes depending on the key column.
-년월 is in YYYYMM format.
-For 시군구, select one of the following: [전체, 강남구, 강동구, 강북구, 강서구, 관악구, 광진구, 구로구, 금천구, 노원구, 도봉구, 동대문구, 동작구, 마포구, 서대문구, 서초구, 성동구, 성북구, 송파구, 양천구, 영등포구, 용산구, 은평구, 종로구, 중구, 중랑구]
+YearMonth is in YYYYMM format.
+For District, select one of the following: [All, Gangnam-gu, Gangdong-gu, Gangbuk-gu, Gangseo-gu, Gwanak-gu, Gwangjin-gu, Guro-gu, Geumcheon-gu, Nowon-gu, Dobong-gu, Dongdaemun-gu, Dongjak-gu, Mapo-gu, Seodaemun-gu, Seocho-gu, Seongdong-gu, Seongbuk-gu, Songpa-gu, Yangcheon-gu, Yeongdeungpo-gu, Yongsan-gu, Eunpyeong-gu, Jongno-gu, Jung-gu, Jungnang-gu]
 ```
 
 ![1]({{ site.baseurl }}/assets/image/ws3/6-2.png)
@@ -247,52 +247,52 @@ Sample data - RAW_Data (structure example — in the actual lab, use the full ro
 ```
 [
   {
-    "년월": "202301",
-    "시도": "서울특별시",
-    "시군구": "동대문구",
-    "대상가구수(호)": "194,302",
-    "가구당 평균 전력 사용량(kWh)": "232",
-    "가구당 평균 전기요금(원)": "30,224"
+    "YearMonth": "202301",
+    "City/Province": "Seoul",
+    "District": "Dongdaemun-gu",
+    "Households covered": "194,302",
+    "Average household electricity usage (kWh)": "232",
+    "Average household electricity bill (KRW)": "30,224"
   },
   {
-    "년월": "202308",
-    "시도": "서울특별시",
-    "시군구": "동대문구",
-    "대상가구수(호)": "196,419",
-    "가구당 평균 전력 사용량(kWh)": "312",
-    "가구당 평균 전기요금(원)": "46,034"
+    "YearMonth": "202308",
+    "City/Province": "Seoul",
+    "District": "Dongdaemun-gu",
+    "Households covered": "196,419",
+    "Average household electricity usage (kWh)": "312",
+    "Average household electricity bill (KRW)": "46,034"
   },
   {
-    "년월": "202508",
-    "시도": "서울특별시",
-    "시군구": "동대문구",
-    "대상가구수(호)": "203,974",
-    "가구당 평균 전력 사용량(kWh)": "344",
-    "가구당 평균 전기요금(원)": "53,497"
+    "YearMonth": "202508",
+    "City/Province": "Seoul",
+    "District": "Dongdaemun-gu",
+    "Households covered": "203,974",
+    "Average household electricity usage (kWh)": "344",
+    "Average household electricity bill (KRW)": "53,497"
   },
   {
-    "년월": "202301",
-    "시도": "서울특별시",
-    "시군구": "전체",
-    "대상가구수(호)": "4,807,229",
-    "가구당 평균 전력 사용량(kWh)": "247",
-    "가구당 평균 전기요금(원)": "33,227"
+    "YearMonth": "202301",
+    "City/Province": "Seoul",
+    "District": "All",
+    "Households covered": "4,807,229",
+    "Average household electricity usage (kWh)": "247",
+    "Average household electricity bill (KRW)": "33,227"
   },
   {
-    "년월": "202308",
-    "시도": "서울특별시",
-    "시군구": "전체",
-    "대상가구수(호)": "4,838,055",
-    "가구당 평균 전력 사용량(kWh)": "340",
-    "가구당 평균 전기요금(원)": "52,895"
+    "YearMonth": "202308",
+    "City/Province": "Seoul",
+    "District": "All",
+    "Households covered": "4,838,055",
+    "Average household electricity usage (kWh)": "340",
+    "Average household electricity bill (KRW)": "52,895"
   },
   {
-    "년월": "202508",
-    "시도": "서울특별시",
-    "시군구": "전체",
-    "대상가구수(호)": "4,935,553",
-    "가구당 평균 전력 사용량(kWh)": "370",
-    "가구당 평균 전기요금(원)": "60,145"
+    "YearMonth": "202508",
+    "City/Province": "Seoul",
+    "District": "All",
+    "Households covered": "4,935,553",
+    "Average household electricity usage (kWh)": "370",
+    "Average household electricity bill (KRW)": "60,145"
   }
 ]
 ```

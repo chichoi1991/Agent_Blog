@@ -63,7 +63,7 @@ To check the exact path:
 Paste the path and click **Add**.
 
 Alternatively, you can navigate by clicking the **Browse items** button as shown below.
-Here, browse and select Communication site → CopilotStudio_실습자료 → Spec Sheet in that order.
+Here, browse and select Communication site → CopilotStudio_Workshop material → Spec Sheet in that order.
 ![Enter SharePoint path #1]({{ site.baseurl }}/assets/image/ws3/스크린샷%202026-03-18%20220442.png)
 ![Enter SharePoint path #2]({{ site.baseurl }}/assets/image/ws3/스크린샷%202026-03-18%20220507.png)
 <br>

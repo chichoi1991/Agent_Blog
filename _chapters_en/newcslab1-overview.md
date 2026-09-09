@@ -64,8 +64,8 @@ An organization's report materials are collected in a **specific OneDrive/ShareP
 
 - Access to New Copilot Studio (preview) — go to `copilotstudio.preview.microsoft.com` or click **Try now** on the existing home screen to switch to the New Copilot Studio UI.
 - Use a **Sandbox environment** for the lab (CLI agents have behavior issues in personal development environments).
-- One **SharePoint library (or OneDrive) folder** to collect report materials — for example, `Documents/보고자료`.
-- One **"CEO Risk Points" Word document in OneDrive** — a document that lists the CEO's sensitive interest areas, priorities, and taboos (for example, `Documents/CEO-리스크-포인트.docx`). It is referenced first **before** risk assessment.
+- One **SharePoint library (or OneDrive) folder** to collect report materials — for example, `Documents/Report materials`.
+- One **"CEO Risk Points" Word document in OneDrive** — a document that lists the CEO's sensitive interest areas, priorities, and taboos (for example, `Documents/CEO-risk-points.docx`). It is referenced first **before** risk assessment.
 - Prepare one or two sample reports (PDF/Word) for testing.
 
 <figure class="screenshot">

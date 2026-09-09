@@ -142,7 +142,7 @@ Then exchange the authorization code for an access token.
 **PowerShell (Windows)**
 
 ```powershell
-# 실행 전 자리 표시자를 교체하세요
+# Replace the placeholders before running
 $TENANT_ID = "{your-tenant-id}"
 $CLIENT_ID = "{your-client-id}"
 $CLIENT_SECRET = "{your-client-secret}"
@@ -171,7 +171,7 @@ Write-Host "Access token stored in `$ACCESS_TOKEN"
 **Bash (macOS / Linux)**
 
 ```bash
-# 실행 전 자리 표시자를 교체하세요
+# Replace the placeholders before running
 TENANT_ID="{your-tenant-id}"
 CLIENT_ID="{your-client-id}"
 CLIENT_SECRET="{your-client-secret}"
@@ -201,7 +201,7 @@ With a valid access token, you can start a multi-turn conversation with Work IQ.
 **PowerShell (Windows)**
 
 ```powershell
-# 대화 생성
+# Create a conversation
 $conversationUrl = "https://workiq.svc.cloud.microsoft/rest/conversations"
 $headers = @{
     "Authorization" = "Bearer $ACCESS_TOKEN"
@@ -210,7 +210,7 @@ $headers = @{
 
 $response = Invoke-RestMethod -Uri $conversationUrl -Method Post -Headers $headers -Body "{}"
 
-# 대화 정보 출력
+# Print the conversation info
 $conversationId = $response.id
 Write-Host "Conversation created successfully!"
 Write-Host "Conversation ID: $conversationId"
@@ -222,7 +222,7 @@ Write-Host "Turn Count: $($response.turnCount)"
 **Bash (macOS / Linux)**
 
 ```bash
-# 대화 생성
+# Create a conversation
 CONVERSATION_URL="https://workiq.svc.cloud.microsoft/rest/conversations"
 
 CONVERSATION_RESPONSE=$(curl -s -X POST "$CONVERSATION_URL" \
@@ -230,7 +230,7 @@ CONVERSATION_RESPONSE=$(curl -s -X POST "$CONVERSATION_URL" \
   -H "Content-Type: application/json" \
   -d "{}")
 
-# 대화 ID 추출
+# Extract the conversation ID
 CONVERSATION_ID=$(echo "$CONVERSATION_RESPONSE" | jq -r '.id')
 CREATED_TIME=$(echo "$CONVERSATION_RESPONSE" | jq -r '.createdDateTime')
 STATUS=$(echo "$CONVERSATION_RESPONSE" | jq -r '.status')
@@ -262,23 +262,23 @@ Now send your first message. By default, this message is grounded in **both ente
 **PowerShell (Windows)**
 
 ```powershell
-# 채팅 엔드포인트
+# Chat endpoint
 $chatUrl = "https://workiq.svc.cloud.microsoft/rest/conversations/$conversationId/chat"
 $headers = @{
     "Authorization" = "Bearer $ACCESS_TOKEN"
     "Content-Type"  = "application/json"
 }
 
-# 메시지 정의
+# Define the message
 $chatBody = @{
     message      = @{ text = "Who am I? What is my role in the company?" }
     locationHint = @{ timeZone = "America/New_York" }
 } | ConvertTo-Json -Depth 3
 
-# 메시지 전송
+# Send the message
 $chatResponse = Invoke-RestMethod -Uri $chatUrl -Method Post -Headers $headers -Body $chatBody
 
-# 응답 출력
+# Print the response
 Write-Host "Message sent successfully!"
 Write-Host "Response: $($chatResponse.messages[-1].text)"
 Write-Host "Turn Count: $($chatResponse.turnCount)"
@@ -287,10 +287,10 @@ Write-Host "Turn Count: $($chatResponse.turnCount)"
 **Bash (macOS / Linux)**
 
 ```bash
-# 채팅 엔드포인트
+# Chat endpoint
 CHAT_URL="https://workiq.svc.cloud.microsoft/rest/conversations/${CONVERSATION_ID}/chat"
 
-# 메시지 정의
+# Define the message
 CHAT_BODY='{
     "message": {
       "text": "Who am I? What is my role in the company?"
@@ -300,13 +300,13 @@ CHAT_BODY='{
     }
   }'
 
-# 메시지 전송
+# Send the message
 CHAT_RESPONSE=$(curl -s -X POST "$CHAT_URL" \
   -H "Authorization: Bearer ${ACCESS_TOKEN}" \
   -H "Content-Type: application/json" \
   -d "$CHAT_BODY")
 
-# 응답 출력
+# Print the response
 LAST_MESSAGE=$(echo "$CHAT_RESPONSE" | jq -r '.messages[-1].text')
 TURN_COUNT=$(echo "$CHAT_RESPONSE" | jq -r '.turnCount')
 
@@ -337,7 +337,7 @@ $headers = @{
     "Content-Type"  = "application/json"
 }
 
-# 웹 그라운딩을 끈 메시지
+# Message with web grounding turned off
 $chatBody = @{
     message      = @{ text = "What are our company policies on remote work?" }
     locationHint = @{ timeZone = "America/New_York" }
@@ -359,7 +359,7 @@ Write-Host "Response: $($chatResponse.messages[-1].text)"
 ```bash
 CHAT_URL="https://workiq.svc.cloud.microsoft/rest/conversations/${CONVERSATION_ID}/chat"
 
-# 웹 그라운딩을 끈 메시지
+# Message with web grounding turned off
 CHAT_BODY='{
   "message": "What are our company policies on remote work?",
   "locationHint": "America/New_York",
@@ -425,8 +425,8 @@ $headers = @{
     "Content-Type"  = "application/json"
 }
 
-# SharePoint 파일 컨텍스트를 포함한 메시지
-# 실제 SharePoint 사이트·문서 URL로 교체하세요
+# SharePoint Message including file context
+# Replace with your real SharePoint site and document URL
 $chatBody = @{
     message      = @{ text = "Based on the HR documents, how can I improve my career?" }
     locationHint = @{ timeZone = "America/New_York" }
@@ -453,7 +453,7 @@ Write-Host "Response: $($chatResponse.messages[-1].text)"
 ```bash
 CHAT_URL="https://workiq.svc.cloud.microsoft/rest/conversations/${CONVERSATION_ID}/chat"
 
-# SharePoint 파일 컨텍스트를 포함한 메시지
+# SharePoint Message including file context
 CHAT_BODY='{
   "message": "Based on the HR documents, what are the steps to request paid time off?",
   "contextualResources": {

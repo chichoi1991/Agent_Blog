@@ -180,7 +180,7 @@ Copilot Studio supports the **Power Fx** formula language to handle complex oper
 Concatenate(VarFirstName, " ", VarLastName)
 
 // Conditional message
-If(VarRequestType = "긴급", "긴급 처리팀에 전달합니다.", "일반 접수되었습니다.")
+If(VarRequestType = "Urgent", "Forwarding to the urgent handling team.", "Received as a standard request.")
 
 // Date calculation
 DateAdd(Now(), 3, TimeUnit.Days)

@@ -30,43 +30,43 @@ The **actual single skill** used in this lab is the demo's one-page `weekly-sale
 ````markdown
 ---
 name: weekly-sales-brief
-description: 판매 데이터 분석 결과를 매번 똑같은 짧은 형식의 "주간 브리핑"으로 정리할 때 사용. "주간 요약·브리핑·정리·한 장 요약" 요청 시.
+description: Use when sales analysis results should always be written up as the same short "weekly briefing". Triggers on requests such as a weekly summary, briefing, write-up, or one-page summary.
 ---
 
-# 주간 판매 브리핑
+# Weekly sales briefing
 
-분석 결과를 **늘 같은 형식의 짧은 요약**으로 정리하는 스킬입니다.
-(파일은 이 SKILL.md 한 장뿐입니다. 별도 자료·코드 필요 없음.)
+A skill that turns analysis results into a **short summary in a consistent format**.
+(This skill is a single SKILL.md; no extra material or code is needed.)
 
-## 언제 쓰나
-"이번 주 요약", "브리핑으로 정리", "한 장으로 요약" 같은 요청.
+## When to use it
+Requests such as "summarize this week", "write it up as a briefing", or "summarize on one page".
 
-## 무엇을 하나
-분석 결과를 아래 **고정 형식**으로 정리합니다. 항상 이 순서·이 항목을 지킵니다.
+## What it does
+It organizes the analysis results into the **fixed format** below. Always keep this order and these sections.
 
 ```
-📊 주간 판매 브리핑 — [기간]
+📊 Weekly sales briefing — [Period]
 
-한 줄 요약: [가장 중요한 결론 한 문장]
+One-line summary: [the single most important conclusion]
 
-핵심 숫자
-- 총매출: [값] (전주 대비 [+/-%])
-- 1위 제조사: [이름] ([값])
-- 베스트 모델: [이름] ([값])
+Key numbers
+- Total revenue: [value] (week over week [+/-%])
+- Top 3 manufacturers: [name] ([value])
+- Best-selling model: [name] ([value])
 
-눈에 띄는 점
-- [관찰 1]
-- [관찰 2]
+What stands out
+- [observation 1]
+- [observation 2]
 
-다음 액션(제안)
-- [할 일 1]
+Suggested next actions
+- [action 1]
 ```
 
-## 규칙
-1. **숫자는 분석 결과만** 사용하고 지어내지 않습니다. 없으면 "데이터 없음"으로 둡니다.
-2. 항목은 **5줄 안팎**으로 짧게. 길어지면 핵심만 남깁니다.
-3. 증감은 **+/-**와 함께 표시합니다(예: +12%).
-4. "다음 액션"은 데이터에서 자연스럽게 나오는 제안만 적습니다.
+## Rules
+1. **Use only numbers from the analysis result** and never invent them. If a number is missing, write "no data".
+2. Keep each item to about one line. If it grows longer, keep only the essentials.
+3. Show increases and decreases with a sign (for example: +12%).
+4. "Next actions" must contain only suggestions that follow naturally from the data.
 ````
 
 > **Checkpoint:** The key is only three things: **"when to use it (trigger) + what it does (fixed format) + rules."** With this one page and no resources or code, you have a single skill.

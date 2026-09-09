@@ -101,13 +101,13 @@ You are an HTML card generation expert. Based on the email topic, generate HTML 
 <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; color: #000000;">
   <!-- Header -->
   <div style="background-color: #e3f2fd; padding: 25px; border-radius: 10px; margin-bottom: 20px; border-left: 5px solid #1976d2;">
-    <h1 style="color: #1565c0; margin: 0; font-size: 24px;">📊 {% raw %}{{보고서_제목}}{% endraw %}</h1>
-    <p style="color: #424242; margin: 10px 0 0 0; font-size: 14px;">Report date: {% raw %}{{보고일}}{% endraw %}</p>
+    <h1 style="color: #1565c0; margin: 0; font-size: 24px;">📊 {% raw %}{{Report_Subject}}{% endraw %}</h1>
+    <p style="color: #424242; margin: 10px 0 0 0; font-size: 14px;">Report date: {% raw %}{{Report date}}{% endraw %}</p>
   </div>
   <!-- Greeting -->
   <div style="padding: 15px; margin-bottom: 20px;">
-    <p style="color: #212121; font-size: 15px; line-height: 1.6;">Hello, {% raw %}{{수신자}}{% endraw %} 👋</p>
-    <p style="color: #212121; font-size: 15px; line-height: 1.6;">{% raw %}{{인사말_본문}}{% endraw %}</p>
+    <p style="color: #212121; font-size: 15px; line-height: 1.6;">Hello, {% raw %}{{Recipient}}{% endraw %} 👋</p>
+    <p style="color: #212121; font-size: 15px; line-height: 1.6;">{% raw %}{{Greeting_Body}}{% endraw %}</p>
   </div>
   <!-- Priority summary -->
   <div style="background-color: #fff9c4; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #f57f17;">
@@ -122,12 +122,12 @@ You are an HTML card generation expert. Based on the email topic, generate HTML 
         </tr>
       </thead>
       <tbody>
-        {% raw %}{{#each 우선순위_목록}}{% endraw %}
+        {% raw %}{{#each Priority_List}}{% endraw %}
         <tr>
-          <td style="padding: 10px; border: 1px solid #f9a825;">{% raw %}{{순위}}{% endraw %}</td>
-          <td style="padding: 10px; border: 1px solid #f9a825;">{% raw %}{{업무명}}{% endraw %}</td>
-          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825;"><strong>{% raw %}{{마감일}}{% endraw %}</strong></td>
-          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825;">{% raw %}{{상태}}{% endraw %}</td>
+          <td style="padding: 10px; border: 1px solid #f9a825;">{% raw %}{{Rank}}{% endraw %}</td>
+          <td style="padding: 10px; border: 1px solid #f9a825;">{% raw %}{{Task name}}{% endraw %}</td>
+          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825;"><strong>{% raw %}{{Due date}}{% endraw %}</strong></td>
+          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825;">{% raw %}{{Status}}{% endraw %}</td>
         </tr>
         {% raw %}{{/each}}{% endraw %}
       </tbody>
@@ -136,7 +136,7 @@ You are an HTML card generation expert. Based on the email topic, generate HTML 
   <!-- Signature -->
   <div style="padding: 15px; border-top: 2px solid #e0e0e0; margin-top: 20px;">
     <p style="color: #212121; font-size: 14px;">Thank you. 😊</p>
-    <p style="color: #616161; font-size: 13px;">{% raw %}{{발신자_이름}}{% endraw %}</p>
+    <p style="color: #616161; font-size: 13px;">{% raw %}{{Sender_Name}}{% endraw %}</p>
   </div>
 </div>
 
@@ -144,13 +144,13 @@ You are an HTML card generation expert. Based on the email topic, generate HTML 
 
 <div style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
   <div style="background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-    <h1 style="color: #2c3e50; text-align: center;">📊 {% raw %}{{리포트_제목}}{% endraw %}</h1>
-    <p style="color: #7f8c8d; text-align: center; font-size: 14px;">Lookup period: {% raw %}{{조회_시작}}{% endraw %} ~ {% raw %}{{조회_종료}}{% endraw %}</p>
+    <h1 style="color: #2c3e50; text-align: center;">📊 {% raw %}{{Report_Subject}}{% endraw %}</h1>
+    <p style="color: #7f8c8d; text-align: center; font-size: 14px;">Lookup period: {% raw %}{{Look up_Start}}{% endraw %} ~ {% raw %}{{Look up_End}}{% endraw %}</p>
     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 8px; margin-bottom: 30px;">
       <h2 style="color: #fff; font-size: 18px;">Summary information</h2>
       <table style="width: 100%; border-collapse: collapse;">
-        <tr><td style="padding: 10px; color: #fff;">Total:</td><td style="padding: 10px; color: #fff; text-align: right;">{% raw %}{{총합}}{% endraw %}</td></tr>
-        <tr><td style="padding: 10px; color: #fff;">Average:</td><td style="padding: 10px; color: #fff; text-align: right;">{% raw %}{{평균}}{% endraw %}</td></tr>
+        <tr><td style="padding: 10px; color: #fff;">Total:</td><td style="padding: 10px; color: #fff; text-align: right;">{% raw %}{{Total}}{% endraw %}</td></tr>
+        <tr><td style="padding: 10px; color: #fff;">Average:</td><td style="padding: 10px; color: #fff; text-align: right;">{% raw %}{{Average}}{% endraw %}</td></tr>
       </table>
     </div>
     <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
@@ -162,11 +162,11 @@ You are an HTML card generation expert. Based on the email topic, generate HTML 
         </tr>
       </thead>
       <tbody>
-        {% raw %}{{#each 데이터_목록}}{% endraw %}
+        {% raw %}{{#each Data_List}}{% endraw %}
         <tr>
-          <td style="padding: 10px; border: 1px solid #ddd;">{% raw %}{{기간}}{% endraw %}</td>
-          <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">{% raw %}{{값}}{% endraw %}</td>
-          <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">{% raw %}{{상태}}{% endraw %}</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">{% raw %}{{Period}}{% endraw %}</td>
+          <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">{% raw %}{{Value}}{% endraw %}</td>
+          <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">{% raw %}{{Status}}{% endraw %}</td>
         </tr>
         {% raw %}{{/each}}{% endraw %}
       </tbody>

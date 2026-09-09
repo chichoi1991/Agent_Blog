@@ -85,7 +85,7 @@ Dynamically populate input variables so that an email and Teams message are post
 |Name|Daily work notification trigger flow|
 |Description|Runs automatically every day at a set time to send a work notification email and create a Teams channel post.|
 |To|Email address of the person in charge of the work|
-|Subject|[Daily work notification] {% raw %}{{날짜}}{% endraw %}|
+|Subject|[Daily work notification] {% raw %}{{Date}}{% endraw %}|
 |Body|Daily work summary in HTML format|
 |Channel Message|"Today's work notification has arrived." + part of Body|
 
