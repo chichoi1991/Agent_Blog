@@ -15,6 +15,7 @@
     "copilot-harness-cost-governance",
     "agent-review-tool",
     "copilot-credit-consumption-api",
-    "sharepoint-metadata-filtering"
+    "sharepoint-metadata-filtering",
+    "work-iq-context-layer-you-already-have"
   ]
 }

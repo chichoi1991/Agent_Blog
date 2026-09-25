@@ -46,7 +46,7 @@ window.addEventListener('popstate', (e) => {
 });
 
 function updateProgressBar(sectionId) {
-  const steps = ['시작', '진단', '추천 결과'];
+  const steps = T.progressSteps;
   const activeIndex = {
     'loading-section': 0,
     'error-section': 0,
@@ -128,7 +128,7 @@ function sumRawScores(answersMap, questions, zeroed) {
 function getThresholdLabel(score, thresholds) {
   const rounded = Math.round(score);
   const t = thresholds.find(t => rounded >= t.min && rounded <= t.max);
-  return t ? t.label : '권장하지 않음';
+  return t ? t.label : T.notRecommended;
 }
 
 // Returns platforms sorted by final score descending: [{id, score, label}, ...]
@@ -243,13 +243,150 @@ function renderCrossNotes(answersMap, winnerId) {
   container.classList.remove('hidden');
 }
 
+// Platform icon paths.
+// The English page shares the Korean page's image folder; set window.APA_IMAGE_BASE
+// before loading apa.js to use an absolute path, or default to page-relative images/.
+const APA_IMAGE_BASE = (typeof window !== 'undefined' && window.APA_IMAGE_BASE) || 'images/';
+
+const APA_LANG = (typeof window !== 'undefined' && window.APA_LANG) || 'ko';
+const APA_STRINGS = {
+  ko: {
+    progressSteps: ['시작', '진단', '추천 결과'],
+    notRecommended: '권장하지 않음',
+    platformDataUnavailable: '플랫폼 데이터를 불러올 수 없습니다.',
+    recommendationReasonTitle: '이 플랫폼을 추천한 이유',
+    resourcesLink: (headline) => `${headline} 리소스 살펴보기 →`,
+    startHere: '여기서 시작하세요',
+    spotlight: '주요 기능',
+    firstPartyAgents: '사용 가능한 자사 Copilot 에이전트',
+    availableTemplates: '사용 가능한 템플릿',
+    bestForTitle: '이런 경우에 적합',
+    watchOutTitle: '고려해야 할 사항',
+    copyShareAria: '공유 링크를 클립보드에 복사',
+    shareResult: '📋 결과 공유하기',
+    loadError: (message) => `어드바이저 데이터를 불러오지 못했습니다: ${message}`,
+    useAgentsTitle: '에이전트 사용하기',
+    useAgentsDescription: 'Microsoft 365 내부 또는 업무 환경 전반에서 동작하는 내장·완성형 에이전트로 시작하세요.',
+    buildAgentsTitle: '에이전트 만들기',
+    buildAgentsDescription: '시나리오에 맞는 에이전트를 만들고, 확장하고, 관리하고, 운영할 플랫폼을 선택하세요.',
+    exploreResources: '리소스 살펴보기 →',
+    questionCounter: (current, total) => `질문 ${current} / ${total}`,
+    showRecommendation: '추천 결과 보기 ▶',
+    next: '다음 ▶',
+    shortQuestionLabels: {
+      q1: '제작자',
+      q8: '사용 대상',
+      q2: '배포 위치',
+      q4: '작업 유형',
+      q3: '데이터 접근',
+    },
+    m365Excluded: 'Only available via the entry-point wizard — excluded from custom agent assessment.',
+    notApplicable: 'Not applicable for this scenario.',
+    winnerPerfect: '완벽한 적합 — 모든 항목에서 최고 점수를 기록했습니다.',
+    winnerStrong: '거의 모든 항목에서 높은 적합도를 보였습니다.',
+    winnerTopStrengths: (tops) => `${tops.join(', ')} 항목에서 가장 강점을 보였습니다.`,
+    closeGapWeak: (weakQs) => `근소한 차이 — ${weakQs.join(', ')} 항목에서 뒤처졌습니다.`,
+    limitedFit: '이 시나리오에는 적합도가 제한적입니다.',
+    weakFit: (weakQs) => `${weakQs.join(', ')} 항목에서 적합도가 낮습니다.`,
+    topsGoodButLost: (tops) => `${tops.join(', ')} 항목은 우수하지만 종합 점수에서 밀렸습니다.`,
+    excluded: '제외됨',
+    dotVeryFit: '매우 적합',
+    dotModerate: '보통',
+    dotLow: '낮음',
+    dotNotFit: '부적합',
+    scoreDetails: '점수 상세',
+    perQuestionFit: '질문별 적합도',
+    noMatch: '해당 없음',
+    closeScoreTie: '상위 두 플랫폼의 점수가 동일합니다',
+    closeScoreGap: (gap) => `상위 두 플랫폼의 점수 차이는 ${gap}점에 불과합니다`,
+    closeScoreCallout: (gapText) => `📊 ${gapText} — 팀 역량과 기존 도구 환경이 선택의 기준이 될 수 있습니다.`,
+    considerBothBanner: '<strong>두 가지를 함께 고려하세요.</strong> Scout는 상시 모니터링과 조율을 담당하고, Cowork는 필요할 때 Microsoft 365 산출물을 완성하는 역할을 맡을 수 있습니다.',
+    alsoConsider: '함께 고려할 선택지',
+    noRecommendation: '추천 결과를 생성할 수 없습니다. CAT 팀에 문의해 주세요.',
+    complementaryPlatform: '함께 쓰면 좋은 플랫폼:',
+    alsoConsiderColon: '함께 고려할 선택지:',
+    tabTitle: (label) => `APA: ${label} 추천`,
+    whyNot: (dimension, winnerLabel, runnerLabel, optionLabel) => `<strong>${dimension}</strong> 항목에서 ${winnerLabel}이(가) ${runnerLabel}보다 앞섰습니다 — 선택하신 답변: "${optionLabel}"`,
+    previousVisit: '이전 방문 시점',
+    temporalChangeBanner: (dateStr) => `${dateStr} 이후 추천 결과가 변경되었습니다. 플랫폼 정보가 업데이트되었습니다. <a href="javascript:void(0)" onclick="restart()">다시 진단하기 →</a>`,
+    driftNote: 'ℹ 이 추천이 생성된 이후 일부 평가 기준이 업데이트되었습니다.',
+    copySuccess: '✓ 복사되었습니다',
+    copyFailure: '복사 실패',
+  },
+  en: {
+    progressSteps: ['Start', 'Diagnose', 'Recommendation'],
+    notRecommended: 'Not recommended',
+    platformDataUnavailable: 'Unable to load platform data.',
+    recommendationReasonTitle: 'Why this platform is recommended',
+    resourcesLink: (headline) => `Explore ${headline} resources →`,
+    startHere: 'Start here',
+    spotlight: 'Spotlight',
+    firstPartyAgents: 'Available first-party Copilot agents',
+    availableTemplates: 'Available templates',
+    bestForTitle: 'Best for',
+    watchOutTitle: 'Things to consider',
+    copyShareAria: 'Copy share link to clipboard',
+    shareResult: '📋 Share result',
+    loadError: (message) => `Unable to load advisor data: ${message}`,
+    useAgentsTitle: 'Use agents',
+    useAgentsDescription: 'Start with built-in, ready-made agents that work inside Microsoft 365 or across your work environment.',
+    buildAgentsTitle: 'Build agents',
+    buildAgentsDescription: 'Choose a platform to create, extend, manage, and operate agents for your scenario.',
+    exploreResources: 'Explore resources →',
+    questionCounter: (current, total) => `Question ${current} / ${total}`,
+    showRecommendation: 'View recommendation ▶',
+    next: 'Next ▶',
+    shortQuestionLabels: {
+      q1: 'Maker',
+      q8: 'Audience',
+      q2: 'Deployment',
+      q4: 'Task type',
+      q3: 'Data access',
+    },
+    m365Excluded: 'Only available via the entry-point wizard — excluded from custom agent assessment.',
+    notApplicable: 'Not applicable for this scenario.',
+    winnerPerfect: 'Perfect fit — it scored highest across every category.',
+    winnerStrong: 'Strong fit across nearly every category.',
+    winnerTopStrengths: (tops) => `It was strongest in ${tops.join(', ')}.`,
+    closeGapWeak: (weakQs) => `Close call — it trailed in ${weakQs.join(', ')}.`,
+    limitedFit: 'This scenario has limited fit.',
+    weakFit: (weakQs) => `Lower fit in ${weakQs.join(', ')}.`,
+    topsGoodButLost: (tops) => `${tops.join(', ')} scored well, but the overall score was lower.`,
+    excluded: 'Excluded',
+    dotVeryFit: 'Strong fit',
+    dotModerate: 'Moderate',
+    dotLow: 'Low',
+    dotNotFit: 'Not a fit',
+    scoreDetails: 'Score details',
+    perQuestionFit: 'Fit by question',
+    noMatch: 'No match',
+    closeScoreTie: 'The top two platforms have the same score',
+    closeScoreGap: (gap) => `The top two platforms are only ${gap} point${gap === 1 ? '' : 's'} apart`,
+    closeScoreCallout: (gapText) => `📊 ${gapText} — team skills and your existing tool environment may guide the choice.`,
+    considerBothBanner: '<strong>Consider both options together.</strong> Scout can handle always-on monitoring and coordination, while Cowork can complete Microsoft 365 deliverables when needed.',
+    alsoConsider: 'Also consider',
+    noRecommendation: 'Unable to generate a recommendation. Please contact the CAT team.',
+    complementaryPlatform: 'Good platform to use together:',
+    alsoConsiderColon: 'Also consider:',
+    tabTitle: (label) => `APA: ${label} recommendation`,
+    whyNot: (dimension, winnerLabel, runnerLabel, optionLabel) => `<strong>${dimension}</strong> is where ${winnerLabel} led ${runnerLabel} — your selected answer: "${optionLabel}"`,
+    previousVisit: 'previous visit',
+    temporalChangeBanner: (dateStr) => `Your recommendation has changed since ${dateStr}. Platform information has been updated. <a href="javascript:void(0)" onclick="restart()">Run the diagnosis again →</a>`,
+    driftNote: 'ℹ Some evaluation criteria have been updated since this recommendation was generated.',
+    copySuccess: '✓ Copied',
+    copyFailure: 'Copy failed',
+  },
+};
+const T = APA_STRINGS[APA_LANG] || APA_STRINGS.ko;
+
+
 const PLATFORM_ICONS = {
-  agent_builder:  'images/copilot.png',
-  m365_copilot:   'images/m365-copilot-logo.png',
-  copilot_studio: 'images/copilot-studio.png',
-  foundry:        'images/foundry.svg',
-  cowork:         'images/cowork.png',
-  scout:          'images/scout.svg',
+  agent_builder:  APA_IMAGE_BASE + 'copilot.png',
+  m365_copilot:   APA_IMAGE_BASE + 'm365-copilot-logo.png',
+  copilot_studio: APA_IMAGE_BASE + 'copilot-studio.png',
+  foundry:        APA_IMAGE_BASE + 'foundry.svg',
+  cowork:         APA_IMAGE_BASE + 'cowork.png',
+  scout:          APA_IMAGE_BASE + 'scout.svg',
 };
 
 // Destinations reached through the entry-point wizard rather than the scored wizard.
@@ -265,7 +402,7 @@ function badgeClass(label) {
 
 function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge, startKey) {
   const rec = apa.recommendations[platformId];
-  if (!rec) return `<div class="rec-card"><p>플랫폼 데이터를 불러올 수 없습니다.</p></div>`;
+  if (!rec) return `<div class="rec-card"><p>${T.platformDataUnavailable}</p></div>`;
   const rankEntry = ranked.find(r => r.id === platformId);
   // Entry-point destinations are single-card results with nothing to compare against,
   // so their accordions start expanded — the card is the whole page. Scored platform
@@ -280,12 +417,12 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge,
     : '';
 
   const factorsHtml = factors.length > 0 ? `
-    <div class="rec-section-title">이 플랫폼을 추천한 이유</div>
+    <div class="rec-section-title">${T.recommendationReasonTitle}</div>
     <ul class="rec-list">${factors.map(f => `<li>${f}</li>`).join('')}</ul>` : '';
 
   const resourcesHtml = rec.resources_url
     ? `<a class="rec-resources-link" href="${rec.resources_url}" target="_blank" rel="noopener noreferrer">
-        ${rec.headline} 리소스 살펴보기 →</a>`
+        ${T.resourcesLink(rec.headline)}</a>`
     : '';
 
   const bestFor = (rec.best_for || []).map(f => `<li>${f}</li>`).join('');
@@ -294,7 +431,7 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge,
   // static spotlight: it tells the user which surface of this platform to open first.
   const startHere = startKey && rec.start_here ? rec.start_here[startKey] : null;
   const spotlight = startHere || rec.spotlight;
-  const spotlightEyebrow = startHere ? '여기서 시작하세요' : '주요 기능';
+  const spotlightEyebrow = startHere ? T.startHere : T.spotlight;
   const spotlightHtml = spotlight ? (() => {
     const nameHtml = spotlight.url
       ? `<a href="${spotlight.url}" target="_blank" rel="noopener noreferrer">${spotlight.label}</a>`
@@ -311,7 +448,7 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge,
   const firstPartyHtml = (rec.first_party_agents || []).length > 0 ? `
     <details class="rec-accordion"${detailsOpen}>
       <summary class="rec-accordion-trigger">
-        <span class="rec-section-title">${rec.first_party_label || '사용 가능한 자사 Copilot 에이전트'}</span>
+        <span class="rec-section-title">${rec.first_party_label || T.firstPartyAgents}</span>
         <span class="rec-accordion-count">${rec.first_party_agents.length}</span>
         <svg class="rec-accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
       </summary>
@@ -326,7 +463,7 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge,
   const templatesHtml = (rec.templates || []).length > 0 ? `
     <details class="rec-accordion"${detailsOpen}>
       <summary class="rec-accordion-trigger">
-        <span class="rec-section-title">사용 가능한 템플릿</span>
+        <span class="rec-section-title">${T.availableTemplates}</span>
         <span class="rec-accordion-count">${rec.templates.length}</span>
         <svg class="rec-accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
       </summary>
@@ -360,7 +497,7 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge,
       ${factorsHtml}
       ${bestFor ? `<details class="rec-accordion"${detailsOpen}>
         <summary class="rec-accordion-trigger">
-          <span class="rec-section-title">이런 경우에 적합</span>
+          <span class="rec-section-title">${T.bestForTitle}</span>
           <span class="rec-accordion-count">${(rec.best_for || []).length}</span>
           <svg class="rec-accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </summary>
@@ -368,7 +505,7 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge,
       </details>` : ''}
       ${watchOut ? `<details class="rec-accordion"${detailsOpen}>
         <summary class="rec-accordion-trigger">
-          <span class="rec-section-title">고려해야 할 사항</span>
+          <span class="rec-section-title">${T.watchOutTitle}</span>
           <span class="rec-accordion-count">${(rec.watch_out_for || []).length}</span>
           <svg class="rec-accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </summary>
@@ -377,8 +514,8 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge,
       ${firstPartyHtml}
       ${templatesHtml}
       ${isPrimary ? `<div class="rec-card-share">
-        <button id="decision-card-share" class="btn-decision btn-decision-primary" aria-label="공유 링크를 클립보드에 복사" onclick="copyShareLink()">
-          📋 결과 공유하기
+        <button id="decision-card-share" class="btn-decision btn-decision-primary" aria-label="${T.copyShareAria}" onclick="copyShareLink()">
+          ${T.shareResult}
         </button>
       </div>` : ''}
     </div>`;
@@ -466,7 +603,7 @@ async function boot() {
     }
   } catch (err) {
     document.getElementById('error-message').textContent =
-      `어드바이저 데이터를 불러오지 못했습니다: ${err.message}`;
+      T.loadError(err.message);
     showSection('error-section');
   }
 }
@@ -607,13 +744,13 @@ function renderExploration() {
   if (!groupsContainer) return;
   const explorationGroups = [
     {
-      title: '에이전트 사용하기',
-      description: 'Microsoft 365 내부 또는 업무 환경 전반에서 동작하는 내장·완성형 에이전트로 시작하세요.',
+      title: T.useAgentsTitle,
+      description: T.useAgentsDescription,
       platforms: ['m365_copilot', 'cowork', 'scout']
     },
     {
-      title: '에이전트 만들기',
-      description: '시나리오에 맞는 에이전트를 만들고, 확장하고, 관리하고, 운영할 플랫폼을 선택하세요.',
+      title: T.buildAgentsTitle,
+      description: T.buildAgentsDescription,
       platforms: ['agent_builder', 'copilot_studio', 'foundry']
     }
   ];
@@ -628,7 +765,7 @@ function renderExploration() {
         ? `<a href="${rec.spotlight.url}" target="_blank" rel="noopener noreferrer">${rec.spotlight.label}</a>`
         : rec.spotlight.label;
       return `<div class="exploration-card-spotlight">
-        <span class="exploration-card-spotlight-eyebrow">주요 기능</span>
+        <span class="exploration-card-spotlight-eyebrow">${T.spotlight}</span>
         <span class="exploration-card-spotlight-name">${nameHtml}</span>
         <span class="exploration-card-spotlight-tagline">${rec.spotlight.tagline}</span>
       </div>`;
@@ -639,7 +776,7 @@ function renderExploration() {
         <h3 class="exploration-card-title">${rec.headline}</h3>
         <p class="exploration-card-summary">${summary}</p>
         ${spotlightChip}
-        <a href="${url}" target="_blank" rel="noopener noreferrer" class="exploration-card-link">리소스 살펴보기 →</a>
+        <a href="${url}" target="_blank" rel="noopener noreferrer" class="exploration-card-link">${T.exploreResources}</a>
       </div>`;
   };
   groupsContainer.innerHTML = explorationGroups.map(group => `
@@ -660,7 +797,7 @@ function renderQuestion() {
   const total = apa.questions.length;
 
   document.getElementById('question-counter').textContent =
-    `질문 ${currentQuestionIndex + 1} / ${total}`;
+    T.questionCounter(currentQuestionIndex + 1, total);
   document.getElementById('question-title').textContent = question.label;
   document.getElementById('question-subtitle').textContent = question.prompt || '';
 
@@ -695,7 +832,7 @@ function renderQuestion() {
   const nextBtn = document.getElementById('next-btn');
   nextBtn.disabled = !answers[question.id];
   nextBtn.textContent = currentQuestionIndex === total - 1
-    ? '추천 결과 보기 ▶' : '다음 ▶';
+    ? T.showRecommendation : T.next;
 
   document.getElementById('prev-btn').disabled = false;
 }
@@ -729,11 +866,7 @@ function handlePrev() {
 
 // Short labels for questions in the per-question grid
 const Q_SHORT_LABELS = {
-  q1: '제작자',
-  q8: '사용 대상',
-  q2: '배포 위치',
-  q4: '작업 유형',
-  q3: '데이터 접근',
+  ...T.shortQuestionLabels,
 };
 
 // Returns all hard-rule labels that zeroed a platform
@@ -768,9 +901,9 @@ function getScoreReason(platformId, ranked, answersMap) {
     const labels = getHardRuleLabels(platformId, answersMap);
     if (labels.length > 0) return labels.map(l => `⚠️ ${l}`).join('<br>');
     if (platformId === 'm365_copilot' && !fastTrack) {
-      return 'Only available via the entry-point wizard — excluded from custom agent assessment.';
+      return T.m365Excluded;
     }
-    return rec ? rec.scoring_summary : 'Not applicable for this scenario.';
+    return rec ? rec.scoring_summary : T.notApplicable;
   }
 
   if (!rankEntry) return rec ? rec.scoring_summary : '';
@@ -784,10 +917,10 @@ function getScoreReason(platformId, ranked, answersMap) {
   const zeroCount = perQ.filter(q => q.score === 0).length;
 
   if (isWinner) {
-    if (perfectCount === 5) return '완벽한 적합 — 모든 항목에서 최고 점수를 기록했습니다.';
-    if (perfectCount >= 4) return '거의 모든 항목에서 높은 적합도를 보였습니다.';
+    if (perfectCount === 5) return T.winnerPerfect;
+    if (perfectCount >= 4) return T.winnerStrong;
     const tops = contribs.slice(0, 2).map(c => `<em>${c.questionLabel.replace(/\?$/, '')}</em>`);
-    return `${tops.join(', ')} 항목에서 가장 강점을 보였습니다.`;
+    return T.winnerTopStrengths(tops);
   }
 
   // Runner-up or lower: explain gap relative to winner
@@ -805,16 +938,16 @@ function getScoreReason(platformId, ranked, answersMap) {
       .map(q => Q_SHORT_LABELS[q.qId] || q.qId);
 
     if (gap <= 2 && weakQs.length > 0) {
-      return `근소한 차이 — ${weakQs.join(', ')} 항목에서 뒤처졌습니다.`;
+      return T.closeGapWeak(weakQs);
     }
     if (zeroCount >= 3) {
-      return rec ? rec.scoring_summary : '이 시나리오에는 적합도가 제한적입니다.';
+      return rec ? rec.scoring_summary : T.limitedFit;
     }
     if (weakQs.length > 0) {
-      return `${weakQs.join(', ')} 항목에서 적합도가 낮습니다.`;
+      return T.weakFit(weakQs);
     }
     const tops = contribs.slice(0, 2).map(c => `<em>${c.questionLabel.replace(/\?$/, '')}</em>`);
-    if (tops.length > 0) return `${tops.join(', ')} 항목은 우수하지만 종합 점수에서 밀렸습니다.`;
+    if (tops.length > 0) return T.topsGoodButLost(tops);
   }
 
   return rec ? rec.scoring_summary : '';
@@ -838,10 +971,10 @@ function buildPerQuestionGrid(answersMap) {
     const shortLabel = Q_SHORT_LABELS[q.id] || q.label;
 
     const cells = platforms.map(p => {
-      if (zeroed[p.id]) return '<td class="pq-cell"><span class="pq-dot pq-zeroed" title="제외됨">—</span></td>';
+      if (zeroed[p.id]) return `<td class="pq-cell"><span class="pq-dot pq-zeroed" title="${T.excluded}">—</span></td>`;
       const score = option.scores[p.id] ?? 0;
       const cls = score === 3 ? 'pq-strong' : score === 2 ? 'pq-moderate' : score === 1 ? 'pq-weak' : 'pq-none';
-      const title = score === 3 ? '매우 적합' : score === 2 ? '보통' : score === 1 ? '낮음' : '부적합';
+      const title = score === 3 ? T.dotVeryFit : score === 2 ? T.dotModerate : score === 1 ? T.dotLow : T.dotNotFit;
       return `<td class="pq-cell"><span class="pq-dot ${cls}" title="${title} (${score}/3)"></span></td>`;
     }).join('');
 
@@ -864,7 +997,7 @@ function buildScoreComparison(ranked, answersMap) {
     .map(p => {
     const rankEntry = ranked.find(r => r.id === p.id);
     const score = rankEntry ? rankEntry.score : 0;
-    const label = rankEntry ? rankEntry.label : '권장하지 않음';
+    const label = rankEntry ? rankEntry.label : T.notRecommended;
     const pct = zeroed[p.id] ? 0 : Math.round((score / maxScore) * 100);
     const icon = PLATFORM_ICONS[p.id] || '';
     const reason = getScoreReason(p.id, ranked, answersMap);
@@ -893,24 +1026,24 @@ function buildScoreComparison(ranked, answersMap) {
   let closeCallout = '';
   if (top && second && !zeroed[second.id] && (top.score - second.score) <= 2 && second.score > 0) {
     const gap = Math.abs(top.score - second.score);
-    const gapText = gap === 0 ? '상위 두 플랫폼의 점수가 동일합니다' : `상위 두 플랫폼의 점수 차이는 ${gap}점에 불과합니다`;
-    closeCallout = `<p class="sc-close-callout">📊 ${gapText} — 팀 역량과 기존 도구 환경이 선택의 기준이 될 수 있습니다.</p>`;
+    const gapText = gap === 0 ? T.closeScoreTie : T.closeScoreGap(gap);
+    closeCallout = `<p class="sc-close-callout">${T.closeScoreCallout(gapText)}</p>`;
   }
 
   return `
     <div class="sc-panel">
-      <div class="sc-heading">점수 상세</div>
+      <div class="sc-heading">${T.scoreDetails}</div>
       ${rows}
       ${closeCallout}
       <div class="sc-grid-section">
-        <div class="sc-grid-heading">질문별 적합도</div>
+        <div class="sc-grid-heading">${T.perQuestionFit}</div>
         ${buildPerQuestionGrid(answersMap)}
         <div class="pq-legend">
-          <span class="pq-dot pq-strong"></span> 매우 적합
-          <span class="pq-dot pq-moderate"></span> 보통
-          <span class="pq-dot pq-weak"></span> 낮음
-          <span class="pq-dot pq-none"></span> 해당 없음
-          <span class="pq-dot pq-zeroed">—</span> 제외됨
+          <span class="pq-dot pq-strong"></span> ${T.dotVeryFit}
+          <span class="pq-dot pq-moderate"></span> ${T.dotModerate}
+          <span class="pq-dot pq-weak"></span> ${T.dotLow}
+          <span class="pq-dot pq-none"></span> ${T.noMatch}
+          <span class="pq-dot pq-zeroed">—</span> ${T.excluded}
         </div>
       </div>
     </div>`;
@@ -954,10 +1087,9 @@ function renderDelegateRecommendation() {
   const secondLabel = document.getElementById('rec-second-label');
   if (ids.length > 1) {
     pairBanner.innerHTML =
-      '<strong>두 가지를 함께 고려하세요.</strong> Scout는 상시 모니터링과 조율을 담당하고, ' +
-      'Cowork는 필요할 때 Microsoft 365 산출물을 완성하는 역할을 맡을 수 있습니다.';
+      T.considerBothBanner;
     pairBanner.classList.remove('hidden');
-    secondLabel.textContent = '함께 고려할 선택지';
+    secondLabel.textContent = T.alsoConsider;
     secondLabel.classList.remove('hidden');
     document.getElementById('rec-second-card').innerHTML =
       buildPlatformCard(ids[1], [], {}, false, false);
@@ -1012,7 +1144,7 @@ function renderRecommendation() {
 
   if (!top || !second) {
     document.getElementById('rec-primary-card').innerHTML =
-      '<div class="rec-card"><p>추천 결과를 생성할 수 없습니다. CAT 팀에 문의해 주세요.</p></div>';
+      `<div class="rec-card"><p>${T.noRecommendation}</p></div>`;
     return;
   }
 
@@ -1059,7 +1191,7 @@ function renderRecommendation() {
     if (whyNot) bannerHtml += `<p class="why-not-sentence">${whyNot}</p>`;
     pairBanner.innerHTML = bannerHtml;
     pairBanner.classList.remove('hidden');
-    secondLabel.textContent = '함께 쓰면 좋은 플랫폼:';
+    secondLabel.textContent = T.complementaryPlatform;
     secondLabel.classList.remove('hidden');
   } else if (isPair) {
     // Close scores but not a valid pair — still show "Why not?"
@@ -1070,11 +1202,11 @@ function renderRecommendation() {
     } else {
       pairBanner.classList.add('hidden');
     }
-    secondLabel.textContent = '함께 고려할 선택지:';
+    secondLabel.textContent = T.alsoConsiderColon;
     secondLabel.classList.remove('hidden');
   } else {
     pairBanner.classList.add('hidden');
-    secondLabel.textContent = '함께 고려할 선택지:';
+    secondLabel.textContent = T.alsoConsiderColon;
     secondLabel.classList.remove('hidden');
   }
 
@@ -1104,9 +1236,9 @@ function updateTabTitle() {
   if (!recommendedPlatformId) return;
   const platformMeta = (apa.meta.platforms || []).find(p => p.id === recommendedPlatformId);
   if (platformMeta) {
-    document.title = `APA: ${platformMeta.label} 추천`;
+    document.title = T.tabTitle(platformMeta.label);
   } else if (apa.recommendations[recommendedPlatformId]) {
-    document.title = `APA: ${apa.recommendations[recommendedPlatformId].headline} 추천`;
+    document.title = T.tabTitle(apa.recommendations[recommendedPlatformId].headline);
   }
 }
 
@@ -1297,7 +1429,7 @@ function computeWhyNot(winner, runner, answersMap) {
 
   if (!bestDelta || bestDelta.delta <= 0) return null;
   const dimension = Q_SHORT_LABELS[bestDelta.qId] || bestDelta.questionLabel;
-  return `<strong>${dimension}</strong> 항목에서 ${winnerMeta.label}이(가) ${runnerMeta.label}보다 앞섰습니다 — 선택하신 답변: "${bestDelta.optionLabel}"`;
+  return T.whyNot(dimension, winnerMeta.label, runnerMeta.label, bestDelta.optionLabel);
 }
 
 function renderDecisionCard() {
@@ -1311,8 +1443,8 @@ function renderDecisionCard() {
   // Temporal change banner
   const bannerEl = document.getElementById('decision-card-banner');
   if (isURLLoaded && originalPlatformId && originalPlatformId !== recommendedPlatformId) {
-    const dateStr = originalDate ? formatDateDisplay(originalDate) : '이전 방문 시점';
-    bannerEl.innerHTML = `${dateStr} 이후 추천 결과가 변경되었습니다. 플랫폼 정보가 업데이트되었습니다. <a href="javascript:void(0)" onclick="restart()">다시 진단하기 →</a>`;
+    const dateStr = originalDate ? formatDateDisplay(originalDate) : T.previousVisit;
+    bannerEl.innerHTML = T.temporalChangeBanner(dateStr);
     bannerEl.style.display = '';
     if (typeof clarity === 'function') clarity('set', 'temporal_change', 'true');
   } else {
@@ -1322,7 +1454,7 @@ function renderDecisionCard() {
   // Schema drift note
   const driftEl = document.getElementById('decision-card-drift');
   if (window._decisionCardDrift) {
-    driftEl.textContent = 'ℹ 이 추천이 생성된 이후 일부 평가 기준이 업데이트되었습니다.';
+    driftEl.textContent = T.driftNote;
     driftEl.style.display = '';
   } else {
     driftEl.style.display = 'none';
@@ -1343,7 +1475,7 @@ function copyShareLink() {
 
   function showSuccess() {
     if (typeof clarity === 'function') clarity('set', 'card_shared', 'true');
-    btn.textContent = '✓ 복사되었습니다';
+    btn.textContent = T.copySuccess;
     btn.classList.add('btn-decision-copied');
     setTimeout(() => {
       btn.textContent = originalText;
@@ -1352,7 +1484,7 @@ function copyShareLink() {
   }
 
   function showError() {
-    btn.textContent = '복사 실패';
+    btn.textContent = T.copyFailure;
     btn.classList.add('btn-decision-error');
     setTimeout(() => {
       btn.textContent = originalText;

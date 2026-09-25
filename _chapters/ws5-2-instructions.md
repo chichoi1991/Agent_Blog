@@ -17,19 +17,19 @@ parent: "ws5"
 ## 1. Copilot Studio 사이트 접속
 
 ### 에이전트 생성을 위해 [Copilot Studio 페이지: copilotstudio.preview.microsoft.com ](https://copilotstudio.preview.microsoft.com) 에 접속 합니다.
-![image](https://github.com/user-attachments/assets/27577404-175d-4646-9caa-72be7e07b94d)
+![image]({{ '/assets/image/github-attachments/27577404-175d-4646-9caa-72be7e07b94d.png' | relative_url }})
 
 <br>
 
 ## 2. 개발환경 변경
 사이트에 접속이 되면, 우측 상단에 환경을 선택하여 사전에 전달받은 실습 환경을 선택하여 이동합니다.
-<img width="1524" height="1392" alt="image" src="https://github.com/user-attachments/assets/68e1bdfd-bec8-4ca7-881b-56a0cbb4f1cf" />
+<img width="1524" height="1392" alt="image" src="{{ '/assets/image/github-attachments/68e1bdfd-bec8-4ca7-881b-56a0cbb4f1cf.png' | relative_url }}" />
 
 <br>
 
 > 만약 아래와 같은 화면이 처음 떴다면, 우측 상단의 ... 선택하여 에이전트 **생성 취소** 를 누르면 위의 화면으로 돌아가게 됩니다.
 
-<img width="1524" height="561" alt="image" src="https://github.com/user-attachments/assets/4794e942-e580-437b-ab0f-2388c6ef330d" />
+<img width="1524" height="561" alt="image" src="{{ '/assets/image/github-attachments/4794e942-e580-437b-ab0f-2388c6ef330d.png' | relative_url }}" />
 
 <br><br>
 
@@ -76,7 +76,7 @@ parent: "ws5"
 이제 이곳에 기본적인 에이전트의 이름과 설명, 지침을 입력합니다.
 
 먼저 우측 상단의 [설정] 을 선택하여 에이전트의 기본 설정들을 확인 및 구성합니다.
-<img width="1524" height="454" alt="image" src="https://github.com/user-attachments/assets/4dffbd0f-4bd3-4f64-8f5f-e4c9f84106a4" />
+<img width="1524" height="454" alt="image" src="{{ '/assets/image/github-attachments/4dffbd0f-4bd3-4f64-8f5f-e4c9f84106a4.png' | relative_url }}" />
 <br><br>
 
 

@@ -1,0 +1,40 @@
+---
+layout: default
+title: "Home"
+permalink: /en/
+lang: en
+---
+
+<div class="home-hero">
+  <h1>Microsoft Copilot Agentic Blog</h1>
+  <p class="hero-sub">The Microsoft Copilot agent ecosystem — centred on New Copilot Studio (CLI Agent).<br>Technical updates, translations, and hands-on labs, all in one place.</p>
+</div>
+
+{%- comment -%} ===== Latest posts: tech updates + CAT blog ===== {%- endcomment -%}
+<section class="home-section">
+  <div class="home-section-head">
+    <h2 class="home-section-title">Latest posts</h2>
+    <p class="home-section-sub">The newest articles from Tech Updates and the CAT blog</p>
+  </div>
+
+  {% assign updates = site.chapters_en | where: "category", "updates" %}
+  {% assign catblog = site.chapters_en | where: "category", "catblog" %}
+  {% assign m365 = site.chapters_en | where: "category", "m365" %}
+  {% assign recent = updates | concat: catblog | concat: m365 | sort: "date" | reverse %}
+
+  {% include card-feed.html posts=recent limit=4 %}
+</section>
+
+{%- comment -%} ===== Hands-on workshops & academy: horizontal card rows ===== {%- endcomment -%}
+<section class="home-section">
+  <div class="home-section-head">
+    <h2 class="home-section-title">Hands-on workshops</h2>
+    <p class="home-section-sub">Follow along step by step — Workshops · Agent Academy · Cowork · Scout</p>
+  </div>
+
+  {% include hscroll-section.html key="newcslab" title="Hands-on workshops" %}
+  {% include hscroll-section.html key="academy-courses" title="Agent Academy · Courses" %}
+  {% include hscroll-section.html key="academy-labs" title="Agent Academy · Labs" %}
+  {% include hscroll-section.html key="cowork" title="Copilot Cowork" %}
+  {% include hscroll-section.html key="scout" title="Microsoft Scout" %}
+</section>

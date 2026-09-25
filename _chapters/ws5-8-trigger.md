@@ -41,7 +41,7 @@ parent: "ws5"
 플로우 디자이너로 이동하여 새로운 흐름을 추가합니다.  
 **[개요]** → **[+도구 추가]** → **[+새로운 도구]** → **[에이전트 흐름]** 또는 Power Automate 포털에서 새 자동화된 클라우드 흐름을 선택합니다.
 
-<img width="1063" height="783" alt="image" src="https://github.com/user-attachments/assets/605cccab-5010-442e-9b80-7d7d8c786b70" />
+<img width="1063" height="783" alt="image" src="{{ '/assets/image/github-attachments/605cccab-5010-442e-9b80-7d7d8c786b70.png' | relative_url }}" />
 
 <br>
 
@@ -84,7 +84,7 @@ parent: "ws5"
 |이름|일일 업무 알림 트리거 흐름|
 |설명|매일 정해진 시각에 자동으로 실행되어, 업무 알림 메일과 팀즈 채널 게시물을 등록합니다.|
 |To|업무 담당자 메일 주소|
-|Subject|[일일 업무 알림] {{날짜}}|
+|Subject|[일일 업무 알림] {% raw %}{{날짜}}{% endraw %}|
 |Body|HTML 형식의 일일 업무 요약|
 |Channel Message|"오늘의 업무 알림이 도착했습니다." + Body 일부|
 
@@ -108,9 +108,9 @@ parent: "ws5"
 - **반복 트리거**: 다음 실행 예정 시각까지 대기 후, Power Automate **실행 기록(Run history)** 에서 정상 실행 여부를 확인합니다.
 - **이벤트 트리거(메일/SharePoint 등)**: 테스트용 메일 발송 또는 항목 추가를 통해 트리거가 즉시 발동하는지 확인합니다.
 
-<img width="1278" height="1169" alt="image" src="https://github.com/user-attachments/assets/fbcf1326-89f0-4f7b-b3d9-bf84977d0f43" />
+<img width="1278" height="1169" alt="image" src="{{ '/assets/image/github-attachments/fbcf1326-89f0-4f7b-b3d9-bf84977d0f43.png' | relative_url }}" />
 <br>
-<img width="1803" height="526" alt="image" src="https://github.com/user-attachments/assets/a7341ff1-eb08-4bb1-a339-3fbd029d338d" />
+<img width="1803" height="526" alt="image" src="{{ '/assets/image/github-attachments/a7341ff1-eb08-4bb1-a339-3fbd029d338d.png' | relative_url }}" />
 
 <br>
 

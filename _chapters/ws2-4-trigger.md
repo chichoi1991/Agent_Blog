@@ -11,190 +11,124 @@ parent: "ws2"
 
 ## Step 4: 트리거 추가
 
-에이전트에 플로우 추가
+에이전트가 스스로 시작하게 만들기
 ===
-✅ Flow(흐름)이란,
 
-**Flow(흐름)** 는 Power Automate 기반의 자동화 프로세스로, 특정 이벤트(예: Copilot에서 사용자 입력 발생)에 따라 일련의 작업을 실행하는 워크플로우입니다.
+✅ 트리거란,
 
-**주요 기능:**
-- Copilot에서 받은 데이터를 기반으로외부 시스템과 상호작용
-- 조건 분기, 반복, 데이터 변환 등비즈니스 로직 처리
-- 다양한 서비스와 연결하여 업무 자동화 구현
+지금까지 만든 기능은 모두 **사용자가 물어봐야** 동작합니다. **트리거(Trigger)** 는 이 관계를 뒤집습니다. 새 메일 도착, SharePoint 항목 생성, Teams 채널 게시글, 일정 등 **외부 이벤트**가 발생하면 에이전트가 스스로 일을 시작합니다.
 
-**Flow vs Connector 비교**
+**도구 vs 트리거 비교**
 
-|구분|Flow|Connector|
+|구분|도구(Tool)|트리거(Trigger)|
 |:---|:---|:---|
-|역할|Copilot에서 발생한 이벤트를 기반으로 자동화 로직 실행|외부 시스템과 데이터 통신 담당|
-|**핵심<br>기능**| 조건 처리, 반복, 데이터 변환, 작업 오케스트레이션 | API 호출, 인증 처리, 데이터 스키마 정의 |
-|**사용<br>예시**| - 휴가 신청 → HR 시스템에 요청 등록<br>- 고객 문의 → CRM 티켓 생성 | - SharePoint 문서 목록 가져오기<br>- Outlook 이메일 전송 |
-|**관계**| Flow는 **Connector를 활용**하여 외부 시스템과 상호작용 | Connector는 Flow에서 **데이터 소스 역할** 수행 |
+|시작 주체|오케스트레이터가 선택한 사용자 요청|사용자 없이 발생하는 외부 이벤트|
+|**실행 시점**|대화 중|이벤트 발생 시점, 대화 밖에서도|
+|**대표 용례**|"이 내용을 담당자에게 메일 보내줘"|"문의 메일이 오면 분석해서 담당자에게 알려줘"|
+|**관계**|트리거는 발동 후 대개 **도구를 호출**한다|트리거로 시작된 실행이 실제로 하는 일이 도구다|
 
 <br>
 
-**핵심 차이 요약**
-- Flow = 자동화 로직
-- Connector = 외부 서비스 연결 수단
-  
-즉, Flow는 “무엇을 할지”를 정의하고, Connector는 “어디서 데이터를 가져오고 보낼지”를 담당합니다.
+요약하면, 도구는 "**무엇을 할 수 있는가**"를, 트리거는 "**언제 시작하는가**"를 정의합니다.
 
 ---
 
 실습
 ===
-이번 실습에서는 앞에서 작성한 메일 발송 커넥터 시나리오를 확장하여 메일을 발송하고, 발송된 내용을 팀즈에도 알려주는 업무 흐름을 만들어 보겠습니다.
 
-## 1. Flow 생성
+<div class="info-box warning" markdown="1">
+**이 페이지는 다시 작성되었습니다.** 이전 버전은 제목만 "트리거 추가"이고 본문은 Step 3의 플로우 생성 내용을 그대로 반복하고 있었습니다. 저작 과정의 복사 실수였습니다. 이 페이지는 현재 UI 기준의 실제 트리거 절차를 다룹니다.
+</div>
 
-Flow 생성을 위해 **[개요]** 에서 **[+도구 추가]** -> **[+새로운 도구]** 를 선택합니다.
-<img width="1081" height="779" alt="image" src="https://github.com/user-attachments/assets/d963a73a-b1e3-4471-8547-e99663380b18" />
+<div class="info-box note" markdown="1">
+**화면은 영문 데모 환경 촬영본입니다(2026년 9월 8일).** 한국어 환경에서도 흐름과 항목 위치는 같고 표시 문자열만 한국어입니다. **트리거를 활성 상태로 두거나 메시지를 발송하지는 않았습니다.**
+</div>
 
-다음으로 **[에이전트 흐름]** 을 선택하여 신규 Flow를 생성하기 위한 디자이너 페이지로 이동합니다.
-<img width="1063" height="783" alt="image" src="https://github.com/user-attachments/assets/605cccab-5010-442e-9b80-7d7d8c786b70" />
+이번 실습에서는 누군가 질문을 입력하기를 기다리는 대신, **새 메일이 도착하면 에이전트가 스스로 시작**하도록 만듭니다.
 
-플로우 디자이너로 이동하면 기본적으로 2개의 액션이 추가되어 있습니다.
-- 에이전트가 흐름을 호출 할 때: 트리거 역할을 하며, 이곳에서 사용할 Input 변수를 지정할 수 있습니다. 
-- Respond to the Agent: 작업이 완료되고 Agent에게 결과값을 호출할 필요가 있을 경우, 이 액션을 통해 Output 변수를 만들어 전달할 수 있습니다
+## 1. 트리거 섹션 열기
 
-이번 시나리오에서는 메일 발송과 게시글 작성에 필요한 메일 주소,cc,제목,본문 값에 대한 입력만 필요하고<br>
-별도의 output결과물을 반환할 필요하 없기 때문에 ""에이전트가 흐름을 호출 할 때"" 에서 Input 변수만 추가합니다.
-<br>
-<img width="675" height="395" alt="image" src="https://github.com/user-attachments/assets/722d2663-b985-4f0e-8117-347ffb671346" />
-<br>
-인풋 변수 추가는 ""에이전트가 흐름을 호출 할 때"" 를 선택하고 ""[+입력 추가]""를 클릭하여 추가할 수 있습니다.<br>
-아래와 같이 입력 변수를 추가합니다.
+트리거는 에이전트 **개요(Overview)** 페이지의 **도구(Tools)** 카드 아래 별도 카드에 있습니다. **[트리거 추가]** 를 선택합니다.
 
-<img width="648" height="225" alt="image" src="https://github.com/user-attachments/assets/4585ee60-3a34-481b-b959-8416ce75efc2" />
+![개요 페이지의 Triggers 카드]({{ '/assets/image/en/caldova/ws2-trigger-overview.png' | relative_url }})
 
-<br>
-<img width="666" height="275" alt="image" src="https://github.com/user-attachments/assets/6833cedd-c723-408f-8f36-66ae1c114cf0" />
+<div class="info-box note" markdown="1">
+**트리거는 과금 대상입니다.** 대화상자에 "This is a billable feature and will consume messages"라고 명시돼 있습니다. 이벤트가 발생할 때마다 메시지를 소비하므로, 들어오는 모든 메일에 반응하게 두지 말고 조건을 좁게 잡으세요.
+</div>
 
-|변수명|타입|
+## 2. 생성형 오케스트레이션 켜기
+
+트리거는 **생성형 오케스트레이션**이 켜져 있어야 사용할 수 있습니다. 아직 클래식 오케스트레이션이면 목록 대신 안내 화면이 나옵니다.
+
+![생성형 오케스트레이션을 요구하는 Add trigger 화면]({{ '/assets/image/en/caldova/ws2-trigger-catalog.png' | relative_url }})
+
+**[Turn it on]** 을 선택하면 "Changes saved." 배너가 뜹니다.
+
+<div class="info-box tip" markdown="1">
+**안내 화면이 계속 다시 나온다면** — 이 환경에서는 **설정 → 오케스트레이션**에 이미 **Yes(동적 응답)** 가 선택돼 있는데도 다시 방문하면 안내 화면이 또 나왔습니다. 설정은 실제로 저장돼 있었고, 대화상자가 그 값을 읽지 못한 것입니다. 대화상자 안에서 **[Turn it on]** 을 누르면 해결됩니다. 같은 증상을 만나면 먼저 설정을 확인해, 이미 올바른 값을 쫓아다니지 않도록 하세요.
+
+![설정에 이미 Yes로 선택돼 있는 생성형 오케스트레이션]({{ '/assets/image/en/caldova/ws2-trigger-orchestration.png' | relative_url }})
+</div>
+
+## 3. 이벤트 선택
+
+오케스트레이션을 켜면 사용 가능한 트리거 목록이 나옵니다. **Featured** 에 11개가 있고, **Library** 에 전체 목록이 있습니다.
+
+![트리거 라이브러리]({{ '/assets/image/en/caldova/ws2-trigger-library.png' | relative_url }})
+
+|트리거|원본|
 |---|---|
-|to|text|
-|Subject|text|
-|CC|text|
-|Body|text|
+|Recurrence|일정(Schedule)|
+|When a new response is submitted|Microsoft Forms|
+|When an item is created / created or modified|SharePoint|
+|When a file is created|OneDrive for Business|
+|When a new channel message is added|Microsoft Teams|
+|When a row is added, modified or deleted|Microsoft Dataverse|
+|**When a new email arrives (V3)**|**Office 365 Outlook**|
+|When a task is completed|Planner|
+|When a file is created (properties only)|SharePoint|
+|When an item or a file is modified|SharePoint|
 
----
-## 2. 액션 커넥터 추가(메일)
+검색으로 목록을 좁힐 수 있습니다. `email` 을 입력하면 Outlook 트리거만 남습니다.
 
-변수 입력이 완료되면 다음은 입력받은 변수값을 기반으로 플로우안에서 진행될 2가지 작업을 순서대로 추가하여 설정합니다.
-1. 메일 발송
-2. 팀즈 채널에 게시물 게시
+![email로 검색한 트리거 목록]({{ '/assets/image/en/caldova/ws2-trigger-search.png' | relative_url }})
 
-먼저 ""에이전트가 흐름을 호출할 때"" 하단에 [+] 버튼을 클릭하여 추가할 작업을 열람 할 수 있습니다.<br>
-<img width="976" height="845" alt="image" src="https://github.com/user-attachments/assets/281c490c-f6a5-4f0e-9d45-d889db12748d" />
+**When a new email arrives (V3)** 를 선택하고 **[Next]** 를 누릅니다.
 
-검색 또는 하단의 커넥터 리스트에서 ""Office 365 Outlook"" 을 선택, <br>이전과 마찬가지로 ""메일 보내기(V2)""를 선택합니다.
-<img width="601" height="522" alt="image" src="https://github.com/user-attachments/assets/d0053a79-95b1-491d-a4c6-40ab7946b7c5" />
+## 4. Power Automate 연결 동의
 
-메일 보내기 커넥가 추가되면 앞 세션에서 실습한 내용과 유사한 UI가 표시 됩니다.<br>
-고급 매개 변수를 선택하여 CC를 추가합니다
-<img width="758" height="703" alt="image" src="https://github.com/user-attachments/assets/7997a038-ca65-43b0-b5b2-6da15c198873" />
-<br>
+트리거는 Power Automate 위에서 동작하므로, 다음 화면은 Copilot Studio 안에 포함된 Power Automate 동의 단계입니다. 어떤 이벤트인지 다시 알려주고, 약관 동의와 사용자·테넌트 정보 조회 허용을 요청합니다.
 
-이후 변수를 입력하기 위해 메일 보내기 커넥터 우측 상단에 **톱니 바퀴**를 선택하여 **동적 컨텐츠 사용** 을 클릭합니다.
-<img width="797" height="218" alt="image" src="https://github.com/user-attachments/assets/c68a61b3-b360-47d3-a5b4-438e9391e183" />
+![Power Automate 동의 화면]({{ '/assets/image/en/caldova/ws2-trigger-config.png' | relative_url }})
 
-이후 각 파라미터의 값에 /를 입력하 ""에이전트가 흐름을 호출할 때""에서 선언한 변수명들을 넣어줍니다.
-<img width="427" height="359" alt="image" src="https://github.com/user-attachments/assets/fa2921eb-1cd4-455d-9abd-f100ce4fb41b" />
+**[Continue]** 를 선택합니다. 동의 후에는 트리거 자체를 구성합니다.
 
-<img width="883" height="783" alt="image" src="https://github.com/user-attachments/assets/2cde6243-e7a3-40ad-88fb-2b2b37548717" />
-
-<img width="821" height="783" alt="image" src="https://github.com/user-attachments/assets/a74ee7b7-c4a6-48ca-9c1b-b301b1cb22f1" />
-
-변수를 모두 선언 하였다면, 메일보내기 흐름 작업은 완료가 되었습니다.<br>
-이후 흐름을 호출하면, Agent가 전달한 각 변수의 값들이 메일 보내기 커넥터의 파라미터와 맵핑이 되어 메일이 발송되게 됩니다.
-<br>
-
----
-## 3. 액션 커넥터 추가 (팀즈 채널에 메세지 게시)
-
-다음으로 메일 보내기가 완료되면 자동으로 팀즈 채널에 메세지가 게시될 수 있도록 새로운 커넥터를 추가합니다.<br>
-앞선 작업과 마찬가지로 메일 보내기 액션 하단에  [+] 버튼을 클릭하여 
-**[Microsoft Teams] - [채팅 또는 채널에서 메세지 게시]** 액션을 추가합니다.
-
-<img width="762" height="683" alt="image" src="https://github.com/user-attachments/assets/3c7439ac-5fdf-402f-9780-1e1a9d12323e" />
-
-아래와 같은 설정으로 알림 메세지를 업로드할 채널을 지정합니다
-
-|파라미터|값|설명|
-|---|---|---|
-|Post as|Flow bot|사용자 이름으로 올릴지, Flow bot이 대신 올릴지 지정합니다.<br> 채널에 표시되는 이름이 달라집니다.
-|Post in|채널|채팅,채널 중 어느 소통방식으로 메세지를 받을지 지정합니다.|
-|Team|게시물을 업로드할 팀|게시물이 올라갈 채널이 소속된 팀을 지정합니다. <br>선택시 내가 접근가능한 팀이 자동으로 표시됩니다.
-|Channel|업로드 채널|게시물이 실제 업로드되는 채널을 선택합니다|
-|Message|텍스트 + body 변수값| 게시물의 내용물을 입력합니다. 이곳에서는 메일에서 입력된 Body을 기반으로 입력합니다|
-
-<br>
-
-메세지에는 고정된 메세지와 함께 메일 발송시 이용한 문구를 활용하기 위해
-동적 변수를 추가토록 합니다.
-> 동일하게 메세지 문구 내에서 / 를 입력하면 동적 변수를 추가할 수 있습니다.
-```
-새로운 문의사항이 도착했습니다. 확인해 주세요!<br> @{triggerBody()?['text_3']}
-```
-
-<img width="695" height="583" alt="image" src="https://github.com/user-attachments/assets/1ee9844e-50e0-4752-b185-da3a89fd1d08" />
-<br>
-
-작업이 완료되었으면 상단의 **게시** 버튼을 클릭하면 Flow가 게시되고 이후 [에이전트로 돌아가]를 선택시 자동으로 Agent 개요 페이지에서 추가된 흐름을 확인할 수 있습니다.. 
-<img width="813" height="393" alt="image" src="https://github.com/user-attachments/assets/a3910866-899d-42ec-82fc-b8147b630d2e" />
-<br>
-<img width="981" height="408" alt="image" src="https://github.com/user-attachments/assets/b6fabf2c-cf60-469b-934f-b9c84f150b96" />
-
----
-## 4. 플로우 적용
-다음은 실제로 플로우가 동작할 수 있도록, 지침과 파라미터 설명을 추가토록 하겠습니다.<br>
-
-**[도구]** 로 이동하면 앞서 생성한 Flow가 **제목 없음** 이라는 이름으로 추가가 되어있음을 확인 할 수 있습니다.
-
-다만, 현재 구성은 이전에 했던 메일 보내기 작업과 중복되는 기능이기 때문에 먼저 **도구** 에서 **메일 보내기(v2)** 작업의 토글을 비활성화 처리를 합니다.
-<img width="1258" height="379" alt="image" src="https://github.com/user-attachments/assets/69e1c73e-aaae-4a62-bb5b-9b7c22a941d4" />
-
-이후 **제목 없음** Flow로 이동하여 **메일 보내기(v2)** 에서 진행한 작업과 동일한 작업을 적용해 줍니다.
-|파라미터|값|
+|항목|설정할 내용|
 |---|---|
-|이름|메일보내기 및 알림 흐름|
-|설명|사용자를 대신하여 메일을 발송해야하는 작업이 있을 경우 이용합니다. <br> 업무 담당자에게 에스컬레이션 메일을 전송해야할 때 이용합니다.|
-|To|AI로 동적으로 채우기 - 수신자 입니다. 담당자 리스트를 참고하여 관련 업무에 해당하는 사용자의 메일주소를 입력합니다. 메일 주소는  someone@contoso.com 형식을 따릅니다. 여러명이 있을 경우 ; 을 이용하여 구분합니다.|
-|Subjuect|AI로 동적으로 채우기 - 메일 제목입니다. [업무 문의] 문의 내용요약 형식으로 작성합니다.|
-|Body|AI로 동적으로 채우기 - 메일의 본문입니다. 실제 담당자에게 문의하는 내용을 정리하여 입력합니다. <br> 문의일자 및 시각, 문의자, 문의 내용등이 HTML 형식으로 입력되어야 합니다.|
-|CC|사용자 지정 값 - User.Email|
-|실행 후|특정 응답 보내기 - 지시하신대로 해당 내용을 담당자에게 메일로 전송하였습니다. <br> 빠른시일내로 담당자가 따로 연락을 드리겠습니다.|
-<br>
-<img width="1181" height="1145" alt="image" src="https://github.com/user-attachments/assets/7d09943b-5053-4853-9cae-a95ed665b2db" />
+|연결(Connection)|트리거가 로그인에 사용할 Office 365 Outlook 연결|
+|폴더(Folder)|감시할 메일 폴더 — 보통 받은 편지함|
+|조건(Conditions)|범위를 좁히는 조건 — 보낸 사람, 제목 필터, 중요도, 첨부 유무|
+|에이전트에게 전달할 메시지|트리거 발동 시 에이전트가 받는 프롬프트. 메일의 각 필드를 동적 콘텐츠로 넣을 수 있습니다|
 
-<br>
+에이전트가 받을 지시문은 "이 메일이 실제로 처리가 필요한지"를 스스로 판단하도록 작성합니다. 예를 들어 핵심 이슈를 추출하고, 연결된 지식 원본을 검색한 뒤, 정말로 의사결정이 필요한 메일일 때만 담당자에게 에스컬레이션하고 뉴스레터·공지는 무시하도록 씁니다.
 
-설정이 완료되면 **저장** 을 한 뒤 **개요** 로 이동하여 지침을 수정합니다.
+<div class="info-box warning" markdown="1">
+**이 실습은 여기서 멈춥니다 — 있는 그대로 밝힙니다.** 촬영에 사용한 데모 환경에서 동의 화면의 **[Continue]** 버튼이 다음 단계로 넘어가지 않았습니다. 여러 번 시도하고 페이지를 새로 고쳐도 동의 화면에 머물렀습니다. 따라서 위 표에서 설명한 매개변수 화면은 **스크린샷이 없습니다.** 촬영하지 못했기 때문입니다. 이 상자 위의 모든 이미지는 실제로 완료된 단계를 찍은 것입니다.
+</div>
 
-기존 지침은, 에스컬레이션이 될 경우 **메일 보내기(V2)** 도구를 이용하라고 설정이 되어있었기에,
-지침에서 해당 도구의 선언을 지우고, **메일 보내기 및 알림 흐름** 을 선언하고 저장을 합니다.
+## 5. 신뢰하기 전에 검증하기
 
-<img width="1010" height="639" alt="image" src="https://github.com/user-attachments/assets/e56bbe69-d6e2-4bd5-b90c-280c0e7b226a" />
+<div class="info-box tip" markdown="1">
+**저장이 반영됐는지 확인하세요** — 트리거를 구성한 뒤 페이지를 새로고침하고 다시 열어보세요. 이 환경에서는 저장이 조용히 되돌아간 경우가 여러 번 있었고, 새로고침 전 화면이 멀쩡해 보여도 실제로 저장된 것은 아닙니다.
+</div>
 
----
+트리거는 실제 이벤트로만 증명됩니다. 조건에 맞는 테스트 메일을 한 통 보내고, **활동(Activity)** 에서 에이전트가 실행됐는지 확인하고, 의도한 동작을 했는지 봅니다. 무시했어야 할 메일에는 **실행되지 않았는지**도 함께 확인해야 합니다. 두 결과를 모두 눈으로 보기 전까지 그 트리거는 "구성됨"일 뿐 "검증됨"이 아닙니다.
 
-테스트를 통해 실제로 플로우가 동작하는지 확인해 봅니다.
-
-<img width="1278" height="1169" alt="image" src="https://github.com/user-attachments/assets/fbcf1326-89f0-4f7b-b3d9-bf84977d0f43" />
-<br>
-<br>
-
-<img width="1803" height="526" alt="image" src="https://github.com/user-attachments/assets/a7341ff1-eb08-4bb1-a339-3fbd029d338d" />
-<br>
-<br>
-
-<img width="633" height="705" alt="image" src="https://github.com/user-attachments/assets/c4d2c9bd-d5a3-4d38-92b2-7778793fdc4a" />
-<br>
-<br>
-
+<div class="info-box note" markdown="1">
+**끝나면 꺼두세요.** 살아 있는 트리거는 조건에 맞는 이벤트마다 계속 메시지를 소비합니다. 실습 목적으로만 만들었다면 마친 뒤 비활성화하세요.
+</div>
 
 ---
-
 ---
 
-← [이전: Step 3. 도구: 플로우]({{ '/chapters/ws2-3-tool-flow/' | relative_url }}) | [다음: Step 5. 게시 및 공유]({{ '/chapters/ws2-5-publish/' | relative_url }}) →
+← [이전: Step 3. 도구 추가(Flow)]({{ '/chapters/ws2-3-tool-flow/' | relative_url }}) | [다음: Step 5. 게시 및 공유]({{ '/chapters/ws2-5-publish/' | relative_url }}) →

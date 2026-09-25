@@ -78,8 +78,8 @@ HTML_Response_Generator
 
 
 ## 입력 정보
-- 카드 유형: {{card_type}}
-- 내용: {{content}}
+- 카드 유형: {% raw %}{{card_type}}{% endraw %}
+- 내용: {% raw %}{{content}}{% endraw %}
 
 ## 카드 유형별 스타일 규칙
 - info: 파란색 헤더 (#0078D4), 일반 정보 표시
@@ -100,13 +100,13 @@ HTML_Response_Generator
 <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; color: #000000;">
   <!-- 헤더 -->
   <div style="background-color: #e3f2fd; padding: 25px; border-radius: 10px; margin-bottom: 20px; border-left: 5px solid #1976d2;">
-    <h1 style="color: #1565c0; margin: 0; font-size: 24px;">📊 {{보고서_제목}}</h1>
-    <p style="color: #424242; margin: 10px 0 0 0; font-size: 14px;">보고일: {{보고일}}</p>
+    <h1 style="color: #1565c0; margin: 0; font-size: 24px;">📊 {% raw %}{{보고서_제목}}{% endraw %}</h1>
+    <p style="color: #424242; margin: 10px 0 0 0; font-size: 14px;">보고일: {% raw %}{{보고일}}{% endraw %}</p>
   </div>
   <!-- 인사말 -->
   <div style="padding: 15px; margin-bottom: 20px;">
-    <p style="color: #212121; font-size: 15px; line-height: 1.6;">안녕하세요, {{수신자}} 👋</p>
-    <p style="color: #212121; font-size: 15px; line-height: 1.6;">{{인사말_본문}}</p>
+    <p style="color: #212121; font-size: 15px; line-height: 1.6;">안녕하세요, {% raw %}{{수신자}}{% endraw %} 👋</p>
+    <p style="color: #212121; font-size: 15px; line-height: 1.6;">{% raw %}{{인사말_본문}}{% endraw %}</p>
   </div>
   <!-- 우선순위 요약 -->
   <div style="background-color: #fff9c4; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #f57f17;">
@@ -121,21 +121,21 @@ HTML_Response_Generator
         </tr>
       </thead>
       <tbody>
-        {{#each 우선순위_목록}}
+        {% raw %}{{#each 우선순위_목록}}{% endraw %}
         <tr>
-          <td style="padding: 10px; border: 1px solid #f9a825;">{{순위}}</td>
-          <td style="padding: 10px; border: 1px solid #f9a825;">{{업무명}}</td>
-          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825;"><strong>{{마감일}}</strong></td>
-          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825;">{{상태}}</td>
+          <td style="padding: 10px; border: 1px solid #f9a825;">{% raw %}{{순위}}{% endraw %}</td>
+          <td style="padding: 10px; border: 1px solid #f9a825;">{% raw %}{{업무명}}{% endraw %}</td>
+          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825;"><strong>{% raw %}{{마감일}}{% endraw %}</strong></td>
+          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825;">{% raw %}{{상태}}{% endraw %}</td>
         </tr>
-        {{/each}}
+        {% raw %}{{/each}}{% endraw %}
       </tbody>
     </table>
   </div>
   <!-- 서명 -->
   <div style="padding: 15px; border-top: 2px solid #e0e0e0; margin-top: 20px;">
     <p style="color: #212121; font-size: 14px;">감사합니다. 😊</p>
-    <p style="color: #616161; font-size: 13px;">{{발신자_이름}}</p>
+    <p style="color: #616161; font-size: 13px;">{% raw %}{{발신자_이름}}{% endraw %}</p>
   </div>
 </div>
 
@@ -143,13 +143,13 @@ HTML_Response_Generator
 
 <div style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
   <div style="background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-    <h1 style="color: #2c3e50; text-align: center;">📊 {{리포트_제목}}</h1>
-    <p style="color: #7f8c8d; text-align: center; font-size: 14px;">조회 기간: {{조회_시작}} ~ {{조회_종료}}</p>
+    <h1 style="color: #2c3e50; text-align: center;">📊 {% raw %}{{리포트_제목}}{% endraw %}</h1>
+    <p style="color: #7f8c8d; text-align: center; font-size: 14px;">조회 기간: {% raw %}{{조회_시작}}{% endraw %} ~ {% raw %}{{조회_종료}}{% endraw %}</p>
     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 8px; margin-bottom: 30px;">
       <h2 style="color: #fff; font-size: 18px;">요약 정보</h2>
       <table style="width: 100%; border-collapse: collapse;">
-        <tr><td style="padding: 10px; color: #fff;">총합:</td><td style="padding: 10px; color: #fff; text-align: right;">{{총합}}</td></tr>
-        <tr><td style="padding: 10px; color: #fff;">평균:</td><td style="padding: 10px; color: #fff; text-align: right;">{{평균}}</td></tr>
+        <tr><td style="padding: 10px; color: #fff;">총합:</td><td style="padding: 10px; color: #fff; text-align: right;">{% raw %}{{총합}}{% endraw %}</td></tr>
+        <tr><td style="padding: 10px; color: #fff;">평균:</td><td style="padding: 10px; color: #fff; text-align: right;">{% raw %}{{평균}}{% endraw %}</td></tr>
       </table>
     </div>
     <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
@@ -161,13 +161,13 @@ HTML_Response_Generator
         </tr>
       </thead>
       <tbody>
-        {{#each 데이터_목록}}
+        {% raw %}{{#each 데이터_목록}}{% endraw %}
         <tr>
-          <td style="padding: 10px; border: 1px solid #ddd;">{{기간}}</td>
-          <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">{{값}}</td>
-          <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">{{상태}}</td>
+          <td style="padding: 10px; border: 1px solid #ddd;">{% raw %}{{기간}}{% endraw %}</td>
+          <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">{% raw %}{{값}}{% endraw %}</td>
+          <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">{% raw %}{{상태}}{% endraw %}</td>
         </tr>
-        {{/each}}
+        {% raw %}{{/each}}{% endraw %}
       </tbody>
     </table>
   </div>

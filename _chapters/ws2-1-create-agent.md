@@ -15,7 +15,7 @@ Custom Engine Agent 생성 및 지침 작성
 ===
 
 ### 1. [여기](https://copilotstudio.preview.microsoft.com) URL을 통해 접속 후 좌측에 있는 **만들기**를 누릅니다.
-![image](https://github.com/user-attachments/assets/27577404-175d-4646-9caa-72be7e07b94d)
+![image]({{ '/assets/image/github-attachments/27577404-175d-4646-9caa-72be7e07b94d.png' | relative_url }})
     > https://copilotstudio.preview.microsoft.com/
 
 <br/>
@@ -24,7 +24,7 @@ Custom Engine Agent 생성 및 지침 작성
 ### 2. 자연어 기반으로 에이전트 초안 생성
 코파일럿 기능을 통해 에이전트 초안을 생성합니다.   
 이건 초안을 작성하는 부분으로, 그냥 바로 **'만들기'를 클릭**해서 직접 설정할 수 있습니다.
-<img width="1248" height="1261" alt="image" src="https://github.com/user-attachments/assets/ebe5a018-c2c1-4a0b-9fc5-b1be25928015" />
+<img width="1248" height="1261" alt="image" src="{{ '/assets/image/github-attachments/ebe5a018-c2c1-4a0b-9fc5-b1be25928015.png' | relative_url }}" />
 
 
 
@@ -46,20 +46,20 @@ Custom Engine Agent 생성 및 지침 작성
 
 대화식 설정이 마무리가 되면 [구성] 에서 현재 설정된 에이전트 정보를 확인할 수 있습니다.
 [만들기] 버튼을 클릭하여 에이전트를 생성합니다.
-<img width="1247" height="1204" alt="image" src="https://github.com/user-attachments/assets/0f0121e0-a5f4-46c5-a15d-e0cd8becf117" />
+<img width="1247" height="1204" alt="image" src="{{ '/assets/image/github-attachments/0f0121e0-a5f4-46c5-a15d-e0cd8becf117.png' | relative_url }}" />
 
 </br>
 
 ### 3. 생성형 AI 오케스트레이션 기능 실행
 여기서 테스트할 기능을 활성화합니다. 오케스트레이션 측면에서 클래식 vs 생성형의 차이는 [여기](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-generative-actions)를 참고할 수 있습니다.
 
-<img width="688" height="419" alt="image" src="https://github.com/user-attachments/assets/bf0ab9b1-9e19-4318-b035-d1909fd8d8e5" />
+<img width="688" height="419" alt="image" src="{{ '/assets/image/github-attachments/bf0ab9b1-9e19-4318-b035-d1909fd8d8e5.png' | relative_url }}" />
 </br>
 </br>
 또한 설정에서 "응답 모델" 을 변경할 수 있습니다.
 
 
-<img width="1176" height="714" alt="image" src="https://github.com/user-attachments/assets/1e6ae064-65ad-4b83-9a27-5436c2647fe2" />
+<img width="1176" height="714" alt="image" src="{{ '/assets/image/github-attachments/1e6ae064-65ad-4b83-9a27-5436c2647fe2.png' | relative_url }}" />
 </br>
 
 ```
@@ -68,7 +68,7 @@ Custom Engine Agent 생성 및 지침 작성
 
 ### 4. 참조자료에 추가적인 설명 추가
 다음과 같이 참조 자료 화면에서, 위에서 자동으로 연결된 홈페이지 URL에 조금 더 상세한 설명을 추가하고 저장을 합니다.
-<img width="1262" height="575" alt="image" src="https://github.com/user-attachments/assets/f9431b04-3eb9-44ea-8c62-e43e19235470" />
+<img width="1262" height="575" alt="image" src="{{ '/assets/image/github-attachments/f9431b04-3eb9-44ea-8c62-e43e19235470.png' | relative_url }}" />
 
 
 
@@ -77,7 +77,7 @@ Custom Engine Agent 생성 및 지침 작성
 LG Innotek, LG이노텍과 관련된 뉴스,공시자료 검색을 요청할 경우 이용합니다.
 ```
 
-<img width="1167" height="978" alt="image" src="https://github.com/user-attachments/assets/352ffe92-dd52-42dd-9aa6-1339254f9a6e" />
+<img width="1167" height="978" alt="image" src="{{ '/assets/image/github-attachments/352ffe92-dd52-42dd-9aa6-1339254f9a6e.png' | relative_url }}" />
 
 
 ---

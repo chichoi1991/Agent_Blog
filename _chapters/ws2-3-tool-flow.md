@@ -48,10 +48,10 @@ parent: "ws2"
 ## 1. Flow 생성
 
 Flow 생성을 위해 **[개요]** 에서 **[+도구 추가]** -> **[+새로운 도구]** 를 선택합니다.
-<img width="1081" height="779" alt="image" src="https://github.com/user-attachments/assets/d963a73a-b1e3-4471-8547-e99663380b18" />
+<img width="1081" height="779" alt="image" src="{{ '/assets/image/github-attachments/d963a73a-b1e3-4471-8547-e99663380b18.png' | relative_url }}" />
 
 다음으로 **[에이전트 흐름]** 을 선택하여 신규 Flow를 생성하기 위한 디자이너 페이지로 이동합니다.
-<img width="1063" height="783" alt="image" src="https://github.com/user-attachments/assets/605cccab-5010-442e-9b80-7d7d8c786b70" />
+<img width="1063" height="783" alt="image" src="{{ '/assets/image/github-attachments/605cccab-5010-442e-9b80-7d7d8c786b70.png' | relative_url }}" />
 
 플로우 디자이너로 이동하면 기본적으로 2개의 액션이 추가되어 있습니다.
 - 에이전트가 흐름을 호출 할 때: 트리거 역할을 하며, 이곳에서 사용할 Input 변수를 지정할 수 있습니다. 
@@ -60,15 +60,15 @@ Flow 생성을 위해 **[개요]** 에서 **[+도구 추가]** -> **[+새로운 
 이번 시나리오에서는 메일 발송과 게시글 작성에 필요한 메일 주소,cc,제목,본문 값에 대한 입력만 필요하고<br>
 별도의 output결과물을 반환할 필요하 없기 때문에 ""에이전트가 흐름을 호출 할 때"" 에서 Input 변수만 추가합니다.
 <br>
-<img width="675" height="395" alt="image" src="https://github.com/user-attachments/assets/722d2663-b985-4f0e-8117-347ffb671346" />
+<img width="675" height="395" alt="image" src="{{ '/assets/image/github-attachments/722d2663-b985-4f0e-8117-347ffb671346.png' | relative_url }}" />
 <br>
 인풋 변수 추가는 ""에이전트가 흐름을 호출 할 때"" 를 선택하고 ""[+입력 추가]""를 클릭하여 추가할 수 있습니다.<br>
 아래와 같이 입력 변수를 추가합니다.
 
-<img width="648" height="225" alt="image" src="https://github.com/user-attachments/assets/4585ee60-3a34-481b-b959-8416ce75efc2" />
+<img width="648" height="225" alt="image" src="{{ '/assets/image/github-attachments/4585ee60-3a34-481b-b959-8416ce75efc2.png' | relative_url }}" />
 
 <br>
-<img width="666" height="275" alt="image" src="https://github.com/user-attachments/assets/6833cedd-c723-408f-8f36-66ae1c114cf0" />
+<img width="666" height="275" alt="image" src="{{ '/assets/image/github-attachments/6833cedd-c723-408f-8f36-66ae1c114cf0.png' | relative_url }}" />
 
 |변수명|타입|
 |---|---|
@@ -85,25 +85,25 @@ Flow 생성을 위해 **[개요]** 에서 **[+도구 추가]** -> **[+새로운 
 2. 팀즈 채널에 게시물 게시
 
 먼저 ""에이전트가 흐름을 호출할 때"" 하단에 [+] 버튼을 클릭하여 추가할 작업을 열람 할 수 있습니다.<br>
-<img width="976" height="845" alt="image" src="https://github.com/user-attachments/assets/281c490c-f6a5-4f0e-9d45-d889db12748d" />
+<img width="976" height="845" alt="image" src="{{ '/assets/image/github-attachments/281c490c-f6a5-4f0e-9d45-d889db12748d.png' | relative_url }}" />
 
 검색 또는 하단의 커넥터 리스트에서 ""Office 365 Outlook"" 을 선택, <br>이전과 마찬가지로 ""메일 보내기(V2)""를 선택합니다.
-<img width="601" height="522" alt="image" src="https://github.com/user-attachments/assets/d0053a79-95b1-491d-a4c6-40ab7946b7c5" />
+<img width="601" height="522" alt="image" src="{{ '/assets/image/github-attachments/d0053a79-95b1-491d-a4c6-40ab7946b7c5.png' | relative_url }}" />
 
 메일 보내기 커넥가 추가되면 앞 세션에서 실습한 내용과 유사한 UI가 표시 됩니다.<br>
 고급 매개 변수를 선택하여 CC를 추가합니다
-<img width="758" height="703" alt="image" src="https://github.com/user-attachments/assets/7997a038-ca65-43b0-b5b2-6da15c198873" />
+<img width="758" height="703" alt="image" src="{{ '/assets/image/github-attachments/7997a038-ca65-43b0-b5b2-6da15c198873.png' | relative_url }}" />
 <br>
 
 이후 변수를 입력하기 위해 메일 보내기 커넥터 우측 상단에 **톱니 바퀴**를 선택하여 **동적 컨텐츠 사용** 을 클릭합니다.
-<img width="797" height="218" alt="image" src="https://github.com/user-attachments/assets/c68a61b3-b360-47d3-a5b4-438e9391e183" />
+<img width="797" height="218" alt="image" src="{{ '/assets/image/github-attachments/c68a61b3-b360-47d3-a5b4-438e9391e183.png' | relative_url }}" />
 
 이후 각 파라미터의 값에 /를 입력하 ""에이전트가 흐름을 호출할 때""에서 선언한 변수명들을 넣어줍니다.
-<img width="427" height="359" alt="image" src="https://github.com/user-attachments/assets/fa2921eb-1cd4-455d-9abd-f100ce4fb41b" />
+<img width="427" height="359" alt="image" src="{{ '/assets/image/github-attachments/fa2921eb-1cd4-455d-9abd-f100ce4fb41b.png' | relative_url }}" />
 
-<img width="883" height="783" alt="image" src="https://github.com/user-attachments/assets/2cde6243-e7a3-40ad-88fb-2b2b37548717" />
+<img width="883" height="783" alt="image" src="{{ '/assets/image/github-attachments/2cde6243-e7a3-40ad-88fb-2b2b37548717.png' | relative_url }}" />
 
-<img width="821" height="783" alt="image" src="https://github.com/user-attachments/assets/a74ee7b7-c4a6-48ca-9c1b-b301b1cb22f1" />
+<img width="821" height="783" alt="image" src="{{ '/assets/image/github-attachments/a74ee7b7-c4a6-48ca-9c1b-b301b1cb22f1.png' | relative_url }}" />
 
 변수를 모두 선언 하였다면, 메일보내기 흐름 작업은 완료가 되었습니다.<br>
 이후 흐름을 호출하면, Agent가 전달한 각 변수의 값들이 메일 보내기 커넥터의 파라미터와 맵핑이 되어 메일이 발송되게 됩니다.
@@ -116,7 +116,7 @@ Flow 생성을 위해 **[개요]** 에서 **[+도구 추가]** -> **[+새로운 
 앞선 작업과 마찬가지로 메일 보내기 액션 하단에  [+] 버튼을 클릭하여 
 **[Microsoft Teams] - [채팅 또는 채널에서 메세지 게시]** 액션을 추가합니다.
 
-<img width="762" height="683" alt="image" src="https://github.com/user-attachments/assets/3c7439ac-5fdf-402f-9780-1e1a9d12323e" />
+<img width="762" height="683" alt="image" src="{{ '/assets/image/github-attachments/3c7439ac-5fdf-402f-9780-1e1a9d12323e.png' | relative_url }}" />
 
 아래와 같은 설정으로 알림 메세지를 업로드할 채널을 지정합니다
 
@@ -137,13 +137,13 @@ Flow 생성을 위해 **[개요]** 에서 **[+도구 추가]** -> **[+새로운 
 새로운 문의사항이 도착했습니다. 확인해 주세요!<br> @{triggerBody()?['text_3']}
 ```
 
-<img width="695" height="583" alt="image" src="https://github.com/user-attachments/assets/1ee9844e-50e0-4752-b185-da3a89fd1d08" />
+<img width="695" height="583" alt="image" src="{{ '/assets/image/github-attachments/1ee9844e-50e0-4752-b185-da3a89fd1d08.png' | relative_url }}" />
 <br>
 
 작업이 완료되었으면 상단의 **게시** 버튼을 클릭하면 Flow가 게시되고 이후 [에이전트로 돌아가]를 선택시 자동으로 Agent 개요 페이지에서 추가된 흐름을 확인할 수 있습니다.. 
-<img width="813" height="393" alt="image" src="https://github.com/user-attachments/assets/a3910866-899d-42ec-82fc-b8147b630d2e" />
+<img width="813" height="393" alt="image" src="{{ '/assets/image/github-attachments/a3910866-899d-42ec-82fc-b8147b630d2e.png' | relative_url }}" />
 <br>
-<img width="981" height="408" alt="image" src="https://github.com/user-attachments/assets/b6fabf2c-cf60-469b-934f-b9c84f150b96" />
+<img width="981" height="408" alt="image" src="{{ '/assets/image/github-attachments/b6fabf2c-cf60-469b-934f-b9c84f150b96.png' | relative_url }}" />
 
 ---
 ## 4. 플로우 적용
@@ -152,7 +152,7 @@ Flow 생성을 위해 **[개요]** 에서 **[+도구 추가]** -> **[+새로운 
 **[도구]** 로 이동하면 앞서 생성한 Flow가 **제목 없음** 이라는 이름으로 추가가 되어있음을 확인 할 수 있습니다.
 
 다만, 현재 구성은 이전에 했던 메일 보내기 작업과 중복되는 기능이기 때문에 먼저 **도구** 에서 **메일 보내기(v2)** 작업의 토글을 비활성화 처리를 합니다.
-<img width="1258" height="379" alt="image" src="https://github.com/user-attachments/assets/69e1c73e-aaae-4a62-bb5b-9b7c22a941d4" />
+<img width="1258" height="379" alt="image" src="{{ '/assets/image/github-attachments/69e1c73e-aaae-4a62-bb5b-9b7c22a941d4.png' | relative_url }}" />
 
 이후 **제목 없음** Flow로 이동하여 **메일 보내기(v2)** 에서 진행한 작업과 동일한 작업을 적용해 줍니다.
 |파라미터|값|
@@ -165,7 +165,7 @@ Flow 생성을 위해 **[개요]** 에서 **[+도구 추가]** -> **[+새로운 
 |CC|사용자 지정 값 - User.Email|
 |실행 후|특정 응답 보내기 - 지시하신대로 해당 내용을 담당자에게 메일로 전송하였습니다. <br> 빠른시일내로 담당자가 따로 연락을 드리겠습니다.|
 <br>
-<img width="1181" height="1145" alt="image" src="https://github.com/user-attachments/assets/7d09943b-5053-4853-9cae-a95ed665b2db" />
+<img width="1181" height="1145" alt="image" src="{{ '/assets/image/github-attachments/7d09943b-5053-4853-9cae-a95ed665b2db.png' | relative_url }}" />
 
 <br>
 
@@ -174,21 +174,21 @@ Flow 생성을 위해 **[개요]** 에서 **[+도구 추가]** -> **[+새로운 
 기존 지침은, 에스컬레이션이 될 경우 **메일 보내기(V2)** 도구를 이용하라고 설정이 되어있었기에,
 지침에서 해당 도구의 선언을 지우고, **메일 보내기 및 알림 흐름** 을 선언하고 저장을 합니다.
 
-<img width="1010" height="639" alt="image" src="https://github.com/user-attachments/assets/e56bbe69-d6e2-4bd5-b90c-280c0e7b226a" />
+<img width="1010" height="639" alt="image" src="{{ '/assets/image/github-attachments/e56bbe69-d6e2-4bd5-b90c-280c0e7b226a.png' | relative_url }}" />
 
 ---
 
 테스트를 통해 실제로 플로우가 동작하는지 확인해 봅니다.
 
-<img width="1278" height="1169" alt="image" src="https://github.com/user-attachments/assets/fbcf1326-89f0-4f7b-b3d9-bf84977d0f43" />
+<img width="1278" height="1169" alt="image" src="{{ '/assets/image/github-attachments/fbcf1326-89f0-4f7b-b3d9-bf84977d0f43.png' | relative_url }}" />
 <br>
 <br>
 
-<img width="1803" height="526" alt="image" src="https://github.com/user-attachments/assets/a7341ff1-eb08-4bb1-a339-3fbd029d338d" />
+<img width="1803" height="526" alt="image" src="{{ '/assets/image/github-attachments/a7341ff1-eb08-4bb1-a339-3fbd029d338d.png' | relative_url }}" />
 <br>
 <br>
 
-<img width="633" height="705" alt="image" src="https://github.com/user-attachments/assets/c4d2c9bd-d5a3-4d38-92b2-7778793fdc4a" />
+<img width="633" height="705" alt="image" src="{{ '/assets/image/github-attachments/c4d2c9bd-d5a3-4d38-92b2-7778793fdc4a.png' | relative_url }}" />
 <br>
 <br>
 

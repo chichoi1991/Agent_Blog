@@ -1,0 +1,1022 @@
+{
+  "products": [
+    "Microsoft Copilot Studio",
+    "Microsoft SharePoint",
+    "Microsoft Power Automate"
+  ],
+  "locale": "en-US",
+  "environment": "Caldova demo tenant",
+  "method": "Actual browser UI screenshots; no translated pixel overlays",
+  "sentEmailOrTeamsMessagesDuringCapture": false,
+  "publishedAgentDuringCapture": false,
+  "captures": [
+    {
+      "path": "assets/image/en/caldova/classic-agent-overview.png",
+      "capturedAt": "2026-09-07T12:47:10.689Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 141418,
+      "sha256": "403583edb8e94433516902cba8f0bcd67d4dbc6eac29b8f2bb3569096fb728a9"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-create-english.png",
+      "capturedAt": "2026-09-07T12:08:21.557Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 49993,
+      "sha256": "62f0ef78bbac392525538ed4ab4c4217f3efadb91f8d8fa1b074600a9f4b62d0"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-create-entry.png",
+      "capturedAt": "2026-09-07T12:03:29.303Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 120823,
+      "sha256": "c82b14786bb91bd1e3e8d8c1cd9ea4067ce9d5a05077bc2115c274bd39abebbd"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-delivery-instructions.png",
+      "capturedAt": "2026-09-07T14:11:08.519Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 139794,
+      "sha256": "d32b79f07adda026e74b0074b15b6e7c8f9a292b93d26e33fb9466bfe502544e"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-details-edit.png",
+      "capturedAt": "2026-09-07T12:47:11.021Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 142849,
+      "sha256": "63bb1b275245f61149793cf70fc2bd02492e5231100350f674e9b1dc24638963"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-environment-picker.png",
+      "capturedAt": "2026-09-07T12:15:15.175Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 158245,
+      "sha256": "5a1ddf452ba376b2c8e6530cabc54e5c018c42cf5d89b42405cb24dd9afbd044"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-instructions-edit.png",
+      "capturedAt": "2026-09-07T12:47:13.514Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 139768,
+      "sha256": "6779c8617ae1fde82f203ca49e3cc31e24a3c2531549462e0179ac587353802d"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-knowledge-catalog.png",
+      "capturedAt": "2026-09-07T12:25:55.142Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 132940,
+      "sha256": "99f5c1d6a19fa0f9aebd007caa7e38ffbe86b0de00f5b5720709ae6c4c62147c"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-knowledge-details.png",
+      "capturedAt": "2026-09-07T13:37:00.852Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 83590,
+      "sha256": "25af261021dc6136928661fb36761cb2e5e7007fb9109fef80cbf2125bbbb11c"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-knowledge-grounded-test.png",
+      "capturedAt": "2026-09-07T13:38:40.725Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 183701,
+      "sha256": "c027ed3e63a143b0560fad819c1bdf78c73b42ae070224f67de09b41d4a8a3f0"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-knowledge-ready.png",
+      "capturedAt": "2026-09-07T13:36:03.885Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 60454,
+      "sha256": "428b4d00244e31132411fc5942800af99603b3acda343ea820266153ccbd8145"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-mcp-catalog.png",
+      "capturedAt": "2026-09-07T12:38:32.186Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 161405,
+      "sha256": "59579a15b39afbeeb7567b4642fcf9cd389b0ca73ed5ccd4bb5e3b95c5ed0c9b"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-mcp-connection-required.png",
+      "capturedAt": "2026-09-07T12:41:18.990Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 74205,
+      "sha256": "231e2564e1902ff7b3bd497cbc6ad66a9d2cf4998ed5f5e8462a2f76d344fafa"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-model-gpt41.png",
+      "capturedAt": "2026-09-07T12:21:38.058Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 141537,
+      "sha256": "269dadca067f0a581c8c981a652b7114a3668d62106ab9673a87e6101a9abdc9"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-settings-knowledge.png",
+      "capturedAt": "2026-09-07T12:14:43.928Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 147804,
+      "sha256": "460d74d7d1df5f90d928d2c87b5b04a989b8b0da15b8f2cf641d440ae2bec4e8"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-settings-orchestration.png",
+      "capturedAt": "2026-09-07T12:14:13.448Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 143297,
+      "sha256": "e70fa8a2bd87140b94aec92ac9ff67fe500e0e3c7074846c12a63acfcf9c1263"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-sharepoint-add.png",
+      "capturedAt": "2026-09-07T12:26:10.101Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 76234,
+      "sha256": "580cc13ced2957e4355f9b22b5ab78e22209983c6a15413c91107c810a7aed66"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-sharepoint-empty-library.png",
+      "capturedAt": "2026-09-07T12:28:16.663Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 83600,
+      "sha256": "93b67ee5fdb16f680b9ad9fd0cbc1519ba5efbc7b1b389b979bf056cb66928a3"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-sharepoint-review.png",
+      "capturedAt": "2026-09-07T13:35:10.942Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 71067,
+      "sha256": "a431af7c7fd7fbf388ef047610ff5c68abd6303505da3e2ee11dfda28d6d3354"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-sharepoint-select-folder.png",
+      "capturedAt": "2026-09-07T13:34:21.476Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 73529,
+      "sha256": "63d3ff385f8018264fa00ea6e69a92ce26d15fdd1533cc1134f8a111987443b1"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-test-english.png",
+      "capturedAt": "2026-09-07T12:24:04.109Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 246386,
+      "sha256": "5a5572c2e92f10ee2a17bc9c928aac7585b6c7bd288b44446b65ce99aece454d"
+    },
+    {
+      "path": "assets/image/en/caldova/classic-tools-catalog.png",
+      "capturedAt": "2026-09-07T12:36:35.966Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 117800,
+      "sha256": "482fbea13d80577508fd20324b9f0318ff527af529e03126b2bd6bd0fb7c073b"
+    },
+    {
+      "path": "assets/image/en/caldova/newcs-home.png",
+      "capturedAt": "2026-09-07T12:01:45.914Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 276377,
+      "sha256": "77ea79891092c575040f672eb22e96807ec5e968f01a7c081caee533089b2d4a"
+    },
+    {
+      "path": "assets/image/en/caldova/outlook-confirmation-credentials.png",
+      "capturedAt": "2026-09-07T13:49:20.880Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 139410,
+      "sha256": "22916cb699b5566b84f55432488e7d1c59d3a955ba1c046c42af948a14ac6fd9"
+    },
+    {
+      "path": "assets/image/en/caldova/outlook-connected.png",
+      "capturedAt": "2026-09-07T13:44:25.302Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 97116,
+      "sha256": "32c347a2d57f2d43787f01503b9692f0af135367fa420cdfaac556511dc6c603"
+    },
+    {
+      "path": "assets/image/en/caldova/outlook-create-connection.png",
+      "capturedAt": "2026-09-07T13:40:53.879Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 96657,
+      "sha256": "bc174fc0df9124960544a9e438866d65ca181ef2259a18d3d6e7695ed5a6e454"
+    },
+    {
+      "path": "assets/image/en/caldova/outlook-new-connection-menu.png",
+      "capturedAt": "2026-09-07T13:40:11.441Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 104713,
+      "sha256": "48fd529ab2a5668a523d2703f6c6cadc4085002c9963254506d19b83e5a095b3"
+    },
+    {
+      "path": "assets/image/en/caldova/outlook-sendemail-only.png",
+      "capturedAt": "2026-09-07T13:49:34.545Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 143373,
+      "sha256": "e2fb5915f9d2fffa28638857adca060c124f8f8eb5e38737c8eb5364ddb0445d"
+    },
+    {
+      "path": "assets/image/en/caldova/sharepoint-create-folder.png",
+      "capturedAt": "2026-09-07T13:30:22.668Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 115763,
+      "sha256": "d6f6d2f06514df0f5f973c5134d7e7c3a05ebf84379ad3765f195bfa15fc5d98"
+    },
+    {
+      "path": "assets/image/en/caldova/sharepoint-demo-library.png",
+      "capturedAt": "2026-09-07T13:32:16.012Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 85573,
+      "sha256": "f8ff1ddead83e8ad5676a819d258d7eabd9d44a27cbeb9e31661d4ee6627b9fb"
+    },
+    {
+      "path": "assets/image/en/caldova/sharepoint-folder-path.png",
+      "capturedAt": "2026-09-07T13:33:10.385Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 123099,
+      "sha256": "edff4cadeb4ef49cd76c5d9f8f85c0c80c3cf517bcb6bfc983c11663fed3139b"
+    },
+    {
+      "path": "assets/image/en/caldova/teams-channel-inputs.png",
+      "capturedAt": "2026-09-07T14:12:05.112Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 111795,
+      "sha256": "89930852e5404f40b571b4429f8c40688b76d13ffbeebdf5100a0f2ee3175d29"
+    },
+    {
+      "path": "assets/image/en/caldova/teams-confirmation-credentials.png",
+      "capturedAt": "2026-09-07T14:12:04.995Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 115556,
+      "sha256": "f02ef7cfcc825ee75d61c6e4faacc3d648f6899287263322a4e588da881c9f66"
+    },
+    {
+      "path": "assets/image/en/caldova/teams-connected.png",
+      "capturedAt": "2026-09-07T14:03:21.722Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 92703,
+      "sha256": "e9431abbd3abaf151dad39b2791333885d36866cd09665c81a0c054e837700fa"
+    },
+    {
+      "path": "assets/image/en/caldova/teams-create-connection.png",
+      "capturedAt": "2026-09-07T14:00:14.354Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 92718,
+      "sha256": "82fbf31cfb2fd975a6a78785425c8dae2afdc9462d92f40d4b6e2b438991307b"
+    },
+    {
+      "path": "assets/image/en/caldova/teams-select-action.png",
+      "capturedAt": "2026-09-07T13:59:43.338Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 133966,
+      "sha256": "641f91d8a2cd399fd2f39018703c0620f70455e9b0c5a7ab7e3075c68e96093e"
+    },
+    {
+      "path": "assets/image/en/caldova/teams-tool-details.png",
+      "capturedAt": "2026-09-07T14:12:04.888Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 116180,
+      "sha256": "57b28098d9a27aa86e82e6f5d81254d564a2485c45bac18bb2438a7207664c48"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-agent-overview.png",
+      "capturedAt": "2026-09-08T00:12:11.192Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 134051,
+      "sha256": "3b34295c20b32f1598fb66a867720d4bf0c742fff6deac409ee97e6da8c7ff4f"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-create-dialog.png",
+      "capturedAt": "2026-09-07T23:53:11.505Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 49260,
+      "sha256": "1e4c1739648822c7ffe634ec9e2d671c982d717e7ab9f76b1a19912d53cd750d"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-action-search.png",
+      "capturedAt": "2026-09-08T10:02:29.676Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 97282,
+      "sha256": "37e221311f986a00d7bd1812c7bbba4ba1cf1c9b7bbe382ffdde484b52e0e770"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-add-tool.png",
+      "capturedAt": "2026-09-08T10:02:29.678Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 136513,
+      "sha256": "d8763faac8438a4b599871aedfe4959ae22715ce3beb21633a334d8d0bdbe5b7"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-advanced-params.png",
+      "capturedAt": "2026-09-08T10:02:29.680Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 82528,
+      "sha256": "a61c6c65f2168cb585b9e279a97d31ffc0141a3c253cf1ddd42297a65e7d3818"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-designer.png",
+      "capturedAt": "2026-09-08T10:02:29.681Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 41411,
+      "sha256": "47ff9930bb1ead24e00736280be286779fbc52d8a34eb94f69204a3fb83bc409"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-dynamic-list.png",
+      "capturedAt": "2026-09-08T10:02:29.682Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 122168,
+      "sha256": "7fd30021ae0ed13939363e7bdf364be5c06165d0e271e401774f13c05af8817c"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-dynamic-menu.png",
+      "capturedAt": "2026-09-08T10:02:29.683Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 89011,
+      "sha256": "95295f5adc52477d42fc27479cf2379fce3e994be2c1c5b6d38a168797f3a25c"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-dynamic-picker.png",
+      "capturedAt": "2026-09-08T10:02:29.684Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 86248,
+      "sha256": "91d029db34b4d0570d626042039fc6c98798c788997fc7c66922bfc7ea069e8f"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-email-added.png",
+      "capturedAt": "2026-09-08T10:02:29.685Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 86203,
+      "sha256": "cf8df8cf82c9eb06004f83ca0bfc25a6bc5dadcc536750d1c1ee1ad6994f0fc7"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-email-mapped.png",
+      "capturedAt": "2026-09-08T10:02:29.686Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 80664,
+      "sha256": "20fa6f29d45273bca2fed7aff9a652845ea7da2fa9bbe69c1df8c483ab96c0aa"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-email-panel.png",
+      "capturedAt": "2026-09-08T10:02:29.689Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 107499,
+      "sha256": "a25f63c2c098b815b64bcfcbe74f22fa50a6ee3f2fd1253f125997d0b0f4a250"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-input-types.png",
+      "capturedAt": "2026-09-08T10:02:29.690Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 62170,
+      "sha256": "81cb1b6a7de5a303bd87cafd73a9954aa00aac74e77e24654beb46518cc45a83"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-inputs-done.png",
+      "capturedAt": "2026-09-08T10:02:29.691Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 67121,
+      "sha256": "d7f3e08aa844893c0a1ab6bfd1fd05af8fc859202ee983d9a8c69c0bb5fabc5e"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-teams-added.png",
+      "capturedAt": "2026-09-08T10:02:29.692Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 81575,
+      "sha256": "1e64dee5191a74f1697202e4cf17736debae10b39492a0bfe517ecd869bd3b3d"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-teams-channel.png",
+      "capturedAt": "2026-09-08T10:02:29.694Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 81861,
+      "sha256": "ac028cce8e20294b5e937631730c2f71d21a23ee87d9c660cfe7b6783b740509"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-teams-postin.png",
+      "capturedAt": "2026-09-08T10:02:29.695Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 79520,
+      "sha256": "897125c5746cc1cc667037ce9d32264d30b688e9e1c32675454b98bb2092e802"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-teams-search.png",
+      "capturedAt": "2026-09-08T10:02:29.695Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 93140,
+      "sha256": "c81fe0511a3bc91f2388bd8237d31a3709248c987472709e87c585b59c46d2bd"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-flow-trigger-inputs.png",
+      "capturedAt": "2026-09-08T10:02:29.697Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 52680,
+      "sha256": "d0c88a7e6ff00ba2ea5ee18626899c398e5c7fb597aaadee1f677cfbf3dda810"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-grounded-test.png",
+      "capturedAt": "2026-09-08T00:12:10.863Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 235571,
+      "sha256": "f8d5f63a77fda593927db719f5efca48a8d0ea41bda507116cbeb274fa65eaf9"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-instructions.png",
+      "capturedAt": "2026-09-08T00:12:11.483Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 135056,
+      "sha256": "089a8757cf3e6dbe94b6894562d41b451f7291336ae6bf5c41415c4816ce2d29"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-knowledge-catalog.png",
+      "capturedAt": "2026-09-07T23:54:25.912Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 158572,
+      "sha256": "de942495457a4fd23a94e202c2ae8f8e2f0c49921ca5bf8c3fa4176a31435c49"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-knowledge-ready.png",
+      "capturedAt": "2026-09-07T23:57:42.274Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 62063,
+      "sha256": "2855ebff7fab201e74a96e64ef790924ea3d358eb533c384eeada8732a0b7851"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-other-ways.png",
+      "capturedAt": "2026-09-07T23:53:07.789Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 120604,
+      "sha256": "e9638a575186296722b1202dc11e95086d3e919c63e78cb2f0b8c6e1be4679b4"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-outlook-actions.png",
+      "capturedAt": "2026-09-08T00:15:12.626Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 59908,
+      "sha256": "bc0c417ac8ceb0017c34a6f4fdcee366b01bca2ccc1d5fd1875f70dce8a2f290"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-outlook-connection.png",
+      "capturedAt": "2026-09-08T00:15:42.256Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 71177,
+      "sha256": "0189c8cd68eecd4f17b73c0d60618f070438506a30faceb87278bdbff2e58e3c"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-settings-orchestration.png",
+      "capturedAt": "2026-09-07T23:58:24.287Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 142406,
+      "sha256": "bce96ff85748a404e4547b8eaa1736fecbbcd8afbff542c8efe5ceefb199291e"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-tool-confirmation.png",
+      "capturedAt": "2026-09-08T00:23:58.609Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 148930,
+      "sha256": "e3040d598d036a3b9f9dc160f8ecc9be0fc7e42f7d4b2882bd4382e7b84fd5d1"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-tool-details.png",
+      "capturedAt": "2026-09-08T00:23:58.480Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 148930,
+      "sha256": "e3040d598d036a3b9f9dc160f8ecc9be0fc7e42f7d4b2882bd4382e7b84fd5d1"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-tool-inputs.png",
+      "capturedAt": "2026-09-08T00:23:58.716Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 131582,
+      "sha256": "58b48723fbdd6a408911be7969e9cc515e39ab00b8ffae5945635c96bab607df"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-tools-catalog.png",
+      "capturedAt": "2026-09-08T00:15:05.470Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 85971,
+      "sha256": "634053f3fd3ddbf28240f046fd5c5e4145954e6932b3a9afe0c63f8ab49f83b1"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-trigger-catalog.png",
+      "capturedAt": "2026-09-08T10:21:31.327Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 77408,
+      "sha256": "5a71e862e043f61b784ad72a25f7d1d52c80398d561576ad898fc6398ff2d502"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-trigger-config.png",
+      "capturedAt": "2026-09-08T10:21:31.328Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 75494,
+      "sha256": "b7f3e01e7af069e26bad252f391f4dc96cf45b0c89ad037e7cbdf27d33d52ac5"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-trigger-library.png",
+      "capturedAt": "2026-09-08T10:21:31.329Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 102378,
+      "sha256": "d3603ee33abed92493f82a648c1b4c03ea4c66c9d626505a1c4b0ba6a43b02dd"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-trigger-orchestration.png",
+      "capturedAt": "2026-09-08T10:21:31.330Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 132321,
+      "sha256": "e24b62fc174702f91a26500650345daa39f8a59bad2ea15c50547fd06a3af69d"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-trigger-overview.png",
+      "capturedAt": "2026-09-08T10:21:31.332Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 128795,
+      "sha256": "cb6f0ef7f99eae60d68626c9a782c46c474ba1b66d2b2c49242ffa1776a70687"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-trigger-search.png",
+      "capturedAt": "2026-09-08T10:21:31.333Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 57716,
+      "sha256": "d28f68980207956f7fad646504ff84052cf8cf346a165725e43e4fd627e6e299"
+    },
+    {
+      "path": "assets/image/en/caldova/ws2-website-review.png",
+      "capturedAt": "2026-09-07T23:56:31.918Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 110399,
+      "sha256": "c44472d386227d0ddd70379bd4406754953b06bdf0b7591e6cc68ae07dc4650f"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-create-dialog.png",
+      "capturedAt": "2026-09-09T21:10:53.421Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 50794,
+      "sha256": "cd45bb461a4ababffd6d4d831184415af67b47d8562a684feb1f5cdbef210ce8"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-create-options.png",
+      "capturedAt": "2026-09-09T21:08:45.866Z",
+      "width": 430,
+      "height": 272,
+      "bytes": 22988,
+      "sha256": "be220db6c9d8e4745760a7ec53c3e75d943b2977dee4fb5952f569faa9246413"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-details.png",
+      "capturedAt": "2026-09-09T21:17:44.687Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 140023,
+      "sha256": "678253bed0b7dd0f120ba76e73ccd0dc7b637b02312c0326e148fdadefa448c9"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-instructions.png",
+      "capturedAt": "2026-09-09T21:19:25.089Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 190379,
+      "sha256": "a15f250b3224586a04fa9e0f5b73105352822793c1b8f0408d5fa2cc2ebc056b"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-knowledge-browse.png",
+      "capturedAt": "2026-09-09T21:24:04.518Z",
+      "width": 1040,
+      "height": 756,
+      "bytes": 35270,
+      "sha256": "44a75f435cf8d809aa1898707c387b5b3026aad733d7dc9bc8208033435a5036"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-knowledge-catalog.png",
+      "capturedAt": "2026-09-09T21:23:30.130Z",
+      "width": 1040,
+      "height": 756,
+      "bytes": 85290,
+      "sha256": "ba2d56910cec8ddff7e6770168ac60c682959196d14760f4f358624c39e4d025"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-knowledge-connect.png",
+      "capturedAt": "2026-09-09T21:48:49.224Z",
+      "width": 470,
+      "height": 1049,
+      "bytes": 54654,
+      "sha256": "afb07e52b7b4e252b0f8fd055eb75e653025a58b91b0d81c43f55ed06f7c77fe"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-knowledge-description.png",
+      "capturedAt": "2026-09-09T21:44:44.444Z",
+      "width": 1040,
+      "height": 756,
+      "bytes": 32563,
+      "sha256": "83277d452c763410729e0e4a0dc58f1ec1bfb5b2ad576e2276f4e561f63cea83"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-knowledge-empty.png",
+      "capturedAt": "2026-09-09T21:23:02.567Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 173163,
+      "sha256": "7dfc037891f114aba6299da56ab7c62c44a74fad324d15eede1bc670b71e85bf"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-knowledge-grounded.png",
+      "capturedAt": "2026-09-09T21:51:37.548Z",
+      "width": 470,
+      "height": 1049,
+      "bytes": 76781,
+      "sha256": "5c42732da1bb5f1149907d7268c9910e9c38fc2599285967d7f04ce9e43e2ee5"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-knowledge-ready.png",
+      "capturedAt": "2026-09-09T21:53:07.993Z",
+      "width": 1091,
+      "height": 90,
+      "bytes": 11486,
+      "sha256": "1bf5ee8d4a6ea4610eff54d98e67fd6c932a613f123de2a964e9a34f5d007867"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-knowledge-selected.png",
+      "capturedAt": "2026-09-09T21:24:33.617Z",
+      "width": 1040,
+      "height": 756,
+      "bytes": 38266,
+      "sha256": "6ad83069413a5e2a4c7938a89203d2bb8a9ee8f4d3e7bab540b8876132335469"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-knowledge-url.png",
+      "capturedAt": "2026-09-09T21:44:12.502Z",
+      "width": 1040,
+      "height": 756,
+      "bytes": 38833,
+      "sha256": "513fc8b80655a074684058faf37092212f23063259715b09e0e6dfa40705a608"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-model-list.png",
+      "capturedAt": "2026-09-09T21:16:27.613Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 145626,
+      "sha256": "fbf32a3cf2d6a21be981310d737a9a5b72d239b119e6669c79b2926f2ad4c31e"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-overview.png",
+      "capturedAt": "2026-09-09T21:20:20.024Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 179509,
+      "sha256": "7bf7940d89feb1b485dd09167d5788190612f48c47bb8d549bb2d583d90349e2"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-settings-knowledge.png",
+      "capturedAt": "2026-09-09T21:13:41.497Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 112483,
+      "sha256": "47c4c76d560ec370f6dbac204b97e2f165511a149283ae6b1ab5c43425b20fff"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-settings-orchestration.png",
+      "capturedAt": "2026-09-09T21:13:39.862Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 106957,
+      "sha256": "da7fc748e22d7a5e763ced82b8fe8ae6e428f0e08c430e07a60a7522c778c53c"
+    },
+    {
+      "path": "assets/image/en/caldova/ws3-test.png",
+      "capturedAt": "2026-09-09T21:21:53.551Z",
+      "width": 470,
+      "height": 1049,
+      "bytes": 95783,
+      "sha256": "077155a91cf5521989ca27b6c00dc40e2793fbb14990a49f0842193ebd2e9cf3"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-agent-created.png",
+      "capturedAt": "2026-09-09T15:04:06.709Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 147046,
+      "sha256": "4d09bc4dd4a9a2698a9ddc266bb73efa619619d69d3692b1d696bcdaaca306dd"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-authoring-complete.png",
+      "capturedAt": "2026-09-09T15:02:29.055Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 122630,
+      "sha256": "53d41bb4b47e23ca0f964a0f6bc4bf12d2a3e5ed1fd8a9694ead8f3073aea996"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-authoring-question.png",
+      "capturedAt": "2026-09-09T14:58:02.494Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 73884,
+      "sha256": "43a7bc0a33481094d1aecfacb5eb25d45af62e628d07a924e2a239f3199be7dc"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-action-details.png",
+      "capturedAt": "2026-09-09T16:13:43.570Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 23580,
+      "sha256": "67f406014ff9f2a20f14e6b659408f8c3d3e66e6187ee9ebaeb239cb5af5d49d"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-denied.png",
+      "capturedAt": "2026-09-09T16:25:17.683Z",
+      "width": 1024,
+      "height": 812,
+      "bytes": 76646,
+      "sha256": "e0e32fefd542ac2406791514d6cd30b698e59a6bb0f3951553faafbf4df27ee7"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-description.png",
+      "capturedAt": "2026-09-09T16:15:09.171Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 36487,
+      "sha256": "3418926bf121c09681b28be5c6a399e3e1fea3ed336df45c03640559b72383cb"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-inputs.png",
+      "capturedAt": "2026-09-09T16:15:31.178Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 31657,
+      "sha256": "6bc92f2602d775cf3f437cd508558a5f6acc5832fecbdb73263f1f8260cf6565"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-panel.png",
+      "capturedAt": "2026-09-09T16:19:37.019Z",
+      "width": 400,
+      "height": 614,
+      "bytes": 42705,
+      "sha256": "a8de3b777479c8f3dfb3f68d3ae1394ece8f760463de1e8350218bdaa8557688"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-permission-list.png",
+      "capturedAt": "2026-09-09T16:21:51.143Z",
+      "width": 1024,
+      "height": 812,
+      "bytes": 57728,
+      "sha256": "d8356c559d17314fd5bd7a2b90c7482830001746ad0c5dd070f4994318c7687d"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-permission-post.png",
+      "capturedAt": "2026-09-09T16:24:26.742Z",
+      "width": 1024,
+      "height": 812,
+      "bytes": 65499,
+      "sha256": "eaaa86e754a6de4bc8ddaba77f6c546b4f6369cb41920f4b5b79e4ed8a6249ee"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-search.png",
+      "capturedAt": "2026-09-09T16:13:14.781Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 14523,
+      "sha256": "337e4632f4b4456a221ae7b970730b1dc006f4ebe05f5586d1422dab88ef211e"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-teams-actions.png",
+      "capturedAt": "2026-09-09T16:12:53.523Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 38992,
+      "sha256": "416a15b50ecf2104682cbd38e0fe73e1159c0f09b5c4f19855dcd808780fdac1"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-connector-value-picker.png",
+      "capturedAt": "2026-09-09T16:17:43.988Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 229085,
+      "sha256": "f8d610cab698ba2050e8f30f61448dc1c5381cc86a849b9fab14b0ac925be92d"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-home-prompt.png",
+      "capturedAt": "2026-09-09T14:50:18.989Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 294716,
+      "sha256": "10fb9d79887d1012dab9d510e23f70422ed60be2d4624d2b87fe01db440ce757"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-instructions-saved.png",
+      "capturedAt": "2026-09-09T15:12:56.871Z",
+      "width": 1600,
+      "height": 1100,
+      "bytes": 201451,
+      "sha256": "e611c7717b38e781c6e74a7c0f641b828026c4e5f00377e7dcca35cf4ee161b7"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-added.png",
+      "capturedAt": "2026-09-09T15:52:09.320Z",
+      "width": 400,
+      "height": 574,
+      "bytes": 37674,
+      "sha256": "05b7008b005203d44786a3b783a18e731ba96fbfc486dfd3ed220f0b1eaddd12"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-browse.png",
+      "capturedAt": "2026-09-09T15:48:00.285Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 31310,
+      "sha256": "4b27343f2154de7260c6561df8619c586dea23d6e5e25020e790ac8bba7c7255"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-catalog.png",
+      "capturedAt": "2026-09-09T15:44:13.662Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 53286,
+      "sha256": "115503e7b822b0257646b11f0375eff80d5c330a7470516cbb16ba45c0be57dc"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-configured.png",
+      "capturedAt": "2026-09-09T15:50:26.459Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 31166,
+      "sha256": "e7e11161109eb91d5daa9eae6f563f38e5060734869e81a37ad40f71478ebaeb"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-details.png",
+      "capturedAt": "2026-09-09T15:43:07.581Z",
+      "width": 900,
+      "height": 880,
+      "bytes": 31398,
+      "sha256": "946fef6c37f18df854804c6e6e04ae094a679e7ae86994c6fefb0bfe4e8ef4d2"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-grounded-test.png",
+      "capturedAt": "2026-09-09T15:53:58.219Z",
+      "width": 1024,
+      "height": 812,
+      "bytes": 77408,
+      "sha256": "b2063d7f593627158ae67a930b7efc12d7fece14c94191d5213eded346899614"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-panel.png",
+      "capturedAt": "2026-09-09T15:42:17.708Z",
+      "width": 400,
+      "height": 534,
+      "bytes": 34661,
+      "sha256": "e6f22f115bcc48752897e9f6d4728859ffa0415ca2e05d2e672d1f470387ff4a"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-selected.png",
+      "capturedAt": "2026-09-09T15:48:37.316Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 34087,
+      "sha256": "a3c446d07ba2c76fde291d1373205ca70d9175ea96982a362f340b4150700e0a"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-knowledge-sharepoint.png",
+      "capturedAt": "2026-09-09T15:45:50.983Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 32975,
+      "sha256": "629ab915a50346c06ba038bb6323ddb5a99bb8812b15804608791142677a3f07"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-catalog.png",
+      "capturedAt": "2026-09-09T15:59:18.687Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 61460,
+      "sha256": "91555bdb341acd5f63b103bbc0e361a14f2552a15c2fd5d99e8eecdbc69dc5e4"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-connection.png",
+      "capturedAt": "2026-09-09T16:00:02.758Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 35002,
+      "sha256": "eebe69a934e750338c04ab09099d1d7fb4494e9e6d795b96831d75a6756efa43"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-draft-result.png",
+      "capturedAt": "2026-09-09T16:09:11.387Z",
+      "width": 1024,
+      "height": 812,
+      "bytes": 100498,
+      "sha256": "4e580140f9c965a2ad89c7c444ed0c7b4d737ee0b6cf5b45f5f0ea76ee0a712f"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-inputs.png",
+      "capturedAt": "2026-09-09T16:04:26.490Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 22109,
+      "sha256": "4b5dadebe9486c860971f31329007558f4ad5524184d3f127e11e40051ab9009"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-panel.png",
+      "capturedAt": "2026-09-09T16:04:02.351Z",
+      "width": 400,
+      "height": 574,
+      "bytes": 38169,
+      "sha256": "cbd71bb855cef7f64057201c852b71d0f91797dbdf247678e76f66108c30ffe5"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-permission.png",
+      "capturedAt": "2026-09-09T16:07:16.800Z",
+      "width": 1024,
+      "height": 812,
+      "bytes": 90679,
+      "sha256": "9837b8dc06e7cce4e27605a04566a2a9f9f35322860f7d4789df88b580150ab9"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-scoped.png",
+      "capturedAt": "2026-09-09T16:02:44.962Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 39985,
+      "sha256": "c4b875530c17369f27c2c9e73f3af8a00832d8f205aa72e394d4df3378d869a3"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-mcp-tool-list.png",
+      "capturedAt": "2026-09-09T16:01:11.705Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 41796,
+      "sha256": "eaa6e486c3c7a58e4928e95f58c209f72495a08a0a549962f8fda899cf396a44"
+    },
+    {
+      "path": "assets/image/en/caldova/ws5-tools-catalog.png",
+      "capturedAt": "2026-09-09T15:57:56.925Z",
+      "width": 800,
+      "height": 660,
+      "bytes": 38384,
+      "sha256": "3cf31c735e2fe2a5215d52e341e9d2516ddda964a52725a19fd41242191d9ef0"
+    }
+  ]
+}
