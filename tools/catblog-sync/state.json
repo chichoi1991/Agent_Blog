@@ -13,6 +13,9 @@
     "podcast-script-skill",
     "copilot-studio-agent-sandbox",
     "copilot-harness-cost-governance",
-    "agent-review-tool"
+    "agent-review-tool",
+    "copilot-credit-consumption-api",
+    "sharepoint-metadata-filtering",
+    "work-iq-context-layer-you-already-have"
   ]
 }

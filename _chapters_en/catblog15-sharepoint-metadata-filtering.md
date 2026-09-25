@@ -1,16 +1,26 @@
 ---
-agent_edition: github-copilot
-layout: post
-title: "SharePoint Metadata Filtering in Copilot Studio: From Topic Logic to Agent Decisions"
+layout: "chapter"
+lang: en
 date: 2026-09-01
-categories: [copilot-studio, knowledge]
-tags: [copilot-studio, github-copilot, sharepoint, knowledge-sources, metadata-filtering, knowledge-search, orchestration, skills]
+title: "SharePoint Metadata Filtering in Copilot Studio: From Topic Logic to Agent Decisions"
+short_title: "SharePoint Metadata Filtering"
 description: "How GitHub Copilot harness agents use SharePoint metadata to find applicable documents, scope knowledge search, and answer without hand-built routing logic."
-author: adilei
-image:
-  path: /assets/posts/sharepoint-metadata-filtering/header.png
-  alt: "A suspiciously confident fortune teller routes SharePoint documents by metadata. Finally, a useful crystal ball."
+order: 15
+category: "catblog"
+source_url: "https://microsoft.github.io/mcscatblog/posts/sharepoint-metadata-filtering/"
+source_author: "adilei"
+source_published: "2026-09-01"
+source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
+canonical_url: "https://microsoft.github.io/mcscatblog/posts/sharepoint-metadata-filtering/"
 ---
+
+<div class="info-box note" markdown="1">
+**Translated article** — This article is based on [SharePoint Metadata Filtering in Copilot Studio: From Topic Logic to Agent Decisions](https://microsoft.github.io/mcscatblog/posts/sharepoint-metadata-filtering/) by adilei (@adilei) on [The Custom Engine](https://microsoft.github.io/mcscatblog/) (2026-09-01). The original wording takes precedence.
+</div>
+
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/sharepoint-metadata-filtering/header.png' | relative_url }}" alt="A suspiciously confident fortune teller routes SharePoint documents by metadata. Finally, a useful crystal ball." loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+</figure>
 
 SharePoint libraries often contain documents that look similar but apply to different audiences. A benefits policy might vary by country. A product guide might apply only to one market. A procedure might be valid only when its status is **Approved**.
 
@@ -18,7 +28,7 @@ People have been asking for a simple way to use SharePoint metadata in knowledge
 
 In the Standard harness, there was no simple, configurable path from a user's intent to SharePoint metadata and then to the URLs of matching documents. Makers could approximate that routing with multiple topics and scoped **Create generative answers** nodes, but those nodes scoped retrieval to configured sources or URLs, not to document-library metadata. Every new country, department, or document state added more configuration to maintain.
 
-Agents powered by the [GitHub Copilot harness]({% post_url 2026-07-07-new-orchestrator-resources %}) can now bridge that gap. The agent can interpret the request, filter SharePoint files by metadata, collect the matching document URLs, and search only those documents.
+Agents powered by the [GitHub Copilot harness](https://microsoft.github.io/mcscatblog/posts/new-orchestrator-resources/) can now bridge that gap. The agent can interpret the request, filter SharePoint files by metadata, collect the matching document URLs, and search only those documents.
 
 ## Start with the use case
 
@@ -51,15 +61,16 @@ GitHub Copilot harness agents currently receive two built-in tools for SharePoin
 
 The metadata tool can work independently. For example, the agent can answer "How many documents are assigned to each country?" without opening and searching every file. To do that, the agent sends this input to `sharepoint_metadata_filter`:
 
+*Input sent by the agent to sharepoint_metadata_filter*
 ```json
 {
   "groupByColumn": "Country"
 }
 ```
-{: file="Input sent by the agent to sharepoint_metadata_filter" }
 
 The tool returns server-calculated totals rather than only the rows displayed to the agent:
 
+*Output returned to the agent by sharepoint_metadata_filter*
 ```json
 {
   "aggregation": true,
@@ -74,12 +85,12 @@ The tool returns server-calculated totals rather than only the rows displayed to
   "backend": "sharepoint_rest"
 }
 ```
-{: file="Output returned to the agent by sharepoint_metadata_filter" }
 
 For a content question that doesn't need metadata, the agent can call `knowledge_search_sharepoint` directly across its configured SharePoint knowledge sources.
 
 The more interesting case is chaining them. Consider a library with a `Country` column and the question, "What employee benefits does Contoso offer in the US?" The agent can first call `sharepoint_metadata_filter` with `Country = US`. That call returns the matching files and their URLs. The agent can then pass those URLs to the knowledge-search tool:
 
+*Input sent by the agent to knowledge_search_sharepoint*
 ```json
 {
   "search_query": "What employee benefits does Contoso offer in the US?",
@@ -90,10 +101,10 @@ The more interesting case is chaining them. Consider a library with a `Country` 
   ]
 }
 ```
-{: file="Input sent by the agent to knowledge_search_sharepoint" }
 
 The tool searches within the supplied URL scope and returns the matching documents:
 
+*Output returned to the agent by knowledge_search_sharepoint*
 ```text
 [2 results]
 
@@ -105,7 +116,6 @@ Title: Contoso HR policies.docx
 URL: https://pplatform.sharepoint.com/.../Contoso HR policies.docx
 ReferenceId: turn1doc2
 ```
-{: file="Output returned to the agent by knowledge_search_sharepoint" }
 
 The agent doesn't have to chain the tools every time. It can use metadata filtering alone for inventory and aggregation questions, knowledge search alone for general content questions, or both when metadata determines the correct document scope.
 
@@ -115,10 +125,11 @@ The [Knowledge Source Router skill](https://microsoft.github.io/cat-agent-skills
 
 That level of guidance is useful when the sequence must be repeatable and easy to inspect. It is **not required for every agent**. With clear agent instructions and well-described knowledge sources, you can also let the agent decide when metadata filtering is relevant and how to combine it with knowledge search.
 
-Start with the lightest guidance that produces reliable results for your use case. Add stricter steps when testing shows that the agent needs them. If you want to package repeatable guidance for reuse, see [how Skills work in GitHub Copilot harness agents]({% post_url 2026-06-15-modern-mcs-agent-skills %}).
+Start with the lightest guidance that produces reliable results for your use case. Add stricter steps when testing shows that the agent needs them. If you want to package repeatable guidance for reuse, see [how Skills work in GitHub Copilot harness agents](https://microsoft.github.io/mcscatblog/posts/modern-mcs-agent-skills/).
 
-> The built-in metadata and knowledge-search tools are implementation details, not public APIs. Their names, parameters, and behavior can change without notice. Design around the supported Copilot Studio capability rather than depending on a specific internal tool contract.
-{: .prompt-warning }
+<div class="info-box warning" markdown="1">
+The built-in metadata and knowledge-search tools are implementation details, not public APIs. Their names, parameters, and behavior can change without notice. Design around the supported Copilot Studio capability rather than depending on a specific internal tool contract.
+</div>
 
 Metadata filtering narrows the content considered for an answer. It does not replace SharePoint permissions or grant access to documents the user cannot read. SharePoint permission trimming continues to apply for the signed-in user.
 

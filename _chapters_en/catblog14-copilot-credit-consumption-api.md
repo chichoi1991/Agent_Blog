@@ -1,16 +1,26 @@
 ---
-layout: post
-agent_edition: both
-title: "Where Are Your Copilot Credits Going? Build a Tenant-Wide View with the Power Platform API"
+layout: "chapter"
+lang: en
 date: 2026-08-25
-categories: [copilot-studio, governance]
-tags: [copilot-studio, governance, billing, licensing, cost management, power-platform-api, dataverse]
+title: "Where Are Your Copilot Credits Going? Build a Tenant-Wide View with the Power Platform API"
+short_title: "Copilot Credit Consumption API"
 description: "Use the Power Platform API to retrieve daily Copilot Credit consumption per agent, persist it in Dataverse, and build tenant-wide dashboards."
-author: PetrosFeleskouras
-image:
-  path: /assets/posts/copilot-credit-consumption-api/header.png
-  alt: "Copilot Credit consumption flowing through the Power Platform API into Dataverse and a custom dashboard."
+order: 14
+category: "catblog"
+source_url: "https://microsoft.github.io/mcscatblog/posts/copilot-credit-consumption-api/"
+source_author: "PetrosFeleskouras"
+source_published: "2026-08-25"
+source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
+canonical_url: "https://microsoft.github.io/mcscatblog/posts/copilot-credit-consumption-api/"
 ---
+
+<div class="info-box note" markdown="1">
+**Translated article** — This article is based on [Where Are Your Copilot Credits Going? Build a Tenant-Wide View with the Power Platform API](https://microsoft.github.io/mcscatblog/posts/copilot-credit-consumption-api/) by PetrosFeleskouras (@PetrosFeleskouras) on [The Custom Engine](https://microsoft.github.io/mcscatblog/) (2026-08-25). The original wording takes precedence.
+</div>
+
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/copilot-credit-consumption-api/header.png' | relative_url }}" alt="Copilot Credit consumption flowing through the Power Platform API into Dataverse and a custom dashboard." loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+</figure>
 
 The Power Platform admin center provides out-of-the-box reports on your tenant's Copilot Credit consumption under **Licensing > Copilot Studio** ([Manage Copilot Credits and capacity](https://learn.microsoft.com/en-us/power-platform/admin/manage-copilot-studio-copilot-credits-capacity)). For many organizations, these reports should be the starting point. You can read them, but you can't reshape them or own the underlying rows.
 
@@ -18,11 +28,13 @@ That becomes a problem the moment you want anything beyond the headline: a trend
 
 This post covers the Power Platform licensing endpoints that expose tenant capacity and per-resource consumption, the details that matter when calling them, and the community solution that turns the results into a daily history in Dataverse.
 
-> **Companion piece.** For the other half of cost management, allocating capacity, setting per-agent limits, and enforcing them, my colleague **Lewis Baybutt** wrote [Adopting the GitHub Copilot Harness: Cost Control and Governance in Copilot Studio]({% post_url 2026-08-07-copilot-harness-cost-governance %}). Read it alongside this one: it shows how to put boundaries on the consumption you're about to make visible.
-{: .prompt-info }
+<div class="info-box tip" markdown="1">
+**Companion piece.** For the other half of cost management, allocating capacity, setting per-agent limits, and enforcing them, my colleague **Lewis Baybutt** wrote [Adopting the GitHub Copilot Harness: Cost Control and Governance in Copilot Studio](https://microsoft.github.io/mcscatblog/posts/copilot-harness-cost-governance/). Read it alongside this one: it shows how to put boundaries on the consumption you're about to make visible.
+</div>
 
-> **The sample.** This community solution is not a replacement for PPAC reporting. It is intended for organizations that have a specific reason to retrieve the API data, retain it in Dataverse, and build their own reports. Everything here is implemented in [copilot-credit-consumption](https://github.com/PetrosFeleskouras/copilot-credit-consumption), a daily flow, three Dataverse tables, a security role, and a Power Apps Code App, deployable from a single solution import. The validated V2 packages are available in the [v2.0.0 release](https://github.com/PetrosFeleskouras/copilot-credit-consumption/releases/tag/v2.0.0).
-{: .prompt-tip }
+<div class="info-box tip" markdown="1">
+**The sample.** This community solution is not a replacement for PPAC reporting. It is intended for organizations that have a specific reason to retrieve the API data, retain it in Dataverse, and build their own reports. Everything here is implemented in [copilot-credit-consumption](https://github.com/PetrosFeleskouras/copilot-credit-consumption), a daily flow, three Dataverse tables, a security role, and a Power Apps Code App, deployable from a single solution import. The validated V2 packages are available in the [v2.0.0 release](https://github.com/PetrosFeleskouras/copilot-credit-consumption/releases/tag/v2.0.0).
+</div>
 
 What's covered:
 
@@ -76,11 +88,13 @@ GET https://api.powerplatform.com/environmentmanagement/environments?api-version
 
 Together, these endpoints let you build a tenant-wide daily history, compare agents and environments, separate billed from non-billed consumption, and add channel or other dimensional context where it is available.
 
-> **Harness-specific telemetry.** Standard harness agents can provide feature, tool, model, channel, and knowledge-source detail. GitHub Copilot harness agents currently report the feature as `Process Agent` and do not provide tool, model, or knowledge-source values. Blank values for those fields reflect the source telemetry, not missing data in your integration.
-{: .prompt-info }
+<div class="info-box note" markdown="1">
+**Harness-specific telemetry.** Standard harness agents can provide feature, tool, model, channel, and knowledge-source detail. GitHub Copilot harness agents currently report the feature as `Process Agent` and do not provide tool, model, or knowledge-source values. Blank values for those fields reflect the source telemetry, not missing data in your integration.
+</div>
 
-> **Support boundary.** The core routes and response models are documented by Microsoft. Some optional rich metadata is not fully described in the public reference, so test the fields your reporting depends on when you update the integration.
-{: .prompt-info }
+<div class="info-box note" markdown="1">
+**Support boundary.** The core routes and response models are documented by Microsoft. Some optional rich metadata is not fully described in the public reference, so test the fields your reporting depends on when you update the integration.
+</div>
 
 ## #2 Persist the data and build dashboards with the community solution
 
@@ -99,8 +113,9 @@ The included dashboard provides capacity status, billed and non-billed trends, l
 
 The full solution, including the daily flow, Dataverse tables, security role, and Code App, is available in the [v2.0.0 release](https://github.com/PetrosFeleskouras/copilot-credit-consumption/releases/tag/v2.0.0).
 
-> **Community solution.** Built entirely with standard Power Platform components, the package can be inspected during import and deployed through your organization's usual Power Platform process.
-{: .prompt-tip }
+<div class="info-box tip" markdown="1">
+**Community solution.** Built entirely with standard Power Platform components, the package can be inspected during import and deployed through your organization's usual Power Platform process.
+</div>
 
 ## Wrapping up
 

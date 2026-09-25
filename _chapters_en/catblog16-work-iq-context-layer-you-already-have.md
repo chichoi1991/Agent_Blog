@@ -1,17 +1,26 @@
 ---
-layout: post
-agent_edition: both
+layout: "chapter"
+lang: en
+date: 2026-08-24
 title: "Work IQ: How It's Used, Licensed, and Controlled"
-date: 2026-08-24 09:00:00 +0200
-categories: [copilot-studio, work-iq]
-tags: [copilot-studio, microsoft-365-copilot, mcp, knowledge, governance, licensing, billing, declarative-agents]
+short_title: "Work IQ Usage, Licensing, Controls"
 description: "Understand how Work IQ is used, when Copilot Credits apply, and how to configure controls in the Microsoft 365 and Power Platform admin centers."
-author: asfjordhoj
-image:
-  path: /assets/posts/work-iq-context-layer-you-already-have/header.png
-  alt: "Work IQ connects email, meetings, chats, and files, with agent capacity and user spending controls operating in parallel."
-  no_bg: true
+order: 16
+category: "catblog"
+source_url: "https://microsoft.github.io/mcscatblog/posts/work-iq-context-layer-you-already-have/"
+source_author: "asfjordhoj"
+source_published: "2026-08-24"
+source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
+canonical_url: "https://microsoft.github.io/mcscatblog/posts/work-iq-context-layer-you-already-have/"
 ---
+
+<div class="info-box note" markdown="1">
+**Translated article** — This article is based on [Work IQ: How It's Used, Licensed, and Controlled](https://microsoft.github.io/mcscatblog/posts/work-iq-context-layer-you-already-have/) by asfjordhoj (@asfjordhoj) on [The Custom Engine](https://microsoft.github.io/mcscatblog/) (2026-08-24). The original wording takes precedence.
+</div>
+
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/work-iq-context-layer-you-already-have/header.png' | relative_url }}" alt="Work IQ connects email, meetings, chats, and files, with agent capacity and user spending controls operating in parallel." loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+</figure>
 
 [Work IQ](https://learn.microsoft.com/microsoft-365/copilot/extensibility/work-iq/) is Microsoft's workplace intelligence layer for agents. It helps agents understand work across email, meetings, chats, files, and connected business systems, using information the user has permission to access.
 
@@ -34,21 +43,8 @@ The comparison below uses the **September 2026** [Copilot Credits Licensing Guid
 | **Copilot Studio, Standard harness** | The unified Work IQ integration isn't supported. | Not applicable. |
 | **Copilot Studio, GitHub Copilot harness** | Add the unified Work IQ MCP tool. The agent invokes it when needed for a task. | Consumes Copilot Credits, including for users with a Microsoft 365 Copilot license. |
 | **Custom client or own solution** | Your application calls a Work IQ API to use work context in its own experience. | Consumes Copilot Credits. A Microsoft 365 Copilot license isn't required; [usage-based billing must be enabled for the user](https://learn.microsoft.com/microsoft-365/copilot/extensibility/work-iq/enable-work-iq#prerequisites). |
-{: #work-iq-scenarios .work-iq-comparison }
 
 The declarative-agent rows describe usage by eligible Microsoft 365 Copilot licensed users. For users without that license, an agent that accesses SharePoint or Copilot connector data consumes Copilot Credits when usage-based billing is enabled. These charges are for using the declarative agent, not for a separate Work IQ API call. This applies to agents built with either Agent Builder or Agents Toolkit. See the [declarative-agent licensing guidance](https://learn.microsoft.com/microsoft-365/copilot/extensibility/cost-considerations#declarative-agents) and [supported users for each authoring tool](https://learn.microsoft.com/microsoft-365/copilot/extensibility/declarative-agent-tool-comparison#tool-requirements-and-access).
-
-<style>
-  .content table.work-iq-comparison {
-    width: 100%;
-    min-width: 36rem;
-    table-layout: fixed;
-  }
-  .content .table-wrapper > table.work-iq-comparison th,
-  .content .table-wrapper > table.work-iq-comparison td {
-    white-space: normal;
-  }
-</style>
 
 ## Where to manage Work IQ consumption
 
@@ -61,7 +57,6 @@ For the metered scenarios in the comparison, these are the controls to configure
 | **Copilot Studio, GitHub Copilot harness with Work IQ** | [**PPAC**](https://learn.microsoft.com/power-platform/admin/manage-usage-github-copilot-harness) and [**MAC**](https://learn.microsoft.com/microsoft-365/copilot/usage-based-billing-manage-copilot-credits) | Use PPAC to manage the agent's environment capacity and limits. Use MAC to configure the required Work IQ spending policy for its users. |
 | **Custom client or own solution calling Work IQ APIs** | [**MAC**](https://learn.microsoft.com/microsoft-365/copilot/usage-based-billing-manage-copilot-credits) | The calling user's **Work IQ spending policy**: user/group scope, billing method, policy and per-user spending limits, and threshold alerts. |
 | **Cowork** | [**MAC**](https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-admin-governance) | A spending policy that selects **Cowork**, scoped to the intended users/groups, with a billing method, spending limits, and alerts. |
-{: #work-iq-controls .work-iq-comparison }
 
 Prepaid Copilot Credit capacity packs can [fund experiences managed through either admin center](https://learn.microsoft.com/power-platform/admin/manage-usage-github-copilot-harness#coordinate-capacity-across-admin-centers). Capacity allocated to Power Platform environments or consumed by Copilot Studio reduces what's available to supported Microsoft 365 experiences. The controls remain separate.
 
@@ -82,8 +77,9 @@ This Work IQ policy applies to custom applications and to the Copilot Studio MCP
 
 Spending policies set limits; they don't reserve a portion of your credits. Prepaid credits or pay-as-you-go provide the funding.
 
-> A [Cowork spending policy grants access to everyone in its scope](https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-access), even with a very low limit. To prevent access, keep the user out of every policy that selects Cowork. Limit enforcement can lag behind consumption, so additional tasks may start after a limit is reached.
-{: .prompt-warning }
+<div class="info-box warning" markdown="1">
+A [Cowork spending policy grants access to everyone in its scope](https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-access), even with a very low limit. To prevent access, keep the user out of every policy that selects Cowork. Limit enforcement can lag behind consumption, so additional tasks may start after a limit is reached.
+</div>
 
 Spending approval doesn't grant data access; [tenant enablement and consent](https://learn.microsoft.com/microsoft-365/copilot/extensibility/work-iq/enable-work-iq) remain separate prerequisites.
 
@@ -98,7 +94,7 @@ Building, testing, evaluating, and running a GitHub Copilot harness agent can co
 
 The environment allocation is capacity shared by its agents; the agent limit constrains one agent's usage. Azure budget alerts send notifications but don't stop Copilot Studio consumption.
 
-Our guide to [cost control for the GitHub Copilot harness]({% post_url 2026-08-07-copilot-harness-cost-governance %}) covers these settings in more detail.
+Our guide to [cost control for the GitHub Copilot harness](https://microsoft.github.io/mcscatblog/posts/copilot-harness-cost-governance/) covers these settings in more detail.
 
 If different teams manage the two admin centers, share the agent name, environment, intended users, and Work IQ use case with both teams.
 
@@ -124,7 +120,7 @@ Some individual MCP tools available in the Standard harness also still mention W
 
 A [knowledge source](https://learn.microsoft.com/microsoft-copilot-studio/knowledge-copilot-studio) retrieves relevant content from selected sources, and the Copilot Studio agent uses that content to generate its response. Work IQ's conversational [`ask` tool](https://learn.microsoft.com/microsoft-365/copilot/extensibility/work-iq/mcp/tool-reference) reasons across the signed-in user's work context in mail, meetings, chats, and files, then returns a generated response to the agent.
 
-The same agent can use both. A meeting-preparation agent could consult a knowledge source for the approved briefing format and Work IQ for the user's recent work context. Use [instructions to describe when to use tools and knowledge]({% post_url 2025-11-11-influence-orchestration-knowledge %}).
+The same agent can use both. A meeting-preparation agent could consult a knowledge source for the approved briefing format and Work IQ for the user's recent work context. Use [instructions to describe when to use tools and knowledge](https://microsoft.github.io/mcscatblog/posts/influence-orchestration-knowledge/).
 
 ## Putting it into practice
 
