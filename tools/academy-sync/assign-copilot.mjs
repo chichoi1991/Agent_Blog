@@ -49,17 +49,17 @@ function buildIssue(items) {
       (it.images?.length ? ` · 이미지 ${it.images.length}` : ""))
     .join("\n");
 
-  const body = `Agent Academy(microsoft/agent-academy)의 **${p.parentTitle}** 코스/랩 페이지를 한글로 번역해 게시해줘.
+  const body = `Agent Academy(microsoft/agent-academy)의 **${p.parentTitle}** 코스/랩 페이지를 **한국어판과 영문판 두 벌**로 게시해줘.
 
 ## 대상 (원문 EN 은 \`tools/academy-sync/incoming/<slug>.md\` 에 스테이징됨)
 ${list}
 
 ## 계층 구조
 - 카테고리: \`${p.category}\` · parent: \`${p.parent}\` (\`${p.parentShort}\`)
-- **부모 랜딩 페이지**가 없으면 하나 생성: \`_chapters/academy-${p.parent}.md\`
-  - frontmatter: \`category: ${p.category}\`, \`parent: "${p.parent}"\`, \`is_parent: true\`, \`order: ${p.parentOrder}\`, \`short_title: "${p.parentShort}"\`, \`title\`(한글), \`description\`(한글).
+- **부모 랜딩 페이지**가 없으면 한/영 둘 다 생성: \`_chapters/academy-${p.parent}.md\`, \`_chapters_en/academy-${p.parent}.md\`
+  - frontmatter: \`category: ${p.category}\`, \`parent: "${p.parent}"\`, \`is_parent: true\`, \`order: ${p.parentOrder}\`, \`short_title: "${p.parentShort}"\`, \`title\`, \`description\`. 영문판에는 \`lang: en\` 추가.
   - 본문: 코스/랩 소개 + 모듈 목록.
-- 각 모듈: \`_chapters/academy-<slug>.md\` (\`parent: "${p.parent}"\`, \`is_parent\` 없음, \`order\`=manifest의 order).
+- 각 모듈: \`_chapters/academy-<slug>.md\` + \`_chapters_en/academy-<slug>.md\` (\`parent: "${p.parent}"\`, \`is_parent\` 없음, \`order\`=manifest의 order).
 
 ## 작업 지침
 반드시 \`.github/skills/academy-sync/SKILL.md\` 규칙을 따를 것. 각 대상마다:
@@ -69,10 +69,23 @@ ${list}
    - 본문 최상단에 "원문 번역 게시물" 콜아웃(원문 링크 명시).
    - **VitePress 정리**: \`> [!TIP]\`/\`[!INFO]\`/\`[!WARNING]\` → 블로그 콜아웃(\`<div class="info-box note" markdown="1">\`)로 변환. \`<mission-meta />\`·\`<analytics-tag .../>\` 등 커스텀 컴포넌트 제거. 제목 앵커 \`{#...}\` 제거. 상대 링크(\`../02-.../index.md\`)는 제거하거나 원문 절대 URL로.
    - 이미지는 이미 \`assets/academy/<slug>/\` 에 다운로드됨(manifest의 images 참조). 기존 컨벤션대로 \`<figure class="screenshot"><img src="{{ '/assets/academy/<slug>/<file>' | relative_url }}" ...><figcaption>...</figcaption></figure>\` 로 삽입.
-> ⚠️ **이 PR 은 \`_chapters/academy-*.md\` (번역본)만 생성/수정한다.**
+3. **\`_chapters_en/academy-<slug>.md\` 생성(영어, 파일명은 한국어판과 완전히 동일).**
+   - 한국어판을 되옮기지 말고 **원문(EN)을 그대로 살려** 작성한다. VitePress 정리 규칙은 동일하게 적용.
+   - frontmatter 에 \`lang: en\` 필수. \`order\`·\`category\`·\`parent\`·\`is_parent\`·\`source_*\` 는 한국어판과 **동일한 값**.
+     (하나라도 어긋나면 한/영 사이드바 계층·정렬이 달라진다.)
+   - 본문 최상단 콜아웃은 영문으로:
+     \`**Translated article** — This article is based on [<원문 제목>](<source_url>) from the [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/). The original wording takes precedence.\`
+   - 이미지는 한국어판과 **같은 \`assets/academy/<slug>/\` 경로**를 쓰고 \`alt\`·\`figcaption\` 만 영문으로.
+   - 사이트 내부 링크는 \`/en\` 접두사: \`/chapters/academy-<slug>/\` → \`/en/chapters/academy-<slug>/\` (슬러그 자체는 변경 금지).
+4. \`node tools/i18n/check-parity.mjs\` 로 한/영 짝을 확인한다.
+
+> ⚠️ **이 PR 은 \`_chapters/academy-*.md\` 와 \`_chapters_en/academy-*.md\` (번역본)만 생성/수정한다.**
 > \`tools/academy-sync/state.json\`, \`incoming/_manifest.json\`, \`incoming/<slug>.md\` 는 **절대 수정·삭제하지 마.**
 > 이 파일들은 매일 도는 \`academy-sync\` 스케줄이 master 에서 갱신하므로, PR 이 건드리면 충돌한다.
 > 상태 반영(state 갱신·manifest 항목 제거·incoming 삭제)은 **머지 후 \`reconcile.mjs\` 가 master 에서 자동 수행**한다.
+
+> ⚠️ **한 벌만 만들면 안 된다.** \`_chapters/\` 와 \`_chapters_en/\` 에 **같은 파일명**으로 둘 다 있어야
+> 언어 토글이 동작하고 \`i18n-parity\` 체크가 통과한다.
 
 완료되면 이 이슈를 참조하는 PR 을 열어줘.
 

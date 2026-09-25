@@ -1,21 +1,18 @@
 {%- comment -%}
-  가로 스크롤 카드 섹션. 파라미터: include.key(category), include.title
+  가로 스크롤 카드 섹션. 파라미터: include.key(category), include.title(선택 — 없으면 i18n 사전)
   academy-labs는 개별 랩(자식)을, 그 외는 상위/독립 항목을 카드로 렌더한다.
 {%- endcomment -%}
+{% assign lang = page.lang | default: site.default_lang | default: 'ko' %}
+{% assign t = site.data.i18n[lang] %}
 {% assign key = include.key %}
-{% assign items = site.chapters | where: "category", key | sort: "order" %}
-{% case key %}
-  {% when 'newcslab' %}{% assign clabel = '핸즈온 워크샵' %}
-  {% when 'academy-courses' %}{% assign clabel = 'Agent Academy · 코스' %}
-  {% when 'academy-labs' %}{% assign clabel = 'Agent Academy · 랩' %}
-  {% when 'cowork' %}{% assign clabel = 'Copilot Cowork' %}
-  {% when 'scout' %}{% assign clabel = 'Microsoft Scout' %}
-  {% else %}{% assign clabel = key %}
-{% endcase %}
+{% if lang == 'en' %}{% assign hs_pool = site.chapters_en %}{% else %}{% assign hs_pool = site.chapters %}{% endif %}
+{% assign items = hs_pool | where: "category", key | sort: "order" %}
+{% assign clabel = t.hscroll[key] | default: t.cat[key] | default: key %}
+{% assign block_title = include.title | default: clabel %}
 
 <div class="hscroll-block">
   <div class="hscroll-head">
-    <h3 class="hscroll-title">{{ include.title }}</h3>
+    <h3 class="hscroll-title">{{ block_title }}</h3>
   </div>
   <div class="hscroll-row">
     {% assign shown = 0 %}
@@ -56,6 +53,6 @@
         </a>
       {% endif %}
     {% endfor %}
-    {% if shown == 0 %}<div class="hscroll-empty">콘텐츠 준비 중</div>{% endif %}
+    {% if shown == 0 %}<div class="hscroll-empty">{{ t.section_empty }}</div>{% endif %}
   </div>
 </div>

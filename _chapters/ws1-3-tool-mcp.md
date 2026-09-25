@@ -66,20 +66,20 @@ parent: "ws1"
 
 ### 1. 메일 발송 도구 추가
 에이전트 설정창에서 [도구] - [+ 도구 추가] 를 선택합니다.
-<img width="970" height="589" alt="image" src="https://github.com/user-attachments/assets/4ff4e0b4-8fd1-4bb0-9c79-9097c94156ff" />
+<img width="970" height="589" alt="image" src="{{ '/assets/image/github-attachments/4ff4e0b4-8fd1-4bb0-9c79-9097c94156ff.png' | relative_url }}" />
 
 모던 컨텍스트 프로토콜에서 "이메일 관리 MCP 서버"를 선택합니다. 
-<img width="543" height="396" alt="image" src="https://github.com/user-attachments/assets/9d324745-f91b-4588-9729-df8fa9cb315e" />
+<img width="543" height="396" alt="image" src="{{ '/assets/image/github-attachments/9d324745-f91b-4588-9729-df8fa9cb315e.png' | relative_url }}" />
 
 도구를 선택하면, Office 365 outlook 커넥터를 이용하기 위한 OAuth 연결 창이 뜨며, <br>
 [새 연결 만들기]를 통해 접속한 계정의 로그인 정보를 입력후 만들기를 클릭합니다. <br>
-<img width="548" height="406" alt="image" src="https://github.com/user-attachments/assets/d4260866-c5ea-48fb-aaad-3a9d9f2552ec" />
+<img width="548" height="406" alt="image" src="{{ '/assets/image/github-attachments/d4260866-c5ea-48fb-aaad-3a9d9f2552ec.png' | relative_url }}" />
 <br> 
-<img width="1022" height="738" alt="image" src="https://github.com/user-attachments/assets/599eb77c-27b3-4ca8-834e-47078913cd4d" />
+<img width="1022" height="738" alt="image" src="{{ '/assets/image/github-attachments/599eb77c-27b3-4ca8-834e-47078913cd4d.png' | relative_url }}" />
 <br> <br> 
 연결이 완료되면 아래 화면과 같이 연결된 계정 정보와 초록색 아이콘이 표시됩니다. <br> 
 [추가 및 구성] 을 선택하여, 메일 발송 커넥터의 상세 설정으로 이동합니다. <br> 
-<img width="1044" height="768" alt="image" src="https://github.com/user-attachments/assets/a669d0f8-228c-429f-88d2-93c7351db777" />
+<img width="1044" height="768" alt="image" src="{{ '/assets/image/github-attachments/a669d0f8-228c-429f-88d2-93c7351db777.png' | relative_url }}" />
 <br> 
 <br> 
 <br> 
@@ -94,7 +94,7 @@ parent: "ws1"
 <br> 
 <br> 
 다음으로 추가 세부 정보창을 열어 인증 정책을 **[제작자 제공 자격 증명]** 으로 변경합니다.
-<img width="1056" height="694" alt="image" src="https://github.com/user-attachments/assets/e9ab862e-b6bf-473b-969f-bf1e92c9c5c6" />
+<img width="1056" height="694" alt="image" src="{{ '/assets/image/github-attachments/e9ab862e-b6bf-473b-969f-bf1e92c9c5c6.png' | relative_url }}" />
 
 기본적으로 "최종 사용자 자격 증명" 으로 선택되어 있으며, 이 경우 에이전트를 사용하는 사용자가 액션을 이용할 때 로그인 절차를 1회 거치게 되어있습니다.
 
@@ -110,7 +110,7 @@ MCP서버에서 제공되는 도구들 중, 실제로 사용할 도구들만 활
 
 도구에서 기능 전체 기능 활성화 옵션을 끄게되면, 각각의 도구들만 선택적으로 허용할 수 있습니다. <br>
 이번 시나리오에서는 메일 발송만 필요하기 때문에 SendEmail 도구 이외에 다른 기능은 모두 비활성화 처리 합니다. <br>
-<img width="1055" height="980" alt="image" src="https://github.com/user-attachments/assets/fc646c29-01d3-45bb-a25f-9c8670385adf" />
+<img width="1055" height="980" alt="image" src="{{ '/assets/image/github-attachments/fc646c29-01d3-45bb-a25f-9c8670385adf.png' | relative_url }}" />
 
 이후 상단의 **저장** 버튼을 클릭하면 이메일 발송도구가 준비되었으며,
 다음은 에이전트가 메일을 발송할 때, 어떻게 보내야하는지에 대한 지침을 작성하도록 합니다.
@@ -123,7 +123,7 @@ MCP서버에서 제공되는 도구들 중, 실제로 사용할 도구들만 활
 
 따라서, 다시 **개요**로 돌아가, 추가된 도구에 대한 지침을 입력해 주도록 합니다.
 
-<img width="1094" height="828" alt="image" src="https://github.com/user-attachments/assets/0e13eae5-14b5-4374-9788-b815e090596e" />
+<img width="1094" height="828" alt="image" src="{{ '/assets/image/github-attachments/0e13eae5-14b5-4374-9788-b815e090596e.png' | relative_url }}" />
 
 
 지침 내 1) 지원 능력 파트아래에 추가
@@ -155,12 +155,12 @@ MCP서버에서 제공되는 도구들 중, 실제로 사용할 도구들만 활
 식기세척기 제품군들에 대해 뉴스레터를 만들어서 **[메일 주소]** 에게 메일로 보내줘
 ```
 Copilot Studio 테스트 화면
-<img width="1704" height="1259" alt="image" src="https://github.com/user-attachments/assets/1b8124ba-fd06-4167-877a-22ab78461c49" />
+<img width="1704" height="1259" alt="image" src="{{ '/assets/image/github-attachments/1b8124ba-fd06-4167-877a-22ab78461c49.png' | relative_url }}" />
 
 > 지침에 따라 맞추어 문서 형식과 초안을 만들어 제안후 메일을 발송
 
 메일 수신 화면
-<img width="1544" height="1528" alt="image" src="https://github.com/user-attachments/assets/a9879c4f-8caf-47b0-935d-47e89498d4a3" />
+<img width="1544" height="1528" alt="image" src="{{ '/assets/image/github-attachments/a9879c4f-8caf-47b0-935d-47e89498d4a3.png' | relative_url }}" />
 
 
 ---

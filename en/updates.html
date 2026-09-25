@@ -1,0 +1,18 @@
+---
+layout: default
+title: "Tech Updates"
+permalink: /en/updates/
+lang: en
+---
+
+<div class="home-section-head">
+  <h1 class="home-section-title">Tech Updates</h1>
+  <p class="home-section-sub">The latest technical updates across the Microsoft Copilot and agent ecosystem, newest first.</p>
+</div>
+
+{% assign posts = site.chapters_en | where: "category", "updates" | sort: "date" | reverse %}
+{% if posts.size == 0 %}
+  <p class="home-section-sub">No posts published yet. Check back soon.</p>
+{% else %}
+  {% include card-feed.html posts=posts %}
+{% endif %}

@@ -204,9 +204,6 @@ public class SayHello
 
 8. 로컬 테스트: `F5`를 누르고 프롬프트에서 **"Use Local Emulator"** 를 선택하면 Azure Blob Storage용 로컬 에뮬레이터(Azurite)가 세팅됩니다. `AzureWebJobStorage` 연결 확인 실패가 뜨면 **"Run Emulator"** 를 클릭해 시작합니다. 빌드 완료를 기다립니다.
 
-<figure class="screenshot">
-  <img src="{{ '/assets/newcs/labs/newcslab3/p1-03.png' | relative_url }}" alt="MCP over VNet 실습 스크린샷" loading="lazy">
-</figure>
 9. 로컬 서버가 실행되는 것을 확인합니다.
 
 <figure class="screenshot">

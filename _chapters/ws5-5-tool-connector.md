@@ -31,25 +31,25 @@ MCP서버의 경우 각 도구의 설명이나 Input 변수에 대한 설명이 
 ### 팀즈 채널에 메세지 게시 도구 추가
 
 마찬가지로 **개요** 에서 **+도구 추가** 를 선택합니다.
-<img width="1186" height="686" alt="image" src="https://github.com/user-attachments/assets/68cf3d4d-bdf0-48a0-bfe7-28a368670d33" />
+<img width="1186" height="686" alt="image" src="{{ '/assets/image/github-attachments/68cf3d4d-bdf0-48a0-bfe7-28a368670d33.png' | relative_url }}" />
 <br><br>
 추천 또는 도구 검색에서** Microsoft Teams**를 검색하여 선택합니다.
-<img width="746" height="464" alt="image" src="https://github.com/user-attachments/assets/f72d7d76-da73-43a1-8845-adf372f94009" />
+<img width="746" height="464" alt="image" src="{{ '/assets/image/github-attachments/f72d7d76-da73-43a1-8845-adf372f94009.png' | relative_url }}" />
 <br><br>
 
 팀즈 도구 모음중에, **채팅 또는 채널에서 메세지 게시** 도구를 선택합니다.
-<img width="715" height="455" alt="image" src="https://github.com/user-attachments/assets/56fda9c2-bdc6-4214-b817-38e500dacacb" />
+<img width="715" height="455" alt="image" src="{{ '/assets/image/github-attachments/56fda9c2-bdc6-4214-b817-38e500dacacb.png' | relative_url }}" />
 <br><br>
 
 이전과 마찬가지로 연결이 안되어 있을 경우, **새 연결 만들기**를 통해 에이전트와 도구를 연결하고 <br>
 **추가 및 구성** 을 선택에 도구를 추가 및 설정을 계속합니다. <br>
 
-<img width="697" height="451" alt="image" src="https://github.com/user-attachments/assets/6fe1a004-f626-421f-9ac2-d569287f7b1d" />
+<img width="697" height="451" alt="image" src="{{ '/assets/image/github-attachments/6fe1a004-f626-421f-9ac2-d569287f7b1d.png' | relative_url }}" />
 <br><br><br>
 ### 도구 설정
 도구 추가가 완료되었으면 아래와같은 세부정보 페이지가 표시되며, 
 이전 MCP 서버 도구와 다르게 이름, 설명, 입력 등에 대한 정보를 설정할 수 있음을 볼 수 있습니다.
-<img width="1111" height="1101" alt="image" src="https://github.com/user-attachments/assets/44b46518-e066-4c2e-beda-d70959129104" />
+<img width="1111" height="1101" alt="image" src="{{ '/assets/image/github-attachments/44b46518-e066-4c2e-beda-d70959129104.png' | relative_url }}" />
 <br><br>
 여기서 설명, 입력, 완료 설정들을 아래와 같이 변경 합니다.
 
@@ -57,7 +57,7 @@ MCP서버의 경우 각 도구의 설명이나 Input 변수에 대한 설명이 
 ```
 사용자가 팀즈, 팀즈 채널에 게시물을 게시,등록을 요청할 경우 이 도구를 이용합니다.
 ```
-<img width="1021" height="529" alt="image" src="https://github.com/user-attachments/assets/43630d5b-9f26-48c9-9a45-961f8983dafb" />
+<img width="1021" height="529" alt="image" src="{{ '/assets/image/github-attachments/43630d5b-9f26-48c9-9a45-961f8983dafb.png' | relative_url }}" />
 
 <br><br>
 
@@ -67,13 +67,13 @@ MCP서버의 경우 각 도구의 설명이나 Input 변수에 대한 설명이 
 입력 탭에서 다음을 사용하여 채우기 필드의 값을 선택하면 다음과 같이 AI로 동적으로 채우기, 사용자 지정값 두개중 하나를 선택 할 수 있습니다.
 <br>
 Post as, Post in 모두 사용자 지정값을 선택합니다. <br>
-<img width="495" height="239" alt="image" src="https://github.com/user-attachments/assets/d9228dec-3709-4f7a-b574-40827b817c54" />
+<img width="495" height="239" alt="image" src="{{ '/assets/image/github-attachments/d9228dec-3709-4f7a-b574-40827b817c54.png' | relative_url }}" />
 <br><br>
 이후 값을 선택하면 다음과 같이 선택할수 있는 옵션이 나오며, <br>
 Post as에는 User를, Post in에는 Channel을 선택합니다.<br>
-<img width="443" height="203" alt="image" src="https://github.com/user-attachments/assets/cb2db0c1-b8ec-4483-bb1b-ad11e050d616" />
+<img width="443" height="203" alt="image" src="{{ '/assets/image/github-attachments/cb2db0c1-b8ec-4483-bb1b-ad11e050d616.png' | relative_url }}" />
 <br>
-<img width="469" height="233" alt="image" src="https://github.com/user-attachments/assets/cdad9ffd-40c2-4a3e-ae3b-1dd5f780c2db" />
+<img width="469" height="233" alt="image" src="{{ '/assets/image/github-attachments/cdad9ffd-40c2-4a3e-ae3b-1dd5f780c2db.png' | relative_url }}" />
 <br><br>
 Post in이 채널로 선택이 되면, Team, Channel, Message 라는 새로운 입력 변수가 추가 됩니다. <br>
 팀과 채널은 팀즈 게시물을 업로드한 위치를 지정하는 변수이며, 메세지는 게시물의 본문입니다. <br>
@@ -85,12 +85,12 @@ Message는 AI로 **동적으로 채우기** 값을 그대로 유지합니다.
 
 기본적을 Team과 Channel은 자동으로 나에게 할당된 팀과 채널이 조회가 되어야 하는게 정상이나,
 아직 Preview 단계로 정상적으로 ID가 표시되지 않는 문제가 있습니다.
-<img width="987" height="426" alt="image" src="https://github.com/user-attachments/assets/8c594558-feaa-47d5-9f21-3a5855daaac8" />
+<img width="987" height="426" alt="image" src="{{ '/assets/image/github-attachments/8c594558-feaa-47d5-9f21-3a5855daaac8.png' | relative_url }}" />
 
 따라서 팀즈 채널 ID를 조회하기 위해 아래와 같이 확인해 보도록 합니다. <br>
 먼저 팀즈를 접속합니다 [**팀즈 접속 링크**](https://teams.microsoft.com/v2/) <br>
 다음으로 게시글을 올릴 채널을 선택해 ... 을 클릭한 뒤 링크 복사를 선택 합니다.<br>
-<img width="335" height="334" alt="image" src="https://github.com/user-attachments/assets/e4fb9e44-c9c0-4218-86f7-be8ef92d0c1e" />
+<img width="335" height="334" alt="image" src="{{ '/assets/image/github-attachments/e4fb9e44-c9c0-4218-86f7-be8ef92d0c1e.png' | relative_url }}" />
 <br><br>
 
 복사를 한 뒤, 메모장에 붙여넣으시면 아래와 같은 형식의 URL이 표시됩니다
@@ -107,7 +107,7 @@ channel/ 뒤에 19% 로 시작하는 하여 .tacv2로 끝나는 값이 채널ID 
 ```
 
 이 값을 추출하여 팀과 채널값에 입력해 줍니다.
-<img width="876" height="513" alt="image" src="https://github.com/user-attachments/assets/d9d503c6-d4d7-4073-ac96-d79b562ab38e" />
+<img width="876" height="513" alt="image" src="{{ '/assets/image/github-attachments/d9d503c6-d4d7-4073-ac96-d79b562ab38e.png' | relative_url }}" />
 <br><br>
 
 이후 저장을 하면 도구 설정이 완료 됩니다.
@@ -116,7 +116,7 @@ channel/ 뒤에 19% 로 시작하는 하여 .tacv2로 끝나는 값이 채널ID 
 
 도구 추가가 완료되었으면, 다시 개요로 돌아가서  지침에 아래와 같이 게시물 생성 작업 플로우를 작성해 줍니다.
 <br>
-<img width="1071" height="709" alt="image" src="https://github.com/user-attachments/assets/8912e14c-8630-49ad-93a4-252baa402c76" />
+<img width="1071" height="709" alt="image" src="{{ '/assets/image/github-attachments/8912e14c-8630-49ad-93a4-252baa402c76.png' | relative_url }}" />
 <br><br>
 
 지침 내 ## 단계별 지침 아래에 추가
@@ -140,7 +140,7 @@ channel/ 뒤에 19% 로 시작하는 하여 .tacv2로 끝나는 값이 채널ID 
 ```
 팀즈 채널에 안녕하세요 만나서 반갑습니다라고 게시해줘
 ```
-<img width="1697" height="1270" alt="image" src="https://github.com/user-attachments/assets/d15802d6-1e09-4948-862a-3dbc7dff1ec8" />
+<img width="1697" height="1270" alt="image" src="{{ '/assets/image/github-attachments/d15802d6-1e09-4948-862a-3dbc7dff1ec8.png' | relative_url }}" />
 
 
 ----

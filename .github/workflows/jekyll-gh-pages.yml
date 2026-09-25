@@ -30,6 +30,14 @@ jobs:
           source: ./
           destination: ./_site
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check rendered image URLs
+        run: node tools/check-images.mjs --site _site --remote
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

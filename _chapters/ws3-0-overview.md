@@ -152,7 +152,7 @@ is_parent: true
 | ⚙️ | [Step 1. 에이전트 생성]({{ '/chapters/ws3-1-create-agent/' | relative_url }}) | 에이전트 생성 및 지침 작성 |
 | 📂 | [Step 2. 지식 소스 연결]({{ '/chapters/ws3-2-knowledge/' | relative_url }}) | 지식 소스 연결 |
 | 📧 | [Step 3. Work IQ MCP]({{ '/chapters/ws3-3-workiq-mcp/' | relative_url }}) | Work IQ MCP 도구 추가 |
-| 📱 | [Step 4. ThinQ MCP]({{ '/chapters/ws3-4-thinq-mcp/' | relative_url }}) | ThinQ MCP 도구 추가 |
+| 📱 | [Step 4. 외부 MCP 도구 추가]({{ '/chapters/ws3-4-external-mcp/' | relative_url }}) | 외부 MCP 도구 추가 |
 | 🤖 | [Step 5. AI Prompt 도구]({{ '/chapters/ws3-5-ai-prompt/' | relative_url }}) | AI Prompt 도구 추가 |
 | 📊 | [Step 6. Excel 필터링]({{ '/chapters/ws3-6-excel-filter/' | relative_url }}) | Excel 데이터 필터링 (심화) |
 | 🚀 | [Step 7. Teams 배포]({{ '/chapters/ws3-7-teams-deploy/' | relative_url }}) | Teams 배포 |

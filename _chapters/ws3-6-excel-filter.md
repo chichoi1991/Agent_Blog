@@ -86,7 +86,7 @@ Excel 커넥터(테이블에 있는 행 나열)을 통해 필터링 기반 데�
 | `설명` | 서울시 지역별 전력사용량에 대한 분석이 필요하여 시계열 데이터 원본을 조회할 때 사용합니다.
  | 
 
-![1]({{ site.baseurl }}/assets/image/ws3/6-2)
+![1]({{ '/assets/image/ws3/6-2.png' | relative_url }})
 
 
 
@@ -152,7 +152,7 @@ Excel 데이터를 받아 사용자 맞춤형 응답을 생성하는 별도 AI P
 ```
 모델응답창 우측에 출력을 기본 텍스트에서 JSON으로 변경합니다.
 ```
-![1](../assets/image/ws3/6-8.png)
+![1]({{ '/assets/image/ws3/6-8.png' | relative_url }})
 
 
 **중요! 변수 입력 방법** <br>

@@ -46,8 +46,8 @@ Copilot studio의 커스텀 엔진 에이전트에서는 Microsoft 365 내의 �
 | **API 기반** | 외부 HTTP API, YAML 정의 | OnKnowledgeRequested 트리거를 통해 실시간 API 호출 가능 |
 
 
-<img width="1023" height="742" alt="image" src="https://github.com/user-attachments/assets/b01a1a1c-75cd-46ec-9daa-015792a8f561" />
-<img width="1023" height="740" alt="image" src="https://github.com/user-attachments/assets/566c5a93-4c17-4a44-a229-35d3eb43ca51" />
+<img width="1023" height="742" alt="image" src="{{ '/assets/image/github-attachments/b01a1a1c-75cd-46ec-9daa-015792a8f561.png' | relative_url }}" />
+<img width="1023" height="740" alt="image" src="{{ '/assets/image/github-attachments/566c5a93-4c17-4a44-a229-35d3eb43ca51.png' | relative_url }}" />
 
 ---
 
@@ -56,7 +56,7 @@ Copilot studio의 커스텀 엔진 에이전트에서는 Microsoft 365 내의 �
 먼저 에이전트 개요에서 스크롤을 내리면 참조자료 탭이 있습니다. <br>
 
 쉐어포인트의 데이터를 참조할 수 있도록 **+참조 자료 추가** 를 클릭합니다. <br>
-<img width="512" height="254" alt="image" src="https://github.com/user-attachments/assets/5e796dd8-8272-4486-b465-028dbdcf5f4e" />
+<img width="512" height="254" alt="image" src="{{ '/assets/image/github-attachments/5e796dd8-8272-4486-b465-028dbdcf5f4e.png' | relative_url }}" />
 <br><br>
 
 > 참조자료 하단의 **웹 검색** 기능은  Agent는 Bing search 정보를 기반으로 사용자의 질문에 답변을 할 수 있도록 설정하는 선택 옵션입니다. <br>
@@ -66,14 +66,14 @@ Copilot studio의 커스텀 엔진 에이전트에서는 Microsoft 365 내의 �
 
 이번 실습은 쉐어포인트의 데이터를 참고할 것이므로, SharePoint를 선택합니다. <br>
 
-<img width="554" height="404" alt="image" src="https://github.com/user-attachments/assets/05fe197d-56ef-4af7-b481-2f186c10be93" />
+<img width="554" height="404" alt="image" src="{{ '/assets/image/github-attachments/05fe197d-56ef-4af7-b481-2f186c10be93.png' | relative_url }}" />
 
 
 <br>
 
 이후 쉐어포인트 사이트 주소를 직접 입력하거나, **항목 찾아보기** 를 클릭하여 최근에 접근한 사이트를 선택합니다.
 
-<img width="538" height="392" alt="image" src="https://github.com/user-attachments/assets/87cc18ab-1ed9-444d-ba8e-dc86efe8ff84" />
+<img width="538" height="392" alt="image" src="{{ '/assets/image/github-attachments/87cc18ab-1ed9-444d-ba8e-dc86efe8ff84.png' | relative_url }}" />
 
 이번 실습은 쉐어포인트 사이트 또는 팀즈 채널의 특정 라이브러리 폴더 내부 파일만 참고할 예정이기에 쉐어포인트 폴더의 path를 입력합니다.
 
@@ -81,12 +81,12 @@ Copilot studio의 커스텀 엔진 에이전트에서는 Microsoft 365 내의 �
 이후 추가할 폴더 라이브러리를 이동, 우측에 **세부 정보** 를 클릭하여 오른쪽 사이드에 세부 정보 사이드 패널을 활성화시킵니다. <br>
 마지막으로 하단의 **경로** 를 복사하면 라이브러리 폴더의 위치를 확보 할 수 있습니다.
 
-<img width="1380" height="1278" alt="image" src="https://github.com/user-attachments/assets/b4e30695-2f74-4c3d-a374-cdf90102e24d" />
+<img width="1380" height="1278" alt="image" src="{{ '/assets/image/github-attachments/b4e30695-2f74-4c3d-a374-cdf90102e24d.png' | relative_url }}" />
 <br>
 항목 찾기를 통해 사이트, 라이브러리를 선태하거나  사이트 입력창 확보한 링크를 붙여넣고 추가를 하면 아래와 같이 표시가 됩니다. <br>
 > 실습은 제공되는 SpecSheet 폴더가 저장된 쉐어포인트 사이트 또는 팀즈 채널을 선택합니다.
 
-<img width="1092" height="792" alt="image" src="https://github.com/user-attachments/assets/02429176-066d-47c3-b1e9-f16f1fbe89f4" />
+<img width="1092" height="792" alt="image" src="{{ '/assets/image/github-attachments/02429176-066d-47c3-b1e9-f16f1fbe89f4.png' | relative_url }}" />
 <br>
 
 마지막으로 설명란에 아래 내용을 추가하여 이 참조자료가 무엇에 관한 자료인지 설명을 보강 합니다.
@@ -99,7 +99,7 @@ Copilot studio의 커스텀 엔진 에이전트에서는 Microsoft 365 내의 �
 
 이후 **"에이전트 추가"** 버튼을 클릭하면 에이전트는 쉐어포인트 사이트의 PDF파일을 기반으로 답변을 할 수 있게 됩니다.
 
-<img width="1720" height="1392" alt="image" src="https://github.com/user-attachments/assets/ac38d914-1667-4872-a022-2a63d237f5f4" />
+<img width="1720" height="1392" alt="image" src="{{ '/assets/image/github-attachments/ac38d914-1667-4872-a022-2a63d237f5f4.png' | relative_url }}" />
 
 <br>
 <br>

@@ -39,7 +39,7 @@ Teams에 에이전트를 배포하기 전, 아래 체크리스트를 확인합�
 
 에이전트 개요 화면 우측 상단의 **게시** 버튼을 클릭합니다.
 
-<img width="854" height="391" alt="image" src="https://github.com/user-attachments/assets/1bdf16ac-b7ce-470d-b89f-c9c48f7fcf91" />
+<img width="854" height="391" alt="image" src="{{ '/assets/image/github-attachments/1bdf16ac-b7ce-470d-b89f-c9c48f7fcf91.png' | relative_url }}" />
 
 <br>
 
@@ -52,7 +52,7 @@ Teams에 에이전트를 배포하기 전, 아래 체크리스트를 확인합�
 
 게시 완료까지 1~2분 소요될 수 있습니다.
 
-<img width="1065" height="549" alt="image" src="https://github.com/user-attachments/assets/fa5f499a-37cf-4f5e-a922-de21133dc27d" />
+<img width="1065" height="549" alt="image" src="{{ '/assets/image/github-attachments/fa5f499a-37cf-4f5e-a922-de21133dc27d.png' | relative_url }}" />
 
 <br>
 

@@ -8,10 +8,19 @@ kramdown:
 plugins:
   - jekyll-seo-tag
 
+# 기본 언어. 프론트매터에 lang 이 없으면 이 값으로 간주한다.
+default_lang: ko
+
 collections:
+  # 한국어 본문(기본). URL: /chapters/:name/
   chapters:
     output: true
     permalink: /:collection/:name/
+  # 영어 본문. 파일명(slug)은 한국어와 동일하게 유지해야 언어 토글이 짝을 찾는다.
+  # URL: /en/chapters/:name/
+  chapters_en:
+    output: true
+    permalink: /en/chapters/:name/
 
 defaults:
   - scope:
@@ -19,48 +28,78 @@ defaults:
       type: "chapters"
     values:
       layout: "chapter"
+      lang: "ko"
+  - scope:
+      path: ""
+      type: "chapters_en"
+    values:
+      layout: "chapter"
+      lang: "en"
   - scope:
       path: ""
     values:
       layout: "default"
+      lang: "ko"
+  # en/ 아래의 일반 페이지는 영어로 렌더한다(위의 기본값을 덮어씀).
+  - scope:
+      path: "en"
+    values:
+      layout: "default"
+      lang: "en"
 
 # Sidebar navigation sections (그룹 지원: {group, sections:[...]} 또는 {key, title})
+# title_en / group_en 은 영문판 사이드바에서 사용한다. listing 은 영문판에서 /en 접두사가 붙는다.
 nav_sections:
   - key: agent-resources
     title: "Microsoft Agent 통합 리소스"
+    title_en: "Microsoft Agent Resources"
     listing: /agent-resources/
   - key: newcs
     title: "New Copilot Studio (CLI Agent)"
+    title_en: "New Copilot Studio (CLI Agent)"
   - key: newcslab
     title: "핸즈온 워크샵"
+    title_en: "Hands-on Workshops"
   - key: updates
     title: "기술 업데이트"
+    title_en: "Tech Updates"
     listing: /updates/
   - key: catblog
     title: "CAT 블로그 업데이트"
+    title_en: "CAT Blog Updates"
     listing: /catblog/
   - key: academy-courses
     title: "Agent Academy · 코스"
+    title_en: "Agent Academy · Courses"
   - key: academy-labs
     title: "Agent Academy · 랩"
+    title_en: "Agent Academy · Labs"
   - key: cowork
     title: "Copilot Cowork"
+    title_en: "Copilot Cowork"
   - key: scout
     title: "Microsoft Scout"
+    title_en: "Microsoft Scout"
     listing: /scout/
   - key: m365
     title: "Microsoft 365"
+    title_en: "Microsoft 365"
     listing: /m365/
   - group: "Copilot Studio Classic"
+    group_en: "Copilot Studio Classic"
     sections:
       - key: guide
         title: "Copilot Studio 실무 가이드"
+        title_en: "Copilot Studio Practical Guide"
       - key: workshop
         title: "핸즈온 워크샵 (Classic)"
+        title_en: "Hands-on Workshops (Classic)"
       - key: special
         title: "특별 워크샵"
+        title_en: "Special Workshops"
   - key: resources
     title: "추천 사이트"
+    title_en: "Recommended Sites"
     listing: /resources/
 
 # Exclude dev/handoff docs from the built site

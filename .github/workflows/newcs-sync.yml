@@ -107,6 +107,32 @@ jobs:
         if: steps.src.outputs.skip != 'true'
         run: rm -rf _src
 
+      # 변환기는 한국어 원고만 결정적으로 변환한다(_chapters/newcs*.md).
+      # 영문판(_chapters_en/newcs*.md)은 번역이 필요하므로 여기서 누락분을 뽑아
+      # PR 본문에 체크리스트로 남긴다. 실제 차단은 i18n-parity 워크플로가 한다.
+      - name: Detect newcs chapters missing an English counterpart
+        id: parity
+        if: steps.src.outputs.skip != 'true'
+        run: |
+          node tools/i18n/check-parity.mjs || true
+          MISSING=""
+          for f in _chapters/newcs*.md; do
+            [ -e "$f" ] || continue
+            base=$(basename "$f")
+            if [ ! -f "_chapters_en/$base" ]; then
+              MISSING="${MISSING}- [ ] \`_chapters_en/${base}\` 영문판 작성"$'\n'
+            fi
+          done
+          {
+            echo "missing<<PARITY_EOF"
+            if [ -z "$MISSING" ]; then
+              echo "- 없음 — 모든 newcs 챕터에 영문판이 있습니다."
+            else
+              printf '%s' "$MISSING"
+            fi
+            echo "PARITY_EOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Create Pull Request
         if: steps.src.outputs.skip != 'true'
         uses: peter-evans/create-pull-request@v6
@@ -117,12 +143,22 @@ jobs:
           title: "Sync New Copilot Studio chapters from source"
           body: |
             소스 문서 변경을 `tools/newcs-sync` 변환기로 자동 반영했습니다.
+            변환기는 **한국어판(`_chapters/newcs*.md`)만** 생성합니다.
 
             **검수 포인트**
             - [ ] 챕터 분할/순서가 의도와 맞는가
             - [ ] 콜아웃·표·코드블록 렌더링 정상
             - [ ] 스크린샷(assets/newcs) 누락 없음
             - [ ] (선택) AI 후처리로 표현을 다듬을 부분
+
+            **영문판(`_chapters_en/`) 작업 — 머지 전 필수**
+            아래 파일은 한국어판만 있고 영문판이 없습니다. 번역 규칙은
+            `.github/skills/newcs-sync/SKILL.md` 의 "영문판 규칙" 절을 따르세요.
+
+            ${{ steps.parity.outputs.missing }}
+
+            한/영 짝은 `node tools/i18n/check-parity.mjs` 로 확인할 수 있고,
+            `i18n parity` 체크가 이 PR 에서 자동으로 검사합니다.
 
             머지하면 GitHub Pages 배포가 자동 실행됩니다.
           labels: automated, newcs-sync

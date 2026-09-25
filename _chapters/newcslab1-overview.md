@@ -40,7 +40,7 @@ tags: ["New Copilot Studio", "New Work Flow"]
 </div>
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/00-scenario-overview.png' | relative_url }}" alt="시나리오 다이어그램 — SharePoint 폴더 → 참고자료/스킬 → 워크플로 → Teams 브리핑" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/00-scenario-overview.png' | relative_url }}" alt="시나리오 다이어그램 — SharePoint 폴더 → 참고자료/스킬 → 워크플로 → Teams 브리핑" loading="lazy">
   <figcaption>전체 흐름: SharePoint 보고자료 폴더 → 참고자료·스킬 → 워크플로 트리거 → Teams 브리핑</figcaption>
 </figure>
 
@@ -68,7 +68,7 @@ tags: ["New Copilot Studio", "New Work Flow"]
 - 테스트용 샘플 보고서 1~2개(PDF/Word) 준비.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/01-sharepoint-folder-1.png' | relative_url }}" alt="보고자료를 모을 SharePoint 폴더와 샘플 파일" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/01-sharepoint-folder-1.png' | relative_url }}" alt="보고자료를 모을 SharePoint 폴더와 샘플 파일" loading="lazy">
   <figcaption>보고자료를 모을 SharePoint 폴더#1 (예: Documents/보고자료)</figcaption>
 </figure>
 
@@ -109,7 +109,7 @@ tags: ["New Copilot Studio", "New Work Flow"]
 ```
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/02-create-agent-instructions.png' | relative_url }}" alt="에이전트 생성 다이얼로그와 지침 입력 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/02-create-agent-instructions.png' | relative_url }}" alt="에이전트 생성 다이얼로그와 지침 입력 화면" loading="lazy">
   <figcaption>새 에이전트 생성 + 지침 입력</figcaption>
 </figure>
 
@@ -133,13 +133,13 @@ tags: ["New Copilot Studio", "New Work Flow"]
 </div>
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint-1.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint.png-1.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy">
 
-  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint-2.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint.png-2.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy">
  
-  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint-3.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">  
+  <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint.png-3.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy">
   
-   <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint-4.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"> 
+   <img src="{{ '/assets/image/newcslab1/03-knowledge-sharepoint.png-4.png' | relative_url }}" alt="참고자료로 SharePoint 폴더와 OneDrive CEO 리스크 문서를 연결하는 화면" loading="lazy">
   <figcaption>참고자료에 SharePoint 보고자료 폴더 + OneDrive "CEO 리스크 포인트" Word 문서 연결</figcaption>
 </figure>
 
@@ -178,7 +178,7 @@ tags: ["New Copilot Studio", "New Work Flow"]
 </div>
 
 <figure class="screenshot">
-   <img src="{{ '/assets/image/newcslab1/04-Skill-Create-upload-1.png' | relative_url }}" alt="스킬을 생성하거나 zip파일로 된 패키지를 임포트하는 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"> 
+   <img src="{{ '/assets/image/newcslab1/04-Skill-Create-upload-1.png' | relative_url }}" alt="스킬을 생성하거나 zip파일로 된 패키지를 임포트하는 화면" loading="lazy">
   <figcaption> 스킬 탭을 선택하여 나만의 워크플로우를 구성 또는 사전에 작성된 스킬, 스킬 패키지를 업로드</figcaption>
 </figure>
 
@@ -205,7 +205,7 @@ tags: ["New Copilot Studio", "New Work Flow"]
 2. 디자인 스킬에는 브리핑 카드의 **고정 서식**을 직접 적지 말고 `design.md`(색 토큰·타이포·레이아웃·시그니처)에 모아 두고, SKILL.md는 "design.md를 따른다"고만 가리킵니다.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/04-skills-summary-keyword-design.png' | relative_url }}" alt="요약·키워드 추출·디자인 스킬 3개를 추가한 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/04-skills-summary-keyword-design-1.png' | relative_url }}" alt="요약·키워드 추출·디자인 스킬 3개를 추가한 화면" loading="lazy">
   <figcaption>요약 · 키워드/리스크 추출 · 브리핑 디자인 스킬 구성</figcaption>
 </figure>
 
@@ -229,8 +229,8 @@ tags: ["New Copilot Studio", "New Work Flow"]
 </div>
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/04b-tools-teams-mail-calendar.png' | relative_url }}" alt="Teams·Outlook(Mail)·Calendar 도구(MCP)를 연결한 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>도구 연결 — Teams(발송+검색) · Outlook/Mail · Calendar (맥락 분석)</figcaption>
+  <img src="{{ '/assets/newcs/3-tools-add.png' | relative_url }}" alt="Add a tool 대화상자에서 Microsoft Teams와 Office 365 Outlook을 선택하는 화면" loading="lazy">
+  <figcaption>참고 화면 — 다른 실습의 Add a tool 대화상자입니다. 이 실습의 Teams·Mail·Calendar 연결은 위 절차를 따릅니다.</figcaption>
 </figure>
 
 ---
@@ -249,12 +249,12 @@ tags: ["New Copilot Studio", "New Work Flow"]
 </div>
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/05-workflow-trigger.png' | relative_url }}" alt="폴더 파일 추가 트리거와 요약→키워드→맥락→디자인→Teams 발송 흐름" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/05-workflow-trigger.png' | relative_url }}" alt="폴더 파일 추가 트리거와 요약→키워드→맥락→디자인→Teams 발송 흐름" loading="lazy">
   <figcaption>폴더 감지 트리거 → M365 Copilot(WorkIQ) 컨텍스트 보강 → 브리핑 에이전트 호출</figcaption>
 </figure>
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/05-workflow-trigger-2.png' | relative_url }}" alt="브리핑 에이전트 호출 노드 — 새 보고자료 업로드 알림과 맥락 데이터를 전달" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/05-workflow-trigger-2.png' | relative_url }}" alt="브리핑 에이전트 호출 노드 — 새 보고자료 업로드 알림과 맥락 데이터를 전달" loading="lazy">
   <figcaption>마지막 노드: 브리핑 에이전트 호출 — 업로드 알림·맥락 데이터를 넘겨 브리핑 생성·발송</figcaption>
 </figure>
 
@@ -269,7 +269,7 @@ tags: ["New Copilot Studio", "New Work Flow"]
 3. 요약 길이·키워드 구분·CEO 관점 반영·맥락 보강·디자인 서식이 의도대로인지 점검하고, 어긋나면 지침/스킬/CEO 문서를 다듬습니다.
 
 <figure class="screenshot">
-  <img src="{{ '/assets/image/newcslab1/06-teams-briefing-result.png' | relative_url }}" alt="Teams에 도착한 브리핑 카드 결과 화면" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/image/newcslab1/06-teams-briefing-result.png' | relative_url }}" alt="Teams에 도착한 브리핑 카드 결과 화면" loading="lazy">
   <figcaption>Teams에 자동 도착한 브리핑 결과</figcaption>
 </figure>
 

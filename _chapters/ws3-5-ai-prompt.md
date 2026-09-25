@@ -84,8 +84,8 @@ HTML_Response_Generator
 
 
 ## 입력 정보
-- 카드 유형: {{card_type}}
-- 내용: {{content}}
+- 카드 유형: {% raw %}{{card_type}}{% endraw %}
+- 내용: {% raw %}{{content}}{% endraw %}
 
 ## 카드 유형별 스타일 규칙
 - info: 파란색 헤더 (#0078D4), 일반 정보 표시
@@ -107,79 +107,79 @@ HTML_Response_Generator
   
   <!-- 헤더 -->
   <div style="background-color: #e3f2fd; padding: 25px; border-radius: 10px; margin-bottom: 20px; border-left: 5px solid #1976d2;">
-    <h1 style="color: #1565c0; margin: 0; font-size: 24px;">📊 {{보고서_제목}}</h1>
-    <p style="color: #424242; margin: 10px 0 0 0; font-size: 14px;">보고일: {{보고일}}</p>
+    <h1 style="color: #1565c0; margin: 0; font-size: 24px;">📊 {% raw %}{{보고서_제목}}{% endraw %}</h1>
+    <p style="color: #424242; margin: 10px 0 0 0; font-size: 14px;">보고일: {% raw %}{{보고일}}{% endraw %}</p>
   </div>
 
   <!-- 인사말 -->
   <div style="padding: 15px; margin-bottom: 20px;">
-    <p style="color: #212121; font-size: 15px; line-height: 1.6;">안녕하세요, {{수신자}} 👋</p>
-    <p style="color: #212121; font-size: 15px; line-height: 1.6;">{{인사말_본문}}</p>
+    <p style="color: #212121; font-size: 15px; line-height: 1.6;">안녕하세요, {% raw %}{{수신자}}{% endraw %} 👋</p>
+    <p style="color: #212121; font-size: 15px; line-height: 1.6;">{% raw %}{{인사말_본문}}{% endraw %}</p>
   </div>
 
   <!-- 긴급 업무 -->
-  {{#each 긴급_업무}}
+  {% raw %}{{#each 긴급_업무}}{% endraw %}
   <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #ef5350;">
     <h2 style="color: #c62828; font-size: 18px; margin: 0 0 15px 0;">🔴 긴급 업무</h2>
     
     <div style="padding: 15px; background-color: #ffebee; border-radius: 5px; margin-bottom: 10px;">
-      <h3 style="color: #d32f2f; font-size: 16px; margin: 0 0 10px 0;">{{순번}} {{업무명}}</h3>
-      <p style="color: #212121; margin: 5px 0; font-size: 14px;"><strong style="color: #1a237e;">⏰ 마감:</strong> {{마감일}}</p>
+      <h3 style="color: #d32f2f; font-size: 16px; margin: 0 0 10px 0;">{% raw %}{{순번}}{% endraw %} {% raw %}{{업무명}}{% endraw %}</h3>
+      <p style="color: #212121; margin: 5px 0; font-size: 14px;"><strong style="color: #1a237e;">⏰ 마감:</strong> {% raw %}{{마감일}}{% endraw %}</p>
       <p style="color: #212121; margin: 5px 0; font-size: 14px;"><strong style="color: #1a237e;">📋 현황:</strong></p>
       <ul style="color: #212121; margin: 5px 0; font-size: 14px; padding-left: 20px;">
-        {{#each 현황_목록}}
-        <li style="margin: 5px 0;">{{this}}</li>
-        {{/each}}
+        {% raw %}{{#each 현황_목록}}{% endraw %}
+        <li style="margin: 5px 0;">{% raw %}{{this}}{% endraw %}</li>
+        {% raw %}{{/each}}{% endraw %}
       </ul>
-      {{#if 조치_사항}}
+      {% raw %}{{#if 조치_사항}}{% endraw %}
       <p style="color: #212121; margin: 10px 0 5px 0; font-size: 14px;"><strong style="color: #1a237e;">✅ 조치 사항:</strong></p>
       <div style="background-color: #e8f5e9; padding: 12px; border-radius: 5px; border-left: 4px solid #4caf50;">
-        <p style="color: #1b5e20; margin: 5px 0; font-size: 14px;"><strong>{{조치_제목}}</strong></p>
+        <p style="color: #1b5e20; margin: 5px 0; font-size: 14px;"><strong>{% raw %}{{조치_제목}}{% endraw %}</strong></p>
         <ul style="color: #212121; margin: 5px 0; font-size: 13px; padding-left: 20px;">
-          {{#each 조치_목록}}
-          <li style="margin: 3px 0;">{{this}}</li>
-          {{/each}}
+          {% raw %}{{#each 조치_목록}}{% endraw %}
+          <li style="margin: 3px 0;">{% raw %}{{this}}{% endraw %}</li>
+          {% raw %}{{/each}}{% endraw %}
         </ul>
       </div>
-      {{/if}}
-      <p style="color: #212121; margin: 10px 0 0 0; font-size: 14px;"><strong style="color: #c62828;">🎯 {{목표_액션}}</strong></p>
+      {% raw %}{{/if}}{% endraw %}
+      <p style="color: #212121; margin: 10px 0 0 0; font-size: 14px;"><strong style="color: #c62828;">🎯 {% raw %}{{목표_액션}}{% endraw %}</strong></p>
     </div>
   </div>
-  {{/each}}
+  {% raw %}{{/each}}{% endraw %}
 
   <!-- 중요 업무 -->
-  {{#each 중요_업무}}
+  {% raw %}{{#each 중요_업무}}{% endraw %}
   <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #ffa726;">
     <h2 style="color: #e65100; font-size: 18px; margin: 0 0 15px 0;">🟡 중요 업무</h2>
     
     <div style="padding: 15px; background-color: #fff3e0; border-radius: 5px;">
-      <h3 style="color: #ef6c00; font-size: 16px; margin: 0 0 10px 0;">{{순번}} {{업무명}}</h3>
-      <p style="color: #212121; margin: 5px 0; font-size: 14px;"><strong style="color: #1a237e;">⏰ {{마감_라벨}}:</strong> {{마감일}}</p>
+      <h3 style="color: #ef6c00; font-size: 16px; margin: 0 0 10px 0;">{% raw %}{{순번}}{% endraw %} {% raw %}{{업무명}}{% endraw %}</h3>
+      <p style="color: #212121; margin: 5px 0; font-size: 14px;"><strong style="color: #1a237e;">⏰ {% raw %}{{마감_라벨}}{% endraw %}:</strong> {% raw %}{{마감일}}{% endraw %}</p>
       <p style="color: #212121; margin: 5px 0; font-size: 14px;"><strong style="color: #1a237e;">📋 현황:</strong></p>
       <ul style="color: #212121; margin: 5px 0; font-size: 14px; padding-left: 20px;">
-        {{#each 현황_목록}}
-        <li style="margin: 5px 0;">{{this}}</li>
-        {{/each}}
+        {% raw %}{{#each 현황_목록}}{% endraw %}
+        <li style="margin: 5px 0;">{% raw %}{{this}}{% endraw %}</li>
+        {% raw %}{{/each}}{% endraw %}
       </ul>
-      <p style="color: #212121; margin: 10px 0 0 0; font-size: 14px;"><strong style="color: #e65100;">🎯 {{목표_액션}}</strong></p>
+      <p style="color: #212121; margin: 10px 0 0 0; font-size: 14px;"><strong style="color: #e65100;">🎯 {% raw %}{{목표_액션}}{% endraw %}</strong></p>
     </div>
   </div>
-  {{/each}}
+  {% raw %}{{/each}}{% endraw %}
 
   <!-- 기타 업무 -->
-  {{#if 기타_업무}}
+  {% raw %}{{#if 기타_업무}}{% endraw %}
   <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #66bb6a;">
     <h2 style="color: #2e7d32; font-size: 18px; margin: 0 0 15px 0;">🟢 기타 업무</h2>
     
     <div style="padding: 15px; background-color: #e8f5e9; border-radius: 5px;">
-      {{#each 기타_업무}}
+      {% raw %}{{#each 기타_업무}}{% endraw %}
       <p style="color: #212121; margin: 5px 0; font-size: 14px;">
-        <strong style="color: #1b5e20;">{{순번}} {{업무명}}</strong> - {{설명}}
+        <strong style="color: #1b5e20;">{% raw %}{{순번}}{% endraw %} {% raw %}{{업무명}}{% endraw %}</strong> - {% raw %}{{설명}}{% endraw %}
       </p>
-      {{/each}}
+      {% raw %}{{/each}}{% endraw %}
     </div>
   </div>
-  {{/if}}
+  {% raw %}{{/if}}{% endraw %}
 
   <!-- 우선순위 요약 -->
   <div style="background-color: #fff9c4; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #f57f17;">
@@ -194,14 +194,14 @@ HTML_Response_Generator
         </tr>
       </thead>
       <tbody>
-        {{#each 우선순위_목록}}
-        <tr style="background-color: {{줄_배경색}};">
-          <td style="padding: 10px; border: 1px solid #f9a825; color: #212121;">{{순위}}</td>
-          <td style="padding: 10px; border: 1px solid #f9a825; color: #212121;">{{업무명}}</td>
-          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825; color: {{마감_색상}};"><strong>{{마감일}}</strong></td>
-          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825; color: #212121;">{{상태}}</td>
+        {% raw %}{{#each 우선순위_목록}}{% endraw %}
+        <tr style="background-color: {% raw %}{{줄_배경색}}{% endraw %};">
+          <td style="padding: 10px; border: 1px solid #f9a825; color: #212121;">{% raw %}{{순위}}{% endraw %}</td>
+          <td style="padding: 10px; border: 1px solid #f9a825; color: #212121;">{% raw %}{{업무명}}{% endraw %}</td>
+          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825; color: {% raw %}{{마감_색상}}{% endraw %};"><strong>{% raw %}{{마감일}}{% endraw %}</strong></td>
+          <td style="padding: 10px; text-align: center; border: 1px solid #f9a825; color: #212121;">{% raw %}{{상태}}{% endraw %}</td>
         </tr>
-        {{/each}}
+        {% raw %}{{/each}}{% endraw %}
       </tbody>
     </table>
   </div>
@@ -210,15 +210,15 @@ HTML_Response_Generator
   <div style="padding: 15px; background-color: #e1f5fe; border-radius: 8px; margin-bottom: 20px;">
     <p style="color: #212121; font-size: 14px; line-height: 1.6; margin: 0;">
       <strong style="color: #01579b;">💡 특이사항:</strong><br>
-      {{특이사항}}
+      {% raw %}{{특이사항}}{% endraw %}
     </p>
   </div>
 
   <!-- 서명 -->
   <div style="padding: 15px; border-top: 2px solid #e0e0e0; margin-top: 20px;">
     <p style="color: #212121; font-size: 14px; margin: 5px 0;">감사합니다. 😊</p>
-    <p style="color: #616161; font-size: 13px; margin: 5px 0;">{{발신자_이름}}</p>
-    <p style="color: #616161; font-size: 13px; margin: 5px 0;">{{발신자_이메일}}</p>
+    <p style="color: #616161; font-size: 13px; margin: 5px 0;">{% raw %}{{발신자_이름}}{% endraw %}</p>
+    <p style="color: #616161; font-size: 13px; margin: 5px 0;">{% raw %}{{발신자_이메일}}{% endraw %}</p>
   </div>
 
 </div>
@@ -237,27 +237,27 @@ HTML_Response_Generator
     <div style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
         <div style="background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
 
-            <h1 style="color: #2c3e50; text-align: center; margin-bottom: 10px;">🍷 {{디바이스명}} 에너지 사용량 리포트</h1>
-            <p style="color: #7f8c8d; text-align: center; font-size: 14px; margin-bottom: 30px;">조회 기간: {{조회_시작일}} ~ {{조회_종료일}} ({{조회_일수}}일간)</p>
+            <h1 style="color: #2c3e50; text-align: center; margin-bottom: 10px;">🍷 {% raw %}{{디바이스명}}{% endraw %} 에너지 사용량 리포트</h1>
+            <p style="color: #7f8c8d; text-align: center; font-size: 14px; margin-bottom: 30px;">조회 기간: {% raw %}{{조회_시작일}}{% endraw %} ~ {% raw %}{{조회_종료일}}{% endraw %} ({% raw %}{{조회_일수}}{% endraw %}일간)</p>
 
             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 8px; margin-bottom: 30px;">
                 <h2 style="color: #000000; margin-top: 0; font-size: 18px;">📊 요약 정보</h2>
                 <table style="width: 100%; border-collapse: collapse;">
                     <tr>
                         <td style="padding: 10px; color: #000000; font-weight: bold;">⚡ 총 에너지 사용량:</td>
-                        <td style="padding: 10px; color: #000000; font-size: 20px; font-weight: bold; text-align: right;">{{총_사용량}} Wh</td>
+                        <td style="padding: 10px; color: #000000; font-size: 20px; font-weight: bold; text-align: right;">{% raw %}{{총_사용량}}{% endraw %} Wh</td>
                     </tr>
                     <tr>
                         <td style="padding: 10px; color: #000000; font-weight: bold;">📈 일평균 사용량:</td>
-                        <td style="padding: 10px; color: #000000; font-size: 18px; text-align: right;">{{일평균_사용량}} Wh/일</td>
+                        <td style="padding: 10px; color: #000000; font-size: 18px; text-align: right;">{% raw %}{{일평균_사용량}}{% endraw %} Wh/일</td>
                     </tr>
                     <tr>
                         <td style="padding: 10px; color: #000000; font-weight: bold;">🔝 최대 사용량:</td>
-                        <td style="padding: 10px; color: #000000; text-align: right;">{{최대_사용량}} Wh ({{최대_사용일}})</td>
+                        <td style="padding: 10px; color: #000000; text-align: right;">{% raw %}{{최대_사용량}}{% endraw %} Wh ({% raw %}{{최대_사용일}}{% endraw %})</td>
                     </tr>
                     <tr>
                         <td style="padding: 10px; color: #000000; font-weight: bold;">🔻 최소 사용량:</td>
-                        <td style="padding: 10px; color: #000000; text-align: right;">{{최소_사용량}} Wh ({{최소_사용일}})</td>
+                        <td style="padding: 10px; color: #000000; text-align: right;">{% raw %}{{최소_사용량}}{% endraw %} Wh ({% raw %}{{최소_사용일}}{% endraw %})</td>
                     </tr>
                 </table>
             </div>
@@ -273,20 +273,20 @@ HTML_Response_Generator
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each 일별_데이터}}
-                    <tr style="background-color: {{줄_배경색}};">
-                        <td style="padding: 10px; color: #2c3e50; border: 1px solid #ddd;{{#if 강조}} font-weight: bold;{{/if}}">{{날짜}} ({{요일}})</td>
-                        <td style="padding: 10px; color: #2c3e50; text-align: right; border: 1px solid #ddd;{{#if 강조}} font-weight: bold;{{/if}}">{{사용량}}</td>
-                        <td style="padding: 10px; color: {{상태_색상}}; text-align: center; border: 1px solid #ddd;">{{상태_아이콘}} {{상태_텍스트}}</td>
+                    {% raw %}{{#each 일별_데이터}}{% endraw %}
+                    <tr style="background-color: {% raw %}{{줄_배경색}}{% endraw %};">
+                        <td style="padding: 10px; color: #2c3e50; border: 1px solid #ddd;{% raw %}{{#if 강조}}{% endraw %} font-weight: bold;{% raw %}{{/if}}{% endraw %}">{% raw %}{{날짜}}{% endraw %} ({% raw %}{{요일}}{% endraw %})</td>
+                        <td style="padding: 10px; color: #2c3e50; text-align: right; border: 1px solid #ddd;{% raw %}{{#if 강조}}{% endraw %} font-weight: bold;{% raw %}{{/if}}{% endraw %}">{% raw %}{{사용량}}{% endraw %}</td>
+                        <td style="padding: 10px; color: {% raw %}{{상태_색상}}{% endraw %}; text-align: center; border: 1px solid #ddd;">{% raw %}{{상태_아이콘}}{% endraw %} {% raw %}{{상태_텍스트}}{% endraw %}</td>
                     </tr>
-                    {{/each}}
+                    {% raw %}{{/each}}{% endraw %}
                 </tbody>
             </table>
 
             <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-top: 30px; border-radius: 5px;">
                 <h3 style="color: #2c3e50; margin-top: 0;">💡 분석 및 권장사항</h3>
                 <p style="color: #2c3e50; line-height: 1.6;">
-                    {{분석_내용}}
+                    {% raw %}{{분석_내용}}{% endraw %}
                 </p>
             </div>
 
@@ -383,4 +383,4 @@ HTML 결과물 생성을 위해 /HTML_Response_Generator 를 호출하여 반환
 
 ---
 
-← [이전: Step 4. ThinQ MCP]({{ '/chapters/ws3-4-thinq-mcp/' | relative_url }}) | [다음: Step 6. Excel 필터링]({{ '/chapters/ws3-6-excel-filter/' | relative_url }}) →
+← [이전: Step 4. 외부 MCP 도구 추가]({{ '/chapters/ws3-4-external-mcp/' | relative_url }}) | [다음: Step 6. Excel 필터링]({{ '/chapters/ws3-6-excel-filter/' | relative_url }}) →

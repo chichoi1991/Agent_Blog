@@ -1,0 +1,67 @@
+{%- comment -%}
+  공용 헤더. default.html·chapter.html 이 include 한다.
+  언어 토글(KO/EN)은 같은 slug 의 반대 언어 URL 로 이동한다.
+  반대 언어 페이지가 아직 없으면 해당 언어의 홈으로 폴백한다.
+{%- endcomment -%}
+{% assign lang = page.lang | default: site.default_lang | default: 'ko' %}
+{% assign t = site.data.i18n[lang] %}
+
+{%- comment -%} 반대 언어 URL 계산: /en 접두사 추가·제거 {%- endcomment -%}
+{% if lang == 'en' %}
+  {% assign alt_url = page.url | remove_first: '/en' %}
+  {% assign alt_pool = site.chapters %}
+  {% assign alt_home = '/' %}
+{% else %}
+  {% assign alt_url = '/en' | append: page.url %}
+  {% assign alt_pool = site.chapters_en %}
+  {% assign alt_home = '/en/' %}
+{% endif %}
+
+{% assign alt_exists = false %}
+{% for d in alt_pool %}
+  {% if d.url == alt_url %}{% assign alt_exists = true %}{% break %}{% endif %}
+{% endfor %}
+{% unless alt_exists %}
+  {% for p in site.pages %}
+    {% if p.url == alt_url %}{% assign alt_exists = true %}{% break %}{% endif %}
+  {% endfor %}
+{% endunless %}
+{% unless alt_exists %}{% assign alt_url = alt_home %}{% endunless %}
+
+{% if lang == 'en' %}
+  {% assign home_url = '/en/' %}
+  {% assign source_url = 'https://github.com/chichoi1991/Agent_Blog/tree/master/_chapters_en' %}
+{% else %}
+  {% assign home_url = '/' %}
+  {% assign source_url = 'https://github.com/chichoi1991/Agent_Blog/tree/master/_chapters' %}
+{% endif %}
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="{{ home_url | relative_url }}" class="header-logo">
+      <svg class="logo-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Microsoft Copilot Agentic Blog</span>
+    </a>
+    <nav class="header-nav">
+      <a href="{{ home_url | relative_url }}">{{ t.home }}</a>
+      <div class="header-search">
+        <input type="search" id="blog-search" class="search-input" placeholder="{{ t.search_placeholder }}" autocomplete="off" aria-label="{{ t.search_aria }}">
+        <div class="search-results" id="search-results" hidden></div>
+      </div>
+      <a href="https://copilotstudio.microsoft.com" target="_blank">{{ t.cta_studio }}</a>
+      <a href="{{ source_url }}" target="_blank">{{ t.cta_github }}</a>
+      <div class="lang-switch" role="group" aria-label="{{ t.lang_switch_aria }}">
+        {% if lang == 'en' %}
+          <a class="lang-opt" href="{{ alt_url | relative_url }}" hreflang="ko" title="{{ t.lang_switch_to }}">KO</a>
+          <span class="lang-opt active" aria-current="true">EN</span>
+        {% else %}
+          <span class="lang-opt active" aria-current="true">KO</span>
+          <a class="lang-opt" href="{{ alt_url | relative_url }}" hreflang="en" title="{{ t.lang_switch_to }}">EN</a>
+        {% endif %}
+      </div>
+    </nav>
+    <button class="mobile-menu-btn" aria-label="{{ t.menu_aria }}">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>

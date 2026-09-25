@@ -22,7 +22,7 @@ parent: "ws4"
 [사용자 이름] 과 미팅에 앞서 인사이트 분석을 해줘
 ```
 <br>
-<img width="952" height="596" alt="image" src="https://github.com/user-attachments/assets/ab9f9b35-591e-4bb3-b80f-a2fb166f3740" />
+<img width="952" height="596" alt="image" src="{{ '/assets/image/github-attachments/ab9f9b35-591e-4bb3-b80f-a2fb166f3740.png' | relative_url }}" />
 
 <br>
 
@@ -32,15 +32,15 @@ parent: "ws4"
 
 ## 3.2 Copilot 화면에서 에이전트 사용하기
 완성된 에이전트는 Copilot 에서 살펴볼 수 있으며, 필요시 고정을 통해 자유롭게 활용할 수 있습니다.
-<img width="1199" height="672" alt="image" src="https://github.com/user-attachments/assets/af2b399b-569d-4c1f-b0f9-8efb3a0bff46" />
+<img width="1199" height="672" alt="image" src="{{ '/assets/image/github-attachments/af2b399b-569d-4c1f-b0f9-8efb3a0bff46.png' | relative_url }}" />
 <br>
 내가 이용가능한 에이전트를 모두 보려면 **모든 에이전트** 를 선택하여 **내 에이전트** 를 모두 체크할 수 있습니다.
-<img width="1197" height="666" alt="image" src="https://github.com/user-attachments/assets/8ab98d80-d128-45e7-ba96-2a5d939d69d1" />
+<img width="1197" height="666" alt="image" src="{{ '/assets/image/github-attachments/8ab98d80-d128-45e7-ba96-2a5d939d69d1.png' | relative_url }}" />
 <br>
 내가 만든 선언형 에이전트를 한눈에 보고싶다면 **에이전트 만들기 -> 내 에이전트 보기** 를 선택합니다.
 
-<img width="1198" height="664" alt="image" src="https://github.com/user-attachments/assets/d77aa77f-907c-4637-9604-e2caf7106e55" />
-<img width="1199" height="456" alt="image" src="https://github.com/user-attachments/assets/78751c5e-39c8-4ff0-8338-56f1b1d9a8b7" />
+<img width="1198" height="664" alt="image" src="{{ '/assets/image/github-attachments/d77aa77f-907c-4637-9604-e2caf7106e55.png' | relative_url }}" />
+<img width="1199" height="456" alt="image" src="{{ '/assets/image/github-attachments/78751c5e-39c8-4ff0-8338-56f1b1d9a8b7.png' | relative_url }}" />
 
 
 ## 3.3 에이전트 공유하기
@@ -49,16 +49,16 @@ parent: "ws4"
 > M365 Copilot 라이선스가 없는 사용자들이 에이전트를 사용하기 위해서는, 테넌트 관리자의 설정이 필요합니다.
 
 생성한 에이전트를 ... 클릭하여 공유를 통해 에이전트를 타 조지들에게 공유할 수 있습니다.
-<img width="678" height="482" alt="image" src="https://github.com/user-attachments/assets/18017611-ac5d-4bfb-97be-0dc2e9ae36c0" />
+<img width="678" height="482" alt="image" src="{{ '/assets/image/github-attachments/18017611-ac5d-4bfb-97be-0dc2e9ae36c0.png' | relative_url }}" />
 <br>
 공유 버튼을 클릭 한 후, 공유 대상을 조직 전체 또는 특정 인원,그룹등으로 선택합니다.
 <br>
-<img width="1200" height="615" alt="image" src="https://github.com/user-attachments/assets/47e7d1f7-7732-4d05-a3e8-1342616902a6" />
+<img width="1200" height="615" alt="image" src="{{ '/assets/image/github-attachments/47e7d1f7-7732-4d05-a3e8-1342616902a6.png' | relative_url }}" />
 <br>
 
 라이선스가 있는 사용자들은 선택한 링크를 통해 에이전트를 이용할 수 있습니다.
 > M365 Copilot 라이선스가 없거나 관리자 설정이 진행되지 않은 사용자들은 해당 에이전트를 사용할 수 없습니다.
-<img width="1200" height="643" alt="image" src="https://github.com/user-attachments/assets/3c88f648-db00-476e-86b0-d901317743c4" />
+<img width="1200" height="643" alt="image" src="{{ '/assets/image/github-attachments/3c88f648-db00-476e-86b0-d901317743c4.png' | relative_url }}" />
 
 완료된 에이전트는 팀즈 뿐만 아니라 다양한 오피스 앱에서 이용할 수 있습니다.
 

@@ -1,0 +1,419 @@
+---
+layout: default
+title: "Agent Development Resources"
+permalink: /en/agent-resources/develop-agents/
+lang: en
+---
+
+<div class="ar-detail-nav">
+  <a href="{{ '/en/agent-resources/' | relative_url }}" class="ar-back-link">← Agent Resources Hub</a>
+</div>
+
+<div class="ar-detail-hero ar-detail-hero--dev">
+  <div class="ar-detail-hero-icon">
+    <img src="{{ '/assets/img/agent-resources/agent-framework-icon.png' | relative_url }}" alt="Agent Development">
+  </div>
+  <div>
+    <span class="ar-detail-eyebrow">Develop Agents</span>
+    <h1 class="ar-detail-title">Agent Development Resources</h1>
+    <p class="ar-detail-desc">Developer resources for building enterprise AI agents with Microsoft SDKs, protocols, and OSS tools. Curated by the <a href="https://aka.ms/wearecat" target="_blank" rel="noopener">Microsoft Copilot Acceleration Team (CAT)</a>.</p>
+  </div>
+</div>
+
+<nav class="ar-toc-bar">
+  <a href="#get-started">Get started</a>
+  <a href="#extend-m365">Extend M365</a>
+  <a href="#sdks">Microsoft SDKs</a>
+  <a href="#protocols">Protocols</a>
+  <a href="#oss">OSS/third-party</a>
+  <a href="#samples">Samples</a>
+  <a href="#learning">Learning</a>
+  <a href="#community">Community</a>
+</nav>
+
+<div class="ar-detail-body">
+
+  <section id="get-started" class="ar-section">
+    <h2 class="ar-section-title">🚀 Get started</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://microsoft.github.io/agent-resources/" target="_blank" rel="noopener">Agent Resources Hub</a>
+        <span class="ar-resource-desc">— Official hub covering the full Microsoft agent development ecosystem</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/architecture/ai-ml/architecture/ai-agent-design-patterns" target="_blank" rel="noopener">AI agent solution architecture</a>
+        <span class="ar-resource-desc">— Patterns and architecture principles for designing agent systems</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/architecture/ai-ml/architecture/agent-design-guidelines" target="_blank" rel="noopener">Agent design guidelines</a>
+        <span class="ar-resource-desc">— Design principles and recommended patterns for building effective agents</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365-copilot/extensibility/agents-sdk" target="_blank" rel="noopener">M365 Agents SDK</a>
+        <span class="ar-resource-desc">— Official agent SDK for extending Microsoft 365 Copilot</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-copilot-studio/sdk" target="_blank" rel="noopener">Copilot Studio SDK</a>
+        <span class="ar-resource-desc">— SDK for developing Copilot Studio agents with code</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension" target="_blank" rel="noopener">Teams Toolkit VS Code extension</a>
+        <span class="ar-resource-desc">— Official extension for developing Teams apps and agents in Visual Studio Code</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Agent archetypes</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/architecture/ai-ml/architecture/agent-archetypes" target="_blank" rel="noopener">Agent archetypes guide</a>
+        <span class="ar-resource-desc">— Design patterns by agent type, including notification, assistant, and autonomous agents</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="extend-m365" class="ar-section">
+    <h2 class="ar-section-title">🔌 Extend M365 Copilot</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365-copilot/extensibility/" target="_blank" rel="noopener">M365 Copilot extensibility overview</a>
+        <span class="ar-resource-desc">— How to extend with Agent Store, Work IQ, and SharePoint Copilot Apps</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent" target="_blank" rel="noopener">Declarative Agents</a>
+        <span class="ar-resource-desc">— How to declare agent behavior in JSON and integrate it with M365 Copilot</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-message-extension-bot" target="_blank" rel="noopener">Message extension plugins</a>
+        <span class="ar-resource-desc">— How to convert Teams message extensions into M365 Copilot plugins</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/graph/connecting-external-content-connectors-overview" target="_blank" rel="noopener">Microsoft Graph connectors</a>
+        <span class="ar-resource-desc">— Connect external data sources to Graph so they can be searched in Copilot</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="sdks" class="ar-section">
+    <h2 class="ar-section-title">🛠️ Microsoft SDKs</h2>
+    <h3 class="ar-subsection-title">Agent Framework (MAF)</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework" target="_blank" rel="noopener">Introduction to Agent Framework</a>
+        <span class="ar-resource-desc">— Introduction to Microsoft Agent Framework for building complex multi-agent systems</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework/quickstart" target="_blank" rel="noopener">MAF quickstart</a>
+        <span class="ar-resource-desc">— Step-by-step guide to creating your first agent with Agent Framework</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework/memory" target="_blank" rel="noopener">MAF memory management</a>
+        <span class="ar-resource-desc">— Memory patterns that let agents remember and reference context</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework/workflows" target="_blank" rel="noopener">MAF workflows</a>
+        <span class="ar-resource-desc">— How to configure sequential, parallel, and conditional agent execution workflows</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework/a2a" target="_blank" rel="noopener">MAF A2A (agent-to-agent communication)</a>
+        <span class="ar-resource-desc">— How to delegate work between agents with the Agent-to-Agent protocol</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework/dev-ui" target="_blank" rel="noopener">MAF Developer UI</a>
+        <span class="ar-resource-desc">— Developer UI tool for visually debugging agent execution</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/azure/azure-ai-agent-framework" target="_blank" rel="noopener">MAF GitHub repository</a>
+        <span class="ar-resource-desc">— Agent Framework open-source code, samples, and issue tracker</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/azure/azure-ai-agent-framework/tree/main/samples" target="_blank" rel="noopener">MAF sample code</a>
+        <span class="ar-resource-desc">— Collection of Agent Framework examples showing various agent patterns</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/agent-framework/azure-functions" target="_blank" rel="noopener">MAF + Azure Functions</a>
+        <span class="ar-resource-desc">— Serverless pattern for integrating Azure Functions as agent tools</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Semantic Kernel (SK)</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/semantic-kernel/overview/" target="_blank" rel="noopener">Semantic Kernel official documentation</a>
+        <span class="ar-resource-desc">— Microsoft open-source AI orchestration SDK supporting .NET, Python, and Java</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/semantic-kernel" target="_blank" rel="noopener">Semantic Kernel GitHub</a>
+        <span class="ar-resource-desc">— Semantic Kernel open-source code repository (⭐ 30K+)</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://www.nuget.org/packages/Microsoft.SemanticKernel/" target="_blank" rel="noopener">SK NuGet package (.NET)</a>
+        <span class="ar-resource-desc">— NuGet package for installing Semantic Kernel in .NET projects</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://pypi.org/project/semantic-kernel/" target="_blank" rel="noopener">SK PyPI package (Python)</a>
+        <span class="ar-resource-desc">— PyPI package for installing Semantic Kernel in Python projects</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">M365 Agents SDK</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365/agents-sdk/" target="_blank" rel="noopener">M365 Agents SDK official documentation</a>
+        <span class="ar-resource-desc">— Unified agent SDK supporting Teams, M365 Copilot, and Azure Bot Service</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://devblogs.microsoft.com/microsoft365dev/announcing-m365-agents-sdk/" target="_blank" rel="noopener">M365 Agents SDK announcement blog</a>
+        <span class="ar-resource-desc">— Background on the M365 Agents SDK launch and guidance for migration from Bot Framework</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365/agents-sdk/quickstart-csharp" target="_blank" rel="noopener">Quickstart — C#</a>
+        <span class="ar-resource-desc">— Quickstart guide for creating your first M365 agent in C#</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365/agents-sdk/quickstart-javascript" target="_blank" rel="noopener">Quickstart — JavaScript</a>
+        <span class="ar-resource-desc">— Quickstart guide for creating an M365 agent with JavaScript/TypeScript</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365/agents-sdk/quickstart-python" target="_blank" rel="noopener">Quickstart — Python</a>
+        <span class="ar-resource-desc">— Quickstart guide for creating an M365 agent in Python</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/teams-ai" target="_blank" rel="noopener">M365 Agents SDK GitHub</a>
+        <span class="ar-resource-desc">— M365 Agents SDK open-source repository (formerly Teams AI library)</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365/agents-sdk/botframework-migration" target="_blank" rel="noopener">Bot Framework migration guide</a>
+        <span class="ar-resource-desc">— Migration guide for moving existing Bot Framework bots to the M365 Agents SDK</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Copilot Studio developer tools</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://marketplace.visualstudio.com/items?itemName=microsoft.copilotstudio" target="_blank" rel="noopener">VS Code extension — Copilot Studio</a>
+        <span class="ar-resource-desc">— Develop Copilot Studio agents with code in Visual Studio Code</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/power-platform/developer/cli/introduction" target="_blank" rel="noopener">Power Platform CLI</a>
+        <span class="ar-resource-desc">— Power Platform CLI for managing Copilot Studio agents from the command line</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Agent 365 SDK</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-365/agent365/sdk" target="_blank" rel="noopener">Agent 365 SDK official documentation</a>
+        <span class="ar-resource-desc">— Developer SDK documentation for integrating with the Agent 365 platform</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/agent365-sdk-nodejs" target="_blank" rel="noopener">Agent 365 SDK — Node.js</a>
+        <span class="ar-resource-desc">— Official SDK for integrating Agent 365 in Node.js environments</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/agent365-sdk-python" target="_blank" rel="noopener">Agent 365 SDK — Python</a>
+        <span class="ar-resource-desc">— Official SDK for integrating Agent 365 in Python environments</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/agent365-sdk-dotnet" target="_blank" rel="noopener">Agent 365 SDK — .NET</a>
+        <span class="ar-resource-desc">— Official SDK for integrating Agent 365 in .NET environments</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Azure AI Foundry Agent Service SDK</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/azure/ai-studio/how-to/agents/sdk" target="_blank" rel="noopener">Foundry Agent Service SDK documentation</a>
+        <span class="ar-resource-desc">— SDK for controlling Azure AI Foundry Agent Service with code</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="protocols" class="ar-section">
+    <h2 class="ar-section-title">📡 Protocols and standards</h2>
+    <h3 class="ar-subsection-title">A2A (Agent-to-Agent protocol)</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://google.github.io/A2A/" target="_blank" rel="noopener">A2A protocol specification</a>
+        <span class="ar-resource-desc">— Official A2A protocol specification for interoperability between different agent platforms</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/google-a2a/A2A" target="_blank" rel="noopener">A2A GitHub</a>
+        <span class="ar-resource-desc">— Open-source implementation code and samples for the A2A protocol</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">MCP (Model Context Protocol)</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://modelcontextprotocol.io/docs" target="_blank" rel="noopener">MCP official documentation</a>
+        <span class="ar-resource-desc">— Official documentation for the MCP standard, which connects external data and tools to AI models</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/modelcontextprotocol/python-sdk" target="_blank" rel="noopener">MCP Python SDK</a>
+        <span class="ar-resource-desc">— Official SDK for implementing MCP servers and clients in Python</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/modelcontextprotocol/typescript-sdk" target="_blank" rel="noopener">MCP TypeScript SDK</a>
+        <span class="ar-resource-desc">— Official SDK for implementing MCP in TypeScript/JavaScript</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/Azure/azure-mcp" target="_blank" rel="noopener">Azure MCP server</a>
+        <span class="ar-resource-desc">— Official Azure MCP server that exposes Azure services through the MCP protocol</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/adding-mcp-plugins" target="_blank" rel="noopener">SK + MCP integration</a>
+        <span class="ar-resource-desc">— How to add MCP plugins to Semantic Kernel</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/microsoft-copilot-studio/agent-mcp" target="_blank" rel="noopener">Copilot Studio + MCP</a>
+        <span class="ar-resource-desc">— How to extend tools by connecting MCP servers from Copilot Studio agents</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="oss" class="ar-section">
+    <h2 class="ar-section-title">🌐 OSS and third-party</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://python.langchain.com/docs/integrations/providers/azure" target="_blank" rel="noopener">LangChain — Azure integration</a>
+        <span class="ar-resource-desc">— How to integrate the LangChain framework with Azure AI services</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://microsoft.github.io/autogen/" target="_blank" rel="noopener">AutoGen (AG2)</a>
+        <span class="ar-resource-desc">— Microsoft Research's AutoGen multi-agent conversation framework</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://www.crewai.com/" target="_blank" rel="noopener">CrewAI</a>
+        <span class="ar-resource-desc">— CrewAI framework for building role-based agent teams</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://docs.llamaindex.ai/en/stable/" target="_blank" rel="noopener">LlamaIndex</a>
+        <span class="ar-resource-desc">— LlamaIndex framework for data-centric RAG and agent workflows</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="samples" class="ar-section">
+    <h2 class="ar-section-title">💾 Samples and repositories</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://github.com/azure/azureai-samples" target="_blank" rel="noopener">azureai-samples</a>
+        <span class="ar-resource-desc">— Official Azure AI Foundry sample code repository</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/semantic-kernel/tree/main/python/samples" target="_blank" rel="noopener">Semantic Kernel Python samples</a>
+        <span class="ar-resource-desc">— Collection of Semantic Kernel Python example code</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/semantic-kernel/tree/main/dotnet/samples" target="_blank" rel="noopener">Semantic Kernel .NET samples</a>
+        <span class="ar-resource-desc">— Collection of Semantic Kernel .NET example code</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/Agent365-Samples" target="_blank" rel="noopener">Agent365 samples</a>
+        <span class="ar-resource-desc">— Sample code for Agent 365 platform integration</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/OfficeDev/TeamsFx/tree/main/templates" target="_blank" rel="noopener">Teams Toolkit sample templates</a>
+        <span class="ar-resource-desc">— Agent project templates you can start from in Teams Toolkit</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/azure/azure-ai-agent-framework/tree/main/samples" target="_blank" rel="noopener">Agent Framework samples</a>
+        <span class="ar-resource-desc">— Examples of MAF-based multi-agent patterns</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/build-2026-demos" target="_blank" rel="noopener">Build 2026 demo code</a>
+        <span class="ar-resource-desc">— Agent demo source code shown at Microsoft Build 2026</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/multi-agent-reference-architecture" target="_blank" rel="noopener">Multi-agent reference architecture</a>
+        <span class="ar-resource-desc">— Reference architecture implementation for enterprise multi-agent systems</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/autogen" target="_blank" rel="noopener">AutoGen GitHub</a>
+        <span class="ar-resource-desc">— Code repository for the AutoGen open-source multi-agent framework</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/OfficeDev/Copilot-for-M365-Samples" target="_blank" rel="noopener">Copilot-for-M365-Samples</a>
+        <span class="ar-resource-desc">— M365 Copilot extensibility development samples (declarative agents, plugins)</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://adoption.microsoft.com/sample-solution-gallery/" target="_blank" rel="noopener">Sample Solution Gallery</a>
+        <span class="ar-resource-desc">— Ready-to-deploy Microsoft 365 solution gallery</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/CopilotStudioSamples" target="_blank" rel="noopener">CopilotStudioSamples</a>
+        <span class="ar-resource-desc">— Sample repository for Copilot Studio agent development</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/copilot-connectors-samples" target="_blank" rel="noopener">Copilot connector samples</a>
+        <span class="ar-resource-desc">— Sample code for Graph connectors and Copilot plugins</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/skills-for-copilot-studio" target="_blank" rel="noopener">Skills for Copilot Studio</a>
+        <span class="ar-resource-desc">— Reusable skills module library for Copilot Studio</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="learning" class="ar-section">
+    <h2 class="ar-section-title">🎓 Learning and courses</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://aka.ms/AIAgentsForBeginners" target="_blank" rel="noopener">AI Agents for Beginners (12 lessons)</a>
+        <span class="ar-resource-desc">— Free 12-lesson beginner course on agent development from GitHub</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/training/paths/develop-ai-agents-azure-open-ai-semantic-kernel-sdk/" target="_blank" rel="noopener">MS Learn — Develop AI agents with Semantic Kernel</a>
+        <span class="ar-resource-desc">— Official learning path using Azure OpenAI and the Semantic Kernel SDK</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/training/paths/m365-agents-sdk/" target="_blank" rel="noopener">MS Learn — M365 Agents SDK learning path</a>
+        <span class="ar-resource-desc">— Structured learning path for learning the M365 Agents SDK from the beginning</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://aka.ms/CopilotDevCamp" target="_blank" rel="noopener">Copilot Dev Camp</a>
+        <span class="ar-resource-desc">— Intensive learning camp for M365 Copilot extensibility developers</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://learn.microsoft.com/credentials/certifications/exams/ai-3026/" target="_blank" rel="noopener">AI-3026 certification — Develop AI agent solutions</a>
+        <span class="ar-resource-desc">— New certification exam that formally validates Microsoft agent development skills</span>
+      </div>
+    </div>
+    <h3 class="ar-subsection-title">Build 2026 sessions</h3>
+    <div class="ar-session-grid">
+      <a href="https://build.microsoft.com/sessions/BRK101" target="_blank" rel="noopener" class="ar-session-badge">BRK101 — Agent development patterns</a>
+      <a href="https://build.microsoft.com/sessions/BRK102" target="_blank" rel="noopener" class="ar-session-badge">BRK102 — M365 Agents SDK</a>
+      <a href="https://build.microsoft.com/sessions/BRK103" target="_blank" rel="noopener" class="ar-session-badge">BRK103 — Semantic Kernel</a>
+      <a href="https://build.microsoft.com/sessions/BRK104" target="_blank" rel="noopener" class="ar-session-badge">BRK104 — MCP & A2A</a>
+      <a href="https://build.microsoft.com/sessions/BRK105" target="_blank" rel="noopener" class="ar-session-badge">BRK105 — MAF multi-agent</a>
+      <a href="https://build.microsoft.com/sessions/DEM201" target="_blank" rel="noopener" class="ar-session-badge">DEM201 — Agent demos</a>
+    </div>
+    <h3 class="ar-subsection-title">Video tutorials</h3>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://www.youtube.com/@NTFAQGuy" target="_blank" rel="noopener">John Savill — agent architecture deep dive</a>
+        <span class="ar-resource-desc">— Technical videos on agent design patterns for cloud architects</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://www.youtube.com/c/MicrosoftDeveloper" target="_blank" rel="noopener">Microsoft Developer YouTube</a>
+        <span class="ar-resource-desc">— Official developer channel with rich SDK, framework, and coding tutorials</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="community" class="ar-section">
+    <h2 class="ar-section-title">🤝 Community</h2>
+    <div class="ar-resource-list">
+      <div class="ar-resource-item">
+        <a href="https://techcommunity.microsoft.com/t5/microsoft-developer-community/ct-p/DeveloperCommunity" target="_blank" rel="noopener">Microsoft Developer Tech Community</a>
+        <span class="ar-resource-desc">— Developer community for technical blogs and discussions related to agent development</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://github.com/microsoft/semantic-kernel/discussions" target="_blank" rel="noopener">Semantic Kernel GitHub Discussions</a>
+        <span class="ar-resource-desc">— GitHub Discussions where Semantic Kernel users and the team discuss together</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://stackoverflow.com/questions/tagged/microsoft-agents-sdk" target="_blank" rel="noopener">Stack Overflow — microsoft-agents-sdk</a>
+        <span class="ar-resource-desc">— Stack Overflow Q&amp;A tag for M365 Agents SDK questions</span>
+      </div>
+      <div class="ar-resource-item">
+        <a href="https://discord.gg/semantic-kernel" target="_blank" rel="noopener">Semantic Kernel Discord</a>
+        <span class="ar-resource-desc">— Semantic Kernel community Discord for real-time chat and support</span>
+      </div>
+    </div>
+  </section>
+
+</div>

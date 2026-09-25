@@ -16,7 +16,7 @@ is_parent: true
 
 이번 실습은 Copilot Studio lite에서 실습한 [**블로그 포스팅 에이전트**](https://github.com/chichoi1991/Copilot_Agent/tree/main/%EC%BD%94%ED%8C%8C%EC%9D%BC%EB%9F%BF%20%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%20%EC%9B%8C%ED%81%AC%EC%83%B5/%EC%BD%94%ED%8C%8C%EC%9D%BC%EB%9F%BF%20%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%20Lite) 를 메일 발송, 팀즈 게시물 생성 기능까지 제공하는 커스텀엔진 에이전트로 만들어 보도록 하겠습니다.
 
-<img width="1861" height="1392" alt="image" src="https://github.com/user-attachments/assets/dd2943fa-454d-4d49-ada3-f9df313cf34a" />
+<img width="1861" height="1392" alt="image" src="{{ '/assets/image/github-attachments/dd2943fa-454d-4d49-ada3-f9df313cf34a.png' | relative_url }}" />
 
 <br> <br> 
 
