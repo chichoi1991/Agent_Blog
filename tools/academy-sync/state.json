@@ -36,6 +36,7 @@
     "special-ops/azure-ai-search-rag": "93e7fb8e16b5b08faf2c295c0376dfaeb5b891d3",
     "special-ops/mcp-oauth": "a4bfd653cab71ea5a46540f3f0d10de4ea31b15d",
     "special-ops/ghostwriter": "1639345e43e91d497364638b0e3832e0b2517680",
-    "recruit/choose": "a8334d5f7c0a8f2b64640f33834f7687f9879b59"
+    "recruit/choose": "a8334d5f7c0a8f2b64640f33834f7687f9879b59",
+    "operative/choose": "1b6c38562d0dbd702342edfe5c4561faea8058ee"
   }
 }

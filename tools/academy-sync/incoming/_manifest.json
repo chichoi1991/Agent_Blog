@@ -1,29 +1,3 @@
 {
-  "items": [
-    {
-      "slug": "operative-choose",
-      "src_path": "operative/choose",
-      "sha": "1b6c38562d0dbd702342edfe5c4561faea8058ee",
-      "title": "Welcome Operative",
-      "description": "",
-      "category": "academy-courses",
-      "parent": "aoperative",
-      "parentTitle": "Operative — 중급 코스",
-      "parentShort": "Operative",
-      "parentOrder": 2,
-      "order": 999,
-      "source_url": "https://microsoft.github.io/agent-academy/operative/choose/",
-      "source_author": "Copilot Studio Agent Academy",
-      "source_blog": "Copilot Studio Agent Academy",
-      "source_published": "",
-      "images": [
-        {
-          "src": "../../images/banner_operative.png",
-          "local": "assets/academy/operative-choose/banner_operative.png"
-        }
-      ],
-      "staged_at": "2026-09-16T05:14:49.553Z",
-      "status": "pending-translation"
-    }
-  ]
+  "items": []
 }
