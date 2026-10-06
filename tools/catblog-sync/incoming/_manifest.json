@@ -1,3 +1,26 @@
 {
-  "items": []
+  "items": [
+    {
+      "slug": "agent-memory",
+      "title": "Memory in Copilot Studio: How Agents Carry Knowledge Across Conversations",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/agent-memory/",
+      "source_author": "Microsoft Copilot Studio CAT",
+      "source_published": "2026-10-05",
+      "source_updated": "2026-10-05",
+      "categories": [
+        "copilot-studio",
+        "agents"
+      ],
+      "summary": "Large language models are stateless. Here's how agent memory in Copilot Studio carries knowledge across conversations: short-term and long-term memory, the three kinds of long-term memory, reflection, and how we check that it actually works.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-10-05-agent-memory.md",
+      "images": [
+        {
+          "src": "/assets/posts/agent-memory/header.png",
+          "local": "assets/catblog/agent-memory/header.png"
+        }
+      ],
+      "staged_at": "2026-10-06T06:24:31.220Z",
+      "status": "pending-translation"
+    }
+  ]
 }
