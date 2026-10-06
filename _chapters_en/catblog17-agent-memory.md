@@ -1,17 +1,26 @@
 ---
-layout: post
-agent_edition: github-copilot
-title: "Memory in Copilot Studio: How Agents Carry Knowledge Across Conversations"
+layout: "chapter"
+lang: en
 date: 2026-10-05
-categories: [copilot-studio, agents]
-tags: [copilot-studio, agent-memory, agent-development, best-practices, evals, sandbox]
-description: "Large language models are stateless. Here's how agent memory in Copilot Studio carries knowledge across conversations: short-term and long-term memory, the three kinds of long-term memory, reflection, and how we check that it actually works."
-authors: [kaashyapmurali, misroka]
-image:
-  path: /assets/posts/agent-memory/header.png
-  alt: "Agent memory: three sessions connected to a durable memory store"
-mermaid: true
+title: "Memory in Copilot Studio: How Agents Carry Knowledge Across Conversations"
+short_title: "Agent Memory"
+description: "Explore short- and long-term memory in Copilot Studio agents, the three kinds of long-term memory, reflection, and how memory is evaluated."
+order: 17
+category: "catblog"
+source_url: "https://microsoft.github.io/mcscatblog/posts/agent-memory/"
+source_author: "Microsoft Copilot Studio CAT"
+source_published: "2026-10-05"
+source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
+canonical_url: "https://microsoft.github.io/mcscatblog/posts/agent-memory/"
 ---
+
+<div class="info-box note" markdown="1">
+**Translated article** — This article is based on [Memory in Copilot Studio: How Agents Carry Knowledge Across Conversations](https://microsoft.github.io/mcscatblog/posts/agent-memory/) by Microsoft Copilot Studio CAT (@Microsoft Copilot Studio CAT) on [The Custom Engine](https://microsoft.github.io/mcscatblog/) (2026-10-05). The original wording takes precedence.
+</div>
+
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/agent-memory/header.png' | relative_url }}" alt="Agent memory connects three sessions through a durable memory store." loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+</figure>
 
 Large language models are stateless. Every conversation starts from nothing. Memory is the engineering we wrap around a model to create the illusion of continuity, and it is what turns an agent from a clever tool into something closer to a colleague.
 
@@ -25,19 +34,14 @@ Think about how a scientist actually works. Partway through a project she asks h
 
 Those same three problems, what to write, what to recall, and what to forget, are exactly what an agent's memory system has to solve.
 
-```mermaid
-flowchart TB
-    subgraph WITHOUT["Without memory"]
-        A1["Session 1<br/>learns your context"]
-        A2["Session 2<br/>starts from zero"]
-        A3["Session 3<br/>starts from zero"]
-    end
-    subgraph WITHMEM["With memory"]
-        B1["Session 1"] --> M[("durable memory store")]
-        M --> B2["Session 2<br/>recalls and builds on it"]
-        M --> B3["Session 3<br/>recalls and builds on it"]
-    end
-    WITHOUT ~~~ WITHMEM
+```text
+Without memory                       With memory
+Session 1: learns your context        Session 1
+Session 2: starts from zero                 |
+Session 3: starts from zero          Durable memory store
+                                            |       |
+                                   Session 2: recalls and builds on it
+                                   Session 3: recalls and builds on it
 ```
 _The continuity gap. Without memory, each session is sealed off from the last. Memory is what lets knowledge cross the boundary of a single conversation._
 
@@ -71,7 +75,7 @@ Compaction buys room inside one conversation. It does nothing for the next one. 
 | **Semantic** (facts) | Distilled episodic memory. The agent turns experiences into standing facts, which also means it has to notice when a fact has been superseded. | *Experience:* "Alice said she's moving to Berlin." → *Fact:* "Alice lives in Berlin." |
 | **Procedural** (skills) | Learned routines, workflows, and rules of thumb: the agent's muscle memory. The difference between knowing a policy and knowing how to execute against it. | *Semantic:* "Expenses over $500 need approval." *Procedural:* pull the receipt, categorize, check against policy, route to the approver, file it, confirm back. |
 
-That last row is worth sitting with. Procedural memory is a close cousin of a Skill, a reviewed routine the agent can run on demand. If you have read [Agents Have Skills Now]({% post_url 2026-06-15-modern-mcs-agent-skills %}), you already know the shape of it: know-how, packaged so it can be applied again.
+That last row is worth sitting with. Procedural memory is a close cousin of a Skill, a reviewed routine the agent can run on demand. If you have read [Agents Have Skills Now](https://microsoft.github.io/mcscatblog/posts/modern-mcs-agent-skills/), you already know the shape of it: know-how, packaged so it can be applied again.
 
 > The leap isn't that the agent knows a fact. It's that the agent knows how to do the task.
 
@@ -95,22 +99,13 @@ Memory is also user-controlled. The first time someone interacts with a memory-e
 
 Two durable boundaries shape the design. First, every user gets a dedicated memory folder for each agent, so one person's context isn't shared with another. Second, agents powered by the GitHub Copilot harness run each task inside a [secure sandbox](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview) provided by Copilot Studio.
 
-{% raw %}
-```mermaid
-flowchart TB
-    subgraph MEMORY["Memory for one agent"]
-        U1["User A<br/>dedicated memory folder"]
-        U2["User B<br/>dedicated memory folder"]
-        U1 ~~~ U2
-    end
-
-    subgraph EXECUTION["Task execution"]
-        TASK["Agent task"] --> SB{{"Secure sandbox<br/>provided by Copilot Studio"}}
-    end
-
-    MEMORY ~~~ EXECUTION
+```text
+Memory for one agent                    Task execution
+User A -> dedicated memory folder       Agent task
+User B -> dedicated memory folder            |
+                                         Secure sandbox
+                                    provided by Copilot Studio
 ```
-{% endraw %}
 _Clear boundaries. Each user has separate memory for an agent, while agent tasks run in a secure sandbox._
 
 For this introductory post, those are the boundaries that matter: memory is separated per user, and task execution is isolated.
@@ -121,13 +116,13 @@ Capture, store, and apply describe how memory supports future interactions. **Re
 
 In a reflection loop, an agent revisits stored experience outside the live conversation to consolidate what matters, merge duplicates, update stale information, and retire what is no longer useful. It is the memory-system equivalent of reviewing the scientist's notebook at the end of the week rather than treating every entry as permanent truth.
 
-```mermaid
-flowchart LR
-    O["Observe<br/>the conversation"] --> W["Write<br/>what is worth keeping"]
-    W --> R["Reflect<br/>outside the live turn"]
-    R --> C["Apply<br/>in a later conversation"]
-    C --> T["Retire<br/>if stale"]
-    T -. "corrected or dropped" .-> O
+```text
+Observe (the conversation) -> Write (what is worth keeping) -> Reflect
+        ^                                                       |
+        |                                                       v
+Retire (if stale) <- Apply (in a later conversation) <----------+
+        |
+        +-- corrected or dropped information informs later observations
 ```
 _A conceptual reflection loop. Forming memory is only half the system; keeping it useful and current is the other half._
 
@@ -136,7 +131,6 @@ _A conceptual reflection loop. Forming memory is only half the system; keeping i
 The Copilot Studio behavior described above has to hold up in practice. Before Memory widens to more customers, our engineering and data science teams have to validate it. That work is ours, not something we hand to makers to figure out on their own.
 
 > An agent with a bad memory does not crash. It just becomes confidently wrong.
-{: .prompt-warning }
 
 That is what makes memory worth testing carefully: the failure modes are quiet. So we evaluate memory against the ways it can go wrong, not only the ways it can help. Among the behaviors we hold agents to:
 
@@ -145,7 +139,7 @@ That is what makes memory worth testing carefully: the failure modes are quiet. 
 - **Abstention.** When something was never actually said, does the agent say it doesn't know? An agent that trades correct refusals for plausible guesses has become less trustworthy, not more.
 - **Hallucination.** Does having a memory tempt the model into inventing detail that was never in it?
 
-Pinning down behaviors this nuanced is its own discipline. If you want to go deeper on that, we wrote about [scoring agent behavior with LLMs]({% post_url 2026-06-26-better-llm-scoring %}). The bar is simple: memory has to clearly help on recall without costing the agent its willingness to say "I don't know."
+Pinning down behaviors this nuanced is its own discipline. If you want to go deeper on that, we wrote about [scoring agent behavior with LLMs](https://microsoft.github.io/mcscatblog/posts/better-llm-scoring/). The bar is simple: memory has to clearly help on recall without costing the agent its willingness to say "I don't know."
 
 > A memory system isn't good because it remembers more. It's good because it remembers the right things, and knows what it doesn't know.
 
@@ -162,4 +156,3 @@ Agents are becoming genuine co-workers. Memory, deciding what to write down, how
 So here's the question worth asking of your own agents: what is the first thing you'd want them to stop forgetting?
 
 > Memory in Copilot Studio is a production-ready preview for agents powered by the GitHub Copilot harness. Preview capabilities and documentation may change.
-{: .prompt-info }
