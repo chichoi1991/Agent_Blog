@@ -21,6 +21,56 @@
       ],
       "staged_at": "2026-10-06T06:24:31.220Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "hooks-in-copilot-studio",
+      "title": "Hooks in Copilot Studio: Give Your Agent More Than Instructions",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/hooks-in-copilot-studio/",
+      "source_author": "PetrosFeleskouras",
+      "source_published": "2026-10-12",
+      "source_updated": "2026-10-12",
+      "categories": [
+        "copilot-studio",
+        "automation"
+      ],
+      "summary": "Learn how hooks in Copilot Studio extend agent behavior with event-driven workflows that add context, transform data, and check actions before execution.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-10-12-hooks-in-copilot-studio.md",
+      "images": [
+        {
+          "src": "/assets/posts/hooks-in-copilot-studio/Example1_Hook_Creation.png",
+          "local": "assets/catblog/hooks-in-copilot-studio/Example1_Hook_Creation.png"
+        },
+        {
+          "src": "/assets/posts/hooks-in-copilot-studio/Example1_Context_Workflow.png",
+          "local": "assets/catblog/hooks-in-copilot-studio/Example1_Context_Workflow.png"
+        },
+        {
+          "src": "/assets/posts/hooks-in-copilot-studio/HR_Buddy_SessionStart.png",
+          "local": "assets/catblog/hooks-in-copilot-studio/HR_Buddy_SessionStart.png"
+        },
+        {
+          "src": "/assets/posts/hooks-in-copilot-studio/Example2_PII_Workflow.png",
+          "local": "assets/catblog/hooks-in-copilot-studio/Example2_PII_Workflow.png"
+        },
+        {
+          "src": "/assets/posts/hooks-in-copilot-studio/Example2_PII_Preview.png",
+          "local": "assets/catblog/hooks-in-copilot-studio/Example2_PII_Preview.png"
+        },
+        {
+          "src": "/assets/posts/hooks-in-copilot-studio/Example3_Policy_Workflow.png",
+          "local": "assets/catblog/hooks-in-copilot-studio/Example3_Policy_Workflow.png"
+        },
+        {
+          "src": "/assets/posts/hooks-in-copilot-studio/Example3_Policy_Preview.png",
+          "local": "assets/catblog/hooks-in-copilot-studio/Example3_Policy_Preview.png"
+        },
+        {
+          "src": "/assets/posts/hooks-in-copilot-studio/background-image.png",
+          "local": "assets/catblog/hooks-in-copilot-studio/background-image.png"
+        }
+      ],
+      "staged_at": "2026-10-14T17:18:41.968Z",
+      "status": "pending-translation"
     }
   ]
 }
