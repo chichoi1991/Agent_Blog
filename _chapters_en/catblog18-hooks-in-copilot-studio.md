@@ -1,17 +1,26 @@
 ---
-layout: post
-agent_edition: github-copilot
-title: "Hooks in Copilot Studio: Give Your Agent More Than Instructions"
+layout: "chapter"
+lang: en
 date: 2026-10-12
-categories: [copilot-studio, automation]
-tags: [copilot-studio, github-copilot, hooks, workflows, governance, orchestration]
-description: "Learn how hooks in Copilot Studio extend agent behavior with event-driven workflows that add context, transform data, and check actions before execution."
-author: PetrosFeleskouras
-image:
-  path: /assets/posts/hooks-in-copilot-studio/background-image.png
-  alt: "User input passing through before and after hooks around Copilot Studio agent orchestration to an agent response."
-mermaid: false
+title: "Hooks in Copilot Studio: Give Your Agent More Than Instructions"
+short_title: "Hooks in Copilot Studio"
+description: "Learn how Copilot Studio hooks use event-driven workflows to add context, transform data, and check actions before execution."
+order: 18
+category: "catblog"
+source_url: "https://microsoft.github.io/mcscatblog/posts/hooks-in-copilot-studio/"
+source_author: "PetrosFeleskouras"
+source_published: "2026-10-12"
+source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
+canonical_url: "https://microsoft.github.io/mcscatblog/posts/hooks-in-copilot-studio/"
 ---
+
+<div class="info-box note" markdown="1">
+**Translated article** — This article is based on [Hooks in Copilot Studio: Give Your Agent More Than Instructions](https://microsoft.github.io/mcscatblog/posts/hooks-in-copilot-studio/) by PetrosFeleskouras (@PetrosFeleskouras) on [The Custom Engine](https://microsoft.github.io/mcscatblog/) (2026-10-12). The original wording takes precedence.
+</div>
+
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/hooks-in-copilot-studio/background-image.png' | relative_url }}" alt="User input passing through before and after hooks around Copilot Studio agent orchestration to an agent response." loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+</figure>
 
 In agents powered by the GitHub Copilot harness, the agent reasons about how to approach a task and which tools to call. Instructions guide those decisions, but some steps should run whenever a particular event occurs — not only when the model chooses them. **Hooks provide predictable checkpoints where the runtime invokes your logic.**
 
@@ -20,7 +29,6 @@ An HR agent can start a conversation with the employee’s country and preferred
 These examples show how hooks add context, transform data, and check proposed actions. We’ll look at their workflows, input/output mappings, and execution traces, including what happens when a hook fails.
 
 > Hooks are currently in public preview for agents powered by the GitHub Copilot harness. To access hooks today, go to [copilotstudio.preview.microsoft.com](https://copilotstudio.preview.microsoft.com/) and confirm availability in your environment.
-{: .prompt-info }
 
 ## From topic triggers to hooks
 
@@ -32,7 +40,7 @@ This lifecycle-hook pattern is also available in the [GitHub Copilot SDK](https:
 
 In Copilot Studio, you currently implement a hook's handler through a workflow. It receives event inputs and returns outputs that add context, replace values, or deny a proposed tool call. The hook determines when the workflow runs; the agent still decides how to approach the task using the resulting context and decisions.
 
-[Agent skills]({% post_url 2026-06-15-modern-mcs-agent-skills %}) provide task guidance; hooks provide event-triggered execution. See also [agents powered by the GitHub Copilot harness]({% post_url 2026-07-07-new-orchestrator-resources %}).
+[Agent skills](https://microsoft.github.io/mcscatblog/posts/modern-mcs-agent-skills/) provide task guidance; hooks provide event-triggered execution. See also [agents powered by the GitHub Copilot harness](https://microsoft.github.io/mcscatblog/posts/new-orchestrator-resources/).
 
 ## Configure a hook
 
@@ -48,8 +56,10 @@ Although the block accompanies the user's message, the workflow supplies its con
 
 In the sample HR Buddy agent, create **Load employee context**, select **Start (pre-loop)**, and attach its workflow:
 
-![Adding the Load employee context hook to the sample HR Buddy agent](/assets/posts/hooks-in-copilot-studio/Example1_Hook_Creation.png)
-_The hook creation form connects the session-start event to the employee-context workflow._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/hooks-in-copilot-studio/Example1_Hook_Creation.png' | relative_url }}" alt="Adding the Load employee context hook to the sample HR Buddy agent" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>The hook creation form connects the session-start event to the employee-context workflow.</figcaption>
+</figure>
 
 The sample workflow follows this path:
 
@@ -60,11 +70,15 @@ The sample workflow follows this path:
 | Select fields | Use `country`, `employmentCategory`, `preferredLanguage`, and `onboardingStage`. |
 | Return context | Format those values as `additionalContext`; return empty context for an unmatched identity. |
 
-![Employee-context workflow reading the signed-in identifier, resolving a sample profile, and responding to the agent](/assets/posts/hooks-in-copilot-studio/Example1_Context_Workflow.png)
-_For production, replace the sample-profile step with an authenticated, authorized HR lookup._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/hooks-in-copilot-studio/Example1_Context_Workflow.png' | relative_url }}" alt="Employee-context workflow reading the signed-in identifier, resolving a sample profile, and responding to the agent" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>For production, replace the sample-profile step with an authenticated, authorized HR lookup.</figcaption>
+</figure>
 
-![HR Buddy SessionStart trace showing employee context and a subsequent response in Greek](/assets/posts/hooks-in-copilot-studio/HR_Buddy_SessionStart.png)
-_HR Buddy execution: the hook returns employee context in `additionalContext`, followed by a tool call and a response in Greek._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/hooks-in-copilot-studio/HR_Buddy_SessionStart.png' | relative_url }}" alt="HR Buddy SessionStart trace showing employee context and a subsequent response in Greek" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>HR Buddy execution: the hook returns employee context in `additionalContext`, followed by a tool call and a response in Greek.</figcaption>
+</figure>
 
 ## 2. Redact a prompt with Azure Language
 
@@ -88,8 +102,10 @@ Keep credentials in the secured connection and restrict access to approved calle
 
 Create **Redact prompt PII**. Map `prompt` to the document's `text`, with ID `prompt-1` and language `en`. Pass a document object so the connector serializes quotes and newlines correctly.
 
-![PII workflow showing the authenticated Azure Language action and dynamic prompt mapping](/assets/posts/hooks-in-copilot-studio/Example2_PII_Workflow.png)
-_The workflow sends the hook's prompt to Azure Language, validates the result, and returns the redacted text._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/hooks-in-copilot-studio/Example2_PII_Workflow.png' | relative_url }}" alt="PII workflow showing the authenticated Azure Language action and dynamic prompt mapping" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>The workflow sends the hook's prompt to Azure Language, validates the result, and returns the redacted text.</figcaption>
+</figure>
 
 Configure the [categories](https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories) and language for your policy; this example selects English and one category. Default masking produces asterisks.
 
@@ -99,8 +115,10 @@ Validate the connector outcome and document result: require an empty `errors` ar
 
 Map the matching document's `redactedText` to `modifiedPrompt` in **Respond to the agent**, then attach the workflow to the sample HR Buddy agent's **User prompt submitted** hook.
 
-![Sample HR Buddy Preview showing the original prompt and the redacted modifiedPrompt returned by the hook](/assets/posts/hooks-in-copilot-studio/Example2_PII_Preview.png)
-_Actual Preview execution: the Social Security number becomes asterisks while the parental-leave question and requested response language remain intact._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/hooks-in-copilot-studio/Example2_PII_Preview.png' | relative_url }}" alt="Sample HR Buddy Preview showing the original prompt and the redacted modifiedPrompt returned by the hook" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Actual Preview execution: the Social Security number becomes asterisks while the parental-leave question and requested response language remain intact.</figcaption>
+</figure>
 
 Forward only redacted text; keep entity details containing original values within the approved processing path. Zero detections returns the original wording. Coverage varies; sensitive values can remain.
 
@@ -116,8 +134,10 @@ The sample Travel Buddy agent has a non-transactional **BookFlight** workflow to
 
 The tool receives `quoteId`, `totalMinorUnits`, and `currency`. USD amounts use integer cents: `65000` represents $650. In the Preview chat, the tool serialized that value as text, so the workflow converts it with `int()` before comparing amounts.
 
-![Booking-policy workflow loading the USD 500 sample limit and returning its decision](/assets/posts/hooks-in-copilot-studio/Example3_Policy_Workflow.png)
-_The sample workflow normalizes the fare and compares it with the limit. Production requires the identity, policy, and backend checks below._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/hooks-in-copilot-studio/Example3_Policy_Workflow.png' | relative_url }}" alt="Booking-policy workflow loading the USD 500 sample limit and returning its decision" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>The sample workflow normalizes the fare and compares it with the limit. Production requires the identity, policy, and backend checks below.</figcaption>
+</figure>
 
 | Step | Input and decision |
 |---|---|
@@ -127,8 +147,10 @@ _The sample workflow normalizes the fare and compares it with the limit. Product
 | Compare amounts | Deny a fare above the limit. Permit a valid fare at or below the limit. |
 | Return the decision | Set `permissionDecision` and `permissionDecisionReason`. Keep the original arguments by leaving `modifiedParameters` empty. |
 
-![Travel Buddy Preview showing proposed BookFlight arguments and the pre-tool hook's deny response](/assets/posts/hooks-in-copilot-studio/Example3_Policy_Preview.png)
-_Actual Preview execution: the $650 proposal is denied with a reason. The agent asks for a cheaper quote without invoking BookFlight._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/hooks-in-copilot-studio/Example3_Policy_Preview.png' | relative_url }}" alt="Travel Buddy Preview showing proposed BookFlight arguments and the pre-tool hook's deny response" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Actual Preview execution: the $650 proposal is denied with a reason. The agent asks for a cheaper quote without invoking BookFlight.</figcaption>
+</figure>
 
 For approval, leave both permission outputs empty. For handled validation or policy-lookup errors, return `deny` with a reason: "Booking requires a verified policy. Please retry after policy verification succeeds." Keep `additionalContext` empty and `suppressOutput` false.
 
