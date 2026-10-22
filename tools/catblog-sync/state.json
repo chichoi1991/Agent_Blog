@@ -16,6 +16,9 @@
     "agent-review-tool",
     "copilot-credit-consumption-api",
     "sharepoint-metadata-filtering",
-    "work-iq-context-layer-you-already-have"
+    "work-iq-context-layer-you-already-have",
+    "agent-memory",
+    "hooks-in-copilot-studio",
+    "copilot-studio-sdk-both-harnesses"
   ]
 }
