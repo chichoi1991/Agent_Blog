@@ -71,6 +71,40 @@
       ],
       "staged_at": "2026-10-14T17:18:41.968Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "copilot-studio-sdk-both-harnesses",
+      "title": "One SDK Client for Both Copilot Studio Harnesses (Preview)",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/copilot-studio-sdk-both-harnesses/",
+      "source_author": "adilei",
+      "source_published": "2026-10-21",
+      "source_updated": "2026-10-21",
+      "categories": [
+        "copilot-studio",
+        "agents-sdk"
+      ],
+      "summary": "Build custom clients for both Copilot Studio harnesses with Microsoft Entra ID sign-in, plus reasoning and tool calls from GitHub Copilot-harness agents.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-10-21-copilot-studio-sdk-both-harnesses.md",
+      "images": [
+        {
+          "src": "/assets/posts/copilot-studio-sdk-both-harnesses/activity-collapsed.png",
+          "local": "assets/catblog/copilot-studio-sdk-both-harnesses/activity-collapsed.png"
+        },
+        {
+          "src": "/assets/posts/copilot-studio-sdk-both-harnesses/activity-expanded.png",
+          "local": "assets/catblog/copilot-studio-sdk-both-harnesses/activity-expanded.png"
+        },
+        {
+          "src": "/assets/posts/copilot-studio-sdk-both-harnesses/ghcp-schema-name.png",
+          "local": "assets/catblog/copilot-studio-sdk-both-harnesses/ghcp-schema-name.png"
+        },
+        {
+          "src": "/assets/posts/copilot-studio-sdk-both-harnesses/header.png",
+          "local": "assets/catblog/copilot-studio-sdk-both-harnesses/header.png"
+        }
+      ],
+      "staged_at": "2026-10-22T04:51:40.347Z",
+      "status": "pending-translation"
     }
   ]
 }
