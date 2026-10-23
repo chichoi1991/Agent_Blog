@@ -238,8 +238,9 @@ Copy the secret **Value** immediately and store it securely — it will not be s
 
 1. If you haven't installed dev tunnel, follow the [dev tunnels get-started guide](https://learn.microsoft.com/azure/developer/dev-tunnels/get-started), then host a tunnel:
 
-    > [!IMPORTANT]
-    > Replace `hr-mcp-secured` with a unique name (for example, `hr-mcp-secured-alex`).
+    <div class="info-box note" markdown="1">
+    **Important:** Replace `hr-mcp-secured` with a unique name (for example, `hr-mcp-secured-alex`).
+    </div>
 
     ```bash
     devtunnel create hr-mcp-secured -a --host-header unchanged
@@ -251,16 +252,18 @@ Copy the secret **Value** immediately and store it securely — it will not be s
 
     <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-mcp-oauth/devtunnel-hosting-01.png' | relative_url }}" alt="Connect" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Connect</figcaption></figure>
 
-<div class="info-box tip" markdown="1">
-**Tip**
+<div class="info-box note" markdown="1">
+**Tip:**
 Keep both the server (`dotnet run`) and the tunnel (`devtunnel host hr-mcp-secured`) running throughout the mission.
 </div>
 
-### Update the Application ID URI and configuration
+### Confirm the Application ID URI
 
-1. In the [Entra admin center](https://entra.microsoft.com), open the **HR MCP Server** app → **Expose an API** → next to **Application ID URI** select **Edit**, replace `api://<guid>` with your dev tunnel URL (no trailing slash, e.g., `https://hr-mcp-secured.devtunnels.ms`), and **Save**.
+Leave the **Application ID URI** as the default `api://<client-id>` you set earlier. Do not replace it with the dev tunnel URL. Microsoft Entra ID accepts an `https://` identifier URI only when its host is a verified domain of your tenant, and `devtunnels.ms` cannot be verified, so the edit fails with `Values of IdentifierUris property must use a verified domain of the organization or its subdomain`. See [Restrictions on identifier URIs of Microsoft Entra applications](https://learn.microsoft.com/entra/identity-platform/identifier-uri-restrictions) for the supported formats.
 
-1. Update `appsettings.json` so `Scopes` uses the dev tunnel URL:
+The dev tunnel URL is still the address Copilot Studio calls. The server builds its RFC 9728 `resource` value and `resource_metadata` URL from the incoming request host, so the tunnel is picked up automatically, and the access token audience stays the server's client ID.
+
+1. Confirm `appsettings.json` matches the following, then stop the server (`Ctrl+C`) and start it again with `dotnet run`:
 
     ```json
     {
@@ -269,12 +272,10 @@ Keep both the server (`dotnet run`) and the tunnel (`devtunnel host hr-mcp-secur
         "TenantId": "[YOUR_TENANT_ID]",
         "ClientId": "[YOUR_HR_MCP_SERVER_CLIENT_ID]",
         "Audience": "[YOUR_HR_MCP_SERVER_CLIENT_ID]",
-        "Scopes": "[YOUR_DEVTUNNEL_URL]/HR.Manage"
+        "Scopes": "api://[YOUR_HR_MCP_SERVER_CLIENT_ID]/HR.Manage"
       }
     }
     ```
-
-1. Save, stop the server (`Ctrl+C`), and start it again with `dotnet run`.
 
 <!-- REFORMAT-ONLY: Lab 1.2 runs in the Entra admin center and local terminal; it does not
      depend on the Copilot Studio experience. Screenshots were not recaptured. -->
@@ -375,8 +376,9 @@ Now add the secured MCP server as a tool and wire up OAuth 2.0.
 
     - **Scopes**: enter these scopes, separated by spaces:
 
-        > [!IMPORTANT]
-        > These scopes are temporary — you'll replace them with the secured server's real scope (`[YOUR_DEVTUNNEL_URL]/HR.Manage`) once the connection is established.
+        <div class="info-box note" markdown="1">
+        **Important:** These scopes are temporary — you'll replace them with the secured server's real scope (`api://[YOUR_HR_MCP_SERVER_CLIENT_ID]/HR.Manage`) once the connection is established.
+        </div>
 
     <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-mcp-oauth/step-oauth-config.png' | relative_url }}" alt="OAuth 2.0 Manual configuration" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>OAuth 2.0 Manual configuration</figcaption></figure>
 
@@ -386,7 +388,7 @@ Now add the secured MCP server as a tool and wire up OAuth 2.0.
 
     <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-mcp-oauth/entra-redirect-uri-01.png' | relative_url }}" alt="Configure" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Configure</figcaption></figure>
 
-1. *(Optional)* Configure the Power Apps custom connector if your environment requires it. In [Power Automate](https://make.powerautomate.com), select the correct environment → **More** → **Discover all** → **Custom connectors**, edit the **HR MCP Server Secured** connector's **Security** tab, set the **Client Secret**, **Resource URL** (your dev tunnel URL), and **Scope** (`HR.Manage`), then **Update connector**.
+1. *(Optional)* Configure the Power Apps custom connector if your environment requires it. In [Power Automate](https://make.powerautomate.com), select the correct environment → **More** → **Discover all** → **Custom connectors**, edit the **HR MCP Server Secured** connector's **Security** tab, set the **Client Secret**, **Resource URL** (the Application ID URI, `api://[YOUR_HR_MCP_SERVER_CLIENT_ID]`), and **Scope** (`HR.Manage`), then **Update connector**.
 
 1. Complete the connection: in the tool configuration, select **Not connected** → **Create new connection** → **Create**, authenticate with a valid work account, and grant consent if prompted. Then select **Add**.
 
@@ -404,8 +406,9 @@ Time to verify that OAuth 2.0 is guarding the door.
 
 1. On the first secured tool call, an inline **Permission Required** card appears asking to use your credentials to access the external server. Select **Allow**.
 
-    > [!NOTE]
-    > If your connection is missing or the token has expired, you may instead see **Open connection manager**. If so, select it, choose **Connect**, sign in with your work account, grant consent, and confirm the connection shows **Connected**, then return and re-send your prompt.
+    <div class="info-box note" markdown="1">
+    **Note:** If your connection is missing or the token has expired, you may instead see **Open connection manager**. If so, select it, choose **Connect**, sign in with your work account, grant consent, and confirm the connection shows **Connected**, then return and re-send your prompt.
+    </div>
 
 1. Confirm the agent calls the secured MCP server and returns the candidate list. Try more prompts to exercise the other tools:
 
@@ -417,8 +420,9 @@ Time to verify that OAuth 2.0 is guarding the door.
     Get candidate with email bob.brown@example.com
     ```
 
-    > [!TIP]
-    > After the first authentication, your access token is cached — you won't re-authenticate on every request unless it expires or is revoked.
+    <div class="info-box note" markdown="1">
+    **Tip:** After the first authentication, your access token is cached — you won't re-authenticate on every request unless it expires or is revoked.
+    </div>
 
 <div class="info-box note" markdown="1">
 **Note**
@@ -447,8 +451,8 @@ Simply submit the badge request form and answer all required questions:
 
 Once your submission is reviewed, you will receive an email from Global AI Community with instructions to claim your badge.
 
-<div class="info-box tip" markdown="1">
-**Tip**
+<div class="info-box note" markdown="1">
+**Tip:**
 If you do not see the email, check your spam or junk folder.
 </div>
 
