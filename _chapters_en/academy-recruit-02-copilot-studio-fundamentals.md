@@ -1,225 +1,246 @@
 ---
 layout: "chapter"
 lang: en
-date: 2026-08-06
+date: 2026-10-22
 title: "Mission 02: Copilot Studio Fundamentals"
 short_title: "Copilot Studio Fundamentals"
-description: "Learn the building blocks of Knowledge, Skills, and Autonomy."
+description: "Understand the Copilot Studio product map and standard agent building blocks."
 order: 2
 category: "academy-courses"
 parent: "arecruit"
 source_url: "https://microsoft.github.io/agent-academy/recruit/02-copilot-studio-fundamentals/"
 source_author: "Copilot Studio Agent Academy"
 source_blog: "Copilot Studio Agent Academy"
-source_published: "2026-08-06"
+source_published: "2026-10-22"
 canonical_url: "https://microsoft.github.io/agent-academy/recruit/02-copilot-studio-fundamentals/"
 ---
 
 <div class="info-box note" markdown="1">
-**Translated article** — This article is based on [Mission 02: Copilot Studio Fundamentals](https://microsoft.github.io/agent-academy/recruit/02-copilot-studio-fundamentals/) from the [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/). The original wording takes precedence.
+**Translated article** — This article is based on [🚨 Mission 02: Copilot Studio Fundamentals](https://microsoft.github.io/agent-academy/recruit/02-copilot-studio-fundamentals/) from the [Copilot Studio Agent Academy](https://microsoft.github.io/agent-academy/). The original wording takes precedence.
 </div>
 
-## Watch the video
+## Watch the walkthrough
 
-- [YouTube walkthrough](https://www.youtube.com/watch?v=x4OCwDRGeLE)
+- [Watch the walkthrough on YouTube](https://www.youtube.com/watch?v=x4OCwDRGeLE)
 
 <figure class="screenshot">
   <img src="{{ '/assets/academy/recruit-02-copilot-studio-fundamentals/video-thumbnail.jpg' | relative_url }}" alt="Copilot Studio Fundamentals video thumbnail" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
   <figcaption>Copilot Studio Fundamentals video thumbnail</figcaption>
 </figure>
 
-## Mission Briefing
+## Mission Brief
 
-Welcome, Recruit. In this mission, you will learn the core information you need to understand how Copilot Studio works and how to design intelligent agents that deliver real business value.
+Welcome, Recruit. This mission will equip you with foundational intel to understand how Copilot Studio works and how to build intelligent agents that deliver real business value.
 
-Before creating your first agent, you need to understand the four core elements that make up every custom AI agent: Knowledge, Tools, Topics, and Instructions. You will also learn how these elements work together inside the Copilot Studio orchestrator.
+Before building your first agent on the **standard harness**, you'll explore knowledge, tools, topics, and instructions. You'll learn how these components work together through classic or generative orchestration. Other Copilot Studio harnesses organize their capabilities differently.
 
 <div class="info-box note" markdown="1">
 **Important — This mission uses the classic Copilot Studio experience**
-Microsoft Copilot Studio is gradually rolling out a new authoring experience. The concepts in this mission still apply, but the screenshots and navigation paths in the course are based on the **classic experience**. If your screen looks different in later missions, turn off **New Experience** in the upper-right corner and follow along.
+Microsoft Copilot Studio is rolling out a new authoring experience. The concepts in this mission still apply, but the course screenshots and navigation paths use the **classic experience**. If later missions look different on your screen, turn off **New Experience** in the upper-right corner to follow along.
 </div>
 
 ## Objectives
 
-This mission covers:
+In this mission, you'll learn:
 
 1. What Copilot Studio is and when to use it
 2. Why organizations build agents for knowledge and automation scenarios
-3. How Knowledge, Tools, Topics, and Instructions shape an agent
-4. How the Copilot Studio orchestrator makes these components work together
+3. How knowledge, tools, topics, and instructions shape an agent
+4. How the Copilot Studio orchestrator brings these components together
 
-## What is an agent in Copilot Studio?
+## Where This Course Fits in Copilot Studio
 
-An **agent** is a specialized AI assistant designed to handle specific work. Unlike a general-purpose chatbot, an agent can:
+Copilot Studio supports **agents**, **workflows and agent flows**, and **app creation in preview**. An app provides an interactive interface, an agent handles requests using its configured capabilities, and a workflow or agent flow coordinates defined process steps.
 
-- Know **company-specific data**, such as policies, documents, and databases  
-- **Perform real work**, such as sending messages, creating calendar events, and updating records  
-- **Maintain conversation context** and follow up on earlier questions
+For agents, there are four harnesses:
 
-Copilot Studio is a low-code tool, so you can create agents by dragging and dropping prebuilt components, even without coding experience. When an agent is complete, you can use it in Teams, Slack, custom webpages, and other channels to provide answers or automatically run workflows.
+| Harness | When it fits |
+| --- | --- |
+| **GitHub Copilot** | Reasoning-heavy, multi-step work across tools and files |
+| **Copilot chat** | Extending Microsoft Copilot Chat with enterprise knowledge |
+| **Customer Conversation (preview)** | **Customer Assist Agents** for customer-service conversations over chat and voice, with escalation to human representatives |
+| **standard** | Structured conversations and maker-authored topics, using classic or generative orchestration |
 
-## When and why should you use Copilot Studio?
+This mission teaches the **standard harness**. The four building blocks below describe this course's custom-agent architecture, not a universal checklist for every app or agent in Copilot Studio. The separate declarative-agent mission introduces extending Microsoft 365 Copilot; it doesn't change the harness used for the custom agent you build later.
 
-Microsoft 365 Copilot provides general-purpose AI assistance across Office apps, but custom agents are better suited for cases like these.
+Apps created in the new app experience run in **Copilot Managed Runtime (preview)**. They aren't the agent **App channel** or Power Apps **canvas apps** and **model-driven apps**, and they don't use this course's agent-building steps.
 
-### When you need to combine multiple knowledge sources
+<div class="info-box note" markdown="1">
+**Orientation, not extra prerequisites**
+You don't need app-creation or Customer Conversation access to complete this course. The standard harness remains supported. Use the [GitHub Copilot harness Recruit path](https://microsoft.github.io/agent-academy/recruit-nextgen/) if you want its hands-on agent-building approach instead.
+</div>
 
-- M365 Copilot is strong at bringing in context from Microsoft 365, such as SharePoint and Outlook, but an agent is a good choice when you need to search across a broader set of knowledge sources.
+See the [Copilot Studio overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio), [harness comparison](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview), and [apps overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/apps-overview).
 
-### When you want to automate multi-step workflows
+## What Are Agents in Copilot Studio?
 
-- Example: “When someone submits an expense, send an approval request, update the finance tracker, and notify the manager.” A custom agent can handle this kind of multi-step flow from a single command or event.
+An **agent** is a specialized AI assistant you design to handle specific tasks. Unlike a general-purpose chatbot, your agent:
 
-### When you need a contextual experience that flows naturally inside a tool
+- **Knows company-specific data** (policies, documents, databases)
+- **Carries out real-world tasks** (sending messages, creating calendar events, updating records)
+- **Maintains conversational context** so it can follow up on previous questions
 
-- For example, a new-hire onboarding agent in Teams can guide an HR representative through policies, send required forms, and schedule orientation directly inside the collaboration tool they already use.
+Because Copilot Studio is low-code, you can drag and drop prebuilt components to build your agent with no coding skills required. Once your agent is built, you can use it inside Teams, Slack, or even a custom webpage to get answers or trigger workflows automatically.
 
-## The four core components of an agent
+## When and Why to Use Copilot Studio
 
-Every Copilot Studio agent consists of four core elements:
+While Microsoft 365 Copilot provides general AI assistance across Office apps, you'll want a custom agent when:
 
-1. **Knowledge**  
-2. **Tools (Actions)**  
-3. **Topics**  
+### You need to mix and match knowledge from multiple sources
+
+- M365 Copilot is great at retrieving context from M365 (SharePoint, Outlook, etc.), but an agent is a good choice when you need to search across more knowledge sources.
+
+### You want to automate multi-step workflows
+
+- For example: “When someone submits an expense, send it for approval, update the finance tracker, and notify the manager.” A custom agent can handle every step, triggered by a single command or event.
+
+### You need a contextual, in-tool experience
+
+- Imagine a New Hire Onboarding agent in Teams that guides HR staff through every policy, sends necessary forms, and schedules orientation meetings—right inside your existing collaboration platform.
+
+## Four Building Blocks of an Agent
+
+For the standard harness agent in this course, focus on four building blocks:
+
+1. **Knowledge**
+2. **Tools (Actions)**
+3. **Topics**
 4. **Instructions**
 
-Below, we define each element and explain how they work together to create an effective agent.
+Below, we'll define each building block and show how they work together to make an effective agent.
 
 ### 1. Knowledge
 
-**Knowledge** is the data and context an agent uses to answer questions accurately. It has two main parts.
+**Knowledge** is the data and context your agent uses to answer questions accurately. It has two parts:
 
-#### Custom instructions and context
+#### Custom Instructions & Context
 
-- Briefly describe the agent's purpose and tone. For example:
+- You write a brief description of the agent's purpose and tone. For example:
 
-```text
-You are an IT support agent. You help employees troubleshoot common software issues, provide troubleshooting steps, and escalate urgent tickets.
-```
+  ```text
+  You are an IT support agent. You help employees troubleshoot common software issues, provide troubleshooting steps, and escalate urgent tickets.
+  ```
 
-- During a conversation, the agent remembers previous turns, so it can refer back to what has already been discussed. For example, if the user first says “My printer is offline” and later asks “Did you check the ink level?”, the agent can answer while preserving the printer context.
+- During a conversation, the agent remembers previous turns so it can refer back to what was already discussed (for instance, if the user first says, “My printer is offline,” then later asks, “Did you check the ink level?”, the agent recalls the printer context).
 
-#### Knowledge sources (grounding data)
+#### Knowledge Sources (Grounding Data)
 
-- You can connect the agent to multiple data sources, such as SharePoint libraries, documentation sites, wikis, and other databases.  
-- When the user asks a question, the agent retrieves relevant content from those sources so its answers are **grounded** in your organization's actual policies, product documentation, and proprietary information.  
-- You can even force the agent to answer only from those sources to reduce guesses and hallucinated responses.
+- You connect your agent to multiple data sources—SharePoint libraries, documentation sites, wikis, or other databases.
+- When a user asks a question, the agent pulls relevant excerpts from those sources so answers are **grounded** in your organization's actual policies, product manuals, or proprietary information.
+- You can even force the agent to only respond with information from those sources, preventing it from guessing or “hallucinating” answers.
 
 <div class="info-box note" markdown="1">
-**Example**  
-Suppose a “Policy Assistant” agent is connected to an HR SharePoint site. When a user asks “What is our PTO accrual rate?”, the agent can retrieve the exact wording from the HR policy document instead of relying on a generic AI answer.
+**Example**
+A “Policy Assistant” agent might connect to your HR SharePoint site. If a user asks, “What is our PTO accrual rate?”, the agent retrieves the exact text from the HR policy document rather than relying on a generic AI response.
 </div>
 
 ### 2. Tools (Actions)
 
-**Tools (Actions)** define what an agent can do beyond simple conversation. Each Action is a unit that programmatically performs work such as:
+**Tools (Actions)** define what the agent can do beyond chatting. Each action is a task the agent executes programmatically, such as:
 
-- Sending an email or Teams message  
-- Creating or updating a calendar event  
-- Adding or modifying database records, such as SharePoint lists or Dataverse tables  
+- Sending an email or Teams message
+- Creating or updating a calendar event
+- Adding or editing a record in a database (e.g., a SharePoint list or Dataverse table)
 - Calling a Power Automate flow or REST API
 
-#### How actions work
+#### How Actions Work
 
-- **Define inputs and outputs**  
-  - For example, a Send Email action might accept the following inputs:  
-    - `RecipientEmailAddress`  
-    - `SubjectLine`  
+- **Define Inputs & Outputs**
+  - For example, a Send Email action might require:
+    - `RecipientEmailAddress`
+    - `SubjectLine`
     - `EmailBody`
 
-- **Combine actions into workflows**  
-  - User requests often require multiple steps.  
-  - For example, you might chain actions in this order:  
-    1. Retrieve data from a SharePoint list.  
-    2. Generate a summary with an LLM.  
-    3. Send that summary as a Teams message.
+- **Combine Actions into Workflows**
+  - Often, fulfilling a user request involves multiple steps.
+  - You can sequence actions so that:
+    1. The agent retrieves data from a SharePoint list.
+    2. It generates a summary using the LLM.
+    3. It sends a Teams message with that summary.
 
-- **Connect to external systems**  
-  - If you need to update a CRM or call an internal API, you can create a custom action to handle it.  
-  - Copilot Studio can integrate with Power Platform or HTTP-based endpoints.
+- **Connect to External Systems**
+  - If you need to update a CRM or call an internal API, create a custom action to handle that.
+  - Copilot Studio can integrate with the Power Platform or any HTTP-based endpoint.
 
 <div class="info-box note" markdown="1">
-**Example**
+**An “Expense Helper” agent could:**
 
-An “Expense Helper” agent might work like this:
-
-1. Detect a “Submit Expense” request.  
-2. Collect the user's expense information from a form.  
-3. Save the data with an “Add to SharePoint List” action.  
+1. Listen for a “Submit Expense” request.
+2. Grab the user's expense details from a form.
+3. Use an “Add to SharePoint List” action to store the data.
 4. Trigger a “Send Email” action to notify the approver.
 </div>
 
 ### 3. Topics
 
-**Topics** define an agent's conversation triggers or entry points. Each topic corresponds to a feature or category of questions.
+**Topics** define the conversational triggers or entry points for your agent. Each topic corresponds to a piece of functionality or a question category.
 
-#### Conversational triggers
+#### Conversational Triggers
 
-- For example, you might have topics such as “Submit IT Ticket”, “Check Vacation Balance”, and “Create Sales Report”.  
-- Internally, Copilot Studio uses **generative orchestration**. This means it does not rely only on exact keyword matches. Instead, it interprets the user's intent and selects the right topic based on the short description you wrote.
+- A topic might be “Submit IT Ticket,” “Check Vacation Balance,” or “Create Sales Report.”
+- Under the hood, Copilot Studio uses **generative orchestration**: rather than relying on exact keywords, the AI interprets user intent and picks the right topic based on a short description you provide.
 
-#### Topic descriptions
+#### Topic Descriptions
 
-- Each topic should include a short, clear description of the scope that topic covers.
+- In each topic, you write a clear, concise description of what that topic covers.
 
 <div class="info-box note" markdown="1">
-**Example topic description**  
-This topic helps the user submit an IT support ticket by collecting the issue description, priority, and contact information.
+**Example of a topic description**
+This topic helps users submit an IT support ticket by collecting the issue details, priority, and contact information.
 </div>
 
-- Based on this description, the AI decides when to activate the topic even if the user's wording is not an exact match.
+- The AI uses that description to decide when to activate this topic, even if the user's phrasing doesn't exactly match.
 
-#### Connecting topics and actions
+#### Mapping Topics to Actions
 
-- Each topic is connected to one or more actions or data lookup steps.  
-- When the AI selects a topic, it guides the conversation and proceeds with the work in the order you defined, such as asking follow-up questions, calling actions, and returning results.
+- Each topic is connected to one or more actions or data-retrieval steps.
+- When the AI chooses a topic, it guides the conversation through the sequence you defined (ask follow-up questions, call actions, return results).
 
 <div class="info-box note" markdown="1">
-**Example**  
-If a user says “Help me set up a new laptop,” the AI can map that intent to the “Submit IT Ticket” topic. The agent then asks for the laptop model and user information, and automatically creates a ticket in the help desk system.
+**Example**
+If a user says, “I need help setting up my new laptop,” the AI might match that intent to the “Submit IT Ticket” topic. The agent then asks for the laptop model and user details, and pushes a ticket into the help desk system automatically.
 </div>
 
 ### 4. Instructions
 
-**Instructions** (sometimes called “Prompts” or “System Messages”) guide the LLM's tone, style, and boundaries. They define how the agent should respond in any situation.
+**Instructions** (sometimes called “Prompts” or “System Messages”) guide the LLM's tone, style, and boundaries. They shape how the agent responds in any situation.
 
-#### Role and persona
+#### Role & Persona
 
-- Tell the agent who it is, such as “You are a customer service agent for Contoso Retail.”  
-- This lets you choose the appropriate response style for the situation, such as friendly, concise, or formal.
+- You tell the AI who it is (e.g., “You are a customer service agent for Contoso Retail”).
+- This sets the tone—friendly, concise, formal, or casual—depending on your use case.
 
-#### Response guidelines
+#### Response Guidelines
 
-- Specify rules the agent must follow. For example:  
-  - “Always summarize policy information in bullet points.”  
-  - “If you do not know the answer, say ‘I'm sorry, but I don't have that information.’”  
-  - “Never include confidential data outside the current context.”
+- Specify any rules the agent must follow, such as:
+  - “Always summarize policy information in bullet points.”
+  - “If you don't know the answer, say ‘I'm sorry, I don't have that information.’”
+  - “Never include confidential data outside of context.”
 
-#### Memory and context rules
+#### Memory & Context Rules
 
-- You can instruct the agent how many turns of conversation to remember.  
-- Example: “Remember the details of this user's request for up to three follow-up questions.”
+- You can instruct the agent how many turns of conversation to remember.
+- For example: “Remember details from this user's requests for up to three follow-up questions.”
 
 <div class="info-box note" markdown="1">
-**Example**  
-A “Benefits Advisor” agent might include instructions such as:  
-“Always refer to the latest HR handbook when answering questions. If the user asks about enrollment deadlines, provide the exact dates from the policy. Keep responses under 150 words.”
+**In a “Benefits Advisor” agent, you might include:**
+“Always reference the latest HR handbook when answering questions. If asked about enrollment deadlines, provide the specific dates from the policy. Keep answers under 150 words.”
 </div>
 
-## How the four core components work together
+## How the Four Building Blocks Work Together
 
-When you combine **Knowledge**, **Tools**, **Topics**, and **Instructions**, the Copilot Studio AI orchestrator creates an agent that works like this:
+When you assemble **Knowledge**, **Tools**, **Topics**, and **Instructions**, Copilot Studio's AI orchestrator creates an agent that:
 
-1. **Detects the relevant Topic** based on topic descriptions.  
-2. **Applies Instructions** to set the tone, decide whether follow-up questions are needed, and enforce rules.  
-3. **Uses Knowledge Sources** to ground answers in organizational data.  
-4. **Calls Tools (Actions)** to perform work such as sending messages, updating records, or calling APIs.
+1. **Listens for a relevant Topic** (guided by your topic descriptions).
+2. **Applies Instructions** to set its tone, decide when to ask follow-up questions, and enforce rules.
+3. **Leverages Knowledge Sources** to ground its answers in your organization's data.
+4. **Calls Tools (Actions)** as needed to perform tasks—sending messages, updating records, or invoking APIs.
 
-Internally, the orchestrator uses a **generative planning** approach to determine the steps and order needed to handle the user's request. For example, if sending an email fails, it can ask a follow-up question or report the error based on the exception-handling instructions you defined. The LLM also adapts to conversation context, so it can maintain memory across multiple turns and keep adjusting its responses as new information arrives.
+Under the hood, the orchestrator uses a **generative planning** approach: it decides which steps to take, in what order, to fulfill a user request. If an action fails (for example, an email can't be sent), the agent follows your exception-handling guidelines (ask a clarifying question or report the error). Because the LLM adapts to conversation context, the agent can maintain memory over multiple turns and incorporate new information as the conversation unfolds.
 
-**Visual flow example**
+**Visual Flow Example**
 
-``` mermaid
+```mermaid
 sequenceDiagram
     participant User
     participant AI
@@ -238,16 +259,18 @@ sequenceDiagram
 
 ## Mission Complete
 
-You have successfully completed the following.
+You've successfully:
 
-- **Knowledge**: Identified where agents find factual information.
-- **Tools**: Explained how agents perform actions and connect to other systems.
-- **Topics**: Explained how agents handle defined conversation paths.
-- **Instructions**: Explained how rules, tone, and boundaries guide responses.
+- **Knowledge**: Identified where an agent finds factual information
+- **Tools**: Explained how an agent performs tasks and connects to other systems
+- **Topics**: Described how an agent handles defined conversation paths
+- **Instructions**: Explained how rules, tone, and boundaries guide responses
 
-Next, continue to [Mission 03: Deploy a declarative agent for Microsoft 365 Copilot]({{ '/en/chapters/academy-recruit-03-create-a-declarative-agent-for-m365copilot/' | relative_url }}).
+Next, continue to [Mission 03: Deploy a Declarative Agent for Microsoft 365 Copilot](https://microsoft.github.io/agent-academy/recruit/03-create-a-declarative-agent-for-M365Copilot/).
 
 ## Tactical Resources
 
-- [Microsoft Copilot Studio overview](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-what-is-copilot-studio)
-- [Create an agent in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/authoring-first-bot)
+- [Microsoft Copilot Studio overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio)
+- [Harness comparison](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview)
+- [Apps overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/apps-experience/apps-overview)
+- [Create an agent in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-first-bot)
