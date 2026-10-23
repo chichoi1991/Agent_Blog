@@ -24,10 +24,12 @@ canonical_url: "https://microsoft.github.io/agent-academy/special-ops/mcp-oauth/
 에이전트 여러분, 이번 미션 **Operation Clearance**의 목표는 **OAuth 2.0** 인증으로 보호된 **MCP 서버**를 Microsoft Copilot Studio 에이전트에 연결하는 것입니다. 토큰 없이는 접근 불가. Entra ID에 자격증명을 등록하고, Authorization Code Flow를 연결하고, 인증된 운영자만 HR 채용 후보 파일에 접근할 수 있음을 증명합니다. 🎯🔑
 
 <div class="info-box note" markdown="1">
-**참고**: 이 미션은 **새 Copilot Studio 작성 환경(New Experience)** 기준으로 업데이트되었습니다.
+**중요**: Copilot Studio 단계에는 **GitHub Copilot 하네스**로 구동되는 에이전트가 필요합니다. 에이전트를 만들기 전에 **New Experience**를 켜세요.
 </div>
 
 이 미션은 [Microsoft Copilot Studio ❤️ MCP](https://microsoft.github.io/agent-academy/special-ops/mcs-mcp/) 미션의 개념을 기반으로 합니다. 이전 미션에서는 인증이 없는 MCP 서버를 다뤘습니다. 여기서는 커스텀 MCP 서버를 OAuth 2.0 인증으로 보호합니다.
+
+**커리큘럼 출처:** 이 미션은 [Microsoft Copilot Developer Camp](https://aka.ms/copilot-camp)의 자료를 바탕으로 합니다. 원래 커리큘럼을 제공한 [Paolo Pialorsi](https://github.com/PaoloPia)와 Copilot Camp 기여자들에게 감사드립니다. Agent Academy 버전은 GitHub Copilot 하네스에 맞게 실습을 업데이트하고 Special Ops 형식으로 제공합니다.
 
 ## 🔧 만들 것들
 
@@ -37,9 +39,14 @@ canonical_url: "https://microsoft.github.io/agent-academy/special-ops/mcp-oauth/
 
 ## ⚙️ 사전 준비
 
-- Microsoft Copilot Studio 체험판 또는 유료 계정. 계정이 없다면 [코스 설정](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) 안내를 참고하세요.
+- **GitHub Copilot 하네스**를 사용할 수 있는 Microsoft Copilot Studio 체험판 또는 유료 계정. 계정이 없다면 [코스 설정](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) 안내를 참고하세요.
 - **Microsoft Entra ID**에 앱을 등록하고 관리자 동의를 부여할 수 있는 권한.
 - 로컬에 **Visual Studio Code**, **.NET SDK**, **dev tunnel** CLI 설치.
+
+<div class="info-box note" markdown="1">
+**중요: GitHub Copilot 하네스 요금**
+이 미션은 Microsoft Copilot Studio의 **GitHub Copilot 하네스**를 사용하며 사용량 기반 요금이 적용됩니다. 에이전트 빌드, 미리 보기 테스트, 평가 및 사용에 **Copilot Credits**가 소모될 수 있습니다. 시작하기 전에 [Copilot Credits 요금 개요](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview)를 확인하세요.
+</div>
 
 <div class="info-box note" markdown="1">
 **참고**: Lab 1.1과 1.2는 로컬 머신과 Entra 관리 센터에서 진행합니다. Lab 1.3–1.5는 Copilot Studio에서 진행합니다. 미션 전체에서 서버와 dev tunnel을 계속 실행 상태로 유지하세요.
@@ -225,11 +232,13 @@ Zava의 HR 팀은 민감한 인사 데이터를 노출하는 후보 관리 MCP �
 **팁**: 미션 전체에서 서버(`dotnet run`)와 터널(`devtunnel host hr-mcp-secured`)을 모두 실행 상태로 유지하세요.
 </div>
 
-### 애플리케이션 ID URI 및 구성 업데이트
+### 애플리케이션 ID URI 확인
 
-1. [Entra 관리 센터](https://entra.microsoft.com)에서 **HR MCP Server** 앱 → **API 노출** → **애플리케이션 ID URI** 옆 **편집**을 선택하고, `api://<guid>`를 dev tunnel URL(후행 슬래시 없이, 예: `https://hr-mcp-secured.devtunnels.ms`)로 교체하고 **저장**합니다.
+앞서 설정한 기본값 `api://<client-id>`를 **애플리케이션 ID URI**로 유지합니다. dev tunnel URL로 바꾸지 마세요. Microsoft Entra ID에서 `https://` 식별자 URI를 사용하려면 해당 호스트가 테넌트에서 확인된 도메인이어야 합니다. `devtunnels.ms`는 확인할 수 없으므로 변경 시 `Values of IdentifierUris property must use a verified domain of the organization or its subdomain` 오류가 발생합니다. 지원되는 형식은 [Microsoft Entra 애플리케이션 식별자 URI 제한](https://learn.microsoft.com/entra/identity-platform/identifier-uri-restrictions)을 참고하세요.
 
-1. `appsettings.json`의 `Scopes`가 dev tunnel URL을 사용하도록 업데이트합니다.
+dev tunnel URL은 계속 Copilot Studio가 호출하는 주소입니다. 서버는 수신 요청 호스트에서 RFC 9728 `resource` 값과 `resource_metadata` URL을 구성하므로 터널 주소가 자동으로 사용되고 액세스 토큰 대상은 서버의 클라이언트 ID로 유지됩니다.
+
+1. `appsettings.json`이 다음과 일치하는지 확인한 후 서버를 중지(`Ctrl+C`)하고 `dotnet run`으로 다시 시작합니다.
 
     ```json
     {
@@ -238,12 +247,10 @@ Zava의 HR 팀은 민감한 인사 데이터를 노출하는 후보 관리 MCP �
         "TenantId": "[YOUR_TENANT_ID]",
         "ClientId": "[YOUR_HR_MCP_SERVER_CLIENT_ID]",
         "Audience": "[YOUR_HR_MCP_SERVER_CLIENT_ID]",
-        "Scopes": "[YOUR_DEVTUNNEL_URL]/HR.Manage"
+        "Scopes": "api://[YOUR_HR_MCP_SERVER_CLIENT_ID]/HR.Manage"
       }
     }
     ```
-
-1. 파일을 저장하고 서버를 중지(`Ctrl+C`)한 뒤 `dotnet run`으로 다시 시작합니다.
 
 ## 🧪 Lab 1.3 — Copilot Studio에서 에이전트 만들기
 
@@ -317,7 +324,7 @@ Zava의 HR 팀은 민감한 인사 데이터를 노출하는 후보 관리 MCP �
     - **범위**: 공백으로 구분된 범위 입력
 
     <div class="info-box note" markdown="1">
-    **중요**: 이 범위는 임시입니다 — 연결이 확립되면 보안 서버의 실제 범위(`[YOUR_DEVTUNNEL_URL]/HR.Manage`)로 교체합니다.
+    **중요**: 이 범위는 임시입니다 — 연결이 확립되면 보안 서버의 실제 범위(`api://[YOUR_HR_MCP_SERVER_CLIENT_ID]/HR.Manage`)로 교체합니다.
     </div>
 
     <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-mcp-oauth/step-oauth-config.png' | relative_url }}" alt="OAuth 2.0 수동 구성" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>OAuth 2.0 수동 구성 화면</figcaption></figure>
@@ -328,7 +335,7 @@ Zava의 HR 팀은 민감한 인사 데이터를 노출하는 후보 관리 MCP �
 
     <figure class="screenshot"><img src="{{ '/assets/academy/special-ops-mcp-oauth/entra-redirect-uri-01.png' | relative_url }}" alt="리디렉션 URI 구성" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')"><figcaption>Entra ID에 리디렉션 URI 등록</figcaption></figure>
 
-1. *(선택 사항)* 환경에 Power Apps 커스텀 커넥터가 필요하다면, [Power Automate](https://make.powerautomate.com)에서 올바른 환경 선택 → **더 보기** → **모두 검색** → **커스텀 커넥터**로 이동해 **HR MCP Server Secured** 커넥터의 **보안** 탭에서 **클라이언트 시크릿**, **리소스 URL**(dev tunnel URL), **범위**(`HR.Manage`)를 설정하고 **커넥터 업데이트**를 선택합니다.
+1. *(선택 사항)* 환경에 Power Apps 커스텀 커넥터가 필요하다면, [Power Automate](https://make.powerautomate.com)에서 올바른 환경 선택 → **더 보기** → **모두 검색** → **커스텀 커넥터**로 이동해 **HR MCP Server Secured** 커넥터의 **보안** 탭에서 **클라이언트 시크릿**, **리소스 URL**(애플리케이션 ID URI, `api://[YOUR_HR_MCP_SERVER_CLIENT_ID]`), **범위**(`HR.Manage`)를 설정하고 **커넥터 업데이트**를 선택합니다.
 
 1. 연결 완료: 도구 구성에서 **연결 안 됨** → **새 연결 만들기** → **만들기**를 선택하고 유효한 회사 계정으로 인증한 뒤 동의를 부여합니다. 이후 **추가**를 선택합니다.
 
