@@ -125,6 +125,2252 @@
       ],
       "staged_at": "2026-10-23T05:20:34.706Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-06-create-agent-from-conversation",
+      "src_path": "recruit/06-create-agent-from-conversation",
+      "sha": "af07faddd47010568736a8cd1f8f16e208555853",
+      "title": "🚨 Mission 06: Create a custom agent using natural language with AI and grounding it with your data",
+      "description": "Create a new agent grounded in knowledge sources",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 6,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/06-create-agent-from-conversation/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-06",
+      "images": [
+        {
+          "src": "./assets/video-thumbnail.jpg",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/video-thumbnail.jpg"
+        },
+        {
+          "src": "./assets/6.1_01_Prompt.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_01_Prompt.png"
+        },
+        {
+          "src": "./assets/6.1_02_AgentSettings.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_02_AgentSettings.png"
+        },
+        {
+          "src": "./assets/6.1_03_AgentProvisioned.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_03_AgentProvisioned.png"
+        },
+        {
+          "src": "./assets/6.1_04_KnowledgeAndTools.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_04_KnowledgeAndTools.png"
+        },
+        {
+          "src": "./assets/6.1_05_ConnectedAgentsTopicsSuggestedPrompts.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_05_ConnectedAgentsTopicsSuggestedPrompts.png"
+        },
+        {
+          "src": "./assets/6.1_06_AgentSettings.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_06_AgentSettings.png"
+        },
+        {
+          "src": "./assets/6.1_07_AdvancedSettings.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_07_AdvancedSettings.png"
+        },
+        {
+          "src": "./assets/6.1_08_EditDetails.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_08_EditDetails.png"
+        },
+        {
+          "src": "./assets/6.1_09_AgentName.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_09_AgentName.png"
+        },
+        {
+          "src": "./assets/6.1_10_AddSuggestedWebsite.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_10_AddSuggestedWebsite.png"
+        },
+        {
+          "src": "./assets/6.1_11_AddWebsite.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_11_AddWebsite.png"
+        },
+        {
+          "src": "./assets/6.1_12_AddAdditionalWebsite.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_12_AddAdditionalWebsite.png"
+        },
+        {
+          "src": "./assets/6.1_13_SelectDismiss.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_13_SelectDismiss.png"
+        },
+        {
+          "src": "./assets/6.1_14_DisableWebSearch.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_14_DisableWebSearch.png"
+        },
+        {
+          "src": "./assets/6.1_15_StartNewTestSession.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_15_StartNewTestSession.png"
+        },
+        {
+          "src": "./assets/6.1_16_EnterQuestion.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_16_EnterQuestion.png"
+        },
+        {
+          "src": "./assets/6.1_17_References.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.1_17_References.png"
+        },
+        {
+          "src": "./assets/6.2_01_SelectSharePoint.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.2_01_SelectSharePoint.png"
+        },
+        {
+          "src": "./assets/6.2_02_AddSharePointSite.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.2_02_AddSharePointSite.png"
+        },
+        {
+          "src": "./assets/6.2_03_SharePointSiteAdded.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.2_03_SharePointSiteAdded.png"
+        },
+        {
+          "src": "./assets/6.3_01_SelectUploadFile.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.3_01_SelectUploadFile.png"
+        },
+        {
+          "src": "./assets/6.3_02_SelectWordFile.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.3_02_SelectWordFile.png"
+        },
+        {
+          "src": "./assets/6.3_03_SelectAddToAgent.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.3_03_SelectAddToAgent.png"
+        },
+        {
+          "src": "./assets/6.3_04_FileAdded.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.3_04_FileAdded.png"
+        },
+        {
+          "src": "./assets/6.3_05_FileStatus.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.3_05_FileStatus.png"
+        },
+        {
+          "src": "./assets/6.4_01_EnterQuestion1.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_01_EnterQuestion1.png"
+        },
+        {
+          "src": "./assets/6.4_02_Question1Response.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_02_Question1Response.png"
+        },
+        {
+          "src": "./assets/6.4_03_OtherSourcesSearchedOver.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_03_OtherSourcesSearchedOver.png"
+        },
+        {
+          "src": "./assets/6.4_04_EnterQuestion2Question3.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_04_EnterQuestion2Question3.png"
+        },
+        {
+          "src": "./assets/6.4_05_Question2Response.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_05_Question2Response.png"
+        },
+        {
+          "src": "./assets/6.4_06_Question3Response.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_06_Question3Response.png"
+        },
+        {
+          "src": "./assets/6.4_07_OtherSourcesSearchedOver.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_07_OtherSourcesSearchedOver.png"
+        },
+        {
+          "src": "./assets/6.4_08_VerifyDocument.png",
+          "local": "assets/academy/recruit-06-create-agent-from-conversation/6.4_08_VerifyDocument.png"
+        }
+      ],
+      "staged_at": "2026-10-26T05:16:22.238Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "operative-01-get-started",
+      "src_path": "operative/01-get-started",
+      "sha": "0d03706314d7256d5cf8c507619b3d4628fc36a1",
+      "title": "🚨 Mission 01: Get started with the Hiring Agent",
+      "description": "Deploy foundational infrastructure and create your central orchestrator agent",
+      "category": "academy-courses",
+      "parent": "aoperative",
+      "parentTitle": "Operative — 중급 코스",
+      "parentShort": "Operative",
+      "parentOrder": 2,
+      "order": 1,
+      "source_url": "https://microsoft.github.io/agent-academy/operative/01-get-started/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-03-16",
+      "images": [
+        {
+          "src": "./assets/01-get-started-thumbnail_PlayButton.png",
+          "local": "assets/academy/operative-01-get-started/01-get-started-thumbnail_PlayButton.png"
+        },
+        {
+          "src": "./assets/01-solutionstab.png",
+          "local": "assets/academy/operative-01-get-started/01-solutionstab.png"
+        },
+        {
+          "src": "./assets/01-importsolution.png",
+          "local": "assets/academy/operative-01-get-started/01-importsolution.png"
+        },
+        {
+          "src": "./assets/01-nextsolution.png",
+          "local": "assets/academy/operative-01-get-started/01-nextsolution.png"
+        },
+        {
+          "src": "./assets/01-import.png",
+          "local": "assets/academy/operative-01-get-started/01-import.png"
+        },
+        {
+          "src": "./assets/01-selectsolution.png",
+          "local": "assets/academy/operative-01-get-started/01-selectsolution.png"
+        },
+        {
+          "src": "./assets/components.png",
+          "local": "assets/academy/operative-01-get-started/components.png"
+        },
+        {
+          "src": "./assets/01-pubcustomizations.png",
+          "local": "assets/academy/operative-01-get-started/01-pubcustomizations.png"
+        },
+        {
+          "src": "./assets/01-playhiringhubapp.png",
+          "local": "assets/academy/operative-01-get-started/01-playhiringhubapp.png"
+        },
+        {
+          "src": "./assets/import-from-excel.png",
+          "local": "assets/academy/operative-01-get-started/import-from-excel.png"
+        },
+        {
+          "src": "./assets/import-from-csv.png",
+          "local": "assets/academy/operative-01-get-started/import-from-csv.png"
+        },
+        {
+          "src": "./assets/import-from-csv-job-roles.png",
+          "local": "assets/academy/operative-01-get-started/import-from-csv-job-roles.png"
+        },
+        {
+          "src": "./assets/job-roles-import-successful.png",
+          "local": "assets/academy/operative-01-get-started/job-roles-import-successful.png"
+        },
+        {
+          "src": "./assets/import-from-csv-evaluation-criteria.png",
+          "local": "assets/academy/operative-01-get-started/import-from-csv-evaluation-criteria.png"
+        },
+        {
+          "src": "./assets/01-jobrolemag.png",
+          "local": "assets/academy/operative-01-get-started/01-jobrolemag.png"
+        },
+        {
+          "src": "./assets/01-jobtitle.png",
+          "local": "assets/academy/operative-01-get-started/01-jobtitle.png"
+        },
+        {
+          "src": "./assets/evaluation-criteria-import-successful.png",
+          "local": "assets/academy/operative-01-get-started/evaluation-criteria-import-successful.png"
+        },
+        {
+          "src": "./assets/01-agenttab.png",
+          "local": "assets/academy/operative-01-get-started/01-agenttab.png"
+        },
+        {
+          "src": "./assets/01-newagent.png",
+          "local": "assets/academy/operative-01-get-started/01-newagent.png"
+        },
+        {
+          "src": "./assets/01-agentsettings.png",
+          "local": "assets/academy/operative-01-get-started/01-agentsettings.png"
+        },
+        {
+          "src": "./assets/01-editdetails.png",
+          "local": "assets/academy/operative-01-get-started/01-editdetails.png"
+        }
+      ],
+      "staged_at": "2026-10-26T05:16:23.996Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "operative-03-multi-agent",
+      "src_path": "operative/03-multi-agent",
+      "sha": "e475f1157a1a693d948180685fa1bd4bd59726ce",
+      "title": "🚨 Mission 03: Multi-Agent Systems",
+      "description": "Transform single agent into coordinated multi-agent system",
+      "category": "academy-courses",
+      "parent": "aoperative",
+      "parentTitle": "Operative — 중급 코스",
+      "parentShort": "Operative",
+      "parentOrder": 2,
+      "order": 3,
+      "source_url": "https://microsoft.github.io/agent-academy/operative/03-multi-agent/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-03-16",
+      "images": [
+        {
+          "src": "./assets/03-multi-agent-thumbnail_PlayButton.png",
+          "local": "assets/academy/operative-03-multi-agent/03-multi-agent-thumbnail_PlayButton.png"
+        },
+        {
+          "src": "./assets/2-select-solutions.png",
+          "local": "assets/academy/operative-03-multi-agent/2-select-solutions.png"
+        },
+        {
+          "src": "./assets/2-select-preferred-solution.png",
+          "local": "assets/academy/operative-03-multi-agent/2-select-preferred-solution.png"
+        },
+        {
+          "src": "./assets/02-editinstructions.png",
+          "local": "assets/academy/operative-03-multi-agent/02-editinstructions.png"
+        },
+        {
+          "src": "./assets/2-hiring-agent-instructions.png",
+          "local": "assets/academy/operative-03-multi-agent/2-hiring-agent-instructions.png"
+        },
+        {
+          "src": "./assets/02_settingsbtn.png",
+          "local": "assets/academy/operative-03-multi-agent/02_settingsbtn.png"
+        },
+        {
+          "src": "./assets/2-gen-orchestration.png",
+          "local": "assets/academy/operative-03-multi-agent/2-gen-orchestration.png"
+        },
+        {
+          "src": "./assets/2-set-medium-moderation.png",
+          "local": "assets/academy/operative-03-multi-agent/2-set-medium-moderation.png"
+        },
+        {
+          "src": "./assets/2-settings-knowledge-web.png",
+          "local": "assets/academy/operative-03-multi-agent/2-settings-knowledge-web.png"
+        },
+        {
+          "src": "./assets/02_closesettings.png",
+          "local": "assets/academy/operative-03-multi-agent/02_closesettings.png"
+        },
+        {
+          "src": "./assets/02_agentsadd.png",
+          "local": "assets/academy/operative-03-multi-agent/02_agentsadd.png"
+        },
+        {
+          "src": "./assets/02_newchildagent.png",
+          "local": "assets/academy/operative-03-multi-agent/02_newchildagent.png"
+        },
+        {
+          "src": "./assets/02_agentnamedesc.png",
+          "local": "assets/academy/operative-03-multi-agent/02_agentnamedesc.png"
+        },
+        {
+          "src": "./assets/02_priority.png",
+          "local": "assets/academy/operative-03-multi-agent/02_priority.png"
+        },
+        {
+          "src": "./assets/02_websearchdisabled.png",
+          "local": "assets/academy/operative-03-multi-agent/02_websearchdisabled.png"
+        },
+        {
+          "src": "./assets/02_addtool.png",
+          "local": "assets/academy/operative-03-multi-agent/02_addtool.png"
+        },
+        {
+          "src": "./assets/2-new-tool-2.png",
+          "local": "assets/academy/operative-03-multi-agent/2-new-tool-2.png"
+        },
+        {
+          "src": "./assets/2-add-agent-flow.png",
+          "local": "assets/academy/operative-03-multi-agent/2-add-agent-flow.png"
+        },
+        {
+          "src": "./assets/02_flowaddinput.png",
+          "local": "assets/academy/operative-03-multi-agent/02_flowaddinput.png"
+        },
+        {
+          "src": "./assets/2-upload-resume-trigger.png",
+          "local": "assets/academy/operative-03-multi-agent/2-upload-resume-trigger.png"
+        },
+        {
+          "src": "./assets/02-dataverseaddaction.png",
+          "local": "assets/academy/operative-03-multi-agent/02-dataverseaddaction.png"
+        },
+        {
+          "src": "./assets/02-renamecreateresume.png",
+          "local": "assets/academy/operative-03-multi-agent/02-renamecreateresume.png"
+        },
+        {
+          "src": "./assets/02_resumeshowall.png",
+          "local": "assets/academy/operative-03-multi-agent/02_resumeshowall.png"
+        },
+        {
+          "src": "./assets/2-upload-resume-add-resume-props.png",
+          "local": "assets/academy/operative-03-multi-agent/2-upload-resume-add-resume-props.png"
+        },
+        {
+          "src": "./assets/02_dataverseupload.png",
+          "local": "assets/academy/operative-03-multi-agent/02_dataverseupload.png"
+        },
+        {
+          "src": "./assets/2-upload-resume-upload-resume-file.png",
+          "local": "assets/academy/operative-03-multi-agent/2-upload-resume-upload-resume-file.png"
+        },
+        {
+          "src": "./assets/2-upload-resume-return.png",
+          "local": "assets/academy/operative-03-multi-agent/2-upload-resume-return.png"
+        },
+        {
+          "src": "./assets/2-upload-resume-save-draft.png",
+          "local": "assets/academy/operative-03-multi-agent/2-upload-resume-save-draft.png"
+        },
+        {
+          "src": "./assets/2-upload-resume-rename.png",
+          "local": "assets/academy/operative-03-multi-agent/2-upload-resume-rename.png"
+        },
+        {
+          "src": "./assets/2-upload-resume-publish.png",
+          "local": "assets/academy/operative-03-multi-agent/2-upload-resume-publish.png"
+        },
+        {
+          "src": "./assets/2-add-agent-flow-to-agent.png",
+          "local": "assets/academy/operative-03-multi-agent/2-add-agent-flow-to-agent.png"
+        },
+        {
+          "src": "./assets/02_selectResumeUploadFlow.png",
+          "local": "assets/academy/operative-03-multi-agent/02_selectResumeUploadFlow.png"
+        },
+        {
+          "src": "./assets/02_addconfigResupl.png",
+          "local": "assets/academy/operative-03-multi-agent/02_addconfigResupl.png"
+        },
+        {
+          "src": "./assets/2-resume-upload-tool-props-1.png",
+          "local": "assets/academy/operative-03-multi-agent/2-resume-upload-tool-props-1.png"
+        },
+        {
+          "src": "./assets/2-resume-upload-tool-props-2.png",
+          "local": "assets/academy/operative-03-multi-agent/2-resume-upload-tool-props-2.png"
+        },
+        {
+          "src": "./assets/02_contentbytesconfig.png",
+          "local": "assets/academy/operative-03-multi-agent/02_contentbytesconfig.png"
+        },
+        {
+          "src": "./assets/02_nameconfig.png",
+          "local": "assets/academy/operative-03-multi-agent/02_nameconfig.png"
+        },
+        {
+          "src": "./assets/02_messagecustomize.png",
+          "local": "assets/academy/operative-03-multi-agent/02_messagecustomize.png"
+        },
+        {
+          "src": "./assets/02_messagereprompts.png",
+          "local": "assets/academy/operative-03-multi-agent/02_messagereprompts.png"
+        },
+        {
+          "src": "./assets/02_messageentitynotfound.png",
+          "local": "assets/academy/operative-03-multi-agent/02_messageentitynotfound.png"
+        },
+        {
+          "src": "./assets/02_useremailconfig.png",
+          "local": "assets/academy/operative-03-multi-agent/02_useremailconfig.png"
+        },
+        {
+          "src": "./assets/02_saveresup.png",
+          "local": "assets/academy/operative-03-multi-agent/02_saveresup.png"
+        },
+        {
+          "src": "./assets/2-application-agent-instructions.png",
+          "local": "assets/academy/operative-03-multi-agent/2-application-agent-instructions.png"
+        },
+        {
+          "src": "./assets/2-test-multi-uploads.png",
+          "local": "assets/academy/operative-03-multi-agent/2-test-multi-uploads.png"
+        },
+        {
+          "src": "./assets/2-upload-activity-map.png",
+          "local": "assets/academy/operative-03-multi-agent/2-upload-activity-map.png"
+        },
+        {
+          "src": "./assets/2-open-model-driven-app.png",
+          "local": "assets/academy/operative-03-multi-agent/2-open-model-driven-app.png"
+        },
+        {
+          "src": "./assets/2-resume-uploade.png",
+          "local": "assets/academy/operative-03-multi-agent/2-resume-uploade.png"
+        },
+        {
+          "src": "./assets/02_newConnectedAgent.png",
+          "local": "assets/academy/operative-03-multi-agent/02_newConnectedAgent.png"
+        },
+        {
+          "src": "./assets/02_connectedAdvancedSettings.png",
+          "local": "assets/academy/operative-03-multi-agent/02_connectedAdvancedSettings.png"
+        },
+        {
+          "src": "./assets/02_connectedSolution.png",
+          "local": "assets/academy/operative-03-multi-agent/02_connectedSolution.png"
+        },
+        {
+          "src": "./assets/2-create-interview-agent.png",
+          "local": "assets/academy/operative-03-multi-agent/2-create-interview-agent.png"
+        },
+        {
+          "src": "./assets/2-interview-agent-add-knowledge.png",
+          "local": "assets/academy/operative-03-multi-agent/2-interview-agent-add-knowledge.png"
+        },
+        {
+          "src": "./assets/2-interview-agent-add-knowledge-select-dataverse.png",
+          "local": "assets/academy/operative-03-multi-agent/2-interview-agent-add-knowledge-select-dataverse.png"
+        },
+        {
+          "src": "./assets/2-interview-agent-add-knowledge-select-tables.png",
+          "local": "assets/academy/operative-03-multi-agent/2-interview-agent-add-knowledge-select-tables.png"
+        },
+        {
+          "src": "./assets/02_connectedAgentSettings.png",
+          "local": "assets/academy/operative-03-multi-agent/02_connectedAgentSettings.png"
+        },
+        {
+          "src": "./assets/02_connectedAgentsSettingsConfig.png",
+          "local": "assets/academy/operative-03-multi-agent/02_connectedAgentsSettingsConfig.png"
+        },
+        {
+          "src": "./assets/02_connectedAgentPublish.png",
+          "local": "assets/academy/operative-03-multi-agent/02_connectedAgentPublish.png"
+        },
+        {
+          "src": "./assets/02_selectedConnectedAgent.png",
+          "local": "assets/academy/operative-03-multi-agent/02_selectedConnectedAgent.png"
+        },
+        {
+          "src": "./assets/2-add-connected-agent.png",
+          "local": "assets/academy/operative-03-multi-agent/2-add-connected-agent.png"
+        },
+        {
+          "src": "./assets/2-child-and-connected.png",
+          "local": "assets/academy/operative-03-multi-agent/2-child-and-connected.png"
+        },
+        {
+          "src": "./assets/2-multi-agent-test.png",
+          "local": "assets/academy/operative-03-multi-agent/2-multi-agent-test.png"
+        }
+      ],
+      "staged_at": "2026-10-26T05:16:28.716Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "operative-07-multimodal-prompts",
+      "src_path": "operative/07-multimodal-prompts",
+      "sha": "03f2776256ce89170e6efe670a68f0b560b12fd8",
+      "title": "🚨 Mission 07: Extracting Resume Contents with Multimodal Prompts",
+      "description": "Process documents and images with advanced AI capabilities",
+      "category": "academy-courses",
+      "parent": "aoperative",
+      "parentTitle": "Operative — 중급 코스",
+      "parentShort": "Operative",
+      "parentOrder": 2,
+      "order": 7,
+      "source_url": "https://microsoft.github.io/agent-academy/operative/07-multimodal-prompts/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-03-11",
+      "images": [
+        {
+          "src": "./assets/07-multi-modal-prompts-thumbnail.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/07-multi-modal-prompts-thumbnail.png"
+        },
+        {
+          "src": "./assets/7-new-prompt.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-new-prompt.png"
+        },
+        {
+          "src": "./assets/7-promptname.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-promptname.png"
+        },
+        {
+          "src": "./assets/7-prompt-parameters.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-prompt-parameters.png"
+        },
+        {
+          "src": "./assets/7-json-prompt.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-json-prompt.png"
+        },
+        {
+          "src": "./assets/7-AppIntakeAgentSelect.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-AppIntakeAgentSelect.png"
+        },
+        {
+          "src": "./assets/7-AgentFlowTrigger.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-AgentFlowTrigger.png"
+        },
+        {
+          "src": "./assets/7-AddListRows.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-AddListRows.png"
+        },
+        {
+          "src": "./assets/7-summarize-resume-1.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-summarize-resume-1.png"
+        },
+        {
+          "src": "./assets/7-DataverseDownload.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-DataverseDownload.png"
+        },
+        {
+          "src": "./assets/7-summarize-resume-2.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-summarize-resume-2.png"
+        },
+        {
+          "src": "./assets/7-RunPrompt.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-RunPrompt.png"
+        },
+        {
+          "src": "./assets/7-summarize-resume-3.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-summarize-resume-3.png"
+        },
+        {
+          "src": "./assets/7-summarize-resume-4.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-summarize-resume-4.png"
+        },
+        {
+          "src": "./assets/7-summarize-resume-5.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-summarize-resume-5.png"
+        },
+        {
+          "src": "./assets/7-summarize-resume-6.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-summarize-resume-6.png"
+        },
+        {
+          "src": "./assets/7-summarize-resume-7.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-summarize-resume-7.png"
+        },
+        {
+          "src": "./assets/7-summarize-resume-8.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-summarize-resume-8.png"
+        },
+        {
+          "src": "./assets/7-summarize-resume-9.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-summarize-resume-9.png"
+        },
+        {
+          "src": "./assets/7-SummarizeResumeFlowselect.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-SummarizeResumeFlowselect.png"
+        },
+        {
+          "src": "./assets/7-configure-summarize-resume-tool.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-configure-summarize-resume-tool.png"
+        },
+        {
+          "src": "./assets/7-agent-tools.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-agent-tools.png"
+        },
+        {
+          "src": "./assets/7-summarize-instructions-update.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-summarize-instructions-update.png"
+        },
+        {
+          "src": "./assets/7-test-result.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-test-result.png"
+        },
+        {
+          "src": "./assets/7-resume-in-dataverse.png",
+          "local": "assets/academy/operative-07-multimodal-prompts/7-resume-in-dataverse.png"
+        }
+      ],
+      "staged_at": "2026-10-26T05:16:31.069Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "operative-08-dataverse-grounding",
+      "src_path": "operative/08-dataverse-grounding",
+      "sha": "d21c3e93aad7e99ccf44995f62e5fbd98e6ceb4c",
+      "title": "🚨 Mission 08: Enhanced prompts with Dataverse grounding",
+      "description": "Ground agents in enterprise data for accurate responses",
+      "category": "academy-courses",
+      "parent": "aoperative",
+      "parentTitle": "Operative — 중급 코스",
+      "parentShort": "Operative",
+      "parentOrder": 2,
+      "order": 8,
+      "source_url": "https://microsoft.github.io/agent-academy/operative/08-dataverse-grounding/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-03-11",
+      "images": [
+        {
+          "src": "./assets/08-dataverse-grounding-thumbnail_PlayButton.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/08-dataverse-grounding-thumbnail_PlayButton.png"
+        },
+        {
+          "src": "./assets/8-select-prompt.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-select-prompt.png"
+        },
+        {
+          "src": "./assets/8-add-grounding.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-add-grounding.png"
+        },
+        {
+          "src": "./assets/8-add-eval-criteria.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-add-eval-criteria.png"
+        },
+        {
+          "src": "./assets/8-all-prompt-parameters.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-all-prompt-parameters.png"
+        },
+        {
+          "src": "./assets/8-prompt-settings.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-prompt-settings.png"
+        },
+        {
+          "src": "./assets/8-matched-roles-json.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-matched-roles-json.png"
+        },
+        {
+          "src": "./assets/8-add-application-1.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-add-application-1.png"
+        },
+        {
+          "src": "./assets/8-add-application-2.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-add-application-2.png"
+        },
+        {
+          "src": "./assets/8-add-application-3.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-add-application-3.png"
+        },
+        {
+          "src": "./assets/8-add-application-4.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-add-application-4.png"
+        },
+        {
+          "src": "./assets/8-add-application-5.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-add-application-5.png"
+        },
+        {
+          "src": "./assets/8-add-application-6.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-add-application-6.png"
+        },
+        {
+          "src": "./assets/8-add-application-7.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-add-application-7.png"
+        },
+        {
+          "src": "./assets/8-test-1.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-test-1.png"
+        },
+        {
+          "src": "./assets/8-test-2.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-test-2.png"
+        },
+        {
+          "src": "./assets/8-create-job-application-activity-map.png",
+          "local": "assets/academy/operative-08-dataverse-grounding/8-create-job-application-activity-map.png"
+        }
+      ],
+      "staged_at": "2026-10-26T05:16:32.553Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "operative-09-document-generation",
+      "src_path": "operative/09-document-generation",
+      "sha": "d9651e5aa2be9f509674d93882586e7bdecf2c42",
+      "title": "🚨 Mission 09: Generate a Candidate Interview Questions Document",
+      "description": "Implement document generation in AI prompts",
+      "category": "academy-courses",
+      "parent": "aoperative",
+      "parentTitle": "Operative — 중급 코스",
+      "parentShort": "Operative",
+      "parentOrder": 2,
+      "order": 9,
+      "source_url": "https://microsoft.github.io/agent-academy/operative/09-document-generation/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-03-11",
+      "images": [
+        {
+          "src": "./assets/09-doc-gen_thumbnail_PlayButton.png",
+          "local": "assets/academy/operative-09-document-generation/09-doc-gen_thumbnail_PlayButton.png"
+        },
+        {
+          "src": "./assets/ToolsSelect.png",
+          "local": "assets/academy/operative-09-document-generation/ToolsSelect.png"
+        },
+        {
+          "src": "./assets/NewToolBtn.png",
+          "local": "assets/academy/operative-09-document-generation/NewToolBtn.png"
+        },
+        {
+          "src": "./assets/NewPromptBtn.png",
+          "local": "assets/academy/operative-09-document-generation/NewPromptBtn.png"
+        },
+        {
+          "src": "./assets/PromptName.png",
+          "local": "assets/academy/operative-09-document-generation/PromptName.png"
+        },
+        {
+          "src": "./assets/JobAppTable.png",
+          "local": "assets/academy/operative-09-document-generation/JobAppTable.png"
+        },
+        {
+          "src": "./assets/PromptFIlled.png",
+          "local": "assets/academy/operative-09-document-generation/PromptFIlled.png"
+        },
+        {
+          "src": "./assets/FirstTest.png",
+          "local": "assets/academy/operative-09-document-generation/FirstTest.png"
+        },
+        {
+          "src": "./assets/ModelSelect.png",
+          "local": "assets/academy/operative-09-document-generation/ModelSelect.png"
+        },
+        {
+          "src": "./assets/Template.png",
+          "local": "assets/academy/operative-09-document-generation/Template.png"
+        },
+        {
+          "src": "./assets/OutputSelect.png",
+          "local": "assets/academy/operative-09-document-generation/OutputSelect.png"
+        },
+        {
+          "src": "./assets/DocumentSettings.png",
+          "local": "assets/academy/operative-09-document-generation/DocumentSettings.png"
+        },
+        {
+          "src": "./assets/DocTest.png",
+          "local": "assets/academy/operative-09-document-generation/DocTest.png"
+        },
+        {
+          "src": "./assets/DocOutputBtn.png",
+          "local": "assets/academy/operative-09-document-generation/DocOutputBtn.png"
+        },
+        {
+          "src": "./assets/DocFilled.png",
+          "local": "assets/academy/operative-09-document-generation/DocFilled.png"
+        },
+        {
+          "src": "./assets/SavePrompt.png",
+          "local": "assets/academy/operative-09-document-generation/SavePrompt.png"
+        },
+        {
+          "src": "./assets/ToolsTab.png",
+          "local": "assets/academy/operative-09-document-generation/ToolsTab.png"
+        },
+        {
+          "src": "./assets/NewTool.png",
+          "local": "assets/academy/operative-09-document-generation/NewTool.png"
+        },
+        {
+          "src": "./assets/AgentFlowBtn.png",
+          "local": "assets/academy/operative-09-document-generation/AgentFlowBtn.png"
+        },
+        {
+          "src": "./assets/AddInputBtn.png",
+          "local": "assets/academy/operative-09-document-generation/AddInputBtn.png"
+        },
+        {
+          "src": "./assets/SelectInputType.png",
+          "local": "assets/academy/operative-09-document-generation/SelectInputType.png"
+        },
+        {
+          "src": "./assets/TriggerInputFilled.png",
+          "local": "assets/academy/operative-09-document-generation/TriggerInputFilled.png"
+        },
+        {
+          "src": "./assets/AddAction.png",
+          "local": "assets/academy/operative-09-document-generation/AddAction.png"
+        },
+        {
+          "src": "./assets/SelectPromptName.png",
+          "local": "assets/academy/operative-09-document-generation/SelectPromptName.png"
+        },
+        {
+          "src": "./assets/inputlightningbolt.png",
+          "local": "assets/academy/operative-09-document-generation/inputlightningbolt.png"
+        },
+        {
+          "src": "./assets/MapInput.png",
+          "local": "assets/academy/operative-09-document-generation/MapInput.png"
+        },
+        {
+          "src": "./assets/AddOutput.png",
+          "local": "assets/academy/operative-09-document-generation/AddOutput.png"
+        },
+        {
+          "src": "./assets/FileType.png",
+          "local": "assets/academy/operative-09-document-generation/FileType.png"
+        },
+        {
+          "src": "./assets/Formula.png",
+          "local": "assets/academy/operative-09-document-generation/Formula.png"
+        },
+        {
+          "src": "./assets/SaveDraft.png",
+          "local": "assets/academy/operative-09-document-generation/SaveDraft.png"
+        },
+        {
+          "src": "./assets/OverviewTab.png",
+          "local": "assets/academy/operative-09-document-generation/OverviewTab.png"
+        },
+        {
+          "src": "./assets/EditName.png",
+          "local": "assets/academy/operative-09-document-generation/EditName.png"
+        },
+        {
+          "src": "./assets/FlowName.png",
+          "local": "assets/academy/operative-09-document-generation/FlowName.png"
+        },
+        {
+          "src": "./assets/Designer.png",
+          "local": "assets/academy/operative-09-document-generation/Designer.png"
+        },
+        {
+          "src": "./assets/PublishFlowBtn.png",
+          "local": "assets/academy/operative-09-document-generation/PublishFlowBtn.png"
+        },
+        {
+          "src": "./assets/SelectTopicsTab.png",
+          "local": "assets/academy/operative-09-document-generation/SelectTopicsTab.png"
+        },
+        {
+          "src": "./assets/AddTopic.png",
+          "local": "assets/academy/operative-09-document-generation/AddTopic.png"
+        },
+        {
+          "src": "./assets/RenameTopic.png",
+          "local": "assets/academy/operative-09-document-generation/RenameTopic.png"
+        },
+        {
+          "src": "./assets/TopicDescription.png",
+          "local": "assets/academy/operative-09-document-generation/TopicDescription.png"
+        },
+        {
+          "src": "./assets/DetailsBTN.png",
+          "local": "assets/academy/operative-09-document-generation/DetailsBTN.png"
+        },
+        {
+          "src": "./assets/InputNewVariable.png",
+          "local": "assets/academy/operative-09-document-generation/InputNewVariable.png"
+        },
+        {
+          "src": "./assets/InputFilled.png",
+          "local": "assets/academy/operative-09-document-generation/InputFilled.png"
+        },
+        {
+          "src": "./assets/SelectFlow.png",
+          "local": "assets/academy/operative-09-document-generation/SelectFlow.png"
+        },
+        {
+          "src": "./assets/MapVariable.png",
+          "local": "assets/academy/operative-09-document-generation/MapVariable.png"
+        },
+        {
+          "src": "./assets/AddMessageNode.png",
+          "local": "assets/academy/operative-09-document-generation/AddMessageNode.png"
+        },
+        {
+          "src": "./assets/MessageFill.png",
+          "local": "assets/academy/operative-09-document-generation/MessageFill.png"
+        },
+        {
+          "src": "./assets/MapFile.png",
+          "local": "assets/academy/operative-09-document-generation/MapFile.png"
+        },
+        {
+          "src": "./assets/SelectNameInput.png",
+          "local": "assets/academy/operative-09-document-generation/SelectNameInput.png"
+        },
+        {
+          "src": "./assets/InsertNameFormula.png",
+          "local": "assets/academy/operative-09-document-generation/InsertNameFormula.png"
+        },
+        {
+          "src": "./assets/SaveTopic.png",
+          "local": "assets/academy/operative-09-document-generation/SaveTopic.png"
+        },
+        {
+          "src": "./assets/TestPanel.png",
+          "local": "assets/academy/operative-09-document-generation/TestPanel.png"
+        },
+        {
+          "src": "./assets/TestResult.png",
+          "local": "assets/academy/operative-09-document-generation/TestResult.png"
+        },
+        {
+          "src": "./assets/OutputTest.png",
+          "local": "assets/academy/operative-09-document-generation/OutputTest.png"
+        }
+      ],
+      "staged_at": "2026-10-26T05:16:36.387Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "special-ops-azure-ai-search-rag",
+      "src_path": "special-ops/azure-ai-search-rag",
+      "sha": "bd657f0b6a7b2954a88215a94aff73e74750c3d7",
+      "title": "🔎 Build a RAG Agent with Azure AI Search",
+      "description": "",
+      "category": "academy-labs",
+      "parent": "aspecialops",
+      "parentTitle": "Special Ops — 독립 랩",
+      "parentShort": "Special Ops",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/special-ops/azure-ai-search-rag/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-10",
+      "images": [
+        {
+          "src": "./assets/azure-search-01.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-01.png"
+        },
+        {
+          "src": "./assets/azure-storage-01.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-storage-01.png"
+        },
+        {
+          "src": "./assets/openai-embedding-01.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/openai-embedding-01.png"
+        },
+        {
+          "src": "./assets/azure-storage-02.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-storage-02.png"
+        },
+        {
+          "src": "./assets/azure-storage-03.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-storage-03.png"
+        },
+        {
+          "src": "./assets/azure-search-02.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-02.png"
+        },
+        {
+          "src": "./assets/azure-search-03.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-03.png"
+        },
+        {
+          "src": "./assets/azure-search-04.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-04.png"
+        },
+        {
+          "src": "assets/azure-search-05.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-05.png"
+        },
+        {
+          "src": "assets/azure-search-06.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/azure-search-06.png"
+        },
+        {
+          "src": "assets/new-experience.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/new-experience.png"
+        },
+        {
+          "src": "assets/new-agent.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/new-agent.png"
+        },
+        {
+          "src": "assets/title-description.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/title-description.png"
+        },
+        {
+          "src": "./assets/rag-knowledge-no-azure-search.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/rag-knowledge-no-azure-search.png"
+        },
+        {
+          "src": "./assets/rag-tool-azure-search-actions.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/rag-tool-azure-search-actions.png"
+        },
+        {
+          "src": "./assets/rag-tool-details-auth.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/rag-tool-details-auth.png"
+        },
+        {
+          "src": "./assets/ai-search-badge.png",
+          "local": "assets/academy/special-ops-azure-ai-search-rag/ai-search-badge.png"
+        }
+      ],
+      "staged_at": "2026-10-26T05:16:37.757Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "special-ops-docusign-mcp",
+      "src_path": "special-ops/docusign-mcp",
+      "sha": "ed80399c4857eede2a28a12b5f84099ea6704e83",
+      "title": "📄 Microsoft Copilot Studio + Docusign MCP",
+      "description": "",
+      "category": "academy-labs",
+      "parent": "aspecialops",
+      "parentTitle": "Special Ops — 독립 랩",
+      "parentShort": "Special Ops",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/special-ops/docusign-mcp/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-10",
+      "images": [
+        {
+          "src": "assets/0.0_02_SolutionDiagram.png",
+          "local": "assets/academy/special-ops-docusign-mcp/0.0_02_SolutionDiagram.png"
+        },
+        {
+          "src": "assets/0.0_01_CreateDeveloperAccount.png",
+          "local": "assets/academy/special-ops-docusign-mcp/0.0_01_CreateDeveloperAccount.png"
+        },
+        {
+          "src": "assets/1.1_01_Templates.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_01_Templates.png"
+        },
+        {
+          "src": "assets/1.1_02_CreateWebForm.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_02_CreateWebForm.png"
+        },
+        {
+          "src": "assets/1.1_03_StartFromScratch.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_03_StartFromScratch.png"
+        },
+        {
+          "src": "assets/1.1_04_NameWebForm.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_04_NameWebForm.png"
+        },
+        {
+          "src": "assets/1.1_05_WelcomePageDetails.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_05_WelcomePageDetails.png"
+        },
+        {
+          "src": "assets/1.1_06_YourNamePage.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_06_YourNamePage.png"
+        },
+        {
+          "src": "assets/1.1_07_AddField.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_07_AddField.png"
+        },
+        {
+          "src": "assets/1.1_08_SelectTextField.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_08_SelectTextField.png"
+        },
+        {
+          "src": "assets/1.1_09_FirstNameField.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_09_FirstNameField.png"
+        },
+        {
+          "src": "assets/1.1_10_FirstNameField.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_10_FirstNameField.png"
+        },
+        {
+          "src": "assets/1.1_12_AddNewBlankPage.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_12_AddNewBlankPage.png"
+        },
+        {
+          "src": "assets/1.1_13_AddressPage.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_13_AddressPage.png"
+        },
+        {
+          "src": "assets/1.1_14_FieldsAddedToAddressPage.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_14_FieldsAddedToAddressPage.png"
+        },
+        {
+          "src": "assets/1.1_15_ThankYouPageDetails.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_15_ThankYouPageDetails.png"
+        },
+        {
+          "src": "assets/1.1_16_PreviewWebForm.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_16_PreviewWebForm.png"
+        },
+        {
+          "src": "assets/1.1_17_CompleteYourNamePage.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_17_CompleteYourNamePage.png"
+        },
+        {
+          "src": "assets/1.1_18_AddressPage.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_18_AddressPage.png"
+        },
+        {
+          "src": "assets/1.1_19_CompleteAddressPage.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_19_CompleteAddressPage.png"
+        },
+        {
+          "src": "assets/1.1_20_Review.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_20_Review.png"
+        },
+        {
+          "src": "assets/1.1_21_NextPage.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_21_NextPage.png"
+        },
+        {
+          "src": "assets/1.1_22_Error.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_22_Error.png"
+        },
+        {
+          "src": "assets/1.1_23_Activate.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_23_Activate.png"
+        },
+        {
+          "src": "assets/1.1_24_Activate.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_24_Activate.png"
+        },
+        {
+          "src": "assets/1.1_25_GoToWebForms.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_25_GoToWebForms.png"
+        },
+        {
+          "src": "assets/1.1_26_ActiveWebForm.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.1_26_ActiveWebForm.png"
+        },
+        {
+          "src": "assets/1.2_01_SelectDocumentTemplates.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_01_SelectDocumentTemplates.png"
+        },
+        {
+          "src": "assets/1.2_02_SelectUpload.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_02_SelectUpload.png"
+        },
+        {
+          "src": "assets/1.2_03_SelectSampleEmploymentAgreement.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_03_SelectSampleEmploymentAgreement.png"
+        },
+        {
+          "src": "assets/1.2_04_AgreementType.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_04_AgreementType.png"
+        },
+        {
+          "src": "assets/1.2_05_EditRecipients.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_05_EditRecipients.png"
+        },
+        {
+          "src": "assets/1.2_06_EditAndAddRecipients.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_06_EditAndAddRecipients.png"
+        },
+        {
+          "src": "assets/1.2_07_SelectSender.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_07_SelectSender.png"
+        },
+        {
+          "src": "assets/1.2_08_EffectiveDate.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_08_EffectiveDate.png"
+        },
+        {
+          "src": "assets/1.2_09_EffectiveDateAdded.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_09_EffectiveDateAdded.png"
+        },
+        {
+          "src": "assets/1.2_10_AddedEmployeeFullNameCustomField.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_10_AddedEmployeeFullNameCustomField.png"
+        },
+        {
+          "src": "assets/1.2_11_CreateEmployeeFullNameCustomField.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_11_CreateEmployeeFullNameCustomField.png"
+        },
+        {
+          "src": "assets/1.2_12_ConfigureEmployeeFullNameCustomField.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_12_ConfigureEmployeeFullNameCustomField.png"
+        },
+        {
+          "src": "assets/1.2_13_SaveEmployeeFullNameCustomField.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_13_SaveEmployeeFullNameCustomField.png"
+        },
+        {
+          "src": "assets/1.2_14_CreateRemainingCustomFields.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_14_CreateRemainingCustomFields.png"
+        },
+        {
+          "src": "assets/1.2_15_AddEmployeeFullNameField.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_15_AddEmployeeFullNameField.png"
+        },
+        {
+          "src": "assets/1.2_16_SwitchToHiringManagerRole.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_16_SwitchToHiringManagerRole.png"
+        },
+        {
+          "src": "assets/1.2_17_AddSignatureField.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_17_AddSignatureField.png"
+        },
+        {
+          "src": "assets/1.2_18_SignatureFieldAdded.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_18_SignatureFieldAdded.png"
+        },
+        {
+          "src": "assets/1.2_19_SwitchToEmployeeRole.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_19_SwitchToEmployeeRole.png"
+        },
+        {
+          "src": "assets/1.2_20_FieldsAddedForRoles.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_20_FieldsAddedForRoles.png"
+        },
+        {
+          "src": "assets/1.2_21_PublishDocumentTemplate.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_21_PublishDocumentTemplate.png"
+        },
+        {
+          "src": "assets/1.2_22_CreateNewDocumentTemplate.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_22_CreateNewDocumentTemplate.png"
+        },
+        {
+          "src": "assets/1.2_23_OfferLetterAgreementType.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_23_OfferLetterAgreementType.png"
+        },
+        {
+          "src": "assets/1.2_24_Roles.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_24_Roles.png"
+        },
+        {
+          "src": "assets/1.2_25_ConfigureFields.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_25_ConfigureFields.png"
+        },
+        {
+          "src": "assets/1.2_28_FieldsConfigured.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_28_FieldsConfigured.png"
+        },
+        {
+          "src": "assets/1.2_29_PreviewMode.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_29_PreviewMode.png"
+        },
+        {
+          "src": "assets/1.2_30_SaveAsDraft.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_30_SaveAsDraft.png"
+        },
+        {
+          "src": "assets/1.2_31_Publish.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_31_Publish.png"
+        },
+        {
+          "src": "assets/1.2_32_Published.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.2_32_Published.png"
+        },
+        {
+          "src": "assets/1.3_01_CreateWorkflow.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_01_CreateWorkflow.png"
+        },
+        {
+          "src": "assets/1.3_02_BlankWorkflow.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_02_BlankWorkflow.png"
+        },
+        {
+          "src": "assets/1.3_03_RenameWorkflow.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_03_RenameWorkflow.png"
+        },
+        {
+          "src": "assets/1.3_04_SaveWorkflowName.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_04_SaveWorkflowName.png"
+        },
+        {
+          "src": "assets/1.3_05_AddWorkflowStart.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_05_AddWorkflowStart.png"
+        },
+        {
+          "src": "assets/1.3_06_WorkflowStartMethod.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_06_WorkflowStartMethod.png"
+        },
+        {
+          "src": "assets/1.3_07_NextConfigurationStep.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_07_NextConfigurationStep.png"
+        },
+        {
+          "src": "assets/1.3_08_NewTextVariable.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_08_NewTextVariable.png"
+        },
+        {
+          "src": "assets/1.3_09_WorkflowStartVariables.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_09_WorkflowStartVariables.png"
+        },
+        {
+          "src": "assets/1.3_10_SelectNext.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_10_SelectNext.png"
+        },
+        {
+          "src": "assets/1.3_11_SelectAutomatedProcess.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_11_SelectAutomatedProcess.png"
+        },
+        {
+          "src": "assets/1.3_12_AddWorkflowStep.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_12_AddWorkflowStep.png"
+        },
+        {
+          "src": "assets/1.3_13_SetUpInvite.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_13_SetUpInvite.png"
+        },
+        {
+          "src": "assets/1.3_14_SelectConfigure.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_14_SelectConfigure.png"
+        },
+        {
+          "src": "assets/1.3_15_SelectAddParticipant.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_15_SelectAddParticipant.png"
+        },
+        {
+          "src": "assets/1.3_16_EmployeeParticipant.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_16_EmployeeParticipant.png"
+        },
+        {
+          "src": "assets/1.3_17_SelectVariables.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_17_SelectVariables.png"
+        },
+        {
+          "src": "assets/1.3_18_EmployeeFullNameVariable.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_18_EmployeeFullNameVariable.png"
+        },
+        {
+          "src": "assets/1.3_19_EmployeeEmailVariable.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_19_EmployeeEmailVariable.png"
+        },
+        {
+          "src": "assets/1.3_20_Apply.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_20_Apply.png"
+        },
+        {
+          "src": "assets/1.3_21_AddStep.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_21_AddStep.png"
+        },
+        {
+          "src": "assets/1.3_22_SelectCollectDataWithWebForms.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_22_SelectCollectDataWithWebForms.png"
+        },
+        {
+          "src": "assets/1.3_23_SelectConfigure.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_23_SelectConfigure.png"
+        },
+        {
+          "src": "assets/1.3_24_ChooseForm.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_24_ChooseForm.png"
+        },
+        {
+          "src": "assets/1.3_25_NextConfigurationStep.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_25_NextConfigurationStep.png"
+        },
+        {
+          "src": "assets/1.3_26_SelectEmployeeParticipant.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_26_SelectEmployeeParticipant.png"
+        },
+        {
+          "src": "assets/1.3_27_ContinueToMapDataFields.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_27_ContinueToMapDataFields.png"
+        },
+        {
+          "src": "assets/1.3_28_EmployeeFullNameVariable.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_28_EmployeeFullNameVariable.png"
+        },
+        {
+          "src": "assets/1.3_29_Apply.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_29_Apply.png"
+        },
+        {
+          "src": "assets/1.3_30_AddAStep.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_30_AddAStep.png"
+        },
+        {
+          "src": "assets/1.3_31_SelectPrepareDocumentTemplate.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_31_SelectPrepareDocumentTemplate.png"
+        },
+        {
+          "src": "assets/1.3_32_SelectConfigure.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_32_SelectConfigure.png"
+        },
+        {
+          "src": "assets/1.3_33_SelectSampleEmploymentAgreement.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_33_SelectSampleEmploymentAgreement.png"
+        },
+        {
+          "src": "assets/1.3_34_SelectNext.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_34_SelectNext.png"
+        },
+        {
+          "src": "assets/1.3_35_SelectNext.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_35_SelectNext.png"
+        },
+        {
+          "src": "assets/1.3_36_SelectEffectiveDate.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_36_SelectEffectiveDate.png"
+        },
+        {
+          "src": "assets/1.3_37_AgreementFieldsConfigured.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_37_AgreementFieldsConfigured.png"
+        },
+        {
+          "src": "assets/1.3_38_TitleBuilder.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_38_TitleBuilder.png"
+        },
+        {
+          "src": "assets/1.3_39_SelectEffectiveDate.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_39_SelectEffectiveDate.png"
+        },
+        {
+          "src": "assets/1.3_40_TitleBuilderFieldConfigured.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_40_TitleBuilderFieldConfigured.png"
+        },
+        {
+          "src": "assets/1.3_41_SelectApply.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_41_SelectApply.png"
+        },
+        {
+          "src": "assets/1.3_42_AddAStep.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_42_AddAStep.png"
+        },
+        {
+          "src": "assets/1.3_43_SelectPrepareDocumentTemplate.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_43_SelectPrepareDocumentTemplate.png"
+        },
+        {
+          "src": "assets/1.3_44_ConfigureAgreementFields.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_44_ConfigureAgreementFields.png"
+        },
+        {
+          "src": "assets/1.3_45_NameDocumentConfigurationStep.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_45_NameDocumentConfigurationStep.png"
+        },
+        {
+          "src": "assets/1.3_46_AddAStep.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_46_AddAStep.png"
+        },
+        {
+          "src": "assets/1.3_47_SendDocumentsForSignature.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_47_SendDocumentsForSignature.png"
+        },
+        {
+          "src": "assets/1.3_48_SelectConfigure.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_48_SelectConfigure.png"
+        },
+        {
+          "src": "assets/1.3_49_SelectGenerateDocumentEmploymentAgreement.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_49_SelectGenerateDocumentEmploymentAgreement.png"
+        },
+        {
+          "src": "assets/1.3_50_SelectAddDocument.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_50_SelectAddDocument.png"
+        },
+        {
+          "src": "assets/1.3_51_SelectGenerateDocumentOfferLetter.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_51_SelectGenerateDocumentOfferLetter.png"
+        },
+        {
+          "src": "assets/1.3_52_SelectNext.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_52_SelectNext.png"
+        },
+        {
+          "src": "assets/1.3_53_SendEnvelopeAutomatically.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_53_SendEnvelopeAutomatically.png"
+        },
+        {
+          "src": "assets/1.3_54_SetASigningOrder.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_54_SetASigningOrder.png"
+        },
+        {
+          "src": "assets/1.3_55_SetHiringManagerAs2.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_55_SetHiringManagerAs2.png"
+        },
+        {
+          "src": "assets/1.3_56_SetEmployeeAs1.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_56_SetEmployeeAs1.png"
+        },
+        {
+          "src": "assets/1.3_57_SelectEmployee.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_57_SelectEmployee.png"
+        },
+        {
+          "src": "assets/1.3_58_MappedParticipantFields.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_58_MappedParticipantFields.png"
+        },
+        {
+          "src": "assets/1.3_59_AddParticipant.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_59_AddParticipant.png"
+        },
+        {
+          "src": "assets/1.3_60_HiringManager.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_60_HiringManager.png"
+        },
+        {
+          "src": "assets/1.3_61_MapHiringManagerName.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_61_MapHiringManagerName.png"
+        },
+        {
+          "src": "assets/1.3_62_MapHiringManagerEmail.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_62_MapHiringManagerEmail.png"
+        },
+        {
+          "src": "assets/1.3_63_UseADirectSigningSession.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_63_UseADirectSigningSession.png"
+        },
+        {
+          "src": "assets/1.3_106_AddMessage.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_106_AddMessage.png"
+        },
+        {
+          "src": "assets/1.3_107_SelectApply.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_107_SelectApply.png"
+        },
+        {
+          "src": "assets/1.3_65_AddAStep.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_65_AddAStep.png"
+        },
+        {
+          "src": "assets/1.3_66_SelectShowAConfirmationScreen.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_66_SelectShowAConfirmationScreen.png"
+        },
+        {
+          "src": "assets/1.3_67_SelectConfigure.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_67_SelectConfigure.png"
+        },
+        {
+          "src": "assets/1.3_68_SelectEmployee.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_68_SelectEmployee.png"
+        },
+        {
+          "src": "assets/1.3_69_SelectApply.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_69_SelectApply.png"
+        },
+        {
+          "src": "assets/1.3_70_SelectAppCenter.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_70_SelectAppCenter.png"
+        },
+        {
+          "src": "assets/1.3_71_SelectSharePoint.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_71_SelectSharePoint.png"
+        },
+        {
+          "src": "assets/1.3_72_SelectInstallApp.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_72_SelectInstallApp.png"
+        },
+        {
+          "src": "assets/1.3_73_SelectInstallAndAuthorize.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_73_SelectInstallAndAuthorize.png"
+        },
+        {
+          "src": "assets/1.3_74_ConnectAccount.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_74_ConnectAccount.png"
+        },
+        {
+          "src": "assets/1.3_75_SelectPrivateAndNext.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_75_SelectPrivateAndNext.png"
+        },
+        {
+          "src": "assets/1.3_76_NameTheSharePointConnection.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_76_NameTheSharePointConnection.png"
+        },
+        {
+          "src": "assets/1.3_77_Consent.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_77_Consent.png"
+        },
+        {
+          "src": "assets/1.3_78_SelectUseThisApp.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_78_SelectUseThisApp.png"
+        },
+        {
+          "src": "assets/1.3_79_SelectAddAStep.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_79_SelectAddAStep.png"
+        },
+        {
+          "src": "assets/1.3_80_SelectStoreFilesInSharePoint.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_80_SelectStoreFilesInSharePoint.png"
+        },
+        {
+          "src": "assets/1.3_81_SelectConfigure.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_81_SelectConfigure.png"
+        },
+        {
+          "src": "assets/1.3_82_SelectCombinedEnvelopFile.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_82_SelectCombinedEnvelopFile.png"
+        },
+        {
+          "src": "assets/1.3_83_SelectConnection.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_83_SelectConnection.png"
+        },
+        {
+          "src": "assets/1.3_84_SelectHRTeam.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_84_SelectHRTeam.png"
+        },
+        {
+          "src": "assets/1.3_85_SelectDocuments.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_85_SelectDocuments.png"
+        },
+        {
+          "src": "assets/1.3_86_SelectSignedEmployees.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_86_SelectSignedEmployees.png"
+        },
+        {
+          "src": "assets/1.3_87_SelectNext.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_87_SelectNext.png"
+        },
+        {
+          "src": "assets/1.3_88_SelectEnvelopeIDVariable.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_88_SelectEnvelopeIDVariable.png"
+        },
+        {
+          "src": "assets/1.3_89_SelectText.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_89_SelectText.png"
+        },
+        {
+          "src": "assets/1.3_90_AddUnderscoreCharacter.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_90_AddUnderscoreCharacter.png"
+        },
+        {
+          "src": "assets/1.3_91_SelectFullName.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_91_SelectFullName.png"
+        },
+        {
+          "src": "assets/1.3_92_SelectApply.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_92_SelectApply.png"
+        },
+        {
+          "src": "assets/1.3_93_SelectSaveDraft.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_93_SelectSaveDraft.png"
+        },
+        {
+          "src": "assets/1.3_94_SelectReviewAndPublish.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_94_SelectReviewAndPublish.png"
+        },
+        {
+          "src": "assets/1.3_95_SelectNext.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_95_SelectNext.png"
+        },
+        {
+          "src": "assets/1.3_96_InsertVariable.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_96_InsertVariable.png"
+        },
+        {
+          "src": "assets/1.3_97_SelectInstanceIDVariable.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_97_SelectInstanceIDVariable.png"
+        },
+        {
+          "src": "assets/1.3_98_SelectStartDateAndTimeVariable.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_98_SelectStartDateAndTimeVariable.png"
+        },
+        {
+          "src": "assets/1.3_99_InsertUnderscoreCharacter.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_99_InsertUnderscoreCharacter.png"
+        },
+        {
+          "src": "assets/1.3_100_SelectPublish.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_100_SelectPublish.png"
+        },
+        {
+          "src": "assets/1.3_101_SelectAuthorizeMyAccount.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_101_SelectAuthorizeMyAccount.png"
+        },
+        {
+          "src": "assets/1.3_102_SelectAllowAccess.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_102_SelectAllowAccess.png"
+        },
+        {
+          "src": "assets/1.3_103_SelectPublish.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_103_SelectPublish.png"
+        },
+        {
+          "src": "assets/1.3_104_SelectGoToWorkflow.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_104_SelectGoToWorkflow.png"
+        },
+        {
+          "src": "assets/1.3_105_WorkflowPublished.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.3_105_WorkflowPublished.png"
+        },
+        {
+          "src": "assets/1.4_01_StartInstance.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_01_StartInstance.png"
+        },
+        {
+          "src": "assets/1.4_02_EnterValuesForWorkflowStartVariables.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_02_EnterValuesForWorkflowStartVariables.png"
+        },
+        {
+          "src": "assets/1.4_03_EnterValuesForWorkflowStartVariables.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_03_EnterValuesForWorkflowStartVariables.png"
+        },
+        {
+          "src": "assets/1.4_04_ConfirmationOfInstance.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_04_ConfirmationOfInstance.png"
+        },
+        {
+          "src": "assets/1.4_05_SelectReview.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_05_SelectReview.png"
+        },
+        {
+          "src": "assets/1.4_06_SelectStart.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_06_SelectStart.png"
+        },
+        {
+          "src": "assets/1.4_07_ProvideNameInformation.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_07_ProvideNameInformation.png"
+        },
+        {
+          "src": "assets/1.4_08_ProvideAddressInformation.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_08_ProvideAddressInformation.png"
+        },
+        {
+          "src": "assets/1.4_09_SelectNextToCompleteWebForm.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_09_SelectNextToCompleteWebForm.png"
+        },
+        {
+          "src": "assets/1.4_10_AgreeAndContinue.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_10_AgreeAndContinue.png"
+        },
+        {
+          "src": "assets/1.4_11_ReviewDocumentAgreements.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_11_ReviewDocumentAgreements.png"
+        },
+        {
+          "src": "assets/1.4_12_SignEmploymentAgreement.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_12_SignEmploymentAgreement.png"
+        },
+        {
+          "src": "assets/1.4_13_AdoptAndSign.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_13_AdoptAndSign.png"
+        },
+        {
+          "src": "assets/1.4_14_SignOfferLetter.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_14_SignOfferLetter.png"
+        },
+        {
+          "src": "assets/1.4_15_SelectFinish.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_15_SelectFinish.png"
+        },
+        {
+          "src": "assets/1.4_16_ConfirmationScreen.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_16_ConfirmationScreen.png"
+        },
+        {
+          "src": "assets/1.4_18_SelectFinish.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_18_SelectFinish.png"
+        },
+        {
+          "src": "assets/1.4_19_OptionToLogIntoDocusign.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_19_OptionToLogIntoDocusign.png"
+        },
+        {
+          "src": "assets/1.4_20_Configrmation.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_20_Configrmation.png"
+        },
+        {
+          "src": "assets/1.4_21_DocusignDeveloperUserAccount.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_21_DocusignDeveloperUserAccount.png"
+        },
+        {
+          "src": "assets/1.4_22_SignedDocumentAgreementsUploadedToSharePoint.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_22_SignedDocumentAgreementsUploadedToSharePoint.png"
+        },
+        {
+          "src": "assets/1.4_23_ViewSignedDocumentAgreements.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.4_23_ViewSignedDocumentAgreements.png"
+        },
+        {
+          "src": "assets/1.5_00_ToggleNewExperience.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_00_ToggleNewExperience.png"
+        },
+        {
+          "src": "assets/1.5_01_SelectAgent.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_01_SelectAgent.png"
+        },
+        {
+          "src": "assets/1.5_02_AgentNameInstructionsAddTool.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_02_AgentNameInstructionsAddTool.png"
+        },
+        {
+          "src": "assets/1.5_03_SelectDocusignMCPDemo.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_03_SelectDocusignMCPDemo.png"
+        },
+        {
+          "src": "assets/1.5_03_Warning_DoNotSearch.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_03_Warning_DoNotSearch.png"
+        },
+        {
+          "src": "assets/1.5_04_SelectDocusignMCPServer.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_04_SelectDocusignMCPServer.png"
+        },
+        {
+          "src": "assets/1.5_05_SelectCreateNewConnection.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_05_SelectCreateNewConnection.png"
+        },
+        {
+          "src": "assets/1.5_06_SelectCreate.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_06_SelectCreate.png"
+        },
+        {
+          "src": "assets/1.5_07_LogIn.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_07_LogIn.png"
+        },
+        {
+          "src": "assets/1.5_08_ConnectionCreated.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_08_ConnectionCreated.png"
+        },
+        {
+          "src": "assets/1.5_09_ReviewDocusignMCPDemoCapabilities.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_09_ReviewDocusignMCPDemoCapabilities.png"
+        },
+        {
+          "src": "assets/1.5_10_SelectSettings.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_10_SelectSettings.png"
+        },
+        {
+          "src": "assets/1.5_11_Solution.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_11_Solution.png"
+        },
+        {
+          "src": "assets/1.5_12_TestOfferManagementAgent.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_12_TestOfferManagementAgent.png"
+        },
+        {
+          "src": "assets/1.5_13_OrchestratorInProgress.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_13_OrchestratorInProgress.png"
+        },
+        {
+          "src": "assets/1.5_14_WorkflowTriggerRequirementsIdentified.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_14_WorkflowTriggerRequirementsIdentified.png"
+        },
+        {
+          "src": "assets/1.5_15_VariablesProvided.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_15_VariablesProvided.png"
+        },
+        {
+          "src": "assets/1.5_16_ReviewMappedInformation.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_16_ReviewMappedInformation.png"
+        },
+        {
+          "src": "assets/1.5_17_ConfirmInformationIsCorrect.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_17_ConfirmInformationIsCorrect.png"
+        },
+        {
+          "src": "assets/1.5_18_WorkflowSuccessfullyTriggered.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_18_WorkflowSuccessfullyTriggered.png"
+        },
+        {
+          "src": "assets/1.5_19_SignedAgreementsUploadedToSharePoint.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_19_SignedAgreementsUploadedToSharePoint.png"
+        },
+        {
+          "src": "assets/1.5_20_ReviewAgreements.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_20_ReviewAgreements.png"
+        },
+        {
+          "src": "assets/1.5_21_WorkflowProgressStatus.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.5_21_WorkflowProgressStatus.png"
+        },
+        {
+          "src": "assets/1.6_01_UpdateInstructions.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_01_UpdateInstructions.png"
+        },
+        {
+          "src": "assets/1.6_02_UpdateInstructionsToIncludeOutlookMeetingHeader.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_02_UpdateInstructionsToIncludeOutlookMeetingHeader.png"
+        },
+        {
+          "src": "assets/1.6_03_AddSkill.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_03_AddSkill.png"
+        },
+        {
+          "src": "assets/1.6_04_ClickToUploadSkill.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_04_ClickToUploadSkill.png"
+        },
+        {
+          "src": "assets/1.6_05_SelectSkillFile.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_05_SelectSkillFile.png"
+        },
+        {
+          "src": "assets/1.6_06_SkillAdded.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_06_SkillAdded.png"
+        },
+        {
+          "src": "assets/1.6_07_AddWorkIQCalendarTool.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_07_AddWorkIQCalendarTool.png"
+        },
+        {
+          "src": "assets/1.6_08_SelectWorkIQCalendar.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_08_SelectWorkIQCalendar.png"
+        },
+        {
+          "src": "assets/1.6_09_CreateNewConnection.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_09_CreateNewConnection.png"
+        },
+        {
+          "src": "assets/1.6_10_SelectCreate.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_10_SelectCreate.png"
+        },
+        {
+          "src": "assets/1.6_11_SelectNext.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_11_SelectNext.png"
+        },
+        {
+          "src": "assets/1.6_12_ReviewAndConfirm.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_12_ReviewAndConfirm.png"
+        },
+        {
+          "src": "assets/1.6_13_TestWorkIQCalendarTool.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_13_TestWorkIQCalendarTool.png"
+        },
+        {
+          "src": "assets/1.6_14_LoadedSkill.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_14_LoadedSkill.png"
+        },
+        {
+          "src": "assets/1.6_15_CompletionOfWorkflowAndOutlookMeeting.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_15_CompletionOfWorkflowAndOutlookMeeting.png"
+        },
+        {
+          "src": "assets/1.6_16_ConfirmationOfOutlookMeeting.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_16_ConfirmationOfOutlookMeeting.png"
+        },
+        {
+          "src": "assets/1.6_17_OutlookCalendar.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_17_OutlookCalendar.png"
+        },
+        {
+          "src": "assets/1.6_18_AgentReasoningUsingSkill.png",
+          "local": "assets/academy/special-ops-docusign-mcp/1.6_18_AgentReasoningUsingSkill.png"
+        },
+        {
+          "src": "../assets/Academy-Docusign_Badge.png",
+          "local": "assets/academy/special-ops-docusign-mcp/Academy-Docusign_Badge.png"
+        }
+      ],
+      "staged_at": "2026-10-26T05:16:55.502Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "special-ops-ghostwriter",
+      "src_path": "special-ops/ghostwriter",
+      "sha": "8df8a040d2f02318816628c5c689d8cd7ea234f3",
+      "title": "✍️ Build a Marketing Content Agent with Skills",
+      "description": "",
+      "category": "academy-labs",
+      "parent": "aspecialops",
+      "parentTitle": "Special Ops — 독립 랩",
+      "parentShort": "Special Ops",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/special-ops/ghostwriter/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-10",
+      "images": [
+        {
+          "src": "./assets/1.1_01_CreateAgent.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.1_01_CreateAgent.png"
+        },
+        {
+          "src": "./assets/1.1_02_Instructions-annotated.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.1_02_Instructions-annotated.png"
+        },
+        {
+          "src": "./assets/1.2_01_AddSkill-annotated.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.2_01_AddSkill-annotated.png"
+        },
+        {
+          "src": "./assets/1.2_03_CreateFromBlank.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.2_03_CreateFromBlank.png"
+        },
+        {
+          "src": "./assets/1.2_04_CreateBlogSKill.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.2_04_CreateBlogSKill.png"
+        },
+        {
+          "src": "./assets/1.3_addskill.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.3_addskill.png"
+        },
+        {
+          "src": "./assets/1.3_uploadskill.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.3_uploadskill.png"
+        },
+        {
+          "src": "./assets/1.4_skillfilled.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.4_skillfilled.png"
+        },
+        {
+          "src": "./assets/1.5_skillfilled.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.5_skillfilled.png"
+        },
+        {
+          "src": "./assets/1.5_previewtab.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.5_previewtab.png"
+        },
+        {
+          "src": "./assets/1.6.01_prompt.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.6.01_prompt.png"
+        },
+        {
+          "src": "./assets/1.6.02_chaining.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.6.02_chaining.png"
+        },
+        {
+          "src": "./assets/1.6.03_file.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.6.03_file.png"
+        },
+        {
+          "src": "./assets/1.6.04_filereview.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.6.04_filereview.png"
+        },
+        {
+          "src": "./assets/1.6.04_filereview2.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.6.04_filereview2.png"
+        },
+        {
+          "src": "./assets/1.6.06_newchat.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.6.06_newchat.png"
+        },
+        {
+          "src": "./assets/1.6.07_newprompt.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.6.07_newprompt.png"
+        },
+        {
+          "src": "./assets/1.6.08_response.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.6.08_response.png"
+        },
+        {
+          "src": "./assets/1.7_skillprompt.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7_skillprompt.png"
+        },
+        {
+          "src": "./assets/1.7_reviewcopy.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7_reviewcopy.png"
+        },
+        {
+          "src": "./assets/1.7-addskill.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7-addskill.png"
+        },
+        {
+          "src": "./assets/1.7_plusskill.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7_plusskill.png"
+        },
+        {
+          "src": "./assets/1.7_createskill.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7_createskill.png"
+        },
+        {
+          "src": "./assets/1.7_testprompt.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7_testprompt.png"
+        },
+        {
+          "src": "./assets/1.7-test.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.7-test.png"
+        },
+        {
+          "src": "./assets/1.8.01_memorytoggle.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.8.01_memorytoggle.png"
+        },
+        {
+          "src": "./assets/1.8.02_memoryprompt.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.8.02_memoryprompt.png"
+        },
+        {
+          "src": "./assets/1.8.03_memoryconfirm.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.8.03_memoryconfirm.png"
+        },
+        {
+          "src": "./assets/1.8.05_memorytest.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.8.05_memorytest.png"
+        },
+        {
+          "src": "./assets/1.8.06_memorytestresponse.png",
+          "local": "assets/academy/special-ops-ghostwriter/1.8.06_memorytestresponse.png"
+        },
+        {
+          "src": "../assets/ghostwriter-badge.png",
+          "local": "assets/academy/special-ops-ghostwriter/ghostwriter-badge.png"
+        }
+      ],
+      "staged_at": "2026-10-26T05:16:58.119Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "special-ops-mcs-mcp",
+      "src_path": "special-ops/mcs-mcp",
+      "sha": "2e6ceb51281ddbb35bf618f8f579f78692136bb0",
+      "title": "🤖 Microsoft Copilot Studio ❤️ MCP",
+      "description": "",
+      "category": "academy-labs",
+      "parent": "aspecialops",
+      "parentTitle": "Special Ops — 독립 랩",
+      "parentShort": "Special Ops",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/special-ops/mcs-mcp/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-08-10",
+      "images": [
+        {
+          "src": "./assets/vscode-terminal-run-start.png",
+          "local": "assets/academy/special-ops-mcs-mcp/vscode-terminal-run-start.png"
+        },
+        {
+          "src": "./assets/vscode-terminal-ports.png",
+          "local": "assets/academy/special-ops-mcs-mcp/vscode-terminal-ports.png"
+        },
+        {
+          "src": "./assets/vscode-terminal-ports-forward.png",
+          "local": "assets/academy/special-ops-mcs-mcp/vscode-terminal-ports-forward.png"
+        },
+        {
+          "src": "./assets/vscode-terminal-ports-setup.png",
+          "local": "assets/academy/special-ops-mcs-mcp/vscode-terminal-ports-setup.png"
+        },
+        {
+          "src": "./assets/azd-deploy-server.png",
+          "local": "assets/academy/special-ops-mcs-mcp/azd-deploy-server.png"
+        },
+        {
+          "src": "./assets/settings.png",
+          "local": "assets/academy/special-ops-mcs-mcp/settings.png"
+        },
+        {
+          "src": "./assets/tools-menu.png",
+          "local": "assets/academy/special-ops-mcs-mcp/tools-menu.png"
+        },
+        {
+          "src": "./assets/github-copilot-get-joke.png",
+          "local": "assets/academy/special-ops-mcs-mcp/github-copilot-get-joke.png"
+        },
+        {
+          "src": "./assets/newagent.png",
+          "local": "assets/academy/special-ops-mcs-mcp/newagent.png"
+        },
+        {
+          "src": "./assets/editname.png",
+          "local": "assets/academy/special-ops-mcs-mcp/editname.png"
+        },
+        {
+          "src": "./assets/tools.png",
+          "local": "assets/academy/special-ops-mcs-mcp/tools.png"
+        },
+        {
+          "src": "./assets/create-mcp.png",
+          "local": "assets/academy/special-ops-mcs-mcp/create-mcp.png"
+        },
+        {
+          "src": "./assets/add-mcp.png",
+          "local": "assets/academy/special-ops-mcs-mcp/add-mcp.png"
+        },
+        {
+          "src": "./assets/create-connection-mcp-create.png",
+          "local": "assets/academy/special-ops-mcs-mcp/create-connection-mcp-create.png"
+        },
+        {
+          "src": "./assets/create-connection-mcp-create-name.png",
+          "local": "assets/academy/special-ops-mcs-mcp/create-connection-mcp-create-name.png"
+        },
+        {
+          "src": "./assets/create-connection-mcp-create-add.png",
+          "local": "assets/academy/special-ops-mcs-mcp/create-connection-mcp-create-add.png"
+        },
+        {
+          "src": "./assets/tools-mcp-server.png",
+          "local": "assets/academy/special-ops-mcs-mcp/tools-mcp-server.png"
+        },
+        {
+          "src": "./assets/preview-mode.png",
+          "local": "assets/academy/special-ops-mcs-mcp/preview-mode.png"
+        },
+        {
+          "src": "./assets/connection-allow.png",
+          "local": "assets/academy/special-ops-mcs-mcp/connection-allow.png"
+        },
+        {
+          "src": "./assets/joke-result.png",
+          "local": "assets/academy/special-ops-mcs-mcp/joke-result.png"
+        },
+        {
+          "src": "./assets/dad-joke-result.png",
+          "local": "assets/academy/special-ops-mcs-mcp/dad-joke-result.png"
+        },
+        {
+          "src": "./assets/azd-down-confirmation.png",
+          "local": "assets/academy/special-ops-mcs-mcp/azd-down-confirmation.png"
+        },
+        {
+          "src": "./assets/MCP_Joker_Badge.png",
+          "local": "assets/academy/special-ops-mcs-mcp/MCP_Joker_Badge.png"
+        }
+      ],
+      "staged_at": "2026-10-26T05:16:59.899Z",
+      "status": "pending-translation"
     }
   ]
 }
