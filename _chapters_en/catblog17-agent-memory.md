@@ -1,9 +1,10 @@
 ---
 layout: "chapter"
 lang: en
+date: 2026-10-05
 title: "Memory in Copilot Studio: How Agents Carry Knowledge Across Conversations"
-short_title: "Copilot Studio Agent Memory"
-description: "Explore short-term and long-term memory in Copilot Studio agents, how memories are stored and recalled, and how the behavior is evaluated."
+short_title: "Agent Memory"
+description: "Explore short- and long-term memory in Copilot Studio agents, the three kinds of long-term memory, reflection, and how memory is evaluated."
 order: 17
 category: "catblog"
 source_url: "https://microsoft.github.io/mcscatblog/posts/agent-memory/"
@@ -18,7 +19,7 @@ canonical_url: "https://microsoft.github.io/mcscatblog/posts/agent-memory/"
 </div>
 
 <figure class="screenshot">
-  <img src="{{ '/assets/catblog/agent-memory/header.png' | relative_url }}" alt="Agent memory connecting three sessions through a durable memory store" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <img src="{{ '/assets/catblog/agent-memory/header.png' | relative_url }}" alt="Agent memory connects three sessions through a durable memory store." loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
 </figure>
 
 Large language models are stateless. Every conversation starts from nothing. Memory is the engineering we wrap around a model to create the illusion of continuity, and it is what turns an agent from a clever tool into something closer to a colleague.
@@ -33,12 +34,15 @@ Think about how a scientist actually works. Partway through a project she asks h
 
 Those same three problems, what to write, what to recall, and what to forget, are exactly what an agent's memory system has to solve.
 
-| Sessions without memory | Sessions with memory |
-|---|---|
-| Session 1 learns your context. | Session 1 writes to a durable memory store. |
-| Session 2 starts from zero. | Session 2 recalls and builds on what was stored. |
-| Session 3 starts from zero. | Session 3 recalls and builds on what was stored. |
-
+```text
+Without memory                       With memory
+Session 1: learns your context        Session 1
+Session 2: starts from zero                 |
+Session 3: starts from zero          Durable memory store
+                                            |       |
+                                   Session 2: recalls and builds on it
+                                   Session 3: recalls and builds on it
+```
 _The continuity gap. Without memory, each session is sealed off from the last. Memory is what lets knowledge cross the boundary of a single conversation._
 
 ## Two horizons: short-term and long-term
@@ -95,11 +99,13 @@ Memory is also user-controlled. The first time someone interacts with a memory-e
 
 Two durable boundaries shape the design. First, every user gets a dedicated memory folder for each agent, so one person's context isn't shared with another. Second, agents powered by the GitHub Copilot harness run each task inside a [secure sandbox](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview) provided by Copilot Studio.
 
-| Boundary | Behavior |
-|---|---|
-| User memory | User A and User B have separate memory folders for an agent. |
-| Task execution | Agent tasks run in the secure sandbox provided by Copilot Studio. |
-
+```text
+Memory for one agent                    Task execution
+User A -> dedicated memory folder       Agent task
+User B -> dedicated memory folder            |
+                                         Secure sandbox
+                                    provided by Copilot Studio
+```
 _Clear boundaries. Each user has separate memory for an agent, while agent tasks run in a secure sandbox._
 
 For this introductory post, those are the boundaries that matter: memory is separated per user, and task execution is isolated.
@@ -110,14 +116,14 @@ Capture, store, and apply describe how memory supports future interactions. **Re
 
 In a reflection loop, an agent revisits stored experience outside the live conversation to consolidate what matters, merge duplicates, update stale information, and retire what is no longer useful. It is the memory-system equivalent of reviewing the scientist's notebook at the end of the week rather than treating every entry as permanent truth.
 
-| Step | Action |
-|---|---|
-| Observe | Review the conversation. |
-| Write | Record what is worth keeping. |
-| Reflect | Review memory outside the live turn. |
-| Apply | Use the memory in a later conversation. |
-| Retire | Correct or drop stale information. |
-
+```text
+Observe (the conversation) -> Write (what is worth keeping) -> Reflect
+        ^                                                       |
+        |                                                       v
+Retire (if stale) <- Apply (in a later conversation) <----------+
+        |
+        +-- corrected or dropped information informs later observations
+```
 _A conceptual reflection loop. Forming memory is only half the system; keeping it useful and current is the other half._
 
 ## Trusted, but also verified
