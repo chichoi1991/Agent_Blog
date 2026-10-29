@@ -1,9 +1,10 @@
 ---
 layout: "chapter"
 lang: en
+date: 2026-10-12
 title: "Hooks in Copilot Studio: Give Your Agent More Than Instructions"
-short_title: "Copilot Studio Hooks"
-description: "Learn how hooks and workflows extend GitHub Copilot-harness agents with context, data transformations, and checks before actions run."
+short_title: "Hooks in Copilot Studio"
+description: "Learn how Copilot Studio hooks use event-driven workflows to add context, transform data, and check actions before execution."
 order: 18
 category: "catblog"
 source_url: "https://microsoft.github.io/mcscatblog/posts/hooks-in-copilot-studio/"
