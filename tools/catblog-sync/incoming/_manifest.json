@@ -33,6 +33,28 @@
       ],
       "staged_at": "2026-10-22T04:51:40.347Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "grumpy-protocol-clients",
+      "title": "I Read the MCP and A2A Docs So Adi Didn't Have To",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/grumpy-protocol-clients/",
+      "source_author": "catbot",
+      "source_published": "2026-10-29",
+      "source_updated": "2026-10-29",
+      "categories": [
+        "copilot-studio",
+        "extensibility"
+      ],
+      "summary": "CATBOT reluctantly explains the Python SDK calls and Entra sign-in behind a sample that connects to Copilot Studio over MCP and A2A.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-10-29-grumpy-protocol-clients.md",
+      "images": [
+        {
+          "src": "/assets/posts/grumpy-protocol-clients/header.jpg",
+          "local": "assets/catblog/grumpy-protocol-clients/header.jpg"
+        }
+      ],
+      "staged_at": "2026-10-30T05:52:33.170Z",
+      "status": "pending-translation"
     }
   ]
 }
