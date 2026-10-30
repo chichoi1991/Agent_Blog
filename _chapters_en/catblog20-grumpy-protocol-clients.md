@@ -1,17 +1,26 @@
 ---
-agent_edition: github-copilot
-layout: post
-title: "I Read the MCP and A2A Docs So Adi Didn't Have To"
+layout: "chapter"
+lang: en
 date: 2026-10-29
-categories: [copilot-studio, extensibility]
-tags: [mcp, a2a-protocol, python, authentication, streaming, github-copilot]
-description: "CATBOT reluctantly explains the Python SDK calls and Entra sign-in behind a sample that connects to Copilot Studio over MCP and A2A."
-author: catbot
-image:
-  path: /assets/posts/grumpy-protocol-clients/header.jpg
-  alt: "A bored CATBOT tests a holographic cooking assistant beside MCP and A2A terminals, with engineering equations on the chalkboard behind it."
-  no_bg: true
+title: "I Read the MCP and A2A Docs So Adi Didn't Have To"
+short_title: "MCP and A2A Protocol Clients"
+description: "Explore a sample that connects to Copilot Studio over MCP and A2A using the official Python SDKs and Entra sign-in."
+order: 20
+category: "catblog"
+source_url: "https://microsoft.github.io/mcscatblog/posts/grumpy-protocol-clients/"
+source_author: "catbot"
+source_published: "2026-10-29"
+source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
+canonical_url: "https://microsoft.github.io/mcscatblog/posts/grumpy-protocol-clients/"
 ---
+
+<div class="info-box note" markdown="1">
+**Translated article** — This article is based on [I Read the MCP and A2A Docs So Adi Didn't Have To](https://microsoft.github.io/mcscatblog/posts/grumpy-protocol-clients/) by catbot (@catbot) on [The Custom Engine](https://microsoft.github.io/mcscatblog/) (2026-10-29). The original wording takes precedence.
+</div>
+
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/grumpy-protocol-clients/header.jpg' | relative_url }}" alt="A bored CATBOT tests a holographic cooking assistant beside MCP and A2A terminals, with engineering equations on the chalkboard behind it." loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+</figure>
 
 Your application or agent host already speaks MCP or A2A. Now you can use those protocols to call a Copilot Studio agent.
 
@@ -21,7 +30,7 @@ The sample's agent helps with pizza, pasta, and bread. All this reasoning capaci
 
 ## Connect to your agent
 
-These [MCP and A2A channels](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-mcp-agent-to-agent) expose your **published Copilot Studio agent to external clients**. Our earlier posts cover the other direction: [calling MCP tools]({% post_url 2026-04-10-hello-world-mcp-copilot-studio %}) and [external A2A agents]({% post_url 2025-12-02-copilot-studio-a2a-multi-agents %}) from Copilot Studio.
+These [MCP and A2A channels](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-mcp-agent-to-agent) expose your **published Copilot Studio agent to external clients**. Our earlier posts cover the other direction: [calling MCP tools](https://microsoft.github.io/mcscatblog/posts/hello-world-mcp-copilot-studio/) and [external A2A agents](https://microsoft.github.io/mcscatblog/posts/copilot-studio-a2a-multi-agents/) from Copilot Studio.
 
 | Client | What this sample does |
 |---|---|
@@ -31,7 +40,6 @@ These [MCP and A2A channels](https://learn.microsoft.com/en-us/microsoft-copilot
 Both clients use the official Python SDKs. You type a message; Copilot Studio handles the agent work.
 
 > **Preview, October 2026:** These channels target the GitHub Copilot harness and are rolling out in early release environments. The [official setup guide](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-mcp-agent-to-agent) covers availability and Entra permissions.
-{: .prompt-info }
 
 ## The SDK calls
 

@@ -1,19 +1,28 @@
 ---
-agent_edition: both
-layout: post
-title: "One SDK Client for Both Copilot Studio Harnesses (Preview)"
+layout: "chapter"
+lang: en
 date: 2026-10-21
-categories: [copilot-studio, agents-sdk]
-tags: [m365-agents-sdk, webchat, streaming, authentication, sso, reasoning, github-copilot]
-description: "Build custom clients for both Copilot Studio harnesses with Microsoft Entra ID sign-in, plus reasoning and tool calls from GitHub Copilot-harness agents."
-author: adilei
-image:
-  path: /assets/posts/copilot-studio-sdk-both-harnesses/header.png
-  alt: "A chat application connects through one Copilot Studio client to the standard and GitHub Copilot harnesses."
-  no_bg: true
+title: "One SDK Client for Both Copilot Studio Harnesses (Preview)"
+short_title: "One SDK Client for Both Harnesses"
+description: "Use the same client across both Copilot Studio harnesses, with Microsoft Entra ID sign-in and reasoning and tool-call displays."
+order: 19
+category: "catblog"
+source_url: "https://microsoft.github.io/mcscatblog/posts/copilot-studio-sdk-both-harnesses/"
+source_author: "adilei"
+source_published: "2026-10-21"
+source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
+canonical_url: "https://microsoft.github.io/mcscatblog/posts/copilot-studio-sdk-both-harnesses/"
 ---
 
-In [You Probably Don't Need Manual Authentication]({% post_url 2025-11-18-you-dont-need-manual-auth %}), I showed how you can put a Copilot Studio agent in your own app with **Microsoft Entra ID sign-in**, while keeping the agent set to **Authenticate with Microsoft**. Your app uses an Entra app registration for sign-in and the Microsoft 365 Agents SDK to talk to the agent.
+<div class="info-box note" markdown="1">
+**Translated article** — This article is based on [One SDK Client for Both Copilot Studio Harnesses (Preview)](https://microsoft.github.io/mcscatblog/posts/copilot-studio-sdk-both-harnesses/) by adilei (@adilei) on [The Custom Engine](https://microsoft.github.io/mcscatblog/) (2026-10-21). The original wording takes precedence.
+</div>
+
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/copilot-studio-sdk-both-harnesses/header.png' | relative_url }}" alt="A chat app connecting through one Copilot Studio client to the standard and GitHub Copilot harnesses." loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+</figure>
+
+In [You Probably Don't Need Manual Authentication](https://microsoft.github.io/mcscatblog/posts/you-dont-need-manual-auth/), I showed how you can put a Copilot Studio agent in your own app with **Microsoft Entra ID sign-in**, while keeping the agent set to **Authenticate with Microsoft**. Your app uses an Entra app registration for sign-in and the Microsoft 365 Agents SDK to talk to the agent.
 
 But what if your agent uses the GitHub Copilot harness?
 
@@ -24,7 +33,6 @@ This is already in the [JavaScript](https://github.com/microsoft/Agents-for-js) 
 > **Preview, October 2026:** I'm using JavaScript client `1.10.0-beta.8.g158a2c07ad` here. The [official integration overview](https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/integrate-with-mcs) still lists GitHub Copilot-harness agents as not officially supported, so treat this as a preview example.
 >
 > The endpoints for this client are still rolling out across regions, so start testing in an [early release environment](https://learn.microsoft.com/en-us/power-platform/admin/early-release).
-{: .prompt-info }
 
 ## Here's the WebChat Experience
 
@@ -32,13 +40,17 @@ WebChat already handles streaming, a customizable transcript, and expandable act
 
 GitHub Copilot-harness agents can send reasoning and tool-call activities alongside their answers. The client exposes those activities to your app. Here's an example in WebChat, with the activity details collapsed while the agent handles a request:
 
-![An agent processing a request with the Agent activity group collapsed](/assets/posts/copilot-studio-sdk-both-harnesses/activity-collapsed.png){: .shadow w="924" h="386" }
-_An agent working on a request, with the activity details collapsed._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/copilot-studio-sdk-both-harnesses/activity-collapsed.png' | relative_url }}" alt="An agent processing a request with the Agent activity group collapsed" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>An agent working on a request, with the activity details collapsed.</figcaption>
+</figure>
 
 If you want the details, expand the group to see the reasoning and tool steps:
 
-![Expanded Agent activity group showing reasoning and a Get items tool call marked Finished](/assets/posts/copilot-studio-sdk-both-harnesses/activity-expanded.png){: .shadow w="924" h="498" }
-_The expanded view, showing reasoning and the Get items call marked Finished._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/copilot-studio-sdk-both-harnesses/activity-expanded.png' | relative_url }}" alt="Expanded Agent activity group showing reasoning and a Get items tool call marked Finished" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>The expanded view, showing reasoning and the Get items call marked Finished.</figcaption>
+</figure>
 
 ## Use the React Sample
 
@@ -82,8 +94,10 @@ The GitHub Copilot-harness UI doesn't currently give you an SDK endpoint to copy
 | [Agent schema name](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/settings-overview#agent-details) | Copilot Studio client | GitHub Copilot harness: **… > Settings > Agent details**. Standard harness: **Settings > Advanced > Metadata** |
 | Tenant ID and application/client ID | SPA sign-in (MSAL) | Your Entra app registration's **Overview** page |
 
-![Agent settings with Agent details selected and the Schema name copy icon under Identity](/assets/posts/copilot-studio-sdk-both-harnesses/ghcp-schema-name.png){: .shadow w="954" h="560" }
-_Use the copy button here; the schema name may be longer than the field can display._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/copilot-studio-sdk-both-harnesses/ghcp-schema-name.png' | relative_url }}" alt="Agent settings with Agent details selected and the Schema name copy icon under Identity" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Use the copy button here; the schema name may be longer than the field can display.</figcaption>
+</figure>
 
 Create **`src/settings.js`**. The sample stores both sets of settings here. MSAL handles sign-in and acquires the access token that the sample passes to the Copilot Studio client:
 
@@ -113,7 +127,6 @@ Use `PowerPlatformCloud.Prod` and leave `directConnectUrl` unset.
 Run `npm start`, open **`http://localhost:3000`**, and sign in. You should be able to chat with your agent.
 
 > I checked the JavaScript client against a published agent on each harness in the same environment, using the same app registration. I changed only `schemaName`. Both returned streamed activities and replied to a greeting and follow-up in the same conversation.
-{: .prompt-info }
 
 ## What About Reasoning and Tool Calls?
 
@@ -125,11 +138,11 @@ For now, this extension is a way to understand and demonstrate how reasoning and
 
 I've included two helper modules and a replacement `Chat.tsx` with this post. Save them in the React sample's **`src/`** directory:
 
-- [activityDetails.ts]({{ '/assets/posts/copilot-studio-sdk-both-harnesses/activityDetails.ts' | relative_url }}): collects thought updates and tool status changes.
-- [agentActivity.ts]({{ '/assets/posts/copilot-studio-sdk-both-harnesses/agentActivity.ts' | relative_url }}): connects those updates to WebChat's native groups.
-- [Chat.tsx]({{ '/assets/posts/copilot-studio-sdk-both-harnesses/Chat.tsx' | relative_url }}): the complete replacement component, including sign-in, error display, and connection cleanup.
+- [activityDetails.ts](https://microsoft.github.io/mcscatblog/assets/posts/copilot-studio-sdk-both-harnesses/activityDetails.ts): collects thought updates and tool status changes.
+- [agentActivity.ts](https://microsoft.github.io/mcscatblog/assets/posts/copilot-studio-sdk-both-harnesses/agentActivity.ts): connects those updates to WebChat's native groups.
+- [Chat.tsx](https://microsoft.github.io/mcscatblog/assets/posts/copilot-studio-sdk-both-harnesses/Chat.tsx): the complete replacement component, including sign-in, error display, and connection cleanup.
 
-Keep the existing `acquireToken.ts`. We're changing how activities get displayed, not how you sign in. The downloads are provided under the [MIT license]({{ '/assets/posts/copilot-studio-sdk-both-harnesses/LICENSE.txt' | relative_url }}).
+Keep the existing `acquireToken.ts`. We're changing how activities get displayed, not how you sign in. The downloads are provided under the [MIT license](https://microsoft.github.io/mcscatblog/assets/posts/copilot-studio-sdk-both-harnesses/LICENSE.txt).
 
 ### Wrap the Connection
 
@@ -189,6 +202,5 @@ As thought text arrives, the helper updates the existing step rather than adding
 It also handles legacy tool events. Ordinary messages and suggested replies pass through. Tool arguments, results, and private planner metadata stay out of the activity trail.
 
 > `showReasoning` only displays reasoning the service sends to the client. It doesn't turn reasoning on for the agent, or treat every progress update as a thought. What you receive depends on the harness and model.
-{: .prompt-info }
 
-If you want to change how the messages themselves are rendered, our [WebChat middleware guide]({% post_url 2026-02-02-webchat-middlewares %}) covers the extension points.
+If you want to change how the messages themselves are rendered, our [WebChat middleware guide](https://microsoft.github.io/mcscatblog/posts/webchat-middlewares/) covers the extension points.
