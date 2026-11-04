@@ -2371,6 +2371,201 @@
       ],
       "staged_at": "2026-10-26T05:16:59.899Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "recruit-choose",
+      "src_path": "recruit/choose",
+      "sha": "b98e5e420b09841a55d9e14ecc404d8d02df6e79",
+      "title": "Welcome Recruit",
+      "description": "",
+      "category": "academy-courses",
+      "parent": "arecruit",
+      "parentTitle": "Recruit — 입문 코스",
+      "parentShort": "Recruit",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/recruit/choose/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "",
+      "images": [
+        {
+          "src": "../../images/banner_recruit.png",
+          "local": "assets/academy/recruit-choose/banner_recruit.png"
+        }
+      ],
+      "staged_at": "2026-10-30T06:25:18.749Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "operative-choose",
+      "src_path": "operative/choose",
+      "sha": "4adcbbfd2ed00b0a3398223f42142ad326f67c31",
+      "title": "Welcome Operative",
+      "description": "",
+      "category": "academy-courses",
+      "parent": "aoperative",
+      "parentTitle": "Operative — 중급 코스",
+      "parentShort": "Operative",
+      "parentOrder": 2,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/operative/choose/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "",
+      "images": [
+        {
+          "src": "../../images/banner_operative.png",
+          "local": "assets/academy/operative-choose/banner_operative.png"
+        }
+      ],
+      "staged_at": "2026-10-30T06:25:18.974Z",
+      "status": "pending-translation"
+    },
+    {
+      "slug": "special-ops-ms-learn-mcp",
+      "src_path": "special-ops/ms-learn-mcp",
+      "sha": "b3f359e87e0a1393d8668562c83077edb5096476",
+      "title": "📚 Microsoft Learn MCP Server",
+      "description": "",
+      "category": "academy-labs",
+      "parent": "aspecialops",
+      "parentTitle": "Special Ops — 독립 랩",
+      "parentShort": "Special Ops",
+      "parentOrder": 1,
+      "order": 999,
+      "source_url": "https://microsoft.github.io/agent-academy/special-ops/ms-learn-mcp/",
+      "source_author": "Copilot Studio Agent Academy",
+      "source_blog": "Copilot Studio Agent Academy",
+      "source_published": "2026-10-29",
+      "images": [
+        {
+          "src": "./assets/1.1.01_new.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/1.1.01_new.png"
+        },
+        {
+          "src": "./assets/step-02.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-02.png"
+        },
+        {
+          "src": "./assets/step-03.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-03.png"
+        },
+        {
+          "src": "./assets/step-04.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-04.png"
+        },
+        {
+          "src": "./assets/step-05.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-05.png"
+        },
+        {
+          "src": "./assets/step-06.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-06.png"
+        },
+        {
+          "src": "./assets/step-07.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-07.png"
+        },
+        {
+          "src": "./assets/step-08.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-08.png"
+        },
+        {
+          "src": "./assets/step-09.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-09.png"
+        },
+        {
+          "src": "./assets/step-10.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-10.png"
+        },
+        {
+          "src": "./assets/step-11.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-11.png"
+        },
+        {
+          "src": "./assets/step-12.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-12.png"
+        },
+        {
+          "src": "./assets/step-13.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-13.png"
+        },
+        {
+          "src": "./assets/step-14.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-14.png"
+        },
+        {
+          "src": "./assets/step-15.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-15.png"
+        },
+        {
+          "src": "./assets/step-16.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-16.png"
+        },
+        {
+          "src": "./assets/step-17.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-17.png"
+        },
+        {
+          "src": "./assets/step-18.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-18.png"
+        },
+        {
+          "src": "./assets/step-19.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-19.png"
+        },
+        {
+          "src": "./assets/step-20.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-20.png"
+        },
+        {
+          "src": "./assets/step-21.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/step-21.png"
+        },
+        {
+          "src": "./assets/1.6_AddSkill.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/1.6_AddSkill.png"
+        },
+        {
+          "src": "./assets/1.6_SkillConfig.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/1.6_SkillConfig.png"
+        },
+        {
+          "src": "./assets/1.6_PreviewTab.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/1.6_PreviewTab.png"
+        },
+        {
+          "src": "./assets/1.6_quizPrompt.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/1.6_quizPrompt.png"
+        },
+        {
+          "src": "./assets/1.6_quizSkillLevel.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/1.6_quizSkillLevel.png"
+        },
+        {
+          "src": "./assets/1.6_quizresult.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/1.6_quizresult.png"
+        },
+        {
+          "src": "./assets/1.6_prompt2.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/1.6_prompt2.png"
+        },
+        {
+          "src": "./assets/1.6_prompt2response.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/1.6_prompt2response.png"
+        },
+        {
+          "src": "./assets/1.6_prompt2output.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/1.6_prompt2output.png"
+        },
+        {
+          "src": "./assets/Academy_LearnMCP_Badge.png",
+          "local": "assets/academy/special-ops-ms-learn-mcp/Academy_LearnMCP_Badge.png"
+        }
+      ],
+      "staged_at": "2026-10-30T06:25:21.747Z",
+      "status": "pending-translation"
     }
   ]
 }
