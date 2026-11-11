@@ -55,6 +55,28 @@
       ],
       "staged_at": "2026-10-30T05:52:33.170Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "disable-adaptive-cards-after-submission",
+      "title": "Disabling Adaptive Cards After Submission in Copilot Studio Agents",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/disable-adaptive-cards-after-submission/",
+      "source_author": "mmonisha",
+      "source_published": "2026-11-11",
+      "source_updated": "2026-11-11",
+      "categories": [
+        "copilot-studio",
+        "tutorial"
+      ],
+      "summary": "Two proven patterns to disable or replace Adaptive Cards after submission: one for custom web portals using WebChat, and one for Microsoft Teams using Universal Actions.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-11-11-disable-adaptive-cards-after-submission.md",
+      "images": [
+        {
+          "src": "/assets/posts/disable-adaptive-cards-after-submission/header.png",
+          "local": "assets/catblog/disable-adaptive-cards-after-submission/header.png"
+        }
+      ],
+      "staged_at": "2026-11-11T19:41:19.224Z",
+      "status": "pending-translation"
     }
   ]
 }
