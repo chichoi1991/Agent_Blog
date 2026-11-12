@@ -1,19 +1,25 @@
 ---
-layout: post
+layout: "chapter"
+lang: en
 title: "Disabling Adaptive Cards After Submission in Copilot Studio Agents"
-date: 2026-11-11
-categories: [copilot-studio, tutorial]
-agent_edition: standard
-tags: [adaptive-cards, teams, webchat, universal-actions, user-experience, action-execute, bot-framework]
-description: "Two proven patterns to disable or replace Adaptive Cards after submission: one for custom web portals using WebChat, and one for Microsoft Teams using Universal Actions."
-author: mmonisha
-image:
-  path: /assets/posts/disable-adaptive-cards-after-submission/header.png
-  alt: "You clicked Submit. The card got it, it just forgot to say so."
-  no_bg: true
-published: true
-mermaid: true
+short_title: "Disable Cards After Submit"
+description: "Explore two patterns to prevent Adaptive Card resubmission in WebChat and Microsoft Teams, plus the limitations in Microsoft 365 Copilot."
+order: 21
+category: "catblog"
+source_url: "https://microsoft.github.io/mcscatblog/posts/disable-adaptive-cards-after-submission/"
+source_author: "mmonisha"
+source_published: "2026-11-11"
+source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
+canonical_url: "https://microsoft.github.io/mcscatblog/posts/disable-adaptive-cards-after-submission/"
 ---
+
+<div class="info-box note" markdown="1">
+**Translated article** — This article is based on [Disabling Adaptive Cards After Submission in Copilot Studio Agents](https://microsoft.github.io/mcscatblog/posts/disable-adaptive-cards-after-submission/) by mmonisha (@mmonisha) on [The Custom Engine](https://microsoft.github.io/mcscatblog/) (2026-11-11). The original wording takes precedence.
+</div>
+
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/disable-adaptive-cards-after-submission/header.png' | relative_url }}" alt="You clicked Submit. The card got it, it just forgot to say so." loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+</figure>
 
 You've shipped an agent with an Adaptive Card form. A user fills it in, clicks Submit, and the data they just typed vanishes. The card sits there looking perfectly fillable, so they assume it failed, fill it in again, hit Submit a second time, and get an error for their trouble.
 
@@ -25,9 +31,9 @@ The good news is that it's solvable. The catch is that the right fix depends ent
 
 Adaptive Cards, by default, don't have a built-in "disable after submit" behavior. When a user submits a card:
 
-1. The input fields clear (data disappears visually)
-2. The card remains interactive
-3. A second submission triggers an error because the conversation has already moved on
+1. The input fields clear (data disappears visually).
+2. The card remains interactive.
+3. A second submission triggers an error because the conversation has already moved on.
 
 This is a platform behavior, not a bug in your agent logic. Your agent received and processed the data just fine. But the user doesn't know that.
 
@@ -48,9 +54,8 @@ Let's walk through the two workarounds, then cover what to do when your agent li
 > This pattern works for agents you embed in your own custom web portals or self-service pages with the BotFramework-WebChat SDK, where you control the client.
 >
 > It does **not** apply to the Microsoft 365 [Employee Self-Service (ESS) agent](https://learn.microsoft.com/microsoft-365/copilot/employee-self-service/overview). Despite the similar name, ESS runs in the Microsoft 365 Copilot channel, where you don't host the client, so there's nowhere to plug in this middleware. There's a section on that channel near the end.
-{: .prompt-info }
 
-The idea is simple: use an **[attachment middleware]({% post_url 2026-02-02-webchat-middlewares %})** in WebChat that checks whether a card belongs to the most recent bot message. If it doesn't (meaning the user has already moved past it), render the card as disabled.
+The idea is simple: use an **[attachment middleware](https://microsoft.github.io/mcscatblog/posts/2026-02-02-webchat-middlewares/)** in WebChat that checks whether a card belongs to the most recent bot message. If it doesn't (meaning the user has already moved past it), render the card as disabled.
 
 ### The core logic
 
@@ -112,27 +117,21 @@ Pass the middleware when rendering WebChat:
 ```
 
 > This is a **client-side** solution. It prevents resubmission in the UI but doesn't enforce it server-side. For most self-service portal scenarios, this is sufficient.
-{: .prompt-warning }
 
 The full working sample is available in the [BotFramework-WebChat repo](https://github.com/microsoft/BotFramework-WebChat/tree/main/samples/05.custom-components/l.disable-adaptive-cards).
 
 ## Pattern 2: Microsoft Teams (Universal Actions)
 
-Here's where things get interesting. The WebChat middleware doesn't apply in Teams because you don't control the client. If you're designing agents for Teams more broadly, the [Teams agent patterns post]({% post_url 2026-04-07-copilot-studio-teams-agent-patterns %}) covers the wider design considerations. For this problem, we reach for [**Universal Actions**](https://learn.microsoft.com/en-us/adaptive-cards/authoring-cards/universal-action-model), the model that lets an agent respond to a card action and hand back a fresh card in its place.
+Here's where things get interesting. The WebChat middleware doesn't apply in Teams because you don't control the client. If you're designing agents for Teams more broadly, the [Teams agent patterns post](https://microsoft.github.io/mcscatblog/posts/2026-04-07-copilot-studio-teams-agent-patterns/) covers the wider design considerations. For this problem, we reach for [**Universal Actions**](https://learn.microsoft.com/en-us/adaptive-cards/authoring-cards/universal-action-model), the model that lets an agent respond to a card action and hand back a fresh card in its place.
 
 ### How Universal Actions work
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant Teams
-    participant Agent as Copilot Studio Agent
-
-    User->>Teams: Fills out card, clicks Submit
-    Teams->>Agent: Sends invoke activity with verb
-    Agent->>Agent: Processes data, branches on verb
-    Agent->>Teams: Returns replacement card (HTTP 200)
-    Teams->>User: Original card replaced with confirmation
+```text
+User → Teams: Fills out card, clicks Submit
+Teams → Agent: Sends invoke activity with verb
+Agent → Agent: Processes data, branches on verb
+Agent → Teams: Returns replacement card (HTTP 200)
+Teams → User: Original card replaced with confirmation
 ```
 
 Instead of `Action.Submit`, the card uses `Action.Execute` with a unique **verb**. When the user clicks the button, Teams sends an invoke activity to Copilot Studio. A topic picks it up, processes the data, and returns a new card. Teams swaps the original card for the new one.
@@ -141,7 +140,7 @@ The user sees their form replaced with a confirmation. No ambiguity, no resubmis
 
 ### Step 1: Design the card with `Action.Execute`
 
-Start from any Adaptive Card. If you'd rather not hand-author the JSON, you can [let Copilot generate the card for you]({% post_url 2026-01-02-adaptive-card-generation %}) and tweak the actions from there. The critical change is in the action buttons. Replace `Action.Submit` with `Action.Execute` and add a `verb`:
+Start from any Adaptive Card. If you'd rather not hand-author the JSON, you can [let Copilot generate the card for you](https://microsoft.github.io/mcscatblog/posts/2026-01-02-adaptive-card-generation/) and tweak the actions from there. The critical change is in the action buttons. Replace `Action.Submit` with `Action.Execute` and add a `verb`:
 
 <details>
 <summary>Adaptive Card action buttons using <code>Action.Execute</code></summary>
@@ -172,7 +171,6 @@ Start from any Adaptive Card. If you'd rather not hand-author the JSON, you can 
 </details>
 
 > Use `"fallback": "Action.Submit"` so the card degrades gracefully in clients that don't support Universal Actions.
-{: .prompt-tip }
 
 ### Step 2: Send with a "Send a message" node
 
@@ -202,6 +200,7 @@ properties:
 ```
 
 Then branch on `resultData.action.verb`:
+
 - `feedbackSubmitForm` → process the input, return a thank-you card
 - `feedbackSkipForm` → return a skipped confirmation
 
@@ -243,7 +242,6 @@ The response must follow the Universal Action response format:
 The original card is replaced. No buttons, no inputs, just a clean confirmation.
 
 > Test this in Teams directly, not the Copilot Studio test canvas. The invoke/refresh flow may not work in the test panel.
-{: .prompt-warning }
 
 A complete, importable version of this pattern (built by [Nghiem Doan](https://github.com/nghiemdoan-msft)) is available in the [CopilotStudioSamples repo](https://github.com/microsoft/CopilotStudioSamples/tree/main/authoring/solutions/adaptive-card-refresh) as a ready-to-import solution.
 
@@ -259,7 +257,6 @@ Here's the situation as of July 2026:
 There's no supported way to disable or replace a card after submit in Microsoft 365 Copilot right now. The pragmatic move is to design around it: keep cards informational where you can, gather input through a Question node or a conversational turn instead of a submit-heavy card, and write the card text so a click that appears to do nothing still reads as "received."
 
 > ESS is the perfect trap here. It shares DNA with the custom-portal scenario, so the WebChat fix looks like it should carry over, but ESS runs in the Microsoft 365 Copilot channel where that client-side hook can't reach it and the Teams card swap doesn't apply. Same-looking problem, different rules.
-{: .prompt-warning }
 
 ## Key takeaways
 
