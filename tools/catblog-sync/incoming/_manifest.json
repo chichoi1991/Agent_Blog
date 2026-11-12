@@ -32,7 +32,7 @@
         }
       ],
       "staged_at": "2026-10-22T04:51:40.347Z",
-      "status": "pending-translation"
+      "status": "published"
     },
     {
       "slug": "grumpy-protocol-clients",
@@ -54,7 +54,7 @@
         }
       ],
       "staged_at": "2026-10-30T05:52:33.170Z",
-      "status": "pending-translation"
+      "status": "published"
     },
     {
       "slug": "disable-adaptive-cards-after-submission",
@@ -76,7 +76,7 @@
         }
       ],
       "staged_at": "2026-11-11T19:41:19.224Z",
-      "status": "pending-translation"
+      "status": "published"
     },
     {
       "slug": "call-ghcp-harness-agents-mcp-a2a",
@@ -154,7 +154,7 @@
         }
       ],
       "staged_at": "2026-11-12T07:14:10.344Z",
-      "status": "pending-translation"
+      "status": "published"
     }
   ]
 }
