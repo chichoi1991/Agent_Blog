@@ -77,6 +77,84 @@
       ],
       "staged_at": "2026-11-11T19:41:19.224Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "call-ghcp-harness-agents-mcp-a2a",
+      "title": "Call Microsoft Copilot Harness Agents from Other Copilot Studio Agents with MCP and A2A",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/call-ghcp-harness-agents-mcp-a2a/",
+      "source_author": "ssivaraman",
+      "source_published": "2026-11-12",
+      "source_updated": "2026-11-12",
+      "categories": [
+        "copilot-studio",
+        "orchestration"
+      ],
+      "summary": "Configure a standard agent to call a Microsoft Copilot harness agent (formerly GitHub Copilot harness) over MCP, and harness agents to call each other across environments over A2A, with OBO sign-in for other users.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-11-12-call-ghcp-harness-agents-mcp-a2a.md",
+      "images": [
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/add-trigger.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/add-trigger.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/a2a-endpoint-dialog.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/a2a-endpoint-dialog.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/mcp-oauth-manual.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/mcp-oauth-manual.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/entra-web-redirect.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/entra-web-redirect.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/standard-agent-mcp-tool.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/standard-agent-mcp-tool.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/obo-flow.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/obo-flow.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/obo-expose-api.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/obo-expose-api.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/obo-connector-security.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/obo-connector-security.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/obo-consent-card.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/obo-consent-card.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/obo-answer-after-allow.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/obo-answer-after-allow.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/obo-followup-no-prompt.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/obo-followup-no-prompt.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/add-a2a-agent.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/add-a2a-agent.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/a2a-review-description.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/a2a-review-description.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/a2a-call-trace.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/a2a-call-trace.png"
+        },
+        {
+          "src": "/assets/posts/call-ghcp-harness-agents-mcp-a2a/header.png",
+          "local": "assets/catblog/call-ghcp-harness-agents-mcp-a2a/header.png"
+        }
+      ],
+      "staged_at": "2026-11-12T07:14:10.344Z",
+      "status": "pending-translation"
     }
   ]
 }
