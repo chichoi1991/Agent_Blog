@@ -155,6 +155,60 @@
       ],
       "staged_at": "2026-11-12T07:14:10.344Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "model-assessment",
+      "title": "Before you switch models: Assess your Copilot Studio agent with Model Assessment",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/model-assessment/",
+      "source_author": "patilravikiran",
+      "source_published": "2026-11-12",
+      "source_updated": "2026-11-12",
+      "categories": [
+        "copilot-studio",
+        "testing"
+      ],
+      "summary": "Compare a Copilot Studio agent across models with Model Assessment: inspect shared evaluation checks, investigate regressions, and weigh reported Copilot Credits before choosing a model.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-11-12-model-assessment.md",
+      "images": [
+        {
+          "src": "/assets/posts/model-assessment/01-zava-agents.png",
+          "local": "assets/catblog/model-assessment/01-zava-agents.png"
+        },
+        {
+          "src": "/assets/posts/model-assessment/02-model-history.png",
+          "local": "assets/catblog/model-assessment/02-model-history.png"
+        },
+        {
+          "src": "/assets/posts/model-assessment/08-assessment-progress.png",
+          "local": "assets/catblog/model-assessment/08-assessment-progress.png"
+        },
+        {
+          "src": "/assets/posts/model-assessment/03-model-comparison.png",
+          "local": "assets/catblog/model-assessment/03-model-comparison.png"
+        },
+        {
+          "src": "/assets/posts/model-assessment/07-ai-summary.png",
+          "local": "assets/catblog/model-assessment/07-ai-summary.png"
+        },
+        {
+          "src": "/assets/posts/model-assessment/05-regressed-check.png",
+          "local": "assets/catblog/model-assessment/05-regressed-check.png"
+        },
+        {
+          "src": "/assets/posts/model-assessment/04-test-results.png",
+          "local": "assets/catblog/model-assessment/04-test-results.png"
+        },
+        {
+          "src": "/assets/posts/model-assessment/06-needs-attention.png",
+          "local": "assets/catblog/model-assessment/06-needs-attention.png"
+        },
+        {
+          "src": "/assets/posts/model-assessment/header.png",
+          "local": "assets/catblog/model-assessment/header.png"
+        }
+      ],
+      "staged_at": "2026-11-18T20:39:11.063Z",
+      "status": "pending-translation"
     }
   ]
 }
