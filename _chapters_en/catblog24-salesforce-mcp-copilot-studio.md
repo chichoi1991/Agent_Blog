@@ -1,24 +1,32 @@
 ---
-layout: post
-title: "Connecting Salesforce's Hosted MCP Server to Copilot Studio"
+layout: "chapter"
+lang: en
 date: 2026-10-14
-categories: [copilot-studio, mcp]
-tags: [mcp, model-context-protocol, salesforce, oauth, authentication, copilot-studio]
-description: "Connect Salesforce's SObject All hosted MCP server to a Copilot Studio agent using an External Client App and manual OAuth, then validate reads and controlled updates."
-author: MarcusCastroMSFT
-agent_edition: github-copilot
-image:
-  path: /assets/posts/salesforce-mcp-copilot-studio/header.png
-  alt: Salesforce and Copilot Studio connected through MCP with OAuth 2.0 authentication
-  no_bg: true
+title: "Connecting Salesforce's Hosted MCP Server to Copilot Studio"
+short_title: "Connect Salesforce MCP"
+description: "Connect the SObject All hosted MCP server using a Salesforce External Client App and manual OAuth, then safely verify reads and updates."
+order: 24
+category: "catblog"
+source_url: "https://microsoft.github.io/mcscatblog/posts/salesforce-mcp-copilot-studio/"
+source_author: "Marcus Castro"
+source_published: "2026-10-14"
+source_blog: "The Custom Engine (Microsoft Copilot Studio CAT)"
+canonical_url: "https://microsoft.github.io/mcscatblog/posts/salesforce-mcp-copilot-studio/"
 ---
+
+<div class="info-box note" markdown="1">
+**Translated article** — This article is based on [Connecting Salesforce's Hosted MCP Server to Copilot Studio](https://microsoft.github.io/mcscatblog/posts/salesforce-mcp-copilot-studio/) by Marcus Castro (@MarcusCastroMSFT) on [The Custom Engine](https://microsoft.github.io/mcscatblog/) (2026-10-14). The original wording takes precedence.
+</div>
+
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/header.png' | relative_url }}" alt="Salesforce and Copilot Studio connected through MCP with OAuth 2.0 authentication" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+</figure>
 
 Your sales team wants to ask an agent for the latest opportunities, update a close date, and add a note without switching between chat and Salesforce. The interesting part isn't just retrieving CRM data. It's making sure the agent can act on that data with the right user's permissions.
 
 Salesforce's hosted Model Context Protocol (MCP) servers provide tools for working with Salesforce records. In this walkthrough, we'll connect **SObject All** directly to a Copilot Studio agent, using a Salesforce **External Client App** and **manual OAuth 2.0 configuration**. Then we'll test a read, make a controlled update, and verify the result in Salesforce.
 
 > The screenshots use Copilot Studio's [GitHub Copilot harness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview). The linked MCP onboarding documentation describes the standard harness, so navigation and button labels can differ. This walkthrough follows the captured Build experience and identifies the OAuth settings explicitly.
-{: .prompt-info }
 
 ## Before you begin
 
@@ -34,7 +42,6 @@ Salesforce's [org setup guide](https://developer.salesforce.com/docs/platform/ho
 **SObject All supports reads and writes**, including deletes. Salesforce still applies the authenticated user's object permissions, field-level security, and sharing rules. We'll also limit the tools exposed to the agent before testing.
 
 > Don't start with a production opportunity. Use controlled records and a least-privileged Salesforce account. Keep consumer secrets, access tokens, and refresh tokens out of screenshots, prompts, and source control.
-{: .prompt-warning }
 
 ### Choose the right endpoints
 
@@ -65,11 +72,15 @@ Follow Salesforce's [External Client App setup instructions](https://developer.s
 5. Enter an **API Name**, such as `Copilot_Studio_MCP_Client`, and your **Contact Email**.
 6. Leave **Distribution State** as **Local** for this configuration.
 
-![Salesforce External Client App Manager with New External Client App highlighted](/assets/posts/salesforce-mcp-copilot-studio/external-client-app-manager.png){: .shadow w="1000" }
-_Open External Client App Manager and select New External Client App._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/external-client-app-manager.png' | relative_url }}" alt="Salesforce External Client App Manager with New External Client App highlighted" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Open External Client App Manager and select New External Client App.</figcaption>
+</figure>
 
-![External Client App basic information fields](/assets/posts/salesforce-mcp-copilot-studio/app-basic-information.png){: .shadow w="1000" }
-_Provide the app name, API name, and contact email, with Local distribution selected._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/app-basic-information.png' | relative_url }}" alt="External Client App basic information fields" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Provide the app name, API name, and contact email, with Local distribution selected.</figcaption>
+</figure>
 
 ### Enable OAuth and select the scopes
 
@@ -82,8 +93,10 @@ Move these entries into **Selected OAuth Scopes**:
 - **Perform requests at any time** (`refresh_token`, `offline_access`).
 - **Access Salesforce hosted MCP servers** (`mcp_api`).
 
-![OAuth enabled with a temporary callback URL and the MCP and refresh token scopes](/assets/posts/salesforce-mcp-copilot-studio/app-oauth-scopes.png){: .shadow w="1000" }
-_Enable OAuth, enter the temporary callback, and select the refresh token and hosted MCP scopes._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/app-oauth-scopes.png' | relative_url }}" alt="OAuth enabled with a temporary callback URL and the MCP and refresh token scopes" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Enable OAuth, enter the temporary callback, and select the refresh token and hosted MCP scopes.</figcaption>
+</figure>
 
 ### Confirm the security settings
 
@@ -91,13 +104,17 @@ In **Security**, select **Issue JSON Web Token (JWT)-based access tokens for nam
 
 In our configuration, **Require Proof Key for Code Exchange (PKCE)**, **Enable Refresh Token Rotation**, and **Limit idle Refresh Token Time-to-Live (TTL) to 30 Days** were already selected, with the UI indicating that changing them required Salesforce support. Keep those settings. Leave the **Flow Enablement** options unchecked, and follow Salesforce's setup guide for the remaining security options.
 
-![External Client App security options with JWT-based access tokens selected](/assets/posts/salesforce-mcp-copilot-studio/app-security-settings.png){: .shadow w="826" }
-_The configuration used PKCE, refresh token rotation, JWT-based access tokens, and the 30-day idle refresh token TTL._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/app-security-settings.png' | relative_url }}" alt="External Client App security options with JWT-based access tokens selected" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>The configuration used PKCE, refresh token rotation, JWT-based access tokens, and the 30-day idle refresh token TTL.</figcaption>
+</figure>
 
 Scroll to the bottom and select **Create** to save the app.
 
-![Cancel and Create buttons in Salesforce](/assets/posts/salesforce-mcp-copilot-studio/create-app.png){: .shadow w="300" }
-_Select Create after completing the OAuth and security settings._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/create-app.png' | relative_url }}" alt="Cancel and Create buttons in Salesforce" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Select Create after completing the OAuth and security settings.</figcaption>
+</figure>
 
 ### Retrieve the client credentials
 
@@ -112,11 +129,12 @@ The field names map to Copilot Studio as follows:
 
 Store the values securely. You'll enter them in Copilot Studio, not in the agent's instructions.
 
-![OAuth Settings with the Consumer Key and Secret button highlighted](/assets/posts/salesforce-mcp-copilot-studio/consumer-key-and-secret.png){: .shadow w="1000" }
-_The Consumer Key and Secret button opens the credential values; this screenshot does not display them._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/consumer-key-and-secret.png' | relative_url }}" alt="OAuth Settings with the Consumer Key and Secret button highlighted" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>The Consumer Key and Secret button opens the credential values; this screenshot does not display them.</figcaption>
+</figure>
 
 > Salesforce notes that a new External Client App can take **up to 30 minutes** to become operational. Account for that delay when testing, but check the configuration before assuming a failure is caused by propagation.
-{: .prompt-info }
 
 ## 2. Activate the hosted MCP server
 
@@ -124,21 +142,25 @@ In **Salesforce Setup**, search for **MCP** and open **MCP Servers** under **Int
 
 On the **Salesforce Servers** tab, locate **SObject All**. Open the server or its row action and activate it. Confirm that **Server Status** is **Active** before continuing. Salesforce's [hosted MCP documentation](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/setup-overview.html) is the starting point for org setup, while the [SObject All reference](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/sobject-all.html) describes this server's operations.
 
-![Salesforce MCP Servers page with SObject All showing Active status](/assets/posts/salesforce-mcp-copilot-studio/active-sobject-all.png){: .shadow w="1000" }
-_SObject All appears at the bottom of the server list with an Active status._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/active-sobject-all.png' | relative_url }}" alt="Salesforce MCP Servers page with SObject All showing Active status" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>SObject All appears at the bottom of the server list with an Active status.</figcaption>
+</figure>
 
 ## 3. Add the server to your Copilot Studio agent
 
 Now switch to Copilot Studio. Microsoft's [MCP onboarding guide](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-add-existing-server-to-agent) documents the manual OAuth fields and callback sequence for the standard harness. The steps and screenshots below show the GitHub Copilot harness configuration used in our implementation.
 
-For an introduction to MCP onboarding, see our [first MCP connector walkthrough]({% post_url 2026-04-10-hello-world-mcp-copilot-studio %}).
+For an introduction to MCP onboarding, see our [first MCP connector walkthrough](https://microsoft.github.io/mcscatblog/posts/hello-world-mcp-copilot-studio/).
 
 1. Open your target agent.
 2. In the UI shown here, open **Build** and select **+** next to **Tools**. In environments with a dedicated **Tools** page, select **Add a tool** there.
 3. In **Add a tool**, select **+ Add**, then **Model Context Protocol (MCP)**.
 
-![Copilot Studio Add a tool dialog with the MCP option highlighted](/assets/posts/salesforce-mcp-copilot-studio/add-mcp-tool.png){: .shadow w="1000" }
-_Add the hosted server using the Model Context Protocol option._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/add-mcp-tool.png' | relative_url }}" alt="Copilot Studio Add a tool dialog with the MCP option highlighted" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Add the hosted server using the Model Context Protocol option.</figcaption>
+</figure>
 
 ### Enter the server and authentication details
 
@@ -159,15 +181,19 @@ Give the server a description that tells the agent when to use it. For example:
 
 Keep the description aligned with the tools you intend to enable. It isn't an authorization control: we'll configure tool permissions separately.
 
-![Add MCP server form with Salesforce endpoint and manual OAuth configuration](/assets/posts/salesforce-mcp-copilot-studio/mcp-server-details.png){: .shadow w="760" }
-_Enter the server details and select OAuth 2.0 with Manual configuration. Client credentials are masked._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/mcp-server-details.png' | relative_url }}" alt="Add MCP server form with Salesforce endpoint and manual OAuth configuration" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Enter the server details and select OAuth 2.0 with Manual configuration. Client credentials are masked.</figcaption>
+</figure>
 
 Scroll down and enter the **Authorization URL**, **Token URL**, **Refresh token URL**, and space-separated **Scopes** from the endpoint table.
 
 For the production / Developer Edition configuration shown here, the scopes are `mcp_api refresh_token`, and both token fields use `https://login.salesforce.com/services/oauth2/token`.
 
-![Manual OAuth fields containing Salesforce endpoints and scopes](/assets/posts/salesforce-mcp-copilot-studio/mcp-oauth-endpoints.png){: .shadow w="760" }
-_The OAuth configuration uses Salesforce's authorization and token endpoints with the MCP and refresh token scopes._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/mcp-oauth-endpoints.png' | relative_url }}" alt="Manual OAuth fields containing Salesforce endpoints and scopes" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>The OAuth configuration uses Salesforce's authorization and token endpoints with the MCP and refresh token scopes.</figcaption>
+</figure>
 
 Select **Add** to create the server definition. The current documentation may label this action **Create**.
 
@@ -177,8 +203,10 @@ Copilot Studio displays **Save your redirect URL**. Use **Copy** to capture the 
 
 **Don't select Next yet.** Salesforce needs this exact URL registered before you create the connection.
 
-![Save your redirect URL screen with Copy highlighted](/assets/posts/salesforce-mcp-copilot-studio/copy-redirect-url.png){: .shadow w="760" }
-_Copy your generated redirect URL. The instance-specific portion is redacted in this screenshot; don't copy the screenshot's example._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/copy-redirect-url.png' | relative_url }}" alt="Save your redirect URL screen with Copy highlighted" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Copy your generated redirect URL. The instance-specific portion is redacted in this screenshot; don't copy the screenshot's example.</figcaption>
+</figure>
 
 ## 4. Complete the callback and sign in
 
@@ -186,8 +214,10 @@ Return to **Salesforce Setup > External Client App Manager**, open your app, and
 
 Expand **OAuth Settings** and replace the temporary **Callback URL** with the full redirect URL copied from Copilot Studio. Select **Save**.
 
-![Salesforce callback field updated with the Copilot Studio redirect URL](/assets/posts/salesforce-mcp-copilot-studio/update-callback-url.png){: .shadow w="1000" }
-_Replace the placeholder with your own Copilot Studio redirect URL, preserving it exactly._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/update-callback-url.png' | relative_url }}" alt="Salesforce callback field updated with the Copilot Studio redirect URL" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>Replace the placeholder with your own Copilot Studio redirect URL, preserving it exactly.</figcaption>
+</figure>
 
 Then return to Copilot Studio:
 
@@ -207,12 +237,13 @@ error=redirect_uri_mismatch&error_description=redirect_uri must match configurat
 Compare the Salesforce callback with the Copilot Studio redirect **character for character**, including the scheme, path, and any trailing slash. Check that you edited the External Client App whose Consumer Key you entered in Copilot Studio.
 
 > **Callback URL updates aren't always immediate.** If the URLs match exactly and you just saved the change, allow **up to 30 minutes** for the updated redirect URL to take effect before assuming the configuration is wrong. In our tests, it started working after around **10 minutes**. Close the failed sign-in window and retry after allowing time for propagation. For context, Salesforce's [External Client App setup guide](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/create-external-client-app.html) documents an availability delay of up to 30 minutes for a newly created app.
-{: .prompt-info }
 
 The error itself doesn't prove that propagation is the cause, so verify the callback and client credentials first.
 
-![Salesforce sign-in window showing redirect_uri_mismatch](/assets/posts/salesforce-mcp-copilot-studio/redirect-uri-mismatch.png){: .shadow w="1000" }
-_A redirect mismatch blocks connection creation. Verify the saved callback before retrying._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/redirect-uri-mismatch.png' | relative_url }}" alt="Salesforce sign-in window showing redirect_uri_mismatch" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>A redirect mismatch blocks connection creation. Verify the saved callback before retrying.</figcaption>
+</figure>
 
 ## 5. Review the discovered tools
 
@@ -229,10 +260,12 @@ These match the operations described in the [SObject All tool reference](https:/
 
 For this walkthrough, enable the read and schema tools first. Enable only the create/update tools needed for the controlled write test, and leave delete tools disabled. If **Allow all** is selected, turn it off before choosing individual tools. Select **Done** to save.
 
-![Edit tool panel showing a connected Salesforce MCP server and discovered tools](/assets/posts/salesforce-mcp-copilot-studio/discovered-tools.png){: .shadow w="1000" }
-_A successful connection exposes the SObject All tools. The captured configuration shows Allow all enabled; narrow the permissions for your own test._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/discovered-tools.png' | relative_url }}" alt="Edit tool panel showing a connected Salesforce MCP server and discovered tools" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>A successful connection exposes the SObject All tools. The captured configuration shows Allow all enabled; narrow the permissions for your own test.</figcaption>
+</figure>
 
-For another example of onboarding a hosted service, see our [Jira remote MCP walkthrough]({% post_url 2026-05-15-atlassian-jira-remote-mcp-copilot-studio %}). It uses a different OAuth registration approach, so don't reuse its authentication settings for Salesforce.
+For another example of onboarding a hosted service, see our [Jira remote MCP walkthrough](https://microsoft.github.io/mcscatblog/posts/atlassian-jira-remote-mcp-copilot-studio/). It uses a different OAuth registration approach, so don't reuse its authentication settings for Salesforce.
 
 ## 6. Test a read, then a controlled write
 
@@ -263,8 +296,10 @@ The name above is an example, not a record you should expect to find. Confirm th
 
 Our captured walkthrough retrieved opportunities, then updated the opportunity named **Microsoft - New Pilot**, changed its close date, and added a note. The screenshot illustrates that test interaction, not a business result to reproduce.
 
-![Copilot Studio agent retrieving opportunities and confirming an update](/assets/posts/salesforce-mcp-copilot-studio/opportunity-conversation.png){: .shadow w="700" }
-_The original test conversation shows a read followed by a stage, close-date, and note update._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/opportunity-conversation.png' | relative_url }}" alt="Copilot Studio agent retrieving opportunities and confirming an update" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>The original test conversation shows a read followed by a stage, close-date, and note update.</figcaption>
+</figure>
 
 ### Verify the result in Salesforce
 
@@ -277,14 +312,17 @@ Don't stop at the agent's confirmation. Open the opportunity in Salesforce and c
 
 The screenshots below capture the October 13 test. Their dates are the test dates, not dates to enter in your own records.
 
-![Salesforce opportunity showing Closed Won, the updated close date, and an attached note](/assets/posts/salesforce-mcp-copilot-studio/verified-opportunity.png){: .shadow w="1000" }
-_The opportunity record confirms the stage, close date, and attached note after the agent's update._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/verified-opportunity.png' | relative_url }}" alt="Salesforce opportunity showing Closed Won, the updated close date, and an attached note" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>The opportunity record confirms the stage, close date, and attached note after the agent's update.</figcaption>
+</figure>
 
-![Salesforce note record containing the note added in the test conversation](/assets/posts/salesforce-mcp-copilot-studio/verified-note.png){: .shadow w="856" }
-_The note record lets you verify the stored text and its link to the opportunity._
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/salesforce-mcp-copilot-studio/verified-note.png' | relative_url }}" alt="Salesforce note record containing the note added in the test conversation" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+  <figcaption>The note record lets you verify the stored text and its link to the opportunity.</figcaption>
+</figure>
 
 > Salesforce permissions remain the enforcement boundary. An agent's success message and a record's Last Modified By field are useful checks, but neither replaces testing with the actual user permissions you plan to support.
-{: .prompt-tip }
 
 ## Final checks and troubleshooting
 
