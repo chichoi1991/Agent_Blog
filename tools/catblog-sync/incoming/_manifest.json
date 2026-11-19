@@ -209,6 +209,93 @@
       ],
       "staged_at": "2026-11-18T20:39:11.063Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "salesforce-mcp-copilot-studio",
+      "title": "Connecting Salesforce’s Hosted MCP Server to Copilot Studio",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/salesforce-mcp-copilot-studio/",
+      "source_author": "Marcus Castro",
+      "source_published": "2026-10-14",
+      "source_updated": "2026-10-14",
+      "categories": [],
+      "summary": "Connect Salesforce’s SObject All hosted MCP server to a Copilot Studio agent using an External Client App and manual OAuth, then validate reads and controlled updates.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-10-14-salesforce-mcp-copilot-studio.md",
+      "images": [
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/external-client-app-manager.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/external-client-app-manager.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/app-basic-information.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/app-basic-information.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/app-oauth-scopes.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/app-oauth-scopes.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/app-security-settings.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/app-security-settings.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/create-app.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/create-app.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/consumer-key-and-secret.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/consumer-key-and-secret.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/active-sobject-all.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/active-sobject-all.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/add-mcp-tool.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/add-mcp-tool.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/mcp-server-details.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/mcp-server-details.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/mcp-oauth-endpoints.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/mcp-oauth-endpoints.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/copy-redirect-url.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/copy-redirect-url.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/update-callback-url.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/update-callback-url.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/redirect-uri-mismatch.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/redirect-uri-mismatch.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/discovered-tools.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/discovered-tools.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/opportunity-conversation.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/opportunity-conversation.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/verified-opportunity.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/verified-opportunity.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/verified-note.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/verified-note.png"
+        },
+        {
+          "src": "/assets/posts/salesforce-mcp-copilot-studio/header.png",
+          "local": "assets/catblog/salesforce-mcp-copilot-studio/header.png"
+        }
+      ],
+      "staged_at": "2026-11-19T20:45:11.612Z",
+      "status": "pending-translation"
     }
   ]
 }
