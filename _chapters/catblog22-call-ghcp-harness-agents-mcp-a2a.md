@@ -64,7 +64,7 @@ Early 환경에서 게시된 Microsoft Copilot 하네스 에이전트를 열고 
 
 <figure class="screenshot">
   <img src="{{ '/assets/catblog/call-ghcp-harness-agents-mcp-a2a/add-trigger.png' | relative_url }}" alt="Recurrence, Copilot, Microsoft Teams, Office 365 Outlook 등의 트리거와 Preview 표시가 있는 MCP 및 A2A 프로토콜을 보여 주는 Add a trigger 대화 상자" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>**MCP protocol**과 **A2A protocol**은 Early 릴리스 환경에서만 Add a trigger 대화 상자에 표시됩니다.</figcaption>
+  <figcaption>MCP protocol과 A2A protocol은 Early 릴리스 환경에서만 Add a trigger 대화 상자에 표시됩니다.</figcaption>
 </figure>
 
 각 대화 상자에 에이전트 URL이 표시됩니다.
@@ -119,7 +119,7 @@ Card: {A2A URL}/.well-known/agent-card.json
 
 <figure class="screenshot">
   <img src="{{ '/assets/catblog/call-ghcp-harness-agents-mcp-a2a/mcp-oauth-manual.png' | relative_url }}" alt="OAuth 2.0 Manual 유형, 클라이언트 ID, 권한 부여 URL, 토큰 URL 템플릿, 새로 고침 URL 및 범위가 입력된 Add a Model Context Protocol server 대화 상자" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>**Manual** OAuth를 선택한 MCP 마법사입니다. 여기서는 테넌트 ID를 `{tenantId}`로 바꿨습니다.</figcaption>
+  <figcaption>Manual OAuth를 선택한 MCP 마법사입니다. 여기서는 테넌트 ID를 `{tenantId}`로 바꿨습니다.</figcaption>
 </figure>
 
 ### 4. 리디렉션 URI 등록 및 연결 만들기
@@ -130,7 +130,7 @@ Card: {A2A URL}/.well-known/agent-card.json
 
 <figure class="screenshot">
   <img src="{{ '/assets/catblog/call-ghcp-harness-agents-mcp-a2a/entra-web-redirect.png' | relative_url }}" alt="https://global.consent.azure-apim.net/redirect/로 시작하는 Web 리디렉션 URI가 등록된 앱 등록의 Authentication 페이지" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>커넥터 리디렉션 URL을 앱 등록에 **Web** 리디렉션 URI로 추가합니다.</figcaption>
+  <figcaption>커넥터 리디렉션 URL을 앱 등록에 Web 리디렉션 URI로 추가합니다.</figcaption>
 </figure>
 
 그런 다음 도구 패널에 `send-message` 도구 하나가 표시됩니다. 같은 환경의 여러 에이전트에서 커넥터와 연결을 공유할 수 있습니다. 제 표준 에이전트는 다른 에이전트에 이미 만든 연결을 재사용했습니다.
@@ -225,7 +225,7 @@ Card: {A2A URL}/.well-known/agent-card.json
 
 <figure class="screenshot">
   <img src="{{ '/assets/catblog/call-ghcp-harness-agents-mcp-a2a/obo-answer-after-allow.png' | relative_url }}" alt="HR 정책에서 세부 정보를 가져와 Mario에게 전액 유급 육아휴직 26주(6개월)를 안내하는 IT Helpdesk 에이전트" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>**Allow**를 선택한 뒤 받은 답변입니다. 세부 정보는 호출 대상 에이전트의 HR 안내서에서 가져옵니다.</figcaption>
+  <figcaption>Allow를 선택한 뒤 받은 답변입니다. 세부 정보는 호출 대상 에이전트의 HR 안내서에서 가져옵니다.</figcaption>
 </figure>
 
 <figure class="screenshot">
@@ -273,7 +273,7 @@ Card: {A2A URL}/.well-known/agent-card.json
 
 <figure class="screenshot">
   <img src="{{ '/assets/catblog/call-ghcp-harness-agents-mcp-a2a/a2a-review-description.png' | relative_url }}" alt="에이전트에서 가져온 일반 설명 “Microsoft Copilot Studio agent 'HR Policy'.”와 HR Policy 이름이 표시된 Review and add 단계" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>에이전트에서 가져온 설명입니다. **Add to agent**를 선택하기 전에 바꾸세요.</figcaption>
+  <figcaption>에이전트에서 가져온 설명입니다. Add to agent를 선택하기 전에 바꾸세요.</figcaption>
 </figure>
 
 Copilot Studio는 연결된 에이전트의 이름과 설명, 사용자 메시지와 대화 맥락, 호출 에이전트 지침을 바탕으로 [A2A 에이전트에 라우팅](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/add-agent-to-agent#how-the-orchestrator-routes-to-the-a2a-agent)합니다. 따라서 다음처럼 에이전트를 언제 사용할지 설명을 바꾸세요.

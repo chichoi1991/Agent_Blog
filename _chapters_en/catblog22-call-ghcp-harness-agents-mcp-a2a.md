@@ -65,7 +65,7 @@ Open the published Microsoft Copilot harness agent in its Early environment, sel
 
 <figure class="screenshot">
   <img src="{{ '/assets/catblog/call-ghcp-harness-agents-mcp-a2a/add-trigger.png' | relative_url }}" alt="The Add a trigger dialog listing Recurrence, Copilot, Microsoft Teams, Office 365 Outlook and other triggers, with MCP protocol and A2A protocol marked Preview" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>**MCP protocol** and **A2A protocol** in the Add a trigger dialog. They only appear in an Early release environment.</figcaption>
+  <figcaption>MCP protocol and A2A protocol in the Add a trigger dialog. They only appear in an Early release environment.</figcaption>
 </figure>
 
 Each dialog shows the agent's URL:
@@ -120,7 +120,7 @@ Replace `{tenantId}` with your Directory (tenant) ID. The scope must include `of
 
 <figure class="screenshot">
   <img src="{{ '/assets/catblog/call-ghcp-harness-agents-mcp-a2a/mcp-oauth-manual.png' | relative_url }}" alt="The Add a Model Context Protocol server dialog with OAuth 2.0 type Manual and the client ID, authorization URL, token URL template, refresh URL and scopes filled in" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>The MCP wizard with **Manual** OAuth. The tenant ID is replaced with `{tenantId}` here.</figcaption>
+  <figcaption>The MCP wizard with Manual OAuth. The tenant ID is replaced with `{tenantId}` here.</figcaption>
 </figure>
 
 ### 4. Register the redirect URI and create the connection
@@ -131,7 +131,7 @@ Replace `{tenantId}` with your Directory (tenant) ID. The scope must include `of
 
 <figure class="screenshot">
   <img src="{{ '/assets/catblog/call-ghcp-harness-agents-mcp-a2a/entra-web-redirect.png' | relative_url }}" alt="The app registration's Authentication page with a Web redirect URI that starts with https://global.consent.azure-apim.net/redirect/" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>The connector's redirect URL added to the app registration as a **Web** redirect URI.</figcaption>
+  <figcaption>The connector's redirect URL added to the app registration as a Web redirect URI.</figcaption>
 </figure>
 
 The tool panel then shows a single tool, `send-message`. One connector and connection can serve several agents in the same environment: my standard agent reused the connection I'd already created for another agent.
@@ -227,7 +227,7 @@ Selecting **Allow** created the user's connection, and the agent answered with t
 
 <figure class="screenshot">
   <img src="{{ '/assets/catblog/call-ghcp-harness-agents-mcp-a2a/obo-answer-after-allow.png' | relative_url }}" alt="The IT Helpdesk agent answering 'Mario, you're entitled to 26 weeks (6 months) of fully paid parental leave' with details from the HR policy" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>The answer after **Allow**. The details come from the called agent's HR handbook.</figcaption>
+  <figcaption>The answer after Allow. The details come from the called agent's HR handbook.</figcaption>
 </figure>
 
 <figure class="screenshot">
@@ -275,7 +275,7 @@ Select **Next** to reach **Review and add**, where the name and description come
 
 <figure class="screenshot">
   <img src="{{ '/assets/catblog/call-ghcp-harness-agents-mcp-a2a/a2a-review-description.png' | relative_url }}" alt="The Review and add step showing the name HR Policy and the generic description 'Microsoft Copilot Studio agent HR Policy.' marked From the agent" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
-  <figcaption>The description that came from the agent. Replace it before you select **Add to agent**.</figcaption>
+  <figcaption>The description that came from the agent. Replace it before you select Add to agent.</figcaption>
 </figure>
 
 Copilot Studio [routes to an A2A agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/add-agent-to-agent#how-the-orchestrator-routes-to-the-a2a-agent) based on its name and description, the user's message and conversation context, and the calling agent's instructions. So replace the description with one that says when to use the agent, for example:
