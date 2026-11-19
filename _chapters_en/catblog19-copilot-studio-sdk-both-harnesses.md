@@ -18,6 +18,10 @@ canonical_url: "https://microsoft.github.io/mcscatblog/posts/copilot-studio-sdk-
 **Translated article** — This article is based on [One SDK Client for Both Copilot Studio Harnesses (Preview)](https://microsoft.github.io/mcscatblog/posts/copilot-studio-sdk-both-harnesses/) by adilei (@adilei) on [The Custom Engine](https://microsoft.github.io/mcscatblog/) (2026-10-21). The original wording takes precedence.
 </div>
 
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/copilot-studio-sdk-both-harnesses/header.png' | relative_url }}" alt="A Copilot Studio client connecting to the standard and GitHub Copilot harnesses with Microsoft Entra ID sign-in" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+</figure>
+
 In [You Probably Don't Need Manual Authentication](https://microsoft.github.io/mcscatblog/posts/you-dont-need-manual-auth/), I showed how you can put a Copilot Studio agent in your own app with **Microsoft Entra ID sign-in**, while keeping the agent set to **Authenticate with Microsoft**. Your app uses an Entra app registration for sign-in and the Microsoft 365 Agents SDK to talk to the agent.
 
 But what if your agent uses the GitHub Copilot harness?

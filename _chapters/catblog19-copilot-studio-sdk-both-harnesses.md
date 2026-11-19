@@ -17,6 +17,10 @@ canonical_url: "https://microsoft.github.io/mcscatblog/posts/copilot-studio-sdk-
 **원문 번역 게시물** — 이 글은 [The Custom Engine](https://microsoft.github.io/mcscatblog/)(Microsoft Copilot Studio CAT)의 adilei(@adilei)가 작성한 원문 [One SDK Client for Both Copilot Studio Harnesses (Preview)](https://microsoft.github.io/mcscatblog/posts/copilot-studio-sdk-both-harnesses/)(2026-10-21)을 한글로 옮긴 것입니다. 원문 표현이 우선합니다.
 </div>
 
+<figure class="screenshot">
+  <img src="{{ '/assets/catblog/copilot-studio-sdk-both-harnesses/header.png' | relative_url }}" alt="Microsoft Entra ID 로그인을 사용해 표준 및 GitHub Copilot 하네스에 연결하는 Copilot Studio 클라이언트" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('pending')">
+</figure>
+
 이전 글 [수동 인증은 필요하지 않을 수 있습니다](https://microsoft.github.io/mcscatblog/posts/you-dont-need-manual-auth/)에서는 에이전트 설정을 **Microsoft로 인증**으로 유지하면서 **Microsoft Entra ID 로그인**을 통해 자체 앱에 Copilot Studio 에이전트를 연결하는 방법을 살펴봤습니다. 앱은 Entra 앱 등록을 사용해 로그인하고 Microsoft 365 Agents SDK로 에이전트와 통신합니다.
 
 그렇다면 에이전트가 GitHub Copilot 하네스를 사용한다면 어떨까요?
