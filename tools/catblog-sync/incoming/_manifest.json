@@ -296,6 +296,40 @@
       ],
       "staged_at": "2026-11-19T20:45:11.612Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "copilot-cowork-credit-analysis",
+      "title": "Use Copilot Cowork to dig deep into your Power Platform credit consumption data",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/copilot-cowork-credit-analysis/",
+      "source_author": "giorgioughini",
+      "source_published": "2026-11-20",
+      "source_updated": "2026-11-20",
+      "categories": [
+        "copilot-studio",
+        "governance"
+      ],
+      "summary": "Use the Power Platform Admin plugin in Copilot Cowork to explore Copilot Credit consumption by environment, create charts, and plan recurring reports.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-11-20-copilot-cowork-credit-analysis.md",
+      "images": [
+        {
+          "src": "/assets/posts/copilot-cowork-credit-analysis/power-platform-admin-plugin.png",
+          "local": "assets/catblog/copilot-cowork-credit-analysis/power-platform-admin-plugin.png"
+        },
+        {
+          "src": "/assets/posts/copilot-cowork-credit-analysis/credit-consumption-summary.png",
+          "local": "assets/catblog/copilot-cowork-credit-analysis/credit-consumption-summary.png"
+        },
+        {
+          "src": "/assets/posts/copilot-cowork-credit-analysis/credit-consumption-chart.png",
+          "local": "assets/catblog/copilot-cowork-credit-analysis/credit-consumption-chart.png"
+        },
+        {
+          "src": "/assets/posts/copilot-cowork-credit-analysis/header.png",
+          "local": "assets/catblog/copilot-cowork-credit-analysis/header.png"
+        }
+      ],
+      "staged_at": "2026-11-20T20:29:08.253Z",
+      "status": "pending-translation"
     }
   ]
 }
