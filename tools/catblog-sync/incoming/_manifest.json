@@ -330,6 +330,68 @@
       ],
       "staged_at": "2026-11-20T20:29:08.253Z",
       "status": "pending-translation"
+    },
+    {
+      "slug": "copilot-agents-bootcamp",
+      "title": "Inside the Copilot & Agents Bootcamp: Every Session and Lab, Ready for You to Run",
+      "source_url": "https://microsoft.github.io/mcscatblog/posts/copilot-agents-bootcamp/",
+      "source_author": "chrisgarty",
+      "source_published": "2026-11-21",
+      "source_updated": "2026-11-21",
+      "categories": [
+        "copilot-studio",
+        "training"
+      ],
+      "summary": "A guided tour of the refreshed Copilot & Agents Bootcamp: the Chat-to-Cowork-to-Copilot Studio narrative, the full three-day agenda with links to every module and lab, and how to run it in your own organization with help from CAT.",
+      "raw_url": "https://raw.githubusercontent.com/microsoft/mcscatblog/main/_posts/2026-11-21-copilot-agents-bootcamp.md",
+      "images": [
+        {
+          "src": "/assets/posts/copilot-agents-bootcamp/assisted-repeatable-production.png",
+          "local": "assets/catblog/copilot-agents-bootcamp/assisted-repeatable-production.png"
+        },
+        {
+          "src": "/assets/posts/copilot-agents-bootcamp/lab1-chat-preread.webp",
+          "local": "assets/catblog/copilot-agents-bootcamp/lab1-chat-preread.webp"
+        },
+        {
+          "src": "/assets/posts/copilot-agents-bootcamp/lab2-cowork-sales-plugin.webp",
+          "local": "assets/catblog/copilot-agents-bootcamp/lab2-cowork-sales-plugin.webp"
+        },
+        {
+          "src": "/assets/posts/copilot-agents-bootcamp/lab4-upload-skill.webp",
+          "local": "assets/catblog/copilot-agents-bootcamp/lab4-upload-skill.webp"
+        },
+        {
+          "src": "/assets/posts/copilot-agents-bootcamp/lab6-skill-load-trace.webp",
+          "local": "assets/catblog/copilot-agents-bootcamp/lab6-skill-load-trace.webp"
+        },
+        {
+          "src": "/assets/posts/copilot-agents-bootcamp/lab3-code-lab-tracker.webp",
+          "local": "assets/catblog/copilot-agents-bootcamp/lab3-code-lab-tracker.webp"
+        },
+        {
+          "src": "/assets/posts/copilot-agents-bootcamp/lab7-hooks-travel-policy.webp",
+          "local": "assets/catblog/copilot-agents-bootcamp/lab7-hooks-travel-policy.webp"
+        },
+        {
+          "src": "/assets/posts/copilot-agents-bootcamp/lab8-customer-assist-canvas.webp",
+          "local": "assets/catblog/copilot-agents-bootcamp/lab8-customer-assist-canvas.webp"
+        },
+        {
+          "src": "/assets/posts/copilot-agents-bootcamp/lab10-workflow-run.webp",
+          "local": "assets/catblog/copilot-agents-bootcamp/lab10-workflow-run.webp"
+        },
+        {
+          "src": "/assets/posts/copilot-agents-bootcamp/lab11-specialist-trace.webp",
+          "local": "assets/catblog/copilot-agents-bootcamp/lab11-specialist-trace.webp"
+        },
+        {
+          "src": "/assets/posts/copilot-agents-bootcamp/header.png",
+          "local": "assets/catblog/copilot-agents-bootcamp/header.png"
+        }
+      ],
+      "staged_at": "2026-11-23T23:59:49.220Z",
+      "status": "pending-translation"
     }
   ]
 }
